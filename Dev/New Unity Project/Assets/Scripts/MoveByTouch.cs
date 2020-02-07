@@ -12,8 +12,7 @@ public class MoveByTouch : MonoBehaviour
         {
             Touch touch = Input.GetTouch(0);
 
-            Vector3 touchPos = Camera.main.ScreenToWorldPoint(touch.position);
-            touchPos.z = 0f;
+            Vector3 touchPos = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, 10));
             transform.position = touchPos;
         }
     }
