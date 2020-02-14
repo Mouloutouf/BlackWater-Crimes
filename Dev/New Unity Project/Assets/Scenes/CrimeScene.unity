@@ -537,6 +537,36 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1771887100
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1771887102}
+  m_Layer: 0
+  m_Name: Player Data Container
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1771887102
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771887100}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1846941671 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2942581723411579102, guid: 2db0515fa6d41e84f98664dd9142584d,
@@ -707,7 +737,7 @@ GameObject:
   - component: {fileID: 2140712986}
   - component: {fileID: 2140712985}
   m_Layer: 0
-  m_Name: Data Container
+  m_Name: Scene Data Container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -722,10 +752,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2140712984}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca00d21cd43e4eb4f838ab9f259b0d6c, type: 3}
+  m_Script: {fileID: 11500000, guid: 041a320e234dd274f92fce5c198e88ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: a9d739f5259ded14ab795e47a0d7ca6b, type: 2}
+  locationData: {fileID: 11400000, guid: ec32d327d7ef91243a7db1b6f74fd8ae, type: 2}
   contents:
   - {fileID: 1591700918}
 --- !u!4 &2140712986
@@ -1015,11 +1045,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5176453501892284309, guid: add3b2c587689f04b9f82d3ef20ca78f,
-        type: 3}
-      propertyPath: referenceSuffix
-      value: 0066
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: add3b2c587689f04b9f82d3ef20ca78f, type: 3}

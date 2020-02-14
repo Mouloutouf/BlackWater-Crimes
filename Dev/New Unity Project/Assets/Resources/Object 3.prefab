@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 6244647572786416060}
   - component: {fileID: 6244647572786416061}
   - component: {fileID: 6244647572786416062}
+  - component: {fileID: 226440723666400672}
+  - component: {fileID: 218956304}
+  - component: {fileID: 6244647572770364542}
   m_Layer: 0
   m_Name: Object 3
   m_TagString: Untagged
@@ -97,3 +100,81 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   referencePrefix: 'A003 - '
   referenceSuffix: 0003
+  referenceName: Axe
+--- !u!114 &226440723666400672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6244647572786416067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0080544480f21014ebfd077f1f80c5c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  events:
+  - {fileID: 11400000, guid: f0798ec3a1c04f9448af7995872450b1, type: 2}
+  hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+--- !u!60 &218956304
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6244647572786416067}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.12, y: 1.2}
+    newSize: {x: 0.32, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.35999998, y: -0.16}
+      - {x: 0.16, y: 0.42}
+      - {x: 0.17999999, y: 0.59999996}
+      - {x: -0.28, y: 0.59999996}
+      - {x: -0.19999999, y: 0.39999998}
+      - {x: -0.38, y: -0.12}
+      - {x: -0.38, y: -0.53999996}
+      - {x: -0.24, y: -0.59999996}
+      - {x: 0.34, y: -0.59999996}
+      - {x: 0.65999997, y: -0.35999998}
+      - {x: 0.65999997, y: -0.17999999}
+    - - {x: -0.099999994, y: -0.42}
+      - {x: -0.12, y: -0.42}
+      - {x: -0.12, y: -0.39999998}
+      - {x: -0.06, y: -0.45999998}
+      - {x: -0.02, y: -0.45999998}
+--- !u!114 &6244647572770364542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6244647572786416067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46742789b7e08be46aa11d27648eb230, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  evidence:
+    name: Axe
+    taken: 0
+    render2D: {fileID: -2441786563314148061, guid: 7da83651229dfe64e949bb06ab965009,
+      type: 3}
+    highRender3D: {fileID: 0}
+    lowRender3D: {fileID: 0}
+    hasIntel: 1
+    intel: {fileID: 0}

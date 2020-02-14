@@ -6,4 +6,6 @@ public class Reference : MonoBehaviour
 {
     public string referencePrefix = "A000 - ";
     public string referenceSuffix = "0000";
+
+    public string referenceName;
 }

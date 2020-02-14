@@ -7,5 +7,7 @@ public class SceneData : ScriptableObject
 {
     public bool isDataContained = false;
 
+    public List<GameObject> initialObjects = new List<GameObject>();
+
     public List<GameObject> objects = new List<GameObject>();
 }

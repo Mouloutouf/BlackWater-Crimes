@@ -30,7 +30,8 @@ public class SceneDataManager : MonoBehaviour
             {
                 if (data.isDataContained == false)
                 {
-                    data.objects.Add((GameObject)Resources.Load(T.name, typeof(GameObject))); // add into scriptable data list
+                    data.initialObjects.Add((GameObject)Resources.Load(T.name, typeof(GameObject))); // add into scriptable data list
+                    data.objects = data.initialObjects;
                 }
                 
                 objects.Add(T.gameObject); // add into data manager list
@@ -85,19 +86,19 @@ public class SceneDataManager : MonoBehaviour
         }
     }
 
-    void Add(GameObject content)
+    public void Add(GameObject content)
     {
         Debug.Log("Added : " + content);
         //Instantiate(content, new Vector3(2, 3, 0), Quaternion.identity, contents[0].transform);
     }
 
-    void Remove(GameObject content)
+    public void Remove(GameObject content)
     {
         Debug.Log("Removed : " + content);
         Destroy(content);
     }
 
-    void Replace(GameObject oldContent, GameObject newContent)
+    public void Replace(GameObject oldContent, GameObject newContent)
     {
         Debug.Log("Replaced : " + oldContent + " with " + newContent);
         Instantiate(newContent, oldContent.transform.position, Quaternion.identity, contents[0].transform);
