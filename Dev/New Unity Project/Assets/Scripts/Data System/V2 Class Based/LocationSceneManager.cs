@@ -19,9 +19,13 @@ public class LocationSceneManager : MonoBehaviour
 
     void Update()
     {
-        foreach (Transform T in contents[0].transform)
+        foreach (GameObject obj in sceneObjects)
         {
-            //if (T.GetComponent<EvidenceObject>().evidence.taken)
+            //Tracking of objects data modifications (specifically taken or not)
+            if (obj.GetComponent<EvidenceObject>().evidence.taken)
+            {
+
+            }
         }
     }
 
@@ -55,7 +59,7 @@ public class LocationSceneManager : MonoBehaviour
                 {
                     if (evidence.name == _object.GetComponent<EvidenceObject>().evidence.name)
                     {
-                        _object.GetComponent<EvidenceObject>().evidence = UpdateData(evidence, _object.GetComponent<EvidenceObject>().evidence);
+                        _object.GetComponent<EvidenceObject>().evidence = evidence;
 
                         evidenceMatch = 1;
                     }
@@ -69,6 +73,7 @@ public class LocationSceneManager : MonoBehaviour
         }
     }
 
+    #region useless methods
     public void Add(GameObject content)
     {
         Debug.Log("Added : " + content);
@@ -99,4 +104,5 @@ public class LocationSceneManager : MonoBehaviour
     {
 
     }
+    #endregion
 }
