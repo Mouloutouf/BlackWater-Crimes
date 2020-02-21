@@ -57,8 +57,8 @@ public class LocationSceneManager : MonoBehaviour
                 }
 
                 if (evidenceMatch == 0) Debug.LogError(
-                    "A GameObject of type Evidence is missing in the Scene. Are you using the right Scene ? " +
-                    "If yes, Try clearing the data from the Scene's associated Scriptable Object"
+                    "A GameObject containing Data type Evidence is missing in the Scene. Are you using the right Scene ? " +
+                    "If yes, Try clearing the Evidence data from the Player Data Scriptable Object"
                     );
             }
         }
@@ -83,6 +83,11 @@ public class LocationSceneManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    public T GenericMethod<T>(T param) where T : Data
+    {
+        return param;
     }
 
     #region useless methods

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class DeskSceneManager : MonoBehaviour
 {
-    public LocationData locationData;
+    public PlayerData data;
 
     public GameObject evidencePrefab;
 
@@ -23,7 +23,7 @@ public class DeskSceneManager : MonoBehaviour
 
     void Start()
     {
-        foreach (Evidence evidence in locationData.evidences)
+        foreach (Evidence evidence in data.evidences)
         {
             Instantiation(evidence);
         }
@@ -51,13 +51,13 @@ public class DeskSceneManager : MonoBehaviour
 
     void SaveData()
     {
-        for (int i = 0; i < locationData.evidences.Count; i++)
+        for (int i = 0; i < data.evidences.Count; i++)
         {
             foreach (GameObject _object in sceneObjects)
             {
-                if (locationData.evidences[i].name == _object.GetComponent<DeskEvidenceObject>().evidence.name)
+                if (data.evidences[i].name == _object.GetComponent<DeskEvidenceObject>().evidence.name)
                 {
-                    locationData.evidences[i] = _object.GetComponent<DeskEvidenceObject>().evidence;
+                    data.evidences[i] = _object.GetComponent<DeskEvidenceObject>().evidence;
                 }
             }
         }

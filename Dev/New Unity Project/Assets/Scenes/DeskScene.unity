@@ -214,6 +214,7 @@ GameObject:
   m_Component:
   - component: {fileID: 88662779}
   - component: {fileID: 88662778}
+  - component: {fileID: 88662780}
   m_Layer: 0
   m_Name: Desk Data Container
   m_TagString: Untagged
@@ -233,12 +234,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 840a9202d6f696d47942b52d33761572, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  locationData: {fileID: 11400000, guid: ec32d327d7ef91243a7db1b6f74fd8ae, type: 2}
+  data: {fileID: 11400000, guid: eaa3567ddd179a64a9d879867070a0b4, type: 2}
   evidencePrefab: {fileID: 2791195250523596685, guid: dfc765fb87adac64baaf564b84add013,
     type: 3}
   contentParent: {fileID: 1600674498}
   initalPos: {x: 0, y: 230, z: 0}
   offset: -200
+  sceneObjects: []
+  scene:
+    m_Handle: 0
 --- !u!4 &88662779
 Transform:
   m_ObjectHideFlags: 0
@@ -253,6 +257,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &88662780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88662777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9d66e60a6470564db72df4916ec4ad6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: NoteScene
 --- !u!1 &494608832
 GameObject:
   m_ObjectHideFlags: 0
