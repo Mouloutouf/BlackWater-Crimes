@@ -20,22 +20,27 @@ public class LocationSceneManager : MonoBehaviour
         Initialization();
     }
 
-    void ListCreation()
+    public void ListCreation()
     {
         foreach (GameObject content in contents)
         {
-            foreach (Transform T in content.transform)
+            foreach (Transform trsfrm in content.transform)
             {
                 if (data.isDataContained == false)
                 {
-                    data.evidences.Add(T.GetComponent<ObjectData>().evidence);
+                    data.evidences.Add(trsfrm.GetComponent<ObjectData>().evidence);
                 }
 
-                sceneObjects.Add(T.gameObject); // add into data manager list
+                sceneObjects.Add(trsfrm.gameObject); // add into data manager list
             }
         }
 
         data.isDataContained = true;
+    }
+
+    public T AddToList<T>(List<T> TList, T TObject) where T : Data
+    {
+        return TObject;
     }
 
     void Initialization()

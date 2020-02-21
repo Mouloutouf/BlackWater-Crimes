@@ -43,6 +43,12 @@ public class PlayerData : ScriptableObject
     public bool isDataContained;
 
     public List<Evidence> evidences;
+    public List<Evidence> Evidences { get => evidences; set => evidences = GetListOfType<Evidence>(evidences); }
 
     public List<Note> notes;
+
+    public List<T> GetListOfType<T>(List<T> TList) where T : Data
+    {
+        return TList;
+    }
 }
