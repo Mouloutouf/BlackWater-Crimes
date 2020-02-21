@@ -1,14 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LocationSceneManager : MonoBehaviour
 {
-    public LocationData locationData;
+    public PlayerData data;
 
     public List<GameObject> contents = new List<GameObject>();
 
     private List<GameObject> sceneObjects = new List<GameObject>();
+
+    public Scene scene;
 
     void Start()
     {
@@ -17,49 +20,37 @@ public class LocationSceneManager : MonoBehaviour
         Initialization();
     }
 
-    void Update()
-    {
-        foreach (GameObject obj in sceneObjects)
-        {
-            //Tracking of objects data modifications (specifically taken or not)
-            if (obj.GetComponent<EvidenceObject>().evidence.taken)
-            {
-
-            }
-        }
-    }
-
     void ListCreation()
     {
         foreach (GameObject content in contents)
         {
             foreach (Transform T in content.transform)
             {
-                if (locationData.isDataContained == false)
+                if (data.isDataContained == false)
                 {
-                    locationData.evidences.Add(T.GetComponent<EvidenceObject>().evidence);
+                    data.evidences.Add(T.GetComponent<ObjectData>().evidence);
                 }
 
                 sceneObjects.Add(T.gameObject); // add into data manager list
             }
         }
 
-        locationData.isDataContained = true;
+        data.isDataContained = true;
     }
 
     void Initialization()
     {
-        if (locationData.isDataContained)
+        if (data.isDataContained)
         {
-            foreach (Evidence evidence in locationData.evidences)
+            foreach (Evidence evidence in data.evidences)
             {
                 int evidenceMatch = 0;
 
                 foreach (GameObject _object in sceneObjects)
                 {
-                    if (evidence.name == _object.GetComponent<EvidenceObject>().evidence.name)
+                    if (evidence.name == _object.GetComponent<ObjectData>().evidence.name)
                     {
-                        _object.GetComponent<EvidenceObject>().evidence = evidence;
+                        _object.GetComponent<ObjectData>().evidence = evidence;
 
                         evidenceMatch = 1;
                     }
@@ -69,6 +60,27 @@ public class LocationSceneManager : MonoBehaviour
                     "A GameObject of type Evidence is missing in the Scene. Are you using the right Scene ? " +
                     "If yes, Try clearing the data from the Scene's associated Scriptable Object"
                     );
+            }
+        }
+    }
+
+    public void Quit()
+    {
+        SaveData();
+
+        SceneManager.LoadScene(scene.name);
+    }
+
+    void SaveData()
+    {
+        for (int i = 0; i < data.evidences.Count; i++)
+        {
+            foreach (GameObject _object in sceneObjects)
+            {
+                if (data.evidences[i].name == _object.GetComponent<ObjectData>().evidence.name)
+                {
+                    data.evidences[i] = _object.GetComponent<ObjectData>().evidence;
+                }
             }
         }
     }

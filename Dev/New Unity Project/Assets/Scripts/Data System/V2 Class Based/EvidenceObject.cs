@@ -4,35 +4,11 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public class Evidence
-{
-    public string name;
-
-    public bool taken;
-
-    public Sprite render2D;
-    public Mesh highRender3D;
-    public Mesh lowRender3D;
-
-    public bool hasIntel;
-
-    public Sprite intel;
-
-    public bool intelRevealed;
-
-    public string description;
-}
-
-public class EvidenceObject : MonoBehaviour
+public class ObjectData : MonoBehaviour
 {
     public Evidence evidence;
 
-    private bool loaded;
-
-    void Start()
-    {
-
-    }
+    protected bool loaded;
 
     void Update()
     {
@@ -40,12 +16,34 @@ public class EvidenceObject : MonoBehaviour
         {
             Protocol();
         }
+
+        Check();
     }
 
-    void Protocol()
+    public virtual void Protocol()
+    {
+        // Here goes the code for applying the Data to the Object
+
+        loaded = true;
+    }
+
+    public virtual void Check()
+    {
+        // Here goes the code to change the Object depending on the Data
+    }
+}
+
+public class EvidenceObject : ObjectData
+{
+    public override void Protocol()
+    {
+        //if (evidence.intelRevealed) ; // Make the 3D model showcase the intel directly
+
+        base.Protocol();
+    }
+
+    public override void Check()
     {
         if (evidence.taken) gameObject.SetActive(false);
-
-        if (evidence.intelRevealed) ; // Make the 3D model showcase the intel directly
     }
 }

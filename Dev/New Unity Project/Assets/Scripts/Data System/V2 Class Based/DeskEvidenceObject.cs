@@ -2,29 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
-public class DeskEvidenceObject : MonoBehaviour
+public class DeskEvidenceObject : ObjectData
 {
-    public Evidence evidence = new Evidence();
-
-    private bool loaded;
-
     public List<GameObject> objects = new List<GameObject>();
 
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
-        if (!loaded)
-        {
-            Protocol();
-        }
-    }
-
-    void Protocol()
+    public Button button;
+    
+    public override void Protocol()
     {
         objects[0].GetComponent<Image>().sprite = evidence.render2D;
 
@@ -32,6 +18,18 @@ public class DeskEvidenceObject : MonoBehaviour
 
         objects[2].GetComponent<Text>().text = evidence.description;
 
-        loaded = true;
+        button.onClick.AddListener( delegate { Close(); } );
+
+        base.Protocol();
+    }
+
+    public override void Check()
+    {
+        if (!evidence.taken) gameObject.SetActive(false);
+    }
+
+    public void Close()
+    {
+        evidence.taken = false;
     }
 }

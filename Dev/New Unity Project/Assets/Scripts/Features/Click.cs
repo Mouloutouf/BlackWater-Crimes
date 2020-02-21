@@ -26,6 +26,6 @@ public class Click : MonoBehaviour
 
     void OnMouseDown()
     {
-        events[0].Raise();
+        GetComponent<EvidenceObject>().evidence.taken = true;
     }
 }

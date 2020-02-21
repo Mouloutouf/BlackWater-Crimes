@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DeskSceneManager : MonoBehaviour
 {
@@ -15,17 +17,16 @@ public class DeskSceneManager : MonoBehaviour
 
     private float ofst = 0;
 
+    public List<GameObject> sceneObjects;
+
+    public Scene scene;
+
     void Start()
     {
-        foreach(Evidence evidence in locationData.evidences)
+        foreach (Evidence evidence in locationData.evidences)
         {
             Instantiation(evidence);
         }
-    }
-
-    void Update()
-    {
-        
     }
 
     void Instantiation(Evidence evidence)
@@ -36,8 +37,29 @@ public class DeskSceneManager : MonoBehaviour
         gO.GetComponent<RectTransform>().anchoredPosition = new Vector3(initalPos.x, initalPos.y + ofst, 0);
 
         gO.GetComponent<DeskEvidenceObject>().evidence = evidence;
-        //Instantiate(evidencePrefab, new Vector3(initalPos.x, initalPos.y + ofst, 0), Quaternion.identity, contentParent.transform);
+        sceneObjects.Add(gO);
 
         ofst += offset;
+    }
+
+    public void Quit()
+    {
+        SaveData();
+
+        SceneManager.LoadScene(scene.name);
+    }
+
+    void SaveData()
+    {
+        for (int i = 0; i < locationData.evidences.Count; i++)
+        {
+            foreach (GameObject _object in sceneObjects)
+            {
+                if (locationData.evidences[i].name == _object.GetComponent<DeskEvidenceObject>().evidence.name)
+                {
+                    locationData.evidences[i] = _object.GetComponent<DeskEvidenceObject>().evidence;
+                }
+            }
+        }
     }
 }
