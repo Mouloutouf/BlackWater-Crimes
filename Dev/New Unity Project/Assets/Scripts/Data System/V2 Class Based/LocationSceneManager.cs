@@ -26,6 +26,8 @@ public class LocationSceneManager : MonoBehaviour
         {
             foreach (Transform trsfrm in content.transform)
             {
+                //trsfrm.GetComponent<ObjectData>().
+
                 if (data.isDataContained == false)
                 {
                     data.evidences.Add(trsfrm.GetComponent<ObjectData>().evidence);
