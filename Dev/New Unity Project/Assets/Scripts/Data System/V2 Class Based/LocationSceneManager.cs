@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 public class LocationSceneManager : MonoBehaviour
 {
@@ -11,13 +12,17 @@ public class LocationSceneManager : MonoBehaviour
 
     private List<GameObject> sceneObjects = new List<GameObject>();
 
+    private List<List<GameObject>> allContents = new List<List<GameObject>>();
+
     public Scene scene;
 
     void Start()
     {
         ListCreation(); // Adds scene content objects into a list of gameObjects. Also creates the scriptable list if first time ever in scene
 
-        Initialization();
+        //Initialization();
+
+        foreach (GameObject content in contents) ReplaceWithDataOfType(data.evidences[0]);
     }
 
     public void ListCreation()
@@ -30,7 +35,7 @@ public class LocationSceneManager : MonoBehaviour
 
                 if (data.isDataContained == false)
                 {
-                    data.evidences.Add(trsfrm.GetComponent<ObjectData>().evidence);
+                    data.evidences.Add(trsfrm.GetComponent<ObjectData<Evidence>>().data);
                 }
 
                 sceneObjects.Add(trsfrm.gameObject); // add into data manager list
@@ -45,6 +50,24 @@ public class LocationSceneManager : MonoBehaviour
         return TObject;
     }
 
+    void ReplaceWithDataOfType<T>(T type) where T : Data
+    {
+        foreach (T _type in data.GetListOfType(type))
+        {
+            bool match = false;
+
+            foreach (GameObject obj in allContents[0])
+            {
+                if (_type.code == obj.GetComponent<ObjectData<T>>().data.code)
+                {
+                    obj.GetComponent<ObjectData<T>>().data = _type;
+                }
+            }
+
+            if (match == false) Debug.Log("yee object missing, yall need to instantiate thy");
+        }
+    }
+
     void Initialization()
     {
         if (data.isDataContained)
@@ -55,9 +78,9 @@ public class LocationSceneManager : MonoBehaviour
 
                 foreach (GameObject _object in sceneObjects)
                 {
-                    if (evidence.name == _object.GetComponent<ObjectData>().evidence.name)
+                    if (evidence.name == _object.GetComponent<ObjectData<Evidence>>().data.name)
                     {
-                        _object.GetComponent<ObjectData>().evidence = evidence;
+                        _object.GetComponent<ObjectData<Evidence>>().data = evidence;
 
                         evidenceMatch = 1;
                     }
@@ -84,9 +107,9 @@ public class LocationSceneManager : MonoBehaviour
         {
             foreach (GameObject _object in sceneObjects)
             {
-                if (data.evidences[i].name == _object.GetComponent<ObjectData>().evidence.name)
+                if (data.evidences[i].name == _object.GetComponent<ObjectData<Evidence>>().data.name)
                 {
-                    data.evidences[i] = _object.GetComponent<ObjectData>().evidence;
+                    data.evidences[i] = _object.GetComponent<ObjectData<Evidence>>().data;
                 }
             }
         }

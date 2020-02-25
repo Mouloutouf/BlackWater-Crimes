@@ -4,9 +4,9 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public class ObjectData : MonoBehaviour
+public class ObjectData<T> : MonoBehaviour where T : Data
 {
-    public Evidence evidence;
+    public T data;
 
     protected bool loaded;
 
@@ -22,18 +22,18 @@ public class ObjectData : MonoBehaviour
 
     public virtual void Protocol()
     {
-        // Here goes the code for applying the Data to the Object
+        // Here goes the code for applying the Data to the Object (OR applying the changes to the object depending on the Data)
 
         loaded = true;
     }
 
     public virtual void Check()
     {
-        // Here goes the code to change the Object depending on the Data
+        // Here goes the code to change the Object depending on the Data (OR applying the changes to the object depending on the Data)
     }
 }
 
-public class EvidenceObject : ObjectData
+public class EvidenceObject : ObjectData<Evidence>
 {
     public override void Protocol()
     {
@@ -44,6 +44,6 @@ public class EvidenceObject : ObjectData
 
     public override void Check()
     {
-        if (evidence.taken) gameObject.SetActive(false);
+        if (data.taken) gameObject.SetActive(false);
     }
 }

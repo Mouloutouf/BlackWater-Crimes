@@ -43,12 +43,25 @@ public class PlayerData : ScriptableObject
     public bool isDataContained;
 
     public List<Evidence> evidences;
-    public List<Evidence> Evidences { get => evidences; set => evidences = GetListOfType<Evidence>(evidences); }
-
+    
     public List<Note> notes;
 
-    public List<T> GetListOfType<T>(List<T> TList) where T : Data
+    private Dictionary<Type, string> allTypes = new Dictionary<Type, string>
     {
-        return TList;
+        {typeof(Evidence), "evidence"},
+        {typeof(Note), "note" }
+    };
+
+    public List<T> GetListOfType<T>(T type) where T : Data
+    {
+        switch (allTypes[type.GetType()])
+        {
+            case "evidence":
+                return evidences as List<T>;
+            case "note":
+                return notes as List<T>;
+            default:
+                return null;
+        }
     }
 }

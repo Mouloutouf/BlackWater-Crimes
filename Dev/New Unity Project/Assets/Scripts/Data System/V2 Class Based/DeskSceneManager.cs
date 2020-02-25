@@ -36,7 +36,7 @@ public class DeskSceneManager : MonoBehaviour
 
         gO.GetComponent<RectTransform>().anchoredPosition = new Vector3(initalPos.x, initalPos.y + ofst, 0);
 
-        gO.GetComponent<DeskEvidenceObject>().evidence = evidence;
+        gO.GetComponent<DeskEvidenceObject>().data = evidence;
         sceneObjects.Add(gO);
 
         ofst += offset;
@@ -55,9 +55,9 @@ public class DeskSceneManager : MonoBehaviour
         {
             foreach (GameObject _object in sceneObjects)
             {
-                if (data.evidences[i].name == _object.GetComponent<DeskEvidenceObject>().evidence.name)
+                if (data.evidences[i].name == _object.GetComponent<DeskEvidenceObject>().data.name)
                 {
-                    data.evidences[i] = _object.GetComponent<DeskEvidenceObject>().evidence;
+                    data.evidences[i] = _object.GetComponent<DeskEvidenceObject>().data;
                 }
             }
         }
