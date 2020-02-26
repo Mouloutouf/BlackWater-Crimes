@@ -18,14 +18,14 @@ public class LocationSceneManager : MonoBehaviour
 
     void Start()
     {
-        ListCreation(); // Adds scene content objects into a list of gameObjects. Also creates the scriptable list if first time ever in scene
+        OUTDATEDList(); // Adds scene content objects into a list of gameObjects. Also creates the scriptable list if first time ever in scene
 
         //Initialization();
 
-        foreach (GameObject content in contents) ReplaceWithDataOfType(data.evidences[0]);
+        foreach (GameObject content in contents) LoadDataOfType(data.evidences[0]);
     }
 
-    public void ListCreation()
+    public void OUTDATEDList()
     {
         foreach (GameObject content in contents)
         {
@@ -45,12 +45,35 @@ public class LocationSceneManager : MonoBehaviour
         data.isDataContained = true;
     }
 
-    public T AddToList<T>(List<T> TList, T TObject) where T : Data
+    public void List()
     {
-        return TObject;
+        int reference = 0;
+
+        foreach (GameObject content in contents)
+        {
+            allContents.Add(new List<GameObject>());
+            reference++;
+
+            foreach (Transform trsfrm in content.transform)
+            {
+                allContents[reference].Add(trsfrm.gameObject); // add into data manager list
+
+                if (data.isDataContained == false)
+                {
+                    //AddToDataListOfType(trsfrm.GetComponent<ObjectData<T>>().GetType(), trsfrm);
+                }
+            }
+        }
+
+        data.isDataContained = true;
     }
 
-    void ReplaceWithDataOfType<T>(T type) where T : Data
+    void AddToDataListOfType<T>(T type, Transform transform) where T : Data
+    {
+        data.GetListOfType(type).Add(transform.GetComponent<ObjectData<T>>().data);
+    }
+
+    void LoadDataOfType<T>(T type) where T : Data
     {
         foreach (T _type in data.GetListOfType(type))
         {
@@ -68,7 +91,7 @@ public class LocationSceneManager : MonoBehaviour
         }
     }
 
-    void Initialization()
+    void OUTDATEDData()
     {
         if (data.isDataContained)
         {
@@ -113,11 +136,6 @@ public class LocationSceneManager : MonoBehaviour
                 }
             }
         }
-    }
-
-    public T GenericMethod<T>(T param) where T : Data
-    {
-        return param;
     }
 
     #region useless methods
