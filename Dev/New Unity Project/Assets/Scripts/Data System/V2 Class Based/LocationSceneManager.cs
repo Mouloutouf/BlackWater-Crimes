@@ -4,57 +4,47 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System;
 
+[Serializable]
+public class Content
+{
+    public GameObject _object;
+
+    public Type type;
+    public bool instantiate;
+}
+
 public class LocationSceneManager : MonoBehaviour
 {
     public PlayerData data;
 
-    public List<GameObject> contents = new List<GameObject>();
-
+    public List<Content> contents = new List<Content>();
+    
     private List<GameObject> sceneObjects = new List<GameObject>();
 
     private List<List<GameObject>> allContents = new List<List<GameObject>>();
 
-    public Scene scene;
-
     void Start()
     {
-        OUTDATEDList(); // Adds scene content objects into a list of gameObjects. Also creates the scriptable list if first time ever in scene
-
-        //Initialization();
-
-        foreach (GameObject content in contents) LoadDataOfType(data.evidences[0]);
-    }
-
-    public void OUTDATEDList()
-    {
-        foreach (GameObject content in contents)
+        //if (data.isDataContained == false)
+        
+        for (int i = 0; i < contents.Count; i++)
         {
-            foreach (Transform trsfrm in content.transform)
-            {
-                //trsfrm.GetComponent<ObjectData>().
+            if (contents[i].instantiate == false) LoadDataOfType(data.evidences[0], i);
 
-                if (data.isDataContained == false)
-                {
-                    data.evidences.Add(trsfrm.GetComponent<ObjectData<Evidence>>().data);
-                }
-
-                sceneObjects.Add(trsfrm.gameObject); // add into data manager list
-            }
+            else InstantiateDataOfType(data.evidences[0], i);
         }
-
-        data.isDataContained = true;
     }
 
     public void List()
     {
-        int reference = 0;
+        int reference = -1;
 
-        foreach (GameObject content in contents)
+        for (int i = 0; i < contents.Count; i++)
         {
             allContents.Add(new List<GameObject>());
             reference++;
 
-            foreach (Transform trsfrm in content.transform)
+            foreach (Transform trsfrm in contents[i]._object.transform)
             {
                 allContents[reference].Add(trsfrm.gameObject); // add into data manager list
 
@@ -73,68 +63,36 @@ public class LocationSceneManager : MonoBehaviour
         data.GetListOfType(type).Add(transform.GetComponent<ObjectData<T>>().data);
     }
 
-    void LoadDataOfType<T>(T type) where T : Data
+    void LoadDataOfType<T>(T type, int index) where T : Data
     {
         foreach (T _type in data.GetListOfType(type))
         {
-            bool match = false;
+            bool isObjectInScene = false;
 
-            foreach (GameObject obj in allContents[0])
+            foreach (Transform transform in contents[index]._object.transform)
             {
-                if (_type.code == obj.GetComponent<ObjectData<T>>().data.code)
+                if (_type.code == transform.gameObject.GetComponent<ObjectData<T>>().data.code)
                 {
-                    obj.GetComponent<ObjectData<T>>().data = _type;
+                    isObjectInScene = true;
+                    transform.gameObject.GetComponent<ObjectData<T>>().data = _type;
                 }
             }
 
-            if (match == false) Debug.Log("yee object missing, yall need to instantiate thy");
-        }
-    }
-
-    void OUTDATEDData()
-    {
-        if (data.isDataContained)
-        {
-            foreach (Evidence evidence in data.evidences)
+            if (isObjectInScene == false)
             {
-                int evidenceMatch = 0;
-
-                foreach (GameObject _object in sceneObjects)
-                {
-                    if (evidence.name == _object.GetComponent<ObjectData<Evidence>>().data.name)
-                    {
-                        _object.GetComponent<ObjectData<Evidence>>().data = evidence;
-
-                        evidenceMatch = 1;
-                    }
-                }
-
-                if (evidenceMatch == 0) Debug.LogError(
-                    "A GameObject containing Data type Evidence is missing in the Scene. Are you using the right Scene ? " +
-                    "If yes, Try clearing the Evidence data from the Player Data Scriptable Object"
-                    );
+                Debug.Log("yee object missing, yall need to instantiate thy");
+                //InstantiateDataOfType(type, reference);
             }
         }
     }
 
-    public void Quit()
+    void InstantiateDataOfType<T>(T type, int index) where T : Data
     {
-        SaveData();
-
-        SceneManager.LoadScene(scene.name);
-    }
-
-    void SaveData()
-    {
-        for (int i = 0; i < data.evidences.Count; i++)
+        foreach (T _type in data.GetListOfType(type))
         {
-            foreach (GameObject _object in sceneObjects)
-            {
-                if (data.evidences[i].name == _object.GetComponent<ObjectData<Evidence>>().data.name)
-                {
-                    data.evidences[i] = _object.GetComponent<ObjectData<Evidence>>().data;
-                }
-            }
+            GameObject instance = contents[index]._object.GetComponent<InstantiationProcess>().Instantiation();
+
+            instance.GetComponent<ObjectData<T>>().data = _type;
         }
     }
 
@@ -154,7 +112,7 @@ public class LocationSceneManager : MonoBehaviour
     public void Replace(GameObject oldContent, GameObject newContent)
     {
         Debug.Log("Replaced : " + oldContent + " with " + newContent);
-        Instantiate(newContent, oldContent.transform.position, Quaternion.identity, contents[0].transform);
+        Instantiate(newContent, oldContent.transform.position, Quaternion.identity, contents[0]._object.transform);
         Destroy(oldContent);
     }
 
@@ -168,6 +126,27 @@ public class LocationSceneManager : MonoBehaviour
     public void AddObject(Evidence evidence)
     {
 
+    }
+
+    public void Quit()
+    {
+        SaveData();
+
+        SceneManager.LoadScene("yes");
+    }
+
+    void SaveData()
+    {
+        for (int i = 0; i < data.evidences.Count; i++)
+        {
+            foreach (GameObject _object in sceneObjects)
+            {
+                if (data.evidences[i].name == _object.GetComponent<ObjectData<Evidence>>().data.name)
+                {
+                    data.evidences[i] = _object.GetComponent<ObjectData<Evidence>>().data;
+                }
+            }
+        }
     }
     #endregion
 }

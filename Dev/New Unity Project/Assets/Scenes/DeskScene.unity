@@ -231,18 +231,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 88662777}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 840a9202d6f696d47942b52d33761572, type: 3}
+  m_Script: {fileID: 11500000, guid: 041a320e234dd274f92fce5c198e88ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: eaa3567ddd179a64a9d879867070a0b4, type: 2}
-  evidencePrefab: {fileID: 2791195250523596685, guid: dfc765fb87adac64baaf564b84add013,
-    type: 3}
-  contentParent: {fileID: 1600674498}
-  initalPos: {x: 0, y: 230, z: 0}
-  offset: -200
-  sceneObjects: []
-  scene:
-    m_Handle: 0
+  contents:
+  - _object: {fileID: 1600674498}
+    instantiate: 1
 --- !u!4 &88662779
 Transform:
   m_ObjectHideFlags: 0
@@ -570,6 +565,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1600674499}
+  - component: {fileID: 1600674500}
   m_Layer: 5
   m_Name: Desk Content
   m_TagString: Untagged
@@ -596,6 +592,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1600674500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600674498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ce185a8418e316469e85c83313a5311, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 2791195250523596685, guid: dfc765fb87adac64baaf564b84add013, type: 3}
+  initalPos: {x: 0, y: 330, z: 0}
+  offset: -200
 --- !u!1 &1718520080
 GameObject:
   m_ObjectHideFlags: 0
@@ -742,7 +753,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
 --- !u!114 &2082838941
 MonoBehaviour:
   m_ObjectHideFlags: 0
