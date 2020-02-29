@@ -4,35 +4,50 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System;
 
+// Content Class
+// Utilisation dans Unity ---> La Scène est définie par plusieurs Game Objects 'Content' / 'Contenu' qui contiennent plusieurs objets enfants d'un certain Data Type.
+// Exemple : Game Object Content 'Scene Evidences', qui contient l'ensemble des Game Objects 'Evidence' / 'Indice' de la Scène en enfants
+// Utilisation dans Script ---> Permet de référencer directement l'objet 'Content' en question et de définir d'autres variables utiles quant au Load de Data
 [Serializable]
 public class Content
 {
-    public GameObject _object;
+    public GameObject contentObject;
 
-    public Type type;
+    //instantiate var
+    //Résumé : Est-ce que le 'Content' doit instantier ses enfants ou sont-ils déjà présents dans la Scène
     public bool instantiate;
+
+    // enumType var
+    // Résumé : Le Data Type des enfants de 'Content'
+    public DataTypes dataType;
 }
 
+// Load for all objects
 public class LocationSceneManager : MonoBehaviour
 {
-    public PlayerData data;
+    public PlayerData gameData;
 
     public List<Content> contents = new List<Content>();
-    
-    private List<GameObject> sceneObjects = new List<GameObject>();
 
     private List<List<GameObject>> allContents = new List<List<GameObject>>();
 
+    public Dictionary<DataTypes, int> dataTypes = new Dictionary<DataTypes, int>
+    {
+        {DataTypes.Evidence, 0},
+        {DataTypes.Note, 1}
+    };
+
     void Start()
     {
-        //if (data.isDataContained == false)
-        
         for (int i = 0; i < contents.Count; i++)
         {
-            if (contents[i].instantiate == false) LoadDataOfType(data.evidences[0], i);
-
-            else InstantiateDataOfType(data.evidences[0], i);
+            if (!contents[i].instantiate)
+                LoadDataOfType(GetDataType(contents[i].dataType), i);
+            else
+                InstantiateDataOfType(GetDataType(contents[i].dataType), i);
         }
+
+        object type = GetType();
     }
 
     public void List()
@@ -44,55 +59,58 @@ public class LocationSceneManager : MonoBehaviour
             allContents.Add(new List<GameObject>());
             reference++;
 
-            foreach (Transform trsfrm in contents[i]._object.transform)
+            foreach (Transform trsfrm in contents[i].contentObject.transform)
             {
                 allContents[reference].Add(trsfrm.gameObject); // add into data manager list
 
-                if (data.isDataContained == false)
+                if (gameData.isDataContained == false)
                 {
                     //AddToDataListOfType(trsfrm.GetComponent<ObjectData<T>>().GetType(), trsfrm);
                 }
             }
         }
 
-        data.isDataContained = true;
+        gameData.isDataContained = true;
     }
 
     void AddToDataListOfType<T>(T type, Transform transform) where T : Data
     {
-        data.GetListOfType(type).Add(transform.GetComponent<ObjectData<T>>().data);
+        gameData.GetListOfType(type).Add(transform.GetComponent<ObjectData<T>>().data);
     }
 
     void LoadDataOfType<T>(T type, int index) where T : Data
     {
-        foreach (T _type in data.GetListOfType(type))
+        foreach (T _type in gameData.GetListOfType(type))
         {
-            bool isObjectInScene = false;
-
-            foreach (Transform transform in contents[index]._object.transform)
+            foreach (Transform transform in contents[index].contentObject.transform)
             {
                 if (_type.code == transform.gameObject.GetComponent<ObjectData<T>>().data.code)
                 {
-                    isObjectInScene = true;
                     transform.gameObject.GetComponent<ObjectData<T>>().data = _type;
                 }
-            }
-
-            if (isObjectInScene == false)
-            {
-                Debug.Log("yee object missing, yall need to instantiate thy");
-                //InstantiateDataOfType(type, reference);
             }
         }
     }
 
     void InstantiateDataOfType<T>(T type, int index) where T : Data
     {
-        foreach (T _type in data.GetListOfType(type))
+        foreach (T _type in gameData.GetListOfType(type))
         {
-            GameObject instance = contents[index]._object.GetComponent<InstantiationProcess>().Instantiation();
-
+            GameObject instance = contents[index].contentObject.GetComponent<InstantiationProcess>().Instantiation();
             instance.GetComponent<ObjectData<T>>().data = _type;
+        }
+    }
+
+    public Data GetDataType(DataTypes enumType)
+    {
+        switch (dataTypes[enumType])
+        {
+            case 0:
+                return new Evidence();
+            case 1:
+                return new Note();
+            default:
+                return null;
         }
     }
 
@@ -112,7 +130,7 @@ public class LocationSceneManager : MonoBehaviour
     public void Replace(GameObject oldContent, GameObject newContent)
     {
         Debug.Log("Replaced : " + oldContent + " with " + newContent);
-        Instantiate(newContent, oldContent.transform.position, Quaternion.identity, contents[0]._object.transform);
+        Instantiate(newContent, oldContent.transform.position, Quaternion.identity, contents[0].contentObject.transform);
         Destroy(oldContent);
     }
 
@@ -126,27 +144,6 @@ public class LocationSceneManager : MonoBehaviour
     public void AddObject(Evidence evidence)
     {
 
-    }
-
-    public void Quit()
-    {
-        SaveData();
-
-        SceneManager.LoadScene("yes");
-    }
-
-    void SaveData()
-    {
-        for (int i = 0; i < data.evidences.Count; i++)
-        {
-            foreach (GameObject _object in sceneObjects)
-            {
-                if (data.evidences[i].name == _object.GetComponent<ObjectData<Evidence>>().data.name)
-                {
-                    data.evidences[i] = _object.GetComponent<ObjectData<Evidence>>().data;
-                }
-            }
-        }
     }
     #endregion
 }

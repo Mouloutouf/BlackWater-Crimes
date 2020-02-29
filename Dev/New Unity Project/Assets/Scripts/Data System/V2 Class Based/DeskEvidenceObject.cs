@@ -10,6 +10,7 @@ public class DeskEvidenceObject : ObjectData<Evidence>
 
     public Button button;
     
+    // Load
     public override void Protocol()
     {
         objects[0].GetComponent<Image>().sprite = data.render2D;
@@ -18,7 +19,7 @@ public class DeskEvidenceObject : ObjectData<Evidence>
 
         objects[2].GetComponent<Text>().text = data.description;
 
-        button.onClick.AddListener( delegate { Close(); } );
+		button.onClick.AddListener( delegate { Close(); } );
 
         base.Protocol();
     }

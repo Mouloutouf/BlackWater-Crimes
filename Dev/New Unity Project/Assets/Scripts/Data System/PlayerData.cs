@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+public enum DataTypes
+{
+    Evidence,
+    Note
+}
+
 public class Data
 {
     public string code;
@@ -37,6 +43,7 @@ public class Evidence : Data
     public string description;
 }
 
+// Facile à sauvegarder
 [CreateAssetMenu(fileName = "New Player Data", menuName = "Player Data Scriptable")]
 public class PlayerData : ScriptableObject
 {
@@ -52,9 +59,9 @@ public class PlayerData : ScriptableObject
         {typeof(Note), "note" }
     };
 
-    public List<T> GetListOfType<T>(T type) where T : Data
+    public List<T> GetListOfType<T>(T _type) where T : Data
     {
-        switch (allTypes[type.GetType()])
+        switch (allTypes[_type.GetType()])
         {
             case "evidence":
                 return evidences as List<T>;
