@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
-using UnityEngine.SceneManagement;
 
 public class PhotosDisplayer : MonoBehaviour
 {
@@ -48,12 +47,12 @@ public class PhotosDisplayer : MonoBehaviour
 
     public void QuitScene()
     {
-        SceneManager.UnloadSceneAsync("NotesPhotosSceneProto");
+        UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("NotesPhotosSceneProto");
     }
 
     public void LoadNoteScene()
     {
-        SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName, UnityEngine.SceneManagement.LoadSceneMode.Additive);
     }
 
     // Update is called once per frame
