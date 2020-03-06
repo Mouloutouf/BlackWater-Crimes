@@ -14,13 +14,13 @@ public class SceneLoader : MonoBehaviour
 
     public void Load(string sceneName)
     {
-        if (!SceneManager.GetSceneByName(sceneName).isLoaded)
-            SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
+        if (!UnityEngine.SceneManagement.SceneManager.GetSceneByName(sceneName).isLoaded)
+            UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
     }
 
     public void Unload(string sceneName)
     {
-        if (SceneManager.GetSceneByName(sceneName).isLoaded)
-            SceneManager.UnloadSceneAsync(sceneName);
+        if (UnityEngine.SceneManagement.SceneManager.GetSceneByName(sceneName).isLoaded)
+            UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync(sceneName);
     }
 }

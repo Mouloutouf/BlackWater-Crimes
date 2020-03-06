@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class NotesRecorder : MonoBehaviour
 {
@@ -56,6 +55,6 @@ public class NotesRecorder : MonoBehaviour
         Screen.autorotateToLandscapeRight = false;
         Screen.autorotateToPortraitUpsideDown = false;
         Screen.orientation = ScreenOrientation.LandscapeLeft;
-        SceneManager.UnloadSceneAsync("NotesSceneProto");
+        UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("NotesSceneProto");
     }
 }
