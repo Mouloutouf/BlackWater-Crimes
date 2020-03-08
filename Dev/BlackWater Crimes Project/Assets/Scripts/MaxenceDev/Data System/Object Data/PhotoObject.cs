@@ -7,7 +7,7 @@ public class PhotoObject : ObjectData<Evidence>
 {
     public override void Protocol()
     {
-        GetComponent<Image>().sprite = data.render2D;
+        GetComponent<Image>().sprite = data.photo;
 
         base.Protocol();
     }

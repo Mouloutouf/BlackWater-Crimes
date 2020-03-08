@@ -29,18 +29,15 @@ public class Evidence : Data
     public string name;
 
     public bool taken;
-
-    public Sprite render2D;
-    public Mesh highRender3D;
-    public Mesh lowRender3D;
-
+    
     public bool hasIntel;
-
     public Sprite intel;
-
     public bool intelRevealed;
 
     public string description;
+
+    public bool photographed;
+    public Sprite photo;
 }
 
 // Facile à sauvegarder
