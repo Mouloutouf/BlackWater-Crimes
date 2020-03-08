@@ -9,7 +9,7 @@ public class Drag : MonoBehaviour
     private bool isHeld;
 
     public bool isUI;
-
+    
     void Update()
     {
         if (isHeld)
@@ -20,6 +20,8 @@ public class Drag : MonoBehaviour
 
             transform.localPosition = new Vector3(mousePos.x - startPosX, mousePos.y - startPosY, 0);
         }
+
+
     }
 
     void OnMouseDown()
