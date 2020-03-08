@@ -10,6 +10,8 @@ public class PhotosDisplayer : MonoBehaviour
     [SerializeField] GameObject[] imagePlaceHolder;
     string[] files = null;
 
+    Sprite sp;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +28,7 @@ public class PhotosDisplayer : MonoBehaviour
         foreach(string file in files)
         {
             Texture2D texture = GetScreenshotImage(files[index]);
-            Sprite sp = Sprite.Create (texture, new Rect(0,0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
+            sp = Sprite.Create (texture, new Rect(0,0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
             imagePlaceHolder[index].GetComponent<Image>().sprite = sp;
             index += 1;
         }

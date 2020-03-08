@@ -26,6 +26,6 @@ public class Click : MonoBehaviour
 
     void OnMouseDown()
     {
-        GetComponent<EvidenceObject>().data.taken = true;
+        GetComponent<TestEvidenceObject>().data.taken = true;
     }
 }
