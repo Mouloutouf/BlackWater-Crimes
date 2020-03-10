@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO;
 
 public class EvidenceInteraction : MonoBehaviour
 {
+    [SerializeField] Image testImage;
+
     [SerializeField] Camera cam;
     [SerializeField] GameObject saveText;
     [SerializeField] Toggle fingerprintToggle;
@@ -126,7 +129,20 @@ public class EvidenceInteraction : MonoBehaviour
             StartCoroutine(DisplayText("Photo Replaced"));
         }
 
-        ScreenCapture.CaptureScreenshot(_hit.transform.gameObject.name + ".png");
+#if !PLATFORM_ANDROID
+        string filePath = "Assets/Graphs/Sprites/Screenshots/" + _hit.transform.gameObject.name + ".png";
+        ScreenCapture.CaptureScreenshot(filePath);
+        Texture2D texture;
+        byte[] fileBytes;
+        fileBytes = File.ReadAllBytes(filePath);
+        texture = new Texture2D(2, 2, TextureFormat.RGB24, false);
+        texture.LoadImage(fileBytes);
+        Rect rect = new Rect(0, 0, texture.width, texture.height);
+        Sprite sp = Sprite.Create(texture, new Rect(500, 200, texture.width/2, texture.height/2), new Vector2(0.5f, 0.5f));
+        _evidence.photo = sp;
+
+        testImage.sprite = sp;
+#endif
     }
 
     IEnumerator DisplayText(string textToDisplay)
