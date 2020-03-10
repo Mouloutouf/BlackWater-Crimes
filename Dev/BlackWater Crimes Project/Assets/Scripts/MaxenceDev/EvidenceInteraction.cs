@@ -126,7 +126,7 @@ public class EvidenceInteraction : MonoBehaviour
             StartCoroutine(DisplayText("Photo Replaced"));
         }
 
-        ScreenCapture.CaptureScreenshot(_hit.transform.gameObject.name + ".png");
+        ScreenCapture.CaptureScreenshot(_evidence.code + ".png");
     }
 
     IEnumerator DisplayText(string textToDisplay)
