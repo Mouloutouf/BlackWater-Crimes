@@ -11,7 +11,10 @@ public class GetClues : MonoBehaviour
     [SerializeField] GameObject sceneCanvas;
     [SerializeField] GameObject cameraCanvas;
     [SerializeField] GameObject overlayClueCanvas;
+    [SerializeField] GameObject photoCanvas;
     [SerializeField] AudioMixerGroup lowPassMixer;
+
+    private bool isPhotoDisplayed;
 
     Vector3 zoomTransformInitPos;
 
@@ -156,7 +159,7 @@ public class GetClues : MonoBehaviour
         cameraCanvas.SetActive(true);
         sceneCanvas.SetActive(false);
         overlayClueCanvas.SetActive(true);
-        overlayClueCanvas.GetComponent<ClueInteraction>().currentClueHolder = actualClue;
+        overlayClueCanvas.GetComponent<EvidenceInteraction>().currentClueHolder = actualClue;
         cam.GetComponent<AudioSource>().outputAudioMixerGroup = lowPassMixer;
     }
 
@@ -171,8 +174,23 @@ public class GetClues : MonoBehaviour
 
         sceneCanvas.SetActive(true);
         cameraCanvas.SetActive(false);
-        overlayClueCanvas.GetComponent<ClueInteraction>().currentClueHolder = null;
+        overlayClueCanvas.GetComponent<EvidenceInteraction>().currentClueHolder = null;
         overlayClueCanvas.SetActive(false);
         cam.GetComponent<AudioSource>().outputAudioMixerGroup = null;
+    }
+
+    //Photo UI
+    public void DisplayUIPhoto()
+    {
+        if (!isPhotoDisplayed)
+        {
+            photoCanvas.SetActive(true);
+            isPhotoDisplayed = true;
+        }
+        else
+        {
+            photoCanvas.SetActive(false);
+            isPhotoDisplayed = false;
+        }
     }
 }

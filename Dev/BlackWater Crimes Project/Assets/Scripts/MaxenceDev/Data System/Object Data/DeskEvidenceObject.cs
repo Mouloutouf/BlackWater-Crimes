@@ -13,7 +13,7 @@ public class DeskEvidenceObject : ObjectData<Evidence>
     // Load
     public override void Protocol()
     {
-        objects[0].GetComponent<Image>().sprite = data.render2D;
+        objects[0].GetComponent<Image>().sprite = data.photo;
 
         objects[1].GetComponent<Text>().text = data.name;
 
