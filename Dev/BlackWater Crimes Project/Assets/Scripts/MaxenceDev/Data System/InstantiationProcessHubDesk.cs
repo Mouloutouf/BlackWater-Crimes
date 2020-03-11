@@ -30,7 +30,7 @@ public class InstantiationProcessHubDesk : InstantiationProcess
         _prefab.GetComponent<RectTransform>().sizeDelta = spawnScales[index];
 
         _prefab.transform.GetChild(0).GetComponent<BoxCollider2D>().size = spawnScales[index];
-        _prefab.transform.GetChild(1).GetComponent<RectTransform>().sizeDelta = spawnScales[index];
+        _prefab.transform.GetChild(2).GetComponent<RectTransform>().sizeDelta = spawnScales[index];
 
         index++;
 

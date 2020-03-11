@@ -14,7 +14,7 @@ public class DragWithSnap : MonoBehaviour
 
     public bool isUI;
     public bool useWithSnap;
-
+    
     void Update()
     {
         if (isHeld)
@@ -25,10 +25,6 @@ public class DragWithSnap : MonoBehaviour
 
             transform.localPosition = new Vector3(mousePos.x - startPosX, mousePos.y - startPosY, 0);
             if (useWithSnap && !isSnapped) imageTransform.localPosition = new Vector3(mousePos.x - startPosX, mousePos.y - startPosY, 0);
-        }
-        else
-        {
-
         }
     }
 

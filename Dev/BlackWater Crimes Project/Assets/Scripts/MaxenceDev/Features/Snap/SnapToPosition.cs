@@ -9,7 +9,7 @@ public class SnapToPosition : MonoBehaviour
         //if (other.GetComponent<PhotoObject>() == null) return;
 
         DragWithSnap drag = other.transform.parent.GetComponent<DragWithSnap>();
-        Transform imageObject = other.transform.parent.parent.GetChild(1);
+        Transform imageObject = other.transform.parent.parent.GetChild(2);
 
         if (drag.isHeld)
         {
