@@ -14,10 +14,10 @@ public class InstantiationProcessHubDesk : InstantiationProcess
     private List<Vector2> spawnPoints = new List<Vector2>();
     private List<Vector2> spawnScales = new List<Vector2>();
 
-    private List<Transform> snapPoints = new List<Transform>();
-    public GameObject snapPrefab;
-
     private int index = 0;
+
+    public GameObject snapColliderPrefab;
+    public float snapDist;
 
     public override GameObject Instantiation()
     {
@@ -29,7 +29,8 @@ public class InstantiationProcessHubDesk : InstantiationProcess
         _prefab.GetComponent<RectTransform>().anchoredPosition = spawnPoints[index];
         _prefab.GetComponent<RectTransform>().sizeDelta = spawnScales[index];
 
-        _prefab.GetComponent<BoxCollider2D>().size = spawnScales[index];
+        _prefab.transform.GetChild(0).GetComponent<BoxCollider2D>().size = spawnScales[index];
+        _prefab.transform.GetChild(1).GetComponent<RectTransform>().sizeDelta = spawnScales[index];
 
         index++;
 
@@ -63,7 +64,21 @@ public class InstantiationProcessHubDesk : InstantiationProcess
                 else { scaleX = sizeX - scaleAmount; scaleY = sizeX - scaleAmount; } // Scale with Width
 
                 spawnScales.Add(new Vector2(scaleX, scaleY));
+
+                InstantiateSnapCollider(posX, posY);
             }
         }
+
+        isLayoutSet = true;
+    }
+
+    void InstantiateSnapCollider(float _posX, float _posY)
+    {
+        GameObject collider = Instantiate(snapColliderPrefab) as GameObject;
+        collider.transform.SetParent(gameObject.transform, false);
+
+        collider.GetComponent<RectTransform>().anchoredPosition = new Vector2(_posX, -_posY);
+
+        collider.transform.GetChild(0).GetComponent<BoxCollider2D>().size = new Vector2(snapDist, snapDist);
     }
 }

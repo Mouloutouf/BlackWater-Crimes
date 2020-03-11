@@ -213,6 +213,9 @@ MonoBehaviour:
   amountInEachRow: 3
   amountInEachColumn: 5
   scaleAmount: 10
+  snapColliderPrefab: {fileID: 3642179767071589659, guid: a80d9f68d91a14749834d00cacc54675,
+    type: 3}
+  snapDist: 40
 --- !u!61 &233056910
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -248,10 +251,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 233056905}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03d02cc900b6b0f4bb9e034475512c3d, type: 3}
+  m_Script: {fileID: 11500000, guid: e279f8b685177c744b0ff64589c9e0de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  imageTransform: {fileID: 0}
+  isHeld: 0
+  isSnapped: 0
   isUI: 1
+  useWithSnap: 0
 --- !u!1 &276864009
 GameObject:
   m_ObjectHideFlags: 0
@@ -1005,10 +1012,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 518848117}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03d02cc900b6b0f4bb9e034475512c3d, type: 3}
+  m_Script: {fileID: 11500000, guid: e279f8b685177c744b0ff64589c9e0de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  imageTransform: {fileID: 0}
+  isHeld: 0
+  isSnapped: 0
   isUI: 0
+  useWithSnap: 0
 --- !u!212 &518848120
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1181,10 +1192,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 798556607}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03d02cc900b6b0f4bb9e034475512c3d, type: 3}
+  m_Script: {fileID: 11500000, guid: e279f8b685177c744b0ff64589c9e0de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  imageTransform: {fileID: 0}
+  isHeld: 0
+  isSnapped: 0
   isUI: 1
+  useWithSnap: 0
 --- !u!224 &798556609
 RectTransform:
   m_ObjectHideFlags: 0
