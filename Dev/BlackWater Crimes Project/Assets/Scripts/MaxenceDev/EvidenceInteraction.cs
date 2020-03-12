@@ -6,11 +6,10 @@ using System.IO;
 
 public class EvidenceInteraction : MonoBehaviour
 {
-    [SerializeField] Image testImage;
-
     [SerializeField] Camera cam;
     [SerializeField] GameObject saveText;
     [SerializeField] Toggle fingerprintToggle;
+    [SerializeField] Button returnButton;
     [SerializeField] Joystick joystick;
     [SerializeField] float rotateSpeed;
 
@@ -131,18 +130,48 @@ public class EvidenceInteraction : MonoBehaviour
 
 #if !PLATFORM_ANDROID
         string filePath = "Assets/Graphs/Sprites/Screenshots/" + _hit.transform.gameObject.name + ".png";
+#endif
+
+#if PLATFORM_ANDROID
+        string filePath = _hit.transform.gameObject.name + ".png";
+#endif
+
+        if (File.Exists(filePath))
+        {
+            File.Delete(filePath);
+        }
+
         ScreenCapture.CaptureScreenshot(filePath);
+
+        StartCoroutine(CheckFile(filePath, _evidence));
+    }
+
+    IEnumerator CheckFile(string filePath, Evidence _evidence)
+    {
+        if (File.Exists(filePath))
+        {
+            CreateSprite(filePath, _evidence);
+        }
+        else
+        {
+            returnButton.interactable = false;
+            yield return new WaitForSeconds(0.1f);
+            StartCoroutine(CheckFile(filePath, _evidence));
+        }
+    }
+
+    void CreateSprite(string filePath, Evidence _evidence)
+    {
         Texture2D texture;
         byte[] fileBytes;
         fileBytes = File.ReadAllBytes(filePath);
         texture = new Texture2D(2, 2, TextureFormat.RGB24, false);
         texture.LoadImage(fileBytes);
         Rect rect = new Rect(0, 0, texture.width, texture.height);
-        Sprite sp = Sprite.Create(texture, new Rect(500, 200, texture.width/2, texture.height/2), new Vector2(0.5f, 0.5f));
+        Sprite sp = Sprite.Create(texture, new Rect(485, 125, texture.width / 3, texture.height / 1.5f), new Vector2(0.5f, 0.5f));
         _evidence.photo = sp;
 
-        testImage.sprite = sp;
-#endif
+        returnButton.interactable = true;
     }
 
     IEnumerator DisplayText(string textToDisplay)
