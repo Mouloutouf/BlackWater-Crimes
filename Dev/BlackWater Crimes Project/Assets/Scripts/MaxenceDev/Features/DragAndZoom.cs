@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DragAndZoom : MonoBehaviour
 {
@@ -20,14 +22,28 @@ public class DragAndZoom : MonoBehaviour
 
     private Vector2 horizontalClamp = new Vector2(-5f, 5f);
     private Vector2 verticalClamp = new Vector2(-5f, 5f);
+
+    private bool zoomed;
+
+    public GameObject returnButton;
+    private Transform currentQuarter;
     
     void Update()
     {
-        /*
         if (Input.GetMouseButtonDown(0))
         {
             Vector3 vec = Input.mousePosition;
             startTouchPos = cam.WorldToScreenPoint(new Vector3(vec.x, vec.y, -10));
+
+            RaycastHit2D[] hits = Physics2D.RaycastAll(cam.ScreenToWorldPoint(Input.mousePosition), new Vector3(0, 0, 1));
+
+            if (hits.Count() > 0)
+            {
+                Debug.Log("ya de l'espoir");
+
+                if (!zoomed) ZoomOnQuarter(hits[0].transform);
+                else DezoomToFullMap();
+            }
         }
 
         //PinchToZoom();
@@ -42,12 +58,6 @@ public class DragAndZoom : MonoBehaviour
                 Mathf.Clamp(cam.transform.position.y + smoothDir.y, verticalClamp.x, verticalClamp.y),
                 -10);
         }
-        */
-    }
-
-    void OnMouseDown()
-    {
-        if (Input.GetMouseButtonDown(0)) Debug.Log("ya de l'espoir"); ZoomOnQuarter(transform);
     }
 
     void PinchToZoom()
@@ -87,10 +97,15 @@ public class DragAndZoom : MonoBehaviour
 
         cam.orthographicSize = 2;
 
-        factor *= 0.01f;
+        factor *= 0.1f;
 
         horizontalClamp = new Vector2(localCamPosition.x - 2f, localCamPosition.x + 2f);
         verticalClamp = new Vector2(localCamPosition.y - 1.5f, localCamPosition.y + 1.5f);
+
+        zoomed = true;
+        currentQuarter = tr;
+
+        SwitchButtons(currentQuarter, true);
     }
 
     public void DezoomToFullMap()
@@ -99,9 +114,21 @@ public class DragAndZoom : MonoBehaviour
         
         cam.orthographicSize = 5;
 
-        factor *= 100f;
+        factor *= 10f;
 
         horizontalClamp = new Vector2(-5f, 5f);
         verticalClamp = new Vector2(-5f, 5f);
+
+        zoomed = false;
+
+        SwitchButtons(currentQuarter, false);
+    }
+
+    public void SwitchButtons(Transform _tr, bool _zoomed)
+    {
+        _tr.gameObject.SetActive(!_zoomed);
+        returnButton.SetActive(_zoomed);
+
+        if (_zoomed) returnButton.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = _tr.GetChild(0).GetComponent<TextMesh>().text;
     }
 }
