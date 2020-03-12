@@ -8,8 +8,10 @@ public class CurrentDialingScript : MonoBehaviour
 {
     [SerializeField] Text dialingText;
     [SerializeField] Text callingText;
+    [SerializeField] Button eraseButton;
 
     List<int> currentDialing = new List<int>();
+    string currentContact = "";
 
     [Serializable]
     public struct Contact
@@ -27,13 +29,9 @@ public class CurrentDialingScript : MonoBehaviour
             currentDialing.Add(number);
             if(currentDialing.Count == 4)
             {
+                eraseButton.interactable = false;
                 StartCoroutine(Call());
             }
-        }
-        else
-        {
-            currentDialing.Clear();
-            currentDialing.Add(number);
         }
         UpdateText();
     }
@@ -67,11 +65,44 @@ public class CurrentDialingScript : MonoBehaviour
         callingText.text += ".";
         yield return new WaitForSeconds(.5f);
         callingText.text += ".";
+        yield return new WaitForSeconds(.5f);
         CheckNumber();
     }
 
     void CheckNumber()
-    {
+    { 
+        for (int i = 0; i < contacts.Length; i++)
+        {
+            if (contacts[i].contactNumber.ToString() == (currentDialing[0].ToString() + currentDialing[1].ToString() + currentDialing[2].ToString() + currentDialing[3].ToString()))
+            {
+                currentContact = contacts[i].contactName;
+            }
+        }
 
+        if(currentContact != "")
+        {
+            callingText.text = "Reaching " + currentContact;
+            StartCoroutine(WaitForReset());
+        }
+        else
+        {
+            callingText.text = "Wrong number";
+            StartCoroutine(WaitForReset());
+        }
+    }
+
+    IEnumerator WaitForReset()
+    {
+        yield return new WaitForSeconds(1);
+        callingText.text = "";
+        eraseButton.interactable = true;
+        ResetDial();
+    }
+
+    public void ResetDial()
+    {
+        currentDialing.Clear();
+        currentContact = "";
+        dialingText.text = "_ _ _ _";
     }
 }
