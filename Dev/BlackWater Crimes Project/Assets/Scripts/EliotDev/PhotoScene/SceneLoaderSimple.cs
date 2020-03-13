@@ -11,7 +11,11 @@ public class SceneLoaderSimple : MonoBehaviour
 
     public void LoadScene()
     {
-        if (loadSceneMode == LoadSceneMode.Additive) UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName, UnityEngine.SceneManagement.LoadSceneMode.Additive);
-        else UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName, UnityEngine.SceneManagement.LoadSceneMode.Single);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName, loadSceneMode);
+    }
+
+    public void LoadScene(string name)
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(name, loadSceneMode);
     }
 }
