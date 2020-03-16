@@ -80,7 +80,7 @@ public class DirectoryDrag : MonoBehaviour
             else if (touch.phase == TouchPhase.Ended)
             {
                 lPos = touch.position;
-                if (Mathf.Abs(lPos.y - fPos.y) > minSwipeDistance && lPos.y < fPos.y)
+                if (Mathf.Abs(lPos.y - fPos.y) > minSwipeDistance && lPos.y < fPos.y && fPos.y > 1100) 
                 {
                     GetComponent<RectTransform>().localPosition = new Vector3(0, -1090f, 0);
                     fPos = Vector3.zero;
