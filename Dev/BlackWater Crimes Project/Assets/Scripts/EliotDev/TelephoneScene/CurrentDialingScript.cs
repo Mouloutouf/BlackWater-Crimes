@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CurrentDialingScript : MonoBehaviour
 {
@@ -12,12 +13,14 @@ public class CurrentDialingScript : MonoBehaviour
 
     List<int> currentDialing = new List<int>();
     string currentContact = "";
+    string currentContactScene;
 
     [Serializable]
     public struct Contact
     {
         public string contactName;
         public int contactNumber;
+        public string contactSceneName;
     }
 
     public Contact[] contacts;
@@ -76,13 +79,14 @@ public class CurrentDialingScript : MonoBehaviour
             if (contacts[i].contactNumber.ToString() == (currentDialing[0].ToString() + currentDialing[1].ToString() + currentDialing[2].ToString() + currentDialing[3].ToString()))
             {
                 currentContact = contacts[i].contactName;
+                currentContactScene = contacts[i].contactSceneName;
             }
         }
 
         if(currentContact != "")
         {
             callingText.text = "Reaching " + currentContact;
-            StartCoroutine(WaitForReset());
+            StartCoroutine(LaunchScene(currentContactScene));
         }
         else
         {
@@ -91,6 +95,17 @@ public class CurrentDialingScript : MonoBehaviour
         }
     }
 
+    
+    IEnumerator LaunchScene(string scene)
+    {
+        yield return new WaitForSeconds(1);
+        AsyncOperation asyncLoad =  UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(scene);
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+    }
+    
     IEnumerator WaitForReset()
     {
         yield return new WaitForSeconds(1);
