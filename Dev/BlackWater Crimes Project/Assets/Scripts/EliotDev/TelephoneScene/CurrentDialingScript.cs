@@ -86,7 +86,14 @@ public class CurrentDialingScript : MonoBehaviour
         if(currentContact != "")
         {
             callingText.text = "Reaching " + currentContact;
-            StartCoroutine(LaunchScene(currentContactScene));
+            if(currentContactScene != "")
+            {
+                StartCoroutine(LaunchScene(currentContactScene));
+            }
+            else
+            {
+                StartCoroutine(WaitForReset());
+            }
         }
         else
         {
