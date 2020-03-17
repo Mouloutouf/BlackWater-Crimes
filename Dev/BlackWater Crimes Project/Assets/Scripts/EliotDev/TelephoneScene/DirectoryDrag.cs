@@ -40,9 +40,9 @@ public class DirectoryDrag : MonoBehaviour
             transform.position = new Vector3(transform.position.x , Input.touches[0].position.y - dragOffset, transform.position.z);
         }
 
-        if (GetComponent<RectTransform>().localPosition.y < -1090f)
+        if (GetComponent<RectTransform>().localPosition.y < -1095f)
         {
-            GetComponent<RectTransform>().localPosition = new Vector3(0, -1090f, 0);
+            GetComponent<RectTransform>().localPosition = new Vector3(0, -1095f, 0);
         }
         if(GetComponent<RectTransform>().localPosition.y > 0)
         {
@@ -54,7 +54,7 @@ public class DirectoryDrag : MonoBehaviour
     {
         if(GetComponent<RectTransform>().localPosition.y <= -1100f)
         {
-            GetComponent<RectTransform>().localPosition = new Vector3(0, -1090f, 0);
+            GetComponent<RectTransform>().localPosition = new Vector3(0, -1095f, 0);
         }
         if (GetComponent<RectTransform>().localPosition.y > 0)
         {
@@ -65,7 +65,7 @@ public class DirectoryDrag : MonoBehaviour
 
     void CheckForSwipe()
     {
-        if (Input.touchCount == 1 && GetComponent<RectTransform>().localPosition.y > -1090f && isDraging == false)
+        if (Input.touchCount == 1 && GetComponent<RectTransform>().localPosition.y > -1095f && isDraging == false)
         {
             Touch touch = Input.GetTouch(0);
             if (touch.phase == TouchPhase.Began)
@@ -80,9 +80,9 @@ public class DirectoryDrag : MonoBehaviour
             else if (touch.phase == TouchPhase.Ended)
             {
                 lPos = touch.position;
-                if (Mathf.Abs(lPos.y - fPos.y) > minSwipeDistance && lPos.y < fPos.y)
+                if (Mathf.Abs(lPos.y - fPos.y) > minSwipeDistance && lPos.y < fPos.y && fPos.y > 1100) 
                 {
-                    GetComponent<RectTransform>().localPosition = new Vector3(0, -1090f, 0);
+                    GetComponent<RectTransform>().localPosition = new Vector3(0, -1095f, 0);
                     fPos = Vector3.zero;
                     lPos = Vector3.zero;
                 }

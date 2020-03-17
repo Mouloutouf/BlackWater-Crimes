@@ -3560,6 +3560,7 @@ MonoBehaviour:
   cam: {fileID: 2062746245}
   saveText: {fileID: 404425615}
   fingerprintToggle: {fileID: 1952267512}
+  returnButton: {fileID: 1589655591}
   joystick: {fileID: 255091912}
   rotateSpeed: 150
   currentClueHolder: {fileID: 0}
@@ -4594,6 +4595,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2062746246}
   - component: {fileID: 2062746245}
+  - component: {fileID: 2062746249}
   - component: {fileID: 2062746244}
   - component: {fileID: 2062746247}
   - component: {fileID: 2062746248}
@@ -4784,6 +4786,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2062746249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062746243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 615e09b24c6258f4e901c15fbcb13751, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneOrientation: 3
+  canRotate: 0
 --- !u!1 &2066495776
 GameObject:
   m_ObjectHideFlags: 0
