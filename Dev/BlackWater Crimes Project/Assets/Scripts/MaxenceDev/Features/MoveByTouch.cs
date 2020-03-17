@@ -6,15 +6,19 @@ public class MoveByTouch : MonoBehaviour
 {
     public Camera theCam;
 
+    private bool isHolding;
+
     void Update()
     {
         for (int i = 0; i < Input.touchCount; i++)
         {
-            Touch touch = Input.touches[i];
-            Vector3 touchPos = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, 10));
-            Debug.DrawLine(Vector3.zero, touchPos, Color.red);
+            Move(i);
         }
 
+        if (isHolding)
+        {
+            Move(1);
+        }
 
         /*
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
@@ -25,5 +29,22 @@ public class MoveByTouch : MonoBehaviour
             transform.position = touchPos;
         }
         */
+    }
+
+    void OnMouseDown()
+    {
+        isHolding = true;
+    }
+
+    void OnMouseUp()
+    {
+        isHolding = false;
+    }
+
+    void Move(int nik)
+    {
+        Touch touch = Input.touches[nik];
+        Vector3 touchPos = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, 10));
+        Debug.DrawLine(Vector3.zero, touchPos, Color.red);
     }
 }

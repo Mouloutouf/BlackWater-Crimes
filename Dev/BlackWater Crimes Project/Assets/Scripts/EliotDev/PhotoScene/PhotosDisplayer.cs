@@ -6,17 +6,18 @@ using System.IO;
 
 public class PhotosDisplayer : MonoBehaviour
 {
+    public Content content;
+
     [SerializeField] string sceneName;
     [SerializeField] GameObject[] imagePlaceHolder;
     string[] files = null;
 
-    Sprite sp;
-
-    // Start is called before the first frame update
+    List<Sprite> photoSprites = new List<Sprite>();
+    
     void Start()
     {
         files = Directory.GetFiles(Application.persistentDataPath + "/", "*.png");
-        if(files.Length > 0)
+        if (files.Length > 0)
         {
             GetPictureAndShowIt();
         }
@@ -25,16 +26,27 @@ public class PhotosDisplayer : MonoBehaviour
     void GetPictureAndShowIt()
     {
         int index = 0;
-        foreach(string file in files)
+
+        foreach (string file in files)
         {
-            Texture2D texture = GetScreenshotImage(files[index]);
-            sp = Sprite.Create (texture, new Rect(0,0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
-            imagePlaceHolder[index].GetComponent<Image>().sprite = sp;
+            Texture2D texture = GetScreenshotTexture(files[index]);
+            photoSprites.Add(Sprite.Create(texture, new Rect(0,0, texture.width, texture.height), new Vector2(0.5f, 0.5f)));
+            imagePlaceHolder[index].GetComponent<Image>().sprite = photoSprites[index];
+
+            // Saves each Photo into the Evidence instance of each Evidence Objects
+            foreach (Transform tr in content.contentObject.transform)
+            {
+                if ((tr.GetComponent<EvidenceObject>().data.code + ".png") == files[index])
+                {
+                    tr.GetComponent<EvidenceObject>().data.intel = photoSprites[index];
+                }
+            }
+
             index += 1;
         }
     }
 
-    Texture2D GetScreenshotImage(string filePath)
+    Texture2D GetScreenshotTexture(string filePath)
     {
         Texture2D texture = null;
         byte[] fileBytes;
@@ -55,11 +67,5 @@ public class PhotosDisplayer : MonoBehaviour
     public void LoadNoteScene()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName, UnityEngine.SceneManagement.LoadSceneMode.Additive);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }
