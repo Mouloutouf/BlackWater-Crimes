@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Sirenix.OdinInspector;
 
 public enum DataTypes
 {
@@ -38,6 +39,21 @@ public class Evidence : Data
 
     public bool photographed;
     public Sprite photo;
+}
+
+[Serializable]
+public class Report : Data
+{
+    public Sprite agentSprite;
+    public string agentName;
+
+    public Sprite elementSprite;
+    public string elementName;
+
+    [Title("Report Text", bold: false)]
+    [HideLabel]
+    [MultiLineProperty(15)]
+    public string reportText;
 }
 
 // Facile à sauvegarder

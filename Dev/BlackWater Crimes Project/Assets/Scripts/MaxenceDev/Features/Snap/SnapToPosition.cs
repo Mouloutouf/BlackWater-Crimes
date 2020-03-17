@@ -13,7 +13,6 @@ public class SnapToPosition : MonoBehaviour
 
         if (drag.isHeld)
         {
-            Debug.Log("askip je fonctionne");
             imageObject.GetComponent<RectTransform>().position = this.transform.parent.GetComponent<RectTransform>().position;
             drag.isSnapped = true;
         }

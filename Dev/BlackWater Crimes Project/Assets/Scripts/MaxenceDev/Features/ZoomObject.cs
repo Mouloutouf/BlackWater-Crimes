@@ -48,7 +48,7 @@ public class ZoomObject : MonoBehaviour
 
             if (!holding)
             {
-                Debug.Log("ouais je chie dans la colle");
+                //Debug.Log("ouais je chie dans la colle");
                 zooming = true;
             }
         }
