@@ -15,6 +15,7 @@ public class VenueValidateButton : MonoBehaviour
         {
             dialogueText.fontSize = 45;
             dialogueText.text = "This seems logic. You can go there, anything else?";
+            dropdown.GetComponent<Dropdown>().value = 0;
             clueShower.GetComponent<AttorneyClueShowerScript>().ResetClue();
             GetComponent<Button>().interactable = false;
             GetComponentInChildren<Text>().text = "Missing elements";
@@ -23,6 +24,7 @@ public class VenueValidateButton : MonoBehaviour
         {
             dialogueText.fontSize = 40;
             dialogueText.text = "This does not make any sense... Please detective, show me something concrete!";
+            dropdown.GetComponent<Dropdown>().value = 0;
             clueShower.GetComponent<AttorneyClueShowerScript>().ResetClue();
             GetComponent<Button>().interactable = false;
             GetComponentInChildren<Text>().text = "Missing elements";
@@ -78,8 +80,16 @@ public class VenueValidateButton : MonoBehaviour
                 }
 
             default:
-            Debug.Log("Dropdown value not valid!");
+            Debug.Log("Dropdown value is not valid!");
                 return false;
         }
+    }
+
+    public void Reset()
+    {
+        dropdown.GetComponent<Dropdown>().value = 0;
+        clueShower.GetComponent<AttorneyClueShowerScript>().ResetClue();
+        GetComponent<Button>().interactable = false;
+        GetComponentInChildren<Text>().text = "Missing elements";
     }
 }
