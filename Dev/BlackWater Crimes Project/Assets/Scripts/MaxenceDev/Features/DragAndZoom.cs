@@ -27,7 +27,14 @@ public class DragAndZoom : MonoBehaviour
 
     public GameObject returnButton;
     private Transform currentQuarter;
+
+    public GameObject locations;
     
+    void Start()
+    {
+        locations.SetActive(false);
+    }
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -37,7 +44,7 @@ public class DragAndZoom : MonoBehaviour
 
             RaycastHit2D[] hits = Physics2D.RaycastAll(cam.ScreenToWorldPoint(Input.mousePosition), new Vector3(0, 0, 1));
 
-            if (hits.Count() > 0)
+            if (hits.Count() > 0 && hits[0].transform.GetComponent<PolygonCollider2D>() != null)
             {
                 Debug.Log("ya de l'espoir");
 
@@ -105,6 +112,8 @@ public class DragAndZoom : MonoBehaviour
         zoomed = true;
         currentQuarter = tr;
 
+        locations.SetActive(true);
+
         SwitchButtons(currentQuarter, true);
     }
 
@@ -120,6 +129,8 @@ public class DragAndZoom : MonoBehaviour
         verticalClamp = new Vector2(-5f, 5f);
 
         zoomed = false;
+
+        locations.SetActive(false);
 
         SwitchButtons(currentQuarter, false);
     }
