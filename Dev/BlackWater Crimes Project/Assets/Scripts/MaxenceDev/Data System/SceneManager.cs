@@ -80,7 +80,7 @@ public class SceneManager : MonoBehaviour
         gameData.GetListOfType(type).Add(transform.GetComponent<ObjectData<T>>().data);
     }
 
-    void LoadDataOfType<T>(T type, int index) where T : Data
+    public void LoadDataOfType<T>(T type, int index) where T : Data
     {
         foreach (T _type in gameData.GetListOfType(type))
         {
@@ -94,7 +94,7 @@ public class SceneManager : MonoBehaviour
         }
     }
 
-    void InstantiateDataOfType<T>(T type, int index) where T : Data
+    public void InstantiateDataOfType<T>(T type, int index) where T : Data
     {
         foreach (T _type in gameData.GetListOfType(type))
         {

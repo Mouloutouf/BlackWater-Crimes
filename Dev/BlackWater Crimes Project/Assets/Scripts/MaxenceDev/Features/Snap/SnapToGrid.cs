@@ -13,6 +13,7 @@ public class SnapToGrid : MonoBehaviour
 
         if (!drag.isHeld)
         {
+            parentObject.transform.SetParent(this.transform.parent.parent);
             parentObject.GetComponent<RectTransform>().anchoredPosition = this.transform.parent.GetComponent<RectTransform>().anchoredPosition;
 
             foreach(Transform tr in parentObject)

@@ -7,6 +7,8 @@ public class InstantiationProcessHubDesk : InstantiationProcess
     public int amountInEachRow;
     public int amountInEachColumn;
 
+    public GameObject[] pages;
+
     public float scaleAmount;
     
     private bool isLayoutSet;
@@ -15,16 +17,20 @@ public class InstantiationProcessHubDesk : InstantiationProcess
     private List<Vector2> spawnScales = new List<Vector2>();
 
     private int index = 0;
+    private int pageIndex = 0;
 
     public GameObject snapColliderPrefab;
     public float snapDist;
 
+    void Start()
+    {
+        SetLayout();
+    }
+
     public override GameObject Instantiation()
     {
-        if (!isLayoutSet) SetLayout();
-
         GameObject _prefab = Instantiate(prefab) as GameObject;
-        _prefab.transform.SetParent(gameObject.transform, false);
+        _prefab.transform.SetParent(pages[pageIndex].transform, false);
 
         _prefab.GetComponent<RectTransform>().anchoredPosition = spawnPoints[index];
         _prefab.GetComponent<RectTransform>().sizeDelta = spawnScales[index];
@@ -33,49 +39,53 @@ public class InstantiationProcessHubDesk : InstantiationProcess
         _prefab.transform.GetChild(2).GetComponent<RectTransform>().sizeDelta = spawnScales[index];
 
         index++;
-
+        if (index == amountInEachRow * amountInEachColumn) pageIndex++;
+        
         return _prefab;
     }
 
     [ContextMenu("Set Layout")]
     public void SetLayout()
     {
-        //int amountOfCadrans = amountInEachColumn * amountInEachRow;
-        float sizeX = GetComponent<RectTransform>().rect.width / amountInEachRow;
-        float sizeY = GetComponent<RectTransform>().rect.height / amountInEachColumn;
-        
-        float posX;
-        float posY;
-        
-        float scaleX;
-        float scaleY;
-        
-        for (int w = 0; w < amountInEachColumn; w++)
+        foreach (GameObject page in pages)
         {
-            posY = (sizeY / 2) + sizeY * w;
+            //int amountOfCadrans = amountInEachColumn * amountInEachRow;
+            float sizeX = page.GetComponent<RectTransform>().rect.width / amountInEachRow;
+            float sizeY = page.GetComponent<RectTransform>().rect.height / amountInEachColumn;
 
-            for (int v = 0; v < amountInEachRow; v++)
+            float posX;
+            float posY;
+
+            float scaleX;
+            float scaleY;
+
+            for (int w = 0; w < amountInEachColumn; w++)
             {
-                posX = (sizeX / 2) + sizeX * v;
-                
-                spawnPoints.Add(new Vector2(posX, -posY));
-                
-                if (sizeX > sizeY) { scaleX = sizeY - scaleAmount; scaleY = sizeY - scaleAmount; } // Scale with Height
-                else { scaleX = sizeX - scaleAmount; scaleY = sizeX - scaleAmount; } // Scale with Width
+                posY = (sizeY / 2) + sizeY * w;
 
-                spawnScales.Add(new Vector2(scaleX, scaleY));
+                for (int v = 0; v < amountInEachRow; v++)
+                {
+                    posX = (sizeX / 2) + sizeX * v;
 
-                InstantiateSnapCollider(posX, posY);
+                    spawnPoints.Add(new Vector2(posX, -posY));
+
+                    if (sizeX > sizeY) { scaleX = sizeY - scaleAmount; scaleY = sizeY - scaleAmount; } // Scale with Height
+                    else { scaleX = sizeX - scaleAmount; scaleY = sizeX - scaleAmount; } // Scale with Width
+
+                    spawnScales.Add(new Vector2(scaleX, scaleY));
+
+                    InstantiateSnapCollider(posX, posY, page);
+                }
             }
         }
-
+        
         isLayoutSet = true;
     }
 
-    void InstantiateSnapCollider(float _posX, float _posY)
+    void InstantiateSnapCollider(float _posX, float _posY, GameObject _page)
     {
         GameObject collider = Instantiate(snapColliderPrefab) as GameObject;
-        collider.transform.SetParent(gameObject.transform, false);
+        collider.transform.SetParent(_page.transform, false);
 
         collider.GetComponent<RectTransform>().anchoredPosition = new Vector2(_posX, -_posY);
 
