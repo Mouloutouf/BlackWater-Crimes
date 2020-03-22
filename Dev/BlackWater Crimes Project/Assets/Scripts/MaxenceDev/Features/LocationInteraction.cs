@@ -48,13 +48,11 @@ public class LocationInteraction : MonoBehaviour
 
         if (!_object.data.accessible)
         {
-            Debug.Log("t'as rien à faire là en fait");
             accessButton.SetActive(false);
             blockedButton.SetActive(true);
         }
         else
         {
-            Debug.Log("ce qui devrait être fait");
             accessButton.SetActive(true);
             blockedButton.SetActive(false);
         }
