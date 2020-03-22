@@ -7,7 +7,9 @@ using Sirenix.OdinInspector;
 public enum DataTypes
 {
     Evidence,
-    Note
+    Note,
+    Report,
+    Location
 }
 
 public class Data
@@ -56,6 +58,18 @@ public class Report : Data
     public string reportText;
 }
 
+[Serializable]
+public class Location : Data
+{
+    public bool known;
+    public bool visible;
+    public bool accessible;
+
+    public bool completed;
+
+    public string locationName;
+}
+
 // Facile à sauvegarder
 [CreateAssetMenu(fileName = "New Player Data", menuName = "Player Data Scriptable")]
 public class GameData : ScriptableObject
@@ -66,10 +80,16 @@ public class GameData : ScriptableObject
     
     public List<Note> notes;
 
+    public List<Report> reports;
+
+    public List<Location> locations;
+
     private Dictionary<Type, string> allTypes = new Dictionary<Type, string>
     {
         {typeof(Evidence), "evidence"},
-        {typeof(Note), "note" }
+        {typeof(Note), "note" },
+        {typeof(Report), "report" },
+        {typeof(Location), "location" }
     };
 
     public List<T> GetListOfType<T>(T _type) where T : Data
@@ -80,6 +100,10 @@ public class GameData : ScriptableObject
                 return evidences as List<T>;
             case "note":
                 return notes as List<T>;
+            case "report":
+                return reports as List<T>;
+            case "location":
+                return locations as List<T>;
             default:
                 return null;
         }

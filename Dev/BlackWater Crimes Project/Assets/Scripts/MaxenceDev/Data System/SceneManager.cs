@@ -34,7 +34,9 @@ public class SceneManager : MonoBehaviour
     public Dictionary<DataTypes, int> dataTypes = new Dictionary<DataTypes, int>
     {
         {DataTypes.Evidence, 0},
-        {DataTypes.Note, 1}
+        {DataTypes.Note, 1},
+        {DataTypes.Report, 2},
+        {DataTypes.Location, 3}
     };
 
     void Start()
@@ -109,6 +111,10 @@ public class SceneManager : MonoBehaviour
                 return new Evidence();
             case 1:
                 return new Note();
+            case 2:
+                return new Report();
+            case 3:
+                return new Location();
             default:
                 return null;
         }

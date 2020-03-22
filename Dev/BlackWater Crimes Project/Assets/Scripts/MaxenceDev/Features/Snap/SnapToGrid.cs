@@ -23,7 +23,7 @@ public class SnapToGrid : MonoBehaviour
                 {
                     _tr.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
                 }
-            }
+            } 
         }
     }
 }
