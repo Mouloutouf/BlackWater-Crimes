@@ -21,6 +21,11 @@ public class PhotoObject : ObjectData<Evidence>
 
     void Update()
     {
+        if (!loaded)
+        {
+            Protocol();
+        }
+
         myMode = photosContent.GetComponent<TabManager>().currentMode;
         
         transform.SetParent(photosContent.GetComponent<TabManager>().currentTabsContents[pageNumber][GetTabParent()].transform);

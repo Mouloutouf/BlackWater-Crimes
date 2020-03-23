@@ -42,7 +42,7 @@ public class TabManager : MonoBehaviour
 
     public GameObject tabParent;
 
-    [HideInInspector] public List<Dictionary<string, GameObject>> currentTabsContents = new List<Dictionary<string, GameObject>>(2);
+    [HideInInspector] public List<Dictionary<string, GameObject>> currentTabsContents = new List<Dictionary<string, GameObject>>();
     
     public GameObject modeText;
     public GameObject modeObject;
@@ -50,7 +50,10 @@ public class TabManager : MonoBehaviour
     void Start()
     {
         desk = GetComponent<InstantiationProcessHubDesk>();
-        
+
+        currentTabsContents.Add(new Dictionary<string, GameObject>());
+        currentTabsContents.Add(new Dictionary<string, GameObject>());
+
         CreateModes();
 
         CreateTabs(currentMode);
@@ -120,8 +123,7 @@ public class TabManager : MonoBehaviour
                 tabContent.name = sortMode.namesOfTabs[i] + " Tab Content";
 
                 tabContent.SetActive(false);
-
-                Debug.Log(currentTabsContents.Count);
+                
                 currentTabsContents[v].Add(sortMode.namesOfTabs[i], tabContent);
                 
                 if (i == 0) tabContent.SetActive(true);
@@ -169,15 +171,15 @@ public class TabManager : MonoBehaviour
         {
             foreach (GameObject _tabContent in currentTabsContents[x].Values)
             {
-                foreach (Transform tr in _tabContent.transform)
-                {
-                    tr.SetParent(pages[0].transform);
-                }
+                List<Transform> objectsToMove = new List<Transform>();
+
+                foreach (Transform tr in _tabContent.transform) objectsToMove.Add(tr);
+                foreach (Transform _tr in objectsToMove) _tr.SetParent(pages[0].transform);
 
                 Destroy(_tabContent);
             }
+
+            currentTabsContents[x].Clear();
         }
-        
-        currentTabsContents.Clear();
     }
 }

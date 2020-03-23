@@ -14,22 +14,26 @@ public class InstantiationProcessHubDesk : InstantiationProcess
     [HideInInspector] public List<Vector2> spawnPoints = new List<Vector2>();
     [HideInInspector] public List<Vector2> spawnScales = new List<Vector2>();
 
+    private bool isLayoutSet;
+
     private int index = 0;
     private int pageIndex = 0;
 
     public GameObject snapColliderPrefab;
     public float snapDist;
-
-    void Start()
-    {
-        SetLayout();
-    }
-
+    
     public override GameObject Instantiation()
     {
+        if (!isLayoutSet)
+        {
+            SetLayout();
+            isLayoutSet = true;
+        }
+        
         GameObject _prefab = Instantiate(prefab) as GameObject;
         _prefab.transform.SetParent(pages[pageIndex].transform, false);
-        
+
+        //Debug.Log(index);
         _prefab.GetComponent<RectTransform>().anchoredPosition = spawnPoints[index];
         _prefab.GetComponent<RectTransform>().sizeDelta = spawnScales[index];
         
