@@ -4,6 +4,20 @@ using UnityEngine;
 using System;
 using Sirenix.OdinInspector;
 
+public enum Locations { Docks, Whorehouse, MayorHouse }
+
+public enum Characters { Jack, Anna, Oliver }
+
+public enum Types { Organic, Ballistic, Other }
+
+[Serializable]
+public class ModeCategory
+{
+    public Locations crimeScene;
+    public Characters suspect;
+    public Types type;
+}
+
 public enum DataTypes
 {
     Evidence,
@@ -41,6 +55,8 @@ public class Evidence : Data
 
     public bool photographed;
     public Sprite photo;
+
+    public ModeCategory modeCategory;
 }
 
 [Serializable]
