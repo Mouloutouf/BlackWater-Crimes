@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(ClueHolder))]
+//[CustomEditor(typeof(ClueHolder))]
 public class ClueHolderCustomEditor : Editor
 {
-    override public void OnInspectorGUI()
+    public override void OnInspectorGUI()
     {
+        serializedObject.Update();
+
         ClueHolder clueHolder = (ClueHolder)target;
 
         clueHolder.size = (ClueHolderSize)EditorGUILayout.EnumPopup("Size", clueHolder.size);

@@ -8,6 +8,7 @@ public class EvidenceInteraction : MonoBehaviour
 {
     [SerializeField] Camera cam;
     [SerializeField] GameObject saveText;
+    [SerializeField] GameObject fingerprintFilter;
     [SerializeField] Toggle fingerprintToggle;
     [SerializeField] Button returnButton;
     [SerializeField] Joystick joystick;
@@ -80,11 +81,16 @@ public class EvidenceInteraction : MonoBehaviour
                     if (evidenceObject.intelAlpha < 1f)
                     {
                         evidenceObject.intelAlpha += .8f * Time.deltaTime;
+                        Color tempColor = hit.transform.gameObject.GetComponentInChildren<SpriteRenderer>().color;
+                        tempColor.a = evidenceObject.intelAlpha + .2f;
+                        Debug.Log(tempColor.a);
+                        hit.transform.gameObject.GetComponentInChildren<SpriteRenderer>().color = tempColor;
                     }
                     else
                     {
                         evidence.intelRevealed = true;
-                        hit.transform.gameObject.GetComponentInChildren<ParticleSystem>().Play();
+                        hit.transform.gameObject.GetComponentsInChildren<ParticleSystem>()[0].Play();
+                        hit.transform.gameObject.GetComponentsInChildren<ParticleSystem>()[1].Stop();
                         GetComponent<AudioSource>().PlayOneShot(fingerprintDiscoveredSound);
                     }
                 }
@@ -187,10 +193,12 @@ public class EvidenceInteraction : MonoBehaviour
         fingerprintMode = fingerprintToggle.isOn;
         if (fingerprintMode == true)
         {
+            fingerprintFilter.SetActive(true);
             canRotate = false;
         }
         else
         {
+            fingerprintFilter.SetActive(false);
             canRotate = true;
         }
     }
