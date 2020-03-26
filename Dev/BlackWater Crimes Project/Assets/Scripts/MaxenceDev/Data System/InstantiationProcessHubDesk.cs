@@ -1,9 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InstantiationProcessHubDesk : InstantiationProcess
 {
+    public Camera cam;
+    public GameObject zoomPanel;
+
     public int amountInEachRow;
     public int amountInEachColumn;
 
@@ -22,6 +27,21 @@ public class InstantiationProcessHubDesk : InstantiationProcess
     public GameObject snapColliderPrefab;
     public float snapDist;
     
+    void Update()
+    {
+        RaycastHit2D[] hits = Physics2D.RaycastAll(cam.ScreenToWorldPoint(Input.mousePosition), new Vector3(0, 0, 1));
+
+        if (hits.Count() > 0 && hits[0].transform.parent.GetComponent<PhotoObject>() != null && Input.GetMouseButtonDown(0))
+        {
+            PhotoObject photoScript = hits[0].transform.parent.GetComponent<PhotoObject>();
+            ZoomPhoto(photoScript.data.photo, photoScript.data.name);
+        }
+        else if (Input.GetMouseButtonDown(0))
+        {
+            DeZoom();
+        }
+    }
+
     public override GameObject Instantiation()
     {
         if (!isLayoutSet)
@@ -40,7 +60,8 @@ public class InstantiationProcessHubDesk : InstantiationProcess
         _prefab.transform.GetChild(0).GetComponent<BoxCollider2D>().size = spawnScales[index];
         _prefab.transform.GetChild(2).GetComponent<RectTransform>().sizeDelta = spawnScales[index];
 
-        _prefab.GetComponent<PhotoObject>().photosContent = this.gameObject;
+        _prefab.GetComponent<PhotoObject>().photosBooklet = this.gameObject;
+        _prefab.GetComponent<PhotoObject>().cam = this.cam;
 
         index++;
         if (index == amountInEachRow * amountInEachColumn) { pageIndex++; index = 0; }
@@ -90,5 +111,17 @@ public class InstantiationProcessHubDesk : InstantiationProcess
         collider.transform.GetChild(0).GetComponent<BoxCollider2D>().size = new Vector2(snapDist, snapDist);
 
         collider.transform.GetChild(1).GetComponent<SnapToGrid>().pageLocation = _pageIndex;
+    }
+
+    public void ZoomPhoto(Sprite photoSprite, string photoName)
+    {
+        zoomPanel.SetActive(true);
+        zoomPanel.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = photoSprite;
+        zoomPanel.transform.GetChild(0).GetChild(1).GetComponent<Text>().text = photoName;
+    }
+
+    public void DeZoom()
+    {
+        zoomPanel.SetActive(false);
     }
 }
