@@ -142,9 +142,9 @@ public class EvidenceInteraction : MonoBehaviour
         string filePath = _hit.transform.gameObject.name + ".png";
 #endif
 
-        if (File.Exists(filePath))
+        if (File.Exists(Application.persistentDataPath + "/" + filePath))
         {
-            File.Delete(filePath);
+            File.Delete(Application.persistentDataPath + "/" + filePath);
         }
 
         ScreenCapture.CaptureScreenshot(filePath);
@@ -154,6 +154,8 @@ public class EvidenceInteraction : MonoBehaviour
 
     IEnumerator CheckFile(string filePath, Evidence _evidence)
     {
+        filePath = Application.persistentDataPath + "/" + filePath;
+
         if (File.Exists(filePath))
         {
             CreateSprite(filePath, _evidence);
@@ -176,7 +178,6 @@ public class EvidenceInteraction : MonoBehaviour
         Rect rect = new Rect(0, 0, texture.width, texture.height);
         Sprite sp = Sprite.Create(texture, new Rect(485, 125, texture.width / 3, texture.height / 1.5f), new Vector2(0.5f, 0.5f));
         _evidence.photo = sp;
-
         returnButton.interactable = true;
     }
 
