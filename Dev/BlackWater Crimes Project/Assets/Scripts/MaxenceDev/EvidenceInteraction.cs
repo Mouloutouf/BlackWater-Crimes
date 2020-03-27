@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
+using UnityEditor;
 
 public class EvidenceInteraction : MonoBehaviour
 {
     [SerializeField] Camera cam;
     [SerializeField] GameObject saveText;
+    [SerializeField] GameObject fingerprintFilter;
     [SerializeField] Toggle fingerprintToggle;
     [SerializeField] Button returnButton;
     [SerializeField] Joystick joystick;
@@ -25,6 +27,8 @@ public class EvidenceInteraction : MonoBehaviour
     public AudioClip photoSavedSound;
     public AudioClip photoReplacedSound;
     public AudioClip fingerprintDiscoveredSound;
+
+    [SerializeField] bool isInEditor;
 
     [ExecuteInEditMode]
     void OnEnable()
@@ -80,11 +84,16 @@ public class EvidenceInteraction : MonoBehaviour
                     if (evidenceObject.intelAlpha < 1f)
                     {
                         evidenceObject.intelAlpha += .8f * Time.deltaTime;
+                        Color tempColor = hit.transform.gameObject.GetComponentInChildren<SpriteRenderer>().color;
+                        tempColor.a = evidenceObject.intelAlpha + .2f;
+                        Debug.Log(tempColor.a);
+                        hit.transform.gameObject.GetComponentInChildren<SpriteRenderer>().color = tempColor;
                     }
                     else
                     {
                         evidence.intelRevealed = true;
-                        hit.transform.gameObject.GetComponentInChildren<ParticleSystem>().Play();
+                        hit.transform.gameObject.GetComponentsInChildren<ParticleSystem>()[0].Play();
+                        hit.transform.gameObject.GetComponentsInChildren<ParticleSystem>()[1].Stop();
                         GetComponent<AudioSource>().PlayOneShot(fingerprintDiscoveredSound);
                     }
                 }
@@ -128,22 +137,39 @@ public class EvidenceInteraction : MonoBehaviour
             StartCoroutine(DisplayText("Photo Replaced"));
         }
 
-#if !PLATFORM_ANDROID
-        string filePath = "Assets/Graphs/Sprites/Screenshots/" + _hit.transform.gameObject.name + ".png";
-#endif
+        string filePath;
 
-#if PLATFORM_ANDROID
-        string filePath = _hit.transform.gameObject.name + ".png";
-#endif
-
-        if (File.Exists(filePath))
+        if(isInEditor)
         {
-            File.Delete(filePath);
+            filePath = "Assets/Graphs/Sprites/Screenshots/" + _hit.transform.gameObject.name + ".png";
+            Debug.Log("Using Editor Folder");
+
+            if (File.Exists(filePath))
+            {
+                File.Delete(filePath);
+            }
         }
+        else
+        {
+            filePath = _hit.transform.gameObject.name + ".png";
+            Debug.Log("Using Android Folder. If you're using Unity Editor, the photo saver won't work! Please check Is In Editor");
+
+            if (File.Exists(Application.persistentDataPath + "/" + filePath))
+            {
+                File.Delete(Application.persistentDataPath + "/" + filePath);
+            }
+        }    
 
         ScreenCapture.CaptureScreenshot(filePath);
 
-        StartCoroutine(CheckFile(filePath, _evidence));
+        if(isInEditor)
+        {
+            StartCoroutine(CheckFile(filePath, _evidence));
+        }
+        else
+        {
+            StartCoroutine(CheckFile(Application.persistentDataPath + "/" + filePath, _evidence));
+        }
     }
 
     IEnumerator CheckFile(string filePath, Evidence _evidence)
@@ -170,7 +196,6 @@ public class EvidenceInteraction : MonoBehaviour
         Rect rect = new Rect(0, 0, texture.width, texture.height);
         Sprite sp = Sprite.Create(texture, new Rect(485, 125, texture.width / 3, texture.height / 1.5f), new Vector2(0.5f, 0.5f));
         _evidence.photo = sp;
-
         returnButton.interactable = true;
     }
 
@@ -187,10 +212,12 @@ public class EvidenceInteraction : MonoBehaviour
         fingerprintMode = fingerprintToggle.isOn;
         if (fingerprintMode == true)
         {
+            fingerprintFilter.SetActive(true);
             canRotate = false;
         }
         else
         {
+            fingerprintFilter.SetActive(false);
             canRotate = true;
         }
     }
