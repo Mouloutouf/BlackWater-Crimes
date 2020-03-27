@@ -51,36 +51,13 @@ public class SceneManager : MonoBehaviour
 
         object type = GetType();
     }
-
-    public void List()
-    {
-        int reference = -1;
-
-        for (int i = 0; i < contents.Count; i++)
-        {
-            allContents.Add(new List<GameObject>());
-            reference++;
-
-            foreach (Transform trsfrm in contents[i].contentObject.transform)
-            {
-                allContents[reference].Add(trsfrm.gameObject); // add into data manager list
-
-                if (gameData.isDataContained == false)
-                {
-                    //AddToDataListOfType(trsfrm.GetComponent<ObjectData<T>>().GetType(), trsfrm);
-                }
-            }
-        }
-
-        gameData.isDataContained = true;
-    }
-
+    
     void AddToDataListOfType<T>(T type, Transform transform) where T : Data
     {
         gameData.GetListOfType(type).Add(transform.GetComponent<ObjectData<T>>().data);
     }
 
-    void LoadDataOfType<T>(T type, int index) where T : Data
+    public void LoadDataOfType<T>(T type, int index) where T : Data
     {
         foreach (T _type in gameData.GetListOfType(type))
         {
@@ -94,11 +71,11 @@ public class SceneManager : MonoBehaviour
         }
     }
 
-    void InstantiateDataOfType<T>(T type, int index) where T : Data
+    public void InstantiateDataOfType<T>(T type, int index) where T : Data
     {
         foreach (T _type in gameData.GetListOfType(type))
         {
-            GameObject instance = contents[index].contentObject.GetComponent<InstantiationProcess>().Instantiation();
+            GameObject instance = contents[index].contentObject.GetComponent<InstantiationProcess<T>>().Instantiation();
             instance.GetComponent<ObjectData<T>>().data = _type;
         }
     }
@@ -151,5 +128,30 @@ public class SceneManager : MonoBehaviour
     {
 
     }
+
+    /*
+    public void List()
+    {
+        int reference = -1;
+
+        for (int i = 0; i < contents.Count; i++)
+        {
+            allContents.Add(new List<GameObject>());
+            reference++;
+
+            foreach (Transform trsfrm in contents[i].contentObject.transform)
+            {
+                allContents[reference].Add(trsfrm.gameObject); // add into data manager list
+
+                if (gameData.isDataContained == false)
+                {
+                    //AddToDataListOfType(trsfrm.GetComponent<ObjectData<T>>().GetType(), trsfrm);
+                }
+            }
+        }
+
+        gameData.isDataContained = true;
+    }
+    */
     #endregion
 }

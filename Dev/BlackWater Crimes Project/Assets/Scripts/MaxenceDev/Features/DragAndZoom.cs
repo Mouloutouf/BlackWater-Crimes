@@ -46,8 +46,6 @@ public class DragAndZoom : MonoBehaviour
 
             if (hits.Count() > 0 && hits[0].transform.GetComponent<PolygonCollider2D>() != null)
             {
-                Debug.Log("ya de l'espoir");
-
                 if (!zoomed) ZoomOnQuarter(hits[0].transform);
                 else DezoomToFullMap();
             }

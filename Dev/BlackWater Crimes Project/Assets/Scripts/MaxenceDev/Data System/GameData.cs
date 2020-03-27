@@ -4,6 +4,20 @@ using UnityEngine;
 using System;
 using Sirenix.OdinInspector;
 
+public enum Locations { Docks, Whorehouse, MayorHouse }
+
+public enum Characters { Jack, Anna, Oliver }
+
+public enum Types { Organic, Ballistic, Other }
+
+[Serializable]
+public class ModeCategory
+{
+    public Locations crimeScene;
+    public Characters suspect;
+    public Types type;
+}
+
 public enum DataTypes
 {
     Evidence,
@@ -15,6 +29,12 @@ public enum DataTypes
 public class Data
 {
     public string code;
+    public int index;
+
+    public Data()
+    {
+        // set index
+    }
 }
 
 [Serializable]
@@ -41,6 +61,8 @@ public class Evidence : Data
 
     public bool photographed;
     public Sprite photo;
+
+    public ModeCategory modeCategory;
 }
 
 [Serializable]
@@ -68,14 +90,17 @@ public class Location : Data
     public bool completed;
 
     public string locationName;
+    [Title("Report Text", bold: false)]
+    [HideLabel]
+    [MultiLineProperty(5)]
+    public string locationDescription;
+    public int evidenceCollected;
 }
 
 // Facile à sauvegarder
 [CreateAssetMenu(fileName = "New Player Data", menuName = "Player Data Scriptable")]
 public class GameData : ScriptableObject
 {
-    public bool isDataContained;
-
     public List<Evidence> evidences;
     
     public List<Note> notes;
@@ -94,7 +119,7 @@ public class GameData : ScriptableObject
 
     public List<T> GetListOfType<T>(T _type) where T : Data
     {
-        switch (allTypes[_type.GetType()])
+        switch (allTypes[typeof(T)])
         {
             case "evidence":
                 return evidences as List<T>;

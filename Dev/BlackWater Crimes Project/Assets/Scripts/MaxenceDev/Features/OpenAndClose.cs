@@ -6,20 +6,35 @@ public class OpenAndClose : MonoBehaviour
 {
     private bool isClosed = true;
 
-    public void Open(GameObject gameObject)
+    public void Open(GameObject gameObject, bool childs)
     {
-        gameObject.SetActive(true);
+        if (!childs) gameObject.SetActive(true);
+        else
+        {
+            foreach (Transform tr in gameObject.transform) tr.gameObject.SetActive(true);
+        }
     }
 
-    public void Close(GameObject gameObject)
+    public void Close(GameObject gameObject, bool childs)
     {
-        gameObject.SetActive(false);
+        if (!childs) gameObject.SetActive(false);
+        else
+        {
+            foreach (Transform tr in gameObject.transform) tr.gameObject.SetActive(false);
+        }
     }
 
     public void OpenOrClose(GameObject _gameObject)
     {
-        if (isClosed) { Open(_gameObject); isClosed = false; }
+        if (isClosed) { Open(_gameObject, false); isClosed = false; }
 
-        else { Close(_gameObject); isClosed = true; }
+        else { Close(_gameObject, false); isClosed = true; }
+    }
+
+    public void OpenOrCloseWithChilds(GameObject _gameObject)
+    {
+        if (isClosed) { Open(_gameObject, true); isClosed = false; }
+
+        else { Close(_gameObject, true); isClosed = true; }
     }
 }
