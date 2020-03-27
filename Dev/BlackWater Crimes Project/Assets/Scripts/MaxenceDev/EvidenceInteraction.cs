@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
+using UnityEditor;
 
 public class EvidenceInteraction : MonoBehaviour
 {
@@ -26,6 +27,8 @@ public class EvidenceInteraction : MonoBehaviour
     public AudioClip photoSavedSound;
     public AudioClip photoReplacedSound;
     public AudioClip fingerprintDiscoveredSound;
+
+    [SerializeField] bool isInEditor;
 
     [ExecuteInEditMode]
     void OnEnable()
@@ -134,28 +137,43 @@ public class EvidenceInteraction : MonoBehaviour
             StartCoroutine(DisplayText("Photo Replaced"));
         }
 
-#if !PLATFORM_ANDROID
-        string filePath = "Assets/Graphs/Sprites/Screenshots/" + _hit.transform.gameObject.name + ".png";
-#endif
+        string filePath;
 
-#if PLATFORM_ANDROID
-        string filePath = _hit.transform.gameObject.name + ".png";
-#endif
-
-        if (File.Exists(Application.persistentDataPath + "/" + filePath))
+        if(isInEditor)
         {
-            File.Delete(Application.persistentDataPath + "/" + filePath);
+            filePath = "Assets/Graphs/Sprites/Screenshots/" + _hit.transform.gameObject.name + ".png";
+            Debug.Log("Using Editor Folder");
+
+            if (File.Exists(filePath))
+            {
+                File.Delete(filePath);
+            }
         }
+        else
+        {
+            filePath = _hit.transform.gameObject.name + ".png";
+            Debug.Log("Using Android Folder. If you're using Unity Editor, the photo saver won't work! Please check Is In Editor");
+
+            if (File.Exists(Application.persistentDataPath + "/" + filePath))
+            {
+                File.Delete(Application.persistentDataPath + "/" + filePath);
+            }
+        }    
 
         ScreenCapture.CaptureScreenshot(filePath);
 
-        StartCoroutine(CheckFile(filePath, _evidence));
+        if(isInEditor)
+        {
+            StartCoroutine(CheckFile(filePath, _evidence));
+        }
+        else
+        {
+            StartCoroutine(CheckFile(Application.persistentDataPath + "/" + filePath, _evidence));
+        }
     }
 
     IEnumerator CheckFile(string filePath, Evidence _evidence)
     {
-        filePath = Application.persistentDataPath + "/" + filePath;
-
         if (File.Exists(filePath))
         {
             CreateSprite(filePath, _evidence);
