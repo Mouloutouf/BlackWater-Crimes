@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InstantiationProcessHubDesk : InstantiationProcess
+public class InstantiationProcessHubDesk : InstantiationProcess<Evidence>
 {
     public Camera cam;
     public GameObject zoomPanel;
@@ -27,6 +27,8 @@ public class InstantiationProcessHubDesk : InstantiationProcess
     public GameObject snapColliderPrefab;
     public float snapDist;
     
+    // Start is already called in Parent Class !
+
     void Update()
     {
         RaycastHit2D[] hits = Physics2D.RaycastAll(cam.ScreenToWorldPoint(Input.mousePosition), new Vector3(0, 0, 1));

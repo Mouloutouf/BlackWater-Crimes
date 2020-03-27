@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class LocationObject : ObjectData<Location>
 {
+    public Camera cam;
+
     public GameObject locationSprite;
 
     public GameObject menuAccessButton;
@@ -20,6 +23,26 @@ public class LocationObject : ObjectData<Location>
         base.Protocol();
     }
 
+    void Update()
+    {
+        if (!loaded)
+        {
+            Protocol();
+        }
+        /*
+        RaycastHit2D[] hits = Physics2D.RaycastAll(cam.ScreenToWorldPoint(Input.mousePosition), new Vector3(0, 0, 1));
+
+        if (hits.Count() > 0 && hits[0].transform.GetComponent<CircleCollider2D>() != null)
+        {
+            if (data.visible) transform.GetChild(1).gameObject.SetActive(true);
+        }
+        else
+        {
+            transform.GetChild(1).gameObject.SetActive(false);
+        }
+        */
+    }
+    /*
     public void OnMouseOver()
     {
         if (data.visible) transform.GetChild(1).gameObject.SetActive(true);
@@ -29,4 +52,5 @@ public class LocationObject : ObjectData<Location>
     {
         transform.GetChild(1).gameObject.SetActive(false);
     }
+    */
 }

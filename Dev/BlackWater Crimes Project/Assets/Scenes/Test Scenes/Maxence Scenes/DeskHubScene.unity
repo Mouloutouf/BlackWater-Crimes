@@ -277,7 +277,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 993814522}
-        m_MethodName: Open
+        m_MethodName: OpenOrClose
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 993814518}
@@ -341,7 +341,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &162971053
 RectTransform:
   m_ObjectHideFlags: 0
@@ -737,7 +737,7 @@ GameObject:
   - component: {fileID: 340809367}
   m_Layer: 0
   m_Name: Scene Manager
-  m_TagString: Untagged
+  m_TagString: Scene Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -755,13 +755,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameData: {fileID: 11400000, guid: eaa3567ddd179a64a9d879867070a0b4, type: 2}
-  contents:
-  - contentObject: {fileID: 233056905}
-    instantiate: 1
-    dataType: 0
-  - contentObject: {fileID: 1551605359}
-    instantiate: 1
-    dataType: 0
+  contents: []
 --- !u!4 &340809366
 Transform:
   m_ObjectHideFlags: 0
@@ -1750,7 +1744,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &531921495
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1865,7 +1859,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &644683548
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1985,7 +1979,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 993814522}
-        m_MethodName: Close
+        m_MethodName: OpenOrClose
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 993814518}
@@ -2213,7 +2207,7 @@ GameObject:
   - component: {fileID: 993814520}
   - component: {fileID: 993814522}
   m_Layer: 5
-  m_Name: Reports Content
+  m_Name: Reports Booklet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2539,7 +2533,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1142819702
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3431,7 +3425,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1555262156
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4453,7 +4447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.735849, g: 0.6247775, b: 0.496351, a: 1}
+  m_Color: {r: 0.5566038, g: 0.47047913, b: 0.375445, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4536,7 +4530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4811321, g: 0.34360093, b: 0.2519135, a: 1}
+  m_Color: {r: 0.3301887, g: 0.22540636, b: 0.17288181, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

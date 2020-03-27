@@ -6,9 +6,16 @@ using UnityEngine;
 [Serializable]
 public class ObjectData<T> : MonoBehaviour where T : Data
 {
+    private GameData gameData;
+
     public T data;
 
     protected bool loaded;
+
+    void Awake()
+    {
+        gameData = GameObject.FindWithTag("Scene Manager").GetComponent<SceneManager>().gameData;
+    }
 
     void Update()
     {
@@ -22,23 +29,42 @@ public class ObjectData<T> : MonoBehaviour where T : Data
 
     public virtual void Protocol()
     {
-        // Here goes the code for applying the Data to the Object (OR applying the changes to the object depending on the Data)
-
         loaded = true;
     }
 
     public virtual void Check()
     {
-        // Here goes the code to change the Object depending on the Data (OR applying the changes to the object depending on the Data)
+
+    }
+
+    public void LoadDataOfType<_T>(_T type) where _T : Data
+    {
+        foreach (_T _type in gameData.GetListOfType(type))
+        {
+            if (_type.index == data.index)
+            {
+                data = _type as T;
+            }
+        }
+    }
+
+    public void AddDataToList<_T>(_T type) where _T : Data
+    {
+        gameData.GetListOfType(type).Add(data as _T);
     }
 }
 
 public class TestEvidenceObject : ObjectData<Evidence>
 {
+    private Evidence myType;
+
+    void Start()
+    {
+        LoadDataOfType(myType);
+    }
+
     public override void Protocol()
     {
-        //if (evidence.intelRevealed) ; // Make the 3D model showcase the intel directly
-
         base.Protocol();
     }
 
