@@ -1223,17 +1223,17 @@ PrefabInstance:
     - target: {fileID: 3730569804384897927, guid: 87335fb74df80ba469e5e3d87edc2191,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0963
+      value: 0.008
       objectReference: {fileID: 0}
     - target: {fileID: 3730569804384897927, guid: 87335fb74df80ba469e5e3d87edc2191,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.1357
+      value: -0.003
       objectReference: {fileID: 0}
     - target: {fileID: 3730569804384897927, guid: 87335fb74df80ba469e5e3d87edc2191,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0147
+      value: 0.015
       objectReference: {fileID: 0}
     - target: {fileID: 3730569804384897927, guid: 87335fb74df80ba469e5e3d87edc2191,
         type: 3}
@@ -1449,7 +1449,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 455794428}
   m_LocalRotation: {x: 0.15943398, y: 0.58741915, z: -0.78359556, w: 0.12448961}
-  m_LocalPosition: {x: -4.45, y: -1.1716702, z: 5.8399997}
+  m_LocalPosition: {x: -4.307, y: -1.129, z: 6.056}
   m_LocalScale: {x: 2, y: 0.9743997, z: 1}
   m_Children:
   - {fileID: 408559563}
@@ -1492,7 +1492,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.21000002, y: 0.297, z: 0.018135456}
-  m_Center: {x: -0.09472766, y: -0.13635948, z: 0.007299696}
+  m_Center: {x: 0, y: 0, z: 0.01}
 --- !u!114 &455794432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1506,7 +1506,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: 3
-  specificZoomPosition: {x: -0.125, y: 0.875, z: -9.2}
+  specificZoomPosition: {x: 0, y: 1, z: -9.2}
   hasSpecificRotation: 0
   specificZoomRotation: {x: 0, y: 0, z: 0}
   specificZoomRotationQuaternion: {x: 0, y: 0, z: 1, w: -0.00000004371139}
@@ -1759,17 +1759,17 @@ PrefabInstance:
     - target: {fileID: 3730569804384897927, guid: 87335fb74df80ba469e5e3d87edc2191,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0963
+      value: 0.008
       objectReference: {fileID: 0}
     - target: {fileID: 3730569804384897927, guid: 87335fb74df80ba469e5e3d87edc2191,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.1357
+      value: -0.003
       objectReference: {fileID: 0}
     - target: {fileID: 3730569804384897927, guid: 87335fb74df80ba469e5e3d87edc2191,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0147
+      value: 0.015
       objectReference: {fileID: 0}
     - target: {fileID: 3730569804384897927, guid: 87335fb74df80ba469e5e3d87edc2191,
         type: 3}
@@ -4746,6 +4746,7 @@ MonoBehaviour:
   photoReplacedSound: {fileID: 8300000, guid: 602c9ad97e86bd64e913f0539601d20a, type: 3}
   fingerprintDiscoveredSound: {fileID: 8300000, guid: c6fdc7f41a026f348bb037b534bf5230,
     type: 3}
+  isInEditor: 0
 --- !u!82 &1294605710
 AudioSource:
   m_ObjectHideFlags: 0
