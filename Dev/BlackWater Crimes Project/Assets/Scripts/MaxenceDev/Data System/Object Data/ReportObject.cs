@@ -17,7 +17,7 @@ public class ReportObject : ObjectData<Report>
 
     void Start()
     {
-        LoadDataOfType(myType);
+        if (!instantiate) LoadDataOfType(myType);
     }
 
     public override void Protocol()

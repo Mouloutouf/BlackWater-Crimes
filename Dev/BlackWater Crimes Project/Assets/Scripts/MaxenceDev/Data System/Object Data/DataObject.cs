@@ -12,6 +12,8 @@ public class ObjectData<T> : MonoBehaviour where T : Data
 
     protected bool loaded;
 
+    public bool instantiate;
+
     void Awake()
     {
         gameData = GameObject.Find("Data Container").GetComponent<DataContainer>().gameData;
@@ -32,12 +34,21 @@ public class ObjectData<T> : MonoBehaviour where T : Data
 
     public void LoadDataOfType<_T>(_T type) where _T : Data
     {
-        foreach (_T _type in gameData.GetListOfType(type))
+        List<_T> list = gameData.GetListOfType(type);
+
+        if (list.Count > 0)
         {
-            if (_type.index == data.index)
+            foreach (_T _type in list)
             {
-                data = _type as T;
+                if (_type.index == data.index)
+                {
+                    data = _type as T;
+                }
             }
+        }
+        else
+        {
+            list.Add(data as _T);
         }
     }
 

@@ -10,7 +10,7 @@ public class EvidenceObject : ObjectData<Evidence>
 
     void Start()
     {
-        LoadDataOfType(myType);
+        if (!instantiate) LoadDataOfType(myType);
     }
 
     public override void Protocol()
