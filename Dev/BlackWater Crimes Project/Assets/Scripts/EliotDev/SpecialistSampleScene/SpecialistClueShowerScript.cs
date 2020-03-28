@@ -8,7 +8,7 @@ public class SpecialistClueShowerScript : MonoBehaviour
 {
     [SerializeField] GameObject clueFolder;
     [SerializeField] Button validateButton;
-    GameObject currentClueShowed;
+    public GameObject currentClueShowed;
     bool folderOpen = false;
 
     public void OpenFolder()

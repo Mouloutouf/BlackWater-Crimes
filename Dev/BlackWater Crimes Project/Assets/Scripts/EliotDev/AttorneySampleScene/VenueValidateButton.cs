@@ -8,9 +8,18 @@ public class VenueValidateButton : MonoBehaviour
     [SerializeField] GameObject dropdown;
     [SerializeField] GameObject clueShower;
     [SerializeField] Text dialogueText;
+    string currentLocationAddress;
+    GameData gameData;
+
+    private void Start()
+    {
+        gameData = GameObject.Find("Data Container").GetComponent<DataContainer>().gameData;
+    }
 
     public void Validate()
     {
+        currentLocationAddress = dropdown.GetComponentInChildren<Text>().text;
+
         if(Match() == true)
         {
             dialogueText.fontSize = 45;
@@ -22,7 +31,6 @@ public class VenueValidateButton : MonoBehaviour
         }
         else
         {
-            dialogueText.fontSize = 40;
             dialogueText.text = "Hmm... No, this isn't a good reason enough.";
             dropdown.GetComponent<Dropdown>().value = 0;
             clueShower.GetComponent<AttorneySingleClueShowerScript>().ResetClue();
@@ -35,48 +43,21 @@ public class VenueValidateButton : MonoBehaviour
 
     bool Match()
     {
-        switch(dropdown.GetComponent<Dropdown>().value)
+        // A voir avec les variables des indices
+        if(currentLocationAddress == "1048, W Madison Str." && clueShower.GetComponent<AttorneySingleClueShowerScript>().currentClueShowed.GetComponent<PhotoSpecialistObject>().data.name == "Key")
         {
-            case 0:
-                if(clueShower.GetComponent<AttorneySingleClueShowerScript>().currentClueShowed.name == "HandClueBG(Clone)")
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-
-            case 1:
-                if(clueShower.GetComponent<AttorneySingleClueShowerScript>().currentClueShowed.name == "PantsClueBG(Clone)")
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-
-            case 2:
-                if(clueShower.GetComponent<AttorneySingleClueShowerScript>().currentClueShowed.name == "BulletClueBG(Clone)")
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-
-            default:
-            Debug.Log("Dropdown value is not valid!");
-                return false;
+            return true;
+        } 
+        else
+        {
+            return false;
         }
     }
 
     public void Reset()
     {
         dropdown.GetComponent<Dropdown>().value = 0;
-        clueShower.GetComponent<AttorneyClueShowerScript>().ResetClue();
+        clueShower.GetComponent<AttorneySingleClueShowerScript>().ResetClue();
         GetComponent<Button>().interactable = false;
         GetComponentInChildren<Text>().text = "Missing elements";
     }
