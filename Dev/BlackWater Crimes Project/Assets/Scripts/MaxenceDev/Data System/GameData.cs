@@ -101,7 +101,7 @@ public class Location : Data
 [CreateAssetMenu(fileName = "New Player Data", menuName = "Player Data Scriptable")]
 public class GameData : ScriptableObject
 {
-    public Dictionary<string, bool> dataListsContainingState;
+    public Dictionary<string, bool> dataListsContainingState = new Dictionary<string, bool>();
 
     public List<Evidence> evidences = new List<Evidence>();
     

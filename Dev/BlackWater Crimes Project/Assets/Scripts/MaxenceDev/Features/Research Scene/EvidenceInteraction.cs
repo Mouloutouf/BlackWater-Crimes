@@ -30,6 +30,9 @@ public class EvidenceInteraction : MonoBehaviour
 
     [SerializeField] bool isInEditor;
 
+    [SerializeField] Vector2 values;
+    [SerializeField] Vector2 sizes;
+
     [ExecuteInEditMode]
     void OnEnable()
     {
@@ -194,7 +197,7 @@ public class EvidenceInteraction : MonoBehaviour
         texture = new Texture2D(2, 2, TextureFormat.RGB24, false);
         texture.LoadImage(fileBytes);
         Rect rect = new Rect(0, 0, texture.width, texture.height);
-        Sprite sp = Sprite.Create(texture, new Rect(485, 125, texture.width / 3, texture.height / 1.5f), new Vector2(0.5f, 0.5f));
+        Sprite sp = Sprite.Create(texture, new Rect(values.x, values.y, texture.width / sizes.x, texture.height / sizes.y), new Vector2(0.5f, 0.5f));
         _evidence.photo = sp;
         returnButton.interactable = true;
     }
