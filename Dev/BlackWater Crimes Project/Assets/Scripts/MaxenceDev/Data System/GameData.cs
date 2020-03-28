@@ -101,13 +101,21 @@ public class Location : Data
 [CreateAssetMenu(fileName = "New Player Data", menuName = "Player Data Scriptable")]
 public class GameData : ScriptableObject
 {
-    public List<Evidence> evidences;
+    public List<Evidence> evidences = new List<Evidence>();
     
-    public List<Note> notes;
+    public List<Note> notes = new List<Note>();
 
-    public List<Report> reports;
+    public List<Report> reports = new List<Report>();
 
-    public List<Location> locations;
+    public List<Location> locations = new List<Location>();
+
+    public GameData()
+    {
+        InitListOfType(evidences);
+        InitListOfType(notes);
+        InitListOfType(reports);
+        InitListOfType(locations);
+    }
 
     private Dictionary<Type, string> allTypes = new Dictionary<Type, string>
     {
@@ -132,5 +140,11 @@ public class GameData : ScriptableObject
             default:
                 return null;
         }
+    }
+
+    public void InitListOfType<T>(List<T> list) where T : Data
+    {
+        int index = 0;
+        foreach (T type in list) { type.index = index; index++; }
     }
 }

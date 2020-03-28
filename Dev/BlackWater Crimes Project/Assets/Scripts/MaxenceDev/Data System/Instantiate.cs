@@ -12,10 +12,8 @@ public class InstantiationProcess<T> : MonoBehaviour where T : Data
 
     void Start()
     {
-        gameData = GameObject.FindWithTag("Scene Manager").GetComponent<SceneManager>().gameData;
-
-        //T type = typeof(T) as T;
-        //Debug.Log(type.GetType());
+        gameData = GameObject.Find("Data Container").GetComponent<DataContainer>().gameData;
+        
         int index = 0;
 
         foreach (T _type in gameData.GetListOfType(this.type))
@@ -39,7 +37,7 @@ public class Instantiate : InstantiationProcess<Evidence>
     public float offset;
     private float ofst = 0;
 
-    // Start is already called in Parent Class !
+    // Start() is called in Parent Class !
 
     public override GameObject Instantiation()
     {

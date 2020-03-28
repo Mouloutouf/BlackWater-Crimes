@@ -13,6 +13,13 @@ public class ReportObject : ObjectData<Report>
 
     public Text reportText;
 
+    private Report myType;
+
+    void Start()
+    {
+        LoadDataOfType(myType);
+    }
+
     public override void Protocol()
     {
         agentImage.sprite = data.agentSprite;

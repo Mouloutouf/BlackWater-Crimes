@@ -7,6 +7,13 @@ public class NoteObject : ObjectData<Note>
 {
     public List<GameObject> textObjects;
 
+    private Note myType;
+
+    void Start()
+    {
+        LoadDataOfType(myType);
+    }
+
     public override void Protocol()
     {
         textObjects[0].GetComponent<Text>().text = data.name;
@@ -14,10 +21,5 @@ public class NoteObject : ObjectData<Note>
         textObjects[1].GetComponent<Text>().text = data.text;
 
         base.Protocol();
-    }
-
-    public override void Check()
-    {
-        base.Check();
     }
 }
