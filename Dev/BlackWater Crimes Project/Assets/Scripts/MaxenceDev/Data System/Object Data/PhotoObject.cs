@@ -8,12 +8,21 @@ using UnityEngine.UI;
 public class PhotoObject : ObjectData<Evidence>
 {
     public GameObject photosBooklet;
-    public Camera cam;
-
+    
     public int pageNumber;
     private SortMode currentMode;
     
     public GameObject imageObject;
+
+    private Evidence myType;
+
+    void Start()
+    {
+        if (!instantiate)
+        {
+            LoadDataOfType(myType);
+        }
+    }
 
     public override void Protocol()
     {
@@ -90,18 +99,4 @@ public class PhotoObject : ObjectData<Evidence>
         }
         else return 0;
     }
-
-    //Useless method
-    string SwitchStuff<T>(T enumType) where T : Enum
-    {
-        switch (data.modeCategory)
-        {
-            default:
-                break;
-        }
-
-        return "";
-    }
-
-    //photosContent.GetComponent<TabManager>().sortModes[0].namesOfTabs[0]
 }
