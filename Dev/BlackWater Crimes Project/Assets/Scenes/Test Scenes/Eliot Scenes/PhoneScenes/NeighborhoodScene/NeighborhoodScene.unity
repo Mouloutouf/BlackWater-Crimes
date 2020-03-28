@@ -1139,15 +1139,15 @@ RectTransform:
   m_GameObject: {fileID: 651648342}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 2138657253}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -130, y: 410}
-  m_SizeDelta: {x: 310, y: 463}
+  m_AnchoredPosition: {x: -130, y: 361}
+  m_SizeDelta: {x: 595, y: 625}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &651648344
 MonoBehaviour:
@@ -1167,8 +1167,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -6078036970793173182, guid: 6a0c63bc474ef46469a989f25dc0ccba,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 56c435b2f30bccb4186cc46068c1c809, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1316,6 +1315,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: PhoneSceneProto
   loadSceneMode: 0
+  withLoadingScreen: 0
+  loadingScreenPrefab: {fileID: 0}
 --- !u!114 &902428660
 MonoBehaviour:
   m_ObjectHideFlags: 0

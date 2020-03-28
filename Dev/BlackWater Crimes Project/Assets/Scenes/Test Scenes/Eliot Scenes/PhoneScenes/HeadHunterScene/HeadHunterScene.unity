@@ -343,7 +343,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Blond
+  m_Text: Blue
 --- !u!222 &86437587
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -786,9 +786,11 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Hair color
+    - m_Text: Eye color
       m_Image: {fileID: 0}
-    - m_Text: Occupation
+    - m_Text: Facial Hair
+      m_Image: {fileID: 0}
+    - m_Text: Hair color
       m_Image: {fileID: 0}
     - m_Text: Particular physical trait
       m_Image: {fileID: 0}
@@ -856,20 +858,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detailDropdown: {fileID: 1834637843}
+  eyeColorOptions:
+  - Blue
+  - Brown
+  - Gray
+  - Green
+  - Hazel
+  facialHairOptions:
+  - Beard
+  - Mustache
+  - Mustache & Beard
+  - Sideburns
   hairColorOptions:
   - Blond
   - Brown
   - Red
   - White
-  occupationOptions:
-  - Butcher
-  - Dentist
-  - Police Officer
-  - Politician
   particularPhysicalTraitOptions:
   - Cleft chin
   - Golden tooth
   - Mole
+  - 
   - Scar
 --- !u!1 &328533355
 GameObject:
@@ -1136,8 +1145,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.19999999, y: 0.19999999, z: 1}
   m_Children: []
-  m_Father: {fileID: 1662219310}
-  m_RootOrder: 2
+  m_Father: {fileID: 1059762549}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1158,6 +1167,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: PhoneSceneProto
   loadSceneMode: 0
+  withLoadingScreen: 0
+  loadingScreenPrefab: {fileID: 0}
 --- !u!114 &464311274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1901,6 +1912,7 @@ RectTransform:
   - {fileID: 1198620105}
   - {fileID: 218078924}
   - {fileID: 1883103640}
+  - {fileID: 464311272}
   m_Father: {fileID: 1662219310}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2673,7 +2685,6 @@ RectTransform:
   m_Children:
   - {fileID: 613566745}
   - {fileID: 1059762549}
-  - {fileID: 464311272}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2929,7 +2940,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Hair color
+  m_Text: Eye color
 --- !u!222 &1686356194
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3395,13 +3406,15 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Blond
+    - m_Text: Blue
       m_Image: {fileID: 0}
     - m_Text: Brown
       m_Image: {fileID: 0}
-    - m_Text: Red
+    - m_Text: Gray
       m_Image: {fileID: 0}
-    - m_Text: White
+    - m_Text: Green
+      m_Image: {fileID: 0}
+    - m_Text: Hazel
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:

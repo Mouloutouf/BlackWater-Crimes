@@ -16,16 +16,16 @@ public class VenueValidateButton : MonoBehaviour
             dialogueText.fontSize = 45;
             dialogueText.text = "This seems logic. You can go there, anything else?";
             dropdown.GetComponent<Dropdown>().value = 0;
-            clueShower.GetComponent<AttorneyClueShowerScript>().ResetClue();
+            clueShower.GetComponent<AttorneySingleClueShowerScript>().ResetClue();
             GetComponent<Button>().interactable = false;
             GetComponentInChildren<Text>().text = "Missing elements";
         }
         else
         {
             dialogueText.fontSize = 40;
-            dialogueText.text = "This does not make any sense... Please detective, show me something concrete!";
+            dialogueText.text = "Hmm... No, this isn't a good reason enough.";
             dropdown.GetComponent<Dropdown>().value = 0;
-            clueShower.GetComponent<AttorneyClueShowerScript>().ResetClue();
+            clueShower.GetComponent<AttorneySingleClueShowerScript>().ResetClue();
             GetComponent<Button>().interactable = false;
             GetComponentInChildren<Text>().text = "Missing elements";
         }
@@ -38,11 +38,7 @@ public class VenueValidateButton : MonoBehaviour
         switch(dropdown.GetComponent<Dropdown>().value)
         {
             case 0:
-                if(clueShower.GetComponent<AttorneyClueShowerScript>().currentClueShowed1.name == "HandClueBG(Clone)" && clueShower.GetComponent<AttorneyClueShowerScript>().currentClueShowed2.name == "BulletClueBG(Clone)")
-                {
-                    return true;
-                }
-                else if(clueShower.GetComponent<AttorneyClueShowerScript>().currentClueShowed2.name == "HandClueBG(Clone)" && clueShower.GetComponent<AttorneyClueShowerScript>().currentClueShowed1.name == "BulletClueBG(Clone)")
+                if(clueShower.GetComponent<AttorneySingleClueShowerScript>().currentClueShowed.name == "HandClueBG(Clone)")
                 {
                     return true;
                 }
@@ -52,11 +48,7 @@ public class VenueValidateButton : MonoBehaviour
                 }
 
             case 1:
-                if(clueShower.GetComponent<AttorneyClueShowerScript>().currentClueShowed1.name == "PantsClueBG(Clone)" && clueShower.GetComponent<AttorneyClueShowerScript>().currentClueShowed2.name == "BeerClueBG(Clone)")
-                {
-                    return true;
-                }
-                else if(clueShower.GetComponent<AttorneyClueShowerScript>().currentClueShowed2.name == "PantsClueBG(Clone)" && clueShower.GetComponent<AttorneyClueShowerScript>().currentClueShowed1.name == "BeerClueBG(Clone)")
+                if(clueShower.GetComponent<AttorneySingleClueShowerScript>().currentClueShowed.name == "PantsClueBG(Clone)")
                 {
                     return true;
                 }
@@ -66,11 +58,7 @@ public class VenueValidateButton : MonoBehaviour
                 }
 
             case 2:
-                if(clueShower.GetComponent<AttorneyClueShowerScript>().currentClueShowed1.name == "BulletClueBG(Clone)" && clueShower.GetComponent<AttorneyClueShowerScript>().currentClueShowed2.name == "BeerClueBG(Clone)")
-                {
-                    return true;
-                }
-                else if(clueShower.GetComponent<AttorneyClueShowerScript>().currentClueShowed2.name == "BulletClueBG(Clone)" && clueShower.GetComponent<AttorneyClueShowerScript>().currentClueShowed1.name == "BeerClueBG(Clone)")
+                if(clueShower.GetComponent<AttorneySingleClueShowerScript>().currentClueShowed.name == "BulletClueBG(Clone)")
                 {
                     return true;
                 }

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class SpecialistValidateButton : MonoBehaviour
 {
-
+    [SerializeField] SpecialistType specialistType;
     [SerializeField] SpecialistClueShowerScript script;
     [SerializeField] Text dialogueText;
 
@@ -16,4 +16,9 @@ public class SpecialistValidateButton : MonoBehaviour
         GetComponent<Button>().interactable = false;
         GetComponentInChildren<Text>().text = "Missing elements";
     }
+}
+
+public enum SpecialistType
+{
+    ClothDesigner, CustomsOfficer, ForensicOfficer, USCCSecretary
 }
