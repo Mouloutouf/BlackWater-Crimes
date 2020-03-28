@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.451401, g: 0.5008942, b: 0.572313, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -72,7 +72,7 @@ LightmapSettings:
     m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
-    m_BakeBackend: 1
+    m_BakeBackend: 2
     m_PVRSampling: 1
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 512
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: cd670e020f09824479f70e10592ab39d,
+  m_LightingDataAsset: {fileID: 112000000, guid: c6f393464d4d3b145a33f553d5532069,
     type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -330,6 +330,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     code: 
+    index: 0
     name: 
     taken: 0
     hasIntel: 0
@@ -338,6 +339,10 @@ MonoBehaviour:
     description: 
     photographed: 0
     photo: {fileID: 0}
+    modeCategory:
+      crimeScene: 0
+      suspect: 0
+      type: 0
   intelAlpha: 0
 --- !u!65 &101305122
 BoxCollider:
@@ -1471,6 +1476,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     code: 
+    index: 0
     name: 
     taken: 0
     hasIntel: 0
@@ -1479,6 +1485,10 @@ MonoBehaviour:
     description: 
     photographed: 0
     photo: {fileID: 0}
+    modeCategory:
+      crimeScene: 0
+      suspect: 0
+      type: 0
   intelAlpha: 0
 --- !u!65 &455794431
 BoxCollider:
@@ -7080,6 +7090,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     code: 
+    index: 0
     name: 
     taken: 0
     hasIntel: 0
@@ -7088,6 +7099,10 @@ MonoBehaviour:
     description: 
     photographed: 0
     photo: {fileID: 0}
+    modeCategory:
+      crimeScene: 0
+      suspect: 0
+      type: 0
   intelAlpha: 0
 --- !u!65 &2028870342
 BoxCollider:
@@ -16767,6 +16782,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     code: 
+    index: 0
     name: 
     taken: 0
     hasIntel: 0
@@ -16775,6 +16791,10 @@ MonoBehaviour:
     description: 
     photographed: 0
     photo: {fileID: 0}
+    modeCategory:
+      crimeScene: 0
+      suspect: 0
+      type: 0
   intelAlpha: 0
 --- !u!64 &7963013785458415245
 MeshCollider:
