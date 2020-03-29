@@ -19,7 +19,7 @@ public class SpecialistValidateButton : MonoBehaviour
     {
         if(MatchType())
         {
-            foreach(Indics indic in gameData.allReports.Keys)
+            /*foreach(Indics indic in gameData.allReports.Keys)
             {
                 foreach(Report report in gameData.allReports[indic])
                 {
@@ -28,7 +28,7 @@ public class SpecialistValidateButton : MonoBehaviour
                         report.unlockedData = true;
                     }
                 }  
-            }
+            }*/
         }
         else
         {

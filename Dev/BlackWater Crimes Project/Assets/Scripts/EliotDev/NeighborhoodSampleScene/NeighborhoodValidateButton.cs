@@ -17,7 +17,7 @@ public class NeighborhoodValidateButton : MonoBehaviour
     {
         string currentLocationAddress = dropdown.GetComponentInChildren<Text>().text;
 
-        foreach(Indics indic in gameData.allReports.Keys)
+        /*foreach(Indics indic in gameData.allReports.Keys)
         {
             foreach(Report report in gameData.allReports[indic])
             {
@@ -26,7 +26,7 @@ public class NeighborhoodValidateButton : MonoBehaviour
                     //report.unlockedData = true;
                 }
             }  
-        }
+        }*/
 
         dialogueText.text = "I will go there! Anything else?";
         dropdown.value = 0;

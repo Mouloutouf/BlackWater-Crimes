@@ -22,7 +22,6 @@ public class VenueValidateButton : MonoBehaviour
 
         if(Match() == true)
         {
-            dialogueText.fontSize = 45;
             dialogueText.text = "This seems logic. You can go there, anything else?";
             dropdown.GetComponent<Dropdown>().value = 0;
             clueShower.GetComponent<AttorneySingleClueShowerScript>().ResetClue();
@@ -43,7 +42,7 @@ public class VenueValidateButton : MonoBehaviour
 
     bool Match()
     {
-        if(clueShower.GetComponent<AttorneySingleClueShowerScript>().currentClueShowed.GetComponent<PhotoSpecialistObject>().data.useToUnlock)
+        /*if(clueShower.GetComponent<AttorneySingleClueShowerScript>().currentClueShowed.GetComponent<PhotoSpecialistObject>().data.useToUnlock)
         {
             Locations currentLocation = dropdown.GetComponent<DropdownVenues>()._venues[dropdown.GetComponentInChildren<Text>().text];
             if(clueShower.GetComponent<AttorneySingleClueShowerScript>().currentClueShowed.GetComponent<PhotoSpecialistObject>().data.unlockableLocation == currentLocation)
@@ -58,7 +57,8 @@ public class VenueValidateButton : MonoBehaviour
         else
         {
             return false;
-        }
+        }*/
+        return false;
     }
 
     public void Reset()

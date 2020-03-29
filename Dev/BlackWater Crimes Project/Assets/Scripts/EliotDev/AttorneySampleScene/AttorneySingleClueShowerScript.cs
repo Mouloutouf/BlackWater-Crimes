@@ -38,7 +38,7 @@ public class AttorneySingleClueShowerScript : MonoBehaviour
         {
             currentClueShowed = Instantiate(clue, this.transform);
             currentClueShowed.GetComponent<RectTransform>().localPosition = Vector3.zero;
-            currentClueShowed.GetComponent<RectTransform>().localScale = new Vector3(.5f, .5f, 1);
+            currentClueShowed.GetComponent<RectTransform>().localScale = new Vector3(2.3f, 2.3f, 1);
             Destroy(currentClueShowed.GetComponent<EventTrigger>());
             CloseFolder();
         }
@@ -47,7 +47,7 @@ public class AttorneySingleClueShowerScript : MonoBehaviour
             Destroy(currentClueShowed);
             currentClueShowed = Instantiate(clue, this.transform);
             currentClueShowed.GetComponent<RectTransform>().localPosition = Vector3.zero;
-            currentClueShowed.GetComponent<RectTransform>().localScale = new Vector3(.5f, .5f, 1);
+            currentClueShowed.GetComponent<RectTransform>().localScale = new Vector3(2.3f, 2.3f, 1);
             Destroy(currentClueShowed.GetComponent<EventTrigger>());
             CloseFolder();
         }

@@ -9,6 +9,9 @@ public class TargetNameScript : MonoBehaviour
     [SerializeField] Text inputText;
     [SerializeField] string[] knownNames;
     List<string> knownNamesToCheck = new List<string>();
+    [SerializeField] Color baseColor;
+    [SerializeField] Color correctColor;
+    [SerializeField] Color incorrectColor;
     [SerializeField] GameObject detail;
     [SerializeField] Button validateButton;
 
@@ -36,22 +39,22 @@ public class TargetNameScript : MonoBehaviour
             {
                 GetComponent<InputField>().text = knownNames[index];
             }
-            inputText.color = Color.green;
+            inputText.color = correctColor;
         }
         else
         {
             detail.SetActive(false);
             validateButton.interactable = false;
             validateButton.gameObject.GetComponentInChildren<Text>().text = "Missing elements";
-            inputText.color = Color.red;
+            inputText.color = incorrectColor;
         }
     }
 
     public void ResetTextColor()
     {
-        if(inputText.color != Color.black)
+        if(inputText.color != baseColor)
         {
-            inputText.color = Color.black;
+            inputText.color = baseColor;
         }
     }
 }

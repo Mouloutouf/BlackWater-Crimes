@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class SpecialistClueShowerScript : MonoBehaviour
@@ -38,8 +37,8 @@ public class SpecialistClueShowerScript : MonoBehaviour
         {
             currentClueShowed = Instantiate(clue, this.transform);
             currentClueShowed.GetComponent<RectTransform>().localPosition = Vector3.zero;
-            currentClueShowed.GetComponent<RectTransform>().localScale = new Vector3(.75f, .75f, 1);
-            Destroy(currentClueShowed.GetComponent<EventTrigger>());
+            currentClueShowed.GetComponent<RectTransform>().localScale = new Vector3(2.3f, 2.3f, 1);
+            Destroy(currentClueShowed.GetComponent<Button>());
             CloseFolder();
         }
         else
@@ -47,8 +46,8 @@ public class SpecialistClueShowerScript : MonoBehaviour
             Destroy(currentClueShowed);
             currentClueShowed = Instantiate(clue, this.transform);
             currentClueShowed.GetComponent<RectTransform>().localPosition = Vector3.zero;
-            currentClueShowed.GetComponent<RectTransform>().localScale = new Vector3(.75f, .75f, 1);
-            Destroy(currentClueShowed.GetComponent<EventTrigger>());
+            currentClueShowed.GetComponent<RectTransform>().localScale = new Vector3(2.3f, 2.3f, 1);
+            Destroy(currentClueShowed.GetComponent<Button>());
             CloseFolder();
         }
     }

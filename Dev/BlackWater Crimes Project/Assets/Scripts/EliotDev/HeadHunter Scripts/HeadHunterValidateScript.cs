@@ -20,7 +20,7 @@ public class HeadHunterValidateScript : MonoBehaviour
     {
         if(MatchDetails())
         {
-            foreach(Indics indic in gameData.allReports.Keys)
+            /*foreach(Indics indic in gameData.allReports.Keys)
             {
                 foreach(Report report in gameData.allReports[indic])
                 {
@@ -29,12 +29,12 @@ public class HeadHunterValidateScript : MonoBehaviour
                         //report.unlockedData = true;
                     }
                 }  
-            }
+            }*/
         }
         else
         {
             //gameData.allReports[Indics.James_Walkder][0].unlockedData = true;
-            //gameData.allReports[Indics.Brandon_Bennington][0].elementName = targetName;
+            //gameData.allReports[Indics.James_Walkder][0].elementName = targetName;
         }
 
         dialogueText.text = "Okay, I'm on it! Anything else?";
