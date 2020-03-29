@@ -1372,6 +1372,7 @@ GameObject:
   - component: {fileID: 700321066}
   - component: {fileID: 700321065}
   - component: {fileID: 700321069}
+  - component: {fileID: 700321070}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1480,6 +1481,22 @@ MonoBehaviour:
   musicValue: {fileID: 1191301015}
   voicesValue: {fileID: 1093442815}
   gameStatusText: {fileID: 2134940918}
+--- !u!114 &700321070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700321064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4206b0aec6eb07545a298b286059b682, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: 
+  loadSceneMode: 0
+  withLoadingScreen: 0
+  loadingScreenPrefab: {fileID: 0}
 --- !u!1 &721629649
 GameObject:
   m_ObjectHideFlags: 0
@@ -1779,11 +1796,22 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 816632884}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 700321070}
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: DemoEndScene
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &816632884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3248,15 +3276,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 700321069}
-        m_MethodName: Play
-        m_Mode: 1
+      - m_Target: {fileID: 700321070}
+        m_MethodName: LoadScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: IntroScene
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1498073477

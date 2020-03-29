@@ -18,12 +18,7 @@ public class MainMenuScript : MonoBehaviour
     {
         gameStatusText.text = "Game 1 - " + DateTime.Today.ToString("M/d/yyyy");
     }
-
-    public void Play()
-    {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(introSceneName, LoadSceneMode.Single);
-    }
-
+    
     public void Quit()
     {
         Application.Quit();

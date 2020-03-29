@@ -50,7 +50,11 @@ public class GetClues : MonoBehaviour
     {
         if (Input.touchCount == 1 && clueIsZoomed == false && actualClue == null)
         {
-            CastRay();
+            CastRay(Input.touches[0].position);
+        }
+        else if(Input.GetMouseButtonDown(0) && clueIsZoomed == false && actualClue == null)
+        {
+            CastRay(Input.mousePosition);
         }
     }
 
@@ -97,10 +101,10 @@ public class GetClues : MonoBehaviour
         }
     }
 
-    void CastRay() 
+    void CastRay(Vector2 rayPos) 
     {
         RaycastHit hit;
-        Ray ray = cam.ScreenPointToRay(Input.touches[0].position);
+        Ray ray = cam.ScreenPointToRay(rayPos);
 
         if(Physics.Raycast(ray, out hit, 100f))
         {

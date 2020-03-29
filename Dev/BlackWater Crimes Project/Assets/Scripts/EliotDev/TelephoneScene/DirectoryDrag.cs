@@ -30,6 +30,11 @@ public class DirectoryDrag : MonoBehaviour
             yPos = Input.touches[0].position.y;
             dragOffset = yPos - transform.position.y;
         }
+        else if(Input.touchCount == 0)
+        {
+            yPos = Input.mousePosition.y;
+            dragOffset = yPos - transform.position.y;
+        }
         isDraging = true;
     }
 
@@ -38,6 +43,10 @@ public class DirectoryDrag : MonoBehaviour
         if (Input.touchCount == 1 && GetComponent<RectTransform>().localPosition.y >= -1100f && GetComponent<RectTransform>().localPosition.y <= 0f)
         {
             transform.position = new Vector3(transform.position.x , Input.touches[0].position.y - dragOffset, transform.position.z);
+        }
+        else if(Input.touchCount == 0)
+        {
+            transform.position = new Vector3(transform.position.x , Input.mousePosition.y - dragOffset, transform.position.z);
         }
 
         if (GetComponent<RectTransform>().localPosition.y < -1095f)
@@ -80,6 +89,28 @@ public class DirectoryDrag : MonoBehaviour
             else if (touch.phase == TouchPhase.Ended)
             {
                 lPos = touch.position;
+                if (Mathf.Abs(lPos.y - fPos.y) > minSwipeDistance && lPos.y < fPos.y && fPos.y > 1100) 
+                {
+                    GetComponent<RectTransform>().localPosition = new Vector3(0, -1095f, 0);
+                    fPos = Vector3.zero;
+                    lPos = Vector3.zero;
+                }
+            }
+        }
+        else if (Input.touchCount ==0 && GetComponent<RectTransform>().localPosition.y > -1095f && isDraging == false)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                fPos = Input.mousePosition;
+                lPos = Input.mousePosition;
+            }
+            else if (Input.GetMouseButton(0))
+            {
+                lPos = Input.mousePosition;
+            }
+            else if (Input.GetMouseButtonUp(0))
+            {
+                lPos = Input.mousePosition;
                 if (Mathf.Abs(lPos.y - fPos.y) > minSwipeDistance && lPos.y < fPos.y && fPos.y > 1100) 
                 {
                     GetComponent<RectTransform>().localPosition = new Vector3(0, -1095f, 0);
