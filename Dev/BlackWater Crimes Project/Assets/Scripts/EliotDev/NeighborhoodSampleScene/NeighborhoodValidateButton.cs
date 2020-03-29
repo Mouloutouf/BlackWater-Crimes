@@ -17,17 +17,17 @@ public class NeighborhoodValidateButton : MonoBehaviour
     {
         string currentLocationAddress = dropdown.GetComponentInChildren<Text>().text;
 
-        /*foreach(Indics indic in gameData.allReports.Keys)
+        foreach (Indics indic in gameData.allReports.Keys)
         {
-            foreach(Report report in gameData.allReports[indic])
+            foreach (Report report in gameData.allReports[indic])
             {
-                if(report.elementName == currentLocationAddress)
+                if (report.elementName == currentLocationAddress)
                 {
-                    //report.unlockedData = true;
+                    report.unlockedData = true;
                 }
-            }  
-        }*/
-
+            }
+        }
+        
         dialogueText.text = "I will go there! Anything else?";
         dropdown.value = 0;
     }

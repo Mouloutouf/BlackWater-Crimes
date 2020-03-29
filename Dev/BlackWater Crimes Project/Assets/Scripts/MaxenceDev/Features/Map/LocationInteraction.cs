@@ -29,6 +29,7 @@ public class LocationInteraction : SerializedMonoBehaviour
     {
         gameData = GameObject.Find("Data Container").GetComponent<DataContainer>().gameData;
 
+        /*
         foreach (Transform tr in transform)
         {
             Location location = tr.GetComponent<LocationObject>().data;
@@ -39,6 +40,7 @@ public class LocationInteraction : SerializedMonoBehaviour
                 gameData.locations.Add(location);
             }
         }
+        */
     }
 
     void Update()

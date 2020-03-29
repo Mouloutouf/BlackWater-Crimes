@@ -10,6 +10,16 @@ public class InstantiatePhotosSpecialist : InstantiationProcess<Evidence>
     SpecialistClueShowerScript clueShowerScript;
     int index;
 
+    void Start()
+    {
+        GetGameData();
+
+        foreach (List<Evidence> _list in gameData.allEvidences.Values)
+        {
+            InstantiateDataOfType(type, _list);
+        }
+    }
+
     public override GameObject Instantiation()
     {
         clueShowerScript = Object.FindObjectOfType<SpecialistClueShowerScript>().GetComponent<SpecialistClueShowerScript>();
