@@ -13,7 +13,6 @@ public class ReturnButtonScript : MonoBehaviour
     public void ReturnButton(GameObject parent)
     {
         actions.SetActive(true);
-        dialogueText.fontSize = 50;
         dialogueText.text = "Please tell me what you want...";
 
         switch(type)

@@ -20,7 +20,7 @@ public class HeadHunterValidateScript : MonoBehaviour
     {
         if(MatchDetails())
         {
-            foreach(Indics indic in gameData.allReports.Keys)
+            /*foreach(Indics indic in gameData.allReports.Keys)
             {
                 foreach(Report report in gameData.allReports[indic])
                 {
@@ -29,7 +29,7 @@ public class HeadHunterValidateScript : MonoBehaviour
                         //report.unlockedData = true;
                     }
                 }  
-            }
+            }*/
         }
         else
         {
