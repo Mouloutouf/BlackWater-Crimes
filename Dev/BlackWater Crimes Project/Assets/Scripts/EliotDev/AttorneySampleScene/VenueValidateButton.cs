@@ -43,10 +43,17 @@ public class VenueValidateButton : MonoBehaviour
 
     bool Match()
     {
-        // A voir avec les variables des indices
-        if(currentLocationAddress == "1048, W Madison Str." && clueShower.GetComponent<AttorneySingleClueShowerScript>().currentClueShowed.GetComponent<PhotoSpecialistObject>().data.name == "Key")
+        if(clueShower.GetComponent<AttorneySingleClueShowerScript>().currentClueShowed.GetComponent<PhotoSpecialistObject>().data.useToUnlock)
         {
-            return true;
+            Location currentLocation = dropdown.GetComponent<DropdownVenues>()._venues[dropdown.GetComponentInChildren<Text>().text];
+            if(clueShower.GetComponent<AttorneySingleClueShowerScript>().currentClueShowed.GetComponent<PhotoSpecialistObject>().data.unlockableLocation == currentLocation)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         } 
         else
         {

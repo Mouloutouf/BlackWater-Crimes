@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class DropdownVenues : MonoBehaviour
 {
     GameData gameData;
-    List<string> venues = new List<string>();
+    public Dictionary<string, Locations> _venues = new Dictionary<string, Locations>();
     [SerializeField] bool attorneyDropdown;
 
     private void Start()
@@ -19,7 +19,7 @@ public class DropdownVenues : MonoBehaviour
             {
                 if(location.accessible)
                 {
-                    //venues.Add(location.locationAddress);
+                    //_venues.Add(locationAddress, location.myLocation);
                 }
             }
         }
@@ -29,11 +29,11 @@ public class DropdownVenues : MonoBehaviour
             {
                 if(location.visible && !location.accessible)
                 {
-                    //venues.Add(location.locationAddress);
+                    //_venues.Add(locationAddress, location.myLocation);
                 }
             }
         }
 
-        //GetComponent<Dropdown>().AddOptions(venues);
+        //GetComponent<Dropdown>().AddOptions(_venues.Keys);
     }
 }
