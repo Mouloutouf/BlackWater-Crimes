@@ -17,18 +17,18 @@ public class SpecialistValidateButton : MonoBehaviour
     
     public void Validate()
     {
-        if(MatchType())
+        if (MatchType())
         {
-            /*foreach(Indics indic in gameData.allReports.Keys)
+            foreach (Indics indic in gameData.allReports.Keys)
             {
-                foreach(Report report in gameData.allReports[indic])
+                foreach (Report report in gameData.allReports[indic])
                 {
-                    if(report.elementName == script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.name)
+                    if (report.elementName == script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.name)
                     {
                         report.unlockedData = true;
                     }
-                }  
-            }*/
+                }
+            }
         }
         else
         {

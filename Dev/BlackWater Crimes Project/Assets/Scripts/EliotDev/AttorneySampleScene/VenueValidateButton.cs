@@ -27,6 +27,14 @@ public class VenueValidateButton : MonoBehaviour
             clueShower.GetComponent<AttorneySingleClueShowerScript>().ResetClue();
             GetComponent<Button>().interactable = false;
             GetComponentInChildren<Text>().text = "Missing elements";
+
+            foreach (Location _location in gameData.locations)
+            {
+                if (clueShower.GetComponent<AttorneySingleClueShowerScript>().currentClueShowed.GetComponent<PhotoAttorneyObject>().data.unlockableLocation == _location.myLocation)
+                {
+                    _location.accessible = true;
+                }
+            }
         }
         else
         {
@@ -36,16 +44,14 @@ public class VenueValidateButton : MonoBehaviour
             GetComponent<Button>().interactable = false;
             GetComponentInChildren<Text>().text = "Missing elements";
         }
-
-        
     }
 
     bool Match()
     {
-        /*if(clueShower.GetComponent<AttorneySingleClueShowerScript>().currentClueShowed.GetComponent<PhotoSpecialistObject>().data.useToUnlock)
+        if (clueShower.GetComponent<AttorneySingleClueShowerScript>().currentClueShowed.GetComponent<PhotoAttorneyObject>().data.useToUnlock)
         {
             Locations currentLocation = dropdown.GetComponent<DropdownVenues>()._venues[dropdown.GetComponentInChildren<Text>().text];
-            if(clueShower.GetComponent<AttorneySingleClueShowerScript>().currentClueShowed.GetComponent<PhotoSpecialistObject>().data.unlockableLocation == currentLocation)
+            if (clueShower.GetComponent<AttorneySingleClueShowerScript>().currentClueShowed.GetComponent<PhotoAttorneyObject>().data.unlockableLocation == currentLocation)
             {
                 return true;
             }
@@ -57,8 +63,7 @@ public class VenueValidateButton : MonoBehaviour
         else
         {
             return false;
-        }*/
-        return false;
+        }
     }
 
     public void Reset()

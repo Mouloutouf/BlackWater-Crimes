@@ -20,21 +20,21 @@ public class HeadHunterValidateScript : MonoBehaviour
     {
         if(MatchDetails())
         {
-            /*foreach(Indics indic in gameData.allReports.Keys)
+            foreach(Indics indic in gameData.allReports.Keys)
             {
                 foreach(Report report in gameData.allReports[indic])
                 {
                     if(report.elementName == targetName)
                     {
-                        //report.unlockedData = true;
+                        report.unlockedData = true;
                     }
                 }  
-            }*/
+            } 
         }
         else
         {
-            //gameData.allReports[Indics.James_Walkder][0].unlockedData = true;
-            //gameData.allReports[Indics.James_Walkder][0].elementName = targetName;
+            gameData.allReports[Indics.James_Walker][0].unlockedData = true;
+            gameData.allReports[Indics.James_Walker][0].elementName = targetName;
         }
 
         dialogueText.text = "Okay, I'm on it! Anything else?";

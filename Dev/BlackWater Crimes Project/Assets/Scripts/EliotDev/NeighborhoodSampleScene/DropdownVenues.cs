@@ -19,7 +19,7 @@ public class DropdownVenues : MonoBehaviour
             {
                 if(location.accessible)
                 {
-                    //_venues.Add(locationAddress, location.myLocation);
+                    _venues.Add(location.locationAdress, location.myLocation);
                 }
             }
         }
@@ -29,11 +29,17 @@ public class DropdownVenues : MonoBehaviour
             {
                 if(location.visible && !location.accessible)
                 {
-                    //_venues.Add(locationAddress, location.myLocation);
+                    _venues.Add(location.locationAdress, location.myLocation);
                 }
             }
         }
 
-        //GetComponent<Dropdown>().AddOptions(_venues.Keys);
+        GetComponentInChildren<Dropdown>().ClearOptions();
+        List<string> listOfKeys = new List<string>();
+        foreach (string key in _venues.Keys)
+        {
+            listOfKeys.Add(key);
+        }
+        GetComponentInChildren<Dropdown>().AddOptions(listOfKeys);
     }
 }
