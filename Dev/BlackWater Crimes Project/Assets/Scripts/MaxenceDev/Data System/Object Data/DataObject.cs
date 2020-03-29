@@ -6,13 +6,15 @@ using UnityEngine;
 [Serializable]
 public class ObjectData<T> : MonoBehaviour where T : Data
 {
-    private GameData gameData;
+    protected GameData gameData;
 
     public T data;
 
     protected bool loaded;
 
-    public bool instantiate;
+    public bool instantiate; // Prefabs only, indicates no loading of Data after their instantiation
+
+    [HideInInspector] public bool hasApplied; // Used by the Data Container to determine if a DataObject has applied to a List
 
     void Awake()
     {
@@ -32,39 +34,34 @@ public class ObjectData<T> : MonoBehaviour where T : Data
         loaded = true;
     }
 
-    public void LoadDataOfType<_T>(_T type) where _T : Data
+    public void LoadDataOfType<_T>(_T type, List<_T> list) where _T : Data
     {
-        List<_T> list = gameData.GetListOfType(type);
-
-        if (list.Count > 0)
+        if (!gameData.dataListsContainingState[type])
         {
-            foreach (_T _type in list)
+            foreach (_T _data in list)
             {
-                if (_type.index == data.index)
+                if (_data.index == data.index)
                 {
-                    data = _type as T;
+                    data = _data as T;
                 }
             }
         }
         else
         {
             list.Add(data as _T);
+            data.dataUnlocked = true;
+            hasApplied = true;
         }
-    }
-
-    public void AddDataToList<_T>(_T type) where _T : Data
-    {
-        gameData.GetListOfType(type).Add(data as _T);
     }
 }
 
 public class DataObject : ObjectData<Data>
 {
-    private Data myType;
+    private Data myType = new Data();
 
     void Start()
     {
-        LoadDataOfType(myType);
+        LoadDataOfType(myType, new List<Data>()); // Place Holder
     }
 
     // Update() is called in Parent Class !

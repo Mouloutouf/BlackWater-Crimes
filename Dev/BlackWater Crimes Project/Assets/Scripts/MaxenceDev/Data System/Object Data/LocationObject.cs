@@ -12,12 +12,12 @@ public class LocationObject : ObjectData<Location>
 
     public GameObject menuAccessButton;
     public GameObject menuBlockedButton;
-
-    private Location myType;
+    
+    private Location myType = new Location();
 
     void Start()
     {
-        if (!instantiate) LoadDataOfType(myType);
+        if (!instantiate) LoadDataOfType(myType, gameData.locations);
     }
 
     public override void Protocol()
@@ -26,7 +26,12 @@ public class LocationObject : ObjectData<Location>
         if (!data.visible) locationSprite.SetActive(false);
         if (!data.accessible) { menuAccessButton.SetActive(false); menuBlockedButton.SetActive(true); }
 
-        if (data.visible) locationName.SetActive(true);
+        if (data.visible)
+        {
+            locationName.SetActive(true);
+            locationName.GetComponentInChildren<TextMesh>().text = data.locationName;
+        }
+        
         //if (data.completed); // code for completion location active
 
         base.Protocol();

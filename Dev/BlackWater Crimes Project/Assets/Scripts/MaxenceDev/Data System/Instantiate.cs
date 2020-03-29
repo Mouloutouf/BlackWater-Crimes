@@ -16,11 +16,14 @@ public class InstantiationProcess<T> : MonoBehaviour where T : Data
         
         int index = 0;
 
-        foreach (T _type in gameData.GetListOfType(this.type))
+        foreach (T _data in gameData.GetListOfType(this.type))
         {
-            GameObject instance = Instantiation();
-            instance.GetComponent<ObjectData<T>>().data = _type;
-            index++;
+            if (_data.dataUnlocked)
+            {
+                GameObject instance = Instantiation();
+                instance.GetComponent<ObjectData<T>>().data = _data;
+                index++;
+            }
         }
     }
 

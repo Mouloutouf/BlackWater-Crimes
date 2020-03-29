@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public enum Modes
 {
-    CrimeScene,
+    Location,
     Suspect,
     Type
 }
