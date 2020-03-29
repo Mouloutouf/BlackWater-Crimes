@@ -8,24 +8,32 @@ public class VenueValidateButton : MonoBehaviour
     [SerializeField] GameObject dropdown;
     [SerializeField] GameObject clueShower;
     [SerializeField] Text dialogueText;
+    string currentLocationAddress;
+    GameData gameData;
+
+    private void Start()
+    {
+        gameData = GameObject.Find("Data Container").GetComponent<DataContainer>().gameData;
+    }
 
     public void Validate()
     {
+        currentLocationAddress = dropdown.GetComponentInChildren<Text>().text;
+
         if(Match() == true)
         {
             dialogueText.fontSize = 45;
             dialogueText.text = "This seems logic. You can go there, anything else?";
             dropdown.GetComponent<Dropdown>().value = 0;
-            clueShower.GetComponent<AttorneyClueShowerScript>().ResetClue();
+            clueShower.GetComponent<AttorneySingleClueShowerScript>().ResetClue();
             GetComponent<Button>().interactable = false;
             GetComponentInChildren<Text>().text = "Missing elements";
         }
         else
         {
-            dialogueText.fontSize = 40;
-            dialogueText.text = "This does not make any sense... Please detective, show me something concrete!";
+            dialogueText.text = "Hmm... No, this isn't a good reason enough.";
             dropdown.GetComponent<Dropdown>().value = 0;
-            clueShower.GetComponent<AttorneyClueShowerScript>().ResetClue();
+            clueShower.GetComponent<AttorneySingleClueShowerScript>().ResetClue();
             GetComponent<Button>().interactable = false;
             GetComponentInChildren<Text>().text = "Missing elements";
         }
@@ -35,60 +43,28 @@ public class VenueValidateButton : MonoBehaviour
 
     bool Match()
     {
-        switch(dropdown.GetComponent<Dropdown>().value)
+        if(clueShower.GetComponent<AttorneySingleClueShowerScript>().currentClueShowed.GetComponent<PhotoSpecialistObject>().data.useToUnlock)
         {
-            case 0:
-                if(clueShower.GetComponent<AttorneyClueShowerScript>().currentClueShowed1.name == "HandClueBG(Clone)" && clueShower.GetComponent<AttorneyClueShowerScript>().currentClueShowed2.name == "BulletClueBG(Clone)")
-                {
-                    return true;
-                }
-                else if(clueShower.GetComponent<AttorneyClueShowerScript>().currentClueShowed2.name == "HandClueBG(Clone)" && clueShower.GetComponent<AttorneyClueShowerScript>().currentClueShowed1.name == "BulletClueBG(Clone)")
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-
-            case 1:
-                if(clueShower.GetComponent<AttorneyClueShowerScript>().currentClueShowed1.name == "PantsClueBG(Clone)" && clueShower.GetComponent<AttorneyClueShowerScript>().currentClueShowed2.name == "BeerClueBG(Clone)")
-                {
-                    return true;
-                }
-                else if(clueShower.GetComponent<AttorneyClueShowerScript>().currentClueShowed2.name == "PantsClueBG(Clone)" && clueShower.GetComponent<AttorneyClueShowerScript>().currentClueShowed1.name == "BeerClueBG(Clone)")
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-
-            case 2:
-                if(clueShower.GetComponent<AttorneyClueShowerScript>().currentClueShowed1.name == "BulletClueBG(Clone)" && clueShower.GetComponent<AttorneyClueShowerScript>().currentClueShowed2.name == "BeerClueBG(Clone)")
-                {
-                    return true;
-                }
-                else if(clueShower.GetComponent<AttorneyClueShowerScript>().currentClueShowed2.name == "BulletClueBG(Clone)" && clueShower.GetComponent<AttorneyClueShowerScript>().currentClueShowed1.name == "BeerClueBG(Clone)")
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-
-            default:
-            Debug.Log("Dropdown value is not valid!");
+            Location currentLocation = dropdown.GetComponent<DropdownVenues>()._venues[dropdown.GetComponentInChildren<Text>().text];
+            if(clueShower.GetComponent<AttorneySingleClueShowerScript>().currentClueShowed.GetComponent<PhotoSpecialistObject>().data.unlockableLocation == currentLocation)
+            {
+                return true;
+            }
+            else
+            {
                 return false;
+            }
+        } 
+        else
+        {
+            return false;
         }
     }
 
     public void Reset()
     {
         dropdown.GetComponent<Dropdown>().value = 0;
-        clueShower.GetComponent<AttorneyClueShowerScript>().ResetClue();
+        clueShower.GetComponent<AttorneySingleClueShowerScript>().ResetClue();
         GetComponent<Button>().interactable = false;
         GetComponentInChildren<Text>().text = "Missing elements";
     }
