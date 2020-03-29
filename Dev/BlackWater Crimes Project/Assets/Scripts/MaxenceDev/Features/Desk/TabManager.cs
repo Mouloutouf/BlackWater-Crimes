@@ -102,6 +102,11 @@ public class TabManager : MonoBehaviour
             mode.colorObject.GetComponent<RectTransform>().sizeDelta = new Vector2(size, 4.3f);
             offset += size;
 
+            mode.colorObject.GetComponent<RectTransform>().localPosition = new Vector3(
+                mode.colorObject.GetComponent<RectTransform>().localPosition.x,
+                mode.colorObject.GetComponent<RectTransform>().localPosition.y,
+                0);
+
             mode.colorObject.GetComponent<Image>().color = baseColor;
         }
 
@@ -177,6 +182,11 @@ public class TabManager : MonoBehaviour
         content.GetComponent<RectTransform>().sizeDelta = Vector2.zero;
         content.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
         content.GetComponent<RectTransform>().anchoredPosition = Vector3.zero;
+
+        content.GetComponent<RectTransform>().localPosition = new Vector3(
+            content.GetComponent<RectTransform>().localPosition.x, 
+            content.GetComponent<RectTransform>().localPosition.y, 
+            0);
     }
     #endregion
 

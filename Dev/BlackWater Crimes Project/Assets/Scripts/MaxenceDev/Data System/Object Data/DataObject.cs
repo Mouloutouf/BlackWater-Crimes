@@ -16,7 +16,7 @@ public class ObjectData<T> : MonoBehaviour where T : Data
 
     [HideInInspector] public bool hasApplied; // Used by the Data Container to determine if a DataObject has applied to a List
 
-    void Awake()
+    public void GetGameData()
     {
         gameData = GameObject.Find("Data Container").GetComponent<DataContainer>().gameData;
     }
@@ -52,6 +52,8 @@ public class DataObject : ObjectData<Data>
 
     void Start()
     {
+        GetGameData();
+
         LoadDataOfType(myType, new List<Data>()); // Place Holder
     }
 

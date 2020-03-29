@@ -638,6 +638,78 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5efd89196acf3e64c9e0d03799f1b7fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: sceneNames
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[Locations, Assembly-CSharp],[System.String,
+        mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[Locations, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 1
+      Data: Scene_Docks
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 1
+      Data: Scene_Bordel
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 1
+      Data: DemoEndScene
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  utilities: {fileID: 1199888300}
   _camera: {fileID: 2068303545}
   locationMenu: {fileID: 1218544209}
   menuName: {fileID: 1012728115}
@@ -3866,6 +3938,7 @@ GameObject:
   - component: {fileID: 2068303545}
   - component: {fileID: 2068303547}
   - component: {fileID: 2068303544}
+  - component: {fileID: 2068303548}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3954,6 +4027,20 @@ MonoBehaviour:
   factor: 0.000007
   returnButton: {fileID: 1783003493}
   locations: {fileID: 284849296}
+--- !u!114 &2068303548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2068303543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 615e09b24c6258f4e901c15fbcb13751, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneOrientation: 3
+  canRotate: 0
 --- !u!1 &2111487354
 GameObject:
   m_ObjectHideFlags: 0

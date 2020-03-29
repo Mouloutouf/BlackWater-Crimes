@@ -16,6 +16,11 @@ public class PhotoObject : ObjectData<Evidence>
 
     private Evidence myType = new Evidence();
 
+    void Start()
+    {
+        GetGameData();
+    }
+
     public override void Protocol()
     {
         imageObject.GetComponent<Image>().sprite = data.photo;

@@ -17,6 +17,8 @@ public class LocationObject : ObjectData<Location>
 
     void Start()
     {
+        GetGameData();
+
         if (!instantiate) LoadDataOfType(myType, gameData.locations);
     }
 

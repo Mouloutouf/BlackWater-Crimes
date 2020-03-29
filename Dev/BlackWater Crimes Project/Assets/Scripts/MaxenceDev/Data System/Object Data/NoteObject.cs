@@ -11,6 +11,8 @@ public class NoteObject : ObjectData<Note>
 
     void Start()
     {
+        GetGameData();
+
         if (!instantiate) LoadDataOfType(myType, gameData.notes);
     }
 

@@ -1,12 +1,15 @@
-﻿using System.Collections;
+﻿using Sirenix.OdinInspector;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LocationInteraction : MonoBehaviour
+public class LocationInteraction : SerializedMonoBehaviour
 {
     private GameData gameData;
+
+    public GameObject utilities;
 
     public Camera _camera;
 
@@ -19,6 +22,8 @@ public class LocationInteraction : MonoBehaviour
     public GameObject blockedButton;
 
     private LocationObject locationObject;
+
+    public Dictionary<Locations, string> sceneNames = new Dictionary<Locations, string>();
 
     void Start()
     {
@@ -76,6 +81,12 @@ public class LocationInteraction : MonoBehaviour
         menuName.text = _object.data.locationName;
         menuDescription.text = _object.data.locationDescription;
         menuClueCount.text = "Evidences found  :  " + _object.data.evidenceCollected.ToString();
+
+        accessButton.GetComponent<Button>().onClick.AddListener(delegate 
+        { 
+            utilities.GetComponent<SceneLoaderSimple>().LoadScene(sceneNames[_object.data.myLocation]); 
+        }
+        );
 
         if (!_object.data.accessible)
         {

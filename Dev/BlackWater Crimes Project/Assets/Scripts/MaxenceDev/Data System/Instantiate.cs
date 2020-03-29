@@ -15,14 +15,14 @@ public class InstantiationProcess<T> : MonoBehaviour where T : Data
         gameData = GameObject.Find("Data Container").GetComponent<DataContainer>().gameData;
     }
 
-    public void InstantiateDataOfType<T>(T type, List<T> list) where T : Data
+    public void InstantiateDataOfType<_T>(_T type, List<_T> list) where _T : Data
     {
-        foreach (T _data in list)
+        foreach (_T _data in list)
         {
             if (_data.unlockedData)
             {
                 GameObject instance = Instantiation();
-                instance.GetComponent<ObjectData<T>>().data = _data;
+                instance.GetComponent<ObjectData<_T>>().data = _data;
             }
         }
     }

@@ -10,6 +10,8 @@ public class EvidenceObject : ObjectData<Evidence>
     
     void Start()
     {
+        GetGameData();
+
         List<Evidence> myDataList = gameData.allEvidences[data.modeCategory.location];
 
         if (!instantiate) LoadDataOfType(myType, myDataList);
