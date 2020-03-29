@@ -36,21 +36,12 @@ public class ObjectData<T> : MonoBehaviour where T : Data
 
     public void LoadDataOfType<_T>(_T type, List<_T> list) where _T : Data
     {
-        if (!gameData.dataListsContainingState[type])
+        foreach (_T _data in list)
         {
-            foreach (_T _data in list)
+            if (_data.index == data.index)
             {
-                if (_data.index == data.index)
-                {
-                    data = _data as T;
-                }
+                data = _data as T;
             }
-        }
-        else
-        {
-            list.Add(data as _T);
-            data.dataUnlocked = true;
-            hasApplied = true;
         }
     }
 }

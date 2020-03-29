@@ -45,7 +45,7 @@ public class VenueValidateButton : MonoBehaviour
     {
         if(clueShower.GetComponent<AttorneySingleClueShowerScript>().currentClueShowed.GetComponent<PhotoSpecialistObject>().data.useToUnlock)
         {
-            Location currentLocation = dropdown.GetComponent<DropdownVenues>()._venues[dropdown.GetComponentInChildren<Text>().text];
+            Locations currentLocation = dropdown.GetComponent<DropdownVenues>()._venues[dropdown.GetComponentInChildren<Text>().text];
             if(clueShower.GetComponent<AttorneySingleClueShowerScript>().currentClueShowed.GetComponent<PhotoSpecialistObject>().data.unlockableLocation == currentLocation)
             {
                 return true;

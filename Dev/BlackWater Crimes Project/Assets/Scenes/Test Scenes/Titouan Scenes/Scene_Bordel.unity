@@ -457,10 +457,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    code: 
     index: 2
+    unlockedData: 0
     name: Affiche du Bordel
-    taken: 0
     hasIntel: 0
     intel: {fileID: 0}
     intelRevealed: 0
@@ -468,10 +467,13 @@ MonoBehaviour:
     photographed: 0
     photo: {fileID: 0}
     modeCategory:
-      crimeScene: 0
-      suspect: 0
+      location: 1
+      suspect: 1
       type: 0
+    useToUnlock: 0
+    unlockableLocation: 0
   instantiate: 0
+  hasApplied: 0
   intelAlpha: 0
 --- !u!65 &101305122
 BoxCollider:
@@ -1604,10 +1606,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    code: 
     index: 3
+    unlockedData: 0
     name: "Carte d'Identit\xE9"
-    taken: 0
     hasIntel: 0
     intel: {fileID: 0}
     intelRevealed: 0
@@ -1615,10 +1616,13 @@ MonoBehaviour:
     photographed: 0
     photo: {fileID: 0}
     modeCategory:
-      crimeScene: 0
+      location: 1
       suspect: 0
-      type: 0
+      type: 2
+    useToUnlock: 0
+    unlockableLocation: 0
   instantiate: 0
+  hasApplied: 0
   intelAlpha: 0
 --- !u!65 &455794431
 BoxCollider:
@@ -4873,6 +4877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d4535a0c09480245b5efe742fa7d649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thisSceneLocation: 0
   cam: {fileID: 2062746245}
   saveText: {fileID: 1631394670}
   fingerprintFilter: {fileID: 1112673352}
@@ -7326,10 +7331,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    code: 
     index: 1
+    unlockedData: 0
     name: Bon de Commande
-    taken: 0
     hasIntel: 0
     intel: {fileID: 0}
     intelRevealed: 0
@@ -7337,10 +7341,13 @@ MonoBehaviour:
     photographed: 0
     photo: {fileID: 0}
     modeCategory:
-      crimeScene: 0
-      suspect: 0
+      location: 1
+      suspect: 2
       type: 0
+    useToUnlock: 0
+    unlockableLocation: 0
   instantiate: 0
+  hasApplied: 0
   intelAlpha: 0
 --- !u!65 &2028870342
 BoxCollider:
@@ -16943,10 +16950,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    code: 
     index: 0
+    unlockedData: 0
     name: Caisse de "Soda"
-    taken: 0
     hasIntel: 0
     intel: {fileID: 0}
     intelRevealed: 0
@@ -16954,10 +16960,13 @@ MonoBehaviour:
     photographed: 0
     photo: {fileID: 0}
     modeCategory:
-      crimeScene: 0
-      suspect: 0
+      location: 1
+      suspect: 2
       type: 0
+    useToUnlock: 0
+    unlockableLocation: 0
   instantiate: 0
+  hasApplied: 0
   intelAlpha: 0
 --- !u!64 &7963013785458415245
 MeshCollider:

@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class LocationInteraction : MonoBehaviour
 {
+    private GameData gameData;
+
     public Camera _camera;
 
     public GameObject locationMenu;
@@ -17,6 +19,22 @@ public class LocationInteraction : MonoBehaviour
     public GameObject blockedButton;
 
     private LocationObject locationObject;
+
+    void Start()
+    {
+        gameData = GameObject.Find("Data Container").GetComponent<DataContainer>().gameData;
+
+        foreach (Transform tr in transform)
+        {
+            Location location = tr.GetComponent<LocationObject>().data;
+
+            if (!location.unlockedData)
+            {
+                location.unlockedData = true;
+                gameData.locations.Add(location);
+            }
+        }
+    }
 
     void Update()
     {
@@ -57,7 +75,7 @@ public class LocationInteraction : MonoBehaviour
         locationMenu.SetActive(true);
         menuName.text = _object.data.locationName;
         menuDescription.text = _object.data.locationDescription;
-        menuClueCount.text = "Indices trouvés  :  " + _object.data.evidenceCollected.ToString();
+        menuClueCount.text = "Evidences found  :  " + _object.data.evidenceCollected.ToString();
 
         if (!_object.data.accessible)
         {

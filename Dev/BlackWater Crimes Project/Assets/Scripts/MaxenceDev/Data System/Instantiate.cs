@@ -4,25 +4,25 @@ using UnityEngine;
 
 public class InstantiationProcess<T> : MonoBehaviour where T : Data
 {
-    T type;
+    protected T type;
 
-    private GameData gameData;
+    protected GameData gameData;
 
     public GameObject prefab;
-
-    void Start()
+    
+    public void GetGameData()
     {
         gameData = GameObject.Find("Data Container").GetComponent<DataContainer>().gameData;
-        
-        int index = 0;
+    }
 
-        foreach (T _data in gameData.GetListOfType(this.type))
+    public void InstantiateDataOfType<T>(T type, List<T> list) where T : Data
+    {
+        foreach (T _data in list)
         {
-            if (_data.dataUnlocked)
+            if (_data.unlockedData)
             {
                 GameObject instance = Instantiation();
                 instance.GetComponent<ObjectData<T>>().data = _data;
-                index++;
             }
         }
     }
@@ -40,10 +40,20 @@ public class Instantiate : InstantiationProcess<Evidence>
     public float offset;
     private float ofst = 0;
 
-    // Start() is called in Parent Class !
+    void Start()
+    {
+        GetGameData();
+
+        foreach (List<Evidence> _list in gameData.allEvidences.Values)
+        {
+            InstantiateDataOfType(type, _list);
+        }
+        
+    }
 
     public override GameObject Instantiation()
     {
+
         GameObject _prefab = Instantiate(prefab) as GameObject;
         _prefab.transform.SetParent(gameObject.transform, false);
 

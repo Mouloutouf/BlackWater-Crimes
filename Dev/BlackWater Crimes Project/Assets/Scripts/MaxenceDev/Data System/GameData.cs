@@ -30,10 +30,9 @@ public enum DataTypes
 
 public class Data
 {
-    public string code;
     public int index;
 
-    public bool dataUnlocked;
+    public bool unlockedData;
 
     public Data()
     {
@@ -54,8 +53,6 @@ public class Note : Data
 public class Evidence : Data
 {
     public string name;
-
-    public bool taken;
     
     public bool hasIntel;
     public Sprite intel;
@@ -116,7 +113,7 @@ public class Location : Data
 [CreateAssetMenu(fileName = "New Player Data", menuName = "Player Data Scriptable")]
 public class GameData : SerializedScriptableObject
 {
-    public Dictionary<Data, bool> dataListsContainingState = new Dictionary<Data, bool>
+    public Dictionary<Data, bool> dataListsContainingState { get; private set; } = new Dictionary<Data, bool>
     {
         {new Evidence(), false },
         {new Note(), false },

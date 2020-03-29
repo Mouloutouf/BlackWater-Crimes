@@ -16,14 +16,6 @@ public class PhotoObject : ObjectData<Evidence>
 
     private Evidence myType = new Evidence();
 
-    void Start()
-    {
-        if (!instantiate)
-        {
-            LoadDataOfType(myType, gameData.evidences);
-        }
-    }
-
     public override void Protocol()
     {
         imageObject.GetComponent<Image>().sprite = data.photo;

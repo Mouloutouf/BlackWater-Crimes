@@ -7,6 +7,10 @@ using UnityEditor;
 
 public class EvidenceInteraction : MonoBehaviour
 {
+    private GameData gameData;
+
+    public Locations thisSceneLocation;
+
     [SerializeField] Camera cam;
     [SerializeField] GameObject saveText;
     [SerializeField] GameObject fingerprintFilter;
@@ -41,6 +45,11 @@ public class EvidenceInteraction : MonoBehaviour
         saveText.SetActive(false);
     }
     
+    void Start()
+    {
+        gameData = GameObject.Find("Data Container").GetComponent<DataContainer>().gameData;
+    }
+
     void Update()
     {
         ObjectRotation();
@@ -132,7 +141,10 @@ public class EvidenceInteraction : MonoBehaviour
         {
             GetComponent<AudioSource>().PlayOneShot(photoSavedSound);
             StartCoroutine(DisplayText("Photo Saved"));
+
             _evidence.photographed = true;
+            _evidence.unlockedData = true;
+            gameData.allEvidences[thisSceneLocation].Add(_evidence); // IMPORTANT : This is where we unlock the evidence in the List
         }
         else
         {

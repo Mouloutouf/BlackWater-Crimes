@@ -23,8 +23,16 @@ public class InstantiatePhotos : InstantiationProcess<Evidence>
 
     public GameObject snapColliderPrefab;
     public float snapDist;
-    
-    // Start() is called in Parent Class !
+
+    void Start()
+    {
+        GetGameData();
+
+        foreach (List<Evidence> _list in gameData.allEvidences.Values)
+        {
+            InstantiateDataOfType(type, _list);
+        }
+    }
 
     public override GameObject Instantiation()
     {
