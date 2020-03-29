@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 123089751}
   - component: {fileID: 123089752}
   m_Layer: 0
-  m_Name: Quarter 1
+  m_Name: Quarter Douglas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -622,6 +622,7 @@ Transform:
   m_Children:
   - {fileID: 1582593723}
   - {fileID: 1284978966}
+  - {fileID: 1163138065}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -637,6 +638,78 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5efd89196acf3e64c9e0d03799f1b7fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: sceneNames
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[Locations, Assembly-CSharp],[System.String,
+        mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[Locations, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 1
+      Data: Scene_Docks
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 1
+      Data: Scene_Bordel
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 1
+      Data: DemoEndScene
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  utilities: {fileID: 1199888300}
   _camera: {fileID: 2068303545}
   locationMenu: {fileID: 1218544209}
   menuName: {fileID: 1012728115}
@@ -728,7 +801,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 446922859}
-  m_Text: Grand Quartier
+  m_Text: Chatham
   m_OffsetZ: 0
   m_CharacterSize: 0.02
   m_LineSpacing: 1
@@ -1137,7 +1210,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 645012772}
-  m_Text: Quartier Riche
+  m_Text: Brighton Park
   m_OffsetZ: 0
   m_CharacterSize: 0.02
   m_LineSpacing: 1
@@ -2031,6 +2104,158 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1134087392}
   m_CullTransparentMesh: 0
+--- !u!1001 &1163138064
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 284849297}
+    m_Modifications:
+    - target: {fileID: 5548631633478804835, guid: 8fa027d05b0bbcf47a4a7857940ce056,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548631633478804835, guid: 8fa027d05b0bbcf47a4a7857940ce056,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.4010697
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548631633478804835, guid: 8fa027d05b0bbcf47a4a7857940ce056,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.35294116
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548631634433681298, guid: 8fa027d05b0bbcf47a4a7857940ce056,
+        type: 3}
+      propertyPath: m_Name
+      value: Location Abigail_House
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548631634433681299, guid: 8fa027d05b0bbcf47a4a7857940ce056,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.886
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548631634433681299, guid: 8fa027d05b0bbcf47a4a7857940ce056,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.412
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548631634433681299, guid: 8fa027d05b0bbcf47a4a7857940ce056,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548631634433681299, guid: 8fa027d05b0bbcf47a4a7857940ce056,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548631634433681299, guid: 8fa027d05b0bbcf47a4a7857940ce056,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548631634433681299, guid: 8fa027d05b0bbcf47a4a7857940ce056,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548631634433681299, guid: 8fa027d05b0bbcf47a4a7857940ce056,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548631634433681299, guid: 8fa027d05b0bbcf47a4a7857940ce056,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548631634433681299, guid: 8fa027d05b0bbcf47a4a7857940ce056,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548631634433681299, guid: 8fa027d05b0bbcf47a4a7857940ce056,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548631634433681299, guid: 8fa027d05b0bbcf47a4a7857940ce056,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548631634433681301, guid: 8fa027d05b0bbcf47a4a7857940ce056,
+        type: 3}
+      propertyPath: menuAccessButton
+      value: 
+      objectReference: {fileID: 154943570}
+    - target: {fileID: 5548631634433681301, guid: 8fa027d05b0bbcf47a4a7857940ce056,
+        type: 3}
+      propertyPath: menuBlockedButton
+      value: 
+      objectReference: {fileID: 1529153194}
+    - target: {fileID: 5548631634433681301, guid: 8fa027d05b0bbcf47a4a7857940ce056,
+        type: 3}
+      propertyPath: data.accessible
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548631634433681301, guid: 8fa027d05b0bbcf47a4a7857940ce056,
+        type: 3}
+      propertyPath: data.locationName
+      value: Abigail's House
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548631634433681301, guid: 8fa027d05b0bbcf47a4a7857940ce056,
+        type: 3}
+      propertyPath: data.locationDescription
+      value: This is were Abigail lives, a nice flat for such a newcomer in the underground
+        business of Chicago. She used to be good friend with Anna, until the incident
+        of course.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548631634433681301, guid: 8fa027d05b0bbcf47a4a7857940ce056,
+        type: 3}
+      propertyPath: data.evidenceCollected
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548631634433681301, guid: 8fa027d05b0bbcf47a4a7857940ce056,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 2068303545}
+    - target: {fileID: 5548631634433681301, guid: 8fa027d05b0bbcf47a4a7857940ce056,
+        type: 3}
+      propertyPath: data.index
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548631634433681301, guid: 8fa027d05b0bbcf47a4a7857940ce056,
+        type: 3}
+      propertyPath: data.visible
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548631634433681301, guid: 8fa027d05b0bbcf47a4a7857940ce056,
+        type: 3}
+      propertyPath: data.known
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548631634433681301, guid: 8fa027d05b0bbcf47a4a7857940ce056,
+        type: 3}
+      propertyPath: data.myLocation
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548631634904861448, guid: 8fa027d05b0bbcf47a4a7857940ce056,
+        type: 3}
+      propertyPath: m_Text
+      value: Le Bordel
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8fa027d05b0bbcf47a4a7857940ce056, type: 3}
+--- !u!4 &1163138065 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5548631634433681299, guid: 8fa027d05b0bbcf47a4a7857940ce056,
+    type: 3}
+  m_PrefabInstance: {fileID: 1163138064}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1186907839
 GameObject:
   m_ObjectHideFlags: 0
@@ -2071,7 +2296,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1186907839}
-  m_Text: Quartier Ouvrier
+  m_Text: Englewoods
   m_OffsetZ: 0
   m_CharacterSize: 0.02
   m_LineSpacing: 1
@@ -2238,7 +2463,7 @@ GameObject:
   - component: {fileID: 1268589367}
   - component: {fileID: 1268589368}
   m_Layer: 0
-  m_Name: Quarter 2
+  m_Name: Quarter Brighton Park
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2390,7 +2615,7 @@ PrefabInstance:
     - target: {fileID: 5548631634433681298, guid: 8fa027d05b0bbcf47a4a7857940ce056,
         type: 3}
       propertyPath: m_Name
-      value: Location Bordel
+      value: Location Brothel
       objectReference: {fileID: 0}
     - target: {fileID: 5548631634433681299, guid: 8fa027d05b0bbcf47a4a7857940ce056,
         type: 3}
@@ -2465,7 +2690,7 @@ PrefabInstance:
     - target: {fileID: 5548631634433681301, guid: 8fa027d05b0bbcf47a4a7857940ce056,
         type: 3}
       propertyPath: data.locationName
-      value: Le Bordel
+      value: Brothel
       objectReference: {fileID: 0}
     - target: {fileID: 5548631634433681301, guid: 8fa027d05b0bbcf47a4a7857940ce056,
         type: 3}
@@ -2486,6 +2711,16 @@ PrefabInstance:
     - target: {fileID: 5548631634433681301, guid: 8fa027d05b0bbcf47a4a7857940ce056,
         type: 3}
       propertyPath: data.index
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548631634433681301, guid: 8fa027d05b0bbcf47a4a7857940ce056,
+        type: 3}
+      propertyPath: data.visible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548631634433681301, guid: 8fa027d05b0bbcf47a4a7857940ce056,
+        type: 3}
+      propertyPath: data.myLocation
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5548631634904861448, guid: 8fa027d05b0bbcf47a4a7857940ce056,
@@ -2848,7 +3083,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1547233939}
-  m_Text: Vieux Quartier
+  m_Text: Douglas
   m_OffsetZ: 0
   m_CharacterSize: 0.02
   m_LineSpacing: 1
@@ -3271,7 +3506,7 @@ GameObject:
   - component: {fileID: 1943638386}
   - component: {fileID: 1943638387}
   m_Layer: 0
-  m_Name: Quarter 3
+  m_Name: Quarter Englewoods
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3487,7 +3722,7 @@ GameObject:
   - component: {fileID: 2022548494}
   - component: {fileID: 2022548495}
   m_Layer: 0
-  m_Name: Quarter 4
+  m_Name: Quarter Chatham
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3703,6 +3938,7 @@ GameObject:
   - component: {fileID: 2068303545}
   - component: {fileID: 2068303547}
   - component: {fileID: 2068303544}
+  - component: {fileID: 2068303548}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3791,6 +4027,20 @@ MonoBehaviour:
   factor: 0.000007
   returnButton: {fileID: 1783003493}
   locations: {fileID: 284849296}
+--- !u!114 &2068303548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2068303543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 615e09b24c6258f4e901c15fbcb13751, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneOrientation: 3
+  canRotate: 0
 --- !u!1 &2111487354
 GameObject:
   m_ObjectHideFlags: 0
@@ -4053,5 +4303,20 @@ PrefabInstance:
       propertyPath: locationName
       value: 
       objectReference: {fileID: 1376789760}
+    - target: {fileID: 5548631634433681301, guid: 8fa027d05b0bbcf47a4a7857940ce056,
+        type: 3}
+      propertyPath: data.visible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548631634433681301, guid: 8fa027d05b0bbcf47a4a7857940ce056,
+        type: 3}
+      propertyPath: data.accessible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548631634433681301, guid: 8fa027d05b0bbcf47a4a7857940ce056,
+        type: 3}
+      propertyPath: data.locationName
+      value: Docks
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fa027d05b0bbcf47a4a7857940ce056, type: 3}

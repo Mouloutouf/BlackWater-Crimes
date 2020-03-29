@@ -21,13 +21,13 @@ public class DeskEvidenceObject : ObjectData<Evidence>
 
 		button.onClick.AddListener( delegate { Close(); } );
 
-        if (!data.taken) gameObject.SetActive(false);
+        if (data != null) gameObject.SetActive(false);
 
         base.Protocol();
     }
 
     public void Close()
     {
-        data.taken = false;
+        //data.taken = false;
     }
 }

@@ -7,11 +7,13 @@ public class NoteObject : ObjectData<Note>
 {
     public List<GameObject> textObjects;
 
-    private Note myType;
+    private Note myType = new Note();
 
     void Start()
     {
-        if (!instantiate) LoadDataOfType(myType);
+        GetGameData();
+
+        if (!instantiate) LoadDataOfType(myType, gameData.notes);
     }
 
     public override void Protocol()

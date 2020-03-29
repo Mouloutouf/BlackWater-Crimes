@@ -13,12 +13,7 @@ public class ReportObject : ObjectData<Report>
 
     public Text reportText;
 
-    private Report myType;
-
-    void Start()
-    {
-        if (!instantiate) LoadDataOfType(myType);
-    }
+    private Report myType = new Report();
 
     public override void Protocol()
     {

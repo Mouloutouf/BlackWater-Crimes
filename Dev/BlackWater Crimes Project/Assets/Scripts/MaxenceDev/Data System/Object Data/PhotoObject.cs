@@ -14,14 +14,11 @@ public class PhotoObject : ObjectData<Evidence>
     
     public GameObject imageObject;
 
-    private Evidence myType;
+    private Evidence myType = new Evidence();
 
     void Start()
     {
-        if (!instantiate)
-        {
-            LoadDataOfType(myType);
-        }
+        GetGameData();
     }
 
     public override void Protocol()
@@ -52,23 +49,23 @@ public class PhotoObject : ObjectData<Evidence>
     {
         string word = "";
 
-        if (currentMode.mode == Modes.CrimeScene)
+        if (currentMode.mode == Modes.Location)
         {
-            if (data.modeCategory.crimeScene == Locations.Docks) word = "Docks";
-            else if (data.modeCategory.crimeScene == Locations.Whorehouse) word = "Bordel";
-            else if (data.modeCategory.crimeScene == Locations.MayorHouse) word = "Maison";
+            if (data.modeCategory.location == Locations.Docks) word = "Docks";
+            else if (data.modeCategory.location == Locations.Brothel) word = "Bordel";
+            else if (data.modeCategory.location == Locations.Anna_House) word = "Maison";
         }
         else if (currentMode.mode == Modes.Suspect)
         {
-            if (data.modeCategory.suspect == Characters.Anna) word = "Anna";
-            else if (data.modeCategory.suspect == Characters.Jack) word = "Jack";
-            else if (data.modeCategory.suspect == Characters.Oliver) word = "Oliver";
+            if (data.modeCategory.suspect == Suspects.Abigail_White) word = "Anna";
+            else if (data.modeCategory.suspect == Suspects.Umberto_Moretti) word = "Jack";
+            else if (data.modeCategory.suspect == Suspects.Richard_Anderson) word = "Oliver";
         }
         else if (currentMode.mode == Modes.Type)
         {
-            if (data.modeCategory.type == Types.Organic) word = "Organic";
-            else if (data.modeCategory.type == Types.Ballistic) word = "Ballistic";
-            else if (data.modeCategory.type == Types.Other) word = "Other";
+            if (data.modeCategory.type == Types.Brands) word = "Organic";
+            else if (data.modeCategory.type == Types.Crime) word = "Ballistic";
+            else if (data.modeCategory.type == Types.Clothing) word = "Other";
         }
 
         return word;
@@ -76,25 +73,25 @@ public class PhotoObject : ObjectData<Evidence>
 
     private int GetTabParent(bool yes)
     {
-        if (currentMode.mode == Modes.CrimeScene)
+        if (currentMode.mode == Modes.Location)
         {
-            if (data.modeCategory.crimeScene == Locations.Docks) return 0;
-            else if (data.modeCategory.crimeScene == Locations.Whorehouse) return 1;
-            else if (data.modeCategory.crimeScene == Locations.MayorHouse) return 2;
+            if (data.modeCategory.location == Locations.Docks) return 0;
+            else if (data.modeCategory.location == Locations.Brothel) return 1;
+            else if (data.modeCategory.location == Locations.Anna_House) return 2;
             else return 0;
         }
         else if (currentMode.mode == Modes.Suspect)
         {
-            if (data.modeCategory.suspect == Characters.Anna) return 0;
-            else if (data.modeCategory.suspect == Characters.Jack) return 1;
-            else if (data.modeCategory.suspect == Characters.Oliver) return 2;
+            if (data.modeCategory.suspect == Suspects.Abigail_White) return 0;
+            else if (data.modeCategory.suspect == Suspects.Umberto_Moretti) return 1;
+            else if (data.modeCategory.suspect == Suspects.Richard_Anderson) return 2;
             else return 0;
         }
         else if (currentMode.mode == Modes.Type)
         {
-            if (data.modeCategory.type == Types.Organic) return 0;
-            else if (data.modeCategory.type == Types.Ballistic) return 1;
-            else if (data.modeCategory.type == Types.Other) return 2;
+            if (data.modeCategory.type == Types.Brands) return 0;
+            else if (data.modeCategory.type == Types.Crime) return 1;
+            else if (data.modeCategory.type == Types.Clothing) return 2;
             else return 0;
         }
         else return 0;

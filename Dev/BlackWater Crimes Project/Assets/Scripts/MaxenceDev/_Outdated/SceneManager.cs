@@ -63,7 +63,7 @@ public class SceneManager : MonoBehaviour
         {
             foreach (Transform transform in contents[index].contentObject.transform)
             {
-                if (_type.code == transform.gameObject.GetComponent<ObjectData<T>>().data.code)
+                if (_type.index == transform.gameObject.GetComponent<ObjectData<T>>().data.index)
                 {
                     transform.gameObject.GetComponent<ObjectData<T>>().data = _type;
                 }

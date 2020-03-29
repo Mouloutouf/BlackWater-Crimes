@@ -6,15 +6,17 @@ using UnityEngine;
 [Serializable]
 public class ObjectData<T> : MonoBehaviour where T : Data
 {
-    private GameData gameData;
+    protected GameData gameData;
 
     public T data;
 
     protected bool loaded;
 
-    public bool instantiate;
+    public bool instantiate; // Prefabs only, indicates no loading of Data after their instantiation
 
-    void Awake()
+    [HideInInspector] public bool hasApplied; // Used by the Data Container to determine if a DataObject has applied to a List
+
+    public void GetGameData()
     {
         gameData = GameObject.Find("Data Container").GetComponent<DataContainer>().gameData;
     }
@@ -32,39 +34,27 @@ public class ObjectData<T> : MonoBehaviour where T : Data
         loaded = true;
     }
 
-    public void LoadDataOfType<_T>(_T type) where _T : Data
+    public void LoadDataOfType<_T>(_T type, List<_T> list) where _T : Data
     {
-        List<_T> list = gameData.GetListOfType(type);
-
-        if (list.Count > 0)
+        foreach (_T _data in list)
         {
-            foreach (_T _type in list)
+            if (_data.index == data.index)
             {
-                if (_type.index == data.index)
-                {
-                    data = _type as T;
-                }
+                data = _data as T;
             }
         }
-        else
-        {
-            list.Add(data as _T);
-        }
-    }
-
-    public void AddDataToList<_T>(_T type) where _T : Data
-    {
-        gameData.GetListOfType(type).Add(data as _T);
     }
 }
 
 public class DataObject : ObjectData<Data>
 {
-    private Data myType;
+    private Data myType = new Data();
 
     void Start()
     {
-        LoadDataOfType(myType);
+        GetGameData();
+
+        LoadDataOfType(myType, new List<Data>()); // Place Holder
     }
 
     // Update() is called in Parent Class !

@@ -1,11 +1,16 @@
-﻿using System.Collections;
+﻿using Sirenix.OdinInspector;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LocationInteraction : MonoBehaviour
+public class LocationInteraction : SerializedMonoBehaviour
 {
+    private GameData gameData;
+
+    public GameObject utilities;
+
     public Camera _camera;
 
     public GameObject locationMenu;
@@ -17,6 +22,24 @@ public class LocationInteraction : MonoBehaviour
     public GameObject blockedButton;
 
     private LocationObject locationObject;
+
+    public Dictionary<Locations, string> sceneNames = new Dictionary<Locations, string>();
+
+    void Start()
+    {
+        gameData = GameObject.Find("Data Container").GetComponent<DataContainer>().gameData;
+
+        foreach (Transform tr in transform)
+        {
+            Location location = tr.GetComponent<LocationObject>().data;
+
+            if (!location.unlockedData)
+            {
+                location.unlockedData = true;
+                gameData.locations.Add(location);
+            }
+        }
+    }
 
     void Update()
     {
@@ -57,7 +80,13 @@ public class LocationInteraction : MonoBehaviour
         locationMenu.SetActive(true);
         menuName.text = _object.data.locationName;
         menuDescription.text = _object.data.locationDescription;
-        menuClueCount.text = "Indices trouvés  :  " + _object.data.evidenceCollected.ToString();
+        menuClueCount.text = "Evidences found  :  " + _object.data.evidenceCollected.ToString();
+
+        accessButton.GetComponent<Button>().onClick.AddListener(delegate 
+        { 
+            utilities.GetComponent<SceneLoaderSimple>().LoadScene(sceneNames[_object.data.myLocation]); 
+        }
+        );
 
         if (!_object.data.accessible)
         {

@@ -329,10 +329,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    code: 
     index: 2
+    unlockedData: 0
     name: Affiche du Bordel
-    taken: 0
     hasIntel: 0
     intel: {fileID: 0}
     intelRevealed: 0
@@ -340,10 +339,13 @@ MonoBehaviour:
     photographed: 0
     photo: {fileID: 0}
     modeCategory:
-      crimeScene: 0
-      suspect: 0
+      location: 1
+      suspect: 1
       type: 0
+    useToUnlock: 0
+    unlockableLocation: 0
   instantiate: 0
+  hasApplied: 0
   intelAlpha: 0
 --- !u!65 &101305122
 BoxCollider:
@@ -1193,10 +1195,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    code: 
     index: 3
+    unlockedData: 0
     name: "Carte d'Identit\xE9"
-    taken: 0
     hasIntel: 0
     intel: {fileID: 0}
     intelRevealed: 0
@@ -1204,10 +1205,13 @@ MonoBehaviour:
     photographed: 0
     photo: {fileID: 0}
     modeCategory:
-      crimeScene: 0
+      location: 1
       suspect: 0
-      type: 0
+      type: 2
+    useToUnlock: 0
+    unlockableLocation: 0
   instantiate: 0
+  hasApplied: 0
   intelAlpha: 0
 --- !u!65 &455794431
 BoxCollider:
@@ -4106,6 +4110,29 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1318291804 stripped
 MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294605707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d4535a0c09480245b5efe742fa7d649, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisSceneLocation: 0
+  cam: {fileID: 2062746245}
+  saveText: {fileID: 1631394670}
+  fingerprintFilter: {fileID: 1112673352}
+  fingerprintToggle: {fileID: 1799772547}
+  returnButton: {fileID: 162733226}
+  joystick: {fileID: 1074195501}
+  rotateSpeed: 150
+  currentClueHolder: {fileID: 0}
+  photoShotSound: {fileID: 8300000, guid: 039980677d9aedb4b8fbac18807ac7f1, type: 3}
+  photoSavedSound: {fileID: 8300000, guid: c0d8d8c097446914d9e7d672c7177fb9, type: 3}
+  photoReplacedSound: {fileID: 8300000, guid: 602c9ad97e86bd64e913f0539601d20a, type: 3}
+  fingerprintDiscoveredSound: {fileID: 8300000, guid: c6fdc7f41a026f348bb037b534bf5230,
   m_CorrespondingSourceObject: {fileID: 9045211434734282764, guid: 3ad9061556b69b64eb83004ba39f7c7a,
     type: 3}
   m_PrefabInstance: {fileID: 9045211433753698640}
@@ -5418,10 +5445,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    code: 
     index: 1
+    unlockedData: 0
     name: Bon de Commande
-    taken: 0
     hasIntel: 0
     intel: {fileID: 0}
     intelRevealed: 0
@@ -5429,10 +5455,13 @@ MonoBehaviour:
     photographed: 0
     photo: {fileID: 0}
     modeCategory:
-      crimeScene: 0
-      suspect: 0
+      location: 1
+      suspect: 2
       type: 0
+    useToUnlock: 0
+    unlockableLocation: 0
   instantiate: 0
+  hasApplied: 0
   intelAlpha: 0
 --- !u!65 &2028870342
 BoxCollider:
@@ -14916,10 +14945,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    code: 
     index: 0
+    unlockedData: 0
     name: Caisse de "Soda"
-    taken: 0
     hasIntel: 0
     intel: {fileID: 0}
     intelRevealed: 0
@@ -14927,10 +14955,13 @@ MonoBehaviour:
     photographed: 0
     photo: {fileID: 0}
     modeCategory:
-      crimeScene: 0
-      suspect: 0
+      location: 1
+      suspect: 2
       type: 0
+    useToUnlock: 0
+    unlockableLocation: 0
   instantiate: 0
+  hasApplied: 0
   intelAlpha: 0
 --- !u!64 &7963013785458415245
 MeshCollider:

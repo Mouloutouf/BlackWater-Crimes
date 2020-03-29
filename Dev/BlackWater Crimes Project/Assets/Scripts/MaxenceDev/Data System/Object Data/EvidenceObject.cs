@@ -6,11 +6,15 @@ public class EvidenceObject : ObjectData<Evidence>
 {
     [Range(0, 1)] public float intelAlpha;
 
-    private Evidence myType;
-
+    private Evidence myType = new Evidence();
+    
     void Start()
     {
-        if (!instantiate) LoadDataOfType(myType);
+        GetGameData();
+
+        List<Evidence> myDataList = gameData.allEvidences[data.modeCategory.location];
+
+        if (!instantiate) LoadDataOfType(myType, myDataList);
     }
 
     public override void Protocol()

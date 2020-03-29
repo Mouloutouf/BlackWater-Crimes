@@ -25,7 +25,7 @@ public class SpecialistValidateButton : MonoBehaviour
                 {
                     if(report.elementName == script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.name)
                     {
-                        //report.unlockedData = true;
+                        report.unlockedData = true;
                     }
                 }  
             }*/
@@ -34,27 +34,27 @@ public class SpecialistValidateButton : MonoBehaviour
         {
             if(specialistType == SpecialistType.ClothDesigner)
             {
-            //gameData.allReports[Indics.Brandon_Bennington][0].unlockedData = true;
-            //gameData.allReports[Indics.Brandon_Bennington][0].elementSprite = script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.sprite;
-            //gameData.allReports[Indics.Brandon_Bennington][0].elementName = script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.name;
+                gameData.allReports[Indics.Brandon_Bennington][0].unlockedData = true;
+                gameData.allReports[Indics.Brandon_Bennington][0].elementSprite = script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.photo;
+                gameData.allReports[Indics.Brandon_Bennington][0].elementName = script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.name;
             }
             else if(specialistType == SpecialistType.CustomsOfficer)
             {
-            //gameData.allReports[Indics.Arnold_Steele][0].unlockedData = true;
-            //gameData.allReports[Indics.Arnold_Steele][0].elementSprite = script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.sprite;
-            //gameData.allReports[Indics.Arnold_Steele][0].elementName = script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.name;
+                gameData.allReports[Indics.Arnold_Steele][0].unlockedData = true;
+                gameData.allReports[Indics.Arnold_Steele][0].elementSprite = script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.photo;
+                gameData.allReports[Indics.Arnold_Steele][0].elementName = script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.name;
             }
             else if(specialistType == SpecialistType.ForensicOfficer)
             {
-            //gameData.allReports[Indics.Quentin_Copeland][0].unlockedData = true;
-            //gameData.allReports[Indics.Quentin_Copeland][0].elementSprite = script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.sprite;
-            //gameData.allReports[Indics.Quentin_Copeland][0].elementName = script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.name;
+                gameData.allReports[Indics.Quentin_Copeland][0].unlockedData = true;
+                gameData.allReports[Indics.Quentin_Copeland][0].elementSprite = script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.photo;
+                gameData.allReports[Indics.Quentin_Copeland][0].elementName = script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.name;
             }
             else if(specialistType == SpecialistType.USCCSecretary)
             {
-            ///gameData.allReports[Indics.Miss_Marshall][0].unlockedData = true;
-            //gameData.allReports[Indics.Miss_Marshall][0].elementSprite = script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.sprite;
-            //gameData.allReports[Indics.Miss_Marshall][0].elementName = script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.name;
+                gameData.allReports[Indics.Miss_Marshall][0].unlockedData = true;
+                gameData.allReports[Indics.Miss_Marshall][0].elementSprite = script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.photo;
+                gameData.allReports[Indics.Miss_Marshall][0].elementName = script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.name;
             }
         }
 
@@ -66,19 +66,19 @@ public class SpecialistValidateButton : MonoBehaviour
 
     bool MatchType()
     {
-        if(specialistType == SpecialistType.ClothDesigner && script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.modeCategory.type == Types.Other) //Clothing
+        if(specialistType == SpecialistType.ClothDesigner && script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.modeCategory.type == Types.Clothing) 
         {
             return true;
         }
-        else if (specialistType == SpecialistType.CustomsOfficer && script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.modeCategory.type == Types.Other) //Documents
+        else if (specialistType == SpecialistType.CustomsOfficer && script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.modeCategory.type == Types.Documents) 
         {
             return true;
         }
-        else if (specialistType == SpecialistType.ForensicOfficer && script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.modeCategory.type == Types.Other) //Crime
+        else if (specialistType == SpecialistType.ForensicOfficer && script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.modeCategory.type == Types.Crime) 
         {
             return true;
         }
-        else if (specialistType == SpecialistType.USCCSecretary && script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.modeCategory.type == Types.Other) //Brands
+        else if (specialistType == SpecialistType.USCCSecretary && script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.modeCategory.type == Types.Brands) 
         {
             return true;
         }

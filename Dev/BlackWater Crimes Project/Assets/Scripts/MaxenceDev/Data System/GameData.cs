@@ -4,17 +4,19 @@ using UnityEngine;
 using System;
 using Sirenix.OdinInspector;
 
-public enum Locations { Docks, Whorehouse, MayorHouse }
+public enum Locations { Docks, Brothel, Anna_House, New_House, Politician_Office, Cop_Office, Mafia_HideOut, Anna_House_Secret, Brothel_HideOut }
 
-public enum Characters { Jack, Anna, Oliver }
+public enum Suspects { Umberto_Moretti, Abigail_White, Richard_Anderson, Bob_Jenkins }
 
-public enum Types { Organic, Ballistic, Other }
+public enum Indics { Master_Thommers, Brandon_Bennington, James_Walker, Quentin_Copeland, Thomas_Maxwell, Miss_Marshall, Bob_Jenkins, Arnold_Steele, Standard }
+
+public enum Types { Brands, Crime, Clothing, Documents }
 
 [Serializable]
 public class ModeCategory
 {
-    public Locations crimeScene;
-    public Characters suspect;
+    public Locations location;
+    public Suspects suspect;
     public Types type;
 }
 
@@ -28,8 +30,9 @@ public enum DataTypes
 
 public class Data
 {
-    public string code;
     public int index;
+
+    public bool unlockedData;
 
     public Data()
     {
@@ -50,8 +53,6 @@ public class Note : Data
 public class Evidence : Data
 {
     public string name;
-
-    public bool taken;
     
     public bool hasIntel;
     public Sprite intel;
@@ -63,6 +64,10 @@ public class Evidence : Data
     public Sprite photo;
 
     public ModeCategory modeCategory;
+
+    public bool useToUnlock;
+    [ShowIf("useToUnlock")]
+    public Locations unlockableLocation;
 }
 
 [Serializable]
@@ -78,6 +83,10 @@ public class Report : Data
     [HideLabel]
     [MultiLineProperty(15)]
     public string reportText;
+
+    public Modes mode;
+
+
 }
 
 [Serializable]
@@ -90,24 +99,35 @@ public class Location : Data
     public bool completed;
 
     public string locationName;
+    public string locationAdress;
     [Title("Report Text", bold: false)]
     [HideLabel]
     [MultiLineProperty(5)]
     public string locationDescription;
     public int evidenceCollected;
+
+    public Locations myLocation;
 }
 
 // Facile à sauvegarder
 [CreateAssetMenu(fileName = "New Player Data", menuName = "Player Data Scriptable")]
-public class GameData : ScriptableObject
+public class GameData : SerializedScriptableObject
 {
-    public Dictionary<string, bool> dataListsContainingState = new Dictionary<string, bool>();
+    public Dictionary<Data, bool> dataListsContainingState { get; private set; } = new Dictionary<Data, bool>
+    {
+        {new Evidence(), false },
+        {new Note(), false },
+        {new Report(), false },
+        {new Location(), false }
+    };
 
     public List<Evidence> evidences = new List<Evidence>();
-    
+    public Dictionary<Locations, List<Evidence>> allEvidences = new Dictionary<Locations, List<Evidence>>();
+
     public List<Note> notes = new List<Note>();
 
     public List<Report> reports = new List<Report>();
+    public Dictionary<Indics, List<Report>> allReports = new Dictionary<Indics, List<Report>>();
 
     public List<Location> locations = new List<Location>();
 
@@ -119,6 +139,12 @@ public class GameData : ScriptableObject
         InitListOfType(locations);
     }
 
+    public void InitListOfType<T>(List<T> list) where T : Data
+    {
+        int index = 0;
+        foreach (T type in list) { type.index = index; index++; }
+    }
+    
     private Dictionary<Type, string> allTypes = new Dictionary<Type, string>
     {
         {typeof(Evidence), "evidence"},
@@ -142,11 +168,5 @@ public class GameData : ScriptableObject
             default:
                 return null;
         }
-    }
-
-    public void InitListOfType<T>(List<T> list) where T : Data
-    {
-        int index = 0;
-        foreach (T type in list) { type.index = index; index++; }
     }
 }
