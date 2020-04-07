@@ -68,13 +68,13 @@ public class TabManager : MonoBehaviour
 
     public void SetPhotosPosition()
     {
-        foreach (GameObject tabObject in tabsObjects)
+        foreach (GameObject tabObject in tabsObjects) // for each tab (tab parent / object)
         {
-            for (int q = 0; q < tabsContents[tabObject].Count; q++)
+            for (int q = 0; q < tabsContents[tabObject].Count; q++) // for each page (tab content)
             {
                 int index = 0;
 
-                foreach (Transform photo in tabsContents[tabObject][q].transform)
+                foreach (Transform photo in tabsContents[tabObject][q].transform) // for each photo
                 {
                     photo.GetComponent<RectTransform>().anchoredPosition = desk.spawnPoints[index];
                     index++;
@@ -163,6 +163,11 @@ public class TabManager : MonoBehaviour
             tabButton.GetComponent<RectTransform>().anchoredPosition = new Vector2(offsetValue, -15);
             offsetValue += -(tabs.GetComponent<RectTransform>().sizeDelta.x / sortMode.numberOfTabs);
 
+            tabButton.GetComponent<RectTransform>().localPosition = new Vector3(
+                tabButton.GetComponent<RectTransform>().localPosition.x,
+                tabButton.GetComponent<RectTransform>().localPosition.y,
+                0);
+
             tabButton.transform.GetComponentInChildren<Text>().text = sortMode.namesOfTabs[i];
 
             int value = i;
@@ -176,16 +181,17 @@ public class TabManager : MonoBehaviour
     {
         content.AddComponent<RectTransform>();
 
-        content.GetComponent<RectTransform>().anchorMin = Vector2.zero;
+        content.GetComponent<RectTransform>().anchorMin = Vector2.zero; // sets the mode (stretch)
         content.GetComponent<RectTransform>().anchorMax = Vector2.one;
 
-        content.GetComponent<RectTransform>().sizeDelta = Vector2.zero;
-        content.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
-        content.GetComponent<RectTransform>().anchoredPosition = Vector3.zero;
+        content.GetComponent<RectTransform>().sizeDelta = Vector2.zero; // sets the size (offsets to 0)
+        content.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1); // sets the scale (normal scale)
+        content.GetComponent<RectTransform>().anchoredPosition = Vector3.zero; // sets the position (center)
 
+        // sets the z position back to 0 because Unity UI randomly puts a new z for no fucking reason
         content.GetComponent<RectTransform>().localPosition = new Vector3(
-            content.GetComponent<RectTransform>().localPosition.x, 
-            content.GetComponent<RectTransform>().localPosition.y, 
+            content.GetComponent<RectTransform>().localPosition.x,
+            content.GetComponent<RectTransform>().localPosition.y,
             0);
     }
     #endregion

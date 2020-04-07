@@ -100,9 +100,9 @@ public class DragAndZoom : MonoBehaviour
         cam.transform.position = new Vector3(tr.position.x, tr.position.y, -10);
         localCamPosition = tr.position;
 
-        cam.orthographicSize = 2;
+        cam.orthographicSize = 3;
 
-        factor *= 0.1f;
+        factor *= 0.5f;
 
         horizontalClamp = new Vector2(localCamPosition.x - 2f, localCamPosition.x + 2f);
         verticalClamp = new Vector2(localCamPosition.y - 1.5f, localCamPosition.y + 1.5f);
@@ -121,7 +121,7 @@ public class DragAndZoom : MonoBehaviour
         
         cam.orthographicSize = 5;
 
-        factor *= 10f;
+        factor *= 2f;
 
         horizontalClamp = new Vector2(-5f, 5f);
         verticalClamp = new Vector2(-5f, 5f);

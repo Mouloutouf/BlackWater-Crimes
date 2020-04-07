@@ -29,18 +29,19 @@ public class LocationInteraction : SerializedMonoBehaviour
     {
         gameData = GameObject.Find("Data Container").GetComponent<DataContainer>().gameData;
 
-        /*
         foreach (Transform tr in transform)
         {
             Location location = tr.GetComponent<LocationObject>().data;
 
-            if (!location.unlockedData)
+            if (!gameData.dataListsContainingState[typeof(Location)])
             {
+                Debug.Log(gameData.dataListsContainingState[typeof(Location)]);
                 location.unlockedData = true;
                 gameData.locations.Add(location);
             }
         }
-        */
+
+        gameData.dataListsContainingState[typeof(Location)] = true;
     }
 
     void Update()
