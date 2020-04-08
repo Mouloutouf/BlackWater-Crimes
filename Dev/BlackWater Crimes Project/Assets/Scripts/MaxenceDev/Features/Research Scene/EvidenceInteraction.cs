@@ -33,6 +33,7 @@ public class EvidenceInteraction : MonoBehaviour
     public AudioClip fingerprintDiscoveredSound;
 
     [SerializeField] bool isInEditor;
+    [SerializeField] bool windowsBuild;
 
     [SerializeField] Vector2 values;
     [SerializeField] Vector2 sizes;
@@ -164,6 +165,16 @@ public class EvidenceInteraction : MonoBehaviour
                 File.Delete(filePath);
             }
         }
+        else if(windowsBuild)
+        {
+            filePath = Application.persistentDataPath + _hit.transform.gameObject.name + ".png";
+            Debug.Log("Using Windows Folder");
+
+            if (File.Exists(filePath))
+            {
+                File.Delete(filePath);
+            }
+        }
         else
         {
             filePath = _hit.transform.gameObject.name + ".png";
@@ -178,6 +189,10 @@ public class EvidenceInteraction : MonoBehaviour
         ScreenCapture.CaptureScreenshot(filePath);
 
         if(isInEditor)
+        {
+            StartCoroutine(CheckFile(filePath, _evidence));
+        }
+        if(windowsBuild)
         {
             StartCoroutine(CheckFile(filePath, _evidence));
         }

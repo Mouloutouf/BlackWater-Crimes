@@ -5,6 +5,7 @@ public class PhoneOrientationScript : MonoBehaviour
 {
     [SerializeField] ScreenOrientation sceneOrientation;
     [SerializeField] bool canRotate;
+    [SerializeField] bool windowsBuild;
 
     // Start is called before the first frame update
     void Start()
@@ -28,18 +29,34 @@ public class PhoneOrientationScript : MonoBehaviour
         {
             case ScreenOrientation.Portrait:
                 Screen.orientation = ScreenOrientation.Portrait;
+                if(windowsBuild)
+                {
+                    Screen.SetResolution(524, 1080, true);
+                }
                 break;
 
             case ScreenOrientation.PortraitUpsideDown:
                 Screen.orientation = ScreenOrientation.PortraitUpsideDown;
+                if(windowsBuild)
+                {
+                    Screen.SetResolution(524, 1080, true);
+                }
                 break;
 
             case ScreenOrientation.LandscapeLeft:
                 Screen.orientation = ScreenOrientation.LandscapeLeft;
+                if(windowsBuild)
+                {
+                    Screen.SetResolution(1480, 720, true);
+                }
                 break;
 
             case ScreenOrientation.LandscapeRight:
                 Screen.orientation = ScreenOrientation.LandscapeRight;
+                if(windowsBuild)
+                {
+                    Screen.SetResolution(1480, 720, true);
+                }
                 break;
         }
 
