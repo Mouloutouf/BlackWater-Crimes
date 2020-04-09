@@ -37,11 +37,10 @@ public class DragAndZoom : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Vector3 vec = Input.mousePosition;
-            startTouchPos = cam.WorldToScreenPoint(new Vector3(vec.x, vec.y, -10));
+        // Zoom Input
 
+        if (Input.GetMouseButtonUp(0))
+        {
             RaycastHit2D[] hits = Physics2D.RaycastAll(cam.ScreenToWorldPoint(Input.mousePosition), new Vector3(0, 0, 1));
 
             if (hits.Count() > 0 && hits[0].transform.GetComponent<PolygonCollider2D>() != null)
@@ -53,7 +52,15 @@ public class DragAndZoom : MonoBehaviour
 
         //PinchToZoom();
 
-        if (Input.GetMouseButton(0))
+        // Move Input (Drag)
+
+        if (Input.GetMouseButtonDown(0)) // On Click
+        {
+            Vector3 vec = Input.mousePosition;
+            startTouchPos = cam.WorldToScreenPoint(new Vector3(vec.x, vec.y, -10));
+        }
+
+        if (Input.GetMouseButton(0)) // On Hold
         {
             Vector3 vec = Input.mousePosition;
             Vector3 camDir = startTouchPos - cam.WorldToScreenPoint(new Vector3(vec.x, vec.y, -10));
@@ -63,36 +70,6 @@ public class DragAndZoom : MonoBehaviour
                 Mathf.Clamp(cam.transform.position.y + smoothDir.y, verticalClamp.x, verticalClamp.y),
                 -10);
         }
-    }
-
-    void PinchToZoom()
-    {
-        if (Input.touchCount == 2)
-        {
-            Touch touchOne = Input.GetTouch(0);
-            Touch touchTwo = Input.GetTouch(1);
-
-            Vector3 prevTouchOnePos = touchOne.position - touchOne.deltaPosition;
-            Vector3 prevTouchTwoPos = touchTwo.position - touchTwo.deltaPosition;
-
-            float prevDistance = (prevTouchOnePos - prevTouchTwoPos).magnitude;
-            float currentDistance = (touchOne.position - touchTwo.position).magnitude;
-
-            float difference = currentDistance - prevDistance;
-
-            Zoom(difference * 0.01f);
-        }
-    }
-
-    void Zoom(float increment)
-    {
-        cam.orthographicSize = Mathf.Clamp(cam.orthographicSize - increment, minZoomOut, maxZoomIn);
-    }
-
-    Vector3 ConvertIntoUnityDialect(Vector3 vector)
-    {
-        Vector3 newVector = Camera.main.ScreenToWorldPoint(new Vector3(vector.x, vector.y, 10));
-        return newVector;
     }
 
     public void ZoomOnQuarter(Transform tr)
@@ -117,7 +94,7 @@ public class DragAndZoom : MonoBehaviour
 
     public void DezoomToFullMap()
     {
-        cam.transform.position = Vector2.zero;
+        cam.transform.position = new Vector3(0, 0, -10);
         
         cam.orthographicSize = 5;
 
@@ -140,4 +117,31 @@ public class DragAndZoom : MonoBehaviour
 
         if (_zoomed) returnButton.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = _tr.GetChild(0).GetComponent<TextMesh>().text;
     }
+
+    #region oldZoom
+    void PinchToZoom()
+    {
+        if (Input.touchCount == 2)
+        {
+            Touch touchOne = Input.GetTouch(0);
+            Touch touchTwo = Input.GetTouch(1);
+
+            Vector3 prevTouchOnePos = touchOne.position - touchOne.deltaPosition;
+            Vector3 prevTouchTwoPos = touchTwo.position - touchTwo.deltaPosition;
+
+            float prevDistance = (prevTouchOnePos - prevTouchTwoPos).magnitude;
+            float currentDistance = (touchOne.position - touchTwo.position).magnitude;
+
+            float difference = currentDistance - prevDistance;
+
+            cam.orthographicSize = Mathf.Clamp(cam.orthographicSize - (difference * 0.01f), minZoomOut, maxZoomIn); // Zoom
+        }
+    }
+
+    Vector3 ConvertIntoUnityDialect(Vector3 vector)
+    {
+        Vector3 newVector = Camera.main.ScreenToWorldPoint(new Vector3(vector.x, vector.y, 10));
+        return newVector;
+    }
+    #endregion
 }
