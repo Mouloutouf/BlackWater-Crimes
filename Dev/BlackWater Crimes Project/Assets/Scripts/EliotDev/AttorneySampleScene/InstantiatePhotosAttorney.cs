@@ -20,7 +20,7 @@ public class InstantiatePhotosAttorney : InstantiationProcess<Evidence>
         }
     }
 
-    public override GameObject Instantiation()
+    public override GameObject Instantiation(GameObject prefab)
     {
         clueShowerScript = Object.FindObjectOfType<AttorneySingleClueShowerScript>().GetComponent<AttorneySingleClueShowerScript>();
 

@@ -86,7 +86,8 @@ public class Report : Data
 
     public Modes mode;
 
-
+    public int unlockOrderIndex;
+    public bool seen;
 }
 
 [Serializable]
