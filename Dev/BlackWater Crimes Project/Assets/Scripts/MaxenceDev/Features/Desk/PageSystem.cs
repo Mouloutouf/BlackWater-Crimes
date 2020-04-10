@@ -8,7 +8,7 @@ public class PageSystem : MonoBehaviour
     public Button rightButton;
     public Button leftButton;
 
-    public Transform reportContent;
+    public Transform content;
     
     private int currentIndex = 1;
 
@@ -20,8 +20,8 @@ public class PageSystem : MonoBehaviour
         {
             CheckIndex();
 
-            for (int n = 1; n < reportContent.childCount; n++) reportContent.GetChild(n).gameObject.SetActive(false);
-            reportContent.GetChild(currentIndex).gameObject.SetActive(true);
+            for (int n = 1; n < content.childCount; n++) content.GetChild(n).gameObject.SetActive(false);
+            content.GetChild(currentIndex).gameObject.SetActive(true);
 
             start = false;
         }
@@ -29,8 +29,8 @@ public class PageSystem : MonoBehaviour
 
     public void TurnPage(int value)
     {
-        reportContent.GetChild(currentIndex).gameObject.SetActive(false);
-        reportContent.GetChild(currentIndex + value).gameObject.SetActive(true);
+        content.GetChild(currentIndex).gameObject.SetActive(false);
+        content.GetChild(currentIndex + value).gameObject.SetActive(true);
         currentIndex += value;
 
         CheckIndex();
@@ -38,7 +38,7 @@ public class PageSystem : MonoBehaviour
 
     void CheckIndex()
     {
-        if (currentIndex == reportContent.childCount -1) rightButton.gameObject.SetActive(false);
+        if (currentIndex == content.childCount -1) rightButton.gameObject.SetActive(false);
         else rightButton.gameObject.SetActive(true);
 
         if (currentIndex == 1) leftButton.gameObject.SetActive(false);

@@ -113,12 +113,12 @@ public class Location : Data
 [CreateAssetMenu(fileName = "New Player Data", menuName = "Player Data Scriptable")]
 public class GameData : SerializedScriptableObject
 {
-    public Dictionary<Data, bool> dataListsContainingState { get; private set; } = new Dictionary<Data, bool>
+    public Dictionary<Type, bool> dataListsContainingState { get; private set; } = new Dictionary<Type, bool>
     {
-        {new Evidence(), false },
-        {new Note(), false },
-        {new Report(), false },
-        {new Location(), false }
+        {typeof(Evidence), false },
+        {typeof(Note), false },
+        {typeof(Report), false },
+        {typeof(Location), false }
     };
 
     public List<Evidence> evidences = new List<Evidence>();
