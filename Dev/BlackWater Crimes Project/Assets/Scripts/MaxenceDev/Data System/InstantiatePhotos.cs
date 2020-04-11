@@ -34,7 +34,7 @@ public class InstantiatePhotos : InstantiationProcess<Evidence>
         }
     }
 
-    public override GameObject Instantiation()
+    public override GameObject Instantiation(GameObject prefab)
     {
         if (!isLayoutSet)
         {

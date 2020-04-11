@@ -21,13 +21,13 @@ public class InstantiationProcess<T> : MonoBehaviour where T : Data
         {
             if (_data.unlockedData)
             {
-                GameObject instance = Instantiation();
+                GameObject instance = Instantiation(prefab);
                 instance.GetComponent<ObjectData<_T>>().data = _data;
             }
         }
     }
 
-    public virtual GameObject Instantiation()
+    public virtual GameObject Instantiation(GameObject prefab)
     {
         return new GameObject(); // PlaceHolder
     }
@@ -51,7 +51,7 @@ public class Instantiate : InstantiationProcess<Evidence>
         
     }
 
-    public override GameObject Instantiation()
+    public override GameObject Instantiation(GameObject prefab)
     {
 
         GameObject _prefab = Instantiate(prefab) as GameObject;
