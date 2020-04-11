@@ -24,9 +24,11 @@ public class HeadHunterValidateScript : MonoBehaviour
             {
                 foreach(Report report in gameData.allReports[indic])
                 {
-                    if(report.elementName == targetName)
+                    if(report.elementName == targetName && report.unlockedData == false)
                     {
                         report.unlockedData = true;
+                        gameData.reportsCollected ++;
+                        report.unlockOrderIndex = gameData.reportsCollected;
                     }
                 }  
             } 

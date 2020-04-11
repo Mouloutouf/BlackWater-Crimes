@@ -23,9 +23,12 @@ public class SpecialistValidateButton : MonoBehaviour
             {
                 foreach (Report report in gameData.allReports[indic])
                 {
-                    if (report.elementName == script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.name)
+                    if (report.elementName == script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.name && report.unlockedData == false)
                     {
                         report.unlockedData = true;
+                        report.elementSprite = script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.photo;
+                        gameData.reportsCollected ++;
+                        report.unlockOrderIndex = gameData.reportsCollected;
                     }
                 }
             }

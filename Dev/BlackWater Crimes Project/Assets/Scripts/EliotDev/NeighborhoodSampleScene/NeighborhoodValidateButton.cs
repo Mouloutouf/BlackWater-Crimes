@@ -21,9 +21,11 @@ public class NeighborhoodValidateButton : MonoBehaviour
         {
             foreach (Report report in gameData.allReports[indic])
             {
-                if (report.elementName == currentLocationAddress)
+                if (report.elementName == currentLocationAddress  && report.unlockedData == false)
                 {
                     report.unlockedData = true;
+                    gameData.reportsCollected ++;
+                    report.unlockOrderIndex = gameData.reportsCollected;
                 }
             }
         }

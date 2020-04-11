@@ -16,6 +16,8 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
+    - {fileID: 0}
+    - {fileID: 0}
     - {fileID: 21300000, guid: 9d7fa6d0fa38f2c4f91c719abbbd3615, type: 3}
     - {fileID: 21300000, guid: c4338e253f2456d4a960c577c069b4bc, type: 3}
     - {fileID: 21300000, guid: 196afd22d2c6fdb43aaabc9caad9dc4b, type: 3}
@@ -82,7 +84,99 @@ MonoBehaviour:
       Data: 3|System.Collections.Generic.List`1[[Evidence, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 4|Evidence, Assembly-CSharp
+    - Name: index
+      Entry: 3
+      Data: 1
+    - Name: unlockedData
+      Entry: 5
+      Data: true
+    - Name: name
+      Entry: 1
+      Data: "Relev\xE9 de compte"
+    - Name: hasIntel
+      Entry: 5
+      Data: false
+    - Name: intel
+      Entry: 6
+      Data: 
+    - Name: intelRevealed
+      Entry: 5
+      Data: false
+    - Name: description
+      Entry: 1
+      Data: 
+    - Name: photographed
+      Entry: 5
+      Data: true
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: modeCategory
+      Entry: 7
+      Data: 5|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 1
+    - Name: suspect
+      Entry: 3
+      Data: 2
+    - Name: type
+      Entry: 3
+      Entry: 10
       Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: false
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+    - Name: intelRevealed
+      Entry: 5
+      Data: false
+    - Name: description
+      Entry: 1
+      Data: 
+    - Name: photographed
+      Entry: 5
+      Data: true
+    - Name: photo
+      Entry: 10
+      Data: 1
+    - Name: modeCategory
+      Entry: 7
+      Data: 5|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 2
+    - Name: suspect
+      Entry: 3
+      Data: 0
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: false
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -98,48 +192,6 @@ MonoBehaviour:
     - Name: $k
       Entry: 3
       Data: 2
-    - Name: $v
-      Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[Evidence, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 3
-    - Name: $v
-      Entry: 7
-      Data: 5|System.Collections.Generic.List`1[[Evidence, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 4
     - Name: $v
       Entry: 7
       Data: 6|System.Collections.Generic.List`1[[Evidence, Assembly-CSharp]], mscorlib
@@ -160,7 +212,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 5
+      Data: 3
     - Name: $v
       Entry: 7
       Data: 7|System.Collections.Generic.List`1[[Evidence, Assembly-CSharp]], mscorlib
@@ -181,7 +233,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 6
+      Data: 4
     - Name: $v
       Entry: 7
       Data: 8|System.Collections.Generic.List`1[[Evidence, Assembly-CSharp]], mscorlib
@@ -202,7 +254,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 7
+      Data: 5
     - Name: $v
       Entry: 7
       Data: 9|System.Collections.Generic.List`1[[Evidence, Assembly-CSharp]], mscorlib
@@ -223,10 +275,52 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 8
+      Data: 6
     - Name: $v
       Entry: 7
       Data: 10|System.Collections.Generic.List`1[[Evidence, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 7
+    - Name: $v
+      Entry: 7
+      Data: 11|System.Collections.Generic.List`1[[Evidence, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 8
+    - Name: $v
+      Entry: 7
+      Data: 12|System.Collections.Generic.List`1[[Evidence, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -247,11 +341,11 @@ MonoBehaviour:
       Data: 
     - Name: allReports
       Entry: 7
-      Data: 11|System.Collections.Generic.Dictionary`2[[Indics, Assembly-CSharp],[System.Collections.Generic.List`1[[Report,
+      Data: 13|System.Collections.Generic.Dictionary`2[[Indics, Assembly-CSharp],[System.Collections.Generic.List`1[[Report,
         Assembly-CSharp]], mscorlib]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 12|System.Collections.Generic.EnumEqualityComparer`1[[Indics, Assembly-CSharp]],
+      Data: 14|System.Collections.Generic.EnumEqualityComparer`1[[Indics, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -273,13 +367,13 @@ MonoBehaviour:
       Data: 1
     - Name: $v
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[Report, Assembly-CSharp]], mscorlib
+      Data: 15|System.Collections.Generic.List`1[[Report, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 14|Report, Assembly-CSharp
+      Data: 16|Report, Assembly-CSharp
     - Name: index
       Entry: 3
       Data: 0
@@ -288,7 +382,7 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 0
+      Data: 2
     - Name: agentName
       Entry: 1
       Data: Brandon Bennington
@@ -330,13 +424,13 @@ MonoBehaviour:
       Data: 2
     - Name: $v
       Entry: 7
-      Data: 15|System.Collections.Generic.List`1[[Report, Assembly-CSharp]], mscorlib
+      Data: 17|System.Collections.Generic.List`1[[Report, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 3
     - Name: 
       Entry: 7
-      Data: 16|Report, Assembly-CSharp
+      Data: 18|Report, Assembly-CSharp
     - Name: index
       Entry: 3
       Data: 0
@@ -345,7 +439,7 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 1
+      Data: 3
     - Name: agentName
       Entry: 1
       Data: James Walker
@@ -372,22 +466,22 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 17|Report, Assembly-CSharp
+      Data: 19|Report, Assembly-CSharp
     - Name: index
       Entry: 3
       Data: 1
     - Name: unlockedData
       Entry: 5
-      Data: true
+      Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 1
+      Data: 3
     - Name: agentName
       Entry: 1
       Data: James Walker
     - Name: elementSprite
       Entry: 10
-      Data: 2
+      Data: 4
     - Name: elementName
       Entry: 1
       Data: Abigail White
@@ -402,7 +496,7 @@ MonoBehaviour:
       Data: 1
     - Name: unlockOrderIndex
       Entry: 3
-      Data: 3
+      Data: 0
     - Name: seen
       Entry: 5
       Data: false
@@ -411,7 +505,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 18|Report, Assembly-CSharp
+      Data: 20|Report, Assembly-CSharp
     - Name: index
       Entry: 3
       Data: 2
@@ -420,13 +514,13 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 1
+      Data: 3
     - Name: agentName
       Entry: 1
       Data: James Walker
     - Name: elementSprite
       Entry: 10
-      Data: 3
+      Data: 5
     - Name: elementName
       Entry: 1
       Data: Bob Jenkins
@@ -465,13 +559,13 @@ MonoBehaviour:
       Data: 3
     - Name: $v
       Entry: 7
-      Data: 19|System.Collections.Generic.List`1[[Report, Assembly-CSharp]], mscorlib
+      Data: 21|System.Collections.Generic.List`1[[Report, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 20|Report, Assembly-CSharp
+      Data: 22|Report, Assembly-CSharp
     - Name: index
       Entry: 3
       Data: 0
@@ -480,7 +574,7 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 4
+      Data: 6
     - Name: agentName
       Entry: 1
       Data: Quentin Copeland
@@ -522,13 +616,13 @@ MonoBehaviour:
       Data: 4
     - Name: $v
       Entry: 7
-      Data: 21|System.Collections.Generic.List`1[[Report, Assembly-CSharp]], mscorlib
+      Data: 23|System.Collections.Generic.List`1[[Report, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 22|Report, Assembly-CSharp
+      Data: 24|Report, Assembly-CSharp
     - Name: index
       Entry: 3
       Data: 0
@@ -537,7 +631,7 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 5
+      Data: 7
     - Name: agentName
       Entry: 1
       Data: Thomas Maxwell
@@ -567,22 +661,22 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 23|Report, Assembly-CSharp
+      Data: 25|Report, Assembly-CSharp
     - Name: index
       Entry: 3
       Data: 1
     - Name: unlockedData
       Entry: 5
-      Data: true
+      Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 5
+      Data: 7
     - Name: agentName
       Entry: 1
       Data: Thomas Maxwell
     - Name: elementSprite
       Entry: 10
-      Data: 6
+      Data: 8
     - Name: elementName
       Entry: 1
       Data: 1048 West Madison street
@@ -598,7 +692,7 @@ MonoBehaviour:
       Data: 0
     - Name: unlockOrderIndex
       Entry: 3
-      Data: 1
+      Data: 0
     - Name: seen
       Entry: 5
       Data: false
@@ -622,13 +716,13 @@ MonoBehaviour:
       Data: 5
     - Name: $v
       Entry: 7
-      Data: 24|System.Collections.Generic.List`1[[Report, Assembly-CSharp]], mscorlib
+      Data: 26|System.Collections.Generic.List`1[[Report, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 25|Report, Assembly-CSharp
+      Data: 27|Report, Assembly-CSharp
     - Name: index
       Entry: 3
       Data: 0
@@ -637,7 +731,7 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 7
+      Data: 9
     - Name: agentName
       Entry: 1
       Data: Miss Marshall
@@ -664,16 +758,16 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 26|Report, Assembly-CSharp
+      Data: 28|Report, Assembly-CSharp
     - Name: index
       Entry: 3
       Data: 1
     - Name: unlockedData
       Entry: 5
-      Data: true
+      Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 7
+      Data: 9
     - Name: agentName
       Entry: 1
       Data: Miss Marshall
@@ -696,7 +790,7 @@ MonoBehaviour:
       Data: 2
     - Name: unlockOrderIndex
       Entry: 3
-      Data: 2
+      Data: 0
     - Name: seen
       Entry: 5
       Data: false
@@ -720,13 +814,13 @@ MonoBehaviour:
       Data: 7
     - Name: $v
       Entry: 7
-      Data: 27|System.Collections.Generic.List`1[[Report, Assembly-CSharp]], mscorlib
+      Data: 29|System.Collections.Generic.List`1[[Report, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 28|Report, Assembly-CSharp
+      Data: 30|Report, Assembly-CSharp
     - Name: index
       Entry: 3
       Data: 0
@@ -735,7 +829,7 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 8
+      Data: 10
     - Name: agentName
       Entry: 1
       Data: Arnold Steele
@@ -822,4 +916,5 @@ MonoBehaviour:
     mode: 0
     unlockOrderIndex: 0
     seen: 0
+  reportsCollected: 0
   locations: []
