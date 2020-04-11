@@ -28,7 +28,7 @@ public class SortMode
 
 public class TabManager : MonoBehaviour
 {
-    private InstantiatePhotos desk;
+    private InstantiatePhotos instantiatePhotosScript;
 
     public List<SortMode> sortModes;
     public SortMode currentMode { get; private set; }
@@ -52,14 +52,12 @@ public class TabManager : MonoBehaviour
     [HideInInspector] public List<GameObject> tabsObjects = new List<GameObject>();
 
     private int pageLayout = 2;
-
-    private bool photosSet;
-
+    
     void Start()
     {
         // Set up Mode Tab & Tabs (Buttons and Contents)
 
-        desk = GetComponent<InstantiatePhotos>();
+        instantiatePhotosScript = GetComponent<InstantiatePhotos>();
         
         CreateModeTab();
 
@@ -68,15 +66,22 @@ public class TabManager : MonoBehaviour
 
     public void SetPhotosPosition() // Photo Folder Button & Mode Tab Button
     {
+        foreach (GameObject photo in instantiatePhotosScript.photosList)
+        {
+            PhotoObject photoScript = photo.GetComponent<PhotoObject>();
+            photo.transform.SetParent(tabsContents[tabsObjects[photoScript.GetTabParent(true, currentMode)]][photoScript.pageNumber].transform);
+            Debug.Log(tabsContents[tabsObjects[photoScript.GetTabParent(true, currentMode)]][photoScript.pageNumber].name);
+        }
+
         foreach (GameObject tabObject in tabsObjects) // for each tab (tab parent / object)
         {
             for (int q = 0; q < tabsContents[tabObject].Count; q++) // for each page (tab content)
             {
                 int index = 0;
 
-                foreach (Transform photo in tabsContents[tabObject][q].transform) // for each photo
+                foreach (Transform _photo in tabsContents[tabObject][q].transform) // for each photo
                 {
-                    photo.GetComponent<RectTransform>().anchoredPosition = desk.spawnPoints[index];
+                    _photo.GetComponent<RectTransform>().anchoredPosition = instantiatePhotosScript.spawnPoints[index];
                     index++;
                 }
             }
