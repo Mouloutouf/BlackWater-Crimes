@@ -106,7 +106,7 @@ public class GetClues : MonoBehaviour
         RaycastHit hit;
         Ray ray = cam.ScreenPointToRay(rayPos);
 
-        if(Physics.Raycast(ray, out hit, 100f))
+        if(Physics.Raycast(ray, out hit, 2000f))
         {
             if(hit.transform.gameObject.tag == "ClueHolder")
             {
