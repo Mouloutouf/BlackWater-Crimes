@@ -66,7 +66,7 @@ public class TabManager : MonoBehaviour
         CreateTabs(currentMode);
     }
 
-    public void SetPhotosPosition()
+    public void SetPhotosPosition() // Photo Folder Button & Mode Tab Button
     {
         foreach (GameObject tabObject in tabsObjects) // for each tab (tab parent / object)
         {
@@ -84,7 +84,7 @@ public class TabManager : MonoBehaviour
     }
 
     #region ModeTab
-    public void CreateModeTab()
+    void CreateModeTab()
     {
         // Creates Colors for the Mode Tab
 
@@ -120,7 +120,7 @@ public class TabManager : MonoBehaviour
     #endregion
 
     #region Tabs
-    public void CreateTabs(SortMode sortMode)
+    void CreateTabs(SortMode sortMode)
     {
         float offsetValue = -(tabs.GetComponent<RectTransform>().sizeDelta.x / sortMode.numberOfTabs) / 2;
 
@@ -177,7 +177,7 @@ public class TabManager : MonoBehaviour
         }
     }
 
-    public void SetContent(GameObject content)
+    void SetContent(GameObject content)
     {
         content.AddComponent<RectTransform>();
 
@@ -197,7 +197,7 @@ public class TabManager : MonoBehaviour
     #endregion
 
     #region Change Mode
-    public void ChangeMode()
+    public void ChangeMode() // Mode Tab Button
     {
         mIndex++; // Increase Mode Index
         if (mIndex >= sortModes.Count) mIndex = 0; // If Last Mode, Set Mode Index to 0
@@ -216,7 +216,7 @@ public class TabManager : MonoBehaviour
         modeText.GetComponent<Text>().text = currentMode.name; // Set Current Mode's Name to the Mode Tab
     }
 
-    public void ResetPhotosToParent()
+    void ResetPhotosToParent()
     {
         // New Version Tabs --> Pages
 
@@ -242,7 +242,7 @@ public class TabManager : MonoBehaviour
     #endregion
 
     #region Change Tab
-    public void ChangeTab(int index)
+    public void ChangeTab(int index) // Tab Buttons
     {
         // Deactivates all Tab Contents, Set Active selected Tab Content
         foreach (GameObject tab in tabsObjects) tab.SetActive(false);

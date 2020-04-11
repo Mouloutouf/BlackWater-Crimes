@@ -18,7 +18,7 @@ public class InstantiateReports : InstantiationProcess<Report>
         {
             foreach (Report report in _list)
             {
-                if (report.unlockedData)
+                if (report.unlockedData && report.index != 0)
                 {
                     instantiationList.Add(report);
                 }
