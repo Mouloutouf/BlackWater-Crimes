@@ -30,20 +30,45 @@ public class PhotoObject : ObjectData<Evidence>
 
     void Update()
     {
-        // Data Protocol
-
         if (!loaded)
         {
             Protocol();
         }
-
-        // Tab Organisation
-
-        currentMode = photosBooklet.GetComponent<TabManager>().currentMode;
-        
-        TabManager tabScript = photosBooklet.GetComponent<TabManager>();
-        transform.SetParent(tabScript.tabsContents[tabScript.tabsObjects[GetTabParent(true)]][pageNumber].transform);
     }
+
+    public int GetTabParent(bool yes, SortMode currentMode)
+    {
+        if (currentMode.mode == Modes.Location)
+        {
+            if (data.modeCategory.location == Locations.Docks) return 0;
+            else if (data.modeCategory.location == Locations.Brothel) return 1;
+            else if (data.modeCategory.location == Locations.Anna_House) return 2;
+            else return 0;
+        }
+        else if (currentMode.mode == Modes.Suspect)
+        {
+            if (data.modeCategory.suspect == Suspects.Abigail_White) return 0;
+            else if (data.modeCategory.suspect == Suspects.Umberto_Moretti) return 1;
+            else if (data.modeCategory.suspect == Suspects.Richard_Anderson) return 2;
+            else return 0;
+        }
+        else if (currentMode.mode == Modes.Type)
+        {
+            if (data.modeCategory.type == Types.Brands) return 0;
+            else if (data.modeCategory.type == Types.Crime) return 1;
+            else if (data.modeCategory.type == Types.Clothing) return 2;
+            else return 0;
+        }
+        else return 0;
+    }
+
+    #region Old
+    // Tab Organisation
+
+    //currentMode = photosBooklet.GetComponent<TabManager>().currentMode;
+
+    //TabManager tabScript = photosBooklet.GetComponent<TabManager>();
+    //transform.SetParent(tabScript.tabsContents[tabScript.tabsObjects[GetTabParent(true)]][pageNumber].transform);
     
     private string GetTabParent()
     {
@@ -70,30 +95,5 @@ public class PhotoObject : ObjectData<Evidence>
 
         return word;
     }
-
-    private int GetTabParent(bool yes)
-    {
-        if (currentMode.mode == Modes.Location)
-        {
-            if (data.modeCategory.location == Locations.Docks) return 0;
-            else if (data.modeCategory.location == Locations.Brothel) return 1;
-            else if (data.modeCategory.location == Locations.Anna_House) return 2;
-            else return 0;
-        }
-        else if (currentMode.mode == Modes.Suspect)
-        {
-            if (data.modeCategory.suspect == Suspects.Abigail_White) return 0;
-            else if (data.modeCategory.suspect == Suspects.Umberto_Moretti) return 1;
-            else if (data.modeCategory.suspect == Suspects.Richard_Anderson) return 2;
-            else return 0;
-        }
-        else if (currentMode.mode == Modes.Type)
-        {
-            if (data.modeCategory.type == Types.Brands) return 0;
-            else if (data.modeCategory.type == Types.Crime) return 1;
-            else if (data.modeCategory.type == Types.Clothing) return 2;
-            else return 0;
-        }
-        else return 0;
-    }
+    #endregion
 }

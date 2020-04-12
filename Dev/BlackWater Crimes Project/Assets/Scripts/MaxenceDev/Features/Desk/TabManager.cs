@@ -28,7 +28,7 @@ public class SortMode
 
 public class TabManager : MonoBehaviour
 {
-    private InstantiatePhotos desk;
+    private InstantiatePhotos instantiatePhotosScript;
 
     public List<SortMode> sortModes;
     public SortMode currentMode { get; private set; }
@@ -52,31 +52,36 @@ public class TabManager : MonoBehaviour
     [HideInInspector] public List<GameObject> tabsObjects = new List<GameObject>();
 
     private int pageLayout = 2;
-
-    private bool photosSet;
-
+    
     void Start()
     {
         // Set up Mode Tab & Tabs (Buttons and Contents)
 
-        desk = GetComponent<InstantiatePhotos>();
+        instantiatePhotosScript = GetComponent<InstantiatePhotos>();
         
         CreateModeTab();
 
         CreateTabs(currentMode);
     }
 
-    public void SetPhotosPosition()
+    public void SetPhotosPosition() // Photo Folder Button & Mode Tab Button
     {
+        foreach (GameObject photo in instantiatePhotosScript.photosList)
+        {
+            PhotoObject photoScript = photo.GetComponent<PhotoObject>();
+            photo.transform.SetParent(tabsContents[tabsObjects[photoScript.GetTabParent(true, currentMode)]][photoScript.pageNumber].transform);
+            Debug.Log(tabsContents[tabsObjects[photoScript.GetTabParent(true, currentMode)]][photoScript.pageNumber].name);
+        }
+
         foreach (GameObject tabObject in tabsObjects) // for each tab (tab parent / object)
         {
             for (int q = 0; q < tabsContents[tabObject].Count; q++) // for each page (tab content)
             {
                 int index = 0;
 
-                foreach (Transform photo in tabsContents[tabObject][q].transform) // for each photo
+                foreach (Transform _photo in tabsContents[tabObject][q].transform) // for each photo
                 {
-                    photo.GetComponent<RectTransform>().anchoredPosition = desk.spawnPoints[index];
+                    _photo.GetComponent<RectTransform>().anchoredPosition = instantiatePhotosScript.spawnPoints[index];
                     index++;
                 }
             }
@@ -84,7 +89,7 @@ public class TabManager : MonoBehaviour
     }
 
     #region ModeTab
-    public void CreateModeTab()
+    void CreateModeTab()
     {
         // Creates Colors for the Mode Tab
 
@@ -120,7 +125,7 @@ public class TabManager : MonoBehaviour
     #endregion
 
     #region Tabs
-    public void CreateTabs(SortMode sortMode)
+    void CreateTabs(SortMode sortMode)
     {
         float offsetValue = -(tabs.GetComponent<RectTransform>().sizeDelta.x / sortMode.numberOfTabs) / 2;
 
@@ -177,7 +182,7 @@ public class TabManager : MonoBehaviour
         }
     }
 
-    public void SetContent(GameObject content)
+    void SetContent(GameObject content)
     {
         content.AddComponent<RectTransform>();
 
@@ -197,7 +202,7 @@ public class TabManager : MonoBehaviour
     #endregion
 
     #region Change Mode
-    public void ChangeMode()
+    public void ChangeMode() // Mode Tab Button
     {
         mIndex++; // Increase Mode Index
         if (mIndex >= sortModes.Count) mIndex = 0; // If Last Mode, Set Mode Index to 0
@@ -216,7 +221,7 @@ public class TabManager : MonoBehaviour
         modeText.GetComponent<Text>().text = currentMode.name; // Set Current Mode's Name to the Mode Tab
     }
 
-    public void ResetPhotosToParent()
+    void ResetPhotosToParent()
     {
         // New Version Tabs --> Pages
 
@@ -242,7 +247,7 @@ public class TabManager : MonoBehaviour
     #endregion
 
     #region Change Tab
-    public void ChangeTab(int index)
+    public void ChangeTab(int index) // Tab Buttons
     {
         // Deactivates all Tab Contents, Set Active selected Tab Content
         foreach (GameObject tab in tabsObjects) tab.SetActive(false);

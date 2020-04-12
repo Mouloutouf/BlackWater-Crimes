@@ -20,7 +20,7 @@ public class InstantiatePhotosSpecialist : InstantiationProcess<Evidence>
         }
     }
 
-    public override GameObject Instantiation()
+    public override GameObject Instantiation(GameObject prefab)
     {
         clueShowerScript = Object.FindObjectOfType<SpecialistClueShowerScript>().GetComponent<SpecialistClueShowerScript>();
 

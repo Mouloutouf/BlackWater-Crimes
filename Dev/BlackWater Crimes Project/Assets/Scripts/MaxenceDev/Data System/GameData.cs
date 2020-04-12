@@ -86,7 +86,8 @@ public class Report : Data
 
     public Modes mode;
 
-
+    public int unlockOrderIndex;
+    public bool seen;
 }
 
 [Serializable]
@@ -128,6 +129,8 @@ public class GameData : SerializedScriptableObject
 
     public List<Report> reports = new List<Report>();
     public Dictionary<Indics, List<Report>> allReports = new Dictionary<Indics, List<Report>>();
+
+    public int reportsCollected = 0;
 
     public List<Location> locations = new List<Location>();
 

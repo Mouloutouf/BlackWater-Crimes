@@ -75,7 +75,8 @@ public class SceneManager : MonoBehaviour
     {
         foreach (T _type in gameData.GetListOfType(type))
         {
-            GameObject instance = contents[index].contentObject.GetComponent<InstantiationProcess<T>>().Instantiation();
+            GameObject prefab = contents[index].contentObject.GetComponent<InstantiationProcess<T>>().prefab;
+            GameObject instance = contents[index].contentObject.GetComponent<InstantiationProcess<T>>().Instantiation(prefab);
             instance.GetComponent<ObjectData<T>>().data = _type;
         }
     }
