@@ -16,19 +16,15 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 21300000, guid: 9d7fa6d0fa38f2c4f91c719abbbd3615, type: 3}
-    - {fileID: 21300000, guid: c4338e253f2456d4a960c577c069b4bc, type: 3}
+    - {fileID: 21300000, guid: 09527e9a4fbfa4a44b1bba91a45fd7d1, type: 3}
+    - {fileID: 21300000, guid: 607eb1dde645d6b40b0db97826f3820f, type: 3}
     - {fileID: 21300000, guid: 196afd22d2c6fdb43aaabc9caad9dc4b, type: 3}
     - {fileID: 21300000, guid: adcd2f040e80cc243a85f1553aaff379, type: 3}
-    - {fileID: 21300000, guid: 6203c53fce585ed4f92d9509eea348ec, type: 3}
-    - {fileID: 21300000, guid: 601d5b00729d9f241bb55f63da0367dc, type: 3}
-    - {fileID: 21300000, guid: da5616da67e46e04bb56fb2febe583dd, type: 3}
+    - {fileID: 21300000, guid: ebdfd49f17118c04aad4d5b205517c9e, type: 3}
+    - {fileID: 21300000, guid: ce3d93af3cc02164c8f02fbc4ddeee0d, type: 3}
     - {fileID: 21300000, guid: 1c43c666d2bbcb7449bf7113e9d49ae3, type: 3}
-    - {fileID: 21300000, guid: 56c435b2f30bccb4186cc46068c1c809, type: 3}
     - {fileID: 21300000, guid: 9a10a3214a5bd5741ab9450ab5879335, type: 3}
-    - {fileID: 21300000, guid: b0c098b0613cf09439da70ba224e8219, type: 3}
+    - {fileID: 21300000, guid: 21ebe72d117fae74a8d353b90ab3a3f4, type: 3}
     - {fileID: 21300000, guid: 688cb1bc00d313d40af908c00fa658b4, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
@@ -95,8 +91,8 @@ MonoBehaviour:
       Entry: 5
       Data: true
     - Name: photo
-      Entry: 10
-      Data: 0
+      Entry: 6
+      Data: 
     - Name: modeCategory
       Entry: 7
       Data: 4|ModeCategory, Assembly-CSharp
@@ -203,8 +199,8 @@ MonoBehaviour:
       Entry: 5
       Data: true
     - Name: photo
-      Entry: 10
-      Data: 1
+      Entry: 6
+      Data: 
     - Name: modeCategory
       Entry: 7
       Data: 8|ModeCategory, Assembly-CSharp
@@ -455,7 +451,7 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 2
+      Data: 0
     - Name: agentName
       Entry: 1
       Data: Brandon Bennington
@@ -491,7 +487,7 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 2
+      Data: 0
     - Name: agentName
       Entry: 1
       Data: Brandon Bennington
@@ -553,7 +549,7 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 3
+      Data: 1
     - Name: agentName
       Entry: 1
       Data: James Walker
@@ -589,13 +585,13 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 3
+      Data: 1
     - Name: agentName
       Entry: 1
       Data: James Walker
     - Name: elementSprite
       Entry: 10
-      Data: 4
+      Data: 2
     - Name: elementName
       Entry: 1
       Data: Abigail White
@@ -628,13 +624,13 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 3
+      Data: 1
     - Name: agentName
       Entry: 1
       Data: James Walker
     - Name: elementSprite
       Entry: 10
-      Data: 5
+      Data: 3
     - Name: elementName
       Entry: 1
       Data: Bob Jenkins
@@ -667,7 +663,7 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 3
+      Data: 1
     - Name: agentName
       Entry: 1
       Data: James Walker
@@ -717,7 +713,7 @@ MonoBehaviour:
       Data: 27|System.Collections.Generic.List`1[[Report, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 3
     - Name: 
       Entry: 7
       Data: 28|Report, Assembly-CSharp
@@ -729,7 +725,7 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 6
+      Data: 4
     - Name: agentName
       Entry: 1
       Data: Quentin Copeland
@@ -765,7 +761,7 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 7
+      Data: 4
     - Name: agentName
       Entry: 1
       Data: Quentin Copeland
@@ -781,10 +777,52 @@ MonoBehaviour:
         envoyer. C\u2019est un Colt de calibre 38. Cette arme n\u2019est cens\xE9e
         \xEAtre en possession que de policiers en civil. La personne qui \xE9tait
         en possession de cet arme doit avoir le bras particuli\xE8rement long, si
-        ce n\u2019est pas une civile.  \r\n\r\nAh, et par ailleurs, nous nous sommes
+        elle n'est pas de la police.  \n\r\nAh, et par ailleurs, nous nous sommes
         permis de tester la douille que vous nous avez envoy\xE9 pr\xE9c\xE9demment.
-        Elle est exactement du m\xEAme calibre que cette arme, et semble directement
-        en provenir. \r\n"
+        Elle semble directement en provenir, et ce dernier ne semble avoir tir\xE9
+        qu'une seule balle.\n"
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 30|Report, Assembly-CSharp
+    - Name: index
+      Entry: 3
+      Data: 2
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: agentSprite
+      Entry: 10
+      Data: 4
+    - Name: agentName
+      Entry: 1
+      Data: Quentin Copeland
+    - Name: elementSprite
+      Entry: 6
+      Data: 
+    - Name: elementName
+      Entry: 1
+      Data: Douille
+    - Name: reportText
+      Entry: 1
+      Data: "Nous avons proc\xE9d\xE9 \xE0 quelques comparaisons avec nos fichiers
+        et vous serez s\xFBrement surpris d'entendre que c'est un calibre .38, provenant
+        s\xFBrement d'un Colt. Ce genre de calibre n'est cens\xE9 se trouver qu'entre
+        les mains de policiers.\n\nDe plus, nous nous sommes pench\xE9s sur l'autopsie
+        de la victime. Elle a subi un puissant coup \xE0 l'arri\xE8re du cr\xE2ne,
+        probablement responsable de sa mort. Cependant, aucun impact de balle...
+        Peut-\xEAtre une piste \xE0 remonter ?"
     - Name: mode
       Entry: 3
       Data: 2
@@ -814,13 +852,13 @@ MonoBehaviour:
       Data: 4
     - Name: $v
       Entry: 7
-      Data: 30|System.Collections.Generic.List`1[[Report, Assembly-CSharp]], mscorlib
+      Data: 31|System.Collections.Generic.List`1[[Report, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 4
     - Name: 
       Entry: 7
-      Data: 31|Report, Assembly-CSharp
+      Data: 32|Report, Assembly-CSharp
     - Name: index
       Entry: 3
       Data: 0
@@ -829,7 +867,7 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 8
+      Data: 5
     - Name: agentName
       Entry: 1
       Data: Thomas Maxwell
@@ -859,7 +897,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 32|Report, Assembly-CSharp
+      Data: 33|Report, Assembly-CSharp
     - Name: index
       Entry: 3
       Data: 1
@@ -868,13 +906,13 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 8
+      Data: 5
     - Name: agentName
       Entry: 1
       Data: Thomas Maxwell
     - Name: elementSprite
       Entry: 10
-      Data: 9
+      Data: 6
     - Name: elementName
       Entry: 1
       Data: 1048 West Madison street
@@ -899,7 +937,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 33|Report, Assembly-CSharp
+      Data: 34|Report, Assembly-CSharp
     - Name: index
       Entry: 3
       Data: 2
@@ -908,13 +946,13 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 10
+      Data: 5
     - Name: agentName
       Entry: 1
       Data: Thomas Maxwell
     - Name: elementSprite
       Entry: 10
-      Data: 11
+      Data: 7
     - Name: elementName
       Entry: 1
       Data: 457 N Wabash Avenue
@@ -926,6 +964,47 @@ MonoBehaviour:
         des domestique l\u2019a suivit, sans le vouloir, en rentrant chez lui. Il
         m\u2019a dit qu\u2019elle allait au 1048 West Madison Street. Elle travaille
         peut-\xEAtre la bas ?\r\n"
+    - Name: mode
+      Entry: 3
+      Data: 0
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 35|Report, Assembly-CSharp
+    - Name: index
+      Entry: 3
+      Data: 3
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: agentSprite
+      Entry: 10
+      Data: 5
+    - Name: agentName
+      Entry: 1
+      Data: Thomas Maxwell
+    - Name: elementSprite
+      Entry: 6
+      Data: 
+    - Name: elementName
+      Entry: 1
+      Data: 210 West Merchandise Mart Plaza
+    - Name: reportText
+      Entry: 1
+      Data: "Je suis all\xE9 tra\xEEner comme tu me l'as demand\xE9 sur les docks
+        ce matin. Le corps a \xE9t\xE9 emmen\xE9 \xE0 la morgue et la vie a tranquillement
+        repris son cours. J'ai essay\xE9 de parler \xE0 de nombreuses personnes,
+        mais malheureusement, il semblerait que personne n'ait vu passer le tueur.\n\nTout
+        ce que je peux te dire, c'est que l'un d'entre eux a entendu un coup de feu,
+        et une trentaine de secondes apr\xE8s, le cri d'une femme."
     - Name: mode
       Entry: 3
       Data: 0
@@ -955,13 +1034,13 @@ MonoBehaviour:
       Data: 5
     - Name: $v
       Entry: 7
-      Data: 34|System.Collections.Generic.List`1[[Report, Assembly-CSharp]], mscorlib
+      Data: 36|System.Collections.Generic.List`1[[Report, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 35|Report, Assembly-CSharp
+      Data: 37|Report, Assembly-CSharp
     - Name: index
       Entry: 3
       Data: 0
@@ -970,7 +1049,7 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 12
+      Data: 8
     - Name: agentName
       Entry: 1
       Data: Miss Marshall
@@ -997,7 +1076,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 36|Report, Assembly-CSharp
+      Data: 38|Report, Assembly-CSharp
     - Name: index
       Entry: 3
       Data: 1
@@ -1006,7 +1085,7 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 12
+      Data: 8
     - Name: agentName
       Entry: 1
       Data: Miss Marshall
@@ -1053,13 +1132,13 @@ MonoBehaviour:
       Data: 7
     - Name: $v
       Entry: 7
-      Data: 37|System.Collections.Generic.List`1[[Report, Assembly-CSharp]], mscorlib
+      Data: 39|System.Collections.Generic.List`1[[Report, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 38|Report, Assembly-CSharp
+      Data: 40|Report, Assembly-CSharp
     - Name: index
       Entry: 3
       Data: 0
@@ -1068,7 +1147,7 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 13
+      Data: 9
     - Name: agentName
       Entry: 1
       Data: Arnold Steele
@@ -1180,7 +1259,7 @@ MonoBehaviour:
     locationAdress: 1048 West Madison street
     locationDescription: The most well-known private club for men in the City, Anna's
       stronghold, a very profficient business of course, but also the place of all
-      longings
+      longings...
     evidenceCollected: 4
     myLocation: 1
   - index: 2
@@ -1192,8 +1271,7 @@ MonoBehaviour:
     locationName: Abigail's House
     locationAdress: 700 West Huron Street
     locationDescription: This is were Abigail lives, a nice flat for such a newcomer
-      in the underground business of Chicago. She used to be good friend with Anna,
-      until the incident of course.
+      in the underground business of Chicago. She used to be good friend with Anna.
     evidenceCollected: 0
     myLocation: 3
   - index: 3
@@ -1206,6 +1284,6 @@ MonoBehaviour:
     locationAdress: 457 N Wabash Avenue
     locationDescription: Anna's Place, she must've gotten quite a nice view from
       up there, but anyway, I need to find out what happened, a very bizarre crime
-      for a person of that much wealth
+      for a person of that much wealth.
     evidenceCollected: 0
     myLocation: 2
