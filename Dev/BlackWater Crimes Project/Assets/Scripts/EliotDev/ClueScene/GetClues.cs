@@ -14,6 +14,10 @@ public class GetClues : MonoBehaviour
     [SerializeField] GameObject photoCanvas;
     [SerializeField] AudioMixerGroup lowPassMixer;
 
+    public AudioSource musicAudio;
+    public AudioSource soundAudio;
+    public AudioClip zoomSound;
+
     private bool isPhotoDisplayed;
 
     Vector3 zoomTransformInitPos;
@@ -164,7 +168,8 @@ public class GetClues : MonoBehaviour
         sceneCanvas.SetActive(false);
         overlayClueCanvas.SetActive(true);
         overlayClueCanvas.GetComponent<EvidenceInteraction>().currentClueHolder = actualClue;
-        cam.GetComponent<AudioSource>().outputAudioMixerGroup = lowPassMixer;
+        musicAudio.outputAudioMixerGroup = lowPassMixer;
+        soundAudio.PlayOneShot(zoomSound);
     }
 
     public void DezoomClue()
@@ -180,7 +185,7 @@ public class GetClues : MonoBehaviour
         cameraCanvas.SetActive(false);
         overlayClueCanvas.GetComponent<EvidenceInteraction>().currentClueHolder = null;
         overlayClueCanvas.SetActive(false);
-        cam.GetComponent<AudioSource>().outputAudioMixerGroup = null;
+        musicAudio.outputAudioMixerGroup = null;
     }
 
     //Photo UI

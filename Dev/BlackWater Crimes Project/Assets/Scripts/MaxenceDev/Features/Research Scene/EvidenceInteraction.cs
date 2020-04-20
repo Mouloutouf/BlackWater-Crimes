@@ -27,6 +27,8 @@ public class EvidenceInteraction : MonoBehaviour
     bool canRotate = true;
     bool fingerprintMode = false;
 
+    public AudioSource soundAudio;
+
     public AudioClip photoShotSound;
     public AudioClip photoSavedSound;
     public AudioClip photoReplacedSound;
@@ -107,7 +109,7 @@ public class EvidenceInteraction : MonoBehaviour
                         evidence.intelRevealed = true;
                         hit.transform.gameObject.GetComponentsInChildren<ParticleSystem>()[0].Play();
                         hit.transform.gameObject.GetComponentsInChildren<ParticleSystem>()[1].Stop();
-                        GetComponent<AudioSource>().PlayOneShot(fingerprintDiscoveredSound);
+                        soundAudio.PlayOneShot(fingerprintDiscoveredSound);
                     }
                 }
             }
@@ -116,7 +118,7 @@ public class EvidenceInteraction : MonoBehaviour
 
     public void TakePhoto()
     {
-        GetComponent<AudioSource>().PlayOneShot(photoShotSound);
+        soundAudio.PlayOneShot(photoShotSound);
 
         RaycastHit hit;
         Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
@@ -140,7 +142,7 @@ public class EvidenceInteraction : MonoBehaviour
 
         if (!_evidence.photographed)
         {
-            GetComponent<AudioSource>().PlayOneShot(photoSavedSound);
+            soundAudio.PlayOneShot(photoSavedSound);
             StartCoroutine(DisplayText("Photo Saved"));
 
             _evidence.photographed = true;
@@ -149,7 +151,7 @@ public class EvidenceInteraction : MonoBehaviour
         }
         else
         {
-            GetComponent<AudioSource>().PlayOneShot(photoReplacedSound);
+            soundAudio.PlayOneShot(photoReplacedSound);
             StartCoroutine(DisplayText("Photo Replaced"));
         }
 

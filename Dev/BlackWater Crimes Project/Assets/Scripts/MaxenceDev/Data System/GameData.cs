@@ -110,6 +110,23 @@ public class Location : Data
     public Locations myLocation;
 }
 
+[Serializable]
+public class SoundFloat
+{
+    public float Volume
+    {
+        get { return _volume; }
+        set { _volume = Mathf.Clamp(value, 0, 1); }
+    }
+    [SerializeField, Range(0, 1)] private float _volume;
+}
+
+[Serializable]
+public class SoundSettings
+{
+    public SoundFloat musicVolume, soundVolume, voiceVolume;
+}
+
 // Facile à sauvegarder
 [CreateAssetMenu(fileName = "New Player Data", menuName = "Player Data Scriptable")]
 public class GameData : SerializedScriptableObject
@@ -122,11 +139,15 @@ public class GameData : SerializedScriptableObject
         {typeof(Location), false }
     };
 
+    public SoundSettings soundSettings;
+
+    [HideInInspector]
     public List<Evidence> evidences = new List<Evidence>();
     public Dictionary<Locations, List<Evidence>> allEvidences = new Dictionary<Locations, List<Evidence>>();
 
     public List<Note> notes = new List<Note>();
 
+    [HideInInspector]
     public List<Report> reports = new List<Report>();
     public Dictionary<Indics, List<Report>> allReports = new Dictionary<Indics, List<Report>>();
 

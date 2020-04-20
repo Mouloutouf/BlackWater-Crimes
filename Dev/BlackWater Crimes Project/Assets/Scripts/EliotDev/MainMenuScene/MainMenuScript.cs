@@ -7,6 +7,10 @@ using System;
 
 public class MainMenuScript : MonoBehaviour
 {
+    public SoundSystem soundSystem;
+    public DataContainer dataContainer;
+    private GameData gameData;
+
     [SerializeField] string introSceneName;
     [SerializeField] Slider musicSlider;
     [SerializeField] Slider voicesSlider;
@@ -17,6 +21,8 @@ public class MainMenuScript : MonoBehaviour
     private void Start() 
     {
         gameStatusText.text = "Game 1 - " + DateTime.Today.ToString("M/d/yyyy");
+
+        if (dataContainer != null) gameData = dataContainer.gameData;
     }
     
     public void Quit()
@@ -24,15 +30,19 @@ public class MainMenuScript : MonoBehaviour
         Application.Quit();
     }
 
-    public void UpdateText(GameObject sender)
+    public void UpdateParameter(GameObject sender)
     {
-        if(sender == musicSlider.gameObject)
+        if (sender == musicSlider.gameObject)
         {
             musicValue.text = musicSlider.value.ToString();
+            gameData.soundSettings.musicVolume.Volume = (musicSlider.value) / musicSlider.maxValue;
+            soundSystem.SetVolume();
         }
-        else if(sender == voicesSlider.gameObject)
+        else if (sender == voicesSlider.gameObject)
         {
             voicesValue.text = voicesSlider.value.ToString();
+            gameData.soundSettings.voiceVolume.Volume = (voicesSlider.value) / voicesSlider.maxValue;
+            soundSystem.SetVolume();
         }
     }   
 }
