@@ -25,12 +25,19 @@ public class SpecialistValidateButton : MonoBehaviour
             {
                 if (report.elementName == script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.name && report.index != 0)
                 {
-                    if (report.unlockedData == false)
+                    if (report.elementDetailName == "")
                     {
-                        report.unlockedData = true;
-                        report.elementSprite = script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.photo;
-                        gameData.reportsCollected++;
-                        report.unlockOrderIndex = gameData.reportsCollected;
+                        UnlockReport(report);
+                    }
+                    else
+                    {
+                        foreach (Intel intel in script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.intels)
+                        {
+                            if (intel.revealed && report.elementDetailName == intel.name)
+                            {
+                                UnlockReport(report);
+                            }
+                        }
                     }
                     
                     match = true;
@@ -65,6 +72,17 @@ public class SpecialistValidateButton : MonoBehaviour
         script.ResetClue();
         GetComponent<Button>().interactable = false;
         GetComponentInChildren<Text>().text = "Missing elements";
+    }
+
+    void UnlockReport(Report _report)
+    {
+        if (_report.unlockedData == false)
+        {
+            _report.unlockedData = true;
+            _report.elementSprite = script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.photo;
+            gameData.reportsCollected++;
+            _report.unlockOrderIndex = gameData.reportsCollected;
+        }
     }
 
     void UnlockFailedReport(Indics indic)

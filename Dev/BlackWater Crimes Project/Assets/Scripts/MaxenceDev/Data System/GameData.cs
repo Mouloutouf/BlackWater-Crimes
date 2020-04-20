@@ -50,18 +50,31 @@ public class Note : Data
 }
 
 [Serializable]
+public class Intel
+{
+    public string name;
+    public Sprite image;
+
+    public bool revealed;
+}
+
+[Serializable]
 public class Evidence : Data
 {
     public string name;
-    
-    public bool hasIntel;
-    public Sprite intel;
-    public bool intelRevealed;
+
+    public bool intelRevealed; // To Remove
+
+    public bool intelSelf;
+    public bool hasIntels;
+    [ShowIf("hasIntel")]
+    public List<Intel> intels = new List<Intel>();
 
     public string description;
 
     public bool photographed;
     public Sprite photo;
+    public bool completedPhotograph;
 
     public ModeCategory modeCategory;
 
@@ -78,6 +91,8 @@ public class Report : Data
 
     public Sprite elementSprite;
     public string elementName;
+    [ShowIf("mode", Modes.Type)]
+    public string elementDetailName;
 
     [Title("Report Text", bold: false)]
     [HideLabel]

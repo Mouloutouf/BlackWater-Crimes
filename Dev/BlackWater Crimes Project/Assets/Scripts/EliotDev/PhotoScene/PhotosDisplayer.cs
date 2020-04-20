@@ -38,7 +38,7 @@ public class PhotosDisplayer : MonoBehaviour
             {
                 if ((tr.GetComponent<EvidenceObject>().data.name + ".png") == files[index])
                 {
-                    tr.GetComponent<EvidenceObject>().data.intel = photoSprites[index];
+                    tr.GetComponent<EvidenceObject>().data.photo = photoSprites[index];
                 }
             }
 

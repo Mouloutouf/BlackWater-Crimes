@@ -94,7 +94,7 @@ public class EvidenceInteraction : MonoBehaviour
                 Evidence evidence = hit.transform.parent.gameObject.GetComponent<EvidenceObject>().data;
                 EvidenceObject evidenceObject = hit.transform.parent.gameObject.GetComponent<EvidenceObject>();
 
-                if (evidence.hasIntel == true && evidence.intelRevealed == false && touch.phase == TouchPhase.Moved)
+                if (evidence.hasIntels == true && evidence.intelRevealed == false && touch.phase == TouchPhase.Moved)
                 {
                     if (evidenceObject.intelAlpha < 1f)
                     {
@@ -136,7 +136,7 @@ public class EvidenceInteraction : MonoBehaviour
 
     void TakeScreenshot(Evidence _evidence, RaycastHit _hit)
     {
-        if (_evidence.hasIntel && !_evidence.intelRevealed) return;
+        if (_evidence.hasIntels && !_evidence.intelRevealed) return;
 
         StopAllCoroutines();
 
