@@ -386,9 +386,9 @@ GameObject:
   - component: {fileID: 107201353}
   - component: {fileID: 107201358}
   - component: {fileID: 107201357}
-  - component: {fileID: 107201356}
   - component: {fileID: 107201355}
   - component: {fileID: 107201354}
+  - component: {fileID: 107201356}
   m_Layer: 0
   m_Name: INDICE Lettre
   m_TagString: ClueHolder
@@ -455,15 +455,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: 3
-  specificZoomPosition: {x: 0, y: 1, z: -9.65}
+  specificZoomPosition: {x: 0, y: 1, z: -9.6}
   hasSpecificRotation: 1
   specificZoomRotation: {x: 0, y: 0, z: 0}
   specificZoomRotationQuaternion: {x: -0.00000003090862, y: 0.70710677, z: -0.70710677,
     w: -0.00000003090862}
   blockHorizontalRotation: 1
   blockVerticalRotation: 1
---- !u!64 &107201356
-MeshCollider:
+--- !u!65 &107201356
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -472,10 +472,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 51.07847, y: 0.000000037252935, z: 45.57452}
+  m_Center: {x: -0.32764348, y: -0.0000009908147, z: 2.044433}
 --- !u!23 &107201357
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1668,8 +1667,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10.000002, y: 0.00000063329935, z: 10.000006}
-  m_Center: {x: 0.000030517578, y: 0.000015258789, z: 0.000030517578}
+  m_Size: {x: 15.652612, y: 0.00000063329924, z: 19.056715}
+  m_Center: {x: -0.090119414, y: 0.000014731504, z: 0.69057214}
 --- !u!23 &872246314
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2077,32 +2076,32 @@ PrefabInstance:
     - target: {fileID: 3730569804384897931, guid: 87335fb74df80ba469e5e3d87edc2191,
         type: 3}
       propertyPath: m_Size.x
-      value: 2.425421
+      value: 6.0430794
       objectReference: {fileID: 0}
     - target: {fileID: 3730569804384897931, guid: 87335fb74df80ba469e5e3d87edc2191,
         type: 3}
       propertyPath: m_Center.x
-      value: 0.012252878
+      value: 0.02487004
       objectReference: {fileID: 0}
     - target: {fileID: 3730569804384897931, guid: 87335fb74df80ba469e5e3d87edc2191,
         type: 3}
       propertyPath: m_Center.y
-      value: 1.0430209e-11
+      value: -0.00690776
       objectReference: {fileID: 0}
     - target: {fileID: 3730569804384897931, guid: 87335fb74df80ba469e5e3d87edc2191,
         type: 3}
       propertyPath: m_Center.z
-      value: -0.33999997
+      value: 0.21130563
       objectReference: {fileID: 0}
     - target: {fileID: 3730569804384897931, guid: 87335fb74df80ba469e5e3d87edc2191,
         type: 3}
       propertyPath: m_Size.z
-      value: 2.9948604
+      value: 7.147122
       objectReference: {fileID: 0}
     - target: {fileID: 3730569804384897931, guid: 87335fb74df80ba469e5e3d87edc2191,
         type: 3}
       propertyPath: m_Size.y
-      value: 0.046335522
+      value: 0.14797322
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3730569804384897930, guid: 87335fb74df80ba469e5e3d87edc2191, type: 3}
@@ -20853,8 +20852,8 @@ GameObject:
   - component: {fileID: 3430635635307228131}
   - component: {fileID: 8414934033583628792}
   - component: {fileID: 6542740856713617745}
-  - component: {fileID: 6542740856713617744}
   - component: {fileID: 6542740856713617743}
+  - component: {fileID: 6542740856713617744}
   m_Layer: 0
   m_Name: INDICE Douille
   m_TagString: ClueHolder
@@ -20893,8 +20892,8 @@ MonoBehaviour:
   instantiate: 0
   hasApplied: 0
   intelAlpha: 0
---- !u!64 &6542740856713617744
-MeshCollider:
+--- !u!65 &6542740856713617744
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -20903,10 +20902,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5741839294967010819, guid: 8ab066959518db849b299b1925eef867, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 2.688694, y: 0.41992036, z: 2.677162}
+  m_Center: {x: -0.0990942, y: -1.9325236e-10, z: 0.5161191}
 --- !u!114 &6542740856713617745
 MonoBehaviour:
   m_ObjectHideFlags: 0
