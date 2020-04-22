@@ -10,6 +10,8 @@ public class SpecialistValidateButton : MonoBehaviour
     [SerializeField] Text dialogueText;
     GameData gameData;
 
+    private bool match;
+
     private void Start()
     {
         gameData = GameObject.Find("Data Container").GetComponent<DataContainer>().gameData;
@@ -17,49 +19,47 @@ public class SpecialistValidateButton : MonoBehaviour
     
     public void Validate()
     {
-        if (MatchType())
+        foreach (Indics indic in gameData.allReports.Keys)
         {
-            foreach (Indics indic in gameData.allReports.Keys)
+            foreach (Report report in gameData.allReports[indic])
             {
-                foreach (Report report in gameData.allReports[indic])
+                if (report.elementName == script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.name && report.index != 0)
                 {
-                    if (report.elementName == script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.name && report.unlockedData == false)
+                    if (report.unlockedData == false)
                     {
                         report.unlockedData = true;
                         report.elementSprite = script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.photo;
-                        gameData.reportsCollected ++;
+                        gameData.reportsCollected++;
                         report.unlockOrderIndex = gameData.reportsCollected;
                     }
+                    
+                    match = true;
                 }
             }
         }
-        else
+
+        if (!match)
         {
-            if(specialistType == SpecialistType.ClothDesigner)
+            switch (specialistType)
             {
-                gameData.allReports[Indics.Brandon_Bennington][0].unlockedData = true;
-                gameData.allReports[Indics.Brandon_Bennington][0].elementSprite = script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.photo;
-                gameData.allReports[Indics.Brandon_Bennington][0].elementName = script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.name;
-            }
-            else if(specialistType == SpecialistType.CustomsOfficer)
-            {
-                gameData.allReports[Indics.Arnold_Steele][0].unlockedData = true;
-                gameData.allReports[Indics.Arnold_Steele][0].elementSprite = script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.photo;
-                gameData.allReports[Indics.Arnold_Steele][0].elementName = script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.name;
-            }
-            else if(specialistType == SpecialistType.ForensicOfficer)
-            {
-                gameData.allReports[Indics.Quentin_Copeland][0].unlockedData = true;
-                gameData.allReports[Indics.Quentin_Copeland][0].elementSprite = script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.photo;
-                gameData.allReports[Indics.Quentin_Copeland][0].elementName = script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.name;
-            }
-            else if(specialistType == SpecialistType.USCCSecretary)
-            {
-                gameData.allReports[Indics.Miss_Marshall][0].unlockedData = true;
-                gameData.allReports[Indics.Miss_Marshall][0].elementSprite = script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.photo;
-                gameData.allReports[Indics.Miss_Marshall][0].elementName = script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.name;
+                case SpecialistType.ClothDesigner:
+                    UnlockFailedReport(Indics.Brandon_Bennington);
+                    break;
+                case SpecialistType.CustomsOfficer:
+                    UnlockFailedReport(Indics.Arnold_Steele);
+                    break;
+                case SpecialistType.ForensicOfficer:
+                    UnlockFailedReport(Indics.Quentin_Copeland);
+                    break;
+                case SpecialistType.USCCSecretary:
+                    UnlockFailedReport(Indics.Miss_Marshall);
+                    break;
+                default:
+                    break;
             }
         }
+
+        match = false;
 
         dialogueText.text = "Okay, let me check that! Anything else?";
         script.ResetClue();
@@ -67,9 +67,16 @@ public class SpecialistValidateButton : MonoBehaviour
         GetComponentInChildren<Text>().text = "Missing elements";
     }
 
+    void UnlockFailedReport(Indics indic)
+    {
+        gameData.allReports[indic][0].unlockedData = true;
+        gameData.allReports[indic][0].elementSprite = script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.photo;
+        gameData.allReports[indic][0].elementName = script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.name;
+    }
+
     bool MatchType()
     {
-        if(specialistType == SpecialistType.ClothDesigner && script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.modeCategory.type == Types.Clothing) 
+        if (specialistType == SpecialistType.ClothDesigner && script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.modeCategory.type == Types.Clothing) 
         {
             return true;
         }

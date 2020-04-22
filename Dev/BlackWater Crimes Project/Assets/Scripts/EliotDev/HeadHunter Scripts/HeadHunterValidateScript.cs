@@ -76,6 +76,18 @@ public class HeadHunterValidateScript : MonoBehaviour
         {
             return false;
         }
+        else if (inputField.text == "Anna Jameswan")
+        {
+            if (dropdown.GetComponentInChildren<Text>().text == "Blond")
+            {
+                targetName = "Anna Jameswan";
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         else
         {
             return false;

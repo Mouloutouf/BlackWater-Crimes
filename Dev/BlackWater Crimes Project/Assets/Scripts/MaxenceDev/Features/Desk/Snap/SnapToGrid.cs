@@ -12,15 +12,15 @@ public class SnapToGrid : MonoBehaviour
     {
         //if (other.GetComponent<PhotoObject>() == null) return;
 
-        DragWithSnap drag = other.transform.parent.GetComponent<DragWithSnap>();
+        DragWithSnap dragScript = other.transform.parent.GetComponent<DragWithSnap>();
         Transform parentObject = other.transform.parent.parent;
 
-        if (!drag.isHeld)
+        if (!dragScript.isHeld)
         {
             if (!isSetAtPage)
             {
                 // set the photo's transform to the right page in hierarchy (either page 1 or page 2)
-                parentObject.transform.SetParent(this.transform.parent.parent);
+                //parentObject.transform.SetParent(this.transform.parent.parent);
                 parentObject.GetComponent<PhotoObject>().pageNumber = pageLocation;
                 isSetAtPage = true;
             }
@@ -38,6 +38,6 @@ public class SnapToGrid : MonoBehaviour
             }
         }
 
-        if (drag.isHeld) isSetAtPage = false;
+        if (dragScript.isHeld) isSetAtPage = false;
     }
 }

@@ -24,7 +24,7 @@ public class NotificationSystem : MonoBehaviour
         {
             foreach (Transform tr in elementHolder)
             {
-                if (tr.gameObject.activeInHierarchy && !tr.GetComponent<ReportObject>().data.seen)
+                if (tr.gameObject.activeInHierarchy && tr.GetComponent<ReportObject>() != null && !tr.GetComponent<ReportObject>().data.seen)
                 {
                     tr.GetComponent<ReportObject>().data.seen = true;
 

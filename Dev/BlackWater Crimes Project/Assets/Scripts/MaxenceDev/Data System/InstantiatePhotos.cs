@@ -24,6 +24,8 @@ public class InstantiatePhotos : InstantiationProcess<Evidence>
     public GameObject snapColliderPrefab;
     public float snapDist;
 
+    public List<GameObject> photosList { get; private set; } = new List<GameObject>();
+
     void Start()
     {
         GetGameData();
@@ -53,7 +55,9 @@ public class InstantiatePhotos : InstantiationProcess<Evidence>
         _prefab.transform.GetChild(2).GetComponent<RectTransform>().sizeDelta = spawnScales[index];
 
         _prefab.GetComponent<PhotoObject>().photosBooklet = this.gameObject;
-        
+
+        photosList.Add(_prefab);
+
         index++;
         if (index == amountInEachRow * amountInEachColumn) { pageIndex++; index = 0; }
 
