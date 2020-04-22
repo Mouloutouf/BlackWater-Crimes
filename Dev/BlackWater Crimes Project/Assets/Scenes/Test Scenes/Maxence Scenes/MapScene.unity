@@ -1340,9 +1340,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
+      propertyPath: languageUsingObjects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
       propertyPath: languageTexts.Array.data[0].textComponent
       value: 
       objectReference: {fileID: 988102777}
+    - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
+      propertyPath: languageUsingObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 946074503}
     - target: {fileID: 6054615889188889912, guid: e7f1cd350bc5f0941bb44b9e4b1ff994,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1581,6 +1589,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &946074503 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5548631634433681298, guid: 8fa027d05b0bbcf47a4a7857940ce056,
+    type: 3}
+  m_PrefabInstance: {fileID: 5548631633122185512}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &964525005
 GameObject:
   m_ObjectHideFlags: 0

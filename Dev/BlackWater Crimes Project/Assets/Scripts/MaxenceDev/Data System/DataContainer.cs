@@ -5,4 +5,9 @@ using UnityEngine;
 public class DataContainer : MonoBehaviour
 {
     public GameData gameData;
+
+    public void EraseCurrentGame()
+    {
+        gameData.ResetData();
+    }
 }

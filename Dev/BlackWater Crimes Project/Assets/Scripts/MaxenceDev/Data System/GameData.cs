@@ -241,4 +241,32 @@ public class GameData : SerializedScriptableObject
                 return null;
         }
     }
+
+    [ContextMenu("Reset Game Data")]
+    public void ResetData()
+    {
+        // Reset Evidences
+        foreach (List<Evidence> evidenceList in allEvidences.Values)
+        {
+            evidenceList.Clear();
+        }
+
+        // Reset Locations
+        locations.Clear();
+
+        // Reset Notes
+        notes.Clear();
+
+        // Reset Reports
+        foreach (List<Report> reportList in allReports.Values)
+        {
+            foreach (Report report in reportList)
+            {
+                report.unlockedData = false;
+                report.unlockOrderIndex = 0;
+                report.seen = false;
+            }
+        }
+        reportsCollected = 0;
+    }
 }
