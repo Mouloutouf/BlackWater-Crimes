@@ -18,6 +18,8 @@ public class MainMenuScript : MonoBehaviour
     [SerializeField] Text voicesValue;
     [SerializeField] Text gameStatusText;
 
+    public Dropdown languageSelection;
+
     private void Start() 
     {
         gameStatusText.text = "Game 1 - " + DateTime.Today.ToString("M/d/yyyy");
@@ -44,5 +46,17 @@ public class MainMenuScript : MonoBehaviour
             gameData.soundSettings.voiceVolume.Volume = (voicesSlider.value) / voicesSlider.maxValue;
             soundSystem.SetVolume();
         }
-    }   
+    }
+
+    public void UpdateLanguage()
+    {
+        if (languageSelection.value == 0)
+        {
+            gameData.gameLanguage = Languages.English;
+        }
+        else if (languageSelection.value == 1)
+        {
+            gameData.gameLanguage = Languages.French;
+        }
+    }
 }

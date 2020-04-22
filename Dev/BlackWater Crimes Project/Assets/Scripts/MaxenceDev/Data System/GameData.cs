@@ -40,6 +40,23 @@ public class Data
     }
 }
 
+public enum Languages { English, French }
+
+[Serializable]
+public class LocalisedText // Testing
+{
+    public bool largeText;
+    public bool superText;
+
+    private const int yes = 1;
+    private int boxSize { get { return largeText ? superText ? 15 : 5 : 1; } }
+
+    [TextArea] // Size of the text box
+    public string frenchText;
+    [MultiLineProperty(yes)] // Size of the text box
+    public string englishText;
+}
+
 [Serializable]
 public class Note : Data
 {
@@ -55,27 +72,36 @@ public class Intel
     public string name;
     public Sprite image;
 
+    [Range(0, 1)] public float intelAlpha;
+
     public bool revealed;
 }
 
 [Serializable]
 public class Evidence : Data
 {
-    public string name;
+    [HideReferenceObjectPicker]
+    public LocalisedText displayedName;
+
+    public string codeName;
 
     public bool intelRevealed; // To Remove
 
     public bool intelSelf;
     public bool hasIntels;
-    [ShowIf("hasIntel")]
+    [ShowIf("hasIntels")]
     public List<Intel> intels = new List<Intel>();
 
+    [Title("Description Text", bold: false)]
+    [HideLabel]
+    [MultiLineProperty(5)]
     public string description;
 
     public bool photographed;
     public Sprite photo;
     public bool completedPhotograph;
 
+    [HideReferenceObjectPicker]
     public ModeCategory modeCategory;
 
     public bool useToUnlock;
@@ -115,11 +141,16 @@ public class Location : Data
     public bool completed;
 
     public string locationName;
+    public LanguageText _locationName;
+
     public string locationAdress;
+
     [Title("Report Text", bold: false)]
     [HideLabel]
     [MultiLineProperty(5)]
     public string locationDescription;
+    public LargeLanguageText _locationDescription;
+
     public int evidenceCollected;
 
     public Locations myLocation;
@@ -153,6 +184,8 @@ public class GameData : SerializedScriptableObject
         {typeof(Report), false },
         {typeof(Location), false }
     };
+
+    public Languages gameLanguage = Languages.English;
 
     public SoundSettings soundSettings;
 

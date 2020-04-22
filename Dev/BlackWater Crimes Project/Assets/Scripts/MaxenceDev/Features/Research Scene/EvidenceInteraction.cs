@@ -91,25 +91,31 @@ public class EvidenceInteraction : MonoBehaviour
         {
             if (hit.transform.gameObject.tag == "Clue")
             {
-                Evidence evidence = hit.transform.parent.gameObject.GetComponent<EvidenceObject>().data;
-                EvidenceObject evidenceObject = hit.transform.parent.gameObject.GetComponent<EvidenceObject>();
+                string name = hit.transform.GetComponent<IntelObject>().myName;
 
-                if (evidence.hasIntels == true && evidence.intelRevealed == false && touch.phase == TouchPhase.Moved)
+                Evidence evidence = hit.transform.parent.gameObject.GetComponent<EvidenceObject>().data;
+
+                if (evidence.hasIntels == true && touch.phase == TouchPhase.Moved)
                 {
-                    if (evidenceObject.intelAlpha < 1f)
+                    foreach (Intel intel in evidence.intels)
                     {
-                        evidenceObject.intelAlpha += .8f * Time.deltaTime;
-                        Color tempColor = hit.transform.gameObject.GetComponentInChildren<SpriteRenderer>().color;
-                        tempColor.a = evidenceObject.intelAlpha + .2f;
-                        Debug.Log(tempColor.a);
-                        hit.transform.gameObject.GetComponentInChildren<SpriteRenderer>().color = tempColor;
-                    }
-                    else
-                    {
-                        evidence.intelRevealed = true;
-                        hit.transform.gameObject.GetComponentsInChildren<ParticleSystem>()[0].Play();
-                        hit.transform.gameObject.GetComponentsInChildren<ParticleSystem>()[1].Stop();
-                        soundAudio.PlayOneShot(fingerprintDiscoveredSound);
+                        if (intel.name == name && !intel.revealed)
+                        {
+                            if (intel.intelAlpha < 1f)
+                            {
+                                intel.intelAlpha += .8f * Time.deltaTime;
+                                Color tempColor = hit.transform.gameObject.GetComponentInChildren<SpriteRenderer>().color;
+                                tempColor.a = intel.intelAlpha + .2f;
+                                hit.transform.gameObject.GetComponentInChildren<SpriteRenderer>().color = tempColor;
+                            }
+                            else
+                            {
+                                intel.revealed = true;
+                                hit.transform.gameObject.GetComponentsInChildren<ParticleSystem>()[0].Play();
+                                hit.transform.gameObject.GetComponentsInChildren<ParticleSystem>()[1].Stop();
+                                soundAudio.PlayOneShot(fingerprintDiscoveredSound);
+                            }
+                        }
                     }
                 }
             }
@@ -136,7 +142,19 @@ public class EvidenceInteraction : MonoBehaviour
 
     void TakeScreenshot(Evidence _evidence, RaycastHit _hit)
     {
-        if (_evidence.hasIntels && !_evidence.intelRevealed) return;
+        if (!_evidence.intelSelf && _evidence.hasIntels)
+        {
+            int val = 0;
+
+            foreach (Intel _intel in _evidence.intels)
+            {
+                val = _evidence.intels.Count;
+
+                if (!_intel.revealed) val--;
+            }
+
+            if (val == 0) return;
+        }
 
         StopAllCoroutines();
 
@@ -153,11 +171,13 @@ public class EvidenceInteraction : MonoBehaviour
         {
             soundAudio.PlayOneShot(photoReplacedSound);
             StartCoroutine(DisplayText("Photo Replaced"));
+            gameData.allEvidences[thisSceneLocation].Remove(_evidence);
+            gameData.allEvidences[thisSceneLocation].Add(_evidence);
         }
 
         string filePath;
 
-        if(isInEditor)
+        if (isInEditor)
         {
             filePath = "Assets/Graphs/Sprites/Screenshots/" + _hit.transform.gameObject.name + ".png";
             Debug.Log("Using Editor Folder");
@@ -167,7 +187,7 @@ public class EvidenceInteraction : MonoBehaviour
                 File.Delete(filePath);
             }
         }
-        else if(windowsBuild)
+        else if (windowsBuild)
         {
             filePath = Application.persistentDataPath + _hit.transform.gameObject.name + ".png";
             Debug.Log("Using Windows Folder");
@@ -190,11 +210,11 @@ public class EvidenceInteraction : MonoBehaviour
 
         ScreenCapture.CaptureScreenshot(filePath);
 
-        if(isInEditor)
+        if (isInEditor)
         {
             StartCoroutine(CheckFile(filePath, _evidence));
         }
-        if(windowsBuild)
+        if (windowsBuild)
         {
             StartCoroutine(CheckFile(filePath, _evidence));
         }

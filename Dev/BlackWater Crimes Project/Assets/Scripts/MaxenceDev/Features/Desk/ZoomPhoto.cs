@@ -26,7 +26,7 @@ public class ZoomPhoto : MonoBehaviour
         if (hits.Count() > 0 && hits[0].transform.parent.GetComponent<PhotoObject>() != null && Input.GetMouseButtonUp(0) && !isZoomed)
         {
             PhotoObject photoScript = hits[0].transform.parent.GetComponent<PhotoObject>();
-            Zoom(photoScript.data.photo, photoScript.data.name);
+            Zoom(photoScript.data.photo, photoScript.data.codeName);
             isZoomed = true;
         }
         else if (Input.GetMouseButtonDown(0))

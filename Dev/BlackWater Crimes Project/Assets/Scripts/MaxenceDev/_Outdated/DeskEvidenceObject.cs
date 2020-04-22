@@ -15,7 +15,7 @@ public class DeskEvidenceObject : ObjectData<Evidence>
     {
         objects[0].GetComponent<Image>().sprite = data.photo;
 
-        objects[1].GetComponent<Text>().text = data.name;
+        objects[1].GetComponent<Text>().text = data.codeName;
 
         objects[2].GetComponent<Text>().text = data.description;
 

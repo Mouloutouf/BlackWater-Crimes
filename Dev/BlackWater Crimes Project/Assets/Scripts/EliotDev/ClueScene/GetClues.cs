@@ -64,14 +64,18 @@ public class GetClues : MonoBehaviour
 
     void CheckForClueHolderMove()
     {
+        // Zoom Movement
         if (actualClue != null && clueIsZoomed == true)
         {
+            // Position
             if (actualClue.transform.position != actualZoomTransform.position)
             {
                 zoomAlpha += .01f * zoomSpeed * Time.deltaTime;
                 actualClue.transform.position = Vector3.Lerp(initCluePos, actualZoomTransform.position, zoomAlpha);
             }
+            else actualClue.GetComponent<EvidenceObject>().isZoomed = true;
 
+            // Rotation
             if (actualClue.GetComponent<ClueHolder>().hasSpecificRotation == true && actualClue.transform.rotation != actualClue.GetComponent<ClueHolder>().specificZoomRotationQuaternion)
             {
                 rotateAlpha += .01f * rotateSpeed * Time.deltaTime;
@@ -79,14 +83,17 @@ public class GetClues : MonoBehaviour
             }
         }
 
+        // Dezoom Movement
         else if (actualClue != null & clueIsZoomed == false)
         {
+            // Position
             if (actualClue.transform.position != initCluePos)
             {
                 zoomAlpha += .01f * zoomSpeed * Time.deltaTime;
                 actualClue.transform.position = Vector3.Lerp(actualZoomTransform.position, initCluePos, zoomAlpha);
             }
 
+            // Rotation
             if (actualClue.transform.rotation != initClueRot)
             {
                 rotateAlpha += .01f * rotateSpeed * Time.deltaTime;
@@ -168,6 +175,7 @@ public class GetClues : MonoBehaviour
         sceneCanvas.SetActive(false);
         overlayClueCanvas.SetActive(true);
         overlayClueCanvas.GetComponent<EvidenceInteraction>().currentClueHolder = actualClue;
+        
         musicAudio.outputAudioMixerGroup = lowPassMixer;
         soundAudio.PlayOneShot(zoomSound);
     }
@@ -184,6 +192,7 @@ public class GetClues : MonoBehaviour
         sceneCanvas.SetActive(true);
         cameraCanvas.SetActive(false);
         overlayClueCanvas.GetComponent<EvidenceInteraction>().currentClueHolder = null;
+        actualClue.GetComponent<EvidenceObject>().isZoomed = false;
         overlayClueCanvas.SetActive(false);
         musicAudio.outputAudioMixerGroup = null;
     }

@@ -23,7 +23,7 @@ public class SpecialistValidateButton : MonoBehaviour
         {
             foreach (Report report in gameData.allReports[indic])
             {
-                if (report.elementName == script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.name && report.index != 0)
+                if (report.elementName == script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.codeName && report.index != 0)
                 {
                     if (report.elementDetailName == "")
                     {
@@ -89,7 +89,7 @@ public class SpecialistValidateButton : MonoBehaviour
     {
         gameData.allReports[indic][0].unlockedData = true;
         gameData.allReports[indic][0].elementSprite = script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.photo;
-        gameData.allReports[indic][0].elementName = script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.name;
+        gameData.allReports[indic][0].elementName = script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.codeName;
     }
 
     bool MatchType()
