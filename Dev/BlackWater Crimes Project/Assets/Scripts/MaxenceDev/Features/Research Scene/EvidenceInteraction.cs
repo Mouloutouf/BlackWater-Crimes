@@ -161,6 +161,7 @@ public class EvidenceInteraction : MonoBehaviour
         if (!_evidence.photographed)
         {
             soundAudio.PlayOneShot(photoSavedSound);
+            Handheld.Vibrate();
             StartCoroutine(DisplayText("Photo Saved"));
 
             _evidence.photographed = true;
@@ -170,6 +171,7 @@ public class EvidenceInteraction : MonoBehaviour
         else
         {
             soundAudio.PlayOneShot(photoReplacedSound);
+            Handheld.Vibrate();
             StartCoroutine(DisplayText("Photo Replaced"));
             gameData.allEvidences[thisSceneLocation].Remove(_evidence);
             gameData.allEvidences[thisSceneLocation].Add(_evidence);
@@ -232,7 +234,7 @@ public class EvidenceInteraction : MonoBehaviour
         }
         else
         {
-            returnButton.interactable = false;
+            //returnButton.interactable = false;
             yield return new WaitForSeconds(0.1f);
             StartCoroutine(CheckFile(filePath, _evidence));
         }

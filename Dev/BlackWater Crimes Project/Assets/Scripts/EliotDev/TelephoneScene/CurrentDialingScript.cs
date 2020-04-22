@@ -62,13 +62,16 @@ public class CurrentDialingScript : MonoBehaviour
     IEnumerator Call()
     {
         callingText.text = "Calling";
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(1f);
+        Handheld.Vibrate();
         callingText.text += ".";
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(1f);
+        Handheld.Vibrate();
         callingText.text += ".";
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(1f);
+        Handheld.Vibrate();
         callingText.text += ".";
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(1f);
         CheckNumber();
     }
 

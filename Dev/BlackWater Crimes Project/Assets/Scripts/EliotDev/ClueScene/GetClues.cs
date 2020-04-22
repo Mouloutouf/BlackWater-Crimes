@@ -22,7 +22,8 @@ public class GetClues : MonoBehaviour
 
     Vector3 zoomTransformInitPos;
 
-    bool clueIsZoomed = false;
+    public bool clueIsZoomed = false;
+    public bool canZoom = true;
 
     float zoomAlpha = 0f;
     float rotateAlpha = 0f;
@@ -52,11 +53,11 @@ public class GetClues : MonoBehaviour
 
     void CheckForCast()
     {
-        if (Input.touchCount == 1 && clueIsZoomed == false && actualClue == null)
+        if (Input.touchCount == 1 && clueIsZoomed == false && actualClue == null && canZoom == true)
         {
             CastRay(Input.touches[0].position);
         }
-        else if(Input.GetMouseButtonDown(0) && clueIsZoomed == false && actualClue == null)
+        else if(Input.GetMouseButtonDown(0) && clueIsZoomed == false && actualClue == null && canZoom == true)
         {
             CastRay(Input.mousePosition);
         }
