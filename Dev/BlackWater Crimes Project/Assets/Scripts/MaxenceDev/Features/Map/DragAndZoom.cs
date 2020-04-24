@@ -23,18 +23,13 @@ public class DragAndZoom : MonoBehaviour
     private Vector2 horizontalClamp = new Vector2(-5f, 5f);
     private Vector2 verticalClamp = new Vector2(-5f, 5f);
 
-    private bool zoomed;
+    public bool zoomed { get; private set; }
 
     public GameObject returnButton;
     private Transform currentQuarter;
 
     public GameObject locations;
     
-    void Start()
-    {
-        locations.SetActive(false);
-    }
-
     void Update()
     {
         // Zoom Input
@@ -53,6 +48,8 @@ public class DragAndZoom : MonoBehaviour
         //PinchToZoom();
 
         // Move Input (Drag)
+
+        if (!zoomed) return;
 
         if (Input.GetMouseButtonDown(0)) // On Click
         {
@@ -86,9 +83,7 @@ public class DragAndZoom : MonoBehaviour
 
         zoomed = true;
         currentQuarter = tr;
-
-        locations.SetActive(true);
-
+        
         SwitchButtons(currentQuarter, true);
     }
 
@@ -96,7 +91,7 @@ public class DragAndZoom : MonoBehaviour
     {
         cam.transform.position = new Vector3(0, 0, -10);
         
-        cam.orthographicSize = 5;
+        cam.orthographicSize = 9;
 
         factor *= 2f;
 
@@ -104,9 +99,7 @@ public class DragAndZoom : MonoBehaviour
         verticalClamp = new Vector2(-5f, 5f);
 
         zoomed = false;
-
-        locations.SetActive(false);
-
+        
         SwitchButtons(currentQuarter, false);
     }
 

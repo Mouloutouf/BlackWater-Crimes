@@ -30,8 +30,8 @@ public class LocationObject : ObjectData<Location>
 
         locationName.GetComponentInChildren<TextMesh>().text = data.locationName;
 
-        if (data.visible) locationName.SetActive(true);
-
+        if (!data.visible) locationName.SetActive(false);
+        
         //if (data.completed); // code for completion location active
 
         base.Protocol();

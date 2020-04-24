@@ -25,6 +25,9 @@ public class LocationInteraction : SerializedMonoBehaviour
 
     public Dictionary<Locations, string> sceneNames = new Dictionary<Locations, string>();
 
+    public AudioSource source;
+    public AudioClip revealSound;
+
     void Start()
     {
         gameData = GameObject.Find("Data Container").GetComponent<DataContainer>().gameData;
@@ -46,6 +49,14 @@ public class LocationInteraction : SerializedMonoBehaviour
 
     void Update()
     {
+        if (!_camera.gameObject.GetComponent<DragAndZoom>().zoomed)
+        {
+            foreach (Transform tr in transform) tr.GetChild(1).gameObject.SetActive(false);
+
+            return;
+        }
+        else foreach (Transform tr in transform) if (tr.GetComponent<LocationObject>().data.visible) tr.GetChild(1).gameObject.SetActive(true);
+
         RaycastHit2D[] hits = Physics2D.RaycastAll(_camera.ScreenToWorldPoint(Input.mousePosition), new Vector3(0, 0, 1));
 
         if (hits.Count() > 0 && hits[0].transform.GetComponent<CircleCollider2D>() != null && Input.GetMouseButtonDown(0))
@@ -55,27 +66,24 @@ public class LocationInteraction : SerializedMonoBehaviour
             if (!locationObject.data.visible)
             {
                 RevealLocation(locationObject);
-                locationObject.data.visible = true;
-                locationObject.transform.GetChild(1).gameObject.SetActive(true);
             }
             else
             {
                 OpenLocationMenu(locationObject);
             }
         }
-        /*
-        else if (Input.GetMouseButtonDown(0) && locationObject != null)
-        {
-            locationObject.transform.GetChild(1).gameObject.SetActive(false);
-        }
-        */
     }
 
     void RevealLocation(LocationObject _object)
     {
         _object.locationSprite.SetActive(true);
+        _object.data.visible = true;
 
         //Particle Effects & anims & sounds etc.
+
+        Handheld.Vibrate();
+        source.PlayOneShot(revealSound);
+        _object.GetComponent<ParticleSystem>().Play();
     }
 
     void OpenLocationMenu(LocationObject _object)
