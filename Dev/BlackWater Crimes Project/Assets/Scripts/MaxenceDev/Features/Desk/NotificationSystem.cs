@@ -38,10 +38,10 @@ public class NotificationSystem : MonoBehaviour
     {
         reportsNumber = elementHolder.childCount - startElement;
 
+        if (elementHolder.GetChild(startElement).GetComponent<ReportObject>() == null) { notificationObject.SetActive(false); start = false; return; }
+
         for (int i = startElement; i < elementHolder.childCount; i++)
         {
-            if (elementHolder.GetChild(i).GetComponent<ReportObject>() == null) { notificationObject.SetActive(false); start = false; return; }
-
             if (elementHolder.GetChild(i).GetComponent<ReportObject>().data.seen)
             {
                 reportsNumber--;

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -51,7 +51,7 @@ public class TabManager : MonoBehaviour
     [HideInInspector] public Dictionary<GameObject, List<GameObject>> tabsContents = new Dictionary<GameObject, List<GameObject>>();
     [HideInInspector] public List<GameObject> tabsObjects = new List<GameObject>();
 
-    private int pageLayout = 2;
+    private int pageLayout { get { return pages.Length; } }
     
     void Start()
     {
@@ -99,7 +99,7 @@ public class TabManager : MonoBehaviour
         foreach (SortMode mode in sortModes)
         {
             mode.colorObject = Instantiate(colorPrefab);
-            mode.colorObject.transform.SetParent(modeTab.transform);
+            mode.colorObject.transform.SetParent(modeTab.transform, false);
 
             mode.colorObject.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
 
@@ -147,7 +147,7 @@ public class TabManager : MonoBehaviour
             for (int u = 0; u < pageLayout; u++)
             {
                 GameObject pageContent = Instantiate(new GameObject());
-                pageContent.transform.SetParent(tab_content.transform);
+                pageContent.transform.SetParent(tab_content.transform, false);
                 pageContent.name = "Page Content " + (u + 1).ToString();
 
                 SetContent(pageContent);

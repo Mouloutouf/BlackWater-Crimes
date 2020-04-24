@@ -21,6 +21,18 @@ public class InstantiationProcess<T> : MonoBehaviour where T : Data
         {
             if (_data.unlockedData)
             {
+                GameObject instance = Instantiation(this.prefab);
+                instance.GetComponent<ObjectData<_T>>().data = _data;
+            }
+        }
+    }
+
+    public void InstantiateDataOfType<_T>(_T type, List<_T> list, GameObject prefab) where _T : Data
+    {
+        foreach (_T _data in list)
+        {
+            if (_data.unlockedData)
+            {
                 GameObject instance = Instantiation(prefab);
                 instance.GetComponent<ObjectData<_T>>().data = _data;
             }
@@ -48,7 +60,6 @@ public class Instantiate : InstantiationProcess<Evidence>
         {
             InstantiateDataOfType(type, _list);
         }
-        
     }
 
     public override GameObject Instantiation(GameObject prefab)
