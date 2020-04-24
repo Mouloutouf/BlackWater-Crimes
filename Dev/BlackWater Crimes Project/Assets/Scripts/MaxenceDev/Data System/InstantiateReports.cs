@@ -26,6 +26,8 @@ public class InstantiateReports : InstantiationProcess<Report>
 
     private List<Report> failedReportsList = new List<Report>();
 
+    [HideInInspector] public List<Vector2> spawnPoints = new List<Vector2>();
+
     void Start()
     {
         failedReportsManager = GetComponent<FailedReportsManager>();
@@ -85,6 +87,7 @@ public class InstantiateReports : InstantiationProcess<Report>
             GameObject _button = Instantiate(prefab) as GameObject;
             _button.transform.SetParent(buttonContentHolder, false);
             _button.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, currentOffset);
+            spawnPoints.Add(new Vector2(0, currentOffset));
 
             currentOffset += buttonOffset;
 

@@ -210,7 +210,7 @@ public class TabManager : MonoBehaviour
 
         foreach (Transform _tabButton in tabs.transform) Destroy(_tabButton.gameObject); // Destroy all Tab Buttons
 
-        ResetPhotosToParent(); // Take all Photos, move them out of the Tab Contents, Destroy all Tab Contents
+        ResetObjectsToParent(); // Take all Photos, move them out of the Tab Contents, Destroy all Tab Contents
         
         CreateTabs(currentMode); // (Re)-Create Tab Buttons and Tab Contents relative to the Current Mode
 
@@ -221,7 +221,7 @@ public class TabManager : MonoBehaviour
         modeText.GetComponent<Text>().text = currentMode.name; // Set Current Mode's Name to the Mode Tab
     }
 
-    void ResetPhotosToParent()
+    void ResetObjectsToParent()
     {
         // New Version Tabs --> Pages
 
