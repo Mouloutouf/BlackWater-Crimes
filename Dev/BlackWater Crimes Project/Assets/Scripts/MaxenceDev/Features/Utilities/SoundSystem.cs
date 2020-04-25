@@ -21,4 +21,9 @@ public class SoundSystem : MonoBehaviour
         soundAudio.volume = gameData.soundSettings.soundVolume.Volume;
         voiceAudio.volume = gameData.soundSettings.voiceVolume.Volume;
     }
+
+    public void PlaySound(AudioClip audio)
+    {
+        soundAudio.PlayOneShot(audio);
+    }
 }

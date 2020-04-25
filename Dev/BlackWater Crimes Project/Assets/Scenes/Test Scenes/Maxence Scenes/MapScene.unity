@@ -721,6 +721,7 @@ MonoBehaviour:
   blockedButton: {fileID: 1529153194}
   source: {fileID: 1397800522}
   revealSound: {fileID: 8300000, guid: c0d8d8c097446914d9e7d672c7177fb9, type: 3}
+  clickSound: {fileID: 8300000, guid: 768bc4bfd564c9046af1ec05072021e3, type: 3}
 --- !u!1 &446922859
 GameObject:
   m_ObjectHideFlags: 0
@@ -895,6 +896,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &513261969 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6054615889987660512, guid: e7f1cd350bc5f0941bb44b9e4b1ff994,
+    type: 3}
+  m_PrefabInstance: {fileID: 895992204}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5beb02e2bd5105e46a54bf8fd58ceff2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &528578660
 GameObject:
   m_ObjectHideFlags: 0
@@ -4360,6 +4373,8 @@ MonoBehaviour:
   factor: 0.000007
   returnButton: {fileID: 1783003493}
   locations: {fileID: 284849296}
+  source: {fileID: 1397800522}
+  clickSound: {fileID: 8300000, guid: c844eb0bc182ce945b635fef853ea19f, type: 3}
 --- !u!114 &2068303548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4466,6 +4481,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: DeskScene
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 513261969}
+        m_MethodName: PlaySound
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 95243a6b136aad546a78e9b24c3318f5,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2111487357

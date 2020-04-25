@@ -44,6 +44,8 @@ public class MainMenuScript : MonoBehaviour
         {
             voicesValue.text = voicesSlider.value.ToString();
             gameData.soundSettings.voiceVolume.Volume = (voicesSlider.value) / voicesSlider.maxValue;
+            gameData.soundSettings.soundVolume.Volume = (voicesSlider.value) / voicesSlider.maxValue;
+
             soundSystem.SetVolume();
         }
     }

@@ -52,7 +52,10 @@ public class TabManager : MonoBehaviour
     [HideInInspector] public List<GameObject> tabsObjects = new List<GameObject>();
 
     private int pageLayout { get { return pages.Length; } }
-    
+
+    public SoundSystem soundSystem;
+    public AudioClip paperSound;
+
     void Start()
     {
         // Set up Mode Tab & Tabs (Buttons and Contents)
@@ -177,7 +180,8 @@ public class TabManager : MonoBehaviour
 
             int value = i;
             tabButton.GetComponent<Button>().onClick.AddListener(delegate { ChangeTab(value); } );
-            
+            tabButton.GetComponent<Button>().onClick.AddListener(delegate { soundSystem.PlaySound(paperSound); });
+
             if (i != 0) tabButton.GetComponent<Image>().color = baseColor;
         }
     }

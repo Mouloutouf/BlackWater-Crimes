@@ -75,7 +75,7 @@ public class InstantiateReports : InstantiationProcess<Report>
 
     public override GameObject Instantiation(GameObject prefab)
     {
-        if (prefab == this.prefab) // Instantiation Process for Reports
+        if (prefab == this.prefab || prefab == noPrefab) // Instantiation Process for Reports
         {
             GameObject _original = Instantiate(prefab) as GameObject;
             _original.transform.SetParent(contentHolder, false);

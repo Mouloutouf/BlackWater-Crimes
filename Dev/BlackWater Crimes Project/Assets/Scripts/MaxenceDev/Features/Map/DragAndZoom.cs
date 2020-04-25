@@ -29,7 +29,10 @@ public class DragAndZoom : MonoBehaviour
     private Transform currentQuarter;
 
     public GameObject locations;
-    
+
+    public AudioSource source;
+    public AudioClip clickSound;
+
     void Update()
     {
         // Zoom Input
@@ -40,6 +43,8 @@ public class DragAndZoom : MonoBehaviour
 
             if (hits.Count() > 0 && hits[0].transform.GetComponent<PolygonCollider2D>() != null)
             {
+                source.PlayOneShot(clickSound);
+
                 if (!zoomed) ZoomOnQuarter(hits[0].transform);
                 else DezoomToFullMap();
             }

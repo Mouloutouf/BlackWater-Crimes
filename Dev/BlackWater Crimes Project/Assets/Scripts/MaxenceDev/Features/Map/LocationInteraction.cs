@@ -27,6 +27,7 @@ public class LocationInteraction : SerializedMonoBehaviour
 
     public AudioSource source;
     public AudioClip revealSound;
+    public AudioClip clickSound;
 
     void Start()
     {
@@ -109,10 +110,14 @@ public class LocationInteraction : SerializedMonoBehaviour
             accessButton.SetActive(true);
             blockedButton.SetActive(false);
         }
+
+        source.PlayOneShot(clickSound);
     }
 
     public void CloseLocationMenu()
     {
         locationMenu.SetActive(false);
+
+        source.PlayOneShot(clickSound);
     }
 }
