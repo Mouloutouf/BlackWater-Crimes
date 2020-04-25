@@ -17,6 +17,8 @@ public class MainMenuScript : MonoBehaviour
     [SerializeField] Text musicValue;
     [SerializeField] Text voicesValue;
     [SerializeField] Text gameStatusText;
+    [SerializeField] GameObject parameters;
+    [SerializeField] GameObject bgDesktopImage;
 
     public Dropdown languageSelection;
 
