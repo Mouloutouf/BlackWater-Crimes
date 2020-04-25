@@ -40,6 +40,23 @@ public class Data
     }
 }
 
+public enum Languages { English, French }
+
+[Serializable]
+public class LocalisedText // Testing
+{
+    public bool largeText;
+    public bool superText;
+
+    private const int yes = 1;
+    private int boxSize { get { return largeText ? superText ? 15 : 5 : 1; } }
+
+    [TextArea] // Size of the text box
+    public string frenchText;
+    [MultiLineProperty(yes)] // Size of the text box
+    public string englishText;
+}
+
 [Serializable]
 public class Note : Data
 {
@@ -50,19 +67,41 @@ public class Note : Data
 }
 
 [Serializable]
-public class Evidence : Data
+public class Intel
 {
     public string name;
-    
-    public bool hasIntel;
-    public Sprite intel;
-    public bool intelRevealed;
+    public Sprite image;
 
+    [Range(0, 1)] public float intelAlpha;
+
+    public bool revealed;
+}
+
+[Serializable]
+public class Evidence : Data
+{
+    [HideReferenceObjectPicker]
+    public LocalisedText displayedName;
+
+    public string codeName;
+
+    public bool intelRevealed; // To Remove
+
+    public bool intelSelf;
+    public bool hasIntels;
+    [ShowIf("hasIntels")]
+    public List<Intel> intels = new List<Intel>();
+
+    [Title("Description Text", bold: false)]
+    [HideLabel]
+    [MultiLineProperty(5)]
     public string description;
 
     public bool photographed;
     public Sprite photo;
+    public bool completedPhotograph;
 
+    [HideReferenceObjectPicker]
     public ModeCategory modeCategory;
 
     public bool useToUnlock;
@@ -78,6 +117,8 @@ public class Report : Data
 
     public Sprite elementSprite;
     public string elementName;
+    [ShowIf("mode", Modes.Type)]
+    public string elementDetailName;
 
     [Title("Report Text", bold: false)]
     [HideLabel]
@@ -100,14 +141,36 @@ public class Location : Data
     public bool completed;
 
     public string locationName;
+    public LanguageText _locationName;
+
     public string locationAdress;
+
     [Title("Report Text", bold: false)]
     [HideLabel]
     [MultiLineProperty(5)]
     public string locationDescription;
+    public LargeLanguageText _locationDescription;
+
     public int evidenceCollected;
 
     public Locations myLocation;
+}
+
+[Serializable]
+public class SoundFloat
+{
+    public float Volume
+    {
+        get { return _volume; }
+        set { _volume = Mathf.Clamp(value, 0, 1); }
+    }
+    [SerializeField, Range(0, 1)] private float _volume;
+}
+
+[Serializable]
+public class SoundSettings
+{
+    public SoundFloat musicVolume, soundVolume, voiceVolume;
 }
 
 // Facile à sauvegarder
@@ -122,11 +185,17 @@ public class GameData : SerializedScriptableObject
         {typeof(Location), false }
     };
 
+    public Languages gameLanguage = Languages.English;
+
+    public SoundSettings soundSettings;
+
+    [HideInInspector]
     public List<Evidence> evidences = new List<Evidence>();
     public Dictionary<Locations, List<Evidence>> allEvidences = new Dictionary<Locations, List<Evidence>>();
 
     public List<Note> notes = new List<Note>();
 
+    [HideInInspector]
     public List<Report> reports = new List<Report>();
     public Dictionary<Indics, List<Report>> allReports = new Dictionary<Indics, List<Report>>();
 
@@ -171,5 +240,33 @@ public class GameData : SerializedScriptableObject
             default:
                 return null;
         }
+    }
+
+    [ContextMenu("Reset Game Data")]
+    public void ResetData()
+    {
+        // Reset Evidences
+        foreach (List<Evidence> evidenceList in allEvidences.Values)
+        {
+            evidenceList.Clear();
+        }
+
+        // Reset Locations
+        locations.Clear();
+
+        // Reset Notes
+        notes.Clear();
+
+        // Reset Reports
+        foreach (List<Report> reportList in allReports.Values)
+        {
+            foreach (Report report in reportList)
+            {
+                report.unlockedData = false;
+                report.unlockOrderIndex = 0;
+                report.seen = false;
+            }
+        }
+        reportsCollected = 0;
     }
 }

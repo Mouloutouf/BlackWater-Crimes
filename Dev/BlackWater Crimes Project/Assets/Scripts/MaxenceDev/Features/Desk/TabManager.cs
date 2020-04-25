@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -51,8 +51,11 @@ public class TabManager : MonoBehaviour
     [HideInInspector] public Dictionary<GameObject, List<GameObject>> tabsContents = new Dictionary<GameObject, List<GameObject>>();
     [HideInInspector] public List<GameObject> tabsObjects = new List<GameObject>();
 
-    private int pageLayout = 2;
-    
+    private int pageLayout { get { return pages.Length; } }
+
+    public SoundSystem soundSystem;
+    public AudioClip paperSound;
+
     void Start()
     {
         // Set up Mode Tab & Tabs (Buttons and Contents)
@@ -99,7 +102,7 @@ public class TabManager : MonoBehaviour
         foreach (SortMode mode in sortModes)
         {
             mode.colorObject = Instantiate(colorPrefab);
-            mode.colorObject.transform.SetParent(modeTab.transform);
+            mode.colorObject.transform.SetParent(modeTab.transform, false);
 
             mode.colorObject.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
 
@@ -147,7 +150,7 @@ public class TabManager : MonoBehaviour
             for (int u = 0; u < pageLayout; u++)
             {
                 GameObject pageContent = Instantiate(new GameObject());
-                pageContent.transform.SetParent(tab_content.transform);
+                pageContent.transform.SetParent(tab_content.transform, false);
                 pageContent.name = "Page Content " + (u + 1).ToString();
 
                 SetContent(pageContent);
@@ -177,7 +180,8 @@ public class TabManager : MonoBehaviour
 
             int value = i;
             tabButton.GetComponent<Button>().onClick.AddListener(delegate { ChangeTab(value); } );
-            
+            tabButton.GetComponent<Button>().onClick.AddListener(delegate { soundSystem.PlaySound(paperSound); });
+
             if (i != 0) tabButton.GetComponent<Image>().color = baseColor;
         }
     }
@@ -210,7 +214,7 @@ public class TabManager : MonoBehaviour
 
         foreach (Transform _tabButton in tabs.transform) Destroy(_tabButton.gameObject); // Destroy all Tab Buttons
 
-        ResetPhotosToParent(); // Take all Photos, move them out of the Tab Contents, Destroy all Tab Contents
+        ResetObjectsToParent(); // Take all Photos, move them out of the Tab Contents, Destroy all Tab Contents
         
         CreateTabs(currentMode); // (Re)-Create Tab Buttons and Tab Contents relative to the Current Mode
 
@@ -221,7 +225,7 @@ public class TabManager : MonoBehaviour
         modeText.GetComponent<Text>().text = currentMode.name; // Set Current Mode's Name to the Mode Tab
     }
 
-    void ResetPhotosToParent()
+    void ResetObjectsToParent()
     {
         // New Version Tabs --> Pages
 

@@ -7,6 +7,11 @@ using System;
 
 public class MainMenuScript : MonoBehaviour
 {
+    public SoundSystem soundSystem;
+    public DataContainer dataContainer;
+    private GameData gameData;
+
+    [SerializeField] string introSceneName;
     [SerializeField] Slider musicSlider;
     [SerializeField] Slider voicesSlider;
     [SerializeField] Text musicValue;
@@ -15,9 +20,13 @@ public class MainMenuScript : MonoBehaviour
     [SerializeField] GameObject parameters;
     [SerializeField] GameObject bgDesktopImage;
 
+    public Dropdown languageSelection;
+
     private void Start() 
     {
         gameStatusText.text = "Game 1 - " + DateTime.Today.ToString("M/d/yyyy");
+
+        if (dataContainer != null) gameData = dataContainer.gameData;
     }
     
     public void Quit()
@@ -25,29 +34,33 @@ public class MainMenuScript : MonoBehaviour
         Application.Quit();
     }
 
-    public void UpdateText(GameObject sender)
+    public void UpdateParameter(GameObject sender)
     {
-        if(sender == musicSlider.gameObject)
+        if (sender == musicSlider.gameObject)
         {
             musicValue.text = musicSlider.value.ToString();
+            gameData.soundSettings.musicVolume.Volume = (musicSlider.value) / musicSlider.maxValue;
+            soundSystem.SetVolume();
         }
-        else if(sender == voicesSlider.gameObject)
+        else if (sender == voicesSlider.gameObject)
         {
             voicesValue.text = voicesSlider.value.ToString();
-        }
-    }   
+            gameData.soundSettings.voiceVolume.Volume = (voicesSlider.value) / voicesSlider.maxValue;
+            gameData.soundSettings.soundVolume.Volume = (voicesSlider.value) / voicesSlider.maxValue;
 
-    public void Parameters()
-    {
-        if(!parameters.activeSelf)
-        {   
-            parameters.SetActive(true);
-            bgDesktopImage.SetActive(false);
+            soundSystem.SetVolume();
         }
-        else
+    }
+
+    public void UpdateLanguage()
+    {
+        if (languageSelection.value == 0)
         {
-            parameters.SetActive(false);
-            bgDesktopImage.SetActive(true);
+            gameData.gameLanguage = Languages.English;
+        }
+        else if (languageSelection.value == 1)
+        {
+            gameData.gameLanguage = Languages.French;
         }
     }
 }

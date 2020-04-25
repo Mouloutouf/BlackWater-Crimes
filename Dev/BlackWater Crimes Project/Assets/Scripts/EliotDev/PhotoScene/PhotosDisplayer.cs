@@ -36,9 +36,9 @@ public class PhotosDisplayer : MonoBehaviour
             // Saves each Photo into the Evidence instance of each Evidence Objects
             foreach (Transform tr in content.contentObject.transform)
             {
-                if ((tr.GetComponent<EvidenceObject>().data.name + ".png") == files[index])
+                if ((tr.GetComponent<EvidenceObject>().data.codeName + ".png") == files[index])
                 {
-                    tr.GetComponent<EvidenceObject>().data.intel = photoSprites[index];
+                    tr.GetComponent<EvidenceObject>().data.photo = photoSprites[index];
                 }
             }
 
