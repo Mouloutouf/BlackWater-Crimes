@@ -84,7 +84,7 @@ public class LocationInteraction : SerializedMonoBehaviour
 
         Handheld.Vibrate();
         source.PlayOneShot(revealSound);
-        _object.GetComponent<ParticleSystem>().Play();
+        _object.transform.GetChild(2).GetComponent<ParticleSystem>().Play();
     }
 
     void OpenLocationMenu(LocationObject _object)

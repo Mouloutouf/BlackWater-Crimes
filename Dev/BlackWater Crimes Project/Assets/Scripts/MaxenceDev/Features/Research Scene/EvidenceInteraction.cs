@@ -17,9 +17,10 @@ public class EvidenceInteraction : MonoBehaviour
     [SerializeField] Toggle fingerprintToggle;
     [SerializeField] Button returnButton;
     [SerializeField] Joystick joystick;
-    [SerializeField] float rotateSpeed;
 
-    public GameObject currentClueHolder;
+    public float rotateSpeed;
+
+    public GameObject currentEvidenceHeld { get; set; }
 
     float horizontalMove = 0f;
     float verticalMove = 0f;
@@ -59,29 +60,29 @@ public class EvidenceInteraction : MonoBehaviour
 
         if (fingerprintMode == true && Input.touchCount == 1)
         {
-            ClueReveal();
+            if (currentEvidenceHeld.GetComponent<EvidenceObject>().data.hasIntels) IntelReveal();
         }
     }
 
     void ObjectRotation()
     {
-        if (currentClueHolder != null && canRotate == true)
+        if (currentEvidenceHeld != null && canRotate == true)
         {
-            if (currentClueHolder.GetComponent<ClueHolder>().blockHorizontalRotation == false)
+            if (currentEvidenceHeld.GetComponent<ClueHolder>().blockHorizontalRotation == false)
             {
                 horizontalMove = -joystick.Horizontal * rotateSpeed * Time.deltaTime;
-                currentClueHolder.transform.Rotate(Vector3.up, horizontalMove, Space.World);
+                currentEvidenceHeld.transform.Rotate(Vector3.up, horizontalMove, Space.World);
             }
 
-            if (currentClueHolder.GetComponent<ClueHolder>().blockVerticalRotation == false)
+            if (currentEvidenceHeld.GetComponent<ClueHolder>().blockVerticalRotation == false)
             {
                 verticalMove = joystick.Vertical * rotateSpeed * Time.deltaTime;
-                currentClueHolder.transform.Rotate(Vector3.right, verticalMove, Space.World);
+                currentEvidenceHeld.transform.Rotate(Vector3.right, verticalMove, Space.World);
             }
         }
     }
 
-    void ClueReveal()
+    void IntelReveal()
     {
         Touch touch = Input.GetTouch(0);
         RaycastHit hit;
@@ -142,6 +143,8 @@ public class EvidenceInteraction : MonoBehaviour
 
     void TakeScreenshot(Evidence _evidence, RaycastHit _hit)
     {
+        // Check if Evidence has unrevealed Intels, if so returns
+
         if (!_evidence.intelSelf && _evidence.hasIntels)
         {
             int val = 0;
@@ -155,6 +158,8 @@ public class EvidenceInteraction : MonoBehaviour
 
             if (val == 0) return;
         }
+
+        // Unlocks the Evidence and displays Feedbacks
 
         StopAllCoroutines();
 
@@ -177,6 +182,8 @@ public class EvidenceInteraction : MonoBehaviour
             gameData.allEvidences[thisSceneLocation].Add(_evidence);
         }
 
+        // Takes the Screenshot and saves it under the right File Path
+
         string filePath;
 
         if (isInEditor)
@@ -184,44 +191,32 @@ public class EvidenceInteraction : MonoBehaviour
             filePath = "Assets/Graphs/Sprites/Screenshots/" + _hit.transform.gameObject.name + ".png";
             Debug.Log("Using Editor Folder");
 
-            if (File.Exists(filePath))
-            {
-                File.Delete(filePath);
-            }
+            if (File.Exists(filePath)) File.Delete(filePath);
+
+            ScreenCapture.CaptureScreenshot(filePath);
+
+            StartCoroutine(CheckFile(filePath, _evidence));
         }
         else if (windowsBuild)
         {
             filePath = Application.persistentDataPath + _hit.transform.gameObject.name + ".png";
             Debug.Log("Using Windows Folder");
 
-            if (File.Exists(filePath))
-            {
-                File.Delete(filePath);
-            }
+            if (File.Exists(filePath)) File.Delete(filePath);
+
+            ScreenCapture.CaptureScreenshot(filePath);
+
+            StartCoroutine(CheckFile(filePath, _evidence));
         }
         else
         {
             filePath = _hit.transform.gameObject.name + ".png";
             Debug.Log("Using Android Folder. If you're using Unity Editor, the photo saver won't work! Please check Is In Editor");
 
-            if (File.Exists(Application.persistentDataPath + "/" + filePath))
-            {
-                File.Delete(Application.persistentDataPath + "/" + filePath);
-            }
-        }    
+            if (File.Exists(Application.persistentDataPath + "/" + filePath)) File.Delete(Application.persistentDataPath + "/" + filePath);
 
-        ScreenCapture.CaptureScreenshot(filePath);
+            ScreenCapture.CaptureScreenshot(filePath);
 
-        if (isInEditor)
-        {
-            StartCoroutine(CheckFile(filePath, _evidence));
-        }
-        if (windowsBuild)
-        {
-            StartCoroutine(CheckFile(filePath, _evidence));
-        }
-        else
-        {
             StartCoroutine(CheckFile(Application.persistentDataPath + "/" + filePath, _evidence));
         }
     }

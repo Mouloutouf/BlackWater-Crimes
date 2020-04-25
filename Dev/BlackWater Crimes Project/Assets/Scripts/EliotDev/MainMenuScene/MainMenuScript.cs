@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-using System;
 
 public class MainMenuScript : MonoBehaviour
 {
@@ -61,6 +58,20 @@ public class MainMenuScript : MonoBehaviour
         else if (languageSelection.value == 1)
         {
             gameData.gameLanguage = Languages.French;
+        }
+    }
+
+    public void OpenParameters()
+    {
+        if (!parameters.activeSelf)
+        {
+            parameters.SetActive(true);
+            bgDesktopImage.SetActive(false);
+        }
+        else
+        {
+            parameters.SetActive(false);
+            bgDesktopImage.SetActive(true);
         }
     }
 }
