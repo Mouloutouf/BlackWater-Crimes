@@ -186,7 +186,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &203998288
 GameObject:
@@ -308,7 +308,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &256574669
 GameObject:
@@ -565,7 +565,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 30.000002, y: 0, z: 0}
 --- !u!114 &510400395 stripped
 MonoBehaviour:
@@ -608,7 +608,7 @@ Transform:
   m_Children:
   - {fileID: 1498401847}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &623914896
 GameObject:
@@ -661,13 +661,20 @@ MonoBehaviour:
   data:
     index: 1
     unlockedData: 0
-    name: Bon de Commande
-    hasIntel: 0
-    intel: {fileID: 0}
+    displayedName:
+      largeText: 0
+      superText: 0
+      frenchText: 
+      englishText: 
+    codeName: 
     intelRevealed: 0
+    intelSelf: 0
+    hasIntels: 0
+    intels: []
     description: 
     photographed: 0
     photo: {fileID: 0}
+    completedPhotograph: 0
     modeCategory:
       location: 1
       suspect: 2
@@ -676,7 +683,10 @@ MonoBehaviour:
     unlockableLocation: 0
   instantiate: 0
   hasApplied: 0
-  intelAlpha: 0
+  hasText: 0
+  isZoomed: 0
+  timer: 0.3
+  displayTextComponent: {fileID: 0}
 --- !u!65 &623914899
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1139,7 +1149,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!4 &898582630 stripped
 Transform:
@@ -1402,7 +1412,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1187127285
 GameObject:
@@ -1523,6 +1533,7 @@ MonoBehaviour:
   joystick: {fileID: 0}
   rotateSpeed: 0
   currentClueHolder: {fileID: 0}
+  soundAudio: {fileID: 0}
   photoShotSound: {fileID: 0}
   photoSavedSound: {fileID: 0}
   photoReplacedSound: {fileID: 0}
@@ -1894,7 +1905,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1761948360 stripped
 GameObject:
@@ -2257,7 +2268,7 @@ Transform:
   - {fileID: 623914897}
   - {fileID: 1054900592143253816}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2011634881
 GameObject:
@@ -2289,7 +2300,7 @@ Transform:
   - {fileID: 5006512735121332628}
   - {fileID: 203998289}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 5, y: 146.3, z: -4.59}
 --- !u!1 &2017854007
 GameObject:
@@ -4187,7 +4198,7 @@ PrefabInstance:
     - target: {fileID: 2213011491218206612, guid: 6e34bc824f7d2714e8a9caa2990f8913,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2213011491218206612, guid: 6e34bc824f7d2714e8a9caa2990f8913,
         type: 3}
@@ -8685,7 +8696,7 @@ PrefabInstance:
     - target: {fileID: 8963193682433347671, guid: 32be31a333568ec4eadf485eb3c2f84d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8963193682433347671, guid: 32be31a333568ec4eadf485eb3c2f84d,
         type: 3}
@@ -8860,7 +8871,7 @@ PrefabInstance:
     - target: {fileID: 9045211434734282765, guid: 3ad9061556b69b64eb83004ba39f7c7a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 9045211434734282765, guid: 3ad9061556b69b64eb83004ba39f7c7a,
         type: 3}
