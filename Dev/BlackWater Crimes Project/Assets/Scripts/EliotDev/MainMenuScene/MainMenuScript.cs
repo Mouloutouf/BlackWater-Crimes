@@ -7,12 +7,13 @@ using System;
 
 public class MainMenuScript : MonoBehaviour
 {
-    [SerializeField] string introSceneName;
     [SerializeField] Slider musicSlider;
     [SerializeField] Slider voicesSlider;
     [SerializeField] Text musicValue;
     [SerializeField] Text voicesValue;
     [SerializeField] Text gameStatusText;
+    [SerializeField] GameObject parameters;
+    [SerializeField] GameObject bgDesktopImage;
 
     private void Start() 
     {
@@ -35,4 +36,18 @@ public class MainMenuScript : MonoBehaviour
             voicesValue.text = voicesSlider.value.ToString();
         }
     }   
+
+    public void Parameters()
+    {
+        if(!parameters.activeSelf)
+        {   
+            parameters.SetActive(true);
+            bgDesktopImage.SetActive(false);
+        }
+        else
+        {
+            parameters.SetActive(false);
+            bgDesktopImage.SetActive(true);
+        }
+    }
 }
