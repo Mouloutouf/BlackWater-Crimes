@@ -8,7 +8,17 @@ public class EvidenceObject : ObjectData<Evidence>
 {
     private Evidence myType = new Evidence();
 
+    [Title("PROPERTIES")]
+
+    // Text \\
     public bool hasText;
+    [ShowIf("hasText")]
+    public Text displayTextComponent;
+    [ShowIf("hasText")]
+    [Title("Description Text", bold: false, HorizontalLine = false)]
+    [HideLabel]
+    [MultiLineProperty(5)]
+    public string descriptionText;
 
     [HideInInspector]
     public bool isZoomed;
@@ -16,10 +26,7 @@ public class EvidenceObject : ObjectData<Evidence>
 
     public float timer = 0.3f;
     private float time;
-
-    [ShowIf("hasText")]
-    public Text displayTextComponent;
-
+    
     void Start()
     {
         GetGameData();
@@ -55,7 +62,7 @@ public class EvidenceObject : ObjectData<Evidence>
                 }
                 else
                 {
-                    displayTextComponent.text = data.description;
+                    displayTextComponent.text = descriptionText;
                     displayTextComponent.transform.parent.gameObject.SetActive(true);
 
                     isShown = true;

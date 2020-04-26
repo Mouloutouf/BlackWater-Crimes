@@ -25,7 +25,7 @@ public class SpecialistValidateButton : MonoBehaviour
             {
                 if (report.elementName == script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.codeName && report.index != 0)
                 {
-                    if (report.elementDetailName == "")
+                    if (report.elementDetailName == null)
                     {
                         UnlockReport(report);
                     }

@@ -17,7 +17,7 @@ public class DeskEvidenceObject : ObjectData<Evidence>
 
         objects[1].GetComponent<Text>().text = data.codeName;
 
-        objects[2].GetComponent<Text>().text = data.description;
+        //objects[2].GetComponent<Text>().text = data.description;
 
 		button.onClick.AddListener( delegate { Close(); } );
 

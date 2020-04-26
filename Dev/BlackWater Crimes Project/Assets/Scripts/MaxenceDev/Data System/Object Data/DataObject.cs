@@ -2,16 +2,19 @@
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using Sirenix.OdinInspector;
 
 [Serializable]
 public class ObjectData<T> : MonoBehaviour where T : Data
 {
     protected GameData gameData;
 
+    [Title("DATA")]
     public T data;
 
     protected bool loaded;
 
+    [Space()]
     public bool instantiate; // Prefabs only, indicates no loading of Data after their instantiation
 
     [HideInInspector] public bool hasApplied; // Used by the Data Container to determine if a DataObject has applied to a List

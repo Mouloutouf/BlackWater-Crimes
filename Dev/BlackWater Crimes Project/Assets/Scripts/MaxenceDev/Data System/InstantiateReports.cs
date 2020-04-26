@@ -95,7 +95,7 @@ public class InstantiateReports : InstantiationProcess<Report>
         }
         else if (prefab == failedPrefab) // Instantiation Process for Failed Reports
         {
-            GameObject _failed = Instantiation(failedPrefab) as GameObject;
+            GameObject _failed = Instantiate(failedPrefab) as GameObject;
             _failed.transform.SetParent(failedContentHolder, false);
 
             _failed.transform.GetChild(5).GetComponent<Button>().onClick.AddListener(delegate { failedReportsManager.CloseFailedReport(_failed); });

@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Sirenix.OdinInspector;
 
 public class LocationObject : ObjectData<Location>
 {
+    [Title("PROPERTIES")]
+
     public Camera cam;
 
     public GameObject locationSprite;
