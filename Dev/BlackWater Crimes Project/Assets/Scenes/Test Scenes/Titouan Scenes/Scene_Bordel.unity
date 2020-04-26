@@ -186,7 +186,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &39775700
 GameObject:
@@ -726,7 +726,7 @@ PrefabInstance:
     - target: {fileID: 6054615889188889912, guid: e7f1cd350bc5f0941bb44b9e4b1ff994,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 6054615889188889912, guid: e7f1cd350bc5f0941bb44b9e4b1ff994,
         type: 3}
@@ -879,7 +879,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &256574669
 GameObject:
@@ -1369,34 +1369,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    index: 2
     unlockedData: 0
-    displayedName:
-      largeText: 0
-      superText: 0
-      frenchText: 
-      englishText: 
-    codeName: Affiche changement
-    intelRevealed: 0
-    intelSelf: 0
+    index: 2
+    codeName: Affiche
+    intelSelf: 1
     hasIntels: 0
     intels: []
-    description: 
-    photographed: 0
-    photo: {fileID: 0}
-    completedPhotograph: 0
+    useToUnlock: 0
+    unlockableLocation: 0
     modeCategory:
       location: 1
       suspect: 1
       type: 0
-    useToUnlock: 0
-    unlockableLocation: 0
   instantiate: 0
   hasApplied: 0
   hasText: 0
+  displayTextComponent: {fileID: 1334870254}
+  descriptionText: 
   isZoomed: 0
   timer: 0.3
-  displayTextComponent: {fileID: 1334870254}
 --- !u!114 &530122689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1521,36 +1512,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10.598343, y: 0.11170695, z: 10.356763}
   m_Center: {x: 0.12953022, y: -0.03998832, z: 0.35868862}
---- !u!1 &540939084
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 540939085}
-  m_Layer: 0
-  m_Name: --- CAMERAS ---
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &540939085
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 540939084}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &584406604
 GameObject:
   m_ObjectHideFlags: 0
@@ -1751,7 +1712,7 @@ Transform:
   m_Children:
   - {fileID: 1498401847}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &605187426
 GameObject:
@@ -2670,8 +2631,8 @@ Transform:
   m_LocalPosition: {x: 11.687658, y: -8.749046, z: 98.71709}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 1372448805}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &765268710
 PrefabInstance:
@@ -4912,6 +4873,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1334870252}
   m_CullTransparentMesh: 0
+--- !u!1 &1372448804
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1372448805}
+  m_Layer: 0
+  m_Name: Lights
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1372448805
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372448804}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 753865333}
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1433461126
 GameObject:
   m_ObjectHideFlags: 0
@@ -5569,7 +5561,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1557675817
 GameObject:
@@ -6093,7 +6085,7 @@ Transform:
   - {fileID: 1761948364}
   - {fileID: 1294605708}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1761948360
 GameObject:
@@ -6683,34 +6675,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    index: 3
     unlockedData: 0
-    displayedName:
-      largeText: 0
-      superText: 0
-      frenchText: 
-      englishText: 
-    codeName: "Carte d'identit\xE9"
-    intelRevealed: 0
-    intelSelf: 0
+    index: 3
+    codeName: "Carte Identit\xE9"
+    intelSelf: 1
     hasIntels: 0
     intels: []
-    description: 
-    photographed: 0
-    photo: {fileID: 0}
-    completedPhotograph: 0
-    modeCategory:
-      location: 1
-      suspect: 1
-      type: 0
     useToUnlock: 0
     unlockableLocation: 0
+    modeCategory:
+      location: 1
+      suspect: 3
+      type: 0
   instantiate: 0
   hasApplied: 0
   hasText: 0
+  displayTextComponent: {fileID: 1334870254}
+  descriptionText: 
   isZoomed: 0
   timer: 0.3
-  displayTextComponent: {fileID: 1334870254}
 --- !u!114 &1805436892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7269,36 +7252,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    index: 1
     unlockedData: 0
-    displayedName:
-      largeText: 0
-      superText: 0
-      frenchText: 
-      englishText: 
-    codeName: Bon de commande
-    intelRevealed: 0
-    intelSelf: 0
+    index: 1
+    codeName: Bon Commande
+    intelSelf: 1
     hasIntels: 0
     intels: []
-    description: "A : Miss Anna Jameswan\nAdresse : 1048 W Madison Street\n\n8 Bo\xEEtes
-      de 10 bouteilles de \"soda\" | Cadeau\n10 Bo\xEEtes de 25 paquets de cigarette
-      | Cadeau"
-    photographed: 0
-    photo: {fileID: 0}
-    completedPhotograph: 0
-    modeCategory:
-      location: 1
-      suspect: 1
-      type: 0
     useToUnlock: 0
     unlockableLocation: 0
+    modeCategory:
+      location: 1
+      suspect: 2
+      type: 0
   instantiate: 0
   hasApplied: 0
   hasText: 1
+  displayTextComponent: {fileID: 1334870254}
+  descriptionText: "A : Miss Anna Jameswan\r\nAdresse : 1048 W Madison Street\r\n\r\n8
+    Bo\xEEtes de 10 bouteilles de \"soda\" | Cadeau\r\n10 Bo\xEEtes de 25 paquets
+    de cigarette | Cadeau"
   isZoomed: 0
   timer: 0.3
-  displayTextComponent: {fileID: 1334870254}
 --- !u!114 &1975511736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7798,7 +7772,7 @@ Transform:
   - {fileID: 530122687}
   - {fileID: 1805436890}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2056594857
 GameObject:
@@ -9319,7 +9293,7 @@ PrefabInstance:
     - target: {fileID: 1161717119125144525, guid: 74811de12f439f5418b282a0a0e77738,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1161717119125144525, guid: 74811de12f439f5418b282a0a0e77738,
         type: 3}
@@ -11823,34 +11797,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    index: 0
     unlockedData: 0
-    displayedName:
-      largeText: 0
-      superText: 0
-      frenchText: 
-      englishText: 
-    codeName: Caisse de "soda"
-    intelRevealed: 0
-    intelSelf: 0
+    index: 0
+    codeName: Caisse Soda
+    intelSelf: 1
     hasIntels: 0
     intels: []
-    description: 
-    photographed: 0
-    photo: {fileID: 0}
-    completedPhotograph: 0
-    modeCategory:
-      location: 1
-      suspect: 1
-      type: 0
     useToUnlock: 0
     unlockableLocation: 0
+    modeCategory:
+      location: 1
+      suspect: 2
+      type: 0
   instantiate: 0
   hasApplied: 0
   hasText: 0
+  displayTextComponent: {fileID: 0}
+  descriptionText: 
   isZoomed: 0
   timer: 0.3
-  displayTextComponent: {fileID: 0}
 --- !u!64 &3371643900217280056
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -17703,7 +17668,7 @@ PrefabInstance:
     - target: {fileID: 8963193682433347671, guid: 32be31a333568ec4eadf485eb3c2f84d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8963193682433347671, guid: 32be31a333568ec4eadf485eb3c2f84d,
         type: 3}

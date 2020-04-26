@@ -3815,34 +3815,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    index: 1
     unlockedData: 0
-    displayedName:
-      largeText: 0
-      superText: 0
-      frenchText: 
-      englishText: 
+    index: 1
     codeName: 
-    intelRevealed: 0
     intelSelf: 0
     hasIntels: 0
     intels: []
-    description: 
-    photographed: 0
-    photo: {fileID: 0}
-    completedPhotograph: 0
+    useToUnlock: 0
+    unlockableLocation: 0
     modeCategory:
       location: 1
       suspect: 2
       type: 0
-    useToUnlock: 0
-    unlockableLocation: 0
   instantiate: 0
   hasApplied: 0
   hasText: 0
+  displayTextComponent: {fileID: 0}
+  descriptionText: 
   isZoomed: 0
   timer: 0.3
-  displayTextComponent: {fileID: 0}
 --- !u!65 &623914899
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4889,8 +4880,8 @@ Transform:
   m_LocalPosition: {x: 11.687658, y: -8.749046, z: 98.71709}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_Father: {fileID: 917793403}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &773894992
 GameObject:
@@ -5688,6 +5679,37 @@ RectTransform:
   m_AnchoredPosition: {x: -400, y: 0}
   m_SizeDelta: {x: 370, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &917793402
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 917793403}
+  m_Layer: 0
+  m_Name: Lights
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &917793403
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917793402}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 753865333}
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &942362596
 GameObject:
   m_ObjectHideFlags: 0
@@ -8411,34 +8433,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    index: 2
     unlockedData: 0
-    displayedName:
-      largeText: 0
-      superText: 0
-      frenchText: 
-      englishText: 
-    codeName: 
-    intelRevealed: 0
-    intelSelf: 0
+    index: 2
+    codeName: "Cl\xE9"
+    intelSelf: 1
     hasIntels: 0
     intels: []
-    description: 
-    photographed: 0
-    photo: {fileID: 0}
-    completedPhotograph: 0
+    useToUnlock: 1
+    unlockableLocation: 1
     modeCategory:
       location: 2
       suspect: 0
       type: 0
-    useToUnlock: 1
-    unlockableLocation: 1
   instantiate: 0
   hasApplied: 0
   hasText: 0
+  displayTextComponent: {fileID: 0}
+  descriptionText: 
   isZoomed: 0
   timer: 0.3
-  displayTextComponent: {fileID: 0}
 --- !u!65 &1354229717
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10649,36 +10662,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    index: 3
     unlockedData: 0
-    displayedName:
-      largeText: 0
-      superText: 0
-      frenchText: 
-      englishText: 
-    codeName: 
-    intelRevealed: 0
-    intelSelf: 0
+    index: 3
+    codeName: Gros Cheques
+    intelSelf: 1
     hasIntels: 0
     intels: []
-    description: "Pour Anna Jameswan \nHuit cent et cinquante\nDino Giuseppe Ghitta\n\nPour
-      Anna Jameswsan\nQuatre cent et cinquante\nJ. Jonas Jameson\n\nPour Anna Jameswan\nMille
-      cinq\nAdolph Schultz"
-    photographed: 0
-    photo: {fileID: 0}
-    completedPhotograph: 0
+    useToUnlock: 0
+    unlockableLocation: 1
     modeCategory:
       location: 2
       suspect: 0
       type: 0
-    useToUnlock: 0
-    unlockableLocation: 1
   instantiate: 0
   hasApplied: 0
   hasText: 1
+  displayTextComponent: {fileID: 53175614}
+  descriptionText: "Pour Anna Jameswan \r\nHuit cent et cinquante\r\nDino Giuseppe
+    Ghitta\r\n\r\nPour Anna Jameswsan\r\nQuatre cent et cinquante\r\nJ. Jonas Jameson\r\n\r\nPour
+    Anna Jameswan\r\nMille cinq\r\nAdolph Schultz"
   isZoomed: 0
   timer: 0.3
-  displayTextComponent: {fileID: 53175614}
 --- !u!1 &1742818073
 GameObject:
   m_ObjectHideFlags: 0
@@ -13606,34 +13610,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    index: 4
     unlockedData: 0
-    displayedName:
-      largeText: 0
-      superText: 0
-      frenchText: 
-      englishText: 
-    codeName: 
-    intelRevealed: 0
-    intelSelf: 0
+    index: 4
+    codeName: Sac Main
+    intelSelf: 1
     hasIntels: 0
     intels: []
-    description: 
-    photographed: 0
-    photo: {fileID: 0}
-    completedPhotograph: 0
+    useToUnlock: 0
+    unlockableLocation: 1
     modeCategory:
       location: 2
       suspect: 0
       type: 0
-    useToUnlock: 0
-    unlockableLocation: 1
   instantiate: 0
   hasApplied: 0
   hasText: 0
+  displayTextComponent: {fileID: 0}
+  descriptionText: 
   isZoomed: 0
   timer: 0.3
-  displayTextComponent: {fileID: 0}
 --- !u!1001 &2213011489472495595
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14236,34 +14231,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    index: 0
     unlockedData: 0
-    displayedName:
-      largeText: 0
-      superText: 0
-      frenchText: 
-      englishText: 
-    codeName: 
-    intelRevealed: 0
-    intelSelf: 0
+    index: 0
+    codeName: Colt Auto
+    intelSelf: 1
     hasIntels: 0
     intels: []
-    description: 
-    photographed: 0
-    photo: {fileID: 0}
-    completedPhotograph: 0
+    useToUnlock: 0
+    unlockableLocation: 0
     modeCategory:
       location: 2
       suspect: 0
       type: 1
-    useToUnlock: 0
-    unlockableLocation: 0
   instantiate: 0
   hasApplied: 0
   hasText: 0
+  displayTextComponent: {fileID: 0}
+  descriptionText: 
   isZoomed: 0
   timer: 0.3
-  displayTextComponent: {fileID: 0}
 --- !u!65 &5771372805531144746
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14969,39 +14955,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    index: 1
     unlockedData: 0
-    displayedName:
-      largeText: 0
-      superText: 0
-      frenchText: 
-      englishText: 
-    codeName: 
-    intelRevealed: 0
-    intelSelf: 0
+    index: 1
+    codeName: "Relev\xE9 Compte"
+    intelSelf: 1
     hasIntels: 0
     intels: []
-    description: "7 avril - 8 bouteilles de soda | 725\n10 avril - Sponsor de campagne
-      | 1050\n21 avril - James Jameson | 450\n\nAider les filles | 2225\n\n5 mai
-      - Mr O'Reilly | 1500\n14 mai - Dino Ghitto | 850\n26 mai - Camille de la Vaudais\n\n7
-      juin - Re\xE7u de banque | 650 et 55 cents\n14 juin - 30X7 Aider Abigail |500\n14
-      juin - Mr Priece | 725\n14 juin - ... | 875\n16 juin - Mrs Markens | 977\n16
-      juin - Mr Schultz | 1005\n21 juin - Re\xE7u de banque | 958"
-    photographed: 0
-    photo: {fileID: 0}
-    completedPhotograph: 0
+    useToUnlock: 0
+    unlockableLocation: 0
     modeCategory:
       location: 2
       suspect: 0
       type: 0
-    useToUnlock: 0
-    unlockableLocation: 0
   instantiate: 0
   hasApplied: 0
   hasText: 1
+  displayTextComponent: {fileID: 53175614}
+  descriptionText: "7 avril - 8 bouteilles de soda | 725\r\n10 avril - Sponsor de
+    campagne | 1050\r\n21 avril - James Jameson | 450\r\n\r\nAider les filles | 2225\r\n\r\n5
+    mai - Mr O'Reilly | 1500\r\n14 mai - Dino Ghitto | 850\r\n26 mai - Camille de
+    la Vaudais\r\n\r\n7 juin - Re\xE7u de banque | 650 et 55 cents\r\n14 juin - 30X7
+    Aider Abigail |500\r\n14 juin - Mr Priece | 725\r\n14 juin - ... | 875\r\n16
+    juin - Mrs Markens | 977\r\n16 juin - Mr Schultz | 1005\r\n21 juin - Re\xE7u
+    de banque | 958"
   isZoomed: 0
   timer: 0.3
-  displayTextComponent: {fileID: 53175614}
 --- !u!65 &9159856205197708480
 BoxCollider:
   m_ObjectHideFlags: 0

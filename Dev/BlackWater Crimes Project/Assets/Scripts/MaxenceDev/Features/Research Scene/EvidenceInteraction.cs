@@ -88,13 +88,12 @@ public class EvidenceInteraction : MonoBehaviour
         RaycastHit hit;
         Ray ray = cam.ScreenPointToRay(touch.position);
 
-        if (Physics.Raycast(ray, out hit, 500000f))
+        if (Physics.Raycast(ray, out hit, 500f))
         {
             Debug.Log("Test");
 
             if (hit.transform.gameObject.tag == "Clue")
             {
-                //if (hit.transform.GetComponent<IntelObject>() == null) return;
                 string name = hit.transform.GetComponent<IntelObject>().myName;
 
                 Evidence evidence = hit.transform.parent.gameObject.GetComponent<EvidenceObject>().data;

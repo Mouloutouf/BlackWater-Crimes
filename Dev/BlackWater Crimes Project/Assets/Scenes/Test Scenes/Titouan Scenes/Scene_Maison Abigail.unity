@@ -186,7 +186,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &89436151 stripped
 GameObject:
@@ -218,12 +218,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 203998288}
-  m_LocalRotation: {x: 0, y: 0.99999326, z: -0, w: -0.003665104}
-  m_LocalPosition: {x: 6, y: 18.61, z: 10.27}
+  m_LocalRotation: {x: 0.053403463, y: 0.28418186, z: -0.025459716, w: -0.95694333}
+  m_LocalPosition: {x: -1.3943129, y: 18.516314, z: 10.633381}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2011634882}
-  m_RootOrder: 1
+  m_Father: {fileID: 1653428648}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 180.42, z: 0}
 --- !u!108 &203998290
 Light:
@@ -314,7 +314,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &246351675
 GameObject:
@@ -725,8 +725,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 9.77, z: 0.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 1653428648}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 30.000002, y: 0, z: 0}
 --- !u!114 &510400395 stripped
 MonoBehaviour:
@@ -740,6 +740,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d83c28294795754cb481f2bab2f8d17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &535713599
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 535713600}
+  m_Layer: 0
+  m_Name: --- DECOR ---
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &535713600
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535713599}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &593553528
 GameObject:
   m_ObjectHideFlags: 0
@@ -769,7 +799,37 @@ Transform:
   m_Children:
   - {fileID: 1498401847}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &603314647
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 603314648}
+  m_Layer: 0
+  m_Name: --- MANAGERS ---
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &603314648
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603314647}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &623914896
 GameObject:
@@ -820,34 +880,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    index: 1
     unlockedData: 0
-    displayedName:
-      largeText: 0
-      superText: 0
-      frenchText: 
-      englishText: 
+    index: 1
     codeName: 
-    intelRevealed: 0
     intelSelf: 0
     hasIntels: 0
     intels: []
-    description: 
-    photographed: 0
-    photo: {fileID: 0}
-    completedPhotograph: 0
+    useToUnlock: 0
+    unlockableLocation: 0
     modeCategory:
       location: 1
       suspect: 2
       type: 0
-    useToUnlock: 0
-    unlockableLocation: 0
   instantiate: 0
   hasApplied: 0
   hasText: 0
+  displayTextComponent: {fileID: 0}
+  descriptionText: 
   isZoomed: 0
   timer: 0.3
-  displayTextComponent: {fileID: 0}
 --- !u!65 &623914899
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1309,8 +1360,8 @@ Transform:
   m_LocalPosition: {x: 11.687658, y: -8.749046, z: 98.71709}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_Father: {fileID: 1653428648}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &839318115 stripped
 GameObject:
@@ -1330,7 +1381,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcb0521eef70ac444ae95e79d8fa7a15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myIndex: 0
   myName: TestEmpreinte
 --- !u!4 &898582630 stripped
 Transform:
@@ -1741,7 +1791,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1187127285
 GameObject:
@@ -1904,47 +1954,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    index: 4
     unlockedData: 0
-    displayedName:
-      largeText: 0
-      superText: 0
-      frenchText: 
-      englishText: 
-    codeName: "Journal enl\xE8vement"
-    intelRevealed: 0
-    intelSelf: 0
+    index: 4
+    codeName: Journal Enlevement
+    intelSelf: 1
     hasIntels: 0
     intels: []
-    description: "Kidnapping ou fuite ?, de JConon O'Reilly\n\nDurant les derniers
-      mois, le Chicago Police Department (CPD) a fait de son mieux pour garder le
-      calme \xE0 Chicago. Les gangsters sont \xE0 chaque coin de rue, de plus en
-      pluis de mouvements contre la Prohibition apparaissent et grandissent \xE0
-      chaque seconde. Le plus terrifiant et difficile pour nos agents de la paix
-      est de devoir faire face au nombre grandissant d'absences \xE0 travers la ville.
-      \n\nDes enqu\xEAteurs aux indics, personne ne sait qui, quand et pourquoi ces
-      personens disparaissent. Le chef investigateur Thomas Maxwell suppose que cela
-      serait du \xE0 des gangs ou des organisations secr\xE8tes associ\xE9es avec
-      le march\xE9 noir qui utiliseraient des personnes pour du travail ill\xE9gal
-      ou pire... Certaines personnes auraient tr\xE8s bien pu partir au vu de leurs
-      relations particuli\xE8res avec leur famille. Cela reste  la proposition la
-      plus absurde \xE0 ce jour, bien que les habitants de l'Illinois semblent s'en
-      contenter..."
-    photographed: 0
-    photo: {fileID: 0}
-    completedPhotograph: 0
+    useToUnlock: 0
+    unlockableLocation: 0
     modeCategory:
       location: 3
       suspect: 1
       type: 3
-    useToUnlock: 0
-    unlockableLocation: 0
   instantiate: 0
   hasApplied: 0
   hasText: 1
+  displayTextComponent: {fileID: 1145899166}
+  descriptionText: "Kidnapping ou fuite ?, de JConon O'Reilly\r\n\r\nDurant les derniers
+    mois, le Chicago Police Department (CPD) a fait de son mieux pour garder le calme
+    \xE0 Chicago. Les gangsters sont \xE0 chaque coin de rue, de plus en pluis de
+    mouvements contre la Prohibition apparaissent et grandissent \xE0 chaque seconde.
+    Le plus terrifiant et difficile pour nos agents de la paix est de devoir faire
+    face au nombre grandissant d'absences \xE0 travers la ville. \r\n\r\nDes enqu\xEAteurs
+    aux indics, personne ne sait qui, quand et pourquoi ces personens disparaissent.
+    Le chef investigateur Thomas Maxwell suppose que cela serait du \xE0 des gangs
+    ou des organisations secr\xE8tes associ\xE9es avec le march\xE9 noir qui utiliseraient
+    des personnes pour du travail ill\xE9gal ou pire... Certaines personnes auraient
+    tr\xE8s bien pu partir au vu de leurs relations particuli\xE8res avec leur famille.
+    Cela reste  la proposition la plus absurde \xE0 ce jour, bien que les habitants
+    de l'Illinois semblent s'en contenter..."
   isZoomed: 0
   timer: 0.3
-  displayTextComponent: {fileID: 1145899166}
 --- !u!114 &1306128414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2267,7 +2307,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcb0521eef70ac444ae95e79d8fa7a15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myIndex: 0
   myName: EmpreinteUmberto
 --- !u!1001 &1430949778
 PrefabInstance:
@@ -2334,7 +2373,7 @@ PrefabInstance:
     - target: {fileID: 6054615889188889914, guid: e7f1cd350bc5f0941bb44b9e4b1ff994,
         type: 3}
       propertyPath: m_Name
-      value: Scene Manager (1)
+      value: Scene Manager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
@@ -2350,6 +2389,18 @@ AudioSource:
     type: 3}
   m_PrefabInstance: {fileID: 1430949778}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1430949781 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6054615890293101837, guid: e7f1cd350bc5f0941bb44b9e4b1ff994,
+    type: 3}
+  m_PrefabInstance: {fileID: 1430949778}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4206b0aec6eb07545a298b286059b682, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1442453216
 GameObject:
   m_ObjectHideFlags: 0
@@ -2475,39 +2526,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    index: 1
     unlockedData: 0
-    displayedName:
-      largeText: 0
-      superText: 0
-      frenchText: 
-      englishText: 
-    codeName: Lettre anonyme
-    intelRevealed: 0
-    intelSelf: 0
+    index: 1
+    codeName: Lettre Anonyme
+    intelSelf: 1
     hasIntels: 1
     intels:
-    - name: EmpreinteUmberto
-      image: {fileID: 0}
-      intelAlpha: 0
-      revealed: 0
-    description: "Ce n'est pas parce que tu as remplac\xE9 l'autre que tout est termin\xE9.
-      JE VAIS. NOUS allons \xEAtre s\xFBrs de tous NOUS D\xC9BARRASSER DE VOUS !"
-    photographed: 0
-    photo: {fileID: 0}
-    completedPhotograph: 0
+    - name: Empreinte Umberto
+    useToUnlock: 0
+    unlockableLocation: 0
     modeCategory:
       location: 3
       suspect: 0
       type: 3
-    useToUnlock: 0
-    unlockableLocation: 0
   instantiate: 0
   hasApplied: 0
   hasText: 1
+  displayTextComponent: {fileID: 1145899166}
+  descriptionText: "Ce n'est pas parce que tu as remplac\xE9 l'autre que tout est
+    termin\xE9. JE VAIS. NOUS allons \xEAtre s\xFBrs de tous NOUS D\xC9BARRASSER
+    DE VOUS !"
   isZoomed: 0
   timer: 0.3
-  displayTextComponent: {fileID: 1145899166}
 --- !u!114 &1442453223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3135,7 +3175,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcb0521eef70ac444ae95e79d8fa7a15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myIndex: 0
   myName: Richard
 --- !u!1001 &1612409379
 PrefabInstance:
@@ -3306,7 +3345,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8963193682202000831}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1632804630
+--- !u!1 &1653428647
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3314,27 +3353,30 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1632804631}
+  - component: {fileID: 1653428648}
   m_Layer: 0
-  m_Name: Indices
+  m_Name: Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1632804631
+--- !u!4 &1653428648
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1632804630}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.2, y: 2.0843298, z: -7.64}
+  m_GameObject: {fileID: 1653428647}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 753865333}
+  - {fileID: 456420569}
+  - {fileID: 203998289}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1726456290
 GameObject:
@@ -3607,18 +3649,6 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &1899111436 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1690070223792849101, guid: 2683cf400de334240af5cb96712ff557,
-    type: 3}
-  m_PrefabInstance: {fileID: 1690070225687504065}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4206b0aec6eb07545a298b286059b682, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1907031895
 GameObject:
   m_ObjectHideFlags: 0
@@ -3654,7 +3684,7 @@ Transform:
   - {fileID: 2010337061}
   - {fileID: 1306128411}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1949669942
 GameObject:
@@ -3719,38 +3749,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    index: 2
     unlockedData: 0
-    displayedName:
-      largeText: 0
-      superText: 0
-      frenchText: 
-      englishText: 
-    codeName: Lettre d'Anna
-    intelRevealed: 0
-    intelSelf: 0
+    index: 2
+    codeName: Lettre Anna
+    intelSelf: 1
     hasIntels: 0
     intels: []
-    description: "Ch\xE8re Abigail\r\n\r\nJe comprends tes peurs mais ne t'en fais
-      pas, tout est sous contr\xF4le. J'accepte ton invitation et je te retrouverai
-      \xE0 l'endroit que tu as propos\xE9. Nous pourrons aussi discuter de la suite
-      des \xE9v\xE9nements et ce qui pourrait arriver si je n'\xE9tais plus l\xE0.\r\n\r\nLes
-      Filles seront toujours ma priorit\xE9, tu le sais.\r\n"
-    photographed: 0
-    photo: {fileID: 0}
-    completedPhotograph: 0
+    useToUnlock: 0
+    unlockableLocation: 0
     modeCategory:
       location: 3
       suspect: 1
       type: 3
-    useToUnlock: 0
-    unlockableLocation: 0
   instantiate: 0
   hasApplied: 0
   hasText: 1
+  displayTextComponent: {fileID: 1145899166}
+  descriptionText: "Ch\xE8re Abigail\r\n\r\nJe comprends tes peurs mais ne t'en fais
+    pas, tout est sous contr\xF4le. J'accepte ton invitation et je te retrouverai
+    \xE0 l'endroit que tu as propos\xE9. Nous pourrons aussi discuter de la suite
+    des \xE9v\xE9nements et ce qui pourrait arriver si je n'\xE9tais plus l\xE0.\r\n\r\nLes
+    Filles seront toujours ma priorit\xE9, tu le sais.\r\n"
   isZoomed: 0
   timer: 0.3
-  displayTextComponent: {fileID: 1145899166}
 --- !u!114 &1949669946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3895,45 +3916,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    index: 3
     unlockedData: 0
-    displayedName:
-      largeText: 0
-      superText: 0
-      frenchText: 
-      englishText: 
-    codeName: Journal politicien
-    intelRevealed: 0
-    intelSelf: 0
+    index: 3
+    codeName: Journal Politicien
+    intelSelf: 1
     hasIntels: 0
     intels: []
-    description: "Un candidat prometteur pour une ville prometteuse, de Jonah Vale\n\nLes
-      \xE9lections pour le prochain maire de Chicago se rapprochent. Apr\xE8s la
-      grande marche des femmes pour la lib\xE9ration de toutes les personnes kidnapp\xE9es
-      en vente sur le march\xE9 noir, nous pouvons dire que Chicago est en crise.
-      Richard Anderson, candidat perdant de la pr\xE9c\xE9dente \xE9lection de maire
-      a vu sa popularit\xE9 exploser gr\xE2ce \xE0 son charisme et sa volont\xE9
-      d'aider \"le peuple\" d'Am\xE9rique. \n\n\"Je vais vous dire... Je me pr\xE9sente
-      pour les hommes et les femmes qui ont fait un travail incroyable... Contrairement
-      \xE0 mes concurrents, je pense aux milliers qui se battent pour s\xE9curiser
-      et ramener l'\xE9quilibre dans notre soci\xE9t\xE9 \xE0 travers le pays, et
-      surtout dans notre ville de Chicago. Je tiens vraiment \xE0 toutes ces personnes,
-      elles sont tout simplement incroyables.\""
-    photographed: 0
-    photo: {fileID: 0}
-    completedPhotograph: 0
-    modeCategory:
-      location: 3
-      suspect: 1
-      type: 3
     useToUnlock: 0
     unlockableLocation: 0
+    modeCategory:
+      location: 3
+      suspect: 2
+      type: 3
   instantiate: 0
   hasApplied: 0
   hasText: 1
+  displayTextComponent: {fileID: 1145899166}
+  descriptionText: "Un candidat prometteur pour une ville prometteuse, de Jonah Vale\r\n\r\nLes
+    \xE9lections pour le prochain maire de Chicago se rapprochent. Apr\xE8s la grande
+    marche des femmes pour la lib\xE9ration de toutes les personnes kidnapp\xE9es
+    en vente sur le march\xE9 noir, nous pouvons dire que Chicago est en crise. Richard
+    Anderson, candidat perdant de la pr\xE9c\xE9dente \xE9lection de maire a vu sa
+    popularit\xE9 exploser gr\xE2ce \xE0 son charisme et sa volont\xE9 d'aider \"le
+    peuple\" d'Am\xE9rique. \r\n\r\n\"Je vais vous dire... Je me pr\xE9sente pour
+    les hommes et les femmes qui ont fait un travail incroyable... Contrairement
+    \xE0 mes concurrents, je pense aux milliers qui se battent pour s\xE9curiser
+    et ramener l'\xE9quilibre dans notre soci\xE9t\xE9 \xE0 travers le pays, et surtout
+    dans notre ville de Chicago. Je tiens vraiment \xE0 toutes ces personnes, elles
+    sont tout simplement incroyables.\""
   isZoomed: 0
   timer: 0.3
-  displayTextComponent: {fileID: 1145899166}
 --- !u!114 &2010337064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4025,7 +4037,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2011634882}
   m_Layer: 0
-  m_Name: --- DECOR ---
+  m_Name: Props
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4043,7 +4055,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5006512735121332628}
-  - {fileID: 203998289}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 5, y: 146.3, z: -4.59}
@@ -5320,80 +5331,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1001 &1690070225687504065
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1690070223722825140, guid: 2683cf400de334240af5cb96712ff557,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1690070223722825140, guid: 2683cf400de334240af5cb96712ff557,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1690070223722825140, guid: 2683cf400de334240af5cb96712ff557,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1690070223722825140, guid: 2683cf400de334240af5cb96712ff557,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1690070223722825140, guid: 2683cf400de334240af5cb96712ff557,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1690070223722825140, guid: 2683cf400de334240af5cb96712ff557,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1690070223722825140, guid: 2683cf400de334240af5cb96712ff557,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1690070223722825140, guid: 2683cf400de334240af5cb96712ff557,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 1690070223722825140, guid: 2683cf400de334240af5cb96712ff557,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1690070223722825140, guid: 2683cf400de334240af5cb96712ff557,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1690070223722825140, guid: 2683cf400de334240af5cb96712ff557,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1690070223722825141, guid: 2683cf400de334240af5cb96712ff557,
-        type: 3}
-      propertyPath: m_Name
-      value: Scene Manager
-      objectReference: {fileID: 0}
-    - target: {fileID: 1690070223722825141, guid: 2683cf400de334240af5cb96712ff557,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2683cf400de334240af5cb96712ff557, type: 3}
 --- !u!23 &1706138312036322947
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5651,38 +5588,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    index: 0
     unlockedData: 0
-    displayedName:
-      largeText: 0
-      superText: 0
-      frenchText: 
-      englishText: 
-    codeName: Verres de whisky
-    intelRevealed: 0
+    index: 0
+    codeName: Verres Whisky
     intelSelf: 0
     hasIntels: 1
     intels:
-    - name: Richard
-      image: {fileID: 0}
-      intelAlpha: 0
-      revealed: 0
-    description: 
-    photographed: 0
-    photo: {fileID: 0}
-    completedPhotograph: 0
+    - name: Empreinte Richard
+    useToUnlock: 1
+    unlockableLocation: 4
     modeCategory:
       location: 3
       suspect: 2
       type: 0
-    useToUnlock: 1
-    unlockableLocation: 4
   instantiate: 0
   hasApplied: 0
   hasText: 0
+  displayTextComponent: {fileID: 1145899166}
+  descriptionText: 
   isZoomed: 0
   timer: 0.3
-  displayTextComponent: {fileID: 1145899166}
 --- !u!114 &2187449669116551643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5852,7 +5777,7 @@ PrefabInstance:
     - target: {fileID: 2213011491218206612, guid: 6e34bc824f7d2714e8a9caa2990f8913,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2213011491218206612, guid: 6e34bc824f7d2714e8a9caa2990f8913,
         type: 3}
@@ -10378,11 +10303,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1899111436}
+      objectReference: {fileID: 1430949781}
     - target: {fileID: 8963193682288773998, guid: 32be31a333568ec4eadf485eb3c2f84d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: DeskScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 8963193682288773998, guid: 32be31a333568ec4eadf485eb3c2f84d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
       objectReference: {fileID: 0}
     - target: {fileID: 8963193682288774000, guid: 32be31a333568ec4eadf485eb3c2f84d,
         type: 3}
@@ -10427,7 +10357,7 @@ PrefabInstance:
     - target: {fileID: 8963193682433347671, guid: 32be31a333568ec4eadf485eb3c2f84d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8963193682433347671, guid: 32be31a333568ec4eadf485eb3c2f84d,
         type: 3}
@@ -10617,7 +10547,7 @@ PrefabInstance:
     - target: {fileID: 9045211434734282765, guid: 3ad9061556b69b64eb83004ba39f7c7a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9045211434734282765, guid: 3ad9061556b69b64eb83004ba39f7c7a,
         type: 3}

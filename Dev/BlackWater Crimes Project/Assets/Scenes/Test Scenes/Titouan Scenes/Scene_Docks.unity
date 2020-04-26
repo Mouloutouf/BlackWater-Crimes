@@ -480,39 +480,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    index: 2
     unlockedData: 0
-    displayedName:
-      largeText: 0
-      superText: 0
-      frenchText: 
-      englishText: 
-    codeName: 
-    intelRevealed: 0
-    intelSelf: 0
+    index: 2
+    codeName: Lettre Abigail
+    intelSelf: 1
     hasIntels: 0
     intels: []
-    description: "Pouvons-nous nous retrouver sur les quais pour parler de notre
-      probl\xE8me s'il te pla\xEEt ? C'est urgent. On doit s'en sortir, sinon, nous
-      sommes toutes en danger. Je me fais du souci pour les autres. J'esp\xE8re qu'elles
-      n'auront pas de probl\xE8mes. Je t'attendrai ce soir pr\xE8s du bateau de p\xEAche,
-      non loin des \xE9tals de poisson.Viens vers 23 heures pour \xEAtre s\xFBre
-      que nous soyons seules. \n\nLa Traviata."
-    photographed: 0
-    photo: {fileID: 0}
-    completedPhotograph: 0
+    useToUnlock: 0
+    unlockableLocation: 2
     modeCategory:
       location: 0
       suspect: 1
       type: 3
-    useToUnlock: 0
-    unlockableLocation: 2
   instantiate: 0
   hasApplied: 0
   hasText: 1
+  displayTextComponent: {fileID: 446966043}
+  descriptionText: "Pouvons-nous nous retrouver sur les quais pour parler de notre
+    probl\xE8me s'il te pla\xEEt ? C'est urgent. On doit s'en sortir, sinon, nous
+    sommes toutes en danger. Je me fais du souci pour les autres. J'esp\xE8re qu'elles
+    n'auront pas de probl\xE8mes. Je t'attendrai ce soir pr\xE8s du bateau de p\xEAche,
+    non loin des \xE9tals de poisson.Viens vers 23 heures pour \xEAtre s\xFBre que
+    nous soyons seules. \r\n\r\nLa Traviata."
   isZoomed: 0
   timer: 0.3
-  displayTextComponent: {fileID: 446966043}
 --- !u!114 &107201355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -714,6 +705,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &215757655
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 215757656}
+  m_Layer: 0
+  m_Name: Lights
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &215757656
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215757655}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 456420569}
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &240716266 stripped
 Transform:
@@ -1308,8 +1330,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 9.77, z: 0.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_Father: {fileID: 215757656}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 30.000002, y: 0, z: 0}
 --- !u!1 &500124718
 GameObject:
@@ -7871,34 +7893,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    index: 1
     unlockedData: 0
-    displayedName:
-      largeText: 0
-      superText: 0
-      frenchText: 
-      englishText: 
-    codeName: 
-    intelRevealed: 0
-    intelSelf: 0
+    index: 1
+    codeName: Etiquette Vetement
+    intelSelf: 1
     hasIntels: 0
     intels: []
-    description: 
-    photographed: 0
-    photo: {fileID: 0}
-    completedPhotograph: 0
+    useToUnlock: 1
+    unlockableLocation: 2
     modeCategory:
       location: 0
       suspect: 0
       type: 2
-    useToUnlock: 1
-    unlockableLocation: 2
   instantiate: 0
   hasApplied: 0
   hasText: 0
+  displayTextComponent: {fileID: 0}
+  descriptionText: 
   isZoomed: 0
   timer: 0.3
-  displayTextComponent: {fileID: 0}
 --- !u!64 &1231236610871885591
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -21325,34 +21338,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    index: 0
     unlockedData: 0
-    displayedName:
-      largeText: 0
-      superText: 0
-      frenchText: 
-      englishText: 
-    codeName: 
-    intelRevealed: 0
-    intelSelf: 0
+    index: 0
+    codeName: Douille
+    intelSelf: 1
     hasIntels: 0
     intels: []
-    description: 
-    photographed: 0
-    photo: {fileID: 0}
-    completedPhotograph: 0
+    useToUnlock: 0
+    unlockableLocation: 0
     modeCategory:
       location: 0
       suspect: 0
       type: 1
-    useToUnlock: 0
-    unlockableLocation: 0
   instantiate: 0
   hasApplied: 0
   hasText: 0
+  displayTextComponent: {fileID: 0}
+  descriptionText: 
   isZoomed: 0
   timer: 0.3
-  displayTextComponent: {fileID: 0}
 --- !u!65 &6542740856713617744
 BoxCollider:
   m_ObjectHideFlags: 0
