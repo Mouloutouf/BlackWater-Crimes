@@ -13,7 +13,7 @@ public class PhotoAttorneyObject : ObjectData<Evidence>
 
     void Start()
     {
-
+        GetGameData();
     }
 
     public override void Protocol()
