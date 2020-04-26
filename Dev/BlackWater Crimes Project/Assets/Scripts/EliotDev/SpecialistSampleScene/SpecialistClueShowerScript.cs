@@ -33,23 +33,13 @@ public class SpecialistClueShowerScript : MonoBehaviour
 
     public void ShowClue(GameObject clue)
     {
-        if(currentClueShowed == null)
-        {
-            currentClueShowed = Instantiate(clue, this.transform);
-            currentClueShowed.GetComponent<RectTransform>().localPosition = Vector3.zero;
-            currentClueShowed.GetComponent<RectTransform>().localScale = new Vector3(2.3f, 2.3f, 1);
-            Destroy(currentClueShowed.GetComponent<Button>());
-            CloseFolder();
-        }
-        else
-        {
-            Destroy(currentClueShowed);
-            currentClueShowed = Instantiate(clue, this.transform);
-            currentClueShowed.GetComponent<RectTransform>().localPosition = Vector3.zero;
-            currentClueShowed.GetComponent<RectTransform>().localScale = new Vector3(2.3f, 2.3f, 1);
-            Destroy(currentClueShowed.GetComponent<Button>());
-            CloseFolder();
-        }
+        if (currentClueShowed != null) Destroy(currentClueShowed);
+
+        currentClueShowed = Instantiate(clue, this.transform);
+        currentClueShowed.GetComponent<RectTransform>().localPosition = Vector3.zero;
+        currentClueShowed.GetComponent<RectTransform>().localScale = new Vector3(2.3f, 2.3f, 1);
+        Destroy(currentClueShowed.GetComponent<Button>());
+        CloseFolder();
     }
 
     public void ResetClue()
