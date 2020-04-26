@@ -4,6 +4,5 @@ using UnityEngine;
 
 public class IntelObject : MonoBehaviour
 {
-    public int myIndex;
     public string myName;
 }

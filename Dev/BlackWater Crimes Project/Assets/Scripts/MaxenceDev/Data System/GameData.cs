@@ -30,9 +30,11 @@ public enum DataTypes
 
 public class Data
 {
-    public int index;
+    [Title("General")]
 
     public bool unlockedData;
+
+    public int index;
 
     public Data()
     {
@@ -70,51 +72,52 @@ public class Note : Data
 public class Intel
 {
     public string name;
-    public Sprite image;
+    
+    public float intelAlpha { get; set; }
 
-    [Range(0, 1)] public float intelAlpha;
-
-    public bool revealed;
+    public bool revealed { get; set; }
 }
 
 [Serializable]
 public class Evidence : Data
 {
-    [HideReferenceObjectPicker]
-    public LocalisedText displayedName;
-
     public string codeName;
-
-    public bool intelRevealed; // To Remove
-
+    
+    [Title("Intels")]
+    
     public bool intelSelf;
     public bool hasIntels;
     [ShowIf("hasIntels")]
     public List<Intel> intels = new List<Intel>();
-
-    [Title("Description Text", bold: false)]
-    [HideLabel]
-    [MultiLineProperty(5)]
-    public string description;
-
-    public bool photographed;
-    public Sprite photo;
-    public bool completedPhotograph;
-
-    [HideReferenceObjectPicker]
-    public ModeCategory modeCategory;
-
+    
+    [Title("Unlock")]
+    
     public bool useToUnlock;
     [ShowIf("useToUnlock")]
     public Locations unlockableLocation;
+
+    public bool photographed { get; set; }
+    public Sprite photo { get; set; }
+    public bool completedPhotograph { get; set; }
+
+    [HideReferenceObjectPicker]
+    [Title("Categories")]
+    [HideLabel]
+    public ModeCategory modeCategory;
 }
 
 [Serializable]
 public class Report : Data
 {
+    [Title("Agent")]
+
     public Sprite agentSprite;
     public string agentName;
 
+    [Title("Element")]
+
+    public Modes mode;
+    [HideIf("mode", Modes.Type)]
     public Sprite elementSprite;
     public string elementName;
     [ShowIf("mode", Modes.Type)]
@@ -124,8 +127,8 @@ public class Report : Data
     [HideLabel]
     [MultiLineProperty(15)]
     public string reportText;
-
-    public Modes mode;
+    
+    [Title("Status")]
 
     public int unlockOrderIndex;
     public bool seen;
@@ -134,26 +137,26 @@ public class Report : Data
 [Serializable]
 public class Location : Data
 {
+    [Title("Status")]
+
     public bool known;
     public bool visible;
     public bool accessible;
 
     public bool completed;
 
-    public string locationName;
-    public LanguageText _locationName;
+    [Title("Location")]
 
+    public Locations myLocation;
+    public string locationName;
     public string locationAdress;
 
-    [Title("Report Text", bold: false)]
+    [Title("Description", bold: false)]
     [HideLabel]
     [MultiLineProperty(5)]
     public string locationDescription;
-    public LargeLanguageText _locationDescription;
-
-    public int evidenceCollected;
-
-    public Locations myLocation;
+    
+    public int evidenceCollected { get; set; }
 }
 
 [Serializable]
@@ -270,3 +273,18 @@ public class GameData : SerializedScriptableObject
         reportsCollected = 0;
     }
 }
+
+#region Test
+
+/* Test Language \\
+    [Title("Language")]
+
+    public bool useLanguage;
+    [ShowIf("useLanguage")]
+    [HideReferenceObjectPicker]
+    public LocalisedText displayedName;
+
+    //public LanguageText _locationName;
+    */
+
+#endregion
