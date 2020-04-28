@@ -2307,7 +2307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcb0521eef70ac444ae95e79d8fa7a15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myName: EmpreinteUmberto
+  myName: Empreinte Umberto
 --- !u!1001 &1430949778
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2563,7 +2563,7 @@ MonoBehaviour:
   size: 3
   specificZoomPosition: {x: 23.56, y: 10.041, z: 22.72}
   hasSpecificRotation: 1
-  specificZoomRotation: {x: 0, y: 0, z: 0}
+  specificZoomRotation: {x: 90, y: 90, z: 0}
   specificZoomRotationQuaternion: {x: -0.39144915, y: -0.54425615, z: 0.47175586,
     w: -0.5727123}
   blockHorizontalRotation: 1
@@ -3175,7 +3175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcb0521eef70ac444ae95e79d8fa7a15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myName: Richard
+  myName: Empreinte Richard
 --- !u!1001 &1612409379
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3715,14 +3715,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1949669942}
-  m_LocalRotation: {x: -0, y: 0.0009948876, z: -0, w: 0.9999995}
-  m_LocalPosition: {x: -11.6, y: -0.451, z: 14.17}
+  m_LocalRotation: {x: -0, y: -0.21634558, z: -0, w: 0.97631687}
+  m_LocalPosition: {x: -11.3, y: -0.6, z: 14.17}
   m_LocalScale: {x: 0.115393035, y: 0.11543921, z: 0.14964244}
   m_Children:
   - {fileID: 1621070627}
   m_Father: {fileID: 1907031896}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0.11400001, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -24.989, z: 0}
 --- !u!65 &1949669944
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3734,8 +3734,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 13.382561, y: 0.0000009499491, z: 14.2699375}
-  m_Center: {x: 1.053944, y: -0.00000088596255, z: -2.1349778}
+  m_Size: {x: 10, y: 0, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1949669945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3787,7 +3787,7 @@ MonoBehaviour:
   size: 3
   specificZoomPosition: {x: 21.93, y: 9.45, z: 22.81}
   hasSpecificRotation: 1
-  specificZoomRotation: {x: 0, y: 0, z: 0}
+  specificZoomRotation: {x: 90, y: 90, z: 0}
   specificZoomRotationQuaternion: {x: -0.39144915, y: -0.54425615, z: 0.47175586,
     w: -0.5727123}
   blockHorizontalRotation: 1
@@ -3801,7 +3801,7 @@ MeshCollider:
   m_GameObject: {fileID: 1949669942}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 30
@@ -7093,7 +7093,7 @@ Transform:
   m_GameObject: {fileID: 5056908357729368407}
   m_LocalRotation: {x: -0.70441604, y: 0.06162841, z: -0.06162841, w: 0.70441604}
   m_LocalPosition: {x: 14.24, y: -0.23, z: 5.09}
-  m_LocalScale: {x: 5.406154, y: 5.406155, z: 5.406154}
+  m_LocalScale: {x: 5.8927083, y: 5.8927093, z: 5.8927083}
   m_Children: []
   m_Father: {fileID: 5006512735121332628}
   m_RootOrder: 71
@@ -7870,6 +7870,7 @@ GameObject:
   - component: {fileID: 3967053084536370054}
   - component: {fileID: 327263136507405533}
   - component: {fileID: 7838396622079091528}
+  - component: {fileID: 5056908357729368408}
   m_Layer: 0
   m_Name: Sphere004
   m_TagString: Untagged
@@ -7877,6 +7878,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &5056908357729368408
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5056908357729368407}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1678289250443766740, guid: fd50f708a6afb2e47844c48ff56e7015, type: 3}
 --- !u!4 &5151189004690590196
 Transform:
   m_ObjectHideFlags: 0
