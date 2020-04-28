@@ -3,21 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Sirenix.OdinInspector;
 
 public class AttorneyClueShowerScript : MonoBehaviour
 {
     [SerializeField] GameObject clueFolder;
     [SerializeField] Button validateButton;
-    GameObject clueShowerUsed;
-    public GameObject currentClueShowed1;
-    public GameObject currentClueShowed2;
+    public bool hasTwoDisplayers;
+    GameObject evidenceDisplayerUsed;
+    public List<GameObject> currentEvidencesDisplayed = new List<GameObject>();
     bool folderOpen = false;
+    int index;
 
-    public void OpenFolder(GameObject clueShower)
+    public void OpenFolder(GameObject displayer)
     {
         if(folderOpen == false)
         {
-            clueShowerUsed = clueShower;
+            evidenceDisplayerUsed = displayer;
+            index = evidenceDisplayerUsed.transform.GetSiblingIndex();
             clueFolder.SetActive(true);
             folderOpen = true;
             validateButton.interactable = false;
@@ -28,8 +31,13 @@ public class AttorneyClueShowerScript : MonoBehaviour
     {
         clueFolder.SetActive(false);
         folderOpen = false;
-        clueShowerUsed = null;
-        if(currentClueShowed1 != null && currentClueShowed2 != null)
+        evidenceDisplayerUsed = null;
+        if(hasTwoDisplayers && currentEvidencesDisplayed[0] != null && currentEvidencesDisplayed[1] != null)
+        {
+            validateButton.interactable = true;
+            validateButton.GetComponentInChildren<Text>().text = "Validate";
+        }
+        else if(!hasTwoDisplayers && currentEvidencesDisplayed[0] != null)
         {
             validateButton.interactable = true;
             validateButton.GetComponentInChildren<Text>().text = "Validate";
@@ -38,54 +46,32 @@ public class AttorneyClueShowerScript : MonoBehaviour
 
     public void ShowClue(GameObject clue)
     {
-        if(clueShowerUsed.name == "ClueShowerReceiver 1"){
-            if(currentClueShowed1 == null)
-            {
-                currentClueShowed1 = Instantiate(clue, clueShowerUsed.transform);
-                currentClueShowed1.GetComponent<RectTransform>().localPosition = Vector3.zero;
-                currentClueShowed1.GetComponent<RectTransform>().localScale = new Vector3(.5f, .5f, 1);
-                Destroy(currentClueShowed1.GetComponent<Button>());
-                currentClueShowed1.GetComponent<PhotoAttorneyObject>().isClueShower = true;
-                CloseFolder();
-            }
-            else
-            {
-                Destroy(currentClueShowed1);
-                currentClueShowed1 = Instantiate(clue, clueShowerUsed.transform);
-                currentClueShowed1.GetComponent<RectTransform>().localPosition = Vector3.zero;
-                currentClueShowed1.GetComponent<RectTransform>().localScale = new Vector3(.5f, .5f, 1);
-                Destroy(currentClueShowed1.GetComponent<Button>());
-                currentClueShowed1.GetComponent<PhotoAttorneyObject>().isClueShower = true;
-                CloseFolder();
-            }
-        }
-        else if(clueShowerUsed.name == "ClueShowerReceiver 2")
-        {
-            if(currentClueShowed2 == null)
-            {
-                currentClueShowed2 = Instantiate(clue, clueShowerUsed.transform);
-                currentClueShowed2.GetComponent<RectTransform>().localPosition = Vector3.zero;
-                currentClueShowed2.GetComponent<RectTransform>().localScale = new Vector3(.5f, .5f, 1);
-                Destroy(currentClueShowed2.GetComponent<Button>());
-                currentClueShowed2.GetComponent<PhotoAttorneyObject>().isClueShower = true;
-                CloseFolder();
-            }
-            else
-            {
-                Destroy(currentClueShowed2);
-                currentClueShowed2 = Instantiate(clue, clueShowerUsed.transform);
-                currentClueShowed2.GetComponent<RectTransform>().localPosition = Vector3.zero;
-                currentClueShowed2.GetComponent<RectTransform>().localScale = new Vector3(.5f, .5f, 1);
-                Destroy(currentClueShowed2.GetComponent<Button>());
-                currentClueShowed2.GetComponent<PhotoAttorneyObject>().isClueShower = true;
-                CloseFolder();
-            }
-        }
-    }
+        if(currentEvidencesDisplayed[index] != null) Destroy(currentEvidencesDisplayed[index]);
 
+        foreach(GameObject evidence in currentEvidencesDisplayed)
+        {
+            if(evidence != null && clue.GetComponent<PhotoAttorneyObject>().data.codeName == evidence.GetComponent<PhotoAttorneyObject>().data.codeName)
+            { 
+                CloseFolder();
+                return;
+            }
+        }
+
+        currentEvidencesDisplayed[index] = Instantiate(clue, evidenceDisplayerUsed.transform);
+        currentEvidencesDisplayed[index].GetComponent<RectTransform>().localPosition = Vector3.zero;
+
+        if(hasTwoDisplayers) currentEvidencesDisplayed[index].GetComponent<RectTransform>().localScale = new Vector3(.5f, .5f, 1);
+
+        else currentEvidencesDisplayed[index].GetComponent<RectTransform>().localScale = new Vector3(2.3f, 2.3f, 1);
+
+        Destroy(currentEvidencesDisplayed[index].GetComponent<Button>());
+        currentEvidencesDisplayed[index].GetComponent<PhotoAttorneyObject>().isEvidenceDisplayed = true;
+
+        CloseFolder();
+}
     public void ResetClue()
     {
-        Destroy(currentClueShowed1);
-        Destroy(currentClueShowed2);
+        Destroy(currentEvidencesDisplayed[0]);
+        Destroy(currentEvidencesDisplayed[1]);
     }
 }

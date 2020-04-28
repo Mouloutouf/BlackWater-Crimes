@@ -12,6 +12,7 @@ public enum ClueHolderSize
 public class ClueHolder : MonoBehaviour
 {
     public ClueHolderSize size;
+    [ShowIf("size", ClueHolderSize.Other)]
     public Vector3 specificZoomPosition;
 
     public bool hasSpecificRotation;
