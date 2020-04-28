@@ -11,7 +11,7 @@ public class EvidenceInteraction : MonoBehaviour
 
     public Locations thisSceneLocation;
 
-    [SerializeField] Camera cam;
+    public Camera cam;
     [SerializeField] GameObject saveText;
     [SerializeField] GameObject fingerprintFilter;
     [SerializeField] Toggle fingerprintToggle;
@@ -270,11 +270,15 @@ public class EvidenceInteraction : MonoBehaviour
         {
             fingerprintFilter.SetActive(true);
             canRotate = false;
+
+            currentEvidenceHeld.GetComponent<EvidenceObject>().canShowText = false;
         }
         else
         {
             fingerprintFilter.SetActive(false);
             canRotate = true;
+
+            currentEvidenceHeld.GetComponent<EvidenceObject>().canShowText = true;
         }
     }
 }

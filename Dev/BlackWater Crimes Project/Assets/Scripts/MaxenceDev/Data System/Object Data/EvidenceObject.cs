@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using Sirenix.OdinInspector;
@@ -19,14 +20,19 @@ public class EvidenceObject : ObjectData<Evidence>
     [HideLabel]
     [MultiLineProperty(5)]
     public string descriptionText;
-
-    [HideInInspector]
-    public bool isZoomed;
-    private bool isShown;
-
+    [ShowIf("hasText")]
     public float timer = 0.3f;
     private float time;
-    
+    [ShowIf("hasText")]
+    public Camera _cam;
+
+    [HideInInspector]
+    public bool isZoomed { get; set; } = false;
+    public bool canShowText { get; set; } = true;
+    private bool isShown;
+
+    private bool hit;
+
     void Start()
     {
         GetGameData();
@@ -43,16 +49,27 @@ public class EvidenceObject : ObjectData<Evidence>
 
     void Update()
     {
-        if (isZoomed && hasText)
+        if (isZoomed && canShowText && hasText)
         {
             if (Input.GetMouseButtonDown(0))
             {
                 time = timer;
+
+                RaycastHit hit;
+                Ray ray = _cam.ScreenPointToRay(Input.mousePosition);
+
+                if (Physics.Raycast(ray, out hit, 2000f))
+                {
+                    if (hit.transform.GetComponent<EvidenceObject>() == this || hit.transform.parent.GetComponent<EvidenceObject>() == this)
+                    {
+                        this.hit = true;
+                    }
+                }
             }
 
             time -= Time.deltaTime;
 
-            if (Input.GetMouseButtonUp(0) && time > 0)
+            if (hit && Input.GetMouseButtonUp(0) && time > 0)
             {
                 if (isShown)
                 {
@@ -67,6 +84,8 @@ public class EvidenceObject : ObjectData<Evidence>
 
                     isShown = true;
                 }
+
+                hit = false;
             }
         }
     }
