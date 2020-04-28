@@ -188,7 +188,7 @@ public class EvidenceInteraction : MonoBehaviour
         string fileName = _hit.transform.parent.GetComponent<EvidenceObject>().data.codeName;
         fileName = fileName.Replace(" ", "");
 
-        if (Application.platform == RuntimePlatform.WindowsEditor || (Application.platform == RuntimePlatform.Android && EditorApplication.isPlaying))
+        if (Application.platform == RuntimePlatform.WindowsEditor /*|| (Application.platform == RuntimePlatform.Android && EditorApplication.isPlaying)*/)
         {
             filePath = "Assets/Graphs/Sprites/Screenshots/" + fileName + ".png";
             Debug.Log("Using Editor Folder");
@@ -246,11 +246,13 @@ public class EvidenceInteraction : MonoBehaviour
         texture.LoadImage(fileBytes);
         Rect rect = new Rect(0, 0, texture.width, texture.height);
         Sprite sp = Sprite.Create(texture, new Rect(values.x, values.y, texture.width / sizes.x, texture.height / sizes.y), new Vector2(0.5f, 0.5f));
+        /*
         if(AssetDatabase.FindAssets(fileName + "Cropped.asset") != null)
         {
             AssetDatabase.DeleteAsset("Assets/Graphs/Sprites/Screenshots/CropedSprites/" + fileName + "Cropped.asset");
         }
         AssetDatabase.CreateAsset(sp, "Assets/Graphs/Sprites/Screenshots/CropedSprites/" + fileName + "Cropped.asset");
+        */
         _evidence.photo = sp;
         returnButton.interactable = true;
     }
