@@ -40,7 +40,7 @@ public class AttorneySingleClueShowerScript : MonoBehaviour
             currentClueShowed.GetComponent<RectTransform>().localPosition = Vector3.zero;
             currentClueShowed.GetComponent<RectTransform>().localScale = new Vector3(2.3f, 2.3f, 1);
             Destroy(currentClueShowed.GetComponent<Button>());
-            currentClueShowed.GetComponent<PhotoAttorneyObject>().isClueShower = true;
+            //currentClueShowed.GetComponent<PhotoAttorneyObject>().isEvidenceDisplayed = true;
             CloseFolder();
         }
         else
@@ -50,7 +50,7 @@ public class AttorneySingleClueShowerScript : MonoBehaviour
             currentClueShowed.GetComponent<RectTransform>().localPosition = Vector3.zero;
             currentClueShowed.GetComponent<RectTransform>().localScale = new Vector3(2.3f, 2.3f, 1);
             Destroy(currentClueShowed.GetComponent<Button>());
-            currentClueShowed.GetComponent<PhotoAttorneyObject>().isClueShower = true;
+            //currentClueShowed.GetComponent<PhotoAttorneyObject>().isEvidenceDisplayed = true;
             CloseFolder();
         }
     }

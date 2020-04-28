@@ -17,7 +17,7 @@ public class ActionsButtonsScript : MonoBehaviour
     public void InterrogatingButton(GameObject interrogatingRequest)
     {
         interrogatingRequest.SetActive(true);
-        dialogueText.text = "So you \nwant to interrogate a suspect...";
+        dialogueText.text = "So you want to interrogate a suspect...";
         gameObject.SetActive(false);
     }
 

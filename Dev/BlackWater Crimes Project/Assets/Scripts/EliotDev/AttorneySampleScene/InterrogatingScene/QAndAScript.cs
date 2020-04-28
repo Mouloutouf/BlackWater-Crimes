@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
 
-public class QAndAScript: MonoBehaviour
+public class QAndAScript: SerializedMonoBehaviour
 {
     [System.Serializable]
     public struct QuestionAndAnswer
@@ -14,13 +14,9 @@ public class QAndAScript: MonoBehaviour
         public string question;
 
         [Title("Answer", bold: false)]
-        [HideLabel]
         [MultiLineProperty(4)]
-        public string answer;
+        public string[] answers;
     }
 
-    public QuestionAndAnswer[] whiteQAndA;
-    public QuestionAndAnswer[] andersonQAndA;
-    public QuestionAndAnswer[] jenkinsQAndA;
-    public QuestionAndAnswer[] morettiQAndA;
+    public Dictionary<Suspects, List<QuestionAndAnswer>> QuestionsAndAnswers = new Dictionary<Suspects, List<QuestionAndAnswer>>();
 }

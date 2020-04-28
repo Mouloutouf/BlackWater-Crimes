@@ -6,7 +6,7 @@ using Sirenix.OdinInspector;
 
 public enum Locations { Docks, Brothel, Anna_House, New_House, Politician_Office, Cop_Office, Mafia_HideOut, Anna_House_Secret, Brothel_HideOut }
 
-public enum Suspects { Umberto_Moretti, Abigail_White, Richard_Anderson, Bob_Jenkins }
+public enum Suspects { Umberto_Moretti, Abigail_White, Richard_Anderson, Bob_Jenkins, None }
 
 public enum Indics { Master_Thommers, Brandon_Bennington, James_Walker, Quentin_Copeland, Thomas_Maxwell, Miss_Marshall, Bob_Jenkins, Arnold_Steele, Standard }
 
@@ -159,6 +159,20 @@ public class Location : Data
     public int evidenceCollected { get; set; }
 }
 
+public class Question : Data
+{
+    [Title("Question", bold: false)]
+    [HideLabel]
+    [MultiLineProperty(2)]
+    public string question;
+
+    [Title("Answer", bold: false)]
+    [MultiLineProperty(4)]
+    public string[] answers;
+
+    public Report correspondance {get; set;}
+}
+
 [Serializable]
 public class SoundFloat
 {
@@ -205,6 +219,10 @@ public class GameData : SerializedScriptableObject
     public int reportsCollected = 0;
 
     public List<Location> locations = new List<Location>();
+
+    public Dictionary<Suspects, List<Question>> Questions = new Dictionary<Suspects, List<Question>>();
+
+    public Suspects currentSuspect {get; set;}
 
     public GameData()
     {

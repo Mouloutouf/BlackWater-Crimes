@@ -24,13 +24,13 @@ public class VenueValidateButton : MonoBehaviour
         {
             dialogueText.text = "This seems logic. You can go there, anything else?";
             dropdown.GetComponent<Dropdown>().value = 0;
-            clueShower.GetComponent<AttorneySingleClueShowerScript>().ResetClue();
+            clueShower.GetComponent<AttorneyClueShowerScript>().ResetClue();
             GetComponent<Button>().interactable = false;
             GetComponentInChildren<Text>().text = "Missing elements";
 
             foreach (Location _location in gameData.locations)
             {
-                if (clueShower.GetComponent<AttorneySingleClueShowerScript>().currentClueShowed.GetComponent<PhotoAttorneyObject>().data.unlockableLocation == _location.myLocation)
+                if (clueShower.GetComponent<AttorneyClueShowerScript>().currentEvidencesDisplayed[0].GetComponent<PhotoAttorneyObject>().data.unlockableLocation == _location.myLocation)
                 {
                     _location.accessible = true;
                 }
@@ -40,7 +40,7 @@ public class VenueValidateButton : MonoBehaviour
         {
             dialogueText.text = "Hmm... No, this isn't a good reason enough.";
             dropdown.GetComponent<Dropdown>().value = 0;
-            clueShower.GetComponent<AttorneySingleClueShowerScript>().ResetClue();
+            clueShower.GetComponent<AttorneyClueShowerScript>().ResetClue();
             GetComponent<Button>().interactable = false;
             GetComponentInChildren<Text>().text = "Missing elements";
         }
@@ -48,10 +48,10 @@ public class VenueValidateButton : MonoBehaviour
 
     bool Match()
     {
-        if (clueShower.GetComponent<AttorneySingleClueShowerScript>().currentClueShowed.GetComponent<PhotoAttorneyObject>().data.useToUnlock)
+        if (clueShower.GetComponent<AttorneyClueShowerScript>().currentEvidencesDisplayed[0].GetComponent<PhotoAttorneyObject>().data.useToUnlock)
         {
             Locations currentLocation = dropdown.GetComponent<DropdownVenues>()._venues[dropdown.GetComponentInChildren<Text>().text];
-            if (clueShower.GetComponent<AttorneySingleClueShowerScript>().currentClueShowed.GetComponent<PhotoAttorneyObject>().data.unlockableLocation == currentLocation)
+            if (clueShower.GetComponent<AttorneyClueShowerScript>().currentEvidencesDisplayed[0].GetComponent<PhotoAttorneyObject>().data.unlockableLocation == currentLocation)
             {
                 return true;
             }
@@ -69,7 +69,7 @@ public class VenueValidateButton : MonoBehaviour
     public void Reset()
     {
         dropdown.GetComponent<Dropdown>().value = 0;
-        clueShower.GetComponent<AttorneySingleClueShowerScript>().ResetClue();
+        clueShower.GetComponent<AttorneyClueShowerScript>().ResetClue();
         GetComponent<Button>().interactable = false;
         GetComponentInChildren<Text>().text = "Missing elements";
     }

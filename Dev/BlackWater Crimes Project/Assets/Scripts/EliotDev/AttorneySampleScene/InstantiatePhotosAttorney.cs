@@ -6,9 +6,10 @@ using UnityEngine.EventSystems;
 
 public class InstantiatePhotosAttorney : InstantiationProcess<Evidence>
 {
-    [SerializeField] List<Vector2> photoPositions = new List<Vector2>();
-    AttorneySingleClueShowerScript clueShowerScript;
+    AttorneySingleClueShowerScript singleClueShowerScript;
+    AttorneyClueShowerScript clueShowerScript;
     int index;
+    bool singleClueShower;
 
     void Start()
     {
@@ -22,7 +23,8 @@ public class InstantiatePhotosAttorney : InstantiationProcess<Evidence>
 
     public override GameObject Instantiation(GameObject prefab)
     {
-        clueShowerScript = Object.FindObjectOfType<AttorneySingleClueShowerScript>().GetComponent<AttorneySingleClueShowerScript>();
+        if(singleClueShower) singleClueShower = Object.FindObjectOfType<AttorneySingleClueShowerScript>().GetComponent<AttorneySingleClueShowerScript>();
+        else clueShowerScript = Object.FindObjectOfType<AttorneyClueShowerScript>().GetComponent<AttorneyClueShowerScript>();
 
         GameObject _prefab = Instantiate(prefab) as GameObject;
 
@@ -47,7 +49,8 @@ public class InstantiatePhotosAttorney : InstantiationProcess<Evidence>
 
         index++;
 
-        _prefab.GetComponent<Button>().onClick.AddListener( delegate { clueShowerScript.ShowClue(_prefab); } );
+        if(singleClueShower) _prefab.GetComponent<Button>().onClick.AddListener( delegate { singleClueShowerScript.ShowClue(_prefab); } );
+        else _prefab.GetComponent<Button>().onClick.AddListener( delegate { clueShowerScript.ShowClue(_prefab); } );
 
         return _prefab;
     }
