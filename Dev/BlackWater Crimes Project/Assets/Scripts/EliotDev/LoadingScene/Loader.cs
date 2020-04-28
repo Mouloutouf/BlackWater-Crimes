@@ -9,6 +9,7 @@ public class Loader : MonoBehaviour
     void Start()
     {
         sceneToLoad = Object.FindObjectOfType<LoadingSceneScript>().GetComponent<LoadingSceneScript>().sceneToLoad;
+        Destroy(Object.FindObjectOfType<LoadingSceneScript>());
         StartCoroutine(LoadScene());
     }
 

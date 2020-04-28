@@ -11,6 +11,8 @@ public class PhotoAttorneyObject : ObjectData<Evidence>
 
     private Evidence myType;
 
+    public bool isClueShower = false;
+
     void Start()
     {
         GetGameData();
@@ -18,7 +20,10 @@ public class PhotoAttorneyObject : ObjectData<Evidence>
 
     public override void Protocol()
     {
-        imageObject.GetComponent<Image>().sprite = data.photo;
+        if(!isClueShower)
+        {
+            imageObject.GetComponent<Image>().sprite = data.photo;
+        }
 
         base.Protocol();
     }

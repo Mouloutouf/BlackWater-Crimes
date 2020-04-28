@@ -65,6 +65,7 @@ public class GetClues : MonoBehaviour
 
     void CheckForClueHolderMove()
     {
+        actualClue.GetComponent<ClueHolder>().specificZoomRotationQuaternion = Quaternion.Euler(actualClue.GetComponent<ClueHolder>().specificZoomRotation);
         // Zoom Movement
         if (actualClue != null && clueIsZoomed == true)
         {

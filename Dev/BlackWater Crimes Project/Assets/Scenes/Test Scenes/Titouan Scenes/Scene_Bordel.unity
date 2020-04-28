@@ -1348,14 +1348,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 530122686}
-  m_LocalRotation: {x: -0.5304918, y: -0.44948736, z: 0.47060823, w: -0.5432012}
-  m_LocalPosition: {x: -29.21, y: 2.75, z: 56.77}
-  m_LocalScale: {x: 0.33836067, y: 3.0035138, z: 0.41720298}
+  m_LocalRotation: {x: 0.52959174, y: 0.46854308, z: -0.46854308, w: 0.52959174}
+  m_LocalPosition: {x: -29.37, y: 2.75, z: 57.454}
+  m_LocalScale: {x: 0.3, y: 1, z: 0.35}
   m_Children:
   - {fileID: 1468571091}
   m_Father: {fileID: 2040125596}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 88.003006, y: -18.368, z: -459.558}
+  m_LocalEulerAnglesHint: {x: 90, y: 83, z: 0}
 --- !u!114 &530122688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1375,8 +1375,8 @@ MonoBehaviour:
     intelSelf: 1
     hasIntels: 0
     intels: []
-    useToUnlock: 0
-    unlockableLocation: 0
+    useToUnlock: 1
+    unlockableLocation: 3
     modeCategory:
       location: 1
       suspect: 1
@@ -1401,10 +1401,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: 3
-  specificZoomPosition: {x: 15.19, y: 2.98, z: 97.91}
+  specificZoomPosition: {x: 15.72, y: 2.98, z: 97.54}
   hasSpecificRotation: 1
-  specificZoomRotation: {x: 90, y: -90, z: 270}
-  specificZoomRotationQuaternion: {x: 0.6558341, y: 0.1864945, z: -0.21946277, w: 0.69780916}
+  specificZoomRotation: {x: 90, y: 40, z: 0}
+  specificZoomRotationQuaternion: {x: 0.6743797, y: 0.2126311, z: -0.2126311, w: 0.6743797}
   blockHorizontalRotation: 1
   blockVerticalRotation: 1
 --- !u!64 &530122690
@@ -4470,13 +4470,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1206800777}
-  m_LocalRotation: {x: -0.0000035911794, y: 0.000001400709, z: -1, w: 0.0000032931562}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: -0.001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1805436890}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 88.003006, y: -18.368, z: 111.083}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1206800780
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4659,7 +4659,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 10.598343, y: 0.11170695, z: 10.356763}
-  m_Center: {x: 0.12953022, y: -0.03998832, z: 0.35868862}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1294605707
 GameObject:
   m_ObjectHideFlags: 0
@@ -4732,8 +4732,6 @@ MonoBehaviour:
   photoReplacedSound: {fileID: 8300000, guid: 602c9ad97e86bd64e913f0539601d20a, type: 3}
   fingerprintDiscoveredSound: {fileID: 8300000, guid: c6fdc7f41a026f348bb037b534bf5230,
     type: 3}
-  isInEditor: 0
-  windowsBuild: 0
   values: {x: 360, y: 0}
   sizes: {x: 2, y: 1}
 --- !u!114 &1294605711
@@ -6653,15 +6651,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1805436889}
-  m_LocalRotation: {x: -0.6304002, y: -0.29335314, z: 0.31036553, w: -0.6482383}
-  m_LocalPosition: {x: -0.078, y: -1.497, z: 85.645}
-  m_LocalScale: {x: 0.0765809, y: 0.67978287, z: 0.04919554}
+  m_LocalRotation: {x: 0.48385644, y: 0.21828505, z: -0.12602685, w: 0.8380643}
+  m_LocalPosition: {x: -0.118, y: -1.54, z: 85.82}
+  m_LocalScale: {x: 0.07, y: 1, z: 0.04}
   m_Children:
   - {fileID: 1289359514}
   - {fileID: 1206800778}
   m_Father: {fileID: 2040125596}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 88.003006, y: -18.368, z: -428.917}
+  m_LocalEulerAnglesHint: {x: 60.000004, y: 29.198002, z: 0}
 --- !u!114 &1805436891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6725,7 +6723,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 18.98862, y: 0.000000039581167, z: 22.375708}
-  m_Center: {x: 0.31287012, y: 0.0000003923645, z: 0.42804435}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1805436894
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11843,7 +11841,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: 3
-  specificZoomPosition: {x: 0, y: 1, z: 2}
+  specificZoomPosition: {x: 0, y: 1, z: -1}
   hasSpecificRotation: 0
   specificZoomRotation: {x: 0, y: 0, z: 0}
   specificZoomRotationQuaternion: {x: 0, y: 0, z: 0, w: 1}

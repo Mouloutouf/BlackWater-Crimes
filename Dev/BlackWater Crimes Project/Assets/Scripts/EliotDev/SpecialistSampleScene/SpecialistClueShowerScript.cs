@@ -39,6 +39,7 @@ public class SpecialistClueShowerScript : MonoBehaviour
         currentClueShowed.GetComponent<RectTransform>().localPosition = Vector3.zero;
         currentClueShowed.GetComponent<RectTransform>().localScale = new Vector3(2.3f, 2.3f, 1);
         Destroy(currentClueShowed.GetComponent<Button>());
+        currentClueShowed.GetComponent<PhotoSpecialistObject>().isClueShower = true;
         CloseFolder();
     }
 

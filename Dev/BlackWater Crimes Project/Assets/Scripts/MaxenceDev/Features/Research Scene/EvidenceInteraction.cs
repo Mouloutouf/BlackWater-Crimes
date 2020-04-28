@@ -34,10 +34,6 @@ public class EvidenceInteraction : MonoBehaviour
     public AudioClip photoSavedSound;
     public AudioClip photoReplacedSound;
     public AudioClip fingerprintDiscoveredSound;
-
-    [SerializeField] bool isInEditor;
-    [SerializeField] bool windowsBuild;
-
     [SerializeField] Vector2 values;
     [SerializeField] Vector2 sizes;
 
@@ -52,6 +48,8 @@ public class EvidenceInteraction : MonoBehaviour
     void Start()
     {
         gameData = GameObject.Find("Data Container").GetComponent<DataContainer>().gameData;
+        values.x = (Screen.width * values.x) / 1480f;
+        values.y = (Screen.height * values.y) / 720;
     }
 
     void Update()
@@ -71,13 +69,13 @@ public class EvidenceInteraction : MonoBehaviour
             if (currentEvidenceHeld.GetComponent<ClueHolder>().blockHorizontalRotation == false)
             {
                 horizontalMove = -joystick.Horizontal * rotateSpeed * Time.deltaTime;
-                currentEvidenceHeld.transform.Rotate(Vector3.up, horizontalMove, Space.World);
+                currentEvidenceHeld.transform.Rotate(cam.transform.up, horizontalMove, Space.World);
             }
 
             if (currentEvidenceHeld.GetComponent<ClueHolder>().blockVerticalRotation == false)
             {
                 verticalMove = joystick.Vertical * rotateSpeed * Time.deltaTime;
-                currentEvidenceHeld.transform.Rotate(Vector3.right, verticalMove, Space.World);
+                currentEvidenceHeld.transform.Rotate(cam.transform.right, verticalMove, Space.World);
             }
         }
     }
@@ -187,57 +185,59 @@ public class EvidenceInteraction : MonoBehaviour
         // Takes the Screenshot and saves it under the right File Path
 
         string filePath;
+        string fileName = _hit.transform.parent.GetComponent<EvidenceObject>().data.codeName;
+        fileName = fileName.Replace(" ", "");
 
-        if (isInEditor)
+        if (Application.platform == RuntimePlatform.WindowsEditor || (Application.platform == RuntimePlatform.Android && EditorApplication.isPlaying))
         {
-            filePath = "Assets/Graphs/Sprites/Screenshots/" + _hit.transform.gameObject.name + ".png";
+            filePath = "Assets/Graphs/Sprites/Screenshots/" + fileName + ".png";
             Debug.Log("Using Editor Folder");
 
             if (File.Exists(filePath)) File.Delete(filePath);
 
             ScreenCapture.CaptureScreenshot(filePath);
 
-            StartCoroutine(CheckFile(filePath, _evidence));
+            StartCoroutine(CheckFile(filePath, fileName, _evidence));
         }
-        else if (windowsBuild)
+        else if (Application.platform == RuntimePlatform.WindowsPlayer)
         {
-            filePath = Application.persistentDataPath + _hit.transform.gameObject.name + ".png";
+            filePath = Application.persistentDataPath + fileName + ".png";
             Debug.Log("Using Windows Folder");
 
             if (File.Exists(filePath)) File.Delete(filePath);
 
             ScreenCapture.CaptureScreenshot(filePath);
 
-            StartCoroutine(CheckFile(filePath, _evidence));
+            StartCoroutine(CheckFile(filePath, fileName, _evidence));
         }
-        else
+        else if (Application.platform == RuntimePlatform.Android)
         {
-            filePath = _hit.transform.gameObject.name + ".png";
+            filePath = fileName + ".png";
             Debug.Log("Using Android Folder. If you're using Unity Editor, the photo saver won't work! Please check Is In Editor");
 
             if (File.Exists(Application.persistentDataPath + "/" + filePath)) File.Delete(Application.persistentDataPath + "/" + filePath);
 
             ScreenCapture.CaptureScreenshot(filePath);
 
-            StartCoroutine(CheckFile(Application.persistentDataPath + "/" + filePath, _evidence));
+            StartCoroutine(CheckFile(Application.persistentDataPath + "/" + filePath, fileName, _evidence));
         }
     }
 
-    IEnumerator CheckFile(string filePath, Evidence _evidence)
+    IEnumerator CheckFile(string filePath, string fileName, Evidence _evidence)
     {
         if (File.Exists(filePath))
         {
-            CreateSprite(filePath, _evidence);
+            CreateSprite(filePath, fileName, _evidence);
         }
         else
         {
             //returnButton.interactable = false;
             yield return new WaitForSeconds(0.1f);
-            StartCoroutine(CheckFile(filePath, _evidence));
+            StartCoroutine(CheckFile(filePath, fileName, _evidence));
         }
     }
 
-    void CreateSprite(string filePath, Evidence _evidence)
+    void CreateSprite(string filePath, string fileName, Evidence _evidence)
     {
         Texture2D texture;
         byte[] fileBytes;
@@ -246,6 +246,11 @@ public class EvidenceInteraction : MonoBehaviour
         texture.LoadImage(fileBytes);
         Rect rect = new Rect(0, 0, texture.width, texture.height);
         Sprite sp = Sprite.Create(texture, new Rect(values.x, values.y, texture.width / sizes.x, texture.height / sizes.y), new Vector2(0.5f, 0.5f));
+        if(AssetDatabase.FindAssets(fileName + "Cropped.asset") != null)
+        {
+            AssetDatabase.DeleteAsset("Assets/Graphs/Sprites/Screenshots/CropedSprites/" + fileName + "Cropped.asset");
+        }
+        AssetDatabase.CreateAsset(sp, "Assets/Graphs/Sprites/Screenshots/CropedSprites/" + fileName + "Cropped.asset");
         _evidence.photo = sp;
         returnButton.interactable = true;
     }
