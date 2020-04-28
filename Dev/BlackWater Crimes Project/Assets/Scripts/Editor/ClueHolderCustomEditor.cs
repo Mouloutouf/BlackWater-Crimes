@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEditor;
 
 //[CustomEditor(typeof(ClueHolder))]
+/*
 public class ClueHolderCustomEditor : Editor
 {
     public override void OnInspectorGUI()
@@ -28,4 +29,4 @@ public class ClueHolderCustomEditor : Editor
         clueHolder.blockHorizontalRotation = GUILayout.Toggle(clueHolder.blockHorizontalRotation, "Block Horizontal Rotation");
         clueHolder.blockVerticalRotation = GUILayout.Toggle(clueHolder.blockVerticalRotation, "Block Vertical Rotation");
     }
-}
+}*/

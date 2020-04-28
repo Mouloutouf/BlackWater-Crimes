@@ -44,7 +44,8 @@ public class AttorneyClueShowerScript : MonoBehaviour
                 currentClueShowed1 = Instantiate(clue, clueShowerUsed.transform);
                 currentClueShowed1.GetComponent<RectTransform>().localPosition = Vector3.zero;
                 currentClueShowed1.GetComponent<RectTransform>().localScale = new Vector3(.5f, .5f, 1);
-                Destroy(currentClueShowed1.GetComponent<EventTrigger>());
+                Destroy(currentClueShowed1.GetComponent<Button>());
+                currentClueShowed1.GetComponent<PhotoAttorneyObject>().isClueShower = true;
                 CloseFolder();
             }
             else
@@ -53,7 +54,8 @@ public class AttorneyClueShowerScript : MonoBehaviour
                 currentClueShowed1 = Instantiate(clue, clueShowerUsed.transform);
                 currentClueShowed1.GetComponent<RectTransform>().localPosition = Vector3.zero;
                 currentClueShowed1.GetComponent<RectTransform>().localScale = new Vector3(.5f, .5f, 1);
-                Destroy(currentClueShowed1.GetComponent<EventTrigger>());
+                Destroy(currentClueShowed1.GetComponent<Button>());
+                currentClueShowed1.GetComponent<PhotoAttorneyObject>().isClueShower = true;
                 CloseFolder();
             }
         }
@@ -64,7 +66,8 @@ public class AttorneyClueShowerScript : MonoBehaviour
                 currentClueShowed2 = Instantiate(clue, clueShowerUsed.transform);
                 currentClueShowed2.GetComponent<RectTransform>().localPosition = Vector3.zero;
                 currentClueShowed2.GetComponent<RectTransform>().localScale = new Vector3(.5f, .5f, 1);
-                Destroy(currentClueShowed2.GetComponent<EventTrigger>());
+                Destroy(currentClueShowed2.GetComponent<Button>());
+                currentClueShowed2.GetComponent<PhotoAttorneyObject>().isClueShower = true;
                 CloseFolder();
             }
             else
@@ -73,7 +76,8 @@ public class AttorneyClueShowerScript : MonoBehaviour
                 currentClueShowed2 = Instantiate(clue, clueShowerUsed.transform);
                 currentClueShowed2.GetComponent<RectTransform>().localPosition = Vector3.zero;
                 currentClueShowed2.GetComponent<RectTransform>().localScale = new Vector3(.5f, .5f, 1);
-                Destroy(currentClueShowed2.GetComponent<EventTrigger>());
+                Destroy(currentClueShowed2.GetComponent<Button>());
+                currentClueShowed2.GetComponent<PhotoAttorneyObject>().isClueShower = true;
                 CloseFolder();
             }
         }
