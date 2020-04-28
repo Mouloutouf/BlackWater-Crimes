@@ -170,7 +170,16 @@ public class Question : Data
     [MultiLineProperty(4)]
     public string[] answers;
 
-    public Report correspondance {get; set;}
+    [Title("Report")]
+
+    public bool unlockedByReport;
+
+    [ShowIf("unlockedByReport")]
+    public Modes mode;
+    [ShowIf("unlockedByReport")]
+    public string reportName;
+    [ShowIf("mode", Modes.Type)]
+    public string otherName;
 }
 
 [Serializable]
@@ -220,9 +229,10 @@ public class GameData : SerializedScriptableObject
 
     public List<Location> locations = new List<Location>();
 
-    public Dictionary<Suspects, List<Question>> Questions = new Dictionary<Suspects, List<Question>>();
+    public Dictionary<Suspects, List<Question>> questions = new Dictionary<Suspects, List<Question>>();
 
-    public Suspects currentSuspect {get; set;}
+    public Suspects currentSuspect { get; set; }
+    public int interrogations { get; set; } = 3;
 
     public GameData()
     {
@@ -289,6 +299,16 @@ public class GameData : SerializedScriptableObject
             }
         }
         reportsCollected = 0;
+
+        // Reset Questions
+        foreach (List<Question> questionList in questions.Values)
+        {
+            foreach (Question question in questionList)
+            {
+                if (question.unlockedByReport) question.unlockedData = false;
+            }
+        }
+        interrogations = 3;
     }
 }
 

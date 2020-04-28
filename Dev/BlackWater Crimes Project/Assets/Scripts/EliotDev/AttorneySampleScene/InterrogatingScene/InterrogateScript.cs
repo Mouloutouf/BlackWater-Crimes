@@ -65,10 +65,10 @@ public class InterrogateScript : MonoBehaviour
         occupationText.text = occupationText.text.ToUpper();
         charaSprite.SetNativeSize();
         
-        for (int i = 0; i <gameData.Questions[gameData.currentSuspect].Count; i++)
+        for (int i = 0; i <gameData.questions[gameData.currentSuspect].Count; i++)
         {
             questionsParent.transform.GetChild(i).gameObject.SetActive(true);
-            questionsParent.transform.GetChild(i).gameObject.GetComponentInChildren<Text>().text = gameData.Questions[gameData.currentSuspect][i].question;
+            questionsParent.transform.GetChild(i).gameObject.GetComponentInChildren<Text>().text = gameData.questions[gameData.currentSuspect][i].question;
         }
     }
 
@@ -83,16 +83,16 @@ public class InterrogateScript : MonoBehaviour
             questionsParent.transform.GetChild(currentQuestion).gameObject.GetComponentInChildren<Text>().fontStyle = FontStyle.BoldAndItalic;
             questionsParent.transform.GetChild(currentQuestion).gameObject.GetComponent<Button>().enabled = false;
 
-            dialogueText.text = gameData.Questions[gameData.currentSuspect][questionNumber].answers[answerIndex];
+            dialogueText.text = gameData.questions[gameData.currentSuspect][questionNumber].answers[answerIndex];
         }
     }
 
     public void Next()
     {
-        if(answerIndex < gameData.Questions[gameData.currentSuspect][currentQuestion].answers.Length - 1)
+        if(answerIndex < gameData.questions[gameData.currentSuspect][currentQuestion].answers.Length - 1)
         {
             answerIndex ++;
-            dialogueText.text = gameData.Questions[gameData.currentSuspect][currentQuestion].answers[answerIndex];
+            dialogueText.text = gameData.questions[gameData.currentSuspect][currentQuestion].answers[answerIndex];
         }
         else EndQuestion();
     }

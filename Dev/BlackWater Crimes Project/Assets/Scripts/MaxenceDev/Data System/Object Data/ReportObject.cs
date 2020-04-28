@@ -15,6 +15,11 @@ public class ReportObject : ObjectData<Report>
 
     private Report myType = new Report();
 
+    void Start()
+    {
+        GetGameData();
+    }
+
     public override void Protocol()
     {
         agentImage.sprite = data.agentSprite;
@@ -26,5 +31,24 @@ public class ReportObject : ObjectData<Report>
         reportText.text = data.reportText;
 
         base.Protocol();
+    }
+
+    public void SetQuestion()
+    {
+        foreach (List<Question> questionList in gameData.questions.Values) 
+        {
+            foreach (Question question in questionList)
+            {
+                if (question.reportName == data.elementName)
+                {
+                    if (question.mode == Modes.Type && question.otherName == data.elementDetailName)
+                    {
+                        question.unlockedData = true;
+                    }
+
+                    question.unlockedData = true;
+                }
+            }
+        }
     }
 }

@@ -9,9 +9,13 @@ public class AttorneyClueShowerScript : MonoBehaviour
 {
     [SerializeField] GameObject clueFolder;
     [SerializeField] Button validateButton;
+
     public bool hasTwoDisplayers;
+
     GameObject evidenceDisplayerUsed;
+
     public List<GameObject> currentEvidencesDisplayed = new List<GameObject>();
+
     bool folderOpen = false;
     int index;
 
@@ -20,8 +24,10 @@ public class AttorneyClueShowerScript : MonoBehaviour
         if(folderOpen == false)
         {
             evidenceDisplayerUsed = displayer;
+
             index = evidenceDisplayerUsed.transform.GetSiblingIndex();
             clueFolder.SetActive(true);
+
             folderOpen = true;
             validateButton.interactable = false;
         }
@@ -30,14 +36,17 @@ public class AttorneyClueShowerScript : MonoBehaviour
     public void CloseFolder()
     {
         clueFolder.SetActive(false);
+
         folderOpen = false;
         evidenceDisplayerUsed = null;
-        if(hasTwoDisplayers && currentEvidencesDisplayed[0] != null && currentEvidencesDisplayed[1] != null)
+
+        if (hasTwoDisplayers && currentEvidencesDisplayed[0] != null && currentEvidencesDisplayed[1] != null)
         {
             validateButton.interactable = true;
             validateButton.GetComponentInChildren<Text>().text = "Validate";
         }
-        else if(!hasTwoDisplayers && currentEvidencesDisplayed[0] != null)
+
+        else if (!hasTwoDisplayers && currentEvidencesDisplayed[0] != null)
         {
             validateButton.interactable = true;
             validateButton.GetComponentInChildren<Text>().text = "Validate";
@@ -46,11 +55,11 @@ public class AttorneyClueShowerScript : MonoBehaviour
 
     public void ShowClue(GameObject clue)
     {
-        if(currentEvidencesDisplayed[index] != null) Destroy(currentEvidencesDisplayed[index]);
+        if (currentEvidencesDisplayed[index] != null) Destroy(currentEvidencesDisplayed[index]);
 
-        foreach(GameObject evidence in currentEvidencesDisplayed)
+        foreach (GameObject evidence in currentEvidencesDisplayed)
         {
-            if(evidence != null && clue.GetComponent<PhotoAttorneyObject>().data.codeName == evidence.GetComponent<PhotoAttorneyObject>().data.codeName)
+            if (evidence != null && clue.GetComponent<PhotoAttorneyObject>().data.codeName == evidence.GetComponent<PhotoAttorneyObject>().data.codeName)
             { 
                 CloseFolder();
                 return;
@@ -68,7 +77,8 @@ public class AttorneyClueShowerScript : MonoBehaviour
         currentEvidencesDisplayed[index].GetComponent<PhotoAttorneyObject>().isEvidenceDisplayed = true;
 
         CloseFolder();
-}
+    }
+
     public void ResetClue()
     {
         Destroy(currentEvidencesDisplayed[0]);

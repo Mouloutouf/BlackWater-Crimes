@@ -11,7 +11,7 @@ public class InstantiateQuestions : InstantiationProcess<Question>
     {
         GetGameData();
 
-        InstantiateDataOfType(type, gameData.Questions[gameData.currentSuspect]);
+        InstantiateDataOfType(type, gameData.questions[gameData.currentSuspect]);
     }
 
     public override GameObject Instantiation(GameObject prefab)
