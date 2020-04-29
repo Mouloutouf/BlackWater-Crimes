@@ -28,19 +28,23 @@ public class SpecialistValidateButton : MonoBehaviour
                     if (report.elementDetailName == null)
                     {
                         UnlockReport(report);
+
+                        match = true;
                     }
                     else
                     {
                         foreach (Intel intel in script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.intels)
                         {
+                            Debug.Log(intel.name + intel.revealed);
+
                             if (intel.revealed && report.elementDetailName == intel.name)
                             {
                                 UnlockReport(report);
+
+                                match = true;
                             }
                         }
                     }
-                    
-                    match = true;
                 }
             }
         }

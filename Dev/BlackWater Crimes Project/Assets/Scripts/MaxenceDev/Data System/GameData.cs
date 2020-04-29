@@ -75,7 +75,7 @@ public class Intel
     
     public float intelAlpha { get; set; }
 
-    public bool revealed { get; set; }
+    public bool revealed;
 }
 
 [Serializable]

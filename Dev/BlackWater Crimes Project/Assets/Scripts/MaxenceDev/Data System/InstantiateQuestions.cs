@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class InstantiateQuestions : InstantiationProcess<Question>
-{    
-    InterrogateScript interrogateScript;
+{
     int index;
+
     void Start()
     {
         GetGameData();

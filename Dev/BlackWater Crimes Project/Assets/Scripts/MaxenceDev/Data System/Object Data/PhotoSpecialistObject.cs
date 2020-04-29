@@ -20,7 +20,7 @@ public class PhotoSpecialistObject : ObjectData<Evidence>
 
     public override void Protocol()
     {
-        if(!isClueShower)
+        if (!isClueShower)
         {
             imageObject.GetComponent<Image>().sprite = data.photo;
         }
