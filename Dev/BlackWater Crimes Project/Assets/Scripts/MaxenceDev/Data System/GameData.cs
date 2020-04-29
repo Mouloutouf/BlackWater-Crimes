@@ -75,7 +75,7 @@ public class Intel
     
     public float intelAlpha { get; set; }
 
-    [HideInInspector] public bool revealed;
+    [HideInInspector] public bool revealed; // get; set; autoproperty
 }
 
 [Serializable]
@@ -97,7 +97,7 @@ public class Evidence : Data
     public Locations unlockableLocation;
 
     public bool photographed { get; set; }
-    [HideInInspector] public Sprite photo;
+    [HideInInspector] public Sprite photo; // get; set; autoproperty
     public bool completedPhotograph { get; set; }
 
     [HideReferenceObjectPicker]
