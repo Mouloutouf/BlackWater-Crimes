@@ -1388,7 +1388,6 @@ MonoBehaviour:
   descriptionText: 
   timer: 0.3
   _cam: {fileID: 0}
-  isZoomed: 0
 --- !u!114 &530122689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4939,7 +4938,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1480, y: 720}
+  m_SizeDelta: {x: 2000, y: 1200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1433461128
 MonoBehaviour:
@@ -6693,7 +6692,6 @@ MonoBehaviour:
   descriptionText: 
   timer: 0.3
   _cam: {fileID: 0}
-  isZoomed: 0
 --- !u!114 &1805436892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7273,7 +7271,6 @@ MonoBehaviour:
     de cigarette | Cadeau"
   timer: 0.3
   _cam: {fileID: 2062746245}
-  isZoomed: 0
 --- !u!114 &1975511736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7289,9 +7286,8 @@ MonoBehaviour:
   size: 3
   specificZoomPosition: {x: 0, y: 1, z: -6}
   hasSpecificRotation: 1
-  specificZoomRotation: {x: 90, y: -90, z: 270}
-  specificZoomRotationQuaternion: {x: -0.00000003090862, y: 0.70710677, z: -0.70710677,
-    w: -0.00000003090862}
+  specificZoomRotation: {x: 90, y: -90, z: 90}
+  specificZoomRotationQuaternion: {x: 0, y: -0.7071067, z: 0.7071067, w: 0}
   blockHorizontalRotation: 1
   blockVerticalRotation: 1
 --- !u!1 &1996465164
@@ -9336,6 +9332,21 @@ PrefabInstance:
       propertyPath: downArrow
       value: 
       objectReference: {fileID: 1864947895}
+    - target: {fileID: 6900047074144540361, guid: 74811de12f439f5418b282a0a0e77738,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6900047074144540361, guid: 74811de12f439f5418b282a0a0e77738,
+        type: 3}
+      propertyPath: m_Range
+      value: 9.645119
+      objectReference: {fileID: 0}
+    - target: {fileID: 6900047074144540361, guid: 74811de12f439f5418b282a0a0e77738,
+        type: 3}
+      propertyPath: m_SpotAngle
+      value: 49.89339
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74811de12f439f5418b282a0a0e77738, type: 3}
 --- !u!23 &1180416636440162633
@@ -10931,7 +10942,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1078240696334099970}
   m_LocalRotation: {x: 0.34586537, y: 0.6978458, z: 0.6167472, w: -0.114067174}
-  m_LocalPosition: {x: -6.4689045, y: 2.678154, z: 44.60674}
+  m_LocalPosition: {x: -6.3, y: 2.6, z: 44.47}
   m_LocalScale: {x: 5.088139, y: 5.088139, z: 5.08814}
   m_Children: []
   m_Father: {fileID: 2359372771253633634}
@@ -11817,7 +11828,6 @@ MonoBehaviour:
   descriptionText: 
   timer: 0.3
   _cam: {fileID: 0}
-  isZoomed: 0
 --- !u!64 &3371643900217280056
 MeshCollider:
   m_ObjectHideFlags: 0
