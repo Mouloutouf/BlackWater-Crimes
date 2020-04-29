@@ -78,6 +78,9 @@ public class InterrogateValidateButton : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         gameData.currentSuspect = suspect;
+
+        gameData.interrogations--;
+
         UnityEngine.SceneManagement.SceneManager.LoadScene("InterrogationScene", LoadSceneMode.Single);
     }
 }

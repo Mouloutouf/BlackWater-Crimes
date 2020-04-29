@@ -28,6 +28,8 @@ public class NotificationSystem : MonoBehaviour
                 {
                     tr.GetComponent<ReportObject>().data.seen = true;
 
+                    tr.GetComponent<ReportObject>().SetQuestion();
+
                     ChangeNotifications();
                 }
             }
