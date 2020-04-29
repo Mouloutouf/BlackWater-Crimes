@@ -97,7 +97,7 @@ public class Evidence : Data
     public Locations unlockableLocation;
 
     public bool photographed { get; set; }
-    public Sprite photo { get; set; }
+    [HideInInspector] public Sprite photo;
     public bool completedPhotograph { get; set; }
 
     [HideReferenceObjectPicker]

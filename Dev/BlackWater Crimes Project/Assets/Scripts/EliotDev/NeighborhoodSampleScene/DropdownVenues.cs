@@ -32,9 +32,9 @@ public class DropdownVenues : MonoBehaviour
                     _venues.Add(location.locationAdress, location.myLocation);
                 }
             }
-
-            if (_venues.Values.Count == 0) GetComponentInChildren<Dropdown>().interactable = false;
         }
+
+        if (_venues.Values.Count == 0) GetComponentInChildren<Dropdown>().interactable = false;
 
         GetComponentInChildren<Dropdown>().ClearOptions();
         List<string> listOfKeys = new List<string>();
