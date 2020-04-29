@@ -13,25 +13,27 @@ public class DropdownVenues : MonoBehaviour
     {
         gameData = GameObject.Find("Data Container").GetComponent<DataContainer>().gameData;
 
-        if(!attorneyDropdown)
+        if (!attorneyDropdown) // Neighborhood Investigation
         {
-            foreach(Location location in gameData.locations)
+            foreach (Location location in gameData.locations)
             {
-                if(location.accessible)
+                if (location.accessible)
                 {
                     _venues.Add(location.locationAdress, location.myLocation);
                 }
             }
         }
-        else
+        else // Attorney Unlock Location
         {
-            foreach(Location location in gameData.locations)
+            foreach (Location location in gameData.locations)
             {
-                if(location.visible && !location.accessible)
+                if (location.visible && !location.accessible)
                 {
                     _venues.Add(location.locationAdress, location.myLocation);
                 }
             }
+
+            if (_venues.Values.Count == 0) GetComponentInChildren<Dropdown>().interactable = false;
         }
 
         GetComponentInChildren<Dropdown>().ClearOptions();

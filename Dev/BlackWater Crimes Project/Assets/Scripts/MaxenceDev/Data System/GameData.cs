@@ -75,7 +75,7 @@ public class Intel
     
     public float intelAlpha { get; set; }
 
-    public bool revealed;
+    [HideInInspector] public bool revealed;
 }
 
 [Serializable]
