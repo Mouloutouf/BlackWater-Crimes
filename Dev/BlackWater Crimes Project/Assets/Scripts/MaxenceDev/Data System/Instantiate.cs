@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Sirenix.OdinInspector;
 
 public class InstantiationProcess<T> : MonoBehaviour where T : Data
 {
     protected T type;
 
     protected GameData gameData;
+
+    [Title("Prefabs")]
 
     public GameObject prefab;
     
