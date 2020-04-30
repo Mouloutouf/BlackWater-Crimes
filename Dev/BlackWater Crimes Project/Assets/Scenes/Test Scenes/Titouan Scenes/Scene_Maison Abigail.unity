@@ -1598,7 +1598,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1084109527
 Transform:
   m_ObjectHideFlags: 0
@@ -2000,9 +2000,8 @@ MonoBehaviour:
   size: 3
   specificZoomPosition: {x: 21.93, y: 9.45, z: 22.81}
   hasSpecificRotation: 1
-  specificZoomRotation: {x: 0, y: 0, z: 0}
-  specificZoomRotationQuaternion: {x: -0.39144915, y: -0.54425615, z: 0.47175586,
-    w: -0.5727123}
+  specificZoomRotation: {x: 75, y: 68.63, z: -25.8}
+  specificZoomRotationQuaternion: {x: 0.3902688, y: 0.54821056, z: -0.48081225, w: 0.5621165}
   blockHorizontalRotation: 1
   blockVerticalRotation: 1
 --- !u!64 &1306128415
@@ -2189,17 +2188,17 @@ PrefabInstance:
     - target: {fileID: 8811280138136717603, guid: c359d56291b71f94a8ddac48b6c04fa2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.71
+      value: -3.12
       objectReference: {fileID: 0}
     - target: {fileID: 8811280138136717603, guid: c359d56291b71f94a8ddac48b6c04fa2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.19
+      value: 0.77
       objectReference: {fileID: 0}
     - target: {fileID: 8811280138136717603, guid: c359d56291b71f94a8ddac48b6c04fa2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.08
+      value: -1.1
       objectReference: {fileID: 0}
     - target: {fileID: 8811280138136717603, guid: c359d56291b71f94a8ddac48b6c04fa2,
         type: 3}
@@ -2375,6 +2374,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scene Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 6054615890293101837, guid: e7f1cd350bc5f0941bb44b9e4b1ff994,
+        type: 3}
+      propertyPath: withLoadingScreen
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6054615890293101837, guid: e7f1cd350bc5f0941bb44b9e4b1ff994,
+        type: 3}
+      propertyPath: loadingScreenPrefab
+      value: 
+      objectReference: {fileID: 941213851771389156, guid: 54b49d70e0d8f054b8e8a7d927f98df2,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
 --- !u!82 &1430949779 stripped
@@ -2533,6 +2543,7 @@ MonoBehaviour:
     hasIntels: 1
     intels:
     - name: Empreinte Umberto
+      revealed: 0
     useToUnlock: 0
     unlockableLocation: 0
     modeCategory:
@@ -2563,9 +2574,8 @@ MonoBehaviour:
   size: 3
   specificZoomPosition: {x: 23.56, y: 10.041, z: 22.72}
   hasSpecificRotation: 1
-  specificZoomRotation: {x: 90, y: 90, z: 0}
-  specificZoomRotationQuaternion: {x: -0.39144915, y: -0.54425615, z: 0.47175586,
-    w: -0.5727123}
+  specificZoomRotation: {x: 67.5, y: 81.9, z: 0}
+  specificZoomRotationQuaternion: {x: 0.4196121, y: 0.5449453, z: -0.3641208, w: 0.6279939}
   blockHorizontalRotation: 1
   blockVerticalRotation: 1
 --- !u!1 &1481823281
@@ -2926,6 +2936,11 @@ PrefabInstance:
       propertyPath: getClues
       value: 
       objectReference: {fileID: 510400395}
+    - target: {fileID: 6900047074144540361, guid: 74811de12f439f5418b282a0a0e77738,
+        type: 3}
+      propertyPath: m_Range
+      value: 7.013975
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74811de12f439f5418b282a0a0e77738, type: 3}
 --- !u!114 &1515454465 stripped
@@ -3787,9 +3802,8 @@ MonoBehaviour:
   size: 3
   specificZoomPosition: {x: 21.93, y: 9.45, z: 22.81}
   hasSpecificRotation: 1
-  specificZoomRotation: {x: 90, y: 90, z: 0}
-  specificZoomRotationQuaternion: {x: -0.39144915, y: -0.54425615, z: 0.47175586,
-    w: -0.5727123}
+  specificZoomRotation: {x: 75, y: 68.63, z: -25.8}
+  specificZoomRotationQuaternion: {x: 0.3902688, y: 0.54821056, z: -0.48081225, w: 0.5621165}
   blockHorizontalRotation: 1
   blockVerticalRotation: 1
 --- !u!64 &1949669947
@@ -3961,7 +3975,7 @@ MonoBehaviour:
   size: 3
   specificZoomPosition: {x: 0, y: 1, z: -7}
   hasSpecificRotation: 1
-  specificZoomRotation: {x: 0, y: 0, z: 0}
+  specificZoomRotation: {x: 90, y: 180, z: 0}
   specificZoomRotationQuaternion: {x: -0.00000003090862, y: 0.70710677, z: -0.70710677,
     w: -0.00000003090862}
   blockHorizontalRotation: 1
@@ -5595,6 +5609,7 @@ MonoBehaviour:
     hasIntels: 1
     intels:
     - name: Empreinte Richard
+      revealed: 0
     useToUnlock: 1
     unlockableLocation: 4
     modeCategory:
@@ -5679,6 +5694,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 695329647063314858, guid: 6e34bc824f7d2714e8a9caa2990f8913,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2213011489582654273, guid: 6e34bc824f7d2714e8a9caa2990f8913,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -5739,6 +5759,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1515454466}
+    - target: {fileID: 2213011491200208163, guid: 6e34bc824f7d2714e8a9caa2990f8913,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2213011491218206612, guid: 6e34bc824f7d2714e8a9caa2990f8913,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5807,12 +5832,12 @@ PrefabInstance:
     - target: {fileID: 6489725231845354019, guid: 6e34bc824f7d2714e8a9caa2990f8913,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 12.400024
+      value: 12.4001465
       objectReference: {fileID: 0}
     - target: {fileID: 6489725231845354019, guid: 6e34bc824f7d2714e8a9caa2990f8913,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -48.299988
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6489725231845354019, guid: 6e34bc824f7d2714e8a9caa2990f8913,
         type: 3}
@@ -5822,7 +5847,7 @@ PrefabInstance:
     - target: {fileID: 6489725231845354019, guid: 6e34bc824f7d2714e8a9caa2990f8913,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: -296.6
+      value: -200
       objectReference: {fileID: 0}
     - target: {fileID: 6623327568063054819, guid: 6e34bc824f7d2714e8a9caa2990f8913,
         type: 3}
