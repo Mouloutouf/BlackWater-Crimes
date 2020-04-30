@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoaderSimple : MonoBehaviour
 {
+    public delegate void Delegate();
+    public Delegate methodToCall;
     [SerializeField] string sceneName;
     [SerializeField] LoadSceneMode loadSceneMode;
     [SerializeField] bool withLoadingScreen;
@@ -20,21 +22,31 @@ public class SceneLoaderSimple : MonoBehaviour
         {
             GameObject tempPrefab = Instantiate(loadingScreenPrefab);
             tempPrefab.GetComponent<LoadingSceneScript>().sceneToLoad = sceneName;
-            UnityEngine.SceneManagement.SceneManager.LoadScene("LoadingScreenScene", LoadSceneMode.Single);
+            methodToCall = LoadingScene;
+            StartCoroutine(WaitForFrame(methodToCall));
         }
+    }
+
+    void LoadingScene()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("LoadingScreenScene", LoadSceneMode.Single);
     }
 
     public void LoadScene(string name)
     {
-        if(withLoadingScreen == false)
-        {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(name, loadSceneMode);
-        }
-        else
-        {
-            GameObject tempPrefab = Instantiate(loadingScreenPrefab);
-            tempPrefab.GetComponent<LoadingSceneScript>().sceneToLoad = name;
-            UnityEngine.SceneManagement.SceneManager.LoadScene("LoadingScreenScene", LoadSceneMode.Single);
-        }
+        sceneName = name;
+        methodToCall = LoadScene;
+        StartCoroutine(WaitForFrame(methodToCall));
+    }
+
+    public void WithLoadingScreen(bool addLoadingScreen)
+    {
+        withLoadingScreen = addLoadingScreen;
+    }
+
+    IEnumerator WaitForFrame(Delegate method)
+    {
+        yield return new WaitForEndOfFrame();
+        method();
     }
 }
