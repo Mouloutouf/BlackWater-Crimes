@@ -100,6 +100,12 @@ public class LocationInteraction : SerializedMonoBehaviour
         }
         );
 
+        accessButton.GetComponent<Button>().onClick.AddListener(delegate 
+        { 
+            utilities.GetComponent<SceneLoaderSimple>().WithLoadingScreen(true);
+        }
+        );
+
         if (!_object.data.accessible)
         {
             accessButton.SetActive(false);

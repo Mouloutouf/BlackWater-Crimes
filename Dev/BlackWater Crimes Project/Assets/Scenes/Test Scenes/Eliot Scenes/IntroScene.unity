@@ -201,7 +201,7 @@ PrefabInstance:
     - target: {fileID: 6054615890293101837, guid: e7f1cd350bc5f0941bb44b9e4b1ff994,
         type: 3}
       propertyPath: withLoadingScreen
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6054615890293101837, guid: e7f1cd350bc5f0941bb44b9e4b1ff994,
         type: 3}
@@ -223,6 +223,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5beb02e2bd5105e46a54bf8fd58ceff2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &130871893 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6054615890293101837, guid: e7f1cd350bc5f0941bb44b9e4b1ff994,
+    type: 3}
+  m_PrefabInstance: {fileID: 130871891}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4206b0aec6eb07545a298b286059b682, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &314874226
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,7 +247,6 @@ GameObject:
   - component: {fileID: 314874228}
   - component: {fileID: 314874227}
   - component: {fileID: 314874230}
-  - component: {fileID: 314874232}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -323,21 +334,6 @@ MonoBehaviour:
   sceneOrientation: 3
   canRotate: 0
   windowsBuild: 0
---- !u!114 &314874232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 314874226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f2605a772720ea478489e52984272d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nextSceneName: Scene_Docks
-  videoPlayer: {fileID: 1004272911}
-  audioSource: {fileID: 1004272914}
 --- !u!1 &1004272909
 GameObject:
   m_ObjectHideFlags: 0
@@ -622,7 +618,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 314874232}
+      - m_Target: {fileID: 1220434077}
         m_MethodName: Skip
         m_Mode: 1
         m_Arguments:
@@ -693,6 +689,7 @@ GameObject:
   - component: {fileID: 1220434075}
   - component: {fileID: 1220434074}
   - component: {fileID: 1220434073}
+  - component: {fileID: 1220434077}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -781,6 +778,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1220434077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220434072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f2605a772720ea478489e52984272d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextSceneName: Scene_Docks
+  sceneLoader: {fileID: 130871893}
+  videoPlayer: {fileID: 1004272911}
+  audioSource: {fileID: 1004272914}
 --- !u!1 &1374226609
 GameObject:
   m_ObjectHideFlags: 0

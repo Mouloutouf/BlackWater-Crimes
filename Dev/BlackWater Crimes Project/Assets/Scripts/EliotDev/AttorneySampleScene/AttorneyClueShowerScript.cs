@@ -69,9 +69,7 @@ public class AttorneyClueShowerScript : MonoBehaviour
         currentEvidencesDisplayed[index] = Instantiate(clue, evidenceDisplayerUsed.transform);
         currentEvidencesDisplayed[index].GetComponent<RectTransform>().localPosition = Vector3.zero;
 
-        if(hasTwoDisplayers) currentEvidencesDisplayed[index].GetComponent<RectTransform>().localScale = new Vector3(.5f, .5f, 1);
-
-        else currentEvidencesDisplayed[index].GetComponent<RectTransform>().localScale = new Vector3(2.3f, 2.3f, 1);
+        currentEvidencesDisplayed[index].GetComponent<RectTransform>().localScale = new Vector3(2.3f, 2.3f, 1);
 
         Destroy(currentEvidencesDisplayed[index].GetComponent<Button>());
         currentEvidencesDisplayed[index].GetComponent<PhotoAttorneyObject>().isEvidenceDisplayed = true;

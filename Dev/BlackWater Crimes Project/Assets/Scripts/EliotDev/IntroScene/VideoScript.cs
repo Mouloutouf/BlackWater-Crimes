@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class VideoScript : MonoBehaviour
 {
     public string nextSceneName;
-
+    [SerializeField] SceneLoaderSimple sceneLoader;
     [SerializeField] VideoPlayer videoPlayer;
     [SerializeField] AudioSource audioSource;
 
@@ -33,11 +33,13 @@ public class VideoScript : MonoBehaviour
     }
     void CheckOver(VideoPlayer vp)
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(nextSceneName, LoadSceneMode.Single);
+        sceneLoader.WithLoadingScreen(true);
+        sceneLoader.LoadScene(nextSceneName);
     }
 
     public void Skip()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(nextSceneName, LoadSceneMode.Single);
+        sceneLoader.WithLoadingScreen(true);
+        sceneLoader.LoadScene(nextSceneName);
     }
 }
