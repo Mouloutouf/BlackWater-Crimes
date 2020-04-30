@@ -115,6 +115,8 @@ public class EvidenceInteraction : MonoBehaviour
                                 hit.transform.gameObject.GetComponentsInChildren<ParticleSystem>()[0].Play();
                                 hit.transform.gameObject.GetComponentsInChildren<ParticleSystem>()[1].Stop();
                                 soundAudio.PlayOneShot(fingerprintDiscoveredSound);
+
+                                Debug.Log(intel.name + intel.revealed);
                             }
                         }
                     }

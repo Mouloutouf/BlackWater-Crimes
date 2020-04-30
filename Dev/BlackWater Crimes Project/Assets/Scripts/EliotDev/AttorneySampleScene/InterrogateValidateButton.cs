@@ -7,55 +7,57 @@ using UnityEngine.SceneManagement;
 public class InterrogateValidateButton : MonoBehaviour
 {
     [SerializeField] Text inputText;
-    [SerializeField] GameObject clueShower;
+    [SerializeField] GameObject evidenceDisplayer;
     [SerializeField] Text dialogueText;
     [SerializeField] GameData gameData;
-    Suspects suspect;
+
+    Suspects inputSuspect;
 
     public void Validate()
     {
-        if(Match() == true)
+        if (Match())
         {
             dialogueText.text = "This seems logic. I will bring this person!";
+
             StartCoroutine(DelayToInterrogate(2));
         }
-        else
-        {
-            dialogueText.text = "This does not make any sense... Please detective, show me something concrete!";
-        }
-
+        else dialogueText.text = "This does not make any sense... Please detective, show me something concrete!";
+        
         Reset();
     }
 
     bool Match()
     {
-        AttorneyClueShowerScript script = clueShower.GetComponent<AttorneyClueShowerScript>();
+        AttorneyClueShowerScript script = evidenceDisplayer.GetComponent<AttorneyClueShowerScript>();
 
         if (script.currentEvidencesDisplayed[0].GetComponent<PhotoAttorneyObject>().data.modeCategory.suspect == script.currentEvidencesDisplayed[1].GetComponent<PhotoAttorneyObject>().data.modeCategory.suspect)
         {
-            Suspects suspectClues = script.currentEvidencesDisplayed[0].GetComponent<PhotoAttorneyObject>().data.modeCategory.suspect;
-            switch(inputText.text)
+            Suspects evidenceSuspect = script.currentEvidencesDisplayed[0].GetComponent<PhotoAttorneyObject>().data.modeCategory.suspect;
+
+            switch (inputText.text)
             {
                 case "Abigail White":
-                    suspect = Suspects.Abigail_White;
+                    inputSuspect = Suspects.Abigail_White;
                 break;
+
                 case "Richard Anderson":
-                    suspect = Suspects.Richard_Anderson;
+                    inputSuspect = Suspects.Richard_Anderson;
                 break;           
 
                 case "Bob Jenkins":
-                    suspect = Suspects.Bob_Jenkins;
+                    inputSuspect = Suspects.Bob_Jenkins;
                 break;
                     
                 case "Umberto Moretti":
-                    suspect = Suspects.Umberto_Moretti;
+                    inputSuspect = Suspects.Umberto_Moretti;
                 break;
         
                 default:
                     Debug.Log("Input field text is not valid!");
                 return false;
             }
-            if(suspect == suspectClues)
+
+            if (inputSuspect == evidenceSuspect)
             {
                 return true;
             }
@@ -66,10 +68,12 @@ public class InterrogateValidateButton : MonoBehaviour
 
     public void Reset()
     {
-        clueShower.GetComponent<AttorneyClueShowerScript>().ResetClue();
-        clueShower.SetActive(false);
+        evidenceDisplayer.GetComponent<AttorneyClueShowerScript>().ResetClue();
+        evidenceDisplayer.SetActive(false);
+
         inputText.GetComponentInParent<InputField>().text = "";
         inputText.color = Color.black;
+
         GetComponent<Button>().interactable = false;
         GetComponentInChildren<Text>().text = "Missing elements";
     }
@@ -77,7 +81,7 @@ public class InterrogateValidateButton : MonoBehaviour
     IEnumerator DelayToInterrogate(int time)
     {
         yield return new WaitForSeconds(time);
-        gameData.currentSuspect = suspect;
+        gameData.currentSuspect = inputSuspect;
 
         gameData.interrogations--;
 

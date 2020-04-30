@@ -7,31 +7,36 @@ public class DropdownVenues : MonoBehaviour
 {
     GameData gameData;
     public Dictionary<string, Locations> _venues = new Dictionary<string, Locations>();
-    [SerializeField] bool attorneyDropdown;
+    [SerializeField] bool specialist;
 
     private void Start()
     {
         gameData = GameObject.Find("Data Container").GetComponent<DataContainer>().gameData;
 
-        if(!attorneyDropdown)
+        if (specialist) // Neighborhood Investigation
         {
-            foreach(Location location in gameData.locations)
+            foreach (Location location in gameData.locations)
             {
-                if(location.accessible)
+                if (location.accessible)
                 {
                     _venues.Add(location.locationAdress, location.myLocation);
                 }
             }
         }
-        else
+        else // Attorney Unlock Location
         {
-            foreach(Location location in gameData.locations)
+            foreach (Location location in gameData.locations)
             {
-                if(location.visible && !location.accessible)
+                if (location.visible && !location.accessible)
                 {
                     _venues.Add(location.locationAdress, location.myLocation);
                 }
             }
+        }
+
+        if (_venues.Values.Count == 0)
+        {
+            GetComponentInChildren<Dropdown>().interactable = false;
         }
 
         GetComponentInChildren<Dropdown>().ClearOptions();
