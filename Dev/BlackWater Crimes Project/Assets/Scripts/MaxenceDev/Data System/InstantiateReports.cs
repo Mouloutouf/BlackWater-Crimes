@@ -12,13 +12,13 @@ public class Element
     public string name;
     public int index;
 
-    public Report bindedReport;
+    public GameObject elementObject;
 }
 
 [Serializable]
 public class Holder
 {
-    public bool contains;
+    public DisplaySystem display;
 
     public Transform holderContent;
     
@@ -39,6 +39,8 @@ public class InstantiateReports : InstantiationProcess<Report>
 
     public List<Holder> holders = new List<Holder>();
     private Transform currentContent;
+    private GameObject bindedObject;
+    private Holder bindedHolder;
     
     public bool useOld;
     [ShowIf("useOld")]
@@ -64,17 +66,10 @@ public class InstantiateReports : InstantiationProcess<Report>
 
         if (useOld) { OldInstantiate(); return; }
         
-        CheckReports(); // Check Reports validity (put the Unlocked Report in either one of the Holder List or in the Failed List)
-
-        CreateReports(); // Instantiate the Reports in each Holder Content or else Instantiate No Report
-        
-        if (failedReportsList.Count > 0) // Instantiate the Failed Reports
-        {
-            InstantiateDataOfType(type, failedReportsList, failedPrefab);
-        }
+        Initialize();
     }
 
-    void CheckReports()
+    void Initialize()
     {
         foreach (List<Report> _list in gameData.allReports.Values)
         {
@@ -82,27 +77,51 @@ public class InstantiateReports : InstantiationProcess<Report>
             {
                 if (report.unlockedData)
                 {
-                    if (report.index == 0) failedReportsList.Add(report);
+                    if (report.index == 0) CreateFailedReport(report);
 
-                    else
-                    {
-                        foreach (Holder holder in holders)
-                        {
-                            foreach (Element element in holder.elements)
-                            {
-                                if (element.name == report.elementName && report.unlockedData)
-                                {
-                                    holder.reports.Add(report);
-                                }
-                            }
-                        }
-                    }
+                    else CreateReport(report);
+                }
+            }
+        }
+
+        CreateNoReport();
+    }
+
+    void CreateReport(Report report)
+    {
+        foreach (Holder holder in holders)
+        {
+            foreach (Element element in holder.elements)
+            {
+                if (element.name == report.elementName && report.unlockedData)
+                {
+                    holder.reports.Add(report);
+
+                    bindedObject = element.elementObject;
+                    bindedHolder = holder;
+
+                    currentContent = holder.holderContent;
+
+                    InstantiateObjectOfType(report, this.prefab);
                 }
             }
         }
     }
 
-    void CreateReports()
+    void CreateFailedReport(Report report)
+    {
+        InstantiateObjectOfType(report, failedPrefab);
+    }
+
+    void CreateNoReport()
+    {
+        foreach (Holder holder in holders)
+        {
+            if (holder.reports.Count == 0) Instantiation(noPrefab); // Instantiate No Report
+        }
+    }
+
+    void SpawnReports()
     {
         foreach (Holder holder in holders)
         {
@@ -129,6 +148,12 @@ public class InstantiateReports : InstantiationProcess<Report>
             _original.GetComponent<RectTransform>().anchorMin = Vector2.zero; // sets the mode (stretch)
             _original.GetComponent<RectTransform>().anchorMax = Vector2.one;
             _original.GetComponent<RectTransform>().sizeDelta = Vector2.zero; // sets the size (offsets to 0)
+
+            if (useOld) return _original;
+
+            DisplaySystem disp = bindedHolder.display as DisplaySystem;
+            if (bindedObject != null) bindedObject.GetComponent<Button>().onClick.AddListener(delegate { disp.DisplayElement(_original); });
+            bindedObject = null;
 
             return _original;
         }

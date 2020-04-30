@@ -29,7 +29,7 @@ public class DisplaySystem : MonoBehaviour
     public void DisplayElement(GameObject bind)
     {
         for (int n = startIndex; n < content.childCount; n++) content.GetChild(n).gameObject.SetActive(false);
-
+        
         bind.SetActive(true);
     }
 

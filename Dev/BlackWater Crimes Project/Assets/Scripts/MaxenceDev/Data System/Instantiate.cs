@@ -42,6 +42,15 @@ public class InstantiationProcess<T> : MonoBehaviour where T : Data
         }
     }
 
+    public void InstantiateObjectOfType<_T>(_T data, GameObject prefab) where _T : Data
+    {
+        if (data.unlockedData)
+        {
+            GameObject instance = Instantiation(prefab);
+            instance.GetComponent<ObjectData<_T>>().data = data;
+        }
+    }
+
     public virtual GameObject Instantiation(GameObject prefab)
     {
         return new GameObject(); // PlaceHolder

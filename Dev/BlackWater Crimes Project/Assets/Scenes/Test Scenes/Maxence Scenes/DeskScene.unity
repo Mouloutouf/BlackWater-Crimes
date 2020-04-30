@@ -2586,16 +2586,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1127452058719276218, guid: 2ed2c364afcc1af448eb4faee3fbe24f, type: 3}
-  contentHolder: {fileID: 1937978439}
-  buttonContentHolder: {fileID: 2029589069}
-  failedContentHolder: {fileID: 1533738241}
-  buttonPrefab: {fileID: 4061153543470559034, guid: 1551035ed1b2187439a0933ed5a64c43,
-    type: 3}
-  buttonOffset: -60
   noPrefab: {fileID: 8010230018407573827, guid: cae0077b3870f1141b3362b64cec65ea,
     type: 3}
   failedPrefab: {fileID: 5798861634024255781, guid: 471094f72167d8e4f8222c77c3ce7455,
     type: 3}
+  failedContentHolder: {fileID: 1533738241}
+  holders: []
+  useOld: 0
+  content: {fileID: 0}
+  buttonContentHolder: {fileID: 2029589069}
+  buttonPrefab: {fileID: 4061153543470559034, guid: 1551035ed1b2187439a0933ed5a64c43,
+    type: 3}
+  amountInEachPage: 0
+  buttonOffset: -60
   spawnPoints: []
 --- !u!222 &897390656
 CanvasRenderer:
@@ -2706,15 +2709,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1127452058719276218, guid: 2ed2c364afcc1af448eb4faee3fbe24f, type: 3}
-  contentHolder: {fileID: 1864874918}
-  buttonContentHolder: {fileID: 0}
-  failedContentHolder: {fileID: 1533738241}
-  buttonPrefab: {fileID: 0}
-  buttonOffset: 0
   noPrefab: {fileID: 8010230018407573827, guid: cae0077b3870f1141b3362b64cec65ea,
     type: 3}
   failedPrefab: {fileID: 5798861634024255781, guid: 471094f72167d8e4f8222c77c3ce7455,
     type: 3}
+  failedContentHolder: {fileID: 1533738241}
+  holders: []
+  useOld: 1
+  content: {fileID: 1864874918}
+  buttonContentHolder: {fileID: 0}
+  buttonPrefab: {fileID: 0}
+  amountInEachPage: 0
+  buttonOffset: 0
   spawnPoints: []
 --- !u!114 &993814523
 MonoBehaviour:

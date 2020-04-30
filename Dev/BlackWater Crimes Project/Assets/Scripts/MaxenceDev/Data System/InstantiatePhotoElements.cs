@@ -44,7 +44,7 @@ public class InstantiatePhotoElements : InstantiationProcess<Evidence>
             
             InstantiateDataOfType(type, _list);
 
-            foreach (Evidence _evidence in _list) if (_evidence.unlockedData) { mainIndex++; SetElement(_evidence); }
+            foreach (Evidence _evidence in _list) if (_evidence.unlockedData) { SetElement(_evidence); mainIndex++; }
 
             local++;
         }
@@ -61,7 +61,9 @@ public class InstantiatePhotoElements : InstantiationProcess<Evidence>
         //_prefab.transform.GetChild(2).GetComponent<RectTransform>().sizeDelta = spawnScales[index];
 
         _prefab.GetComponent<PhotoObject>().photosBooklet = this.gameObject;
-        
+
+        photosList.Add(_prefab);
+
         spawnIndex++;
         if (spawnIndex == amountInEachRow * amountInEachColumn) { CreatePage(currentContent); }
         
@@ -71,7 +73,7 @@ public class InstantiatePhotoElements : InstantiationProcess<Evidence>
     void SetElement(Evidence evidence)
     {
         int ind = mainIndex;
-        mainContentScript.holders[3].elements.Add(new Element { index = ind, name = evidence.codeName });
+        mainContentScript.holders[3].elements.Add(new Element { index = ind, name = evidence.codeName, elementObject = photosList[ind] });
     }
 
     void SetLayout()
