@@ -15,6 +15,8 @@ public class PhotoObject : ObjectData<Evidence>
     public GameObject imageObject;
     public GameObject textObject;
 
+    public ElementHolder holder;
+
     private Evidence myType = new Evidence();
 
     void Start()
@@ -27,6 +29,8 @@ public class PhotoObject : ObjectData<Evidence>
         imageObject.GetComponent<Image>().sprite = data.photo;
 
         if (textObject != null) textObject.GetComponent<Text>().text = data.codeName;
+
+        holder.seen = data.seen;
 
         base.Protocol();
     }

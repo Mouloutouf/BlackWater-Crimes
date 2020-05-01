@@ -126,7 +126,12 @@ public class InstantiateReports : InstantiationProcess<Report>
 
             DisplaySystem disp = bindedHolder.display as DisplaySystem;
             if (bindedObject != null) bindedObject.GetComponent<Button>().onClick.AddListener(delegate { disp.DisplayElement(_original); });
+
+            _original.GetComponent<ElementHolder>().bind = bindedObject;
+
             bindedObject = null;
+
+            Debug.Log(_original.GetComponent<ElementHolder>().bind);
 
             return _original;
         }

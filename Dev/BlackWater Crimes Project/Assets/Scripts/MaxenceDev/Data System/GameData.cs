@@ -104,6 +104,10 @@ public class Evidence : Data
     [Title("Categories")]
     [HideLabel]
     public ModeCategory modeCategory;
+
+    [Title("Status")]
+
+    public bool seen;
 }
 
 [Serializable]

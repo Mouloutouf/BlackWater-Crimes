@@ -12,9 +12,7 @@ public class PageSystem : MonoBehaviour
 
     public int startIndex;
     private int currentIndex = 0;
-
-    public bool _Start { get; private set; } = true;
-
+    
     void Start()
     {
         currentIndex = startIndex;
@@ -27,17 +25,7 @@ public class PageSystem : MonoBehaviour
             content.GetChild(currentIndex).gameObject.SetActive(true);
         }
     }
-
-    void Update()
-    {
-        if (_Start)
-        {
-
-
-            _Start = false;
-        }
-    }
-
+    
     public void TurnPage(int value)
     {
         content.GetChild(currentIndex).gameObject.SetActive(false);

@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using Sirenix.OdinInspector;
 
 public class ZoomPhoto : MonoBehaviour
 {
+    [ShowIf("useOld")]
     public Camera cam;
+    [ShowIf("useOld")]
     public GameObject zoomPanel;
 
     private bool isZoomed;
@@ -14,7 +17,20 @@ public class ZoomPhoto : MonoBehaviour
     private float timerValue = 0.3f;
     private float timer;
 
+    public bool useOld;
+    
     void Update()
+    {
+        if (useOld) OldRaycastCheck();
+
+        if (Input.GetMouseButtonDown(0) && isZoomed)
+        {
+            DeZoom();
+            isZoomed = false;
+        }
+    }
+
+    void OldRaycastCheck()
     {
         if (Input.GetMouseButtonDown(0)) { timer = 0f; isZoomed = false; }
         timer += Time.deltaTime;
@@ -34,6 +50,16 @@ public class ZoomPhoto : MonoBehaviour
             DeZoom();
             isZoomed = false;
         }
+    }
+
+    public void ZoomObject()
+    {
+        Sprite image = this.gameObject.GetComponent<PhotoObject>().data.photo;
+        string text = this.gameObject.GetComponent<PhotoObject>().data.codeName;
+
+        Zoom(image, text);
+
+        isZoomed = true;
     }
 
     public void Zoom(Sprite photoSprite, string photoName)
