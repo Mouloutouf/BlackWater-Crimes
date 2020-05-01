@@ -46,17 +46,7 @@ public class InstantiateReports : InstantiationProcess<Report>
     [ShowIf("useOld")]
     public Transform content;
     private List<Report> reportsList = new List<Report>();
-
-    [Title("Buttons")]
-
-    public Transform buttonContentHolder;
-    public GameObject buttonPrefab;
-    public int amountInEachPage;
-    public float buttonOffset;
-
-    private float currentOffset;
-    [HideInInspector] public List<Vector2> spawnPoints = new List<Vector2>();
-
+    
     private FailedReportsManager failedReportsManager;
 
     void Start()
@@ -120,24 +110,7 @@ public class InstantiateReports : InstantiationProcess<Report>
             if (holder.reports.Count == 0) Instantiation(noPrefab); // Instantiate No Report
         }
     }
-
-    void SpawnReports()
-    {
-        foreach (Holder holder in holders)
-        {
-            if (holder.reports.Count == 0) Instantiation(noPrefab); // Instantiate No Report
-
-            else
-            {
-                //holder.reports = holder.elements.OrderBy(w => w.index) as List<Report>;
-
-                currentContent = holder.holderContent;
-                
-                InstantiateDataOfType(type, holder.reports); // Instantiate Reports
-            }
-        }
-    }
-
+    
     public override GameObject Instantiation(GameObject prefab)
     {
         if (prefab == this.prefab || prefab == noPrefab) // Instantiation Process for Reports
@@ -157,17 +130,7 @@ public class InstantiateReports : InstantiationProcess<Report>
 
             return _original;
         }
-        else if (prefab == buttonPrefab) // Instantiation Process for Button Reports
-        {
-            GameObject _button = Instantiate(prefab) as GameObject;
-            _button.transform.SetParent(buttonContentHolder, false);
-            _button.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, currentOffset);
-            spawnPoints.Add(new Vector2(0, currentOffset));
 
-            currentOffset += buttonOffset;
-
-            return _button;
-        }
         else if (prefab == failedPrefab) // Instantiation Process for Failed Reports
         {
             GameObject _failed = Instantiate(failedPrefab) as GameObject;
@@ -177,6 +140,7 @@ public class InstantiateReports : InstantiationProcess<Report>
 
             return _failed;
         }
+
         else
         {
             return prefab;
@@ -213,10 +177,6 @@ public class InstantiateReports : InstantiationProcess<Report>
             currentContent = content;
 
             InstantiateDataOfType(type, reportsList); // Instantiate Reports
-
-            currentOffset = -35;
-
-            if (buttonPrefab != null) InstantiateDataOfType(type, reportsList, buttonPrefab); // Instantiate Button Reports
         }
 
         // Instantiation Failed Reports

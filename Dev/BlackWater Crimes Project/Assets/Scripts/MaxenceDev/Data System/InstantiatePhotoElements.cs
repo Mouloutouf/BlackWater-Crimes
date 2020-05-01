@@ -27,7 +27,7 @@ public class InstantiatePhotoElements : InstantiationProcess<Evidence>
     
     private int spawnIndex = 0;
     
-    public List<GameObject> photosList { get; private set; } = new List<GameObject>();
+    public List<GameObject> elementsList { get; private set; } = new List<GameObject>();
     
     void Start()
     {
@@ -56,13 +56,8 @@ public class InstantiatePhotoElements : InstantiationProcess<Evidence>
         _prefab.transform.SetParent(pageContent, false);
         
         _prefab.GetComponent<RectTransform>().anchoredPosition = spawnPoints[spawnIndex];
-        //_prefab.GetComponent<RectTransform>().sizeDelta = spawnScales[index];
-
-        //_prefab.transform.GetChild(2).GetComponent<RectTransform>().sizeDelta = spawnScales[index];
-
-        _prefab.GetComponent<PhotoObject>().photosBooklet = this.gameObject;
-
-        photosList.Add(_prefab);
+        
+        elementsList.Add(_prefab);
 
         spawnIndex++;
         if (spawnIndex == amountInEachRow * amountInEachColumn) { CreatePage(currentContent); }
@@ -73,7 +68,7 @@ public class InstantiatePhotoElements : InstantiationProcess<Evidence>
     void SetElement(Evidence evidence)
     {
         int ind = mainIndex;
-        mainContentScript.holders[3].elements.Add(new Element { index = ind, name = evidence.codeName, elementObject = photosList[ind] });
+        mainContentScript.holders[3].elements.Add(new Element { index = ind, name = evidence.codeName, elementObject = elementsList[ind] });
     }
 
     void SetLayout()

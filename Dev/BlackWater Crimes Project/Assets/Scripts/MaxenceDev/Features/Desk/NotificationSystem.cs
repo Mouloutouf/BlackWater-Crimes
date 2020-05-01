@@ -20,7 +20,7 @@ public class NotificationSystem : MonoBehaviour
     {
         if (start) InitializeNotifications();
         
-        if (!pageSystem.Start)
+        if (!pageSystem._Start)
         {
             foreach (Transform tr in elementHolder)
             {

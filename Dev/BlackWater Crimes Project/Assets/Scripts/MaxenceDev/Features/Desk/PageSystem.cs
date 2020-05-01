@@ -13,23 +13,28 @@ public class PageSystem : MonoBehaviour
     public int startIndex;
     private int currentIndex = 0;
 
-    public bool Start { get; private set; } = true;
+    public bool _Start { get; private set; } = true;
+
+    void Start()
+    {
+        currentIndex = startIndex;
+
+        CheckIndex();
+
+        if (content.childCount != 0)
+        {
+            for (int n = startIndex; n < content.childCount; n++) content.GetChild(n).gameObject.SetActive(false);
+            content.GetChild(currentIndex).gameObject.SetActive(true);
+        }
+    }
 
     void Update()
     {
-        if (Start)
+        if (_Start)
         {
-            currentIndex = startIndex;
 
-            CheckIndex();
 
-            if (content.childCount != 0)
-            {
-                for (int n = startIndex; n < content.childCount; n++) content.GetChild(n).gameObject.SetActive(false);
-                content.GetChild(currentIndex).gameObject.SetActive(true);
-            }
-            
-            Start = false;
+            _Start = false;
         }
     }
 
