@@ -5,15 +5,18 @@ using UnityEngine.UI;
 
 public class HeadHunterValidateScript : MonoBehaviour
 {
-    [SerializeField] Text dialogueText;
     [SerializeField] InputField inputField;
     [SerializeField] Dropdown dropdown;
+    [SerializeField] Text dialogueText;
+    [SerializeField] string introText;
+    [SerializeField] string validateText;
     string targetName;
     GameData gameData;
 
     private void Start()
     {
         gameData = GameObject.Find("Data Container").GetComponent<DataContainer>().gameData;
+        dialogueText.text = introText;
     }
 
     public void Validate()
@@ -39,7 +42,7 @@ public class HeadHunterValidateScript : MonoBehaviour
             gameData.allReports[Indics.James_Walker][0].elementName = targetName;
         }
 
-        dialogueText.text = "Okay, I'm on it! Anything else?";
+        dialogueText.text = validateText;
     }
 
     bool MatchDetails()

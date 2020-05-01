@@ -7,11 +7,14 @@ public class NeighborhoodValidateButton : MonoBehaviour
 {
     [SerializeField] Dropdown dropdown;
     [SerializeField] Text dialogueText;
+    [SerializeField] string introText;
+    [SerializeField] string validateText;
     GameData gameData;
 
     private void Start()
     {
         gameData = GameObject.Find("Data Container").GetComponent<DataContainer>().gameData;
+        dialogueText.text = introText;
     }
     public void Validate()
     {
@@ -30,7 +33,7 @@ public class NeighborhoodValidateButton : MonoBehaviour
             }
         }
         
-        dialogueText.text = "I will go there! Anything else?";
+        dialogueText.text = validateText;
         dropdown.value = 0;
     }
 }

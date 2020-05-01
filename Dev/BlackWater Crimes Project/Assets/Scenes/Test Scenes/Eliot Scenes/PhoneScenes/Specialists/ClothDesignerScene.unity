@@ -1066,14 +1066,14 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: da39bc5829190a84cab56332eff41374, type: 3}
     m_FontSize: 45
     m_FontStyle: 2
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 0
-    m_MaxSize: 300
+    m_MaxSize: 50
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 1
+    m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Hello detective! Can I help you?
 --- !u!222 &1039474244
@@ -1100,8 +1100,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 185, y: 448}
-  m_SizeDelta: {x: 250, y: 200}
+  m_AnchoredPosition: {x: 185, y: 445.3}
+  m_SizeDelta: {x: 280, y: 240}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1099348076
 GameObject:
@@ -2451,6 +2451,8 @@ MonoBehaviour:
   specialistType: 0
   script: {fileID: 1670784143}
   dialogueText: {fileID: 1039474243}
+  introText: Hello detective! Can I help you?
+  validateText: Okay let me check that! Anything else?
 --- !u!114 &2070068345
 MonoBehaviour:
   m_ObjectHideFlags: 0

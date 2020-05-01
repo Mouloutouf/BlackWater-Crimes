@@ -8,6 +8,8 @@ public class SpecialistValidateButton : MonoBehaviour
     [SerializeField] SpecialistType specialistType;
     [SerializeField] SpecialistClueShowerScript script;
     [SerializeField] Text dialogueText;
+    [SerializeField] string introText;
+    [SerializeField] string validateText;
     GameData gameData;
 
     private bool match;
@@ -15,6 +17,7 @@ public class SpecialistValidateButton : MonoBehaviour
     private void Start()
     {
         gameData = GameObject.Find("Data Container").GetComponent<DataContainer>().gameData;
+        dialogueText.text = introText;
     }
     
     public void Validate()
@@ -72,7 +75,7 @@ public class SpecialistValidateButton : MonoBehaviour
 
         match = false;
 
-        dialogueText.text = "Okay, let me check that! Anything else?";
+        dialogueText.text = validateText;
         script.ResetClue();
         GetComponent<Button>().interactable = false;
         GetComponentInChildren<Text>().text = "Missing elements";
