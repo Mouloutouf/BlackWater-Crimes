@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Sirenix.OdinInspector;
 
 public class InstantiationProcess<T> : MonoBehaviour where T : Data
 {
     protected T type;
 
     protected GameData gameData;
+
+    [Title("Prefabs")]
 
     public GameObject prefab;
     
@@ -36,6 +39,15 @@ public class InstantiationProcess<T> : MonoBehaviour where T : Data
                 GameObject instance = Instantiation(prefab);
                 instance.GetComponent<ObjectData<_T>>().data = _data;
             }
+        }
+    }
+
+    public void InstantiateObjectOfType<_T>(_T data, GameObject prefab) where _T : Data
+    {
+        if (data.unlockedData)
+        {
+            GameObject instance = Instantiation(prefab);
+            instance.GetComponent<ObjectData<_T>>().data = data;
         }
     }
 

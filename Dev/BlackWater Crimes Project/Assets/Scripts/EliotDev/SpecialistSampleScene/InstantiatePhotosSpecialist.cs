@@ -30,9 +30,13 @@ public class InstantiatePhotosSpecialist : InstantiationProcess<Evidence>
         if(index % 2 == 0) //index is even
         {
             int xPos = -150;
-            int yPos = -(150*index) + 500;
+            int yPos = -(150*index) - 200;
             _prefab.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPos, yPos);
-            if(index >= 8)
+            if(index == 8)
+            {
+                transform.parent.GetComponent<RectTransform>().sizeDelta += new Vector2(0, 150);
+            }
+            else if(index > 8)
             {
                 transform.parent.GetComponent<RectTransform>().sizeDelta += new Vector2(0, 300);
             }
@@ -40,13 +44,13 @@ public class InstantiatePhotosSpecialist : InstantiationProcess<Evidence>
         else //index is odd
         {
             int xPos = 150;
-            int yPos = -(150*(index-1)) + 500;
+            int yPos = -(150*(index-1)) - 200;
             _prefab.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPos, yPos);
         }
-        
-        index++;
 
         _prefab.GetComponent<Button>().onClick.AddListener( delegate { clueShowerScript.ShowClue(_prefab); } );
+
+        index++;
 
         return _prefab;
     }
