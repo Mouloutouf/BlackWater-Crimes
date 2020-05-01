@@ -30,7 +30,7 @@ public class PhotoObject : ObjectData<Evidence>
 
         if (textObject != null) textObject.GetComponent<Text>().text = data.codeName;
 
-        holder.seen = data.seen;
+        if (holder != null) holder.seen = data.seen;
 
         base.Protocol();
     }

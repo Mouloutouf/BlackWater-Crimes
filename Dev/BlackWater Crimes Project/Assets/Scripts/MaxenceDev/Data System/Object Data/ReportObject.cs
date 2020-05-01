@@ -32,7 +32,7 @@ public class ReportObject : ObjectData<Report>
 
         reportText.text = data.reportText;
 
-        holder.seen = data.seen;
+        if (holder != null) holder.seen = data.seen;
 
         base.Protocol();
     }
