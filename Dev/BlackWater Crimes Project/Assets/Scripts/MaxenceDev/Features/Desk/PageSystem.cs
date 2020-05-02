@@ -12,24 +12,20 @@ public class PageSystem : MonoBehaviour
 
     public int startIndex;
     private int currentIndex = 0;
-
-    public bool Start { get; private set; } = true;
-
-    void Update()
+    
+    void Start()
     {
-        if (Start)
+        currentIndex = startIndex;
+
+        CheckIndex();
+
+        if (content.childCount != 0)
         {
-            currentIndex = startIndex;
-
-            CheckIndex();
-
             for (int n = startIndex; n < content.childCount; n++) content.GetChild(n).gameObject.SetActive(false);
             content.GetChild(currentIndex).gameObject.SetActive(true);
-
-            Start = false;
         }
     }
-
+    
     public void TurnPage(int value)
     {
         content.GetChild(currentIndex).gameObject.SetActive(false);
@@ -41,10 +37,10 @@ public class PageSystem : MonoBehaviour
 
     void CheckIndex()
     {
-        if (currentIndex == content.childCount -1) rightButton.gameObject.SetActive(false);
+        if (currentIndex == content.childCount -1 || content.childCount == 0) rightButton.gameObject.SetActive(false);
         else rightButton.gameObject.SetActive(true);
 
-        if (currentIndex == startIndex) leftButton.gameObject.SetActive(false);
+        if (currentIndex == startIndex || content.childCount == 0) leftButton.gameObject.SetActive(false);
         else leftButton.gameObject.SetActive(true);
     }
 }

@@ -13,6 +13,9 @@ public class PhotoObject : ObjectData<Evidence>
     private SortMode currentMode;
     
     public GameObject imageObject;
+    public GameObject textObject;
+
+    public ElementHolder holder;
 
     private Evidence myType = new Evidence();
 
@@ -24,6 +27,10 @@ public class PhotoObject : ObjectData<Evidence>
     public override void Protocol()
     {
         imageObject.GetComponent<Image>().sprite = data.photo;
+
+        if (textObject != null) textObject.GetComponent<Text>().text = data.codeName;
+
+        holder.seen = data.seen;
 
         base.Protocol();
     }

@@ -13,8 +13,10 @@ public class ReportObject : ObjectData<Report>
 
     public Text reportText;
 
-    private Report myType = new Report();
+    public ElementHolder holder;
 
+    private Report myType = new Report();
+    
     void Start()
     {
         GetGameData();
@@ -29,6 +31,8 @@ public class ReportObject : ObjectData<Report>
         ElementText.text = data.elementName;
 
         reportText.text = data.reportText;
+
+        holder.seen = data.seen;
 
         base.Protocol();
     }
