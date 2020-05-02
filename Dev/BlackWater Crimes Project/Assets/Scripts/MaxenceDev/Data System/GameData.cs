@@ -62,6 +62,12 @@ public class LocalisedText // Testing
 [Serializable]
 public class Note : Data
 {
+    [Title("Status")]
+
+    public bool toEdit;
+
+    [Title("Informations")]
+
     public string name;
     public string date;
 
