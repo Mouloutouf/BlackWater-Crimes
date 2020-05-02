@@ -6,25 +6,35 @@ using UnityEngine.UI;
 public class ActionsButtonsScript : MonoBehaviour
 {
     [SerializeField] Text dialogueText;
+    [SerializeField] string introText;
+    [SerializeField] string venueText;
+    [SerializeField] string interrogationText;
+    [SerializeField] string prosecutionText;
+    [SerializeField] public string returnText;
+
+    private void Start() 
+    {
+        dialogueText.text = introText;
+    }
 
     public void VenueButton(GameObject venueRequest)
     {
         venueRequest.SetActive(true);
-        dialogueText.text = "So you want to access a venue...";
+        dialogueText.text = venueText;
         gameObject.SetActive(false);
     }
 
     public void InterrogatingButton(GameObject interrogatingRequest)
     {
         interrogatingRequest.SetActive(true);
-        dialogueText.text = "So you want to interrogate a suspect...";
+        dialogueText.text = interrogationText;
         gameObject.SetActive(false);
     }
 
     public void ProsecutionButton(GameObject prosecutionRequest)
     {
         prosecutionRequest.SetActive(true);
-        dialogueText.text = "So you found the one who did it...";
+        dialogueText.text = prosecutionText;
         gameObject.SetActive(false);
     }
 }

@@ -5,15 +5,18 @@ using UnityEngine.UI;
 
 public class HeadHunterValidateScript : MonoBehaviour
 {
-    [SerializeField] Text dialogueText;
     [SerializeField] InputField inputField;
     [SerializeField] Dropdown dropdown;
+    [SerializeField] Text dialogueText;
+    [SerializeField] string introText;
+    [SerializeField] string validateText;
     string targetName;
     GameData gameData;
 
     private void Start()
     {
         gameData = GameObject.Find("Data Container").GetComponent<DataContainer>().gameData;
+        dialogueText.text = introText;
     }
 
     public void Validate()
@@ -39,7 +42,7 @@ public class HeadHunterValidateScript : MonoBehaviour
             gameData.allReports[Indics.James_Walker][0].elementName = targetName;
         }
 
-        dialogueText.text = "Okay, I'm on it! Anything else?";
+        dialogueText.text = validateText;
     }
 
     bool MatchDetails()
@@ -58,7 +61,15 @@ public class HeadHunterValidateScript : MonoBehaviour
         }
         else if(inputField.text == "Richard Anderson")
         {
-            return false;
+            if (dropdown.GetComponentInChildren<Text>().text == "Blond" || dropdown.GetComponentInChildren<Text>().text == "Mustache")
+            {
+                targetName = "Richard Anderson";
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         else if(inputField.text == "Bob Jenkins")
         {
@@ -74,7 +85,15 @@ public class HeadHunterValidateScript : MonoBehaviour
         }
         else if(inputField.text == "Umberto Moretti")
         {
-            return false;
+            if (dropdown.GetComponentInChildren<Text>().text == "Brown" || dropdown.GetComponentInChildren<Text>().text == "Scar" || dropdown.GetComponentInChildren<Text>().text == "Brown eyes")
+            {
+                targetName = "Umberto Moretti";
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         else if (inputField.text == "Anna Jameswan")
         {

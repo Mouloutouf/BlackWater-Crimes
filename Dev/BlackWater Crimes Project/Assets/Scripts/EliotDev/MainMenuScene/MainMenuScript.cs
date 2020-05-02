@@ -16,7 +16,11 @@ public class MainMenuScript : MonoBehaviour
     [SerializeField] Text gameStatusText;
     [SerializeField] GameObject parameters;
     [SerializeField] GameObject bgDesktopImage;
-
+    [SerializeField] GameObject title;
+    [SerializeField] GameObject menuOptions;
+    bool shouldFadeTitle = false;
+    float titleAlpha = 1f;
+    float menuOptionsAlpa = 0f;
     public Dropdown languageSelection;
 
     private void Start() 
@@ -24,6 +28,49 @@ public class MainMenuScript : MonoBehaviour
         gameStatusText.text = "Game 1 - " + DateTime.Today.ToString("M/d/yyyy");
 
         if (dataContainer != null) gameData = dataContainer.gameData;
+    }
+
+    private void Update() 
+    {
+        if(Input.touchCount > 0 && title.activeSelf)
+        {
+            shouldFadeTitle = true;
+        }
+        
+        if(shouldFadeTitle)
+        {
+            TitleFade();
+        }
+    }
+
+    void TitleFade()
+    {
+        if(titleAlpha > -0.3f)
+        {
+            titleAlpha -= .005f;
+            if(titleAlpha > 0)
+            {
+                Color tempColor = title.GetComponent<Image>().color;
+                tempColor.a = titleAlpha;
+                title.GetComponent<Image>().color = tempColor;
+            }
+        }
+        else if(menuOptionsAlpa < 1f)
+        {
+            title.SetActive(false);
+            menuOptions.SetActive(true);
+            menuOptionsAlpa += .008f;
+            Color tempColor = menuOptions.GetComponentInChildren<Image>().color;
+            tempColor.a = menuOptionsAlpa;
+            foreach(Image image in menuOptions.GetComponentsInChildren<Image>())
+            {
+                image.GetComponent<Image>().color = tempColor;
+            }
+        }
+        else
+        {       
+            shouldFadeTitle = false;
+        }
     }
     
     public void Quit()

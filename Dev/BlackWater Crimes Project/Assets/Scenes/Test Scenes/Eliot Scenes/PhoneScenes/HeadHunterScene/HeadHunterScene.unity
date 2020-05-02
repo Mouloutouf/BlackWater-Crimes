@@ -2628,8 +2628,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 185, y: 462}
-  m_SizeDelta: {x: 276.15, y: 200}
+  m_AnchoredPosition: {x: 185, y: 457.3}
+  m_SizeDelta: {x: 280, y: 240}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1665979568
 MonoBehaviour:
@@ -2653,14 +2653,14 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: da39bc5829190a84cab56332eff41374, type: 3}
     m_FontSize: 45
     m_FontStyle: 2
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 0
-    m_MaxSize: 300
+    m_MaxSize: 50
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 1
+    m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Hi pal! \nSo you need my special skills?"
 --- !u!222 &1665979569
@@ -3616,9 +3616,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2beb7bb76b971d94ab4f857b9721a4cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueText: {fileID: 1665979568}
   inputField: {fileID: 1832340990}
   dropdown: {fileID: 1834637843}
+  dialogueText: {fileID: 1665979568}
+  introText: Hi pal! So you need my special skills?
+  validateText: I'm on it! Check your reports !
 --- !u!1 &1948747123
 GameObject:
   m_ObjectHideFlags: 0
