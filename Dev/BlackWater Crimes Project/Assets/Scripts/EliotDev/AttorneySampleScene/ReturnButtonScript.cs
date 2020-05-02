@@ -13,7 +13,7 @@ public class ReturnButtonScript : MonoBehaviour
     public void ReturnButton(GameObject parent)
     {
         actions.SetActive(true);
-        dialogueText.text = "Please tell me what you want...";
+        dialogueText.text = actions.GetComponent<ActionsButtonsScript>().returnText;
 
         switch(type)
         {
