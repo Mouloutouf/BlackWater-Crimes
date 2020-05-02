@@ -104,6 +104,10 @@ public class Evidence : Data
     [Title("Categories")]
     [HideLabel]
     public ModeCategory modeCategory;
+
+    [Title("Status")]
+
+    public bool seen;
 }
 
 [Serializable]
@@ -151,6 +155,8 @@ public class Location : Data
     public string locationName;
     public string locationAdress;
 
+    public Sprite locationImage;
+
     [Title("Description", bold: false)]
     [HideLabel]
     [MultiLineProperty(5)]
@@ -159,6 +165,7 @@ public class Location : Data
     public int evidenceCollected { get; set; }
 }
 
+[Serializable]
 public class Question : Data
 {
     [Title("Question", bold: false)]
@@ -180,6 +187,25 @@ public class Question : Data
     public string reportName;
     [ShowIf("mode", Modes.Type)]
     public string otherName;
+}
+
+[Serializable]
+public class Character : Data
+{
+    [Title("Information")]
+
+    public string name;
+    public Sprite sprite;
+
+    [Title("", horizontalLine: false)]
+    public bool isSuspect;
+    [ShowIf("isSuspect")]
+    public Suspects suspect;
+
+    [Title("Distinctions")]
+
+    public string distinctiveCategory;
+    public string distinctiveElement;
 }
 
 [Serializable]
@@ -233,6 +259,8 @@ public class GameData : SerializedScriptableObject
 
     public Suspects currentSuspect { get; set; }
     public int interrogations { get; set; } = 3;
+
+    public List<Character> characters = new List<Character>();
 
     public GameData()
     {

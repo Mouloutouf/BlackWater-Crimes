@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
 
-public class InstantiatePhotoElements : InstantiationProcess<Evidence>
+public class InstantiateLocationElements : InstantiationProcess<Location>
 {
     [Title("Settings")]
 
@@ -15,8 +15,6 @@ public class InstantiatePhotoElements : InstantiationProcess<Evidence>
     [HideInInspector] public List<Vector2> spawnPoints = new List<Vector2>();
     [HideInInspector] public List<Vector2> spawnScales = new List<Vector2>();
 
-    public GameObject zoomPanel;
-
     [Title("Contents", horizontalLine: false)]
 
     public InstantiateReports mainContentScript;
@@ -24,57 +22,47 @@ public class InstantiatePhotoElements : InstantiationProcess<Evidence>
 
     public List<Transform> contents;
     private Transform currentContent;
-    
+
     private Transform pageContent;
-    
+
     private int spawnIndex = 0;
-    
+
     public List<GameObject> elementsList { get; private set; } = new List<GameObject>();
-    
+
     void Start()
     {
         GetGameData();
-        
-        int local = 0;
 
         SetLayout();
 
-        foreach (List<Evidence> _list in gameData.allEvidences.Values)
-        {
-            currentContent = contents[local];
-            CreatePage(currentContent);
-            
-            InstantiateDataOfType(type, _list);
+        int local = 0;
+        currentContent = contents[local];
+        CreatePage(currentContent);
 
-            foreach (Evidence _evidence in _list) if (_evidence.unlockedData) { SetElement(_evidence); mainIndex++; }
+        InstantiateDataOfType(type, gameData.locations);
 
-            local++;
-        }
+        foreach (Location _location in gameData.locations) if (_location.unlockedData) { SetElement(_location); mainIndex++; }
     }
 
     public override GameObject Instantiation(GameObject prefab)
     {
         GameObject _prefab = Instantiate(prefab) as GameObject;
         _prefab.transform.SetParent(pageContent, false);
-        
+
         _prefab.GetComponent<RectTransform>().anchoredPosition = spawnPoints[spawnIndex];
-
-        _prefab.GetComponent<ZoomPhoto>().zoomPanel = this.zoomPanel;
-
-        _prefab.GetComponent<ElementHolder>().bind = _prefab;
 
         elementsList.Add(_prefab);
 
         spawnIndex++;
         if (spawnIndex == amountInEachRow * amountInEachColumn) { CreatePage(currentContent); }
-        
+
         return _prefab;
     }
 
-    void SetElement(Evidence evidence)
+    void SetElement(Location location)
     {
         int ind = mainIndex;
-        mainContentScript.holders[3].elements.Add(new Element { index = ind, name = evidence.codeName, elementObject = elementsList[ind] });
+        mainContentScript.holders[1].elements.Add(new Element { index = ind, name = location.locationAdress, elementObject = elementsList[ind] });
     }
 
     void SetLayout()

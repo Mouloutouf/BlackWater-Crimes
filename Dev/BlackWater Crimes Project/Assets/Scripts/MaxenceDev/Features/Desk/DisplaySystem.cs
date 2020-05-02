@@ -11,21 +11,14 @@ public class DisplaySystem : MonoBehaviour
 
     public int startIndex;
     private int currentIndex = 0;
-
-    public bool Start { get; private set; } = true;
-
-    void Update()
+    
+    void Start()
     {
-        if (Start)
-        {
-            currentIndex = startIndex;
+        currentIndex = startIndex;
 
-            if (content.childCount != 0) for (int n = startIndex; n < content.childCount; n++) content.GetChild(n).gameObject.SetActive(false);
-
-            Start = false;
-        }
+        if (content.childCount != 0) for (int n = startIndex; n < content.childCount; n++) content.GetChild(n).gameObject.SetActive(false);
     }
-
+    
     public void DisplayElement(GameObject bind)
     {
         for (int n = startIndex; n < content.childCount; n++) content.GetChild(n).gameObject.SetActive(false);
