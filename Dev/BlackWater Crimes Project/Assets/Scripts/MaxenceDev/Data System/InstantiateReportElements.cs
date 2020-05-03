@@ -74,8 +74,8 @@ public class InstantiateReportElements : InstantiationProcess<Report>
         _prefab.GetComponent<RectTransform>().offsetMin = new Vector2(15, _prefab.GetComponent<RectTransform>().offsetMin.y);
         _prefab.GetComponent<RectTransform>().offsetMax = new Vector2(-15, _prefab.GetComponent<RectTransform>().offsetMax.y);
 
-        GameObject obj = _prefab.transform.GetChild(0).GetChild(_prefab.transform.GetChild(0).childCount - 1).gameObject;
-        _prefab.GetComponent<Button>().onClick.AddListener(delegate { reportDisplay.SelectElement(obj); });
+        //GameObject obj = _prefab.transform.GetChild(0).GetChild(_prefab.transform.GetChild(0).childCount - 1).gameObject;
+        //_prefab.GetComponent<Button>().onClick.AddListener(delegate { reportDisplay.SelectElement(obj); });
 
         elementsList.Add(_prefab);
 

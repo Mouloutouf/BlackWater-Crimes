@@ -9,17 +9,28 @@ public class InterrogateValidateButton : MonoBehaviour
     [SerializeField] Text inputText;
     [SerializeField] GameObject evidenceDisplayer;
     [SerializeField] Text dialogueText;
+    [SerializeField] Text interrogationsNumberText;
     [SerializeField] GameData gameData;
-
     Suspects inputSuspect;
+
+    private void Start() 
+    {
+        interrogationsNumberText.text += gameData.interrogations;
+    }
 
     public void Validate()
     {
         if (Match())
         {
-            dialogueText.text = "This seems logic. I will bring this person!";
-
-            StartCoroutine(DelayToInterrogate(2));
+            if (gameData.interrogations > 0)
+            {
+                dialogueText.text = "This seems logic. I will bring this person!";
+                StartCoroutine(DelayToInterrogate(2));
+            }
+            else
+            {
+                dialogueText.text = "Hold on a minute, you can't go on interrogating the whole city !";
+            }
         }
         else dialogueText.text = "This does not make any sense... Please detective, show me something concrete!";
         

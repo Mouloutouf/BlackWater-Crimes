@@ -74,8 +74,8 @@ public class InstantiateLocationElements : InstantiationProcess<Location>
 
             _prefab.GetComponent<RectTransform>().anchoredPosition = spawnPoints[spawnIndex];
 
-            GameObject obj = _prefab.transform.GetChild(0).GetChild(_prefab.transform.GetChild(0).childCount - 1).gameObject;
-            _prefab.GetComponent<Button>().onClick.AddListener(delegate { locationDisplay.SelectElement(obj); });
+            //GameObject obj = _prefab.transform.GetChild(0).GetChild(_prefab.transform.GetChild(0).childCount - 1).gameObject;
+            //_prefab.GetComponent<Button>().onClick.AddListener(delegate { locationDisplay.SelectElement(obj); });
 
             elementsList.Add(_prefab);
 

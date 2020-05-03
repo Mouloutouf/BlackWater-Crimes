@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using Sirenix.OdinInspector;
 
-public class InterrogateScript : MonoBehaviour
+public class InterrogateScript : SerializedMonoBehaviour
 {
     [Title("Suspect Display")]
 
@@ -16,10 +16,7 @@ public class InterrogateScript : MonoBehaviour
     [SerializeField] Image charaSprite;
 
     [Title("Characters", horizontalLine: false)]
-    [SerializeField] Sprite whiteSprite;
-    [SerializeField] Sprite andersonSprite;
-    [SerializeField] Sprite jenkinsSprite;
-    [SerializeField] Sprite morettiSprite;
+    public Dictionary<Suspects, Dictionary<Emotions, Sprite>> suspectSprites =  new Dictionary<Suspects, Dictionary<Emotions, Sprite>>();
 
     [Title("")]
 
@@ -41,28 +38,28 @@ public class InterrogateScript : MonoBehaviour
                 nameText.text = "Abigail White";
                 occupationText.text = "Pimp";
                 dialogueText.text = "Hello detective... Next time you want to ask me questions, I would be glad to welcome you at our place, it would be more... Comfortable.";
-                charaSprite.sprite = whiteSprite;
+                charaSprite.sprite = suspectSprites[Suspects.Abigail_White][Emotions.Neutral];
                 break;
 
             case Suspects.Richard_Anderson:
                 nameText.text = "Richard Anderson";
                 occupationText.text = "Politician";
                 dialogueText.text = "I hope you have good reasons to disturb me during my busy day detective! Go ahead, what do you want? ";
-                charaSprite.sprite = andersonSprite;
+                charaSprite.sprite = suspectSprites[Suspects.Abigail_White][Emotions.Neutral];
                 break;
 
             case Suspects.Bob_Jenkins:
                 nameText.text = "Bob Jenkins";
                 occupationText.text = "Police officer";
                 dialogueText.text = "I don't quite understand why you bring me here sir... Did I do something wrong while I was on duty?";
-                charaSprite.sprite = jenkinsSprite;
+                charaSprite.sprite = suspectSprites[Suspects.Abigail_White][Emotions.Neutral];
                 break;
 
             case Suspects.Umberto_Moretti:
                 nameText.text = "Umberto Moretti";
                 occupationText.text = "Handyman";
                 dialogueText.text = "Well officer, non vedo, non sento, non parlo...";
-                charaSprite.sprite = morettiSprite;
+                charaSprite.sprite = suspectSprites[Suspects.Abigail_White][Emotions.Neutral];
                 break;
         }
 
@@ -87,6 +84,9 @@ public class InterrogateScript : MonoBehaviour
             questionsParent.transform.GetChild(currentQuestion).gameObject.GetComponent<Button>().enabled = false;
 
             dialogueText.text = gameData.questions[gameData.currentSuspect][questionNumber]._answers[answerIndex].answer;
+            
+            Emotions currentEmotion = gameData.questions[gameData.currentSuspect][questionNumber]._answers[answerIndex].emotion;
+            charaSprite.sprite = suspectSprites[gameData.currentSuspect][currentEmotion];
         }
     }
 
