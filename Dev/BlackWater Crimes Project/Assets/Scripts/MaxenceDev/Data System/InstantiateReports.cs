@@ -74,7 +74,7 @@ public class InstantiateReports : InstantiationProcess<Report>
             }
         }
 
-        CreateNoReport();
+        //CreateNoReport();
     }
 
     void CreateReport(Report report)
@@ -128,6 +128,8 @@ public class InstantiateReports : InstantiationProcess<Report>
             {
                 DisplaySystem disp = bindedHolder.display;
                 bindedObject.GetComponent<Button>().onClick.AddListener(delegate { disp.DisplayElement(_original); });
+                //GameObject obj = bindedObject.transform.GetChild(0).GetChild(bindedObject.transform.GetChild(0).childCount - 1).gameObject;
+                //bindedObject.GetComponent<Button>().onClick.AddListener(delegate { disp.SelectElement(obj); });
                 _original.GetComponent<ElementHolder>().bind = bindedObject;
             }
             

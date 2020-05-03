@@ -11,7 +11,9 @@ public class DisplaySystem : MonoBehaviour
 
     public int startIndex;
     private int currentIndex = 0;
-    
+
+    private GameObject currentSelected;
+
     void Start()
     {
         currentIndex = startIndex;
@@ -26,11 +28,11 @@ public class DisplaySystem : MonoBehaviour
         bind.SetActive(true);
     }
 
-    void SetDisplayButtons()
+    public void SelectElement(GameObject element)
     {
-        foreach (Button btn in displayButtons)
-        {
-            btn.onClick.AddListener(delegate { DisplayElement(new GameObject()); }); // Remplacer par un int stocké dans le DataObject
-        }
+        if (currentSelected != null) currentSelected.SetActive(false);
+
+        currentSelected = element;
+        currentSelected.SetActive(true);
     }
 }

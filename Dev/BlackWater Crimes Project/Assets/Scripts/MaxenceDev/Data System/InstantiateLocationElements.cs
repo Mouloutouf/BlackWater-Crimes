@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Sirenix.OdinInspector;
 
 public class InstantiateLocationElements : InstantiationProcess<Location>
 {
+    public GameObject placeHolderPrefab;
+
     [Title("Settings")]
 
     public int amountInEachColumn;
@@ -20,6 +23,8 @@ public class InstantiateLocationElements : InstantiationProcess<Location>
     public InstantiateReports mainContentScript;
     private int mainIndex = 0;
 
+    public Transform placeHolderContent;
+
     public List<Transform> contents;
     private Transform currentContent;
 
@@ -29,11 +34,20 @@ public class InstantiateLocationElements : InstantiationProcess<Location>
 
     public List<GameObject> elementsList { get; private set; } = new List<GameObject>();
 
+    public DisplaySystem locationDisplay;
+
     void Start()
     {
         GetGameData();
 
         SetLayout();
+
+        for (int i = 0; i < spawnPoints.Count; i++) // Instantiate Place Holder Prefabs
+        {
+            Instantiation(placeHolderPrefab);
+        }
+
+        spawnIndex = 0;
 
         int local = 0;
         currentContent = contents[local];
@@ -46,17 +60,38 @@ public class InstantiateLocationElements : InstantiationProcess<Location>
 
     public override GameObject Instantiation(GameObject prefab)
     {
-        GameObject _prefab = Instantiate(prefab) as GameObject;
-        _prefab.transform.SetParent(pageContent, false);
+        if (prefab == this.prefab)
+        {
+            GameObject _prefab = Instantiate(prefab) as GameObject;
+            _prefab.transform.SetParent(pageContent, false);
 
-        _prefab.GetComponent<RectTransform>().anchoredPosition = spawnPoints[spawnIndex];
+            _prefab.GetComponent<RectTransform>().anchoredPosition = spawnPoints[spawnIndex];
 
-        elementsList.Add(_prefab);
+            GameObject obj = _prefab.transform.GetChild(0).GetChild(_prefab.transform.GetChild(0).childCount - 1).gameObject;
+            _prefab.GetComponent<Button>().onClick.AddListener(delegate { locationDisplay.SelectElement(obj); });
 
-        spawnIndex++;
-        if (spawnIndex == amountInEachRow * amountInEachColumn) { CreatePage(currentContent); }
+            elementsList.Add(_prefab);
 
-        return _prefab;
+            spawnIndex++;
+            if (spawnIndex == amountInEachRow * amountInEachColumn) { CreatePage(currentContent); }
+
+            return _prefab;
+        }
+        else if (prefab == placeHolderPrefab)
+        {
+            GameObject __prefab = Instantiate(prefab) as GameObject;
+            __prefab.transform.SetParent(placeHolderContent, false);
+
+            __prefab.GetComponent<RectTransform>().anchoredPosition = spawnPoints[spawnIndex];
+
+            spawnIndex++;
+
+            return __prefab;
+        }
+        else
+        {
+            return prefab;
+        }
     }
 
     void SetElement(Location location)
