@@ -7,7 +7,12 @@ using UnityEngine.EventSystems;
 public class InstantiatePhotosSpecialist : InstantiationProcess<Evidence>
 {
     SpecialistClueShowerScript clueShowerScript;
+    public int cluesPerRow;
     int index;
+    int indexInRow;
+    int rowNumber;
+    float yPos;
+    float xPos;
 
     void Start()
     {
@@ -27,30 +32,23 @@ public class InstantiatePhotosSpecialist : InstantiationProcess<Evidence>
 
         _prefab.transform.SetParent(transform);
 
-        if(index % 2 == 0) //index is even
+        if(index % cluesPerRow == 0)
         {
-            int xPos = -150;
-            int yPos = -(150*index) - 200;
-            _prefab.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPos, yPos);
-            if(index == 8)
-            {
-                transform.parent.GetComponent<RectTransform>().sizeDelta += new Vector2(0, 150);
-            }
-            else if(index > 8)
+            indexInRow = 0;
+            rowNumber ++;
+            yPos = -(300*rowNumber) - 200;
+            if(rowNumber >= 2)
             {
                 transform.parent.GetComponent<RectTransform>().sizeDelta += new Vector2(0, 300);
             }
-        } 
-        else //index is odd
-        {
-            int xPos = 150;
-            int yPos = -(150*(index-1)) - 200;
-            _prefab.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPos, yPos);
         }
 
-        _prefab.GetComponent<Button>().onClick.AddListener( delegate { clueShowerScript.ShowClue(_prefab); } );
+        xPos = (350 * indexInRow) - 500;
 
+        _prefab.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPos, yPos);
+        
         index++;
+        indexInRow ++;
 
         return _prefab;
     }
