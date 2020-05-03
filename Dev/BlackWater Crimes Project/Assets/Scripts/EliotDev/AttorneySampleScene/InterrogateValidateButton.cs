@@ -9,9 +9,14 @@ public class InterrogateValidateButton : MonoBehaviour
     [SerializeField] Text inputText;
     [SerializeField] GameObject evidenceDisplayer;
     [SerializeField] Text dialogueText;
+    [SerializeField] Text interrogationsNumberText;
     [SerializeField] GameData gameData;
-
     Suspects inputSuspect;
+
+    private void Start() 
+    {
+        interrogationsNumberText.text += gameData.interrogations;
+    }
 
     public void Validate()
     {
