@@ -108,6 +108,15 @@ public class Evidence : Data
     [HideInInspector] public Sprite photo; // get; set; autoproperty
     public bool completedPhotograph { get; set; }
 
+    [Title("Text")]
+
+    public bool hasText;
+    [ShowIf("hasText")]
+    [Title("Description Text", bold: false, HorizontalLine = false)]
+    [HideLabel]
+    [MultiLineProperty(5)]
+    public string descriptionText;
+    
     [HideReferenceObjectPicker]
     [Title("Categories")]
     [HideLabel]
@@ -280,6 +289,8 @@ public class GameData : SerializedScriptableObject
     public Dictionary<Indics, List<Report>> allReports = new Dictionary<Indics, List<Report>>();
 
     public int reportsCollected = 0;
+
+    public bool newStuff;
 
     public List<Location> locations = new List<Location>();
 

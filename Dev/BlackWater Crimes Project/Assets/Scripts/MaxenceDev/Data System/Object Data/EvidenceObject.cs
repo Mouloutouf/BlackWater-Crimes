@@ -49,7 +49,7 @@ public class EvidenceObject : ObjectData<Evidence>
 
     void Update()
     {
-        if (isZoomed && canShowText && hasText)
+        if (isZoomed && canShowText && data.hasText)
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -79,7 +79,7 @@ public class EvidenceObject : ObjectData<Evidence>
                 }
                 else
                 {
-                    displayTextComponent.text = descriptionText;
+                    displayTextComponent.text = data.descriptionText;
                     displayTextComponent.transform.parent.gameObject.SetActive(true);
 
                     isShown = true;
