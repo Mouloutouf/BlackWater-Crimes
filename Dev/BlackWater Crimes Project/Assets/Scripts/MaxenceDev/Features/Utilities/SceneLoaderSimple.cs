@@ -36,6 +36,7 @@ public class SceneLoaderSimple : MonoBehaviour
 
     public void LoadScene(string name)
     {
+
         sceneName = name;
         methodToCall = LoadScene;
         StartCoroutine(WaitForFrame(methodToCall));
