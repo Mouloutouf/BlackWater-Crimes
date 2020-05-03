@@ -893,6 +893,7 @@ MonoBehaviour:
       location: 1
       suspect: 2
       type: 0
+    seen: 0
   instantiate: 0
   hasApplied: 0
   hasText: 0
@@ -1967,8 +1968,9 @@ MonoBehaviour:
     photo: {fileID: 0}
     modeCategory:
       location: 3
-      suspect: 1
+      suspect: 4
       type: 3
+    seen: 0
   instantiate: 0
   hasApplied: 0
   hasText: 1
@@ -2554,6 +2556,7 @@ MonoBehaviour:
       location: 3
       suspect: 0
       type: 3
+    seen: 0
   instantiate: 0
   hasApplied: 0
   hasText: 1
@@ -2939,6 +2942,16 @@ PrefabInstance:
       propertyPath: getClues
       value: 
       objectReference: {fileID: 510400395}
+    - target: {fileID: 1161717119663801098, guid: 74811de12f439f5418b282a0a0e77738,
+        type: 3}
+      propertyPath: gameplayCameras.Array.data[0].direction
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1161717119663801098, guid: 74811de12f439f5418b282a0a0e77738,
+        type: 3}
+      propertyPath: gameplayCameras.Array.data[1].direction
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6900047074144540361, guid: 74811de12f439f5418b282a0a0e77738,
         type: 3}
       propertyPath: m_Range
@@ -3800,6 +3813,7 @@ MonoBehaviour:
       location: 3
       suspect: 1
       type: 3
+    seen: 0
   instantiate: 0
   hasApplied: 0
   hasText: 1
@@ -3965,8 +3979,9 @@ MonoBehaviour:
     photo: {fileID: 0}
     modeCategory:
       location: 3
-      suspect: 2
+      suspect: 4
       type: 3
+    seen: 0
   instantiate: 0
   hasApplied: 0
   hasText: 1
@@ -5642,6 +5657,7 @@ MonoBehaviour:
       location: 3
       suspect: 2
       type: 0
+    seen: 0
   instantiate: 0
   hasApplied: 0
   hasText: 0
@@ -10373,7 +10389,7 @@ PrefabInstance:
     - target: {fileID: 8963193682288773998, guid: 32be31a333568ec4eadf485eb3c2f84d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: DeskScene
+      value: MenuDeskScene
       objectReference: {fileID: 0}
     - target: {fileID: 8963193682288773998, guid: 32be31a333568ec4eadf485eb3c2f84d,
         type: 3}

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 using Sirenix.OdinInspector;
 
 public class InstantiateReportElements : InstantiationProcess<Report>
@@ -27,6 +28,8 @@ public class InstantiateReportElements : InstantiationProcess<Report>
     public List<GameObject> elementsList { get; private set; } = new List<GameObject>();
 
     private List<Report> reportsList = new List<Report>();
+
+    public DisplaySystem reportDisplay;
 
     void Start()
     {
@@ -70,6 +73,9 @@ public class InstantiateReportElements : InstantiationProcess<Report>
 
         _prefab.GetComponent<RectTransform>().offsetMin = new Vector2(15, _prefab.GetComponent<RectTransform>().offsetMin.y);
         _prefab.GetComponent<RectTransform>().offsetMax = new Vector2(-15, _prefab.GetComponent<RectTransform>().offsetMax.y);
+
+        GameObject obj = _prefab.transform.GetChild(0).GetChild(_prefab.transform.GetChild(0).childCount - 1).gameObject;
+        _prefab.GetComponent<Button>().onClick.AddListener(delegate { reportDisplay.SelectElement(obj); });
 
         elementsList.Add(_prefab);
 

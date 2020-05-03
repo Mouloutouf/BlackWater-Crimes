@@ -5,56 +5,103 @@ using UnityEngine.UI;
 
 public class NotesRecorder : MonoBehaviour
 {
+    public Text liveText;
+    public GameObject editPanel;
 
-    [SerializeField] Text notes;
+    public GameData gameData;
 
-    TouchScreenKeyboard keyboard;
+    public InstantiateNotes instantiateNotes;
 
-    // Start is called before the first frame update
-    void Start()
+    private Note currentNote;
+    private NoteObject currentObject;
+
+    private bool newNote;
+
+    private bool isOpen;
+    private TouchScreenKeyboard keyboard;
+    
+    public void OpenEditNote(GameObject noteObject)
     {
-        Screen.autorotateToLandscapeLeft = false;
-        Screen.autorotateToLandscapeRight = false;
-        Screen.autorotateToPortraitUpsideDown = false;
-        Screen.orientation = ScreenOrientation.Portrait;
+        newNote = noteObject.GetComponent<NoteObject>() == null ? true : false;
+
+        if (!newNote) // For Existing Notes
+        {
+            currentObject = noteObject.GetComponent<NoteObject>();
+            this.currentNote = currentObject.data;
+        }
+        else // For Adding Note
+        {
+            Note note = new Note { name = "New Note" + (gameData.notes.Count + 1).ToString(), toEdit = true };
+            gameData.notes.Add(note);
+
+            this.currentNote = note;
+        }
+
+        editPanel.SetActive(true);
+        isOpen = true;
+
+        OpenKeyboard();
     }
+    
     public void OpenKeyboard()
     {
         if (keyboard == null)
         {
             keyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default);
+
+            keyboard.text = currentNote.text;
+            liveText.text = currentNote.text;
         }
     }
-    // Update is called once per frame
+    
     void Update()
     {
-        if (TouchScreenKeyboard.visible == false && keyboard != null)
+        if (isOpen && keyboard != null)
         {
-            if (keyboard.status == TouchScreenKeyboard.Status.Done)
+            liveText.text = keyboard.text;
+
+            if (!TouchScreenKeyboard.visible && keyboard.status == TouchScreenKeyboard.Status.Done)
             {
-                if(notes.text == "Your notes...")
-                {
-                    notes.text = "";
-                }
-                if (notes.text == "")
-                {
-                    notes.text += keyboard.text;
-                }
-                else
-                {
-                    notes.text += "\n" + keyboard.text;
-                }
-                keyboard = null;
+                CloseEditNote();
             }
         }
     }
 
-    public void QuitScene()
+    void CloseEditNote()
     {
-        Screen.autorotateToLandscapeLeft = false;
-        Screen.autorotateToLandscapeRight = false;
-        Screen.autorotateToPortraitUpsideDown = false;
-        Screen.orientation = ScreenOrientation.LandscapeLeft;
-        UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("NotesSceneProto");
+        currentNote.text = keyboard.text;
+        
+        if (!newNote)
+        {
+            currentObject.Protocol();
+        }
+        else
+        {
+            instantiateNotes.CreateNewNote(currentNote);
+        }
+
+        editPanel.SetActive(false);
+        isOpen = false;
     }
+
+    #region Old
+    void OldUpdate()
+    {
+        if (liveText.text == "Your notes...")
+        {
+            liveText.text = "";
+        }
+        if (liveText.text == "")
+        {
+            liveText.text += keyboard.text;
+
+            gameData.notes[0].text = keyboard.text;
+        }
+        else
+        {
+            liveText.text += "\n" + keyboard.text;
+        }
+        keyboard = null;
+    }
+    #endregion
 }

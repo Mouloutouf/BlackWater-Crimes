@@ -1391,8 +1391,9 @@ MonoBehaviour:
     photo: {fileID: 0}
     modeCategory:
       location: 1
-      suspect: 1
+      suspect: 4
       type: 0
+    seen: 0
   instantiate: 0
   hasApplied: 0
   hasText: 0
@@ -4840,8 +4841,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -25}
-  m_SizeDelta: {x: -600, y: -250}
+  m_AnchoredPosition: {x: 61.8, y: -25}
+  m_SizeDelta: {x: -723.6, y: -250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1334870254
 MonoBehaviour:
@@ -6698,6 +6699,7 @@ MonoBehaviour:
       location: 1
       suspect: 3
       type: 0
+    seen: 0
   instantiate: 0
   hasApplied: 0
   hasText: 1
@@ -7277,6 +7279,7 @@ MonoBehaviour:
       location: 1
       suspect: 2
       type: 0
+    seen: 0
   instantiate: 0
   hasApplied: 0
   hasText: 1
@@ -9347,6 +9350,16 @@ PrefabInstance:
       propertyPath: downArrow
       value: 
       objectReference: {fileID: 1864947895}
+    - target: {fileID: 1161717119663801098, guid: 74811de12f439f5418b282a0a0e77738,
+        type: 3}
+      propertyPath: gameplayCameras.Array.data[0].direction
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1161717119663801098, guid: 74811de12f439f5418b282a0a0e77738,
+        type: 3}
+      propertyPath: gameplayCameras.Array.data[1].direction
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6900047074144540361, guid: 74811de12f439f5418b282a0a0e77738,
         type: 3}
       propertyPath: m_Intensity
@@ -11840,8 +11853,9 @@ MonoBehaviour:
     photo: {fileID: 0}
     modeCategory:
       location: 1
-      suspect: 2
+      suspect: 4
       type: 0
+    seen: 0
   instantiate: 0
   hasApplied: 0
   hasText: 0
@@ -17663,6 +17677,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 197491579}
+    - target: {fileID: 8963193682288773998, guid: 32be31a333568ec4eadf485eb3c2f84d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: MenuDeskScene
+      objectReference: {fileID: 0}
     - target: {fileID: 8963193682433347671, guid: 32be31a333568ec4eadf485eb3c2f84d,
         type: 3}
       propertyPath: m_LocalPosition.x

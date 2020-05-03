@@ -502,7 +502,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2031224968}
+      - m_Target: {fileID: 0}
         m_MethodName: QuitScene
         m_Mode: 1
         m_Arguments:
@@ -706,18 +706,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1448090041}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2031224968}
-        m_MethodName: OpenKeyboard
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1448090041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -920,7 +909,6 @@ GameObject:
   - component: {fileID: 2031224966}
   - component: {fileID: 2031224965}
   - component: {fileID: 2031224964}
-  - component: {fileID: 2031224968}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -944,7 +932,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 823
 --- !u!114 &2031224965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1013,16 +1001,3 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &2031224968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2031224963}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fc3673d7127fff4691c2543fb309f1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  notes: {fileID: 1731508020}

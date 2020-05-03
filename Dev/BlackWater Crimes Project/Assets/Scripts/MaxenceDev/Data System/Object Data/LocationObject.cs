@@ -12,7 +12,7 @@ public class LocationObject : ObjectData<Location>
 
     public GameObject locationSprite;
     public GameObject locationName;
-
+    
     public GameObject menuAccessButton;
     public GameObject menuBlockedButton;
     

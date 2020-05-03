@@ -11,8 +11,11 @@ public class PhotoObject : ObjectData<Evidence>
     
     public int pageNumber;
     private SortMode currentMode;
-    
+
+    public List<Sprite> polaroids = new List<Sprite>();
+
     public GameObject imageObject;
+    public GameObject polaroidObject;
     public GameObject textObject;
 
     public ElementHolder holder;
@@ -28,9 +31,11 @@ public class PhotoObject : ObjectData<Evidence>
     {
         imageObject.GetComponent<Image>().sprite = data.photo;
 
+        //polaroidObject.GetComponent<Image>().sprite = polaroids[UnityEngine.Random.Range(0, polaroids.Count)];
+
         if (textObject != null) textObject.GetComponent<Text>().text = data.codeName;
 
-        holder.seen = data.seen;
+        if (holder != null) holder.seen = data.seen;
 
         base.Protocol();
     }

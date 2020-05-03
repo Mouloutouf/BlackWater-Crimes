@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Sirenix.OdinInspector;
 
 public class InstantiatePhotoElements : InstantiationProcess<Evidence>
 {
+    public GameObject placeHolderPrefab;
+
     [Title("Settings")]
 
     public int amountInEachColumn;
@@ -22,6 +25,8 @@ public class InstantiatePhotoElements : InstantiationProcess<Evidence>
     public InstantiateReports mainContentScript;
     private int mainIndex = 0;
 
+    public Transform placeHolderContent;
+
     public List<Transform> contents;
     private Transform currentContent;
     
@@ -30,7 +35,9 @@ public class InstantiatePhotoElements : InstantiationProcess<Evidence>
     private int spawnIndex = 0;
     
     public List<GameObject> elementsList { get; private set; } = new List<GameObject>();
-    
+
+    public DisplaySystem photoDisplay;
+
     void Start()
     {
         GetGameData();
@@ -38,6 +45,13 @@ public class InstantiatePhotoElements : InstantiationProcess<Evidence>
         int local = 0;
 
         SetLayout();
+
+        for (int i = 0; i < spawnPoints.Count; i++) // Instantiate Place Holder Prefabs
+        {
+            Instantiation(placeHolderPrefab);
+        }
+
+        spawnIndex = 0;
 
         foreach (List<Evidence> _list in gameData.allEvidences.Values)
         {
@@ -54,21 +68,42 @@ public class InstantiatePhotoElements : InstantiationProcess<Evidence>
 
     public override GameObject Instantiation(GameObject prefab)
     {
-        GameObject _prefab = Instantiate(prefab) as GameObject;
-        _prefab.transform.SetParent(pageContent, false);
-        
-        _prefab.GetComponent<RectTransform>().anchoredPosition = spawnPoints[spawnIndex];
+        if (prefab == this.prefab)
+        {
+            GameObject _prefab = Instantiate(prefab) as GameObject;
+            _prefab.transform.SetParent(pageContent, false);
 
-        _prefab.GetComponent<ZoomPhoto>().zoomPanel = this.zoomPanel;
+            _prefab.GetComponent<RectTransform>().anchoredPosition = spawnPoints[spawnIndex];
 
-        _prefab.GetComponent<ElementHolder>().bind = _prefab;
+            _prefab.GetComponent<ZoomPhoto>().zoomPanel = this.zoomPanel;
 
-        elementsList.Add(_prefab);
+            _prefab.GetComponent<ElementHolder>().bind = _prefab;
 
-        spawnIndex++;
-        if (spawnIndex == amountInEachRow * amountInEachColumn) { CreatePage(currentContent); }
-        
-        return _prefab;
+            GameObject obj = _prefab.transform.GetChild(0).GetChild(_prefab.transform.GetChild(0).childCount - 1).gameObject;
+            _prefab.GetComponent<Button>().onClick.AddListener(delegate { photoDisplay.SelectElement(obj); });
+
+            elementsList.Add(_prefab);
+
+            spawnIndex++;
+            if (spawnIndex == amountInEachRow * amountInEachColumn) { CreatePage(currentContent); }
+
+            return _prefab;
+        }
+        else if (prefab == placeHolderPrefab)
+        {
+            GameObject __prefab = Instantiate(prefab) as GameObject;
+            __prefab.transform.SetParent(placeHolderContent, false);
+
+            __prefab.GetComponent<RectTransform>().anchoredPosition = spawnPoints[spawnIndex];
+
+            spawnIndex++;
+
+            return __prefab;
+        }
+        else
+        {
+            return prefab;
+        }
     }
 
     void SetElement(Evidence evidence)

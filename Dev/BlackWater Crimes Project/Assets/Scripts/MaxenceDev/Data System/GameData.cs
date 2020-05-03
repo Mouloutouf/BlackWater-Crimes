@@ -62,6 +62,12 @@ public class LocalisedText // Testing
 [Serializable]
 public class Note : Data
 {
+    [Title("Status")]
+
+    public bool toEdit;
+
+    [Title("Informations")]
+
     public string name;
     public string date;
 
@@ -118,6 +124,8 @@ public class Report : Data
     public Sprite agentSprite;
     public string agentName;
 
+    public Sprite signature;
+
     [Title("Element")]
 
     public Modes mode;
@@ -155,7 +163,8 @@ public class Location : Data
     public string locationName;
     public string locationAdress;
 
-    public Sprite locationImage;
+    public Sprite locationArtwork;
+    public Sprite locationCroppedImage;
 
     [Title("Description", bold: false)]
     [HideLabel]

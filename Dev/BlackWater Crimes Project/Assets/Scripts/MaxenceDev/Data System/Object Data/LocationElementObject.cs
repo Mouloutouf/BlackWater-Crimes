@@ -18,7 +18,7 @@ public class LocationElementObject : ObjectData<Location>
 
     public override void Protocol()
     {
-        imageObject.GetComponent<Image>().sprite = data.locationImage;
+        imageObject.GetComponent<Image>().sprite = data.locationCroppedImage;
 
         if (textObject != null) textObject.GetComponent<Text>().text = data.locationName;
 

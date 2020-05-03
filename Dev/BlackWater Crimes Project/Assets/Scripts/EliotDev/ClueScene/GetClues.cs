@@ -196,6 +196,7 @@ public class GetClues : MonoBehaviour
         cameraCanvas.SetActive(false);
         overlayClueCanvas.GetComponent<EvidenceInteraction>().currentEvidenceHeld = null;
         actualClue.GetComponent<EvidenceObject>().isZoomed = false;
+        actualClue.GetComponent<EvidenceObject>().displayTextComponent.transform.parent.gameObject.SetActive(false);
         overlayClueCanvas.SetActive(false);
         musicAudio.outputAudioMixerGroup = null;
     }

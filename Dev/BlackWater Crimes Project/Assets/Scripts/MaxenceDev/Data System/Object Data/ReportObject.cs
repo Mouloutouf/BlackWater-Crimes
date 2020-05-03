@@ -8,10 +8,14 @@ public class ReportObject : ObjectData<Report>
     public Image agentImage;
     public Text agentText;
 
+    public float agentFactor;
+
     public Image ElementImage;
     public Text ElementText;
-
+    
     public Text reportText;
+
+    public Image signatureImage;
 
     public ElementHolder holder;
 
@@ -25,6 +29,10 @@ public class ReportObject : ObjectData<Report>
     public override void Protocol()
     {
         agentImage.sprite = data.agentSprite;
+        agentImage.SetNativeSize();
+        RectTransform rect = agentImage.gameObject.GetComponent<RectTransform>();
+        rect.sizeDelta = new Vector2(rect.rect.width / agentFactor, rect.rect.height / agentFactor);
+
         agentText.text = data.agentName;
 
         ElementImage.sprite = data.elementSprite;
@@ -32,7 +40,9 @@ public class ReportObject : ObjectData<Report>
 
         reportText.text = data.reportText;
 
-        holder.seen = data.seen;
+        if (signatureImage != null) signatureImage.sprite = data.signature;
+
+        if (holder != null) holder.seen = data.seen;
 
         base.Protocol();
     }

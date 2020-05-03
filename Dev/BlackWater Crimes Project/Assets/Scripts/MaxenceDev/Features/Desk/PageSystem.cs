@@ -8,6 +8,8 @@ public class PageSystem : MonoBehaviour
     public Button rightButton;
     public Button leftButton;
 
+    public List<Sprite> sprites = new List<Sprite>();
+
     public Transform content;
 
     public int startIndex;
@@ -37,10 +39,12 @@ public class PageSystem : MonoBehaviour
 
     void CheckIndex()
     {
-        if (currentIndex == content.childCount -1 || content.childCount == 0) rightButton.gameObject.SetActive(false);
-        else rightButton.gameObject.SetActive(true);
+        // Right Button
+        if (currentIndex == content.childCount - 1 || content.childCount == 0) { rightButton.gameObject.GetComponent<Image>().sprite = sprites[0]; rightButton.interactable = false; }
+        else { rightButton.gameObject.GetComponent<Image>().sprite = sprites[1]; rightButton.interactable = true; }
 
-        if (currentIndex == startIndex || content.childCount == 0) leftButton.gameObject.SetActive(false);
-        else leftButton.gameObject.SetActive(true);
+        // Left Button
+        if (currentIndex == startIndex || content.childCount == 0) { leftButton.gameObject.GetComponent<Image>().sprite = sprites[2]; leftButton.interactable = false; }
+        else { leftButton.gameObject.GetComponent<Image>().sprite = sprites[3]; leftButton.interactable = true; }
     }
 }
