@@ -207,11 +207,7 @@ public class Question : Data
     [HideLabel]
     [MultiLineProperty(2)]
     public string question;
-
-    [Title("Answer", bold: false)]
-    [MultiLineProperty(4)]
-    public string[] answers;
-
+    
     public List<Answer> _answers;
 
     [Title("Report")]

@@ -70,7 +70,9 @@ public class NotesRecorder : MonoBehaviour
     void CloseEditNote()
     {
         currentNote.text = keyboard.text;
-        
+
+        keyboard = null;
+
         if (!newNote)
         {
             currentObject.Protocol();
