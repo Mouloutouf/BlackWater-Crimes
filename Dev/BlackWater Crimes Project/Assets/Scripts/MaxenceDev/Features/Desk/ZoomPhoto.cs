@@ -17,6 +17,8 @@ public class ZoomPhoto : MonoBehaviour
     private float timerValue = 0.3f;
     private float timer;
 
+    public Vector2 imagePosWithText;
+
     public bool useOld;
     
     void Update()
@@ -29,7 +31,51 @@ public class ZoomPhoto : MonoBehaviour
             isZoomed = false;
         }
     }
+    
+    public void ZoomObject()
+    {
+        Sprite image = this.gameObject.GetComponent<PhotoObject>().data.photo;
+        string name = this.gameObject.GetComponent<PhotoObject>().data.codeName;
 
+        if (this.gameObject.GetComponent<PhotoObject>().data.hasText)
+        {
+            string text = this.gameObject.GetComponent<PhotoObject>().data.descriptionText;
+            Zoom(image, name, text);
+        }
+        else Zoom(image, name);
+
+        isZoomed = true;
+    }
+
+    public void Zoom(Sprite photoSprite, string photoName)
+    {
+        zoomPanel.SetActive(true);
+        zoomPanel.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = photoSprite;
+        zoomPanel.transform.GetChild(0).GetChild(1).GetComponent<Text>().text = photoName;
+
+        zoomPanel.transform.GetChild(0).GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+
+        zoomPanel.transform.GetChild(1).gameObject.SetActive(false);
+    }
+
+    public void Zoom(Sprite photoSprite, string photoName, string photoText)
+    {
+        zoomPanel.SetActive(true);
+        zoomPanel.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = photoSprite;
+        zoomPanel.transform.GetChild(0).GetChild(1).GetComponent<Text>().text = photoName;
+
+        zoomPanel.transform.GetChild(0).GetComponent<RectTransform>().anchoredPosition = imagePosWithText;
+
+        zoomPanel.transform.GetChild(1).gameObject.SetActive(true);
+        zoomPanel.transform.GetChild(1).GetComponent<Text>().text = photoText;
+    }
+
+    public void DeZoom()
+    {
+        zoomPanel.SetActive(false);
+    }
+
+    #region Old
     void OldRaycastCheck()
     {
         if (Input.GetMouseButtonDown(0)) { timer = 0f; isZoomed = false; }
@@ -51,26 +97,5 @@ public class ZoomPhoto : MonoBehaviour
             isZoomed = false;
         }
     }
-
-    public void ZoomObject()
-    {
-        Sprite image = this.gameObject.GetComponent<PhotoObject>().data.photo;
-        string text = this.gameObject.GetComponent<PhotoObject>().data.codeName;
-
-        Zoom(image, text);
-
-        isZoomed = true;
-    }
-
-    public void Zoom(Sprite photoSprite, string photoName)
-    {
-        zoomPanel.SetActive(true);
-        zoomPanel.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = photoSprite;
-        zoomPanel.transform.GetChild(0).GetChild(1).GetComponent<Text>().text = photoName;
-    }
-
-    public void DeZoom()
-    {
-        zoomPanel.SetActive(false);
-    }
+    #endregion
 }
