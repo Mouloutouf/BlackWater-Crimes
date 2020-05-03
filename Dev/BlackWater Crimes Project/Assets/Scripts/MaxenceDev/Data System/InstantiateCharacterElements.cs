@@ -42,10 +42,12 @@ public class InstantiateCharacterElements : InstantiationProcess<Character>
         
         SetLayout();
 
+        /*
         for (int i = 0; i < spawnPoints.Count; i++) // Instantiate Place Holder Prefabs
         {
             Instantiation(placeHolderPrefab);
         }
+        */
 
         spawnIndex = 0;
 
