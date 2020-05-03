@@ -1723,7 +1723,6 @@ GameObject:
   - component: {fileID: 1071005548}
   - component: {fileID: 1071005547}
   - component: {fileID: 1071005546}
-  - component: {fileID: 1071005549}
   m_Layer: 5
   m_Name: Return To Full Map Button
   m_TagString: Untagged
@@ -1776,11 +1775,16 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.2364502, y: 24.171509}
-      - {x: -24.83197, y: 24.18988}
-      - {x: -24.232239, y: -24.21701}
-      - {x: 24.232117, y: -24.45346}
-      - {x: 24.122437, y: 23.71695}
+    - - {x: 22.089233, y: -38.12645}
+      - {x: -8.957886, y: -43.79364}
+      - {x: -39.32672, y: -28.29712}
+      - {x: -51.143127, y: 3.063568}
+      - {x: -35.659607, y: 37.773926}
+      - {x: 1.27771, y: 47.112213}
+      - {x: 32.04193, y: 38.09424}
+      - {x: 49.558533, y: 6.991516}
+      - {x: 44.04785, y: -18.638794}
+      - {x: 33.267456, y: -32.007446}
 --- !u!114 &1071005547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1817,22 +1821,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1071005544}
   m_CullTransparentMesh: 0
---- !u!58 &1071005549
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1071005544}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.43197632, y: 0}
-  serializedVersion: 2
-  m_Radius: 46.361084
 --- !u!1 &1134087392
 GameObject:
   m_ObjectHideFlags: 0
@@ -3920,7 +3908,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1783003494
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4290,7 +4278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9411765, g: 0.7647059, b: 0.19607843, a: 1}
+  m_Color: {r: 0.8584906, g: 0.7070955, b: 0.4008989, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
