@@ -36,7 +36,7 @@ public class InstantiatePhotosSpecialist : InstantiationProcess<Evidence>
         {
             indexInRow = 0;
             rowNumber ++;
-            yPos = -(300*rowNumber) - 200;
+            yPos = -(300*rowNumber);
             if(rowNumber >= 2)
             {
                 transform.parent.GetComponent<RectTransform>().sizeDelta += new Vector2(0, 300);
@@ -46,6 +46,8 @@ public class InstantiatePhotosSpecialist : InstantiationProcess<Evidence>
         xPos = (350 * indexInRow) - 500;
 
         _prefab.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPos, yPos);
+
+        _prefab.GetComponent<Button>().onClick.AddListener( delegate { clueShowerScript.ShowClue(_prefab); } );
         
         index++;
         indexInRow ++;
