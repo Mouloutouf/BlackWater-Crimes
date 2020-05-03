@@ -79,8 +79,8 @@ public class InstantiatePhotoElements : InstantiationProcess<Evidence>
 
             _prefab.GetComponent<ElementHolder>().bind = _prefab;
 
-            GameObject obj = _prefab.transform.GetChild(0).GetChild(_prefab.transform.GetChild(0).childCount - 1).gameObject;
-            _prefab.GetComponent<Button>().onClick.AddListener(delegate { photoDisplay.SelectElement(obj); });
+            //GameObject obj = _prefab.transform.GetChild(0).GetChild(_prefab.transform.GetChild(0).childCount - 1).gameObject;
+            //_prefab.GetComponent<Button>().onClick.AddListener(delegate { photoDisplay.SelectElement(obj); });
 
             elementsList.Add(_prefab);
 
