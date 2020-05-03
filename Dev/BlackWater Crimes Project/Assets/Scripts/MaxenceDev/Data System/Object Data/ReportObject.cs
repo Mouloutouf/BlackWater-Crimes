@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class ReportObject : ObjectData<Report>
 {
+    public GameData _gameData;
+
     public Image agentImage;
     public Text agentText;
 
@@ -47,9 +49,11 @@ public class ReportObject : ObjectData<Report>
         base.Protocol();
     }
 
-    public void SetQuestion()
+    public void SetData(Report report)
     {
-        foreach (List<Question> questionList in gameData.questions.Values) 
+        // Set Questions
+        
+        foreach (List<Question> questionList in _gameData.questions.Values) 
         {
             foreach (Question question in questionList)
             {
@@ -62,6 +66,16 @@ public class ReportObject : ObjectData<Report>
 
                     question.unlockedData = true;
                 }
+            }
+        }
+
+        // Set Location Known
+
+        if (report.giveAccess)
+        {
+            foreach (Location location in _gameData.locations)
+            {
+                if (location.myLocation == report.locationToAccess) location.known = true;
             }
         }
     }

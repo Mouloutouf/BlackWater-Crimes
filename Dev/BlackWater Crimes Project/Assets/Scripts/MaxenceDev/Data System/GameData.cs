@@ -12,6 +12,8 @@ public enum Indics { Master_Thommers, Brandon_Bennington, James_Walker, Quentin_
 
 public enum Types { Brands, Crime, Clothing, Documents }
 
+public enum Emotions { Neutral, Fearful, Angry, Proud, Confident }
+
 [Serializable]
 public class ModeCategory
 {
@@ -139,7 +141,12 @@ public class Report : Data
     [HideLabel]
     [MultiLineProperty(15)]
     public string reportText;
-    
+
+    [Title("Unlockable")]
+
+    public bool giveAccess;
+    public Locations locationToAccess;
+
     [Title("Status")]
 
     public int unlockOrderIndex;
@@ -175,6 +182,16 @@ public class Location : Data
 }
 
 [Serializable]
+public class Answer
+{
+    [HideLabel]
+    [MultiLineProperty(4)]
+    public string answer;
+
+    public Emotions emotion;
+}
+
+[Serializable]
 public class Question : Data
 {
     [Title("Question", bold: false)]
@@ -185,6 +202,8 @@ public class Question : Data
     [Title("Answer", bold: false)]
     [MultiLineProperty(4)]
     public string[] answers;
+
+    public List<Answer> _answers;
 
     [Title("Report")]
 
