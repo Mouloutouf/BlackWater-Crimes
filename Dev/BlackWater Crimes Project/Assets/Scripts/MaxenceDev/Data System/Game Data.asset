@@ -17,17 +17,24 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 21300000, guid: 19cddb9466c90f04cbbc707959752dad, type: 3}
+    - {fileID: 21300000, guid: 9443cfd055f552c4cac20e4e4450d72b, type: 3}
+    - {fileID: 0}
     - {fileID: 21300000, guid: b2eeefb742d007443b1a22b3c2c96c10, type: 3}
+    - {fileID: 21300000, guid: da33f4d91856b1141bdcc401ab440d57, type: 3}
     - {fileID: 21300000, guid: dcd0f87aebdf5a44a86998e08e9c6815, type: 3}
     - {fileID: 21300000, guid: 5d5d92b9f53c7a7428f5e16ada89497f, type: 3}
     - {fileID: 21300000, guid: 2ce8b93ad4d6a814c967eac9a199b52a, type: 3}
     - {fileID: 21300000, guid: fa9d10161e5d7e64689dbb03b0579982, type: 3}
+    - {fileID: 21300000, guid: 8d7093147653f2343a2cc5cb3555e25a, type: 3}
     - {fileID: 21300000, guid: 565e631769c487241914cdc4d83d2981, type: 3}
+    - {fileID: 21300000, guid: b79bdf46eb9e771499f42ef4c22374e5, type: 3}
     - {fileID: 21300000, guid: a33494e6b19f67b458fa883484c1ba94, type: 3}
     - {fileID: 21300000, guid: c380950968be14a43a02a39c3deecff1, type: 3}
     - {fileID: 21300000, guid: 790ecadda147c8a459fd80e902b75797, type: 3}
     - {fileID: 21300000, guid: 9d7481b73f6a3294eb4596f8ba342cd2, type: 3}
-    - {fileID: 21300000, guid: 688cb1bc00d313d40af908c00fa658b4, type: 3}
+    - {fileID: 21300000, guid: 3894aebf717505c46848a6c562ebb957, type: 3}
+    - {fileID: 21300000, guid: 0f65259f43fdb9645b8fdb02f0a6b0c8, type: 3}
+    - {fileID: 21300000, guid: d290833c696cb6e409da257d3348b26e, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -279,7 +286,7 @@ MonoBehaviour:
       Data: 13|System.Collections.Generic.List`1[[Report, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 4
     - Name: 
       Entry: 7
       Data: 14|Report, Assembly-CSharp
@@ -296,8 +303,8 @@ MonoBehaviour:
       Entry: 1
       Data: Brandon Bennington
     - Name: signature
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 1
     - Name: mode
       Entry: 3
       Data: 2
@@ -313,6 +320,12 @@ MonoBehaviour:
     - Name: reportText
       Entry: 1
       Data: "D\xE9sol\xE9, \xE7a ne me dit rien..."
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
     - Name: unlockOrderIndex
       Entry: 3
       Data: 0
@@ -327,7 +340,7 @@ MonoBehaviour:
       Data: 15|Report, Assembly-CSharp
     - Name: unlockedData
       Entry: 5
-      Data: true
+      Data: false
     - Name: index
       Entry: 3
       Data: 1
@@ -338,14 +351,14 @@ MonoBehaviour:
       Entry: 1
       Data: Brandon Bennington
     - Name: signature
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 1
     - Name: mode
       Entry: 3
       Data: 2
     - Name: elementSprite
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 2
     - Name: elementName
       Entry: 1
       Data: Etiquette Vetement
@@ -360,9 +373,15 @@ MonoBehaviour:
         grand manteau bleu royal qui m'a \xE9t\xE9 achet\xE9 par Anna Jameswan, une
         magnifique femme blonde. Elle m'avait laiss\xE9 une copieuse somme d'argent,
         m\xEAme un peu plus que ce qui \xE9tait pr\xE9vu pour cette pi\xE8ce."
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
     - Name: unlockOrderIndex
       Entry: 3
-      Data: 1
+      Data: 0
     - Name: seen
       Entry: 5
       Data: false
@@ -385,8 +404,8 @@ MonoBehaviour:
       Entry: 1
       Data: Brandon Bennington
     - Name: signature
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 1
     - Name: mode
       Entry: 3
       Data: 2
@@ -407,6 +426,58 @@ MonoBehaviour:
         marques de couture fran\xE7aise.\n\nCet objet doit facilement valoir plusieurs
         milliers de dollars... Si jamais, n'h\xE9sitez pas, je voudrais bien vous
         le racheter..."
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 17|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 3
+    - Name: agentSprite
+      Entry: 10
+      Data: 0
+    - Name: agentName
+      Entry: 1
+      Data: Brandon Bennington
+    - Name: signature
+      Entry: 10
+      Data: 1
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: elementSprite
+      Entry: 6
+      Data: 
+    - Name: elementName
+      Entry: 1
+      Data: Affiche
+    - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: reportText
+      Entry: 1
+      Data: "Je ne connais pas la personne sur l\u2019affiche, mais ses v\xEAtements
+        me parlent ! Ils viennent de chez un concurrent tailleur, Evan Sewing. Il
+        livre \xE0 tout le monde, tant que \xE7a paye bien, et je vois que les prostitu\xE9es
+        ne l\u2019arr\xEAtent pas non plus ! Le connaissant, il a m\xEAme d\xFB demander
+        un paiement en nature, si vous me suivez..."
     - Name: unlockOrderIndex
       Entry: 3
       Data: 0
@@ -433,13 +504,13 @@ MonoBehaviour:
       Data: 2
     - Name: $v
       Entry: 7
-      Data: 17|System.Collections.Generic.List`1[[Report, Assembly-CSharp]], mscorlib
+      Data: 18|System.Collections.Generic.List`1[[Report, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 5
     - Name: 
       Entry: 7
-      Data: 18|Report, Assembly-CSharp
+      Data: 19|Report, Assembly-CSharp
     - Name: unlockedData
       Entry: 5
       Data: false
@@ -448,13 +519,13 @@ MonoBehaviour:
       Data: 0
     - Name: agentSprite
       Entry: 10
-      Data: 1
+      Data: 3
     - Name: agentName
       Entry: 1
       Data: James Walker
     - Name: signature
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 4
     - Name: mode
       Entry: 3
       Data: 1
@@ -470,6 +541,12 @@ MonoBehaviour:
     - Name: reportText
       Entry: 1
       Data: "D\xE9sol\xE9 mon gars, mais j'ai trouv\xE9 personne avec ces informations..."
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
     - Name: unlockOrderIndex
       Entry: 3
       Data: 0
@@ -481,28 +558,28 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 19|Report, Assembly-CSharp
+      Data: 20|Report, Assembly-CSharp
     - Name: unlockedData
       Entry: 5
-      Data: true
+      Data: false
     - Name: index
       Entry: 3
       Data: 1
     - Name: agentSprite
       Entry: 10
-      Data: 1
+      Data: 3
     - Name: agentName
       Entry: 1
       Data: James Walker
     - Name: signature
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 4
     - Name: mode
       Entry: 3
       Data: 1
     - Name: elementSprite
       Entry: 10
-      Data: 2
+      Data: 5
     - Name: elementName
       Entry: 1
       Data: Abigail White
@@ -516,55 +593,15 @@ MonoBehaviour:
         Elle n'y est pas souvent et y vit seule. Elle doit avoir un travail aux alentours
         du 1000 West Madison Street, au centre de la rue. Elle passe beaucoup de
         temps l\xE0-bas.\n"
-    - Name: unlockOrderIndex
-      Entry: 3
-      Data: 2
-    - Name: seen
-      Entry: 5
-      Data: false
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 20|Report, Assembly-CSharp
-    - Name: unlockedData
+    - Name: giveAccess
       Entry: 5
       Data: true
-    - Name: index
+    - Name: locationToAccess
       Entry: 3
-      Data: 2
-    - Name: agentSprite
-      Entry: 10
-      Data: 1
-    - Name: agentName
-      Entry: 1
-      Data: James Walker
-    - Name: signature
-      Entry: 6
-      Data: 
-    - Name: mode
-      Entry: 3
-      Data: 1
-    - Name: elementSprite
-      Entry: 10
       Data: 3
-    - Name: elementName
-      Entry: 1
-      Data: Bob Jenkins
-    - Name: elementDetailName
-      Entry: 6
-      Data: 
-    - Name: reportText
-      Entry: 1
-      Data: "Ce mec m'a tout l'air d'\xEAtre un policier\u2026 Cependant il passe
-        beaucoup d'heures de travail \xE0 l'exterieur. Il tra\xEEne aussi beaucoup
-        pr\xE8s de la West Madison Street, mais je ne sais pas pourquoi... Il est
-        tr\xE8s sur ses gardes, et c'\xE9tait compliqu\xE9 de le suivre, malheureusement,
-        je n'ai pas pu r\xE9cup\xE9rer son adresse.\r\n"
     - Name: unlockOrderIndex
       Entry: 3
-      Data: 3
+      Data: 0
     - Name: seen
       Entry: 5
       Data: false
@@ -579,16 +616,68 @@ MonoBehaviour:
       Data: false
     - Name: index
       Entry: 3
-      Data: 3
+      Data: 2
     - Name: agentSprite
       Entry: 10
-      Data: 1
+      Data: 3
     - Name: agentName
       Entry: 1
       Data: James Walker
     - Name: signature
+      Entry: 10
+      Data: 4
+    - Name: mode
+      Entry: 3
+      Data: 1
+    - Name: elementSprite
+      Entry: 10
+      Data: 6
+    - Name: elementName
+      Entry: 1
+      Data: Bob Jenkins
+    - Name: elementDetailName
       Entry: 6
       Data: 
+    - Name: reportText
+      Entry: 1
+      Data: "Ce mec m'a tout l'air d'\xEAtre un policier\u2026 Cependant il passe
+        beaucoup d'heures de travail \xE0 l'exterieur. Il tra\xEEne aussi beaucoup
+        pr\xE8s de la West Madison Street, mais je ne sais pas pourquoi... Il est
+        tr\xE8s sur ses gardes, et c'\xE9tait compliqu\xE9 de le suivre, malheureusement,
+        je n'ai pas pu r\xE9cup\xE9rer son adresse.\r\n"
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 22|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 3
+    - Name: agentSprite
+      Entry: 10
+      Data: 3
+    - Name: agentName
+      Entry: 1
+      Data: James Walker
+    - Name: signature
+      Entry: 10
+      Data: 4
     - Name: mode
       Entry: 3
       Data: 1
@@ -609,6 +698,12 @@ MonoBehaviour:
         \n\nJ'avais not\xE9 qu'elle vivait seule dans un luxueux appartement au 457
         N Wabash Avenue, dans le Loop District. J'esp\xE8re sinc\xE8rement que vous
         trouverez ce qui lui est arriv\xE9."
+    - Name: giveAccess
+      Entry: 5
+      Data: true
+    - Name: locationToAccess
+      Entry: 3
+      Data: 2
     - Name: unlockOrderIndex
       Entry: 3
       Data: 0
@@ -620,7 +715,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 22|Report, Assembly-CSharp
+      Data: 23|Report, Assembly-CSharp
     - Name: unlockedData
       Entry: 5
       Data: false
@@ -629,19 +724,19 @@ MonoBehaviour:
       Data: 4
     - Name: agentSprite
       Entry: 10
-      Data: 1
+      Data: 3
     - Name: agentName
       Entry: 1
       Data: James Walker
     - Name: signature
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 4
     - Name: mode
       Entry: 3
       Data: 1
     - Name: elementSprite
       Entry: 10
-      Data: 4
+      Data: 7
     - Name: elementName
       Entry: 1
       Data: Richard Anderson
@@ -655,6 +750,12 @@ MonoBehaviour:
         d'\xE9lection. Il passe habituellement ses journ\xE9es \xE0 son bureau au
         130 E Randolph St. \n\nQuoi que, ces derniers jours, il est en tourn\xE9e
         promotionnelle, il y va beaucoup moins..."
+    - Name: giveAccess
+      Entry: 5
+      Data: true
+    - Name: locationToAccess
+      Entry: 3
+      Data: 4
     - Name: unlockOrderIndex
       Entry: 3
       Data: 0
@@ -681,13 +782,13 @@ MonoBehaviour:
       Data: 3
     - Name: $v
       Entry: 7
-      Data: 23|System.Collections.Generic.List`1[[Report, Assembly-CSharp]], mscorlib
+      Data: 24|System.Collections.Generic.List`1[[Report, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 8
     - Name: 
       Entry: 7
-      Data: 24|Report, Assembly-CSharp
+      Data: 25|Report, Assembly-CSharp
     - Name: unlockedData
       Entry: 5
       Data: false
@@ -696,13 +797,13 @@ MonoBehaviour:
       Data: 0
     - Name: agentSprite
       Entry: 10
-      Data: 5
+      Data: 8
     - Name: agentName
       Entry: 1
       Data: Quentin Copeland
     - Name: signature
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 9
     - Name: mode
       Entry: 3
       Data: 2
@@ -718,6 +819,12 @@ MonoBehaviour:
     - Name: reportText
       Entry: 1
       Data: L'analyse de cette preuve ne m'a malheureusement conduit nulle part.
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
     - Name: unlockOrderIndex
       Entry: 3
       Data: 0
@@ -729,22 +836,22 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 25|Report, Assembly-CSharp
+      Data: 26|Report, Assembly-CSharp
     - Name: unlockedData
       Entry: 5
-      Data: true
+      Data: false
     - Name: index
       Entry: 3
       Data: 1
     - Name: agentSprite
       Entry: 10
-      Data: 5
+      Data: 8
     - Name: agentName
       Entry: 1
       Data: Quentin Copeland
     - Name: signature
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 9
     - Name: mode
       Entry: 3
       Data: 2
@@ -767,9 +874,15 @@ MonoBehaviour:
         permis de tester la douille que vous nous avez envoy\xE9 pr\xE9c\xE9demment.
         Elle est exactement du m\xEAme calibre que cette arme, et semble directement
         en provenir. \r\n"
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
     - Name: unlockOrderIndex
       Entry: 3
-      Data: 1
+      Data: 0
     - Name: seen
       Entry: 5
       Data: false
@@ -778,22 +891,22 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 26|Report, Assembly-CSharp
+      Data: 27|Report, Assembly-CSharp
     - Name: unlockedData
       Entry: 5
-      Data: true
+      Data: false
     - Name: index
       Entry: 3
       Data: 2
     - Name: agentSprite
       Entry: 10
-      Data: 5
+      Data: 8
     - Name: agentName
       Entry: 1
       Data: Quentin Copeland
     - Name: signature
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 9
     - Name: mode
       Entry: 3
       Data: 2
@@ -814,9 +927,15 @@ MonoBehaviour:
         \xE9lections municipales. Il s\u2019en sort plut\xF4t bien d\u2019apr\xE8s
         les journaux. Par contre je ne saurai pas vous dire ce qu\u2019il compte
         faire, \xE7a ne m'int\xE9resse que tr\xE8s peu."
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
     - Name: unlockOrderIndex
       Entry: 3
-      Data: 2
+      Data: 0
     - Name: seen
       Entry: 5
       Data: false
@@ -825,7 +944,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 27|Report, Assembly-CSharp
+      Data: 28|Report, Assembly-CSharp
     - Name: unlockedData
       Entry: 5
       Data: false
@@ -834,13 +953,13 @@ MonoBehaviour:
       Data: 3
     - Name: agentSprite
       Entry: 10
-      Data: 5
+      Data: 8
     - Name: agentName
       Entry: 1
       Data: Quentin Copeland
     - Name: signature
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 9
     - Name: mode
       Entry: 3
       Data: 2
@@ -863,6 +982,12 @@ MonoBehaviour:
         de plusieurs crimes en Sicile (l\xE0 d\u2019o\xF9 il vient) mais les preuves
         l'inculpant n\u2019ont jamais \xE9t\xE9 trouv\xE9es. Faites attention \xE0
         vous si vous venez \xE0 le rencontrer. \r\n"
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
     - Name: unlockOrderIndex
       Entry: 3
       Data: 0
@@ -874,7 +999,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 28|Report, Assembly-CSharp
+      Data: 29|Report, Assembly-CSharp
     - Name: unlockedData
       Entry: 5
       Data: false
@@ -883,13 +1008,13 @@ MonoBehaviour:
       Data: 4
     - Name: agentSprite
       Entry: 10
-      Data: 5
+      Data: 8
     - Name: agentName
       Entry: 1
       Data: Quentin Copeland
     - Name: signature
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 9
     - Name: mode
       Entry: 3
       Data: 2
@@ -909,52 +1034,12 @@ MonoBehaviour:
         garantir que la victime n\u2019a pas \xE9t\xE9 tu\xE9e par cette balle. Elle
         n\u2019a pas \xE9t\xE9 tu\xE9e par balle du tout d\u2019ailleurs, c\u2019est
         le coup qu\u2019elle a re\xE7u sur la t\xEAte qui a mis fin \xE0 ses jours.\r\n"
-    - Name: unlockOrderIndex
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
       Entry: 3
       Data: 0
-    - Name: seen
-      Entry: 5
-      Data: false
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 29|Report, Assembly-CSharp
-    - Name: unlockedData
-      Entry: 5
-      Data: false
-    - Name: index
-      Entry: 3
-      Data: 5
-    - Name: agentSprite
-      Entry: 10
-      Data: 5
-    - Name: agentName
-      Entry: 1
-      Data: Quentin Copeland
-    - Name: signature
-      Entry: 6
-      Data: 
-    - Name: mode
-      Entry: 3
-      Data: 2
-    - Name: elementSprite
-      Entry: 6
-      Data: 
-    - Name: elementName
-      Entry: 1
-      Data: Etiquette Vetement
-    - Name: elementDetailName
-      Entry: 6
-      Data: 
-    - Name: reportText
-      Entry: 1
-      Data: "L'\xE9tiquette que vous m'avez envoy\xE9e ne fut pas \xE9vidente \xE0
-        exploiter, au vu des nombreux \xE9l\xE9ments se trouvant dessus. Cependant,
-        malgr\xE9 la boue et la poussi\xE8re, j'ai pu identifer le sang de la victime.\n\nBien
-        qu'il soit de groupe AB +, je ne peux pas vous en dire plus \xE0 ce moment,
-        nous n'avons pas encore les moyens d'identifier quelqu'un seulement son sang."
     - Name: unlockOrderIndex
       Entry: 3
       Data: 0
@@ -972,16 +1057,68 @@ MonoBehaviour:
       Data: false
     - Name: index
       Entry: 3
-      Data: 6
+      Data: 5
     - Name: agentSprite
       Entry: 10
-      Data: 5
+      Data: 8
     - Name: agentName
       Entry: 1
       Data: Quentin Copeland
     - Name: signature
+      Entry: 10
+      Data: 9
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: elementSprite
       Entry: 6
       Data: 
+    - Name: elementName
+      Entry: 1
+      Data: 
+    - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: reportText
+      Entry: 1
+      Data: "L'\xE9tiquette que vous m'avez envoy\xE9e ne fut pas \xE9vidente \xE0
+        exploiter, au vu des nombreux \xE9l\xE9ments se trouvant dessus. Cependant,
+        malgr\xE9 la boue et la poussi\xE8re, j'ai pu identifer le sang de la victime.\n\nBien
+        qu'il soit de groupe AB +, je ne peux pas vous en dire plus \xE0 ce moment,
+        nous n'avons pas encore les moyens d'identifier quelqu'un seulement son sang."
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 31|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 6
+    - Name: agentSprite
+      Entry: 10
+      Data: 8
+    - Name: agentName
+      Entry: 1
+      Data: Quentin Copeland
+    - Name: signature
+      Entry: 10
+      Data: 9
     - Name: mode
       Entry: 3
       Data: 2
@@ -1002,6 +1139,12 @@ MonoBehaviour:
         ancien.\n\nPar contre, la cl\xE9 semble parfaitement entretenue et ne porte
         aucune trace d'usure. La personne qui la poss\xE9dait semblait en prendre
         tr\xE8s grand soin."
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
     - Name: unlockOrderIndex
       Entry: 3
       Data: 0
@@ -1013,7 +1156,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 31|Report, Assembly-CSharp
+      Data: 32|Report, Assembly-CSharp
     - Name: unlockedData
       Entry: 5
       Data: false
@@ -1022,13 +1165,13 @@ MonoBehaviour:
       Data: 7
     - Name: agentSprite
       Entry: 10
-      Data: 5
+      Data: 8
     - Name: agentName
       Entry: 1
       Data: Quentin Copeland
     - Name: signature
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 9
     - Name: mode
       Entry: 3
       Data: 2
@@ -1049,6 +1192,12 @@ MonoBehaviour:
         un d\xE9licieux breuvage r\xE9sultant de la longue distillation de malt et
         d'orge, lui donnant cette magnifique robe ambr\xE9e.\n\nOui, bon, c'est du
         whisky quoi..."
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
     - Name: unlockOrderIndex
       Entry: 3
       Data: 0
@@ -1075,13 +1224,13 @@ MonoBehaviour:
       Data: 4
     - Name: $v
       Entry: 7
-      Data: 32|System.Collections.Generic.List`1[[Report, Assembly-CSharp]], mscorlib
+      Data: 33|System.Collections.Generic.List`1[[Report, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 4
     - Name: 
       Entry: 7
-      Data: 33|Report, Assembly-CSharp
+      Data: 34|Report, Assembly-CSharp
     - Name: unlockedData
       Entry: 5
       Data: false
@@ -1090,13 +1239,13 @@ MonoBehaviour:
       Data: 0
     - Name: agentSprite
       Entry: 10
-      Data: 6
+      Data: 10
     - Name: agentName
       Entry: 1
       Data: Thomas Maxwell
     - Name: signature
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 11
     - Name: mode
       Entry: 3
       Data: 0
@@ -1113,55 +1262,12 @@ MonoBehaviour:
       Entry: 1
       Data: "Personne n'a rien vu... Les gens racontent juste leur journ\xE9e, et
         cela ne vous avancera pas.\n"
-    - Name: unlockOrderIndex
-      Entry: 3
-      Data: 0
-    - Name: seen
+    - Name: giveAccess
       Entry: 5
       Data: false
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 34|Report, Assembly-CSharp
-    - Name: unlockedData
-      Entry: 5
-      Data: false
-    - Name: index
-      Entry: 3
-      Data: 1
-    - Name: agentSprite
-      Entry: 10
-      Data: 6
-    - Name: agentName
-      Entry: 1
-      Data: Thomas Maxwell
-    - Name: signature
-      Entry: 6
-      Data: 
-    - Name: mode
+    - Name: locationToAccess
       Entry: 3
       Data: 0
-    - Name: elementSprite
-      Entry: 10
-      Data: 7
-    - Name: elementName
-      Entry: 1
-      Data: 1048 West Madison street
-    - Name: elementDetailName
-      Entry: 6
-      Data: 
-    - Name: reportText
-      Entry: 1
-      Data: "Une femme qui travaille dans le coin m'a approch\xE9. Rien d'ambigu,
-        ne vous en faites pas, elle voulait me dire que la boss avait chang\xE9,
-        et que son nom est Abigail White. Elle a d'ailleurs laiss\xE9 des affiches
-        d'elle dans l'\xE9tablissement pour pr\xE9venir les clients du changement.
-        \n\nD'apr\xE8s elle, les filles sont bien plus heureuses maintenant et elle
-        m'a presque suppli\xE9 de ne pas fermer l'\xE9tablissement malgr\xE9 ce que
-        c'\xE9tait pass\xE9, car c'\xE9tait une seconde chance pour elles. Malheureusement
-        pour elles, je ne suis qu'un simple enqu\xEAteur...\n"
     - Name: unlockOrderIndex
       Entry: 3
       Data: 0
@@ -1179,36 +1285,44 @@ MonoBehaviour:
       Data: false
     - Name: index
       Entry: 3
-      Data: 2
+      Data: 1
     - Name: agentSprite
       Entry: 10
-      Data: 6
+      Data: 10
     - Name: agentName
       Entry: 1
       Data: Thomas Maxwell
     - Name: signature
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 11
     - Name: mode
       Entry: 3
       Data: 0
     - Name: elementSprite
       Entry: 10
-      Data: 8
+      Data: 12
     - Name: elementName
       Entry: 1
-      Data: 457 N Wabash Avenue
+      Data: 1048 West Madison street
     - Name: elementDetailName
       Entry: 6
       Data: 
     - Name: reportText
       Entry: 1
-      Data: "Voil\xE0 pour vous ! Mademoiselle vivait seule, j\u2019ai donc interrog\xE9
-        ses voisins, des gens fortun\xE9s pour la plupart, ou des domestiques. D'apr\xE8s
-        eux, la propri\xE9taire de la maison n\u2019\xE9tait pas souvent l\xE0. Un
-        des domestique l\u2019a suivie, sans le vouloir, en rentrant chez lui. Il
-        m\u2019a dit qu\u2019elle allait au 1048 West Madison Street. Elle travaille
-        peut-\xEAtre l\xE0-bas ?\r\n"
+      Data: "Une femme qui travaille dans le coin m'a approch\xE9. Rien d'ambigu,
+        ne vous en faites pas, elle voulait me dire que la boss avait chang\xE9,
+        et que son nom est Abigail White. Elle a d'ailleurs laiss\xE9 des affiches
+        d'elle dans l'\xE9tablissement pour pr\xE9venir les clients du changement.
+        \n\nD'apr\xE8s elle, les filles sont bien plus heureuses maintenant et elle
+        m'a presque suppli\xE9 de ne pas fermer l'\xE9tablissement malgr\xE9 ce que
+        c'\xE9tait pass\xE9, car c'\xE9tait une seconde chance pour elles. Malheureusement
+        pour elles, je ne suis qu'un simple enqu\xEAteur...\n"
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
     - Name: unlockOrderIndex
       Entry: 3
       Data: 0
@@ -1226,22 +1340,75 @@ MonoBehaviour:
       Data: false
     - Name: index
       Entry: 3
-      Data: 3
+      Data: 2
     - Name: agentSprite
       Entry: 10
-      Data: 5
+      Data: 10
     - Name: agentName
       Entry: 1
       Data: Thomas Maxwell
     - Name: signature
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 11
     - Name: mode
       Entry: 3
       Data: 0
     - Name: elementSprite
       Entry: 10
-      Data: 9
+      Data: 13
+    - Name: elementName
+      Entry: 1
+      Data: 457 N Wabash Avenue
+    - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: reportText
+      Entry: 1
+      Data: "Voil\xE0 pour vous ! Mademoiselle vivait seule, j\u2019ai donc interrog\xE9
+        ses voisins, des gens fortun\xE9s pour la plupart, ou des domestiques. D'apr\xE8s
+        eux, la propri\xE9taire de la maison n\u2019\xE9tait pas souvent l\xE0. Un
+        des domestique l\u2019a suivie, sans le vouloir, en rentrant chez lui. Il
+        m\u2019a dit qu\u2019elle allait au 1048 West Madison Street. Elle travaille
+        peut-\xEAtre l\xE0-bas ?\r\n"
+    - Name: giveAccess
+      Entry: 5
+      Data: true
+    - Name: locationToAccess
+      Entry: 3
+      Data: 1
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 37|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 3
+    - Name: agentSprite
+      Entry: 10
+      Data: 10
+    - Name: agentName
+      Entry: 1
+      Data: Thomas Maxwell
+    - Name: signature
+      Entry: 10
+      Data: 11
+    - Name: mode
+      Entry: 3
+      Data: 0
+    - Name: elementSprite
+      Entry: 10
+      Data: 14
     - Name: elementName
       Entry: 1
       Data: 210 West Merchandise Mart Plaza
@@ -1257,6 +1424,12 @@ MonoBehaviour:
         appel\xE9. \n\nLa seule information int\xE9ressante, c'est qu'une vieille
         femme a entendu hier soir un coup de feu, suivi par un cri de femme une trentaine
         de secondes plus tard, mais elle n'a pas os\xE9 regarder dehors."
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
     - Name: unlockOrderIndex
       Entry: 3
       Data: 0
@@ -1283,13 +1456,13 @@ MonoBehaviour:
       Data: 5
     - Name: $v
       Entry: 7
-      Data: 37|System.Collections.Generic.List`1[[Report, Assembly-CSharp]], mscorlib
+      Data: 38|System.Collections.Generic.List`1[[Report, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 5
     - Name: 
       Entry: 7
-      Data: 38|Report, Assembly-CSharp
+      Data: 39|Report, Assembly-CSharp
     - Name: unlockedData
       Entry: 5
       Data: false
@@ -1298,13 +1471,13 @@ MonoBehaviour:
       Data: 0
     - Name: agentSprite
       Entry: 10
-      Data: 10
+      Data: 15
     - Name: agentName
       Entry: 1
       Data: Miss Marshall
     - Name: signature
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 16
     - Name: mode
       Entry: 3
       Data: 2
@@ -1320,6 +1493,12 @@ MonoBehaviour:
     - Name: reportText
       Entry: 1
       Data: "Il n'y a rien de correspondant dans nos registres, d\xE9sol\xE9e...\n"
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
     - Name: unlockOrderIndex
       Entry: 3
       Data: 0
@@ -1331,7 +1510,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 39|Report, Assembly-CSharp
+      Data: 40|Report, Assembly-CSharp
     - Name: unlockedData
       Entry: 5
       Data: false
@@ -1340,13 +1519,13 @@ MonoBehaviour:
       Data: 1
     - Name: agentSprite
       Entry: 10
-      Data: 10
+      Data: 15
     - Name: agentName
       Entry: 1
       Data: Miss Marshall
     - Name: signature
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 16
     - Name: mode
       Entry: 3
       Data: 2
@@ -1365,6 +1544,12 @@ MonoBehaviour:
         Okins. Il s'occupe des livraisons pour de tr\xE8s riches clients. R\xE9cemment,
         le politicien Richard Anderson a sign\xE9 un trait\xE9 avec eux pour avoir
         le monopole. En \xE9change, il en fait le sponsor principal de sa campagne.\n"
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
     - Name: unlockOrderIndex
       Entry: 3
       Data: 0
@@ -1376,7 +1561,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 40|Report, Assembly-CSharp
+      Data: 41|Report, Assembly-CSharp
     - Name: unlockedData
       Entry: 5
       Data: false
@@ -1385,13 +1570,13 @@ MonoBehaviour:
       Data: 2
     - Name: agentSprite
       Entry: 10
-      Data: 10
+      Data: 15
     - Name: agentName
       Entry: 1
       Data: Miss Marshall
     - Name: signature
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 16
     - Name: mode
       Entry: 3
       Data: 2
@@ -1411,6 +1596,105 @@ MonoBehaviour:
         bien cela qui m'\xE9tonne. Les sommes indiqu\xE9es sur cette feuille sont
         absolument colossales et m\xEAme certaines petites entreprises ne peuvent
         y pr\xE9tendre. Ou cette personne est tr\xE8s riche, ou c'est une menteuse..."
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 42|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 3
+    - Name: agentSprite
+      Entry: 10
+      Data: 15
+    - Name: agentName
+      Entry: 1
+      Data: Miss Marshall
+    - Name: signature
+      Entry: 10
+      Data: 16
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: elementSprite
+      Entry: 6
+      Data: 
+    - Name: elementName
+      Entry: 1
+      Data: Gros Cheques
+    - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: reportText
+      Entry: 1
+      Data: "Nous n\u2019avons pas eu vent de telles transactions. Ces montants sont
+        importants, le bien \xE9chang\xE9 ou le service doit \xEAtre cons\xE9quent.
+        C\u2019est m\xEAme peut \xEAtre quelque chose d\u2019ill\xE9gal, qui sait
+        ? En tout cas, la chambre des commerces n\u2019a aucune information l\xE0-dessus."
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 43|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 4
+    - Name: agentSprite
+      Entry: 10
+      Data: 15
+    - Name: agentName
+      Entry: 1
+      Data: Miss Marshall
+    - Name: signature
+      Entry: 10
+      Data: 16
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: elementSprite
+      Entry: 6
+      Data: 
+    - Name: elementName
+      Entry: 1
+      Data: Tract Anderson
+    - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: reportText
+      Entry: 1
+      Data: "La campagne d\u2019Anderson ? Tr\xE8s peu pour moi. L\xE9galiser la
+        prostitution pour aider ces filles ? Ca reste de la prostitution, et ouvrir
+        ce circuit n\u2019aidera en rien les filles qui y travaillent, autant les
+        faire sortir de ce cercle infernal s\u2019il veut les aider. \n\nEt puis
+        taxer les plus riches ? Il les fera partir de la ville, et les pauvres devront
+        amortir ces pertes. Donc tout \xE7a n'int\xE9resse que tr\xE8s peu la chambre,
+        et moi non plus."
     - Name: unlockOrderIndex
       Entry: 3
       Data: 0
@@ -1437,13 +1721,13 @@ MonoBehaviour:
       Data: 7
     - Name: $v
       Entry: 7
-      Data: 41|System.Collections.Generic.List`1[[Report, Assembly-CSharp]], mscorlib
+      Data: 44|System.Collections.Generic.List`1[[Report, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 4
     - Name: 
       Entry: 7
-      Data: 42|Report, Assembly-CSharp
+      Data: 45|Report, Assembly-CSharp
     - Name: unlockedData
       Entry: 5
       Data: false
@@ -1452,13 +1736,13 @@ MonoBehaviour:
       Data: 0
     - Name: agentSprite
       Entry: 10
-      Data: 11
+      Data: 17
     - Name: agentName
       Entry: 1
       Data: Arnold Steele
     - Name: signature
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 18
     - Name: mode
       Entry: 3
       Data: 2
@@ -1474,6 +1758,12 @@ MonoBehaviour:
     - Name: reportText
       Entry: 1
       Data: "D\xE9sol\xE9 mec, j'ai rien d'int\xE9ressant pour toi avec \xE7a."
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
     - Name: unlockOrderIndex
       Entry: 3
       Data: 0
@@ -1485,7 +1775,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 43|Report, Assembly-CSharp
+      Data: 46|Report, Assembly-CSharp
     - Name: unlockedData
       Entry: 5
       Data: false
@@ -1494,13 +1784,13 @@ MonoBehaviour:
       Data: 1
     - Name: agentSprite
       Entry: 10
-      Data: 11
+      Data: 17
     - Name: agentName
       Entry: 1
       Data: Arnold Steele
     - Name: signature
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 18
     - Name: mode
       Entry: 3
       Data: 2
@@ -1509,7 +1799,7 @@ MonoBehaviour:
       Data: 
     - Name: elementName
       Entry: 1
-      Data: Colt Auto
+      Data: 
     - Name: elementDetailName
       Entry: 1
       Data: 
@@ -1520,6 +1810,12 @@ MonoBehaviour:
         ! \n\nCependant, ces armes ne s'trouvent pas sur le march\xE9, il faut faire
         partie d'la police f\xE9d\xE9rale pour avoir l'droit de s'en servir. Elle
         est terriblement pr\xE9cise, bien qu'elle fasse un boucan d'enfer"
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
     - Name: unlockOrderIndex
       Entry: 3
       Data: 0
@@ -1531,7 +1827,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 44|Report, Assembly-CSharp
+      Data: 47|Report, Assembly-CSharp
     - Name: unlockedData
       Entry: 5
       Data: false
@@ -1540,24 +1836,24 @@ MonoBehaviour:
       Data: 2
     - Name: agentSprite
       Entry: 10
-      Data: 11
+      Data: 17
     - Name: agentName
       Entry: 1
       Data: Arnold Steele
     - Name: signature
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 18
     - Name: mode
       Entry: 3
-      Data: 0
+      Data: 2
     - Name: elementSprite
       Entry: 6
       Data: 
     - Name: elementName
-      Entry: 6
+      Entry: 1
       Data: 
     - Name: elementDetailName
-      Entry: 6
+      Entry: 1
       Data: 
     - Name: reportText
       Entry: 1
@@ -1566,6 +1862,57 @@ MonoBehaviour:
         pas cens\xE9 rentrer sur l'territoire \xE7a, c'est interdit en c'moment !
         J'suis d\xE9sol\xE9, mais j'vais devoir vous l'requisitionner. C'est pour
         l'travail, bien entendu..."
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 48|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 0
+    - Name: agentSprite
+      Entry: 10
+      Data: 17
+    - Name: agentName
+      Entry: 1
+      Data: Arnold Steele
+    - Name: signature
+      Entry: 10
+      Data: 18
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: elementSprite
+      Entry: 6
+      Data: 
+    - Name: elementName
+      Entry: 1
+      Data: Journal Enlevement
+    - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: reportText
+      Entry: 1
+      Data: "C\u2019est qu'ces cas d\u2019disparitions inqui\xE8tent de plus en plus.
+        A la douane, on est tous sur le qui vive, au cas o\xF9 l'un des disparus
+        pointerait le bout de son nez, mais on a rien vu passer du tout. Ce serait
+        donc des enl\xE8vements ? Moi j\u2019en sais rien du tout..."
     - Name: unlockOrderIndex
       Entry: 3
       Data: 0
@@ -1592,11 +1939,11 @@ MonoBehaviour:
       Data: 
     - Name: questions
       Entry: 7
-      Data: 45|System.Collections.Generic.Dictionary`2[[Suspects, Assembly-CSharp],[System.Collections.Generic.List`1[[Question,
+      Data: 49|System.Collections.Generic.Dictionary`2[[Suspects, Assembly-CSharp],[System.Collections.Generic.List`1[[Question,
         Assembly-CSharp]], mscorlib]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 46|System.Collections.Generic.EnumEqualityComparer`1[[Suspects, Assembly-CSharp]],
+      Data: 50|System.Collections.Generic.EnumEqualityComparer`1[[Suspects, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -1618,13 +1965,13 @@ MonoBehaviour:
       Data: 0
     - Name: $v
       Entry: 7
-      Data: 47|System.Collections.Generic.List`1[[Question, Assembly-CSharp]], mscorlib
+      Data: 51|System.Collections.Generic.List`1[[Question, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 3
     - Name: 
       Entry: 7
-      Data: 48|Question, Assembly-CSharp
+      Data: 52|Question, Assembly-CSharp
     - Name: unlockedData
       Entry: 5
       Data: true
@@ -1636,7 +1983,7 @@ MonoBehaviour:
       Data: Did you know the victim ?
     - Name: answers
       Entry: 7
-      Data: 49|System.String[], mscorlib
+      Data: 53|System.String[], mscorlib
     - Name: 
       Entry: 12
       Data: 3
@@ -1655,6 +2002,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: _answers
+      Entry: 6
+      Data: 
     - Name: unlockedByReport
       Entry: 5
       Data: false
@@ -1672,7 +2022,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 50|Question, Assembly-CSharp
+      Data: 54|Question, Assembly-CSharp
     - Name: unlockedData
       Entry: 5
       Data: false
@@ -1684,7 +2034,7 @@ MonoBehaviour:
       Data: We found this at the Docks, do you recognize it ?
     - Name: answers
       Entry: 7
-      Data: 51|System.String[], mscorlib
+      Data: 55|System.String[], mscorlib
     - Name: 
       Entry: 12
       Data: 1
@@ -1696,6 +2046,9 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 8
+      Data: 
+    - Name: _answers
+      Entry: 6
       Data: 
     - Name: unlockedByReport
       Entry: 5
@@ -1714,7 +2067,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 52|Question, Assembly-CSharp
+      Data: 56|Question, Assembly-CSharp
     - Name: unlockedData
       Entry: 5
       Data: true
@@ -1726,7 +2079,7 @@ MonoBehaviour:
       Data: Do you happen to be a massive consumer of hard drugs, Mr. Moretti ?
     - Name: answers
       Entry: 7
-      Data: 53|System.String[], mscorlib
+      Data: 57|System.String[], mscorlib
     - Name: 
       Entry: 12
       Data: 1
@@ -1739,6 +2092,9 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 8
+      Data: 
+    - Name: _answers
+      Entry: 6
       Data: 
     - Name: unlockedByReport
       Entry: 5
@@ -1772,13 +2128,13 @@ MonoBehaviour:
       Data: 1
     - Name: $v
       Entry: 7
-      Data: 54|System.Collections.Generic.List`1[[Question, Assembly-CSharp]], mscorlib
+      Data: 58|System.Collections.Generic.List`1[[Question, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 5
     - Name: 
       Entry: 7
-      Data: 55|Question, Assembly-CSharp
+      Data: 59|Question, Assembly-CSharp
     - Name: unlockedData
       Entry: 5
       Data: false
@@ -1791,7 +2147,7 @@ MonoBehaviour:
         la mort d'Anna ?"
     - Name: answers
       Entry: 7
-      Data: 56|System.String[], mscorlib
+      Data: 60|System.String[], mscorlib
     - Name: 
       Entry: 12
       Data: 3
@@ -1804,6 +2160,54 @@ MonoBehaviour:
     - Name: 
       Entry: 1
       Data: "Donc ils ont pens\xE9 que j'\xE9tais la plus qualifi\xE9e. "
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _answers
+      Entry: 7
+      Data: 57|System.Collections.Generic.List`1[[Answer, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 58|Answer, Assembly-CSharp
+    - Name: answer
+      Entry: 6
+      Data: 
+    - Name: emotion
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 59|Answer, Assembly-CSharp
+    - Name: answer
+      Entry: 6
+      Data: 
+    - Name: emotion
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 60|Answer, Assembly-CSharp
+    - Name: answer
+      Entry: 6
+      Data: 
+    - Name: emotion
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -1827,7 +2231,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 57|Question, Assembly-CSharp
+      Data: 61|Question, Assembly-CSharp
     - Name: unlockedData
       Entry: 5
       Data: false
@@ -1839,7 +2243,7 @@ MonoBehaviour:
       Data: "Vous avez rencontr\xE9 quelqu'un, non ? Qu'est ce qu'il voulait ?"
     - Name: answers
       Entry: 7
-      Data: 58|System.String[], mscorlib
+      Data: 62|System.String[], mscorlib
     - Name: 
       Entry: 12
       Data: 3
@@ -1858,6 +2262,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: _answers
+      Entry: 6
+      Data: 
     - Name: unlockedByReport
       Entry: 5
       Data: true
@@ -1875,7 +2282,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 59|Question, Assembly-CSharp
+      Data: 63|Question, Assembly-CSharp
     - Name: unlockedData
       Entry: 5
       Data: false
@@ -1888,7 +2295,7 @@ MonoBehaviour:
         victime d'aller sur les docks."
     - Name: answers
       Entry: 7
-      Data: 60|System.String[], mscorlib
+      Data: 64|System.String[], mscorlib
     - Name: 
       Entry: 12
       Data: 4
@@ -1910,6 +2317,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: _answers
+      Entry: 6
+      Data: 
     - Name: unlockedByReport
       Entry: 5
       Data: true
@@ -1927,7 +2337,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 61|Question, Assembly-CSharp
+      Data: 65|Question, Assembly-CSharp
     - Name: unlockedData
       Entry: 5
       Data: false
@@ -1939,7 +2349,7 @@ MonoBehaviour:
       Data: "Quelle \xE9tait votre relation avec la victime ?"
     - Name: answers
       Entry: 7
-      Data: 62|System.String[], mscorlib
+      Data: 66|System.String[], mscorlib
     - Name: 
       Entry: 12
       Data: 2
@@ -1954,6 +2364,9 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 8
+      Data: 
+    - Name: _answers
+      Entry: 6
       Data: 
     - Name: unlockedByReport
       Entry: 5
@@ -1972,7 +2385,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 63|Question, Assembly-CSharp
+      Data: 67|Question, Assembly-CSharp
     - Name: unlockedData
       Entry: 5
       Data: false
@@ -1984,7 +2397,7 @@ MonoBehaviour:
       Data: "Avez-vous d\xE9j\xE0 eu des disputes avec la victime ?"
     - Name: answers
       Entry: 7
-      Data: 64|System.String[], mscorlib
+      Data: 68|System.String[], mscorlib
     - Name: 
       Entry: 12
       Data: 2
@@ -1999,6 +2412,9 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 8
+      Data: 
+    - Name: _answers
+      Entry: 6
       Data: 
     - Name: unlockedByReport
       Entry: 5
@@ -2032,13 +2448,13 @@ MonoBehaviour:
       Data: 2
     - Name: $v
       Entry: 7
-      Data: 65|System.Collections.Generic.List`1[[Question, Assembly-CSharp]], mscorlib
+      Data: 69|System.Collections.Generic.List`1[[Question, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 5
     - Name: 
       Entry: 7
-      Data: 66|Question, Assembly-CSharp
+      Data: 70|Question, Assembly-CSharp
     - Name: unlockedData
       Entry: 5
       Data: false
@@ -2050,7 +2466,7 @@ MonoBehaviour:
       Data: "Quelle \xE9tait votre relation avec la victime ?"
     - Name: answers
       Entry: 7
-      Data: 67|System.String[], mscorlib
+      Data: 71|System.String[], mscorlib
     - Name: 
       Entry: 12
       Data: 3
@@ -2069,6 +2485,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: _answers
+      Entry: 6
+      Data: 
     - Name: unlockedByReport
       Entry: 5
       Data: false
@@ -2086,7 +2505,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 68|Question, Assembly-CSharp
+      Data: 72|Question, Assembly-CSharp
     - Name: unlockedData
       Entry: 5
       Data: false
@@ -2098,7 +2517,7 @@ MonoBehaviour:
       Data: Vous avez fait beaucoup de cadeaux au bordel. Pourquoi ?
     - Name: answers
       Entry: 7
-      Data: 69|System.String[], mscorlib
+      Data: 73|System.String[], mscorlib
     - Name: 
       Entry: 12
       Data: 3
@@ -2117,6 +2536,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: _answers
+      Entry: 6
+      Data: 
     - Name: unlockedByReport
       Entry: 5
       Data: true
@@ -2134,7 +2556,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 70|Question, Assembly-CSharp
+      Data: 74|Question, Assembly-CSharp
     - Name: unlockedData
       Entry: 5
       Data: false
@@ -2147,7 +2569,7 @@ MonoBehaviour:
         ?"
     - Name: answers
       Entry: 7
-      Data: 71|System.String[], mscorlib
+      Data: 75|System.String[], mscorlib
     - Name: 
       Entry: 12
       Data: 3
@@ -2166,6 +2588,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: _answers
+      Entry: 6
+      Data: 
     - Name: unlockedByReport
       Entry: 5
       Data: true
@@ -2183,7 +2608,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 72|Question, Assembly-CSharp
+      Data: 76|Question, Assembly-CSharp
     - Name: unlockedData
       Entry: 5
       Data: false
@@ -2195,7 +2620,7 @@ MonoBehaviour:
       Data: Qu'est ce que ce contrat faisait chez vous ?
     - Name: answers
       Entry: 7
-      Data: 73|System.String[], mscorlib
+      Data: 77|System.String[], mscorlib
     - Name: 
       Entry: 12
       Data: 4
@@ -2217,6 +2642,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: _answers
+      Entry: 6
+      Data: 
     - Name: unlockedByReport
       Entry: 5
       Data: true
@@ -2234,7 +2662,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 74|Question, Assembly-CSharp
+      Data: 78|Question, Assembly-CSharp
     - Name: unlockedData
       Entry: 5
       Data: false
@@ -2246,7 +2674,7 @@ MonoBehaviour:
       Data: "Quel est ce num\xE9ro de \"La Traviata\" ?"
     - Name: answers
       Entry: 7
-      Data: 75|System.String[], mscorlib
+      Data: 79|System.String[], mscorlib
     - Name: 
       Entry: 12
       Data: 1
@@ -2258,6 +2686,9 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 8
+      Data: 
+    - Name: _answers
+      Entry: 6
       Data: 
     - Name: unlockedByReport
       Entry: 5
@@ -2291,7 +2722,7 @@ MonoBehaviour:
       Data: 3
     - Name: $v
       Entry: 7
-      Data: 76|System.Collections.Generic.List`1[[Question, Assembly-CSharp]], mscorlib
+      Data: 80|System.Collections.Generic.List`1[[Question, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -2337,6 +2768,8 @@ MonoBehaviour:
       familles riches de la ville vraisemblablement. Vous devriez essayer de vous
       renseigner sur sa destination, il partait en direction du Sud dans une grande
       Rolls Royce Noire..."
+    giveAccess: 0
+    locationToAccess: 0
     unlockOrderIndex: 0
     seen: 0
   - unlockedData: 0
@@ -2353,6 +2786,8 @@ MonoBehaviour:
       ce sceau appartient \xE0 la famille Sigmund, une riche famille habitant dans
       la banlieue Ouest.\n\nIl semble qu'il y ait des traces de br\xFBlures et de
       sang sech\xE9 sur la bague, vous devriez envoyer \xE7a au labo pour plus d'expertise."
+    giveAccess: 0
+    locationToAccess: 0
     unlockOrderIndex: 0
     seen: 0
   - unlockedData: 0
@@ -2369,9 +2804,11 @@ MonoBehaviour:
       que c'est une carte des \xE9gouts et fondations de Chicago, un vieux document
       datant de 1885.\n\nIl indique diverses adresses souterraines, il serait utile
       de les analyser plus en profondeur, elles pourraient receler des lieux importants..."
+    giveAccess: 0
+    locationToAccess: 0
     unlockOrderIndex: 0
     seen: 0
-  reportsCollected: 5
+  reportsCollected: 0
   locations: []
   characters:
   - unlockedData: 1

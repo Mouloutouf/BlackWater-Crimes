@@ -29,6 +29,8 @@ public class NeighborhoodValidateButton : MonoBehaviour
                     report.unlockedData = true;
                     gameData.reportsCollected ++;
                     report.unlockOrderIndex = gameData.reportsCollected;
+
+                    gameData.newStuff = true;
                 }
             }
         }

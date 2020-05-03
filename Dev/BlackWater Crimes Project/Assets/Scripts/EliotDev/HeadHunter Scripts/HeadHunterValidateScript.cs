@@ -32,6 +32,8 @@ public class HeadHunterValidateScript : MonoBehaviour
                         report.unlockedData = true;
                         gameData.reportsCollected ++;
                         report.unlockOrderIndex = gameData.reportsCollected;
+
+                        gameData.newStuff = true;
                     }
                 }  
             } 

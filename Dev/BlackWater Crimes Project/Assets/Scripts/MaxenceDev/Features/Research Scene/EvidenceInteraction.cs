@@ -174,6 +174,8 @@ public class EvidenceInteraction : MonoBehaviour
             _evidence.photographed = true;
             _evidence.unlockedData = true;
             gameData.allEvidences[thisSceneLocation].Add(_evidence); // IMPORTANT : This is where we unlock the evidence in the List
+
+            gameData.newStuff = true;
         }
         else
         {

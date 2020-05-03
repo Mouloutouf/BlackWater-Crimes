@@ -12,6 +12,8 @@ public enum Indics { Master_Thommers, Brandon_Bennington, James_Walker, Quentin_
 
 public enum Types { Brands, Crime, Clothing, Documents }
 
+public enum Emotions { Neutral, Fearful, Angry, Proud, Confident }
+
 [Serializable]
 public class ModeCategory
 {
@@ -106,6 +108,15 @@ public class Evidence : Data
     [HideInInspector] public Sprite photo; // get; set; autoproperty
     public bool completedPhotograph { get; set; }
 
+    [Title("Text")]
+
+    public bool hasText;
+    [ShowIf("hasText")]
+    [Title("Description Text", bold: false, HorizontalLine = false)]
+    [HideLabel]
+    [MultiLineProperty(5)]
+    public string descriptionText;
+    
     [HideReferenceObjectPicker]
     [Title("Categories")]
     [HideLabel]
@@ -139,7 +150,12 @@ public class Report : Data
     [HideLabel]
     [MultiLineProperty(15)]
     public string reportText;
-    
+
+    [Title("Unlockable")]
+
+    public bool giveAccess;
+    public Locations locationToAccess;
+
     [Title("Status")]
 
     public int unlockOrderIndex;
@@ -175,6 +191,16 @@ public class Location : Data
 }
 
 [Serializable]
+public class Answer
+{
+    [HideLabel]
+    [MultiLineProperty(4)]
+    public string answer;
+
+    public Emotions emotion;
+}
+
+[Serializable]
 public class Question : Data
 {
     [Title("Question", bold: false)]
@@ -185,6 +211,8 @@ public class Question : Data
     [Title("Answer", bold: false)]
     [MultiLineProperty(4)]
     public string[] answers;
+
+    public List<Answer> _answers;
 
     [Title("Report")]
 
@@ -261,6 +289,8 @@ public class GameData : SerializedScriptableObject
     public Dictionary<Indics, List<Report>> allReports = new Dictionary<Indics, List<Report>>();
 
     public int reportsCollected = 0;
+
+    public bool newStuff;
 
     public List<Location> locations = new List<Location>();
 

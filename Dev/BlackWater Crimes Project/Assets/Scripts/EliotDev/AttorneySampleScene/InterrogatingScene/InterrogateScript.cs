@@ -86,16 +86,16 @@ public class InterrogateScript : MonoBehaviour
             questionsParent.transform.GetChild(currentQuestion).gameObject.GetComponentInChildren<Text>().fontStyle = FontStyle.BoldAndItalic;
             questionsParent.transform.GetChild(currentQuestion).gameObject.GetComponent<Button>().enabled = false;
 
-            dialogueText.text = gameData.questions[gameData.currentSuspect][questionNumber].answers[answerIndex];
+            dialogueText.text = gameData.questions[gameData.currentSuspect][questionNumber]._answers[answerIndex].answer;
         }
     }
 
     public void Next()
     {
-        if (answerIndex < gameData.questions[gameData.currentSuspect][currentQuestion].answers.Length - 1)
+        if (answerIndex < gameData.questions[gameData.currentSuspect][currentQuestion]._answers.Count - 1)
         {
             answerIndex ++;
-            dialogueText.text = gameData.questions[gameData.currentSuspect][currentQuestion].answers[answerIndex];
+            dialogueText.text = gameData.questions[gameData.currentSuspect][currentQuestion]._answers[answerIndex].answer;
         }
         else EndQuestion();
     }

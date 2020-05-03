@@ -89,6 +89,8 @@ public class SpecialistValidateButton : MonoBehaviour
             _report.elementSprite = script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.photo;
             gameData.reportsCollected++;
             _report.unlockOrderIndex = gameData.reportsCollected;
+
+            gameData.newStuff = true;
         }
     }
 

@@ -53,9 +53,16 @@ public class InstantiateLocationElements : InstantiationProcess<Location>
         currentContent = contents[local];
         CreatePage(currentContent);
 
-        InstantiateDataOfType(type, gameData.locations);
+        foreach (Location _location in gameData.locations)
+        {
+            if (_location.unlockedData && _location.known)
+            {
+                InstantiateObjectOfType(_location, this.prefab);
 
-        foreach (Location _location in gameData.locations) if (_location.unlockedData) { SetElement(_location); mainIndex++; }
+                SetElement(_location);
+                mainIndex++;
+            }
+        }
     }
 
     public override GameObject Instantiation(GameObject prefab)
