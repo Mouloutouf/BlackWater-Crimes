@@ -3,16 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 public class PhoneOrientationScript : MonoBehaviour
 {
-    [SerializeField] ScreenOrientation sceneOrientation;
-    [SerializeField] bool canRotate;
-    [SerializeField] bool windowsBuild;
 
     // Start is called before the first frame update
     void Start()
     {
-        //TargetFPS();
+        TargetFPS();
 
-        SwitchOrientation();
+        SetScreen();
     }
 
     void TargetFPS()
@@ -23,56 +20,17 @@ public class PhoneOrientationScript : MonoBehaviour
         }
     }
 
-    void SwitchOrientation()
+    void SetScreen()
     {
-        switch (sceneOrientation)
+        if(Application.platform == RuntimePlatform.WindowsPlayer)
         {
-            case ScreenOrientation.Portrait:
-                Screen.orientation = ScreenOrientation.Portrait;
-                if(windowsBuild)
-                {
-                    Screen.SetResolution(524, 1080, true);
-                }
-                break;
-
-            case ScreenOrientation.PortraitUpsideDown:
-                Screen.orientation = ScreenOrientation.PortraitUpsideDown;
-                if(windowsBuild)
-                {
-                    Screen.SetResolution(524, 1080, true);
-                }
-                break;
-
-            case ScreenOrientation.LandscapeLeft:
-                Screen.orientation = ScreenOrientation.LandscapeLeft;
-                if(windowsBuild)
-                {
-                    Screen.SetResolution(1480, 720, true);
-                }
-                break;
-
-            case ScreenOrientation.LandscapeRight:
-                Screen.orientation = ScreenOrientation.LandscapeRight;
-                if(windowsBuild)
-                {
-                    Screen.SetResolution(1480, 720, true);
-                }
-                break;
+            Screen.SetResolution(1480, 720, true);
         }
-
-        if (canRotate)
+        else if(Application.platform == RuntimePlatform.Android)
         {
-            Screen.autorotateToPortrait = true;
-            Screen.autorotateToPortraitUpsideDown = true;
+            Screen.orientation = ScreenOrientation.LandscapeLeft;
             Screen.autorotateToLandscapeLeft = true;
             Screen.autorotateToLandscapeRight = true;
-        }
-        else
-        {
-            Screen.autorotateToPortrait = false;
-            Screen.autorotateToPortraitUpsideDown = false;
-            Screen.autorotateToLandscapeLeft = false;
-            Screen.autorotateToLandscapeRight = false;
         }
     }
 }
