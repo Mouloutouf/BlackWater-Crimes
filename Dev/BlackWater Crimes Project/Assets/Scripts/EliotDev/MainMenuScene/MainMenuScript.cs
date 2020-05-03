@@ -16,6 +16,7 @@ public class MainMenuScript : MonoBehaviour
     [SerializeField] Text gameStatusText;
     [SerializeField] GameObject parameters;
     [SerializeField] GameObject bgDesktopImage;
+    [SerializeField] GameObject bgDesktopImageEffect;
     [SerializeField] GameObject title;
     [SerializeField] GameObject menuOptions;
     bool shouldFadeTitle = false;
@@ -47,7 +48,7 @@ public class MainMenuScript : MonoBehaviour
     {
         if(titleAlpha > -0.3f)
         {
-            titleAlpha -= .005f;
+            titleAlpha -= .008f;
             if(titleAlpha > 0)
             {
                 Color tempColor = title.GetComponent<Image>().color;
@@ -114,11 +115,13 @@ public class MainMenuScript : MonoBehaviour
         {
             parameters.SetActive(true);
             bgDesktopImage.SetActive(false);
+            bgDesktopImageEffect.GetComponent<Image>().fillAmount = .8f;
         }
         else
         {
             parameters.SetActive(false);
             bgDesktopImage.SetActive(true);
+            bgDesktopImageEffect.GetComponent<Image>().fillAmount = 1f;
         }
     }
 }
