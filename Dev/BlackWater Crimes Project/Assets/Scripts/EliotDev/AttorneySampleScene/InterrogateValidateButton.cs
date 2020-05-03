@@ -17,9 +17,15 @@ public class InterrogateValidateButton : MonoBehaviour
     {
         if (Match())
         {
-            dialogueText.text = "This seems logic. I will bring this person!";
-
-            StartCoroutine(DelayToInterrogate(2));
+            if (gameData.interrogations > 0)
+            {
+                dialogueText.text = "This seems logic. I will bring this person!";
+                StartCoroutine(DelayToInterrogate(2));
+            }
+            else
+            {
+                dialogueText.text = "Hold on a minute, you can't go on interrogating the whole city !";
+            }
         }
         else dialogueText.text = "This does not make any sense... Please detective, show me something concrete!";
         

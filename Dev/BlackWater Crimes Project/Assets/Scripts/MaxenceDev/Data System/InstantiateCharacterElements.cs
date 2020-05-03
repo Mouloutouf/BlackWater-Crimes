@@ -67,8 +67,8 @@ public class InstantiateCharacterElements : InstantiationProcess<Character>
 
             _prefab.GetComponent<RectTransform>().anchoredPosition = spawnPoints[spawnIndex];
 
-            GameObject obj = _prefab.transform.GetChild(0).GetChild(_prefab.transform.GetChild(0).childCount - 1).gameObject;
-            _prefab.GetComponent<Button>().onClick.AddListener(delegate { characterDisplay.SelectElement(obj); });
+            //GameObject obj = _prefab.transform.GetChild(0).GetChild(_prefab.transform.GetChild(0).childCount - 1).gameObject;
+            //_prefab.GetComponent<Button>().onClick.AddListener(delegate { characterDisplay.SelectElement(obj); });
 
             elementsList.Add(_prefab);
 
