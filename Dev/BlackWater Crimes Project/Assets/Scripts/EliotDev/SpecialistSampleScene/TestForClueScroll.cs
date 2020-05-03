@@ -8,12 +8,19 @@ public class TestForClueScroll : MonoBehaviour
 {
     public int numberOfClues;
     public GameObject clueTest;
+    public int cluesPerRow;
     int index;
+    int indexInRow;
+    int rowNumber;
+    float yPos;
+    float xPos;
 
     void OnEnable()
     {
         index = 0;
-        transform.parent.GetComponent<RectTransform>().sizeDelta = new Vector2(720, 1480);
+        indexInRow = 0;
+        rowNumber = -1;
+        transform.parent.GetComponent<RectTransform>().sizeDelta = new Vector2(1480, 720);
         foreach(Transform children in transform)
         {
             Destroy(children.gameObject);
@@ -30,27 +37,22 @@ public class TestForClueScroll : MonoBehaviour
 
         clueClone.transform.SetParent(transform);
 
-        if(index % 2 == 0) //index is even
+        if(index % cluesPerRow == 0)
         {
-            int xPos = -150;
-            int yPos = -(150*index) - 200;
-            clueClone.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPos, yPos);
-            if(index == 8)
-            {
-                transform.parent.GetComponent<RectTransform>().sizeDelta += new Vector2(0, 150);
-            }
-            else if(index > 8)
+            indexInRow = 0;
+            rowNumber ++;
+            yPos = -(300*rowNumber) - 200;
+            if(rowNumber >= 2)
             {
                 transform.parent.GetComponent<RectTransform>().sizeDelta += new Vector2(0, 300);
             }
-        } 
-        else //index is odd
-        {
-            int xPos = 150;
-            int yPos = -(150*(index-1)) - 200;
-            clueClone.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPos, yPos);
         }
 
+        xPos = (350 * indexInRow) - 500;
+
+        clueClone.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPos, yPos);
+
         index++;
+        indexInRow ++;
     }
 }
