@@ -33,7 +33,7 @@ public class MainMenuScript : MonoBehaviour
 
     private void Update() 
     {
-        if((Input.touchCount > 0 && title.activeSelf) && (Input.GetMouseButtonDown(0) && title.activeSelf))
+        if((Input.touchCount > 0 && title.activeSelf) || (Input.GetMouseButtonDown(0) && title.activeSelf))
         {
             shouldFadeTitle = true;
         }

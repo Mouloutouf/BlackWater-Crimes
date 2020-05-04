@@ -32,9 +32,10 @@ public class CadranScript : MonoBehaviour
 
     [SerializeField] CurrentDialingScript dialingScript;
     int currentNumber;
-    
 
-    // Start is called before the first frame update
+    public SoundSystem soundSystem;
+    public AudioClip clip;
+
     void Start()
     {
         currentNumber = 11;
@@ -171,6 +172,8 @@ public class CadranScript : MonoBehaviour
                 if(collider.gameObject == blockR && currentNumber != 11)
                 {
                     dialingScript.RecordNumber(currentNumber);
+
+                    soundSystem.PlaySound(clip);
                 }
             }
 

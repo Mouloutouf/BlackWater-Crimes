@@ -5317,6 +5317,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2065828447}
+        m_MethodName: PlaySound
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: c844eb0bc182ce945b635fef853ea19f,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1104932772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5470,6 +5482,8 @@ MonoBehaviour:
   blockR: {fileID: 1339883866}
   placeHolderNumber: {fileID: 1694649614}
   dialingScript: {fileID: 1253876687}
+  soundSystem: {fileID: 2065828447}
+  clip: {fileID: 8300000, guid: 297056ba28bb4ae48a33bd4c0bb57aff, type: 3}
 --- !u!1 &1139572369
 GameObject:
   m_ObjectHideFlags: 0
@@ -8864,6 +8878,18 @@ MonoBehaviour:
           m_StringArgument: MenuDeskScene
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2065828447}
+        m_MethodName: PlaySound
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 768bc4bfd564c9046af1ec05072021e3,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1724152127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10494,6 +10520,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4206b0aec6eb07545a298b286059b682, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2065828447 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6054615889987660512, guid: e7f1cd350bc5f0941bb44b9e4b1ff994,
+    type: 3}
+  m_PrefabInstance: {fileID: 2065828445}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5beb02e2bd5105e46a54bf8fd58ceff2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2082421542

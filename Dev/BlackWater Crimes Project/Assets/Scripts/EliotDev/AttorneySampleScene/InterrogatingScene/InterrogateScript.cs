@@ -34,8 +34,6 @@ public class InterrogateScript : SerializedMonoBehaviour
 
     void Start()
     {
-        gameData.currentSuspect = Suspects.Umberto_Moretti;
-
         switch (gameData.currentSuspect) //Update chara sprite & intro texts
         {
             case Suspects.Abigail_White:
