@@ -889,6 +889,8 @@ MonoBehaviour:
     useToUnlock: 0
     unlockableLocation: 0
     photo: {fileID: 0}
+    hasText: 0
+    descriptionText: 
     modeCategory:
       location: 1
       suspect: 2
@@ -1464,6 +1466,98 @@ RectTransform:
   m_AnchoredPosition: {x: -400, y: 0}
   m_SizeDelta: {x: 370, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &918870980
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 918870981}
+  - component: {fileID: 918870982}
+  m_Layer: 0
+  m_Name: Point Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &918870981
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918870980}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.21, y: 0.66, z: 0.54}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6311812953658730789}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!108 &918870982
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918870980}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 2
+  m_Shape: 0
+  m_Color: {r: 0.8773585, g: 0.49955052, b: 0.15312389, a: 1}
+  m_Intensity: 2
+  m_Range: 10
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 2
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1 &919223298
 GameObject:
   m_ObjectHideFlags: 0
@@ -1966,6 +2060,21 @@ MonoBehaviour:
     useToUnlock: 0
     unlockableLocation: 0
     photo: {fileID: 0}
+    hasText: 1
+    descriptionText: "Kidnapping ou fuite ?, de JConon O'Reilly\r\n\r\nDurant les
+      derniers mois, le Chicago Police Department (CPD) a fait de son mieux pour
+      garder le calme \xE0 Chicago. Les gangsters sont \xE0 chaque coin de rue, de
+      plus en pluis de mouvements contre la Prohibition apparaissent et grandissent
+      \xE0 chaque seconde. Le plus terrifiant et difficile pour nos agents de la
+      paix est de devoir faire face au nombre grandissant d'absences \xE0 travers
+      la ville. \r\n\r\nDes enqu\xEAteurs aux indics, personne ne sait qui, quand
+      et pourquoi ces personens disparaissent. Le chef investigateur Thomas Maxwell
+      suppose que cela serait du \xE0 des gangs ou des organisations secr\xE8tes
+      associ\xE9es avec le march\xE9 noir qui utiliseraient des personnes pour du
+      travail ill\xE9gal ou pire... Certaines personnes auraient tr\xE8s bien pu
+      partir au vu de leurs relations particuli\xE8res avec leur famille. Cela reste 
+      la proposition la plus absurde \xE0 ce jour, bien que les habitants de l'Illinois
+      semblent s'en contenter..."
     modeCategory:
       location: 3
       suspect: 4
@@ -2311,7 +2420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcb0521eef70ac444ae95e79d8fa7a15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myName: Empreinte Umberto
+  myName: Umberto
 --- !u!1001 &1430949778
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2547,11 +2656,14 @@ MonoBehaviour:
     intelSelf: 1
     hasIntels: 1
     intels:
-    - name: Empreinte Umberto
+    - name: Umberto
       revealed: 0
     useToUnlock: 0
     unlockableLocation: 0
     photo: {fileID: 0}
+    hasText: 1
+    descriptionText: "Ce n'est pas parce que tu as remplac\xE9 l'autre que tout est
+      termin\xE9. JE VAIS. NOUS allons nous DEBARRASSER DEFINITIVEMENT DE VOUS."
     modeCategory:
       location: 3
       suspect: 0
@@ -3809,6 +3921,12 @@ MonoBehaviour:
     useToUnlock: 0
     unlockableLocation: 0
     photo: {fileID: 0}
+    hasText: 1
+    descriptionText: "Ch\xE8re Abigail\r\n\r\nJe comprends tes peurs mais ne t'en
+      fais pas, tout est sous contr\xF4le. J'accepte ton invitation et je te retrouverai
+      \xE0 l'endroit que tu as propos\xE9. Nous pourrons aussi discuter de la suite
+      des \xE9v\xE9nements et ce qui pourrait arriver si je n'\xE9tais plus l\xE0.\r\n\r\nLes
+      Filles seront toujours ma priorit\xE9, tu le sais.\r\n\nSinc\xE8rement, Anna"
     modeCategory:
       location: 3
       suspect: 1
@@ -3977,6 +4095,19 @@ MonoBehaviour:
     useToUnlock: 0
     unlockableLocation: 0
     photo: {fileID: 0}
+    hasText: 1
+    descriptionText: "Un candidat prometteur pour une ville prometteuse, de Jonah
+      Vale\r\n\r\nLes \xE9lections pour le prochain maire de Chicago se rapprochent.
+      Apr\xE8s la grande marche des femmes pour la lib\xE9ration de toutes les personnes
+      kidnapp\xE9es en vente sur le march\xE9 noir, nous pouvons dire que Chicago
+      est en crise. Richard Anderson, candidat perdant de la pr\xE9c\xE9dente \xE9lection
+      de maire a vu sa popularit\xE9 exploser gr\xE2ce \xE0 son charisme et sa volont\xE9
+      d'aider \"le peuple\" d'Am\xE9rique. \r\n\r\n\"Je vais vous dire... Je me pr\xE9sente
+      pour les hommes et les femmes qui ont fait un travail incroyable... Contrairement
+      \xE0 mes concurrents, je pense aux milliers qui se battent pour s\xE9curiser
+      et ramener l'\xE9quilibre dans notre soci\xE9t\xE9 \xE0 travers le pays, et
+      surtout dans notre ville de Chicago. Je tiens vraiment \xE0 toutes ces personnes,
+      elles sont tout simplement incroyables.\""
     modeCategory:
       location: 3
       suspect: 4
@@ -5653,6 +5784,8 @@ MonoBehaviour:
     useToUnlock: 1
     unlockableLocation: 4
     photo: {fileID: 0}
+    hasText: 0
+    descriptionText: 
     modeCategory:
       location: 3
       suspect: 2
@@ -8920,7 +9053,8 @@ Transform:
   m_LocalRotation: {x: -0.6532815, y: -0.27059802, z: -0.27059802, w: 0.6532815}
   m_LocalPosition: {x: 0.695, y: 0.5489664, z: -11.555516}
   m_LocalScale: {x: 2.073778, y: 2.073778, z: 2.073778}
-  m_Children: []
+  m_Children:
+  - {fileID: 918870981}
   m_Father: {fileID: 5006512735121332628}
   m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -62,6 +62,8 @@ public class NotesRecorder : MonoBehaviour
 
             if (!TouchScreenKeyboard.visible && keyboard.status == TouchScreenKeyboard.Status.Done)
             {
+                editPanel.GetComponent<Image>().color = Color.yellow;
+
                 CloseEditNote();
             }
         }
@@ -70,13 +72,19 @@ public class NotesRecorder : MonoBehaviour
     void CloseEditNote()
     {
         currentNote.text = keyboard.text;
+
+        editPanel.GetComponent<Image>().color = Color.red;
         
         if (!newNote)
         {
+            editPanel.GetComponent<Image>().color = Color.blue;
+
             currentObject.Protocol();
         }
         else
         {
+            editPanel.GetComponent<Image>().color = Color.green;
+
             instantiateNotes.CreateNewNote(currentNote);
         }
 

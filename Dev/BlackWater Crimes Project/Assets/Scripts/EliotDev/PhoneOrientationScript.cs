@@ -14,7 +14,7 @@ public class PhoneOrientationScript : MonoBehaviour
 
     void TargetFPS()
     {
-        if(Application.targetFrameRate != 60)
+        if (Application.targetFrameRate != 60)
         {
             Application.targetFrameRate = 60;
         }
@@ -22,11 +22,11 @@ public class PhoneOrientationScript : MonoBehaviour
 
     void SetScreen()
     {
-        if(Application.platform == RuntimePlatform.WindowsPlayer)
+        if (Application.platform == RuntimePlatform.WindowsPlayer)
         {
             Screen.SetResolution(1480, 720, true);
         }
-        else if(Application.platform == RuntimePlatform.Android)
+        else if (Application.platform == RuntimePlatform.Android)
         {
             Screen.orientation = ScreenOrientation.LandscapeLeft;
             Screen.autorotateToLandscapeLeft = true;

@@ -46,10 +46,12 @@ public class InstantiatePhotoElements : InstantiationProcess<Evidence>
 
         SetLayout();
 
+        /*
         for (int i = 0; i < spawnPoints.Count; i++) // Instantiate Place Holder Prefabs
         {
             Instantiation(placeHolderPrefab);
         }
+        */
 
         spawnIndex = 0;
 

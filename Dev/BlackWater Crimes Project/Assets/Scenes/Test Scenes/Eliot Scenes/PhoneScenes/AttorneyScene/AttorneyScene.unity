@@ -2572,7 +2572,6 @@ GameObject:
   - component: {fileID: 733985679}
   - component: {fileID: 733985678}
   - component: {fileID: 733985677}
-  - component: {fileID: 733985676}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2580,21 +2579,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &733985676
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 733985675}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 615e09b24c6258f4e901c15fbcb13751, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneOrientation: 3
-  canRotate: 0
-  windowsBuild: 0
 --- !u!81 &733985677
 AudioListener:
   m_ObjectHideFlags: 0
@@ -5406,7 +5390,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1701712637
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5441,7 +5425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60746d50f9b474b41824594555dbb7c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clueFolder: {fileID: 0}
+  clueFolder: {fileID: 735394010}
   validateButton: {fileID: 1330969701}
   hasTwoDisplayers: 1
   currentEvidencesDisplayed:
@@ -6754,8 +6738,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.5}
-  m_SizeDelta: {x: -20, y: -13}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -60, y: -30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2067631836
 MonoBehaviour:
@@ -6779,13 +6763,13 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: da39bc5829190a84cab56332eff41374, type: 3}
     m_FontSize: 40
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 3
     m_MaxSize: 40
     m_Alignment: 3
     m_AlignByGeometry: 1
     m_RichText: 0
-    m_HorizontalOverflow: 1
+    m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 
@@ -7504,6 +7488,9 @@ MonoBehaviour:
   - Bob Jenkins
   - Umberto Moretti
   clueShower: {fileID: 1701712636}
+  baseColor: {r: 0.9294118, g: 0.7058824, b: 0.32156864, a: 1}
+  correctColor: {r: 0.24688502, g: 0.7169812, b: 0.48683748, a: 1}
+  incorrectColor: {r: 0.6886792, g: 0.15917587, b: 0.23960884, a: 1}
 --- !u!114 &2146168255
 MonoBehaviour:
   m_ObjectHideFlags: 0

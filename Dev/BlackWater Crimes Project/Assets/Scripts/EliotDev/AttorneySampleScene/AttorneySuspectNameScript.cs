@@ -9,6 +9,9 @@ public class AttorneySuspectNameScript : MonoBehaviour
     [SerializeField] Text inputText;
     [SerializeField] string[] knownNames;
     [SerializeField] GameObject clueShower;
+    [SerializeField] Color baseColor;
+    [SerializeField] Color correctColor;
+    [SerializeField] Color incorrectColor;
     List<string> knownNamesToCheck = new List<string>();
 
     void Start() 
@@ -33,20 +36,20 @@ public class AttorneySuspectNameScript : MonoBehaviour
             {
                 GetComponent<InputField>().text = knownNames[index];
             }
-            inputText.color = Color.green;
+            inputText.color = correctColor;
         }
         else
         {
             clueShower.SetActive(false);
-            inputText.color = Color.red;
+            inputText.color = incorrectColor;
         }
     }
 
     public void ResetTextColor()
     {
-        if(inputText.color != Color.black)
+        if(inputText.color != baseColor)
         {
-            inputText.color = Color.black;
+            inputText.color = baseColor;
         }
     }
 }

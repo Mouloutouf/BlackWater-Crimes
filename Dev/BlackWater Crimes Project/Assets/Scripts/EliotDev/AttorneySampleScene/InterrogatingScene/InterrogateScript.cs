@@ -29,7 +29,9 @@ public class InterrogateScript : SerializedMonoBehaviour
 
     int answerIndex;
     int currentQuestion = -1;
-    
+
+    List<Question> questions = new List<Question>();
+
     void Start()
     {
         switch (gameData.currentSuspect) //Update chara sprite & intro texts
@@ -45,30 +47,32 @@ public class InterrogateScript : SerializedMonoBehaviour
                 nameText.text = "Richard Anderson";
                 occupationText.text = "Politician";
                 dialogueText.text = "I hope you have good reasons to disturb me during my busy day detective! Go ahead, what do you want? ";
-                charaSprite.sprite = suspectSprites[Suspects.Abigail_White][Emotions.Neutral];
+                charaSprite.sprite = suspectSprites[Suspects.Richard_Anderson][Emotions.Neutral];
                 break;
 
             case Suspects.Bob_Jenkins:
                 nameText.text = "Bob Jenkins";
                 occupationText.text = "Police officer";
                 dialogueText.text = "I don't quite understand why you bring me here sir... Did I do something wrong while I was on duty?";
-                charaSprite.sprite = suspectSprites[Suspects.Abigail_White][Emotions.Neutral];
+                charaSprite.sprite = suspectSprites[Suspects.Bob_Jenkins][Emotions.Neutral];
                 break;
 
             case Suspects.Umberto_Moretti:
                 nameText.text = "Umberto Moretti";
                 occupationText.text = "Handyman";
                 dialogueText.text = "Well officer, non vedo, non sento, non parlo...";
-                charaSprite.sprite = suspectSprites[Suspects.Abigail_White][Emotions.Neutral];
+                charaSprite.sprite = suspectSprites[Suspects.Umberto_Moretti][Emotions.Neutral];
                 break;
         }
 
         occupationText.text = occupationText.text.ToUpper();
         charaSprite.SetNativeSize();
         
-        for (int i = 0; i < gameData.questions[gameData.currentSuspect].Count; i++) // Set the Associated Questions Texts
+        foreach (Question question in gameData.questions[gameData.currentSuspect]) if (question.unlockedData) questions.Add(question);
+
+        for (int i = 0; i < questions.Count; i++) // Set the Associated Questions Texts
         {
-            questionsParent.transform.GetChild(i).gameObject.GetComponentInChildren<Text>().text = gameData.questions[gameData.currentSuspect][i].question;
+            questionsParent.transform.GetChild(i).gameObject.GetComponentInChildren<Text>().text = questions[i].question;
         }
     }
 
@@ -83,19 +87,22 @@ public class InterrogateScript : SerializedMonoBehaviour
             questionsParent.transform.GetChild(currentQuestion).gameObject.GetComponentInChildren<Text>().fontStyle = FontStyle.BoldAndItalic;
             questionsParent.transform.GetChild(currentQuestion).gameObject.GetComponent<Button>().enabled = false;
 
-            dialogueText.text = gameData.questions[gameData.currentSuspect][questionNumber]._answers[answerIndex].answer;
+            dialogueText.text = questions[currentQuestion]._answers[answerIndex].answer;
             
-            Emotions currentEmotion = gameData.questions[gameData.currentSuspect][questionNumber]._answers[answerIndex].emotion;
+            Emotions currentEmotion = questions[currentQuestion]._answers[answerIndex].emotion;
             charaSprite.sprite = suspectSprites[gameData.currentSuspect][currentEmotion];
         }
     }
 
     public void Next()
     {
-        if (answerIndex < gameData.questions[gameData.currentSuspect][currentQuestion]._answers.Count - 1)
+        if (answerIndex < questions[currentQuestion]._answers.Count - 1)
         {
             answerIndex ++;
-            dialogueText.text = gameData.questions[gameData.currentSuspect][currentQuestion]._answers[answerIndex].answer;
+            dialogueText.text = questions[currentQuestion]._answers[answerIndex].answer;
+
+            Emotions currentEmotion = questions[currentQuestion]._answers[answerIndex].emotion;
+            charaSprite.sprite = suspectSprites[gameData.currentSuspect][currentEmotion];
         }
         else EndQuestion();
     }
