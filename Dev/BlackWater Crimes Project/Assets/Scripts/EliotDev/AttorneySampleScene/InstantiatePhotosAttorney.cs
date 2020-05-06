@@ -39,7 +39,7 @@ public class InstantiatePhotosAttorney : InstantiationProcess<Evidence>
         {
             indexInRow = 0;
             rowNumber ++;
-            yPos = -(300*rowNumber) - 200;
+            yPos = -(300*rowNumber);
             if(rowNumber >= 2)
             {
                 transform.parent.GetComponent<RectTransform>().sizeDelta += new Vector2(0, 300);

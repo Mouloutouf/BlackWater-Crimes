@@ -626,7 +626,6 @@ GameObject:
   - component: {fileID: 276864012}
   - component: {fileID: 276864011}
   - component: {fileID: 276864010}
-  - component: {fileID: 276864013}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -699,21 +698,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &276864013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 276864009}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 615e09b24c6258f4e901c15fbcb13751, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneOrientation: 3
-  canRotate: 0
-  windowsBuild: 0
 --- !u!1 &292243603
 GameObject:
   m_ObjectHideFlags: 0
@@ -1656,6 +1640,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 276864011}
   zoomPanel: {fileID: 1859268391}
+  imagePosWithText: {x: 0, y: 0}
+  useOld: 0
 --- !u!61 &555185870
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2594,12 +2580,6 @@ MonoBehaviour:
   holders: []
   useOld: 0
   content: {fileID: 0}
-  buttonContentHolder: {fileID: 2029589069}
-  buttonPrefab: {fileID: 4061153543470559034, guid: 1551035ed1b2187439a0933ed5a64c43,
-    type: 3}
-  amountInEachPage: 0
-  buttonOffset: -60
-  spawnPoints: []
 --- !u!222 &897390656
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2717,11 +2697,6 @@ MonoBehaviour:
   holders: []
   useOld: 1
   content: {fileID: 1864874918}
-  buttonContentHolder: {fileID: 0}
-  buttonPrefab: {fileID: 0}
-  amountInEachPage: 0
-  buttonOffset: 0
-  spawnPoints: []
 --- !u!114 &993814523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2747,10 +2722,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 553f23d9092c5da47b37e776ce8d55cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notificationObject: {fileID: 1062702085}
-  elementHolder: {fileID: 1864874918}
+  notifications: []
+  photoDisplay: {fileID: 0}
+  newPrefab: {fileID: 0}
+  prefabPos: {x: 0, y: 0}
+  useOld: 0
   startElement: 0
-  pageSystem: {fileID: 1222013326}
 --- !u!1 &998663302
 GameObject:
   m_ObjectHideFlags: 0
@@ -3712,6 +3689,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rightButton: {fileID: 1828501568}
   leftButton: {fileID: 1681237016}
+  sprites: []
   content: {fileID: 1864874918}
   startIndex: 0
 --- !u!114 &1249994403 stripped
@@ -4810,6 +4788,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 276864011}
   zoomPanel: {fileID: 1859268391}
+  imagePosWithText: {x: 0, y: 0}
+  useOld: 0
 --- !u!114 &1551605365
 MonoBehaviour:
   m_ObjectHideFlags: 0
