@@ -217,9 +217,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615e09b24c6258f4e901c15fbcb13751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneOrientation: 1
-  canRotate: 0
-  windowsBuild: 0
 --- !u!1001 &238326130
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -420,6 +417,7 @@ MonoBehaviour:
   withLoadingScreen: 0
   loadingScreenPrefab: {fileID: 941213851771389156, guid: 54b49d70e0d8f054b8e8a7d927f98df2,
     type: 3}
+  loadNotes: 0
 --- !u!1 &1101476112
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,8 +452,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 100}
-  m_SizeDelta: {x: 0, y: 100}
+  m_AnchoredPosition: {x: 0, y: 45.85002}
+  m_SizeDelta: {x: -275.2, y: 73.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1101476114
 MonoBehaviour:
@@ -477,7 +475,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: da39bc5829190a84cab56332eff41374, type: 3}
-    m_FontSize: 35
+    m_FontSize: 18
     m_FontStyle: 2
     m_BestFit: 0
     m_MinSize: 0
@@ -531,8 +529,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 240}
-  m_SizeDelta: {x: 0, y: -480}
+  m_AnchoredPosition: {x: 0, y: 40}
+  m_SizeDelta: {x: -105, y: -105.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1331330973
 MonoBehaviour:
@@ -554,7 +552,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: da39bc5829190a84cab56332eff41374, type: 3}
-    m_FontSize: 40
+    m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -566,9 +564,9 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Congratulations !\n\nYou arrived at the end of this demo!\nWait for this
-    summer to enjoy the full story...\n\n\nCredits:\n\nC\xE9lia Bernard\nHugo Bochaton\nLucien
-    Chesneau\nJeanne Delbeare\nMaxence Droz-Bartholet\nAlberto Galan\nTitouan Mergem\nEliot
-    Ringeval"
+    summer to enjoy the full story...\n\nCredits:\n\nC\xE9lia Bernard, Hugo Bochaton,
+    Lucien Chesneau,\nJeanne Delbeare, Maxence Droz-Bartholet, Alberto Galan,\nTitouan
+    Mergem, Eliot Ringeval"
 --- !u!222 &1331330974
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -576,83 +574,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1331330971}
-  m_CullTransparentMesh: 0
---- !u!1 &1486441470
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1486441471}
-  - component: {fileID: 1486441473}
-  - component: {fileID: 1486441472}
-  m_Layer: 5
-  m_Name: Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1486441471
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1486441470}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1652694081}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1486441472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1486441470}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.94117653, g: 0.76470596, b: 0.4901961, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: da39bc5829190a84cab56332eff41374, type: 3}
-    m_FontSize: 50
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 0
-    m_MaxSize: 50
-    m_Alignment: 4
-    m_AlignByGeometry: 1
-    m_RichText: 1
-    m_HorizontalOverflow: 1
-    m_VerticalOverflow: 1
-    m_LineSpacing: 1
-  m_Text: Main Menu
---- !u!222 &1486441473
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1486441470}
   m_CullTransparentMesh: 0
 --- !u!1 &1543356098
 GameObject:
@@ -749,15 +670,14 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1486441471}
+  m_Children: []
   m_Father: {fileID: 680806259}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -400}
-  m_SizeDelta: {x: -290, y: 90}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 37.375, y: 132.28}
+  m_SizeDelta: {x: 30.25, y: 60.02}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1652694082
 MonoBehaviour:
@@ -817,7 +737,7 @@ MonoBehaviour:
         m_MethodName: PlaySound
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 297056ba28bb4ae48a33bd4c0bb57aff,
+          m_ObjectArgument: {fileID: 8300000, guid: ea08b437dbda5de438d0e0745b62e420,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
@@ -843,7 +763,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b7d974268c8e8fd41b7d39344750adf5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 412a69a9b6a58a945a4c19d44122940b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

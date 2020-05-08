@@ -5,23 +5,29 @@ using UnityEngine.UI;
 public class MainMenuScript : MonoBehaviour
 {
     public SoundSystem soundSystem;
+
     public DataContainer dataContainer;
     private GameData gameData;
-
-    [SerializeField] string introSceneName;
+    
     [SerializeField] Slider musicSlider;
     [SerializeField] Slider voicesSlider;
+
     [SerializeField] Text musicValue;
     [SerializeField] Text voicesValue;
+
     [SerializeField] Text gameStatusText;
-    [SerializeField] GameObject parameters;
-    [SerializeField] GameObject bgDesktopImage;
-    [SerializeField] GameObject bgDesktopImageEffect;
+
     [SerializeField] GameObject title;
-    [SerializeField] GameObject menuOptions;
     bool shouldFadeTitle = false;
     float titleAlpha = 1f;
+
+    [SerializeField] GameObject parameters;
+    [SerializeField] GameObject menuOptions;
     float menuOptionsAlpa = 0f;
+
+    [SerializeField] GameObject bgDesktopImage;
+    [SerializeField] GameObject bgDesktopImageEffect;
+    
     public Dropdown languageSelection;
 
     private void Start() 
@@ -29,6 +35,8 @@ public class MainMenuScript : MonoBehaviour
         gameStatusText.text = "Game 1 - " + DateTime.Today.ToString("M/d/yyyy");
 
         if (dataContainer != null) gameData = dataContainer.gameData;
+
+        SetLanguage();
     }
 
     private void Update() 
@@ -97,13 +105,27 @@ public class MainMenuScript : MonoBehaviour
         }
     }
 
+    void SetLanguage()
+    {
+        if (gameData.gameLanguage == Languages.French)
+        {
+            languageSelection.captionText.text = "Français";
+            languageSelection.value = 0; // French is First
+        }
+        else if (gameData.gameLanguage == Languages.English)
+        {
+            languageSelection.captionText.text = "English";
+            languageSelection.value = 1; // English is Second
+        }
+    }
+
     public void UpdateLanguage()
     {
-        if (languageSelection.value == 0)
+        if (languageSelection.captionText.text == "English")
         {
             gameData.gameLanguage = Languages.English;
         }
-        else if (languageSelection.value == 1)
+        else if (languageSelection.captionText.text == "Français")
         {
             gameData.gameLanguage = Languages.French;
         }
