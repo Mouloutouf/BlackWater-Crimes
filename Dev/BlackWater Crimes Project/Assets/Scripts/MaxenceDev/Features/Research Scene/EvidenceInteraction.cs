@@ -128,6 +128,7 @@ public class EvidenceInteraction : MonoBehaviour
     public void TakePhoto()
     {
         soundAudio.PlayOneShot(photoShotSound);
+        fingerprintToggle.isOn = false;
 
         RaycastHit hit;
         Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));

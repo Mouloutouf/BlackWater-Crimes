@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8492563697151059717}
   - component: {fileID: 2925726739830140688}
   - component: {fileID: 1555774298588177716}
+  - component: {fileID: 6631028077222997074}
   m_Layer: 5
   m_Name: QuestionPrefab
   m_TagString: Untagged
@@ -135,7 +136,6 @@ MonoBehaviour:
     unlockedData: 0
     index: 0
     question: 
-    answers: []
     _answers: []
     unlockedByReport: 0
     mode: 0
@@ -143,6 +143,26 @@ MonoBehaviour:
     otherName: 
   instantiate: 1
   hasApplied: 0
+--- !u!114 &6631028077222997074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8492563697151059712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: -1
+  m_PreferredHeight: 100
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!1 &8492563697577746935
 GameObject:
   m_ObjectHideFlags: 0
