@@ -15,6 +15,8 @@ public class CurrentDialingScript : MonoBehaviour
     string currentContact = "";
     string currentContactScene;
 
+    public VibrateSystem vibrateSystem;
+
     [Serializable]
     public struct Contact
     {
@@ -63,13 +65,13 @@ public class CurrentDialingScript : MonoBehaviour
     {
         callingText.text = "Calling";
         yield return new WaitForSeconds(1f);
-        Handheld.Vibrate();
+        vibrateSystem.PhoneVibrate();
         callingText.text += ".";
         yield return new WaitForSeconds(1f);
-        Handheld.Vibrate();
+        vibrateSystem.PhoneVibrate();
         callingText.text += ".";
         yield return new WaitForSeconds(1f);
-        Handheld.Vibrate();
+        vibrateSystem.PhoneVibrate();
         callingText.text += ".";
         yield return new WaitForSeconds(1f);
         CheckNumber();

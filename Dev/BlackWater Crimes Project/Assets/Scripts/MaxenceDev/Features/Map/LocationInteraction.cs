@@ -83,7 +83,7 @@ public class LocationInteraction : SerializedMonoBehaviour
 
         //Particle Effects & anims & sounds etc.
 
-        Handheld.Vibrate();
+        utilities.GetComponent<VibrateSystem>().PhoneVibrate();
         source.PlayOneShot(revealSound);
         _object.transform.GetChild(2).GetComponent<ParticleSystem>().Play();
     }

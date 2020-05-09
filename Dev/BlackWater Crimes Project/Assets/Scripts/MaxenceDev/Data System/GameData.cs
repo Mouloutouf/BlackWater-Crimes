@@ -272,6 +272,8 @@ public class GameData : SerializedScriptableObject
 
     public Languages gameLanguage = Languages.English;
 
+    public bool vibrations = true;
+
     public SoundSettings soundSettings;
 
     [HideInInspector]
