@@ -156,6 +156,7 @@ public class Report : Data
     [Title("Unlockable")]
 
     public bool giveAccess;
+    [ShowIf("giveAccess")]
     public Locations locationToAccess;
 
     [Title("Status")]
@@ -243,6 +244,17 @@ public class Character : Data
 }
 
 [Serializable]
+public class Indic
+{
+    [Title("Infos")]
+
+    public string name;
+    public string job;
+
+    public Sprite image;
+}
+
+[Serializable]
 public class SoundFloat
 {
     public float Volume
@@ -299,6 +311,10 @@ public class GameData : SerializedScriptableObject
     public int interrogations { get; set; } = 3;
 
     public List<Character> characters = new List<Character>();
+
+    public Indics currentIndic = Indics.Standard;
+
+    public Dictionary<Indics, Indic> indics = new Dictionary<Indics, Indic>();
 
     public GameData()
     {

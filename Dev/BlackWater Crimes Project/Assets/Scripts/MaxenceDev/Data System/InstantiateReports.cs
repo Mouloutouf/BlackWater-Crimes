@@ -67,7 +67,7 @@ public class InstantiateReports : InstantiationProcess<Report>
             {
                 if (report.unlockedData)
                 {
-                    if (report.index == 0) CreateFailedReport(report);
+                    if (report.failed) CreateFailedReport(report);
 
                     else CreateReport(report);
                 }
