@@ -130,6 +130,8 @@ public class Evidence : Data
 [Serializable]
 public class Report : Data
 {
+    public bool failed;
+
     [Title("Agent")]
 
     public Sprite agentSprite;
@@ -236,9 +238,8 @@ public class Character : Data
     public Suspects suspect;
 
     [Title("Distinctions")]
-
-    public string distinctiveCategory;
-    public string distinctiveElement;
+    
+    public List<string> distinctiveElements;
 }
 
 [Serializable]

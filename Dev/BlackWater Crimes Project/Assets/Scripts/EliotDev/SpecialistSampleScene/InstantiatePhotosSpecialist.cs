@@ -6,11 +6,16 @@ using UnityEngine.EventSystems;
 
 public class InstantiatePhotosSpecialist : InstantiationProcess<Evidence>
 {
-    SpecialistClueShowerScript clueShowerScript;
+    private SpecialistEvidenceDisplayer evidenceDisplayer;
+
+    public Transform content;
+
     public int cluesPerRow;
+
     int index;
     int indexInRow;
     int rowNumber;
+
     float yPos;
     float xPos;
 
@@ -26,20 +31,22 @@ public class InstantiatePhotosSpecialist : InstantiationProcess<Evidence>
 
     public override GameObject Instantiation(GameObject prefab)
     {
-        clueShowerScript = Object.FindObjectOfType<SpecialistClueShowerScript>().GetComponent<SpecialistClueShowerScript>();
+        evidenceDisplayer = Object.FindObjectOfType<SpecialistEvidenceDisplayer>().GetComponent<SpecialistEvidenceDisplayer>();
 
         GameObject _prefab = Instantiate(prefab) as GameObject;
 
-        _prefab.transform.SetParent(transform);
+        _prefab.transform.SetParent(content);
 
-        if(index % cluesPerRow == 0)
+        if (index % cluesPerRow == 0)
         {
             indexInRow = 0;
             rowNumber ++;
+
             yPos = -(300*rowNumber);
-            if(rowNumber >= 2)
+
+            if (rowNumber >= 2)
             {
-                transform.parent.GetComponent<RectTransform>().sizeDelta += new Vector2(0, 300);
+                content.parent.GetComponent<RectTransform>().sizeDelta += new Vector2(0, 300);
             }
         }
 
@@ -47,7 +54,7 @@ public class InstantiatePhotosSpecialist : InstantiationProcess<Evidence>
 
         _prefab.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPos, yPos);
 
-        _prefab.GetComponent<Button>().onClick.AddListener( delegate { clueShowerScript.ShowClue(_prefab); } );
+        _prefab.GetComponent<Button>().onClick.AddListener( delegate { evidenceDisplayer.ShowClue(_prefab); } );
         
         index++;
         indexInRow ++;

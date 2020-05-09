@@ -13,10 +13,12 @@ public class TargetNameScript : MonoBehaviour
     [SerializeField] Color correctColor;
     [SerializeField] Color incorrectColor;
     [SerializeField] GameObject detail;
-    [SerializeField] Button validateButton;
+    private Button validateButton;
 
     void Start() 
     {
+        validateButton = GameObject.Find("Validate Button").GetComponent<Button>();
+
         for (int i = 0; i < knownNames.Length; i++)
         {
             knownNamesToCheck.Add(knownNames[i]);
@@ -24,6 +26,7 @@ public class TargetNameScript : MonoBehaviour
             knownNamesToCheck[i] = knownNamesToCheck[i].ToLower();
         }
     }
+
     public void CheckName()
     {
         string name = inputText.text;
