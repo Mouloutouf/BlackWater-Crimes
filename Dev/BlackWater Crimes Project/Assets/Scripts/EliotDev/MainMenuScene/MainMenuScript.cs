@@ -30,6 +30,11 @@ public class MainMenuScript : MonoBehaviour
     
     public Dropdown languageSelection;
 
+    public GameObject parameterButton;
+
+    public Sprite baseParameter;
+    public Sprite activeParameter;
+
     private void Start() 
     {
         gameStatusText.text = "Game 1 - " + DateTime.Today.ToString("M/d/yyyy");
@@ -138,12 +143,16 @@ public class MainMenuScript : MonoBehaviour
             parameters.SetActive(true);
             bgDesktopImage.SetActive(false);
             bgDesktopImageEffect.GetComponent<Image>().fillAmount = .8f;
+
+            parameterButton.GetComponent<Image>().sprite = activeParameter;
         }
         else
         {
             parameters.SetActive(false);
             bgDesktopImage.SetActive(true);
             bgDesktopImageEffect.GetComponent<Image>().fillAmount = 1f;
+
+            parameterButton.GetComponent<Image>().sprite = baseParameter;
         }
     }
 }

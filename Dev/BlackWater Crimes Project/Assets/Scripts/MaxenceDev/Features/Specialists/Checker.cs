@@ -18,7 +18,7 @@ public class Checker : MonoBehaviour
 
     public Sprite checkedImage { get; set; }
 
-    public Indics indic;
+    public Indics indic { get { return gameData.currentIndic; } }
     
     private bool match;
 
@@ -42,9 +42,9 @@ public class Checker : MonoBehaviour
     {
         GetCheckedElements();
 
-        foreach (Indics indic in gameData.allReports.Keys)
+        foreach (Indics indic in gameData.megaReports.Keys)
         {
-            foreach (Report report in gameData.allReports[indic])
+            foreach (Report report in gameData.megaReports[indic].Item1)
             {
                 if (Check(indic, report))
                 {
@@ -68,9 +68,9 @@ public class Checker : MonoBehaviour
     {
         GetCheckedElements();
 
-        foreach (Indics indic in gameData.allReports.Keys)
+        foreach (Indics indic in gameData.megaReports.Keys)
         {
-            foreach (Report report in gameData.allReports[indic])
+            foreach (Report report in gameData.megaReports[indic].Item1)
             {
                 if (Check(indic, report))
                 {
@@ -131,7 +131,7 @@ public class Checker : MonoBehaviour
 
     void UnlockFailedReport()
     {
-        Report t_Report = gameData.allReports[indic][0];
+        Report t_Report = gameData.megaReports[indic].Item2[0];
 
         Report f_Report = new Report
         {
@@ -140,7 +140,7 @@ public class Checker : MonoBehaviour
             elementSprite = checkedImage,
             elementName = checkedName,
             
-            index = gameData.allReports.Count,
+            index = gameData.megaReports[indic].Item2.Count,
 
             agentName = t_Report.agentName,
             agentSprite = t_Report.agentSprite,
@@ -148,7 +148,7 @@ public class Checker : MonoBehaviour
             signature = t_Report.signature
         };
 
-        gameData.allReports[indic].Add(f_Report);
+        gameData.megaReports[indic].Item2.Add(f_Report);
     }
     
     public virtual void ResetField()

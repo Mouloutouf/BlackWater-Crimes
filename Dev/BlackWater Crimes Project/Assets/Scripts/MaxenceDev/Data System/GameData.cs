@@ -295,8 +295,8 @@ public class GameData : SerializedScriptableObject
 
     public List<Note> notes = new List<Note>();
 
-    [HideInInspector]
-    public List<Report> reports = new List<Report>();
+    
+    public Dictionary<Indics, (List<Report>, List<Report>)> megaReports = new Dictionary<Indics, (List<Report>, List<Report>)>();
     public Dictionary<Indics, List<Report>> allReports = new Dictionary<Indics, List<Report>>();
 
     public int reportsCollected = 0;
@@ -320,7 +320,6 @@ public class GameData : SerializedScriptableObject
     {
         InitListOfType(evidences);
         InitListOfType(notes);
-        InitListOfType(reports);
         InitListOfType(locations);
     }
 
@@ -346,8 +345,6 @@ public class GameData : SerializedScriptableObject
                 return evidences as List<T>;
             case "note":
                 return notes as List<T>;
-            case "report":
-                return reports as List<T>;
             case "location":
                 return locations as List<T>;
             default:
@@ -382,6 +379,17 @@ public class GameData : SerializedScriptableObject
         }
         reportsCollected = 0;
 
+        foreach ((List<Report>, List<Report>) bigList in megaReports.Values)
+        {
+            foreach (Report _report in bigList.Item1)
+            {
+                _report.unlockedData = false;
+                _report.unlockOrderIndex = 0;
+                _report.seen = false;
+            }
+        }
+        reportsCollected = 0;
+
         // Reset Questions
         foreach (List<Question> questionList in questions.Values)
         {
@@ -391,6 +399,8 @@ public class GameData : SerializedScriptableObject
             }
         }
         interrogations = 3;
+
+        newStuff = false;
     }
 }
 

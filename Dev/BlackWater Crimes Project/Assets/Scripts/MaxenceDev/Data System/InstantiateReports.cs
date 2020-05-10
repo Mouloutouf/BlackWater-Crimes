@@ -61,6 +61,7 @@ public class InstantiateReports : InstantiationProcess<Report>
 
     void Initialize()
     {
+        /*
         foreach (List<Report> _list in gameData.allReports.Values)
         {
             foreach (Report report in _list)
@@ -73,8 +74,21 @@ public class InstantiateReports : InstantiationProcess<Report>
                 }
             }
         }
-
+        */
         //CreateNoReport();
+
+        foreach ((List<Report>, List<Report>) _list in gameData.megaReports.Values)
+        {
+            foreach (Report report in _list.Item1)
+            {
+                if (report.unlockedData) CreateReport(report);
+            }
+
+            foreach (Report fReport in _list.Item2)
+            {
+                if (fReport.index != 0) CreateFailedReport(fReport);
+            }
+        }
     }
 
     void CreateReport(Report report)

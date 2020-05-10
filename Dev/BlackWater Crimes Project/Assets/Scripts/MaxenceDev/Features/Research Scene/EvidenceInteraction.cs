@@ -136,7 +136,7 @@ public class EvidenceInteraction : MonoBehaviour
         currentEvidenceHeld.GetComponent<EvidenceObject>().isZoomed = false;
         if (currentEvidenceHeld.GetComponent<EvidenceObject>().displayTextComponent != null) 
             currentEvidenceHeld.GetComponent<EvidenceObject>().displayTextComponent.transform.parent.gameObject.SetActive(false);
-
+        
         RaycastHit hit;
         Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
 
@@ -200,7 +200,7 @@ public class EvidenceInteraction : MonoBehaviour
         string fileName = _hit.transform.parent.GetComponent<EvidenceObject>().data.codeName;
         fileName = fileName.Replace(" ", "");
 
-        if (Application.platform == RuntimePlatform.WindowsEditor /*|| (Application.platform == RuntimePlatform.Android && EditorApplication.isPlaying)*/)
+        if (Application.platform == RuntimePlatform.WindowsEditor || (Application.platform == RuntimePlatform.Android && EditorApplication.isPlaying))
         {
             filePath = "Assets/Graphs/Sprites/Screenshots/" + fileName + ".png";
             Debug.Log("Using Editor Folder");

@@ -31,15 +31,17 @@ public class FailedReportsManager : MonoBehaviour
 
     public void ClearAllFailedReports()
     {
-        foreach (List<Report> reports in gameData.allReports.Values)
+        foreach ((List<Report>, List<Report>) reports in gameData.megaReports.Values)
         {
-            foreach (Report report in reports)
+            Report template = new Report();
+
+            foreach (Report report in reports.Item2)
             {
-                if (report.failed && report.index != 0)
-                {
-                    reports.Remove(report);
-                }
+                if (report.index == 0) template = report;
             }
+
+            reports.Item2.Clear();
+            reports.Item2.Add(template);
         }
     }
 

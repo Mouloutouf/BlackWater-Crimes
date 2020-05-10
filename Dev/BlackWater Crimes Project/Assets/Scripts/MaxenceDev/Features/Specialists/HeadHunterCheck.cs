@@ -29,13 +29,7 @@ public class HeadHunterCheck : Checker
     public override bool Check(Indics _indic, Report _report)
     {
         bool check = true;
-
-        if (_indic != this.indic) check = false;
-
-        if (_report.elementName != checkedName) check = false;
-
-        if (_report.index == 0) check = false;
-
+        
         foreach (Character character in gameData.characters)
         {
             if (inputField.text == character.name)
@@ -52,6 +46,12 @@ public class HeadHunterCheck : Checker
 
             else check = false;
         }
+
+        if (_indic != this.indic) check = false;
+
+        if (_report.elementName != checkedName) check = false;
+
+        if (_report.index == 0) check = false;
 
         return check;
     }

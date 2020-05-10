@@ -4,9 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Sirenix.OdinInspector;
 
 public class CurrentDialingScript : MonoBehaviour
 {
+    public GameData gameData;
+
     [SerializeField] Text dialingText;
     [SerializeField] Text callingText;
     [SerializeField] Button eraseButton;
@@ -22,7 +25,11 @@ public class CurrentDialingScript : MonoBehaviour
     {
         public string contactName;
         public int contactNumber;
+
+        public bool indicContact;
         public string contactSceneName;
+        [ShowIf("indicContact")]
+        public Indics thisIndic;
     }
 
     public Contact[] contacts;
@@ -85,13 +92,16 @@ public class CurrentDialingScript : MonoBehaviour
             {
                 currentContact = contacts[i].contactName;
                 currentContactScene = contacts[i].contactSceneName;
+
+                if (contacts[i].indicContact) gameData.currentIndic = contacts[i].thisIndic;
             }
         }
 
-        if(currentContact != "")
+        if (currentContact != "")
         {
             callingText.text = "Reaching " + currentContact;
-            if(currentContactScene != "")
+
+            if (currentContactScene != "")
             {
                 StartCoroutine(LaunchScene(currentContactScene));
             }
