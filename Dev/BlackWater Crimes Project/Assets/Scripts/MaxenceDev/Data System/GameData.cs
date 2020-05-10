@@ -8,7 +8,7 @@ public enum Locations { Docks, Brothel, Anna_House, New_House, Politician_Office
 
 public enum Suspects { Umberto_Moretti, Abigail_White, Richard_Anderson, Bob_Jenkins, None }
 
-public enum Indics { Master_Thommers, Brandon_Bennington, James_Walker, Quentin_Copeland, Thomas_Maxwell, Miss_Marshall, Bob_Jenkins, Arnold_Steele, Standard }
+public enum Indics { Master_Thommers, Brandon_Bennington, James_Walker, Quentin_Copeland, Thomas_Maxwell, Miss_Marshall, Arnold_Steele, Standard }
 
 public enum Types { Brands, Crime, Clothing, Documents }
 
