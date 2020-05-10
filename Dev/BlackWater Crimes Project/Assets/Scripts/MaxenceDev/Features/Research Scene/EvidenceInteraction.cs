@@ -131,6 +131,11 @@ public class EvidenceInteraction : MonoBehaviour
     {
         soundAudio.PlayOneShot(photoShotSound);
         fingerprintToggle.isOn = false;
+        fingerprintMode = false;
+
+        currentEvidenceHeld.GetComponent<EvidenceObject>().isZoomed = false;
+        if (currentEvidenceHeld.GetComponent<EvidenceObject>().displayTextComponent != null) 
+            currentEvidenceHeld.GetComponent<EvidenceObject>().displayTextComponent.transform.parent.gameObject.SetActive(false);
 
         RaycastHit hit;
         Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));

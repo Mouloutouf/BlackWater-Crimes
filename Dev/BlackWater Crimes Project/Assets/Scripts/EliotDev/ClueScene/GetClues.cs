@@ -76,7 +76,7 @@ public class GetClues : MonoBehaviour
                 zoomAlpha += .01f * zoomSpeed * Time.deltaTime;
                 actualClue.transform.position = Vector3.Lerp(initCluePos, actualZoomTransform.position, zoomAlpha);
             }
-            else actualClue.GetComponent<EvidenceObject>().isZoomed = true;
+            else actualClue.GetComponent<EvidenceObject>().isZoomed = true; // Allow the Text to be displayed
 
             // Rotation
             if (actualClue.GetComponent<ClueHolder>().hasSpecificRotation == true && actualClue.transform.rotation != actualClue.GetComponent<ClueHolder>().specificZoomRotationQuaternion)
