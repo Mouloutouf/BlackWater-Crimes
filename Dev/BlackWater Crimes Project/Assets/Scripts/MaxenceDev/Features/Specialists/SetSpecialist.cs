@@ -15,15 +15,26 @@ public class SetSpecialist : MonoBehaviour
     public float factor;
     public Text characterName;
     public Text characterJob;
+
+    [Header("Pour débugger")]
+    [SerializeField] private bool isDebugging;
+    [SerializeField] private Indics indicsATester;
     
     void Start()
     {
-        foreach (Indics indic in gameData.indics.Keys)
+        if (!isDebugging)
         {
-            if (indic == gameData.currentIndic)
+            foreach (Indics indic in gameData.indics.Keys)
             {
-                Set(indic);
+                if (indic == gameData.currentIndic)
+                {
+                    Set(indic);
+                }
             }
+        }
+        else
+        {
+            Set(indicsATester);
         }
     }
 
