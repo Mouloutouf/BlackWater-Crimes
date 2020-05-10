@@ -17,7 +17,7 @@ public class LocationInteraction : SerializedMonoBehaviour
     public Text menuName;
     public Text menuDescription;
     public Image menuArtwork;
-    public Text menuClueCount;
+    public Text menuAdresse;
 
     public GameObject accessButton;
     public GameObject blockedButton;
@@ -94,7 +94,7 @@ public class LocationInteraction : SerializedMonoBehaviour
         menuName.text = _object.data.locationName;
         menuDescription.text = _object.data.locationDescription;
         menuArtwork.sprite = _object.data.locationArtwork;
-        menuClueCount.text = "Evidences found  :  " + _object.data.evidenceCollected.ToString();
+        menuAdresse.text = _object.data.locationAdress;
 
         accessButton.GetComponent<Button>().onClick.AddListener(delegate 
         { 

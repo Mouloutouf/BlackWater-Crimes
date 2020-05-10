@@ -32,8 +32,17 @@ public class InterrogateScript : SerializedMonoBehaviour
 
     List<Question> questions = new List<Question>();
 
+    [Header("Débugging")]
+    [SerializeField] bool isDebuggingInterrogatory;
+    [SerializeField] Suspects debuggingSuspect;
+
     void Start()
     {
+        if (isDebuggingInterrogatory)
+        {
+            gameData.currentSuspect = debuggingSuspect;
+        }
+
         switch (gameData.currentSuspect) //Update chara sprite & intro texts
         {
             case Suspects.Abigail_White:
