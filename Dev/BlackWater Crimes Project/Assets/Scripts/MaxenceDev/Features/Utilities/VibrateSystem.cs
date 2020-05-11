@@ -10,4 +10,9 @@ public class VibrateSystem : MonoBehaviour
     {
         if (gameData.vibrations) Handheld.Vibrate();
     }
+
+    public void ChangeBool(bool enabled)
+    {
+        gameData.vibrations = enabled;
+    }
 }
