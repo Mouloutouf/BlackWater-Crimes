@@ -28,6 +28,7 @@ public class CadranScript : MonoBehaviour
     [SerializeField] LayerMask numberLayer;
     [SerializeField] GameObject blockL;
     [SerializeField] GameObject blockR;
+    [SerializeField] GameObject numberRecorder;
     [SerializeField] GameObject placeHolderNumber;
 
     [SerializeField] CurrentDialingScript dialingScript;
@@ -169,7 +170,7 @@ public class CadranScript : MonoBehaviour
 
             foreach(Collider2D collider in hitColliders)
             {
-                if(collider.gameObject == blockR && currentNumber != 11)
+                if(collider.gameObject == numberRecorder && currentNumber != 11)
                 {
                     dialingScript.RecordNumber(currentNumber);
 
