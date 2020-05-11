@@ -58,7 +58,7 @@ public class EvidenceInteraction : MonoBehaviour
     {
         ObjectRotation();
 
-        if (fingerprintMode == true && Input.touchCount == 1)
+        if (fingerprintMode == true && (Input.touchCount == 1 || Input.GetMouseButton(0)))
         {
             if (currentEvidenceHeld.GetComponent<EvidenceObject>().data.hasIntels) IntelReveal();
         }
@@ -84,21 +84,24 @@ public class EvidenceInteraction : MonoBehaviour
 
     void IntelReveal()
     {
-        Touch touch = Input.GetTouch(0);
+        Vector3 inputPos;
+        if(Input.touchCount > 0) 
+        {
+            inputPos = Input.GetTouch(0).position;
+        }
+        else inputPos = Input.mousePosition;
         RaycastHit hit;
-        Ray ray = cam.ScreenPointToRay(touch.position);
+        Ray ray = cam.ScreenPointToRay(inputPos);
 
         if (Physics.Raycast(ray, out hit, 500f))
         {
-            Debug.Log("Test");
-
             if (hit.transform.gameObject.tag == "Clue")
             {
                 string name = hit.transform.GetComponent<IntelObject>().myName;
 
                 Evidence evidence = hit.transform.parent.gameObject.GetComponent<EvidenceObject>().data;
 
-                if (evidence.hasIntels == true && touch.phase == TouchPhase.Moved)
+                if (evidence.hasIntels == true && (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Moved) || Input.GetMouseButton(0))
                 {
                     foreach (Intel intel in evidence.intels)
                     {
