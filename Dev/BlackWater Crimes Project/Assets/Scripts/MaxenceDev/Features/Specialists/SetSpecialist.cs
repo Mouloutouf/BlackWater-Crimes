@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Sirenix.OdinInspector;
 
 public class SetSpecialist : MonoBehaviour
 {
@@ -16,13 +17,14 @@ public class SetSpecialist : MonoBehaviour
     public Text characterName;
     public Text characterJob;
 
-    [Header("Pour débugger")]
-    [SerializeField] private bool isDebugging;
-    [SerializeField] private Indics indicsATester;
+    [Header("For Debug Only")]
+    [SerializeField] private bool debug;
+    [ShowIf("debug")]
+    [SerializeField] private Indics indicToTest;
     
     void Start()
     {
-        if (!isDebugging)
+        if (!debug)
         {
             foreach (Indics indic in gameData.indics.Keys)
             {
@@ -34,7 +36,7 @@ public class SetSpecialist : MonoBehaviour
         }
         else
         {
-            Set(indicsATester);
+            Set(indicToTest);
         }
     }
 
