@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FailedReportsManager : MonoBehaviour
 {
+    public GameData gameData;
+
     public Transform failedContent;
 
     private bool start = true;
@@ -23,8 +25,24 @@ public class FailedReportsManager : MonoBehaviour
     public void CloseFailedReport(GameObject report)
     {
         report.GetComponent<ReportObject>().data.unlockedData = false;
-
+        
         Destroy(report);
+    }
+
+    public void ClearAllFailedReports()
+    {
+        foreach ((List<Report>, List<Report>) reports in gameData.megaReports.Values)
+        {
+            Report template = new Report();
+
+            foreach (Report report in reports.Item2)
+            {
+                if (report.index == 0) template = report;
+            }
+
+            reports.Item2.Clear();
+            reports.Item2.Add(template);
+        }
     }
 
     #region zucc

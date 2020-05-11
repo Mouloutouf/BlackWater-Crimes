@@ -37,6 +37,8 @@ public class EvidenceInteraction : MonoBehaviour
     [SerializeField] Vector2 values;
     [SerializeField] Vector2 sizes;
 
+    public VibrateSystem vibrateSystem;
+
     [ExecuteInEditMode]
     void OnEnable()
     {
@@ -128,7 +130,13 @@ public class EvidenceInteraction : MonoBehaviour
     public void TakePhoto()
     {
         soundAudio.PlayOneShot(photoShotSound);
+        fingerprintToggle.isOn = false;
+        fingerprintMode = false;
 
+        currentEvidenceHeld.GetComponent<EvidenceObject>().isZoomed = false;
+        if (currentEvidenceHeld.GetComponent<EvidenceObject>().displayTextComponent != null) 
+            currentEvidenceHeld.GetComponent<EvidenceObject>().displayTextComponent.transform.parent.gameObject.SetActive(false);
+        
         RaycastHit hit;
         Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
 
@@ -168,7 +176,7 @@ public class EvidenceInteraction : MonoBehaviour
         if (!_evidence.photographed)
         {
             soundAudio.PlayOneShot(photoSavedSound);
-            Handheld.Vibrate();
+            vibrateSystem.PhoneVibrate();
             StartCoroutine(DisplayText("Photo Saved"));
 
             _evidence.photographed = true;
@@ -180,7 +188,7 @@ public class EvidenceInteraction : MonoBehaviour
         else
         {
             soundAudio.PlayOneShot(photoReplacedSound);
-            Handheld.Vibrate();
+            vibrateSystem.PhoneVibrate();
             StartCoroutine(DisplayText("Photo Replaced"));
             gameData.allEvidences[thisSceneLocation].Remove(_evidence);
             gameData.allEvidences[thisSceneLocation].Add(_evidence);
@@ -192,7 +200,7 @@ public class EvidenceInteraction : MonoBehaviour
         string fileName = _hit.transform.parent.GetComponent<EvidenceObject>().data.codeName;
         fileName = fileName.Replace(" ", "");
 
-        if (Application.platform == RuntimePlatform.WindowsEditor /*|| (Application.platform == RuntimePlatform.Android && EditorApplication.isPlaying)*/)
+        if (Application.platform == RuntimePlatform.WindowsEditor || (Application.platform == RuntimePlatform.Android && EditorApplication.isPlaying))
         {
             filePath = "Assets/Graphs/Sprites/Screenshots/" + fileName + ".png";
             Debug.Log("Using Editor Folder");

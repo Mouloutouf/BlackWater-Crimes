@@ -40,12 +40,23 @@ public class InstantiateReportElements : InstantiationProcess<Report>
         int local = 0;
         currentContent = contents[local];
         CreatePage(currentContent);
-        
+        /*
         foreach (List<Report> _list in gameData.allReports.Values)
         {
             foreach (Report report in _list)
             {
-                if (report.unlockedData && report.index != 0)
+                if (report.unlockedData && !report.failed)
+                {
+                    reportsList.Add(report);
+                }
+            }
+        }
+        */
+        foreach ((List<Report>, List<Report>) _list in gameData.megaReports.Values)
+        {
+            foreach (Report report in _list.Item1)
+            {
+                if (report.unlockedData)
                 {
                     reportsList.Add(report);
                 }

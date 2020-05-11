@@ -59,6 +59,8 @@ public class InstantiationProcess<T> : MonoBehaviour where T : Data
 
 public class Instantiate : InstantiationProcess<Evidence>
 {
+    // Example Class
+
     public Vector3 initalPos;
 
     public float offset;

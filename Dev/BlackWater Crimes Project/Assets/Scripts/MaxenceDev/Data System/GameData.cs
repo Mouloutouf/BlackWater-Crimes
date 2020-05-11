@@ -8,7 +8,7 @@ public enum Locations { Docks, Brothel, Anna_House, New_House, Politician_Office
 
 public enum Suspects { Umberto_Moretti, Abigail_White, Richard_Anderson, Bob_Jenkins, None }
 
-public enum Indics { Master_Thommers, Brandon_Bennington, James_Walker, Quentin_Copeland, Thomas_Maxwell, Miss_Marshall, Bob_Jenkins, Arnold_Steele, Standard }
+public enum Indics { Master_Thommers, Brandon_Bennington, James_Walker, Quentin_Copeland, Thomas_Maxwell, Miss_Marshall, Arnold_Steele, Standard }
 
 public enum Types { Brands, Crime, Clothing, Documents }
 
@@ -130,6 +130,8 @@ public class Evidence : Data
 [Serializable]
 public class Report : Data
 {
+    public bool failed;
+
     [Title("Agent")]
 
     public Sprite agentSprite;
@@ -154,6 +156,7 @@ public class Report : Data
     [Title("Unlockable")]
 
     public bool giveAccess;
+    [ShowIf("giveAccess")]
     public Locations locationToAccess;
 
     [Title("Status")]
@@ -236,9 +239,19 @@ public class Character : Data
     public Suspects suspect;
 
     [Title("Distinctions")]
+    
+    public List<string> distinctiveElements;
+}
 
-    public string distinctiveCategory;
-    public string distinctiveElement;
+[Serializable]
+public class Indic
+{
+    [Title("Infos")]
+
+    public string name;
+    public string job;
+
+    public Sprite image;
 }
 
 [Serializable]
@@ -272,6 +285,8 @@ public class GameData : SerializedScriptableObject
 
     public Languages gameLanguage = Languages.English;
 
+    public bool vibrations = true;
+
     public SoundSettings soundSettings;
 
     [HideInInspector]
@@ -280,8 +295,8 @@ public class GameData : SerializedScriptableObject
 
     public List<Note> notes = new List<Note>();
 
-    [HideInInspector]
-    public List<Report> reports = new List<Report>();
+    
+    public Dictionary<Indics, (List<Report>, List<Report>)> megaReports = new Dictionary<Indics, (List<Report>, List<Report>)>();
     public Dictionary<Indics, List<Report>> allReports = new Dictionary<Indics, List<Report>>();
 
     public int reportsCollected = 0;
@@ -297,11 +312,14 @@ public class GameData : SerializedScriptableObject
 
     public List<Character> characters = new List<Character>();
 
+    public Indics currentIndic = Indics.Standard;
+
+    public Dictionary<Indics, Indic> indics = new Dictionary<Indics, Indic>();
+
     public GameData()
     {
         InitListOfType(evidences);
         InitListOfType(notes);
-        InitListOfType(reports);
         InitListOfType(locations);
     }
 
@@ -327,8 +345,6 @@ public class GameData : SerializedScriptableObject
                 return evidences as List<T>;
             case "note":
                 return notes as List<T>;
-            case "report":
-                return reports as List<T>;
             case "location":
                 return locations as List<T>;
             default:
@@ -363,6 +379,17 @@ public class GameData : SerializedScriptableObject
         }
         reportsCollected = 0;
 
+        foreach ((List<Report>, List<Report>) bigList in megaReports.Values)
+        {
+            foreach (Report _report in bigList.Item1)
+            {
+                _report.unlockedData = false;
+                _report.unlockOrderIndex = 0;
+                _report.seen = false;
+            }
+        }
+        reportsCollected = 0;
+
         // Reset Questions
         foreach (List<Question> questionList in questions.Values)
         {
@@ -372,6 +399,8 @@ public class GameData : SerializedScriptableObject
             }
         }
         interrogations = 3;
+
+        newStuff = false;
     }
 }
 

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class SpecialistValidateButton : MonoBehaviour
 {
     [SerializeField] SpecialistType specialistType;
-    [SerializeField] SpecialistClueShowerScript script;
+    [SerializeField] SpecialistEvidenceDisplayer script;
     [SerializeField] Text dialogueText;
     [SerializeField] string introText;
     [SerializeField] string validateText;
@@ -26,7 +26,7 @@ public class SpecialistValidateButton : MonoBehaviour
         {
             foreach (Report report in gameData.allReports[indic])
             {
-                if (report.elementName == script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.codeName && report.index != 0)
+                if (report.elementName == script.currentEvidenceDisplayed.GetComponent<PhotoSpecialistObject>().data.codeName && report.index != 0)
                 {
                     if (report.elementDetailName == null)
                     {
@@ -36,7 +36,7 @@ public class SpecialistValidateButton : MonoBehaviour
                     }
                     else
                     {
-                        foreach (Intel intel in script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.intels)
+                        foreach (Intel intel in script.currentEvidenceDisplayed.GetComponent<PhotoSpecialistObject>().data.intels)
                         {
                             Debug.Log(intel.name + intel.revealed);
 
@@ -86,7 +86,7 @@ public class SpecialistValidateButton : MonoBehaviour
         if (_report.unlockedData == false)
         {
             _report.unlockedData = true;
-            _report.elementSprite = script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.photo;
+            _report.elementSprite = script.currentEvidenceDisplayed.GetComponent<PhotoSpecialistObject>().data.photo;
             gameData.reportsCollected++;
             _report.unlockOrderIndex = gameData.reportsCollected;
 
@@ -97,25 +97,25 @@ public class SpecialistValidateButton : MonoBehaviour
     void UnlockFailedReport(Indics indic)
     {
         gameData.allReports[indic][0].unlockedData = true;
-        gameData.allReports[indic][0].elementSprite = script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.photo;
-        gameData.allReports[indic][0].elementName = script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.codeName;
+        gameData.allReports[indic][0].elementSprite = script.currentEvidenceDisplayed.GetComponent<PhotoSpecialistObject>().data.photo;
+        gameData.allReports[indic][0].elementName = script.currentEvidenceDisplayed.GetComponent<PhotoSpecialistObject>().data.codeName;
     }
 
     bool MatchType()
     {
-        if (specialistType == SpecialistType.ClothDesigner && script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.modeCategory.type == Types.Clothing) 
+        if (specialistType == SpecialistType.ClothDesigner && script.currentEvidenceDisplayed.GetComponent<PhotoSpecialistObject>().data.modeCategory.type == Types.Clothing) 
         {
             return true;
         }
-        else if (specialistType == SpecialistType.CustomsOfficer && script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.modeCategory.type == Types.Documents) 
+        else if (specialistType == SpecialistType.CustomsOfficer && script.currentEvidenceDisplayed.GetComponent<PhotoSpecialistObject>().data.modeCategory.type == Types.Documents) 
         {
             return true;
         }
-        else if (specialistType == SpecialistType.ForensicOfficer && script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.modeCategory.type == Types.Crime) 
+        else if (specialistType == SpecialistType.ForensicOfficer && script.currentEvidenceDisplayed.GetComponent<PhotoSpecialistObject>().data.modeCategory.type == Types.Crime) 
         {
             return true;
         }
-        else if (specialistType == SpecialistType.USCCSecretary && script.currentClueShowed.GetComponent<PhotoSpecialistObject>().data.modeCategory.type == Types.Brands) 
+        else if (specialistType == SpecialistType.USCCSecretary && script.currentEvidenceDisplayed.GetComponent<PhotoSpecialistObject>().data.modeCategory.type == Types.Brands) 
         {
             return true;
         }
