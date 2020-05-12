@@ -16,6 +16,7 @@ public class EvidenceInteraction : MonoBehaviour
     [SerializeField] GameObject fingerprintFilter;
     [SerializeField] Toggle fingerprintToggle;
     [SerializeField] Button returnButton;
+    [SerializeField] Button textButton;
     [SerializeField] Joystick joystick;
 
     public float rotateSpeed;
@@ -27,6 +28,7 @@ public class EvidenceInteraction : MonoBehaviour
 
     bool canRotate = true;
     bool fingerprintMode = false;
+    bool hasCheckTextButton = false;
 
     public AudioSource soundAudio;
 
@@ -45,6 +47,7 @@ public class EvidenceInteraction : MonoBehaviour
         fingerprintToggle.isOn = false;
         fingerprintMode = false;
         saveText.SetActive(false);
+        hasCheckTextButton = false;
     }
     
     void Start()
@@ -56,6 +59,13 @@ public class EvidenceInteraction : MonoBehaviour
 
     void Update()
     {
+        if(currentEvidenceHeld != null && !hasCheckTextButton)
+        {
+            if (currentEvidenceHeld.GetComponent<EvidenceObject>().data.hasText) textButton.gameObject.SetActive(true);
+            else textButton.gameObject.SetActive(false);
+            hasCheckTextButton = true;
+        }
+
         ObjectRotation();
 
         if (fingerprintMode == true && (Input.touchCount == 1 || Input.GetMouseButton(0)))
@@ -297,5 +307,10 @@ public class EvidenceInteraction : MonoBehaviour
 
             currentEvidenceHeld.GetComponent<EvidenceObject>().canShowText = true;
         }
+    }
+
+    public void TextButton()
+    {
+        currentEvidenceHeld.GetComponent<EvidenceObject>().ShowText();
     }
 }

@@ -42,7 +42,7 @@ public class EvidenceObject : ObjectData<Evidence>
 
     void Update()
     {
-        if (isZoomed && canShowText && data.hasText)
+        /*if (isZoomed && canShowText && data.hasText)
         {
             DisplayText();
         }
@@ -83,8 +83,23 @@ public class EvidenceObject : ObjectData<Evidence>
 
                 isShown = true;
             }
+        }*/
+    }
 
-            hit = false;
+    public void ShowText()
+    {
+        if (isShown)
+        {
+            displayTextComponent.transform.parent.gameObject.SetActive(false);
+
+            isShown = false;
+        }
+        else
+        {
+            displayTextComponent.text = data.descriptionText;
+            displayTextComponent.transform.parent.gameObject.SetActive(true);
+
+            isShown = true;
         }
     }
 }

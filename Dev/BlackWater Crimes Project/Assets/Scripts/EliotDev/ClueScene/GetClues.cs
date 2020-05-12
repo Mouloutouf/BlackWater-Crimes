@@ -11,7 +11,6 @@ public class GetClues : MonoBehaviour
     [SerializeField] GameObject sceneCanvas;
     [SerializeField] GameObject cameraCanvas;
     [SerializeField] GameObject overlayClueCanvas;
-    [SerializeField] GameObject photoCanvas;
     [SerializeField] AudioMixerGroup lowPassMixer;
 
     public AudioSource musicAudio;
@@ -199,20 +198,5 @@ public class GetClues : MonoBehaviour
         if(actualClue.GetComponent<EvidenceObject>().displayTextComponent != null) actualClue.GetComponent<EvidenceObject>().displayTextComponent.transform.parent.gameObject.SetActive(false);
         overlayClueCanvas.SetActive(false);
         musicAudio.outputAudioMixerGroup = null;
-    }
-
-    //Photo UI
-    public void DisplayUIPhoto()
-    {
-        if (!isPhotoDisplayed)
-        {
-            photoCanvas.SetActive(true);
-            isPhotoDisplayed = true;
-        }
-        else
-        {
-            photoCanvas.SetActive(false);
-            isPhotoDisplayed = false;
-        }
     }
 }
