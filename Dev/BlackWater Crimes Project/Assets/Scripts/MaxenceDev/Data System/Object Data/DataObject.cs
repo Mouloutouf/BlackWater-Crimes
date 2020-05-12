@@ -37,7 +37,7 @@ public class ObjectData<T> : MonoBehaviour where T : Data
         loaded = true;
     }
 
-    public void LoadDataOfType<_T>(_T type, List<_T> list) where _T : Data
+    public void LoadDataOfType<_T>(List<_T> list) where _T : Data
     {
         foreach (_T _data in list)
         {
@@ -51,13 +51,11 @@ public class ObjectData<T> : MonoBehaviour where T : Data
 
 public class DataObject : ObjectData<Data>
 {
-    private Data myType = new Data();
-
     void Start()
     {
         GetGameData();
 
-        LoadDataOfType(myType, new List<Data>()); // Place Holder
+        LoadDataOfType(new List<Data>()); // Place Holder
     }
 
     // Update() is called in Parent Class !

@@ -13,12 +13,4 @@ public class QuestionObject : ObjectData<Question>
     {
         base.Protocol();
     }
-
-    void Update()
-    {
-        if (!loaded)
-        {
-            Protocol();
-        }
-    }
 }

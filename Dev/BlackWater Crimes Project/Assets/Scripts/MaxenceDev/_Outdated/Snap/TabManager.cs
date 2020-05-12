@@ -5,13 +5,6 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public enum Modes
-{
-    Location,
-    Suspect,
-    Type
-}
-
 [Serializable]
 public class SortMode
 {

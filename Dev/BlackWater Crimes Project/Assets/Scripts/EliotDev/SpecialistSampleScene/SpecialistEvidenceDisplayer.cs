@@ -46,7 +46,7 @@ public class SpecialistEvidenceDisplayer : MonoBehaviour
         currentEvidenceDisplayed.GetComponent<RectTransform>().localPosition = Vector3.zero;
         currentEvidenceDisplayed.GetComponent<RectTransform>().localScale = new Vector3(2.3f, 2.3f, 1);
         Destroy(currentEvidenceDisplayed.GetComponent<Button>());
-        currentEvidenceDisplayed.GetComponent<PhotoSpecialistObject>().isClueShower = true;
+        currentEvidenceDisplayed.GetComponent<PhotoSpecialistObject>().isEvidenceDisplayed = true;
         CloseFolder();
     }
 

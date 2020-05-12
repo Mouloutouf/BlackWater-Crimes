@@ -100,30 +100,6 @@ public class SpecialistValidateButton : MonoBehaviour
         gameData.allReports[indic][0].elementSprite = script.currentEvidenceDisplayed.GetComponent<PhotoSpecialistObject>().data.photo;
         gameData.allReports[indic][0].elementName = script.currentEvidenceDisplayed.GetComponent<PhotoSpecialistObject>().data.codeName;
     }
-
-    bool MatchType()
-    {
-        if (specialistType == SpecialistType.ClothDesigner && script.currentEvidenceDisplayed.GetComponent<PhotoSpecialistObject>().data.modeCategory.type == Types.Clothing) 
-        {
-            return true;
-        }
-        else if (specialistType == SpecialistType.CustomsOfficer && script.currentEvidenceDisplayed.GetComponent<PhotoSpecialistObject>().data.modeCategory.type == Types.Documents) 
-        {
-            return true;
-        }
-        else if (specialistType == SpecialistType.ForensicOfficer && script.currentEvidenceDisplayed.GetComponent<PhotoSpecialistObject>().data.modeCategory.type == Types.Crime) 
-        {
-            return true;
-        }
-        else if (specialistType == SpecialistType.USCCSecretary && script.currentEvidenceDisplayed.GetComponent<PhotoSpecialistObject>().data.modeCategory.type == Types.Brands) 
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
 }
 
 public enum SpecialistType

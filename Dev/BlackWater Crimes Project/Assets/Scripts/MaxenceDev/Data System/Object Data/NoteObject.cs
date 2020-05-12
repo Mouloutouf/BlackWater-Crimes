@@ -6,9 +6,7 @@ using UnityEngine.UI;
 public class NoteObject : ObjectData<Note>
 {
     public Text textComponent;
-
-    private Note myType = new Note();
-
+    
     void Start()
     {
         GetGameData();

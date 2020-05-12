@@ -4,6 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System;
 
+public enum DataTypes
+{
+    Evidence,
+    Note,
+    Report,
+    Location
+}
+
 // Content Class
 // Utilisation dans Unity ---> La Scène est définie par plusieurs Game Objects 'Content' / 'Contenu' qui contiennent plusieurs objets enfants d'un certain Data Type.
 // Exemple : Game Object Content 'Scene Evidences', qui contient l'ensemble des Game Objects 'Evidence' / 'Indice' de la Scène en enfants
@@ -44,9 +52,9 @@ public class SceneManager : MonoBehaviour
         for (int i = 0; i < contents.Count; i++)
         {
             if (!contents[i].instantiate)
-                LoadDataOfType(gameData.evidences[0], i); //GetDataType(contents[i].dataType)
+                LoadDataOfType(gameData.allEvidences[Locations.Docks][0], i); //GetDataType(contents[i].dataType)
             else
-                InstantiateDataOfType(gameData.evidences[0], i); //GetDataType(contents[i].dataType)
+                InstantiateDataOfType(gameData.allEvidences[Locations.Docks][0], i); //GetDataType(contents[i].dataType)
         }
 
         object type = GetType();

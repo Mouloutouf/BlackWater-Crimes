@@ -8,10 +8,8 @@ using UnityEngine.UI;
 public class PhotoSpecialistObject : ObjectData<Evidence>
 {
     public GameObject imageObject;
-
-    private Evidence myType;
-
-    public bool isClueShower = false;
+    
+    public bool isEvidenceDisplayed = false;
 
     void Start()
     {
@@ -20,21 +18,11 @@ public class PhotoSpecialistObject : ObjectData<Evidence>
 
     public override void Protocol()
     {
-        if (!isClueShower)
+        if (!isEvidenceDisplayed)
         {
             imageObject.GetComponent<Image>().sprite = data.photo;
         }
 
         base.Protocol();
-    }
-
-    void Update()
-    {
-        // Data Protocol
-
-        if (!loaded)
-        {
-            Protocol();
-        }
     }
 }

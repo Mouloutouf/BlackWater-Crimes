@@ -38,15 +38,15 @@ public class LocationInteraction : SerializedMonoBehaviour
         {
             Location location = tr.GetComponent<LocationObject>().data;
 
-            if (!gameData.dataListsContainingState[typeof(Location)])
+            if (!gameData.locationsInList)
             {
-                Debug.Log(gameData.dataListsContainingState[typeof(Location)]);
+                Debug.Log(gameData.locationsInList);
                 location.unlockedData = true;
                 gameData.locations.Add(location);
             }
         }
 
-        gameData.dataListsContainingState[typeof(Location)] = true;
+        gameData.locationsInList = true;
     }
 
     void Update()
