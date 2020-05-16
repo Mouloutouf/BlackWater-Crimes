@@ -344,13 +344,11 @@ MonoBehaviour:
     modeCategory:
       location: 5
       suspect: 4
-      type: 3
     seen: 0
   instantiate: 0
   hasApplied: 0
   hasText: 0
   displayTextComponent: {fileID: 0}
-  descriptionText: 
   timer: 0.3
   _cam: {fileID: 0}
 --- !u!114 &85627033
@@ -686,13 +684,11 @@ MonoBehaviour:
     modeCategory:
       location: 5
       suspect: 3
-      type: 3
     seen: 0
   instantiate: 0
   hasApplied: 0
   hasText: 1
   displayTextComponent: {fileID: 951130929}
-  descriptionText: "La famille enti\xE8re enfin r\xE9unie..."
   timer: 0.3
   _cam: {fileID: 1515454466}
 --- !u!114 &267094034
@@ -1268,13 +1264,11 @@ MonoBehaviour:
     modeCategory:
       location: 1
       suspect: 2
-      type: 0
     seen: 0
   instantiate: 0
   hasApplied: 0
   hasText: 0
   displayTextComponent: {fileID: 0}
-  descriptionText: 
   timer: 0.3
   _cam: {fileID: 0}
 --- !u!65 &623914899
@@ -1498,13 +1492,11 @@ MonoBehaviour:
     modeCategory:
       location: 5
       suspect: 4
-      type: 3
     seen: 0
   instantiate: 0
   hasApplied: 0
   hasText: 1
   displayTextComponent: {fileID: 951130929}
-  descriptionText: "Pr\xEAte p...\nsoir\xE9e\n\nDoroth\xE9e"
   timer: 0.3
   _cam: {fileID: 1515454466}
 --- !u!114 &678365765
@@ -1652,13 +1644,11 @@ MonoBehaviour:
     modeCategory:
       location: 5
       suspect: 2
-      type: 3
     seen: 0
   instantiate: 0
   hasApplied: 0
   hasText: 0
   displayTextComponent: {fileID: 0}
-  descriptionText: 
   timer: 0.3
   _cam: {fileID: 0}
 --- !u!114 &716882021
@@ -2499,13 +2489,11 @@ MonoBehaviour:
     modeCategory:
       location: 5
       suspect: 4
-      type: 3
     seen: 0
   instantiate: 0
   hasApplied: 0
   hasText: 0
   displayTextComponent: {fileID: 0}
-  descriptionText: 
   timer: 0.3
   _cam: {fileID: 0}
 --- !u!114 &1221352479
@@ -2847,6 +2835,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bb6b50c0e7174284e9e1160df9fc6cd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1430949783 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6054615889987660512, guid: e7f1cd350bc5f0941bb44b9e4b1ff994,
+    type: 3}
+  m_PrefabInstance: {fileID: 1430949778}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5beb02e2bd5105e46a54bf8fd58ceff2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1464763957
@@ -3414,16 +3414,11 @@ MonoBehaviour:
     modeCategory:
       location: 5
       suspect: 4
-      type: 3
     seen: 0
   instantiate: 0
   hasApplied: 0
   hasText: 1
   displayTextComponent: {fileID: 951130929}
-  descriptionText: '...our la
-
-
-    et moi.'
   timer: 0.3
   _cam: {fileID: 1515454466}
 --- !u!114 &1586696861
@@ -3729,13 +3724,11 @@ MonoBehaviour:
     modeCategory:
       location: 5
       suspect: 4
-      type: 3
     seen: 0
   instantiate: 0
   hasApplied: 0
   hasText: 0
   displayTextComponent: {fileID: 0}
-  descriptionText: 
   timer: 0.3
   _cam: {fileID: 0}
 --- !u!114 &1695334287
@@ -4070,13 +4063,11 @@ MonoBehaviour:
     modeCategory:
       location: 5
       suspect: 4
-      type: 3
     seen: 0
   instantiate: 0
   hasApplied: 0
   hasText: 0
   displayTextComponent: {fileID: 0}
-  descriptionText: 
   timer: 0.3
   _cam: {fileID: 0}
 --- !u!114 &1878871732
@@ -6086,6 +6077,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 100024203571898493, guid: 6e34bc824f7d2714e8a9caa2990f8913,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 510400395}
+    - target: {fileID: 100024203571898493, guid: 6e34bc824f7d2714e8a9caa2990f8913,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DezoomClue
+      objectReference: {fileID: 0}
+    - target: {fileID: 100024203571898493, guid: 6e34bc824f7d2714e8a9caa2990f8913,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100024203571898493, guid: 6e34bc824f7d2714e8a9caa2990f8913,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1430949783}
+    - target: {fileID: 100024203571898493, guid: 6e34bc824f7d2714e8a9caa2990f8913,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlaySound
+      objectReference: {fileID: 0}
+    - target: {fileID: 100024203571898493, guid: 6e34bc824f7d2714e8a9caa2990f8913,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: ea08b437dbda5de438d0e0745b62e420, type: 3}
     - target: {fileID: 695329647063314858, guid: 6e34bc824f7d2714e8a9caa2990f8913,
         type: 3}
       propertyPath: m_IsActive

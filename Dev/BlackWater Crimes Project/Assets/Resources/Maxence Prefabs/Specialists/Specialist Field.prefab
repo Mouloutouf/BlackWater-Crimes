@@ -53,7 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   introText: "Bonjour d\xE9tective ! Comment puis-je vous aider ?"
   validateText: "Okay, je vais checker \xE7a. Regardez vos rapports !"
-  indic: 1
+  checkedImage: {fileID: 0}
   specialistEvidenceDisplayer: {fileID: 7469922199905555098}
 --- !u!114 &7469922198599676667
 MonoBehaviour:
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 4645354823844571672, guid: 179e1963c65f4014c9e2eb89f6bb2c91, type: 3}
-  content: {fileID: 7469922200141847904}
+  content: {fileID: 7469922199720194064}
   cluesPerRow: 4
 --- !u!1 &7469922198615887547
 GameObject:
@@ -231,7 +231,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -696,7 +696,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 7469922198786815567}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.5
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1006,7 +1006,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.17721558}
   m_SizeDelta: {x: 1480, y: 720}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7469922200291720141

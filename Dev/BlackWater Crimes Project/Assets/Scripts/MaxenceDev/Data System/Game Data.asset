@@ -586,8 +586,8 @@ MonoBehaviour:
       Data: 
     - Name: reportText
       Entry: 1
-      Data: "Oui, je connais cette femme. Elle habite au  700 West Huron Street,
-        \xE0 la crois\xE9e avec la  North Halsted Street, pr\xE8s du River West District.
+      Data: "Oui, je connais cette femme. Elle habite au 700 West Huron Street, \xE0
+        la crois\xE9e avec la  North Halsted Street, pr\xE8s du River West District.
         Elle n'y est pas souvent et y vit seule. Elle doit avoir un travail aux alentours
         du 1000 West Madison Street, au centre de la rue. Elle passe beaucoup de
         temps l\xE0-bas.\n"
@@ -5158,16 +5158,17 @@ MonoBehaviour:
   vibrations: 1
   soundSettings:
     musicVolume:
-      _volume: 0
+      _volume: 0.5
     soundVolume:
       _volume: 0.5
     voiceVolume:
       _volume: 0.5
-  evidences: []
   notes: []
   reportsCollected: 0
   newStuff: 0
   locations: []
+  locationsInList: 0
+  currentSuspect: 0
   characters:
   - unlockedData: 1
     index: 0
@@ -5214,4 +5215,4 @@ MonoBehaviour:
     suspect: 0
     distinctiveElements:
     - Blond
-  currentIndic: 1
+  currentIndic: 2

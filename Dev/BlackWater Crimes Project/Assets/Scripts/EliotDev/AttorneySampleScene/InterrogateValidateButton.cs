@@ -13,6 +13,8 @@ public class InterrogateValidateButton : MonoBehaviour
     [SerializeField] GameData gameData;
     Suspects inputSuspect;
 
+    public bool debug;
+
     private void Start() 
     {
         interrogationsNumberText.text += gameData.interrogations;
@@ -20,6 +22,16 @@ public class InterrogateValidateButton : MonoBehaviour
 
     public void Validate()
     {
+        if (debug)
+        {
+            dialogueText.text = "This seems logic. I will bring this person!";
+            StartCoroutine(DelayToInterrogate(2));
+
+            Reset();
+
+            return;
+        }
+
         if (Match())
         {
             if (gameData.interrogations > 0)

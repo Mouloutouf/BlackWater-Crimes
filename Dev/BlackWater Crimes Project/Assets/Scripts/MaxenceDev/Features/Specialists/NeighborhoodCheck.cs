@@ -9,6 +9,8 @@ public class NeighborhoodCheck : Checker
 
     public override void SendEvent()
     {
+        GetCheckedElements();
+
         Send();
     }
 

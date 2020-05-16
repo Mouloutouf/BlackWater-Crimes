@@ -11,6 +11,8 @@ public class SpecialistCheck : Checker
 
     public override void SendEvent()
     {
+        GetCheckedElements();
+
         Send(EvidenceHeld.intels);
     }
 
@@ -29,5 +31,15 @@ public class SpecialistCheck : Checker
 
         validateButton.interactable = false;
         validateButton.GetComponentInChildren<Text>().text = "Missing elements";
+    }
+
+    public override void UnlockReport(Report _report)
+    {
+        if (!_report.unlockedData)
+        {
+            _report.elementSprite = checkedImage;
+        }
+
+        base.UnlockReport(_report);
     }
 }

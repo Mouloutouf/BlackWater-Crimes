@@ -498,18 +498,11 @@ MonoBehaviour:
     modeCategory:
       location: 0
       suspect: 1
-      type: 3
     seen: 0
   instantiate: 0
   hasApplied: 0
   hasText: 1
   displayTextComponent: {fileID: 446966043}
-  descriptionText: "Pouvons-nous nous retrouver sur les quais pour parler de notre
-    probl\xE8me s'il te pla\xEEt ? C'est urgent. On doit s'en sortir, sinon, nous
-    sommes toutes en danger. Je me fais du souci pour les autres. J'esp\xE8re qu'elles
-    n'auront pas de probl\xE8mes. Je t'attendrai ce soir pr\xE8s du bateau de p\xEAche,
-    non loin des \xE9tals de poisson.Viens vers 23 heures pour \xEAtre s\xFBre que
-    nous soyons seules. \r\n\r\nLa Traviata."
   timer: 0.3
   _cam: {fileID: 1445889581}
 --- !u!114 &107201355
@@ -1212,6 +1205,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 100024203571898493, guid: 6e34bc824f7d2714e8a9caa2990f8913,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 675914851}
+    - target: {fileID: 100024203571898493, guid: 6e34bc824f7d2714e8a9caa2990f8913,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DezoomClue
+      objectReference: {fileID: 0}
+    - target: {fileID: 100024203571898493, guid: 6e34bc824f7d2714e8a9caa2990f8913,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100024203571898493, guid: 6e34bc824f7d2714e8a9caa2990f8913,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 829564471}
+    - target: {fileID: 100024203571898493, guid: 6e34bc824f7d2714e8a9caa2990f8913,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlaySound
+      objectReference: {fileID: 0}
+    - target: {fileID: 100024203571898493, guid: 6e34bc824f7d2714e8a9caa2990f8913,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: ea08b437dbda5de438d0e0745b62e420, type: 3}
     - target: {fileID: 157137890444518030, guid: 6e34bc824f7d2714e8a9caa2990f8913,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -2519,6 +2542,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bb6b50c0e7174284e9e1160df9fc6cd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &829564471 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6054615889987660512, guid: e7f1cd350bc5f0941bb44b9e4b1ff994,
+    type: 3}
+  m_PrefabInstance: {fileID: 829564466}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5beb02e2bd5105e46a54bf8fd58ceff2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &872246311
@@ -8226,13 +8261,11 @@ MonoBehaviour:
     modeCategory:
       location: 0
       suspect: 4
-      type: 2
     seen: 0
   instantiate: 0
   hasApplied: 0
   hasText: 0
   displayTextComponent: {fileID: 0}
-  descriptionText: 
   timer: 0.3
   _cam: {fileID: 0}
 --- !u!64 &1231236610871885591
@@ -21678,13 +21711,11 @@ MonoBehaviour:
     modeCategory:
       location: 0
       suspect: 4
-      type: 1
     seen: 0
   instantiate: 0
   hasApplied: 0
   hasText: 0
   displayTextComponent: {fileID: 0}
-  descriptionText: 
   timer: 0.3
   _cam: {fileID: 0}
 --- !u!65 &6542740856713617744

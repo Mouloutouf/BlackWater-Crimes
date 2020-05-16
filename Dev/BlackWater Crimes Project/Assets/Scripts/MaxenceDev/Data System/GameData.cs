@@ -290,11 +290,11 @@ public class GameData : SerializedScriptableObject
 
     [Title("Locations")]
     public List<Location> locations = new List<Location>();
-    public bool locationsInList { get; set; } = false;
+    public bool locationsInList = false; // get; set; autoproperty
 
     [Title("Questions")]
     public Dictionary<Suspects, List<Question>> questions = new Dictionary<Suspects, List<Question>>();
-    public Suspects currentSuspect { get; set; }
+    public Suspects currentSuspect;
     public int interrogations { get; set; } = 3;
 
     [Title("Characters")]
@@ -317,6 +317,8 @@ public class GameData : SerializedScriptableObject
 
         // Reset Locations
         locations.Clear();
+
+        locationsInList = false;
 
         // Reset Notes
         notes.Clear();

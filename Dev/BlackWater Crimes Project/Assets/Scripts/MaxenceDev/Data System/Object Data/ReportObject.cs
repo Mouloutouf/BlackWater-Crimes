@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class ReportObject : ObjectData<Report>
 {
+    public GameData _gameData;
+
     public Image agentImage;
     public Text agentText;
 
@@ -49,7 +51,7 @@ public class ReportObject : ObjectData<Report>
     {
         // Set Questions
         
-        foreach (List<Question> questionList in gameData.questions.Values) 
+        foreach (List<Question> questionList in _gameData.questions.Values) 
         {
             foreach (Question question in questionList)
             {
@@ -69,7 +71,7 @@ public class ReportObject : ObjectData<Report>
 
         if (report.giveAccess)
         {
-            foreach (Location location in gameData.locations)
+            foreach (Location location in _gameData.locations)
             {
                 if (location.myLocation == report.locationToAccess) location.known = true;
             }

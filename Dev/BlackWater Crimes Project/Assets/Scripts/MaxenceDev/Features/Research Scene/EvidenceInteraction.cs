@@ -213,7 +213,7 @@ public class EvidenceInteraction : MonoBehaviour
         string fileName = _hit.transform.parent.GetComponent<EvidenceObject>().data.codeName;
         fileName = fileName.Replace(" ", "");
 
-        if (Application.platform == RuntimePlatform.WindowsEditor || (Application.platform == RuntimePlatform.Android && EditorApplication.isPlaying))
+        if (Application.platform == RuntimePlatform.WindowsEditor /*|| (Application.platform == RuntimePlatform.Android && EditorApplication.isPlaying)*/)
         {
             filePath = "Assets/Graphs/Sprites/Screenshots/" + fileName + ".png";
             Debug.Log("Using Editor Folder");
@@ -284,6 +284,7 @@ public class EvidenceInteraction : MonoBehaviour
 
     IEnumerator DisplayText(string textToDisplay)
     {
+        yield return new WaitForSeconds(0.2f);
         saveText.SetActive(true);
         saveText.GetComponent<Text>().text = textToDisplay;
         yield return new WaitForSeconds(2f);

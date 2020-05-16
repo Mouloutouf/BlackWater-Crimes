@@ -16,7 +16,7 @@ public class Checker : MonoBehaviour
 
     public string checkedName { get; set; }
 
-    public Sprite checkedImage { get; set; }
+    [HideInInspector] public Sprite checkedImage; // get; set; autoproperty maybe
 
     public Indics indic { get { return gameData.currentIndic; } }
     
@@ -35,24 +35,21 @@ public class Checker : MonoBehaviour
 
     public virtual void SendEvent()
     {
+        GetCheckedElements();
+
         Send();
     }
 
     protected void Send()
     {
-        GetCheckedElements();
-
         foreach (Indics indic in gameData.megaReports.Keys)
         {
             foreach (Report report in gameData.megaReports[indic].Item1)
             {
                 if (Check(indic, report))
                 {
-                    if (report.elementDetailName == null)
-                    {
-                        UnlockReport(report);
-                        match = true;
-                    }
+                    UnlockReport(report);
+                    match = true;
                 }
             }
         }
@@ -66,8 +63,6 @@ public class Checker : MonoBehaviour
 
     protected void Send(List<Intel> intelList)
     {
-        GetCheckedElements();
-
         foreach (Indics indic in gameData.megaReports.Keys)
         {
             foreach (Report report in gameData.megaReports[indic].Item1)
@@ -117,7 +112,7 @@ public class Checker : MonoBehaviour
         return check;
     }
 
-    void UnlockReport(Report _report)
+    public virtual void UnlockReport(Report _report)
     {
         if (!_report.unlockedData)
         {

@@ -23,6 +23,7 @@ public class AttorneySuspectNameScript : MonoBehaviour
             knownNamesToCheck[i] = knownNamesToCheck[i].ToLower();
         }
     }
+
     public void CheckName()
     {
         string name = inputText.text;
