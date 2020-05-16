@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,12 +23,25 @@ public class Checker : MonoBehaviour
     
     private bool match;
 
+    [Header("Ajout Titouan")]
+    [SerializeField] private List<IndicsText> allIndicsText;
+    [SerializeField] private GameObject reportButton;
+
     void Start()
     {
         gameData = GameObject.Find("Data Container").GetComponent<DataContainer>().gameData;
 
         dialogueText = GameObject.Find("Dialogue Text").GetComponent<Text>();
         dialogueText.text = introText;
+
+        foreach (IndicsText indicsText in allIndicsText)
+        {
+            if(indicsText.indic == gameData.currentIndic)
+            {
+                dialogueText.text = indicsText.introText;
+                break;
+            }
+        }
 
         validateButton = GameObject.Find("Validate Button").GetComponent<Button>();
         validateButton.onClick.AddListener(delegate { SendEvent(); });
@@ -59,9 +73,11 @@ public class Checker : MonoBehaviour
 
         if (!match) UnlockFailedReport();
 
+        ResetField();
+
         match = false;
 
-        ResetField();
+
     }
 
     protected void Send(List<Intel> intelList)
@@ -97,9 +113,11 @@ public class Checker : MonoBehaviour
 
         if (!match) UnlockFailedReport();
 
+        ResetField();
+
         match = false;
 
-        ResetField();
+
     }
 
     public virtual void GetCheckedElements() { }
@@ -154,5 +172,28 @@ public class Checker : MonoBehaviour
     public virtual void ResetField()
     {
         dialogueText.text = validateText;
+
+        if (match)
+        {
+            foreach (IndicsText indicsText in allIndicsText)
+            {
+                if (indicsText.indic == gameData.currentIndic)
+                {
+                    dialogueText.text = indicsText.successText;
+                    break;
+                }
+            }
+        }
+        else
+        {
+            foreach (IndicsText indicsText in allIndicsText)
+            {
+                if (indicsText.indic == gameData.currentIndic)
+                {
+                    dialogueText.text = indicsText.failureText;
+                    break;
+                }
+            }
+        }
     }
 } 

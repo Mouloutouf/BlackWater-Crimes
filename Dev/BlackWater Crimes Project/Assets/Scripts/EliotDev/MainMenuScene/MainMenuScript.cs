@@ -61,7 +61,7 @@ public class MainMenuScript : MonoBehaviour
     {
         if(titleAlpha > -0.3f)
         {
-            titleAlpha -= .008f;
+            titleAlpha -= .025f;
             if(titleAlpha > 0)
             {
                 Color tempColor = title.GetComponent<Image>().color;
@@ -73,7 +73,7 @@ public class MainMenuScript : MonoBehaviour
         {
             title.SetActive(false);
             menuOptions.SetActive(true);
-            menuOptionsAlpa += .008f;
+            menuOptionsAlpa += .025f;
             Color tempColor = menuOptions.GetComponentInChildren<Image>().color;
             tempColor.a = menuOptionsAlpa;
             foreach(Image image in menuOptions.GetComponentsInChildren<Image>())
