@@ -246,6 +246,15 @@ public class EvidenceInteraction : MonoBehaviour
 
             StartCoroutine(CheckFile(Application.persistentDataPath + "/" + filePath, fileName, _evidence));
         }
+
+        /*if (!_evidence.photographed)
+        {
+            StartCoroutine(DisplayText("Photo Saved"));
+        }
+        else
+        {
+            StartCoroutine(DisplayText("Photo Replaced"));
+        }*/
     }
 
     IEnumerator CheckFile(string filePath, string fileName, Evidence _evidence)
@@ -284,7 +293,7 @@ public class EvidenceInteraction : MonoBehaviour
 
     IEnumerator DisplayText(string textToDisplay)
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.1f);
         saveText.SetActive(true);
         saveText.GetComponent<Text>().text = textToDisplay;
         yield return new WaitForSeconds(2f);
