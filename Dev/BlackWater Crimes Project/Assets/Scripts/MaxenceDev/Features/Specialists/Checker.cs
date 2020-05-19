@@ -1,16 +1,25 @@
 ﻿using System.Collections;
 using Sirenix.OdinInspector;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[Serializable]
+public class IndicsText
+{
+    public Indics indic;
+
+    public string introText;
+
+    public string successText;
+    public string failureText;
+}
+
 public class Checker : MonoBehaviour
 {
     protected Text dialogueText;
-
-    [SerializeField] string introText;
-    [SerializeField] string validateText;
-
+    
     protected Button validateButton;
 
     protected GameData gameData;
@@ -22,21 +31,18 @@ public class Checker : MonoBehaviour
     public Indics indic { get { return gameData.currentIndic; } }
     
     private bool match;
-
-    [Header("Ajout Titouan")]
+    
     [SerializeField] private List<IndicsText> allIndicsText;
-    [SerializeField] private GameObject reportButton;
-
+    
     void Start()
     {
         gameData = GameObject.Find("Data Container").GetComponent<DataContainer>().gameData;
 
         dialogueText = GameObject.Find("Dialogue Text").GetComponent<Text>();
-        dialogueText.text = introText;
-
+        
         foreach (IndicsText indicsText in allIndicsText)
         {
-            if(indicsText.indic == gameData.currentIndic)
+            if (indicsText.indic == gameData.currentIndic)
             {
                 dialogueText.text = indicsText.introText;
                 break;
@@ -72,9 +78,9 @@ public class Checker : MonoBehaviour
 
         ResetField();
 
+        Debug.Log(match);
+
         match = false;
-
-
     }
 
     protected void Send(List<Intel> intelList)
@@ -111,8 +117,6 @@ public class Checker : MonoBehaviour
         ResetField();
 
         match = false;
-
-
     }
 
     public virtual void GetCheckedElements() { }
@@ -166,28 +170,14 @@ public class Checker : MonoBehaviour
     
     public virtual void ResetField()
     {
-        dialogueText.text = validateText;
+        foreach (IndicsText indicText in allIndicsText)
+        {
+            if (indicText.indic == gameData.currentIndic)
+            {
+                if (match) dialogueText.text = indicText.successText;
+                else dialogueText.text = indicText.failureText;
 
-        if (match)
-        {
-            foreach (IndicsText indicsText in allIndicsText)
-            {
-                if (indicsText.indic == gameData.currentIndic)
-                {
-                    dialogueText.text = indicsText.successText;
-                    break;
-                }
-            }
-        }
-        else
-        {
-            foreach (IndicsText indicsText in allIndicsText)
-            {
-                if (indicsText.indic == gameData.currentIndic)
-                {
-                    dialogueText.text = indicsText.failureText;
-                    break;
-                }
+                break;
             }
         }
     }

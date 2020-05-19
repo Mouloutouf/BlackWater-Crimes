@@ -27,7 +27,32 @@ public class HeadHunterCheck : Checker
             }
         }
     }
-    
+
+    public override bool Check(Indics _indic, Report _report)
+    {
+        bool check = true;
+
+        string detailText = dropdown.GetComponentInChildren<Text>().text;
+
+        bool match = false;
+        foreach (Character character in gameData.characters)
+        {
+            foreach (string detail in character.distinctiveElements)
+            {
+                if (detailText == detail) match = true;
+            }
+        }
+        if (!match) check = false;
+
+        if (_indic != this.indic) check = false;
+
+        if (_report.elementName != checkedName) check = false;
+
+        if (_report.index == 0) check = false;
+        
+        return check;
+    }
+
     bool CheckName()
     {
         bool check = false;
@@ -36,12 +61,7 @@ public class HeadHunterCheck : Checker
         {
             if (checkedName == character.name)
             {
-                string detailText = dropdown.GetComponentInChildren<Text>().text;
-
-                foreach (string detail in character.distinctiveElements)
-                {
-                    if (detailText == detail) check = true;
-                }
+                check = true;
             }
         }
 
