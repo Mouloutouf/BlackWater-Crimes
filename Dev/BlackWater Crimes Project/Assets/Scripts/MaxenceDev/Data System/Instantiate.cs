@@ -78,7 +78,6 @@ public class Instantiate : InstantiationProcess<Evidence>
 
     public override GameObject Instantiation(GameObject prefab)
     {
-
         GameObject _prefab = Instantiate(prefab) as GameObject;
         _prefab.transform.SetParent(gameObject.transform, false);
 

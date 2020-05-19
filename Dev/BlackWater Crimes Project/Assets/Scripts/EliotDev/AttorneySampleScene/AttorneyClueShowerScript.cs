@@ -19,6 +19,17 @@ public class AttorneyClueShowerScript : MonoBehaviour
     bool folderOpen = false;
     int index;
 
+    public bool debug;
+
+    void Start()
+    {
+        if (debug)
+        {
+            validateButton.interactable = true;
+            validateButton.GetComponentInChildren<Text>().text = "Validate";
+        }
+    }
+
     public void OpenFolder(GameObject displayer)
     {
         if(folderOpen == false)

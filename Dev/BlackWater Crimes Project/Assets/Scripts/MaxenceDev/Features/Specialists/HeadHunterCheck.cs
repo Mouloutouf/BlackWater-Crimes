@@ -10,7 +10,9 @@ public class HeadHunterCheck : Checker
     
     public override void SendEvent()
     {
-        Send();
+        GetCheckedElements();
+
+        if (CheckName()) Send();
     }
 
     public override void GetCheckedElements()
@@ -29,29 +31,39 @@ public class HeadHunterCheck : Checker
     public override bool Check(Indics _indic, Report _report)
     {
         bool check = true;
-        
+
+        string detailText = dropdown.GetComponentInChildren<Text>().text;
+
+        bool match = false;
         foreach (Character character in gameData.characters)
         {
-            if (inputField.text == character.name)
+            foreach (string detail in character.distinctiveElements)
             {
-                string detailText = dropdown.GetComponentInChildren<Text>().text;
-
-                foreach (string detail in character.distinctiveElements)
-                {
-                    if (detailText == detail) check = true;
-
-                    else check = false;
-                }
+                if (detailText == detail) match = true;
             }
-
-            else check = false;
         }
+        if (!match) check = false;
 
         if (_indic != this.indic) check = false;
 
         if (_report.elementName != checkedName) check = false;
 
         if (_report.index == 0) check = false;
+        
+        return check;
+    }
+
+    bool CheckName()
+    {
+        bool check = false;
+
+        foreach (Character character in gameData.characters)
+        {
+            if (checkedName == character.name)
+            {
+                check = true;
+            }
+        }
 
         return check;
     }

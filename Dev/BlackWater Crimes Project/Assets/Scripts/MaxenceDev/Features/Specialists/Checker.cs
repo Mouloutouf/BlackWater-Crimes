@@ -1,33 +1,53 @@
 ﻿using System.Collections;
+using Sirenix.OdinInspector;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[Serializable]
+public class IndicsText
+{
+    public Indics indic;
+
+    public string introText;
+
+    public string successText;
+    public string failureText;
+}
+
 public class Checker : MonoBehaviour
 {
     protected Text dialogueText;
-
-    [SerializeField] string introText;
-    [SerializeField] string validateText;
-
+    
     protected Button validateButton;
 
     protected GameData gameData;
 
     public string checkedName { get; set; }
 
-    public Sprite checkedImage { get; set; }
+    [HideInInspector] public Sprite checkedImage; // get; set; autoproperty maybe
 
     public Indics indic { get { return gameData.currentIndic; } }
     
     private bool match;
-
+    
+    [SerializeField] private List<IndicsText> allIndicsText;
+    
     void Start()
     {
         gameData = GameObject.Find("Data Container").GetComponent<DataContainer>().gameData;
 
         dialogueText = GameObject.Find("Dialogue Text").GetComponent<Text>();
-        dialogueText.text = introText;
+        
+        foreach (IndicsText indicsText in allIndicsText)
+        {
+            if (indicsText.indic == gameData.currentIndic)
+            {
+                dialogueText.text = indicsText.introText;
+                break;
+            }
+        }
 
         validateButton = GameObject.Find("Validate Button").GetComponent<Button>();
         validateButton.onClick.AddListener(delegate { SendEvent(); });
@@ -35,39 +55,36 @@ public class Checker : MonoBehaviour
 
     public virtual void SendEvent()
     {
+        GetCheckedElements();
+
         Send();
     }
 
     protected void Send()
     {
-        GetCheckedElements();
-
         foreach (Indics indic in gameData.megaReports.Keys)
         {
             foreach (Report report in gameData.megaReports[indic].Item1)
             {
                 if (Check(indic, report))
                 {
-                    if (report.elementDetailName == null)
-                    {
-                        UnlockReport(report);
-                        match = true;
-                    }
+                    UnlockReport(report);
+                    match = true;
                 }
             }
         }
 
         if (!match) UnlockFailedReport();
 
-        match = false;
-
         ResetField();
+
+        Debug.Log(match);
+
+        match = false;
     }
 
     protected void Send(List<Intel> intelList)
     {
-        GetCheckedElements();
-
         foreach (Indics indic in gameData.megaReports.Keys)
         {
             foreach (Report report in gameData.megaReports[indic].Item1)
@@ -97,9 +114,9 @@ public class Checker : MonoBehaviour
 
         if (!match) UnlockFailedReport();
 
-        match = false;
-
         ResetField();
+
+        match = false;
     }
 
     public virtual void GetCheckedElements() { }
@@ -117,7 +134,7 @@ public class Checker : MonoBehaviour
         return check;
     }
 
-    void UnlockReport(Report _report)
+    public virtual void UnlockReport(Report _report)
     {
         if (!_report.unlockedData)
         {
@@ -153,6 +170,15 @@ public class Checker : MonoBehaviour
     
     public virtual void ResetField()
     {
-        dialogueText.text = validateText;
+        foreach (IndicsText indicText in allIndicsText)
+        {
+            if (indicText.indic == gameData.currentIndic)
+            {
+                if (match) dialogueText.text = indicText.successText;
+                else dialogueText.text = indicText.failureText;
+
+                break;
+            }
+        }
     }
 } 

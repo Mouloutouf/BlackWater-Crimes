@@ -20,8 +20,6 @@ public class ReportObject : ObjectData<Report>
     public Image signatureImage;
 
     public ElementHolder holder;
-
-    private Report myType = new Report();
     
     void Start()
     {
@@ -59,7 +57,7 @@ public class ReportObject : ObjectData<Report>
             {
                 if (question.reportName == data.elementName)
                 {
-                    if (question.mode == Modes.Type && question.otherName == data.elementDetailName)
+                    if (question.mode == Modes.Evidence && question.otherName == data.elementDetailName)
                     {
                         question.unlockedData = true;
                     }

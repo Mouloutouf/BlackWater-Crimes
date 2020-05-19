@@ -2756,6 +2756,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb6b50c0e7174284e9e1160df9fc6cd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &506298281 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6054615889987660512, guid: e7f1cd350bc5f0941bb44b9e4b1ff994,
+    type: 3}
+  m_PrefabInstance: {fileID: 506298276}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5beb02e2bd5105e46a54bf8fd58ceff2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &510400395 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9045211434734282764, guid: 3ad9061556b69b64eb83004ba39f7c7a,
@@ -3753,13 +3765,11 @@ MonoBehaviour:
     modeCategory:
       location: 1
       suspect: 2
-      type: 0
     seen: 0
   instantiate: 0
   hasApplied: 0
   hasText: 0
   displayTextComponent: {fileID: 0}
-  descriptionText: 
   timer: 0.3
   _cam: {fileID: 0}
 --- !u!65 &623914899
@@ -6537,7 +6547,7 @@ Transform:
   m_GameObject: {fileID: 1150789180}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.0583, z: -0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 5006512736141462731}
   m_RootOrder: 1
@@ -7938,8 +7948,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1312832545}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.020902859, y: 1, z: 0.029189302}
+  m_LocalPosition: {x: 0.061, y: 0.0298, z: 0}
+  m_LocalScale: {x: 0.041628044, y: 1, z: 0.029189302}
   m_Children: []
   m_Father: {fileID: 7062683745873550743}
   m_RootOrder: 0
@@ -7975,7 +7985,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 15b7a165e357ca94387cc97247d0d58f, type: 2}
+  - {fileID: 2100000, guid: 27898597fb283c048afe9ee7a59a477a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8110,13 +8120,11 @@ MonoBehaviour:
     modeCategory:
       location: 2
       suspect: 4
-      type: 0
     seen: 0
   instantiate: 0
   hasApplied: 0
   hasText: 0
   displayTextComponent: {fileID: 0}
-  descriptionText: 
   timer: 0.3
   _cam: {fileID: 0}
 --- !u!65 &1354229717
@@ -9680,8 +9688,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6.069763, y: 5.593605, z: 0.5289688}
-  m_Center: {x: -0.4605751, y: -0.33139515, z: 0.2355156}
+  m_Size: {x: 13.174406, y: 9.317026, z: 5.5007935}
+  m_Center: {x: -3.6353493, y: -2.1931057, z: -2.2503967}
 --- !u!4 &1594031780
 Transform:
   m_ObjectHideFlags: 0
@@ -10401,15 +10409,11 @@ MonoBehaviour:
     modeCategory:
       location: 2
       suspect: 4
-      type: 0
     seen: 0
   instantiate: 0
   hasApplied: 0
   hasText: 1
   displayTextComponent: {fileID: 53175614}
-  descriptionText: "Pour Anna Jameswan \r\nHuit cent et cinquante\r\nDino Giuseppe
-    Ghitta\r\n\r\nPour Anna Jameswsan\r\nQuatre cent et cinquante\r\nJ. Jonas Jameson\r\n\r\nPour
-    Anna Jameswan\r\nMille cinq\r\nAdolph Schultz"
   timer: 0.3
   _cam: {fileID: 185285710}
 --- !u!1 &1742818073
@@ -13111,13 +13115,11 @@ MonoBehaviour:
     modeCategory:
       location: 2
       suspect: 4
-      type: 0
     seen: 0
   instantiate: 0
   hasApplied: 0
   hasText: 0
   displayTextComponent: {fileID: 0}
-  descriptionText: 
   timer: 0.3
   _cam: {fileID: 0}
 --- !u!1001 &2213011489472495595
@@ -13127,6 +13129,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 100024203571898493, guid: 6e34bc824f7d2714e8a9caa2990f8913,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 510400395}
+    - target: {fileID: 100024203571898493, guid: 6e34bc824f7d2714e8a9caa2990f8913,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DezoomClue
+      objectReference: {fileID: 0}
+    - target: {fileID: 100024203571898493, guid: 6e34bc824f7d2714e8a9caa2990f8913,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100024203571898493, guid: 6e34bc824f7d2714e8a9caa2990f8913,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 506298281}
+    - target: {fileID: 100024203571898493, guid: 6e34bc824f7d2714e8a9caa2990f8913,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlaySound
+      objectReference: {fileID: 0}
+    - target: {fileID: 100024203571898493, guid: 6e34bc824f7d2714e8a9caa2990f8913,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: ea08b437dbda5de438d0e0745b62e420, type: 3}
     - target: {fileID: 695329647063314858, guid: 6e34bc824f7d2714e8a9caa2990f8913,
         type: 3}
       propertyPath: m_IsActive
@@ -13687,7 +13719,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8296172668390522584}
   m_LocalRotation: {x: -0.58094496, y: -0.40311664, z: -0.4031165, w: 0.580945}
-  m_LocalPosition: {x: -11.31, y: 9.8505, z: 74.08}
+  m_LocalPosition: {x: -10.99, y: 9.8505, z: 73.75}
   m_LocalScale: {x: 9.9000025, y: 9.900003, z: 9.9000025}
   m_Children:
   - {fileID: 1297759892}
@@ -13777,13 +13809,11 @@ MonoBehaviour:
     modeCategory:
       location: 2
       suspect: 4
-      type: 1
     seen: 0
   instantiate: 0
   hasApplied: 0
   hasText: 0
   displayTextComponent: {fileID: 0}
-  descriptionText: 
   timer: 0.3
   _cam: {fileID: 0}
 --- !u!65 &5771372805531144746
@@ -14525,29 +14555,18 @@ MonoBehaviour:
     unlockableLocation: 0
     photo: {fileID: 0}
     hasText: 1
-    descriptionText: "7 avril - 8 bouteilles de soda | 725\r\n10 avril - Sponsor
-      de campagne | 1050\r\n21 avril - James Jameson | 450\r\n\r\nAider les filles
-      | 2225\r\n\r\n5 mai - Mr O'Reilly | 1500\r\n14 mai - Dino Ghitto | 850\r\n26
-      mai - Camille de la Vaudais\r\n\r\n7 juin - Re\xE7u de banque | 650 et 55 cents\r\n14
-      juin - 30X7 Aider Abigail |500\r\n14 juin - Mr Priece | 725\r\n14 juin - ...
-      | 875\r\n16 juin - Mrs Markens | 977\r\n16 juin - Mr Schultz | 1005\r\n21 juin
-      - Re\xE7u de banque | 958"
+    descriptionText: "Anna Jameswan | Compte N\xB0468\n\n\t     D\xE9p\xF4t | Solde\n23
+      janvier : 2.000 | 20.000\n1 f\xE9vrier : 955,48 | 20.955,48\n21 f\xE9vrier
+      : 1.525 | 22.408,48\n2 mars : 1.000 | 23.408,48\n15 mars : 800 | 24.280,48\n25
+      mars : 99.52 | 24.380"
     modeCategory:
       location: 2
       suspect: 4
-      type: 0
     seen: 0
   instantiate: 0
   hasApplied: 0
   hasText: 1
   displayTextComponent: {fileID: 53175614}
-  descriptionText: "7 avril - 8 bouteilles de soda | 725\r\n10 avril - Sponsor de
-    campagne | 1050\r\n21 avril - James Jameson | 450\r\n\r\nAider les filles | 2225\r\n\r\n5
-    mai - Mr O'Reilly | 1500\r\n14 mai - Dino Ghitto | 850\r\n26 mai - Camille de
-    la Vaudais\r\n\r\n7 juin - Re\xE7u de banque | 650 et 55 cents\r\n14 juin - 30X7
-    Aider Abigail |500\r\n14 juin - Mr Priece | 725\r\n14 juin - ... | 875\r\n16
-    juin - Mrs Markens | 977\r\n16 juin - Mr Schultz | 1005\r\n21 juin - Re\xE7u
-    de banque | 958"
   timer: 0.3
   _cam: {fileID: 185285710}
 --- !u!65 &9159856205197708480
@@ -14576,7 +14595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: 3
-  specificZoomPosition: {x: 0, y: 1, z: -7}
+  specificZoomPosition: {x: 0.5, y: 0.9, z: -6.8}
   hasSpecificRotation: 1
   specificZoomRotation: {x: 0, y: 180, z: 0}
   specificZoomRotationQuaternion: {x: 0, y: 1, z: 0, w: -0.00000004371139}

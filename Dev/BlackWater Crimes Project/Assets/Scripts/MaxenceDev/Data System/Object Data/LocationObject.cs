@@ -16,13 +16,11 @@ public class LocationObject : ObjectData<Location>
     public GameObject menuAccessButton;
     public GameObject menuBlockedButton;
     
-    private Location myType = new Location();
-
     void Start()
     {
         GetGameData();
 
-        if (!instantiate) LoadDataOfType(myType, gameData.locations);
+        if (!instantiate) LoadDataOfType(gameData.locations);
     }
 
     public override void Protocol()
@@ -35,8 +33,6 @@ public class LocationObject : ObjectData<Location>
 
         if (!data.visible) locationName.SetActive(false);
         
-        //if (data.completed); // code for completion location active
-
         base.Protocol();
     }
 
@@ -46,17 +42,5 @@ public class LocationObject : ObjectData<Location>
         {
             Protocol();
         }
-        /*
-        RaycastHit2D[] hits = Physics2D.RaycastAll(cam.ScreenToWorldPoint(Input.mousePosition), new Vector3(0, 0, 1));
-
-        if (hits.Count() > 0 && hits[0].transform.GetComponent<CircleCollider2D>() != null)
-        {
-            if (data.visible) transform.GetChild(1).gameObject.SetActive(true);
-        }
-        else
-        {
-            transform.GetChild(1).gameObject.SetActive(false);
-        }
-        */
     }
 }

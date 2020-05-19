@@ -53,9 +53,7 @@ public class InstantiatePhotos : InstantiationProcess<Evidence>
         
         _prefab.transform.GetChild(0).GetComponent<BoxCollider2D>().size = spawnScales[index];
         _prefab.transform.GetChild(2).GetComponent<RectTransform>().sizeDelta = spawnScales[index];
-
-        _prefab.GetComponent<PhotoObject>().photosBooklet = this.gameObject;
-
+        
         photosList.Add(_prefab);
 
         index++;

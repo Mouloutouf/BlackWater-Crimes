@@ -7,19 +7,12 @@ using Sirenix.OdinInspector;
 
 public class EvidenceObject : ObjectData<Evidence>
 {
-    private Evidence myType = new Evidence();
-
     [Title("PROPERTIES")]
 
     // Text \\
     public bool hasText;
     [ShowIf("hasText")]
     public Text displayTextComponent;
-    [ShowIf("hasText")]
-    [Title("Description Text", bold: false, HorizontalLine = false)]
-    [HideLabel]
-    [MultiLineProperty(5)]
-    public string descriptionText;
     [ShowIf("hasText")]
     public float timer = 0.3f;
     private float time;
@@ -39,7 +32,7 @@ public class EvidenceObject : ObjectData<Evidence>
 
         List<Evidence> myDataList = gameData.allEvidences[data.modeCategory.location];
 
-        if (!instantiate) LoadDataOfType(myType, myDataList);
+        if (!instantiate) LoadDataOfType(myDataList);
     }
 
     public override void Protocol()
@@ -51,41 +44,44 @@ public class EvidenceObject : ObjectData<Evidence>
     {
         /*if (isZoomed && canShowText && data.hasText)
         {
-            if (Input.GetMouseButtonDown(0))
+            DisplayText();
+        }
+    }
+
+    void DisplayText()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            time = timer;
+
+            RaycastHit hit;
+            Ray ray = _cam.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out hit, 2000f))
             {
-                time = timer;
-
-                RaycastHit hit;
-                Ray ray = _cam.ScreenPointToRay(Input.mousePosition);
-
-                if (Physics.Raycast(ray, out hit, 2000f))
+                if (hit.transform.GetComponent<EvidenceObject>() == this || hit.transform.parent.GetComponent<EvidenceObject>() == this)
                 {
-                    if (hit.transform.GetComponent<EvidenceObject>() == this || hit.transform.parent.GetComponent<EvidenceObject>() == this)
-                    {
-                        this.hit = true;
-                    }
+                    this.hit = true;
                 }
             }
+        }
 
-            time -= Time.deltaTime;
+        time -= Time.deltaTime;
 
-            if (hit && Input.GetMouseButtonUp(0) && time > 0)
+        if (hit && Input.GetMouseButtonUp(0) && time > 0)
+        {
+            if (isShown)
             {
-                if (isShown)
-                {
-                    displayTextComponent.transform.parent.gameObject.SetActive(false);
+                displayTextComponent.transform.parent.gameObject.SetActive(false);
 
-                    isShown = false;
-                }
-                else
-                {
-                    displayTextComponent.text = data.descriptionText;
-                    displayTextComponent.transform.parent.gameObject.SetActive(true);
+                isShown = false;
+            }
+            else
+            {
+                displayTextComponent.text = data.descriptionText;
+                displayTextComponent.transform.parent.gameObject.SetActive(true);
 
-                    isShown = true;
-                }
-
-                hit = false;
+                isShown = true;
             }
         }*/
     }

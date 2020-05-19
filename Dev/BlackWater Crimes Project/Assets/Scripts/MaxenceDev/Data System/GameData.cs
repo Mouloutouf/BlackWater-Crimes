@@ -4,13 +4,11 @@ using UnityEngine;
 using System;
 using Sirenix.OdinInspector;
 
-public enum Locations { Docks, Brothel, Anna_House, New_House, Politician_Office, Cop_Office, Mafia_HideOut, Anna_House_Secret, Brothel_HideOut }
+public enum Locations { Docks, Brothel, Anna_House, Abigail_House, Politician_Office, Cop_Office, Mafia_HideOut, Anna_House_Secret, Brothel_HideOut }
 
 public enum Suspects { Umberto_Moretti, Abigail_White, Richard_Anderson, Bob_Jenkins, None }
 
 public enum Indics { Master_Thommers, Brandon_Bennington, James_Walker, Quentin_Copeland, Thomas_Maxwell, Miss_Marshall, Arnold_Steele, Standard }
-
-public enum Types { Brands, Crime, Clothing, Documents }
 
 public enum Emotions { Neutral, Fearful, Angry, Proud, Confident }
 
@@ -19,15 +17,13 @@ public class ModeCategory
 {
     public Locations location;
     public Suspects suspect;
-    public Types type;
 }
 
-public enum DataTypes
+public enum Modes
 {
-    Evidence,
-    Note,
-    Report,
-    Location
+    Location,
+    Suspect,
+    Evidence
 }
 
 public class Data
@@ -37,15 +33,11 @@ public class Data
     public bool unlockedData;
 
     public int index;
-
-    public Data()
-    {
-        // set index
-    }
 }
 
 public enum Languages { English, French }
 
+#region Test Class
 [Serializable]
 public class LocalisedText // Testing
 {
@@ -60,6 +52,7 @@ public class LocalisedText // Testing
     [MultiLineProperty(yes)] // Size of the text box
     public string englishText;
 }
+#endregion
 
 [Serializable]
 public class Note : Data
@@ -142,10 +135,10 @@ public class Report : Data
     [Title("Element")]
 
     public Modes mode;
-    [HideIf("mode", Modes.Type)]
+    [HideIf("mode", Modes.Evidence)]
     public Sprite elementSprite;
     public string elementName;
-    [ShowIf("mode", Modes.Type)]
+    [ShowIf("mode", Modes.Evidence)]
     public string elementDetailName;
 
     [Title("Report Text", bold: false)]
@@ -173,9 +166,7 @@ public class Location : Data
     public bool known;
     public bool visible;
     public bool accessible;
-
-    public bool completed;
-
+    
     [Title("Location")]
 
     public Locations myLocation;
@@ -189,8 +180,6 @@ public class Location : Data
     [HideLabel]
     [MultiLineProperty(5)]
     public string locationDescription;
-    
-    public int evidenceCollected { get; set; }
 }
 
 [Serializable]
@@ -221,7 +210,7 @@ public class Question : Data
     public Modes mode;
     [ShowIf("unlockedByReport")]
     public string reportName;
-    [ShowIf("mode", Modes.Type)]
+    [ShowIf("mode", Modes.Evidence)]
     public string otherName;
 }
 
@@ -271,17 +260,12 @@ public class SoundSettings
     public SoundFloat musicVolume, soundVolume, voiceVolume;
 }
 
-// Facile à sauvegarder
 [CreateAssetMenu(fileName = "New Player Data", menuName = "Player Data Scriptable")]
 public class GameData : SerializedScriptableObject
 {
-    public Dictionary<Type, bool> dataListsContainingState { get; private set; } = new Dictionary<Type, bool>
-    {
-        {typeof(Evidence), false },
-        {typeof(Note), false },
-        {typeof(Report), false },
-        {typeof(Location), false }
-    };
+    // Data Properties \\
+
+    [Title("Game Settings")]
 
     public Languages gameLanguage = Languages.English;
 
@@ -289,68 +273,38 @@ public class GameData : SerializedScriptableObject
 
     public SoundSettings soundSettings;
 
-    [HideInInspector]
-    public List<Evidence> evidences = new List<Evidence>();
+    [Title("DATA")]
+    
+    [Title("Evidences")]
     public Dictionary<Locations, List<Evidence>> allEvidences = new Dictionary<Locations, List<Evidence>>();
 
+    [Title("Notes")]
     public List<Note> notes = new List<Note>();
-
     
+    [Title("Reports")]
     public Dictionary<Indics, (List<Report>, List<Report>)> megaReports = new Dictionary<Indics, (List<Report>, List<Report>)>();
-    public Dictionary<Indics, List<Report>> allReports = new Dictionary<Indics, List<Report>>();
-
+    [HideInInspector] public Dictionary<Indics, List<Report>> allReports = new Dictionary<Indics, List<Report>>();
     public int reportsCollected = 0;
 
     public bool newStuff;
 
+    [Title("Locations")]
     public List<Location> locations = new List<Location>();
+    public bool locationsInList = false; // get; set; autoproperty
 
+    [Title("Questions")]
     public Dictionary<Suspects, List<Question>> questions = new Dictionary<Suspects, List<Question>>();
-
-    public Suspects currentSuspect { get; set; }
+    public Suspects currentSuspect;
     public int interrogations { get; set; } = 3;
 
+    [Title("Characters")]
     public List<Character> characters = new List<Character>();
-
+    
+    [Title("Indics")]
+    public Dictionary<Indics, Indic> indics = new Dictionary<Indics, Indic>();
     public Indics currentIndic = Indics.Standard;
 
-    public Dictionary<Indics, Indic> indics = new Dictionary<Indics, Indic>();
-
-    public GameData()
-    {
-        InitListOfType(evidences);
-        InitListOfType(notes);
-        InitListOfType(locations);
-    }
-
-    public void InitListOfType<T>(List<T> list) where T : Data
-    {
-        int index = 0;
-        foreach (T type in list) { type.index = index; index++; }
-    }
-    
-    private Dictionary<Type, string> allTypes = new Dictionary<Type, string>
-    {
-        {typeof(Evidence), "evidence"},
-        {typeof(Note), "note" },
-        {typeof(Report), "report" },
-        {typeof(Location), "location" }
-    };
-
-    public List<T> GetListOfType<T>(T _type) where T : Data
-    {
-        switch (allTypes[typeof(T)])
-        {
-            case "evidence":
-                return evidences as List<T>;
-            case "note":
-                return notes as List<T>;
-            case "location":
-                return locations as List<T>;
-            default:
-                return null;
-        }
-    }
+    // Data Methods \\
 
     [ContextMenu("Reset Game Data")]
     public void ResetData()
@@ -363,6 +317,8 @@ public class GameData : SerializedScriptableObject
 
         // Reset Locations
         locations.Clear();
+
+        locationsInList = false;
 
         // Reset Notes
         notes.Clear();
@@ -402,19 +358,56 @@ public class GameData : SerializedScriptableObject
 
         newStuff = false;
     }
-}
 
-#region Test
+    #region Test
 
-/* Test Language \\
-    [Title("Language")]
+    /* Test Language \\
+        [Title("Language")]
 
-    public bool useLanguage;
-    [ShowIf("useLanguage")]
-    [HideReferenceObjectPicker]
-    public LocalisedText displayedName;
+        public bool useLanguage;
+        [ShowIf("useLanguage")]
+        [HideReferenceObjectPicker]
+        public LocalisedText displayedName;
 
-    //public LanguageText _locationName;
-    */
+        //public LanguageText _locationName;
+        */
 
-#endregion
+    public Dictionary<Type, bool> dataListsContainingState { get; set; } = new Dictionary<Type, bool>
+    {
+        {typeof(Evidence), false },
+        {typeof(Note), false },
+        {typeof(Report), false },
+        {typeof(Location), false }
+    };
+
+    void InitListOfType<T>(List<T> list) where T : Data
+    {
+        int index = 0;
+        foreach (T type in list) { type.index = index; index++; }
+    }
+
+    private Dictionary<Type, string> allTypes = new Dictionary<Type, string>
+    {
+        {typeof(Evidence), "evidence"},
+        {typeof(Note), "note" },
+        {typeof(Report), "report" },
+        {typeof(Location), "location" }
+    };
+
+    public List<T> GetListOfType<T>(T _type) where T : Data
+    {
+        switch (allTypes[typeof(T)])
+        {
+            case "evidence":
+                return allEvidences as List<T>;
+            case "note":
+                return notes as List<T>;
+            case "location":
+                return locations as List<T>;
+            default:
+                return null;
+        }
+    }
+
+    #endregion
+} 

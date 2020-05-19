@@ -10,6 +10,11 @@ public class ReportButtonObject : ObjectData<Report>
 
     public GameObject associatedReport { get; set; }
 
+    void Start()
+    {
+        GetGameData();
+    }
+
     public override void Protocol()
     {
         agentText.text = data.agentName;
