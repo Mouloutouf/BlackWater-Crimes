@@ -34,33 +34,34 @@ public class InterrogateScript : SerializedMonoBehaviour
     
     void Start()
     {
+
         switch (gameData.currentSuspect) //Update chara sprite & intro texts
         {
             case Suspects.Abigail_White:
                 nameText.text = "Abigail White";
                 occupationText.text = "Pimp";
-                dialogueText.text = "Hello detective... Next time you want to ask me questions, I would be glad to welcome you at our place, it would be more... Comfortable.";
+                dialogueText.text = "Bojour détective... La prochaine fois que vous voulez me poser des questions, je me ferai un plaisir de vous accueillir chez nous, cela serait plus... confortable.";
                 charaSprite.sprite = suspectSprites[Suspects.Abigail_White][Emotions.Neutral];
                 break;
 
             case Suspects.Richard_Anderson:
                 nameText.text = "Richard Anderson";
                 occupationText.text = "Politician";
-                dialogueText.text = "I hope you have good reasons to disturb me during my busy day detective! Go ahead, what do you want? ";
+                dialogueText.text = "J'espère que vous avez de bonnes raisons de me déranger en ce jour chargé, détective ! Allez-y, que voulez-vous ? ";
                 charaSprite.sprite = suspectSprites[Suspects.Richard_Anderson][Emotions.Neutral];
                 break;
 
             case Suspects.Bob_Jenkins:
                 nameText.text = "Bob Jenkins";
                 occupationText.text = "Police officer";
-                dialogueText.text = "I don't quite understand why you bring me here sir... Did I do something wrong while I was on duty?";
+                dialogueText.text = "Je ne comprends pas vraiment ce que je fais ici monsieur... Ai-je failli à mon devoir ?";
                 charaSprite.sprite = suspectSprites[Suspects.Bob_Jenkins][Emotions.Neutral];
                 break;
 
             case Suspects.Umberto_Moretti:
                 nameText.text = "Umberto Moretti";
                 occupationText.text = "Handyman";
-                dialogueText.text = "Well officer, non vedo, non sento, non parlo...";
+                dialogueText.text = "Bien, officier, non vedo, non sento, non parlo...";
                 charaSprite.sprite = suspectSprites[Suspects.Umberto_Moretti][Emotions.Neutral];
                 break;
         }
