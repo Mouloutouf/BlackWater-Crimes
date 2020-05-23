@@ -22,6 +22,15 @@ public class TutorialScript : SerializedMonoBehaviour
     [MultiLineProperty(3)]
     public List<string> secondDialogueEnglishTexts = new List<string>();
 
+    [MultiLineProperty(3)]
+    public List<string> thirdDialogueEnglishTexts = new List<string>();
+
+    [MultiLineProperty(3)]
+    public List<string> fourthDialogueEnglishTexts = new List<string>();
+
+    [MultiLineProperty(3)]
+    public List<string> fifthDialogueEnglishTexts = new List<string>();
+
     int textIndex = 0;
     List<string> currentDialogue = new List<string>();
 
@@ -32,6 +41,10 @@ public class TutorialScript : SerializedMonoBehaviour
     public EvidenceInteraction evidenceScript;
 
     bool waitingForDouilleInteraction = false;
+    bool waitingForDouillePhotograph = false;
+    bool waitingForDouilleDezoom = false;
+
+    bool waitingForLettreInteraction = false;
 
 
 
@@ -51,6 +64,41 @@ public class TutorialScript : SerializedMonoBehaviour
                 waitingForDouilleInteraction = false;
                 dialogueCanvas.SetActive(true);
                 currentDialogue = secondDialogueEnglishTexts;
+                NextLine();
+            }
+        }
+
+        if(waitingForDouillePhotograph) 
+        {
+            if(evidenceScript.currentEvidenceHeld.GetComponent<EvidenceObject>().data.photographed)
+            {
+                waitingForDouillePhotograph = false;
+                dialogueCanvas.SetActive(true);
+                currentDialogue = thirdDialogueEnglishTexts;
+                NextLine();
+            }
+        }
+
+        if(waitingForDouilleDezoom) 
+        {
+            if(evidenceScript.currentEvidenceHeld == null)
+            {
+                waitingForDouilleDezoom = false;
+                dialogueCanvas.SetActive(true);
+                currentDialogue = fourthDialogueEnglishTexts;
+                NextLine();
+            }
+        }
+
+        if(waitingForLettreInteraction) 
+        {
+            if(evidenceScript.currentEvidenceHeld == clues["Lettre"])
+            {
+                waitingForLettreInteraction = false;
+                dialogueCanvas.SetActive(true);
+                currentDialogue = fifthDialogueEnglishTexts;
+                buttons["Photo"].interactable = false;
+                buttons["Dezoom"].interactable = false;
                 NextLine();
             }
         }
@@ -112,6 +160,29 @@ public class TutorialScript : SerializedMonoBehaviour
                 collider.enabled = true;
             }
             waitingForDouilleInteraction = true;
+        }
+
+        if(currentDialogue == secondDialogueEnglishTexts)
+        {
+            buttons["Photo"].interactable = true;
+            waitingForDouillePhotograph = true;
+        }
+
+        if(currentDialogue == thirdDialogueEnglishTexts)
+        {
+            buttons["Dezoom"].interactable = true;
+            waitingForDouilleDezoom = true;
+        }
+
+        if(currentDialogue == fourthDialogueEnglishTexts)
+        {
+            buttons["UpCamera"].interactable = true;
+            clues["Lettre"].GetComponent<Collider>().enabled = true;
+            foreach(Collider collider in clues["Lettre"].GetComponentsInChildren<Collider>())
+            {
+                collider.enabled = true;
+            }
+            waitingForLettreInteraction = true;
         }
     }
 
