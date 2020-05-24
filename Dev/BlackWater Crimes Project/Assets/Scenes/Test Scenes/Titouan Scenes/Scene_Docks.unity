@@ -574,6 +574,7 @@ MonoBehaviour:
   displayTextComponent: {fileID: 446966043}
   timer: 0.3
   _cam: {fileID: 1445889581}
+  isShown: 0
 --- !u!114 &107201355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -587,10 +588,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: 3
-  specificZoomPosition: {x: 3.701, y: 1.52, z: -2.392}
+  specificZoomPosition: {x: 3.6547, y: 1.5068, z: -2.4089}
   hasSpecificRotation: 1
   specificZoomRotation: {x: 75, y: 70, z: 0}
-  specificZoomRotationQuaternion: {x: 0, y: 0, z: 0, w: 1}
+  specificZoomRotationQuaternion: {x: 0.49866816, y: 0.45504877, z: -0.34917122, w: 0.649877}
   blockHorizontalRotation: 1
   blockVerticalRotation: 1
 --- !u!65 &107201356
@@ -2515,6 +2516,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1161717118841454084, guid: 74811de12f439f5418b282a0a0e77738,
+        type: 3}
+      propertyPath: m_Lens.NearClipPlane
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 1161717119125144524, guid: 74811de12f439f5418b282a0a0e77738,
         type: 3}
       propertyPath: m_Name
@@ -2574,6 +2580,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1161717119663801093, guid: 74811de12f439f5418b282a0a0e77738,
+        type: 3}
+      propertyPath: near clip plane
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 1161717119663801098, guid: 74811de12f439f5418b282a0a0e77738,
         type: 3}
@@ -3829,7 +3840,7 @@ PrefabInstance:
     - target: {fileID: 7298491911991474825, guid: c359d56291b71f94a8ddac48b6c04fa2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7298491911991474825, guid: c359d56291b71f94a8ddac48b6c04fa2,
         type: 3}
@@ -3839,7 +3850,7 @@ PrefabInstance:
     - target: {fileID: 7298491911991474825, guid: c359d56291b71f94a8ddac48b6c04fa2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -2.3
       objectReference: {fileID: 0}
     - target: {fileID: 7298491911991474825, guid: c359d56291b71f94a8ddac48b6c04fa2,
         type: 3}
@@ -3974,7 +3985,7 @@ PrefabInstance:
     - target: {fileID: 8811280138136717615, guid: c359d56291b71f94a8ddac48b6c04fa2,
         type: 3}
       propertyPath: m_Center.z
-      value: -11.48951
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 8811280138136717615, guid: c359d56291b71f94a8ddac48b6c04fa2,
         type: 3}
@@ -4708,13 +4719,227 @@ MonoBehaviour:
     - Name: dialogues
       Entry: 6
       Data: 
+    - Name: englishDialogues
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[System.Collections.Generic.List`1[[System.String,
+        mscorlib]], mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 8
+    - Name: 
+      Entry: 7
+      Data: 1|System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 8
+    - Name: 
+      Entry: 1
+      Data: 'So pal, you got new business here... And this is bad business, very
+        bad... '
+    - Name: 
+      Entry: 1
+      Data: 'A fisherman found the corpse this morning at 5 am. It''s a woman and
+        she was probably killed during the night. '
+    - Name: 
+      Entry: 1
+      Data: 'Unfortunalety we couldn''t find any information about her, no name,
+        no address... '
+    - Name: 
+      Entry: 1
+      Data: The forensics already checked the body and they will move it soon. Until,
+        they asked that nobody touches the corpse, not even you...
+    - Name: 
+      Entry: 1
+      Data: We better be on the crime scene before them next time. Those damn dudes
+        are a real pain in the ass... Anyway, believe me, you do not want to see
+        her head, apparently it was brutally smashed....
+    - Name: 
+      Entry: 1
+      Data: 'But it doesn''t mean it killed her, it could happen after her death.
+        Well pal, you know the rules, we don''t know much about the crime and it''s
+        your job to find out the truth!
+
+'
+    - Name: 
+      Entry: 1
+      Data: However, I'm not gonna lie to you, you're pretty rusty boy.... No offense,
+        but it's been a while since you solved a case... But, don't worry, I'm gonna
+        help you on this one!
+    - Name: 
+      Entry: 1
+      Data: First of all, we need to search the scene. Go ahead, find something relevant!
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 1
+      Data: Good job son! This is a bullet case.
+    - Name: 
+      Entry: 1
+      Data: 'You can rotate that kind of small clues to make sure you don''t miss
+        something important.  '
+    - Name: 
+      Entry: 1
+      Data: Also, try to photograph every clues you can find. This is the only way
+        to collect clues without spoiling the crime scene!
+    - Name: 
+      Entry: 1
+      Data: However make sure to keep the evidence in the center of the picture.
+        Otherwise it won't save it!
+    - Name: 
+      Entry: 1
+      Data: Understood? Try to take a picture of this bullet case!
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 3|System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 1
+      Data: Great! You're doing a good job so far.
+    - Name: 
+      Entry: 1
+      Data: We can search for another clue now, go back on the scene!
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 4|System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 1
+      Data: Listen pal, you won't see every clues if you stand right here!
+    - Name: 
+      Entry: 1
+      Data: Try to move on the other side of the scene, maybe there is something
+        hidden over there... Try to find another clue behind the corpse.
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 1
+      Data: Well done! This letter must belong to the victim, you should take a closer
+        look...
+    - Name: 
+      Entry: 1
+      Data: Whenever you need to read a text, try to use your magnifying glass.
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 6|System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 1
+      Data: Excellent, remember to read carefully every text you will find!
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 1
+      Data: Don't you see anything strange on this letter? Look for some dust on
+        the bottom of it.
+    - Name: 
+      Entry: 1
+      Data: This means that there is a fingerprint. Fingerprints are very important
+        so keep looking for that kind of signs...
+    - Name: 
+      Entry: 1
+      Data: To reveal a fingerprint, you must rub the clue with fingerprint powder.
+        First take your fingerprint powder!
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 1
+      Data: Test
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: frenchDialogues
+      Entry: 7
+      Data: 9|System.Collections.Generic.List`1[[System.Collections.Generic.List`1[[System.String,
+        mscorlib]], mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: clues
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[UnityEngine.GameObject,
+      Data: 10|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[UnityEngine.GameObject,
         UnityEngine.CoreModule]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+      Data: 11|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
         mscorlib]], mscorlib
     - Name: 
       Entry: 8
@@ -4727,7 +4952,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: Douille
+      Data: BulletCase
     - Name: $v
       Entry: 10
       Data: 0
@@ -4751,7 +4976,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: Lettre
+      Data: Letter
     - Name: $v
       Entry: 10
       Data: 2
@@ -4766,11 +4991,11 @@ MonoBehaviour:
       Data: 
     - Name: buttons
       Entry: 7
-      Data: 2|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[UnityEngine.UI.Button,
+      Data: 12|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[UnityEngine.UI.Button,
         UnityEngine.UI]], mscorlib
     - Name: comparer
       Entry: 9
-      Data: 1
+      Data: 11
     - Name: 
       Entry: 12
       Data: 8
@@ -4879,48 +5104,9 @@ MonoBehaviour:
   dialogueCanvas: {fileID: 1330376439}
   dialogueUIText: {fileID: 1807898358}
   charaUIImage: {fileID: 896050287}
-  firstDialogueEnglishTexts:
-  - 'So pal, you got new business here... And this is bad business, very bad... '
-  - 'A fisherman found the corpse this morning at 5 am. It''s a woman and she was
-    probably killed during the night. '
-  - 'Unfortunalety we couldn''t find any information about her, no name, no address... '
-  - The forensics already checked the body and they will move it soon. Until, they
-    asked that nobody touches the corpse, not even you...
-  - We better be on the crime scene before them next time. Those damn dudes are a
-    real pain in the ass... Anyway, believe me, you do not want to see her head,
-    apparently it was brutally smashed....
-  - 'But it doesn''t mean it killed her, it could happen after her death. Well pal,
-    you know the rules, we don''t know much about the crime and it''s your job to
-    find out the truth!
-
-'
-  - However, I'm not gonna lie to you, you're pretty rusty boy.... No offense, but
-    it's been a while since you solved a case... But, don't worry, I'm gonna help
-    you on this one!
-  - First of all, we need to search the scene. Go ahead, find something relevant!
-  dialoguesFrenchTexts:
-  - "Alors mon gars, te revoil\xE0 parti sur une nouvelle enqu\xEAte... En tout cas,
-    je peux te dire que c'est pas joli..."
-  secondDialogueEnglishTexts:
-  - Good job son! This is a bullet case.
-  - 'You can rotate that kind of small clues to make sure you don''t miss something
-    important.  '
-  - Also, try to photograph every clues you can find. This is the only way to collect
-    clues without spoiling the crime scene!
-  - However make sure to keep the evidence in the center of the picture. Otherwise
-    it won't save it!
-  - Understood? Try to take a picture of this bullet case!
-  thirdDialogueEnglishTexts:
-  - Great! You're doing a good job so far.
-  - We can search for another clue now, go back on the scene!
-  fourthDialogueEnglishTexts:
-  - Listen pal, you won't see every clues if you stand right here!
-  - Try to move on the other side of the scene, maybe there is something hidden over
-    there... Try to find another clue behind the corpse.
-  fifthDialogueEnglishTexts:
-  - Test
   fpToggle: {fileID: 1139224125}
   evidenceScript: {fileID: 446966044}
+  gameData: {fileID: 11400000, guid: eaa3567ddd179a64a9d879867070a0b4, type: 2}
 --- !u!4 &1437125667
 Transform:
   m_ObjectHideFlags: 0
@@ -9465,6 +9651,7 @@ MonoBehaviour:
   displayTextComponent: {fileID: 0}
   timer: 0.3
   _cam: {fileID: 0}
+  isShown: 0
 --- !u!64 &1231236610871885591
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -22915,6 +23102,7 @@ MonoBehaviour:
   displayTextComponent: {fileID: 0}
   timer: 0.3
   _cam: {fileID: 0}
+  isShown: 0
 --- !u!65 &6542740856713617744
 BoxCollider:
   m_ObjectHideFlags: 0

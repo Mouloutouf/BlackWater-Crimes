@@ -116,7 +116,7 @@ public class EvidenceInteraction : MonoBehaviour
                     foreach (Intel intel in evidence.intels)
                     {
                         if (intel.name == name && !intel.revealed)
-                        {
+                        { 
                             if (intel.intelAlpha < 1f)
                             {
                                 intel.intelAlpha += .8f * Time.deltaTime;
@@ -247,13 +247,19 @@ public class EvidenceInteraction : MonoBehaviour
             StartCoroutine(CheckFile(Application.persistentDataPath + "/" + filePath, fileName, _evidence));
         }
 
-        /*if (!_evidence.photographed)
-        {
-            StartCoroutine(DisplayText("Photo Saved"));
+        /*if (!_evidence.photographed)
+
+        {
+
+            StartCoroutine(DisplayText("Photo Saved"));
+
         }
-        else
-        {
-            StartCoroutine(DisplayText("Photo Replaced"));
+        else
+
+        {
+
+            StartCoroutine(DisplayText("Photo Replaced"));
+
         }*/
     }
 

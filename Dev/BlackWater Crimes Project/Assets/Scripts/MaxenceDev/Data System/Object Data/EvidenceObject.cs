@@ -22,7 +22,7 @@ public class EvidenceObject : ObjectData<Evidence>
     [HideInInspector]
     public bool isZoomed { get; set; } = false;
     public bool canShowText { get; set; } = true;
-    private bool isShown;
+    public bool isShown;
 
     private bool hit;
 
