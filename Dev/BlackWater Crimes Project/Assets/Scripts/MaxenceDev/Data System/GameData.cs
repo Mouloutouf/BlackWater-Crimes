@@ -291,6 +291,8 @@ public class GameData : SerializedScriptableObject
     [Title("Locations")]
     public List<Location> locations = new List<Location>();
     
+    [HideInInspector] public bool firstTimeInDocks = true;
+
     [Title("Questions")]
     public Dictionary<Suspects, List<Question>> questions = new Dictionary<Suspects, List<Question>>();
     public Suspects currentSuspect;
@@ -493,6 +495,8 @@ public class GameData : SerializedScriptableObject
         interrogations = 3;
 
         newStuff = false;
+
+        firstTimeInDocks = true;
     }
 
     #region Test

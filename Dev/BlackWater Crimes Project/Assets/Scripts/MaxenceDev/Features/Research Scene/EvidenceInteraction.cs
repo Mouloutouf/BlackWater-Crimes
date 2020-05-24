@@ -116,7 +116,7 @@ public class EvidenceInteraction : MonoBehaviour
                     foreach (Intel intel in evidence.intels)
                     {
                         if (intel.name == name && !intel.revealed)
-                        {
+                        { 
                             if (intel.intelAlpha < 1f)
                             {
                                 intel.intelAlpha += .8f * Time.deltaTime;
