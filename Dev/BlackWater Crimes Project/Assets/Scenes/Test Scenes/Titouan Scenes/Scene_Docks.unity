@@ -4716,16 +4716,13 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: dialogues
-      Entry: 6
-      Data: 
     - Name: englishDialogues
       Entry: 7
       Data: 0|System.Collections.Generic.List`1[[System.Collections.Generic.List`1[[System.String,
         mscorlib]], mscorlib]], mscorlib
     - Name: 
       Entry: 12
-      Data: 8
+      Data: 13
     - Name: 
       Entry: 7
       Data: 1|System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib
@@ -4782,7 +4779,7 @@ MonoBehaviour:
       Data: 5
     - Name: 
       Entry: 1
-      Data: Good job son! This is a bullet case.
+      Data: Good job mate! This is a bullet case.
     - Name: 
       Entry: 1
       Data: 'You can rotate that kind of small clues to make sure you don''t miss
@@ -4904,10 +4901,103 @@ MonoBehaviour:
       Data: 8|System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib
     - Name: 
       Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 1
+      Data: Good, now rub on the right spot. This will make the fingerprint progressively
+        appear. Do it until it is fully revealed.
+    - Name: 
+      Entry: 1
+      Data: You will know when the fingerprint is fully revealed, go ahead, reveal
+        it!
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 9|System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
       Data: 1
     - Name: 
       Entry: 1
-      Data: Test
+      Data: There you go, now do not forget to take a picture of it!
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 10|System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 1
+      Data: Very good, now you have a great picture of this fingerprint, it may be
+        very useful...
+    - Name: 
+      Entry: 1
+      Data: Let's get back to the scene...
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 11|System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 1
+      Data: Okay, listen mate, I want you to find one more revelant clue on this
+        scene... You should maybe take a step back...
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 12|System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 1
+      Data: Well done, you're not as bad as I thought you were! Just kidding!
+    - Name: 
+      Entry: 1
+      Data: 'You know what to do: take a picture!'
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 1
+      Data: 'And this is how it is done! I think we won''t find something else on
+        this scene... '
+    - Name: 
+      Entry: 1
+      Data: It's time to go to the next step, let's go to your office! Just quit
+        the scene...
     - Name: 
       Entry: 13
       Data: 
@@ -4922,7 +5012,7 @@ MonoBehaviour:
       Data: 
     - Name: frenchDialogues
       Entry: 7
-      Data: 9|System.Collections.Generic.List`1[[System.Collections.Generic.List`1[[System.String,
+      Data: 14|System.Collections.Generic.List`1[[System.Collections.Generic.List`1[[System.String,
         mscorlib]], mscorlib]], mscorlib
     - Name: 
       Entry: 12
@@ -4935,11 +5025,11 @@ MonoBehaviour:
       Data: 
     - Name: clues
       Entry: 7
-      Data: 10|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[UnityEngine.GameObject,
+      Data: 15|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[UnityEngine.GameObject,
         UnityEngine.CoreModule]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 11|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+      Data: 16|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
         mscorlib]], mscorlib
     - Name: 
       Entry: 8
@@ -4964,7 +5054,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: Etiquette
+      Data: Label
     - Name: $v
       Entry: 10
       Data: 1
@@ -4991,11 +5081,11 @@ MonoBehaviour:
       Data: 
     - Name: buttons
       Entry: 7
-      Data: 12|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[UnityEngine.UI.Button,
+      Data: 17|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[UnityEngine.UI.Button,
         UnityEngine.UI]], mscorlib
     - Name: comparer
       Entry: 9
-      Data: 11
+      Data: 16
     - Name: 
       Entry: 12
       Data: 8
@@ -5104,6 +5194,40 @@ MonoBehaviour:
   dialogueCanvas: {fileID: 1330376439}
   dialogueUIText: {fileID: 1807898358}
   charaUIImage: {fileID: 896050287}
+  dialoguesSprites:
+  - {fileID: 21300000, guid: 011a13136baaab14184c16a8b99d6012, type: 3}
+  - {fileID: 21300000, guid: aca02102e95fe264099aaa38a419e74b, type: 3}
+  - {fileID: 21300000, guid: aca02102e95fe264099aaa38a419e74b, type: 3}
+  - {fileID: 21300000, guid: 61c561fe33b7ae94baeb80d1f0a5842f, type: 3}
+  - {fileID: 21300000, guid: 011a13136baaab14184c16a8b99d6012, type: 3}
+  - {fileID: 21300000, guid: 61c561fe33b7ae94baeb80d1f0a5842f, type: 3}
+  - {fileID: 21300000, guid: 011a13136baaab14184c16a8b99d6012, type: 3}
+  - {fileID: 21300000, guid: 61c561fe33b7ae94baeb80d1f0a5842f, type: 3}
+  - {fileID: 21300000, guid: 011a13136baaab14184c16a8b99d6012, type: 3}
+  - {fileID: 21300000, guid: 61c561fe33b7ae94baeb80d1f0a5842f, type: 3}
+  - {fileID: 21300000, guid: 61c561fe33b7ae94baeb80d1f0a5842f, type: 3}
+  - {fileID: 21300000, guid: aca02102e95fe264099aaa38a419e74b, type: 3}
+  - {fileID: 21300000, guid: 011a13136baaab14184c16a8b99d6012, type: 3}
+  - {fileID: 21300000, guid: 011a13136baaab14184c16a8b99d6012, type: 3}
+  - {fileID: 21300000, guid: aca02102e95fe264099aaa38a419e74b, type: 3}
+  - {fileID: 21300000, guid: aca02102e95fe264099aaa38a419e74b, type: 3}
+  - {fileID: 21300000, guid: aca02102e95fe264099aaa38a419e74b, type: 3}
+  - {fileID: 21300000, guid: 61c561fe33b7ae94baeb80d1f0a5842f, type: 3}
+  - {fileID: 21300000, guid: 61c561fe33b7ae94baeb80d1f0a5842f, type: 3}
+  - {fileID: 21300000, guid: 011a13136baaab14184c16a8b99d6012, type: 3}
+  - {fileID: 21300000, guid: 61c561fe33b7ae94baeb80d1f0a5842f, type: 3}
+  - {fileID: 21300000, guid: 61c561fe33b7ae94baeb80d1f0a5842f, type: 3}
+  - {fileID: 21300000, guid: aca02102e95fe264099aaa38a419e74b, type: 3}
+  - {fileID: 21300000, guid: aca02102e95fe264099aaa38a419e74b, type: 3}
+  - {fileID: 21300000, guid: 011a13136baaab14184c16a8b99d6012, type: 3}
+  - {fileID: 21300000, guid: 011a13136baaab14184c16a8b99d6012, type: 3}
+  - {fileID: 21300000, guid: 61c561fe33b7ae94baeb80d1f0a5842f, type: 3}
+  - {fileID: 21300000, guid: aca02102e95fe264099aaa38a419e74b, type: 3}
+  - {fileID: 21300000, guid: 011a13136baaab14184c16a8b99d6012, type: 3}
+  - {fileID: 21300000, guid: 011a13136baaab14184c16a8b99d6012, type: 3}
+  - {fileID: 21300000, guid: aca02102e95fe264099aaa38a419e74b, type: 3}
+  - {fileID: 21300000, guid: 011a13136baaab14184c16a8b99d6012, type: 3}
+  - {fileID: 21300000, guid: 011a13136baaab14184c16a8b99d6012, type: 3}
   fpToggle: {fileID: 1139224125}
   evidenceScript: {fileID: 446966044}
   gameData: {fileID: 11400000, guid: eaa3567ddd179a64a9d879867070a0b4, type: 2}

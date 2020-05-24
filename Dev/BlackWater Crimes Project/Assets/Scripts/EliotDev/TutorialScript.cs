@@ -10,7 +10,6 @@ public class TutorialScript : SerializedMonoBehaviour
     public GameObject dialogueCanvas;
     public Text dialogueUIText;
     public Image charaUIImage;
-    public Dictionary<string[], Sprite> dialogues = new Dictionary<string[], Sprite>();
 
 
     [Title("Dialogue Texts")]
@@ -25,6 +24,14 @@ public class TutorialScript : SerializedMonoBehaviour
     List<List<string>> currentDialogueLanguage = new List<List<string>>();
     int dialogueIndex = 0;
 
+    
+    
+    [Title("Dialogue Sprites")]
+
+    [ListDrawerSettings(ShowIndexLabels = true)]
+    public List<Sprite> dialoguesSprites = new List<Sprite>();
+    int spriteIndex = 0;
+
 
 
     [Title("Docks References")]
@@ -32,7 +39,6 @@ public class TutorialScript : SerializedMonoBehaviour
     public Dictionary<string, Button> buttons = new Dictionary<string, Button>();
     public Toggle fpToggle;
     public EvidenceInteraction evidenceScript;
-
 
 
     [Title("Game Data")]
@@ -47,24 +53,37 @@ public class TutorialScript : SerializedMonoBehaviour
     bool waitingForLetterInteraction = false;
     bool waitingForLetterText = false;
     bool waitingForLetterNoText = false;
-    bool waitingForLetterFPOn = false;
+    bool waitingForLetterFpOn = false;
+    bool waitingForLetterFpReveal = false;
+    bool waitingForLetterPhoto = false;
+    bool waitingForLetterDezoom = false;
+
+    bool waitingForLabelInteraction = false;
+    bool waitingForLabelPhoto = false;
+
+    bool waitingForDeskScene = false;
 
 
     void Start()
     {
-        DontDestroyOnLoad(this.gameObject);
-        switch (gameData.gameLanguage)
+        if(gameData.firstTimeInDocks)
         {
-            case Languages.English:
-                currentDialogueLanguage = englishDialogues;
-                break;
+            gameData.firstTimeInDocks = false;
+            DontDestroyOnLoad(this.gameObject);
+            switch (gameData.gameLanguage)
+            {
+                case Languages.English:
+                    currentDialogueLanguage = englishDialogues;
+                    break;
 
-            case Languages.French:
-                currentDialogueLanguage = frenchDialogues;
-                break;
+                case Languages.French:
+                    currentDialogueLanguage = frenchDialogues;
+                    break;
+            }
+
+            DockStart();
         }
-
-        DockStart();
+        else Destroy(this.gameObject);
     }
 
     void Update() 
@@ -112,9 +131,10 @@ public class TutorialScript : SerializedMonoBehaviour
                 waitingForLetterInteraction = false;
                 dialogueCanvas.SetActive(true);
 
-                dialogueIndex ++;
                 buttons["Photo"].interactable = false;
                 buttons["Dezoom"].interactable = false;
+
+                dialogueIndex ++;
                 NextLine();
             }
         }
@@ -143,11 +163,78 @@ public class TutorialScript : SerializedMonoBehaviour
             }
         }
 
-        else if (waitingForLetterFPOn)
+        else if (waitingForLetterFpOn)
         {
             if (fpToggle.isOn)
             {
-                waitingForLetterFPOn = false;
+                waitingForLetterFpOn = false;
+                dialogueCanvas.SetActive(true);
+
+                dialogueIndex ++;
+                NextLine();
+            }
+        }
+
+        else if (waitingForLetterFpReveal)
+        {
+            foreach (Intel intel in evidenceScript.currentEvidenceHeld.GetComponent<EvidenceObject>().data.intels)
+            {
+                if (intel.revealed)
+                { 
+                    waitingForLetterFpReveal = false;
+                    dialogueCanvas.SetActive(true);
+
+                    dialogueIndex ++;
+                    NextLine();
+                }
+            }
+        }
+
+        else if (waitingForLetterPhoto)
+        {
+            if (evidenceScript.currentEvidenceHeld.GetComponent<EvidenceObject>().data.photographed)
+            {
+                waitingForLetterPhoto = false;
+                dialogueCanvas.SetActive(true);
+
+                dialogueIndex ++;
+                NextLine();
+            }
+        }
+
+        else if (waitingForLetterDezoom) 
+        {
+            if (evidenceScript.currentEvidenceHeld == null)
+            {
+                waitingForLetterDezoom = false;
+                dialogueCanvas.SetActive(true);
+
+                dialogueIndex ++;
+                NextLine();
+            }
+        }
+
+        else if (waitingForLabelInteraction) 
+        {
+            if (evidenceScript.currentEvidenceHeld == clues["Label"])
+            {
+                waitingForLabelInteraction = false;
+                dialogueCanvas.SetActive(true);
+
+                buttons["Photo"].interactable = false;
+                buttons["Dezoom"].interactable = false;
+                fpToggle.interactable = false;
+
+                dialogueIndex ++;
+                NextLine();
+            }
+        }
+
+        else if (waitingForLabelPhoto) 
+        {
+            if (evidenceScript.currentEvidenceHeld.GetComponent<EvidenceObject>().data.photographed)
+            {
+                waitingForLabelPhoto = false;
                 dialogueCanvas.SetActive(true);
 
                 dialogueIndex ++;
@@ -186,7 +273,11 @@ public class TutorialScript : SerializedMonoBehaviour
         {
             List<string> tempList = currentDialogueLanguage[dialogueIndex];
             dialogueUIText.text = tempList[textIndex];
+
+            charaUIImage.sprite = dialoguesSprites[spriteIndex];
+
             textIndex ++;
+            spriteIndex ++;
         }
         else
         {
@@ -253,7 +344,48 @@ public class TutorialScript : SerializedMonoBehaviour
         else if(dialogueIndex == 6)
         {
             fpToggle.interactable = true;
-            waitingForLetterFPOn = true;
+            waitingForLetterFpOn = true;
+        }
+
+        else if(dialogueIndex == 7)
+        {
+            waitingForLetterFpReveal = true;
+        }
+
+        else if(dialogueIndex == 8)
+        {
+            buttons["Photo"].interactable = true;
+            waitingForLetterPhoto = true;
+        }
+
+        else if(dialogueIndex == 9)
+        {
+            buttons["Dezoom"].interactable = true;
+            waitingForLetterDezoom = true;
+        }
+        
+        else if (dialogueIndex == 10)
+        {
+            buttons["DownCamera"].interactable = true;
+            clues["Label"].GetComponent<Collider>().enabled = true;
+            foreach(Collider collider in clues["Label"].GetComponentsInChildren<Collider>())
+            {
+                collider.enabled = true;
+            }
+            waitingForLabelInteraction = true;
+        }
+
+        else if (dialogueIndex == 11)
+        {
+            buttons["Photo"].interactable = true;
+            waitingForLabelPhoto = true;
+        }
+
+        else if (dialogueIndex == 12)
+        {
+            buttons["Dezoom"].interactable = true;
+            buttons["ReturnDesk"].interactable = true;
+            waitingForDeskScene = true;
         }
     }
 
