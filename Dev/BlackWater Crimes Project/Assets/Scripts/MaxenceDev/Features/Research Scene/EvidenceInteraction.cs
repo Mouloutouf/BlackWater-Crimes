@@ -107,7 +107,7 @@ public class EvidenceInteraction : MonoBehaviour
         {
             if (hit.transform.gameObject.tag == "Clue")
             {
-                string name = hit.transform.GetComponent<IntelObject>().myName;
+                string name = hit.transform.gameObject.GetComponent<IntelObject>().myName;
 
                 Evidence evidence = hit.transform.parent.gameObject.GetComponent<EvidenceObject>().data;
 
