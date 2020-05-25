@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DataContainer : MonoBehaviour
 {
+    public bool menu;
+    
     public GameData gameData;
 
     public void EraseCurrentGame()
@@ -13,7 +15,7 @@ public class DataContainer : MonoBehaviour
 
     void Start()
     {
-        gameData.ManageData(Action.Save);
+        if (!menu) gameData.ManageData(Action.Save);
     }
 
     void OnApplicationQuit()

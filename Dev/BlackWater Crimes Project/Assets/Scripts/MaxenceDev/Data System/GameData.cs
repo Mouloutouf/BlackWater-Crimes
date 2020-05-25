@@ -311,7 +311,7 @@ public class GameData : SerializedScriptableObject
 
     // Data Methods \\
     
-    public List<SaveData> savedData { get; set; } = new List<SaveData>();
+    public List<SaveData> savedData = new List<SaveData>();
     
     [ContextMenu("Test Object Conversion")]
     public void Test()
@@ -336,12 +336,12 @@ public class GameData : SerializedScriptableObject
         else if (_action == Action.Load) LoadDataFromList(_variable, _name);
     }
 
-    private void SaveDataInList(object variable, string name)
+    private void SaveDataInList<T>(T data, string name)
     {
         savedData.Add(
             new SaveData
             {
-                dataVariable = variable, dataName = name
+                dataVariable = data, dataName = name, dataType = data.GetType()
             }
         );
     }
@@ -369,16 +369,16 @@ public class GameData : SerializedScriptableObject
 
         string soundSettingsName = nameof(soundSettings);
 
-        SetData(action, soundSettings.musicVolume, soundSettingsName + "_" + nameof(soundSettings.musicVolume));
-        SetData(action, soundSettings.soundVolume, soundSettingsName + "_" + nameof(soundSettings.soundVolume));
-        SetData(action, soundSettings.voiceVolume, soundSettingsName + "_" + nameof(soundSettings.voiceVolume));
+        SetData(action, soundSettings.musicVolume.Volume, soundSettingsName + "_" + nameof(soundSettings.musicVolume));
+        SetData(action, soundSettings.soundVolume.Volume, soundSettingsName + "_" + nameof(soundSettings.soundVolume));
+        SetData(action, soundSettings.voiceVolume.Volume, soundSettingsName + "_" + nameof(soundSettings.voiceVolume));
 
         // Add Evidences
-        foreach (List<Evidence> evidenceList in allEvidences.Values)
+        foreach (Locations location in allEvidences.Keys)
         {
-            string listName = evidenceList[0].modeCategory.location.ToString();
+            string listName = location.ToString();
 
-            foreach (Evidence evidence in evidenceList)
+            foreach (Evidence evidence in allEvidences[location])
             {
                 string evidenceName = listName + "_" + evidence.codeName;
 
@@ -418,13 +418,13 @@ public class GameData : SerializedScriptableObject
         }
 
         // Add Reports
-        foreach ((List<Report>, List<Report>) bigList in megaReports.Values)
+        foreach (Indics indic in megaReports.Keys)
         {
-            string ListName = bigList.Item1[0].agentName;
+            string listName = indic.ToString();
 
-            foreach (Report report in bigList.Item1)
+            foreach (Report report in megaReports[indic].Item1)
             {
-                string reportName = report.elementName;
+                string reportName = listName + "_" + report.elementName;
                 if (report.mode == Modes.Evidence) reportName += ("_" + report.elementDetailName);
 
                 SetData(action, report.unlockedData, reportName + "_" + nameof(report.unlockedData));
@@ -441,12 +441,14 @@ public class GameData : SerializedScriptableObject
 
             foreach (Question question in questions[suspect])
             {
-                string questionName = listName + question.index.ToString();
+                string questionName = listName + "_question n°" + question.index.ToString();
 
                 if (question.unlockedByReport) SetData(action, question.unlockedData, questionName + "_" + nameof(question.unlockedData));
             }
         }
         SetData(action, interrogations, nameof(interrogations));
+
+        SetData(action, firstTimeInDocks, nameof(firstTimeInDocks));
 
         if (action == Action.Save) saveSystem.SaveDataList(this);
     }
@@ -455,9 +457,9 @@ public class GameData : SerializedScriptableObject
     public void ResetData()
     {
         // Reset Evidences
-        foreach (List<Evidence> evidenceList in allEvidences.Values)
+        foreach (Locations location in allEvidences.Keys)
         {
-            foreach (Evidence evidence in evidenceList)
+            foreach (Evidence evidence in allEvidences[location])
             {
                 evidence.unlockedData = false;
 
@@ -491,20 +493,9 @@ public class GameData : SerializedScriptableObject
         notes.Clear();
 
         // Reset Reports
-        foreach (List<Report> reportList in allReports.Values)
+        foreach (Indics indic in megaReports.Keys)
         {
-            foreach (Report report in reportList)
-            {
-                report.unlockedData = false;
-                report.unlockOrderIndex = 0;
-                report.seen = false;
-            }
-        }
-        reportsCollected = 0;
-
-        foreach ((List<Report>, List<Report>) bigList in megaReports.Values)
-        {
-            foreach (Report _report in bigList.Item1)
+            foreach (Report _report in megaReports[indic].Item1)
             {
                 _report.unlockedData = false;
                 _report.unlockOrderIndex = 0;
@@ -514,9 +505,9 @@ public class GameData : SerializedScriptableObject
         reportsCollected = 0;
 
         // Reset Questions
-        foreach (List<Question> questionList in questions.Values)
+        foreach (Suspects suspect in questions.Keys)
         {
-            foreach (Question question in questionList)
+            foreach (Question question in questions[suspect])
             {
                 if (question.unlockedByReport) question.unlockedData = false;
             }
