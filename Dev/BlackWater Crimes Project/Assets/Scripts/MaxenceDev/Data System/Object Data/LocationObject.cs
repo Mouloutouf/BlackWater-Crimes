@@ -20,7 +20,7 @@ public class LocationObject : ObjectData<Location>
     {
         GetGameData();
 
-        if (!instantiate) LoadDataOfType(gameData.locations);
+        LoadDataOfType(gameData.locations);
     }
 
     public override void Protocol()

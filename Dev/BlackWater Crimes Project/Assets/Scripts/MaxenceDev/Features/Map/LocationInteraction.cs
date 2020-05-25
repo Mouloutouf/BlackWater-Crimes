@@ -33,22 +33,8 @@ public class LocationInteraction : SerializedMonoBehaviour
     void Start()
     {
         gameData = GameObject.Find("Data Container").GetComponent<DataContainer>().gameData;
-
-        foreach (Transform tr in transform)
-        {
-            Location location = tr.GetComponent<LocationObject>().data;
-
-            if (!gameData.locationsInList)
-            {
-                Debug.Log(gameData.locationsInList);
-                location.unlockedData = true;
-                gameData.locations.Add(location);
-            }
-        }
-
-        gameData.locationsInList = true;
     }
-
+    
     void Update()
     {
         if (!_camera.gameObject.GetComponent<DragAndZoom>().zoomed)
