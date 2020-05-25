@@ -35,16 +35,18 @@ public class MainMenuScript : MonoBehaviour
     public Sprite baseParameter;
     public Sprite activeParameter;
 
-    private void Start() 
+    private void Start()
     {
         gameStatusText.text = "Game 1 - " + DateTime.Today.ToString("M/d/yyyy");
 
         if (dataContainer != null) gameData = dataContainer.gameData;
 
+        gameData.ManageData(Action.Load);
+
         SetLanguage();
     }
 
-    private void Update() 
+    private void Update()
     {
         if((Input.touchCount > 0 && title.activeSelf) || (Input.GetMouseButtonDown(0) && title.activeSelf))
         {

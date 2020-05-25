@@ -305,44 +305,73 @@ public class GameData : SerializedScriptableObject
     public Dictionary<Indics, Indic> indics = new Dictionary<Indics, Indic>();
     public Indics currentIndic = Indics.Standard;
 
+    [Title("DATA SAVE")]
+
+    public SaveSystem saveSystem;
+
     // Data Methods \\
     
-    public List<SavingData> dataToStore { get; set; } = new List<SavingData>();
-
-    public delegate void DataDelegate<T>(T data, object variable, string name);
-    private DataDelegate<object> dataMethod;
-
-    private enum Action { Add, Replace }
-    private void Data<T>(Action toDo, T _variable, string _name)
+    public List<SaveData> savedData { get; set; } = new List<SaveData>();
+    
+    [ContextMenu("Test Object Conversion")]
+    public void Test()
     {
-        if (toDo == Action.Add) AddData(_variable, _name);
-        else ReplaceData(_variable, _name);
+        int myInt = 6;
+        
+        object myObject = myInt;
+        
+        Debug.Log(myObject);
+
+        myInt++;
+
+        Debug.Log(myObject);
+
+        Type myType = myObject.GetType();
+        Debug.Log(myType);
+    }
+    
+    private void SetData<T>(Action _action, T _variable, string _name)
+    {
+        if (_action == Action.Save) SaveDataInList(_variable, _name);
+        else if (_action == Action.Load) LoadDataFromList(_variable, _name);
     }
 
-    private void AddData(object variable, string name)
+    private void SaveDataInList(object variable, string name)
     {
-        dataToStore.Add(
-            new SavingData
+        savedData.Add(
+            new SaveData
             {
-                dataVariable = variable as object, dataName = name
+                dataVariable = variable, dataName = name
             }
         );
     }
     
-    private void ReplaceData<T>(T data, string name)
+    private void LoadDataFromList<T>(T data, string name)
     {
-        foreach (SavingData savingData in dataToStore)
+        foreach (SaveData saveData in savedData)
         {
-            if (savingData.dataName == name)
+            if (saveData.dataName == name)
             {
-                data = (T) savingData.dataVariable;
+                data = (T) saveData.dataVariable;
             }
         }
     }
 
-    public void GetData(DataDelegate<object> Data)
+    public void ManageData(Action action)
     {
-        dataToStore.Clear();
+        if (action == Action.Save) savedData.Clear();
+
+        else if (action == Action.Load) saveSystem.LoadDataList(this);
+
+        SetData(action, gameLanguage, nameof(gameLanguage));
+
+        SetData(action, vibrations, nameof(vibrations));
+
+        string soundSettingsName = nameof(soundSettings);
+
+        SetData(action, soundSettings.musicVolume, soundSettingsName + "_" + nameof(soundSettings.musicVolume));
+        SetData(action, soundSettings.soundVolume, soundSettingsName + "_" + nameof(soundSettings.soundVolume));
+        SetData(action, soundSettings.voiceVolume, soundSettingsName + "_" + nameof(soundSettings.voiceVolume));
 
         // Add Evidences
         foreach (List<Evidence> evidenceList in allEvidences.Values)
@@ -353,21 +382,19 @@ public class GameData : SerializedScriptableObject
             {
                 string evidenceName = listName + "_" + evidence.codeName;
 
-                Data(evidence.unlockedData, evidence.unlockedData, evidenceName + "_" + nameof(evidence.unlockedData));
-
-                AddData(evidence.unlockedData, evidenceName + "_" + nameof(evidence.unlockedData));
-
+                SetData(action, evidence.unlockedData, evidenceName + "_" + nameof(evidence.unlockedData));
+                
                 if (evidence.hasIntels)
                 {
                     foreach (Intel intel in evidence.intels)
                     {
-                        AddData(intel.revealed, evidenceName + "_" + intel.name + "_" + nameof(intel.revealed));
-                        AddData(intel.intelAlpha, evidenceName + "_" + intel.name + "_" + nameof(intel.intelAlpha));
+                        SetData(action, intel.revealed, evidenceName + "_" + intel.name + "_" + nameof(intel.revealed));
+                        SetData(action, intel.intelAlpha, evidenceName + "_" + intel.name + "_" + nameof(intel.intelAlpha));
                     }
                 }
 
-                AddData(evidence.photographed, evidenceName + "_" + nameof(evidence.photographed));
-                AddData(evidence.seen, evidenceName + "_" + nameof(evidence.seen));
+                SetData(action, evidence.photographed, evidenceName + "_" + nameof(evidence.photographed));
+                SetData(action, evidence.seen, evidenceName + "_" + nameof(evidence.seen));
             }
         }
 
@@ -376,9 +403,9 @@ public class GameData : SerializedScriptableObject
         {
             string locationName = location.locationName;
 
-            AddData(location.known, locationName + "_" + nameof(location.known));
-            AddData(location.visible, locationName + "_" + nameof(location.visible));
-            AddData(location.accessible, locationName + "_" + nameof(location.accessible));
+            SetData(action, location.known, locationName + "_" + nameof(location.known));
+            SetData(action, location.visible, locationName + "_" + nameof(location.visible));
+            SetData(action, location.accessible, locationName + "_" + nameof(location.accessible));
         }
         
         // Add Notes
@@ -386,8 +413,8 @@ public class GameData : SerializedScriptableObject
         {
             string noteName = note.name;
 
-            AddData(note.text, noteName + "_" + nameof(note.text));
-            AddData(note.date, noteName + "_" + nameof(note.date));
+            SetData(action, note.text, noteName + "_" + nameof(note.text));
+            SetData(action, note.date, noteName + "_" + nameof(note.date));
         }
 
         // Add Reports
@@ -400,12 +427,12 @@ public class GameData : SerializedScriptableObject
                 string reportName = report.elementName;
                 if (report.mode == Modes.Evidence) reportName += ("_" + report.elementDetailName);
 
-                AddData(report.unlockedData, reportName + "_" + nameof(report.unlockedData));
-                AddData(report.unlockOrderIndex, reportName + "_" + nameof(report.unlockOrderIndex));
-                AddData(report.seen, reportName + "_" + nameof(report.seen));
+                SetData(action, report.unlockedData, reportName + "_" + nameof(report.unlockedData));
+                SetData(action, report.unlockOrderIndex, reportName + "_" + nameof(report.unlockOrderIndex));
+                SetData(action, report.seen, reportName + "_" + nameof(report.seen));
             }
         }
-        AddData(reportsCollected, nameof(reportsCollected));
+        SetData(action, reportsCollected, nameof(reportsCollected));
         
         // Add Questions
         foreach (Suspects suspect in questions.Keys)
@@ -416,10 +443,12 @@ public class GameData : SerializedScriptableObject
             {
                 string questionName = listName + question.index.ToString();
 
-                if (question.unlockedByReport) AddData(question.unlockedData, questionName + "_" + nameof(question.unlockedData));
+                if (question.unlockedByReport) SetData(action, question.unlockedData, questionName + "_" + nameof(question.unlockedData));
             }
         }
-        AddData(interrogations, nameof(interrogations));
+        SetData(action, interrogations, nameof(interrogations));
+
+        if (action == Action.Save) saveSystem.SaveDataList(this);
     }
 
     [ContextMenu("Reset Game Data")]
@@ -497,6 +526,10 @@ public class GameData : SerializedScriptableObject
         newStuff = false;
 
         firstTimeInDocks = true;
+
+        savedData.Clear();
+
+        PlayerPrefs.DeleteAll();
     }
 
     #region Test

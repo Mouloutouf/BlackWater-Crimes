@@ -3,22 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum Action { Save, Load }
+
 [Serializable]
-public class SavingData
+public class SaveData
 {
     public object dataVariable;
 
     public string dataName;
 }
 
-public class SaveSystem : MonoBehaviour
+public class SaveSystem
 {
-    public GameData gameData;
-
-    private Emotions myEmotion;
-
-    public Dictionary<string, object> savedData = new Dictionary<string, object>();
-
     public void WriteData<T>(T type, object variable, string name)
     {
         if (type.GetType() == typeof(int)){
@@ -30,8 +26,8 @@ public class SaveSystem : MonoBehaviour
             PlayerPrefs.SetString(name, stringValue);
 
         } else if (type.GetType() == typeof(bool)){
-            bool boolVar = (bool) variable;
-            int value = boolVar == false ? 0 : 1;
+            bool boolValue = (bool) variable;
+            int value = boolValue == false ? 0 : 1;
             PlayerPrefs.SetInt(name, value);
 
         } else if (type.GetType() == typeof(float)){
@@ -66,23 +62,27 @@ public class SaveSystem : MonoBehaviour
         else return variable as T;
     }
 
-    public void SaveData()
+    public void SaveDataList(GameData _gameData)
     {
         PlayerPrefs.DeleteAll();
 
-        foreach (SavingData savingData in gameData.dataToStore)
+        foreach (SaveData saveData in _gameData.savedData)
         {
-            Type dataType = savingData.dataVariable.GetType();
-            WriteData(dataType, savingData.dataVariable, savingData.dataName);
+            Type dataType = saveData.dataVariable.GetType();
+            WriteData(dataType, saveData.dataVariable, saveData.dataName);
+
+            Debug.Log(saveData.dataName + " : " + saveData.dataVariable + ", was saved !");
         }
     }
 
-    public void LoadData()
+    public void LoadDataList(GameData _gameData)
     {
-        foreach (SavingData savingData in gameData.dataToStore)
+        foreach (SaveData saveData in _gameData.savedData)
         {
-            Type dataType = savingData.dataVariable.GetType();
-            savingData.dataVariable = RetrieveData(dataType, savingData.dataVariable, savingData.dataName);
+            Type dataType = saveData.dataVariable.GetType();
+            saveData.dataVariable = RetrieveData(dataType, saveData.dataVariable, saveData.dataName);
+
+            Debug.Log(saveData.dataName + " : " + saveData.dataVariable + ", has been loaded !");
         }
     }
 }

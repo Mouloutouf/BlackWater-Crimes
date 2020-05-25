@@ -10,4 +10,14 @@ public class DataContainer : MonoBehaviour
     {
         gameData.ResetData();
     }
+
+    void Start()
+    {
+        gameData.ManageData(Action.Save);
+    }
+
+    void OnApplicationQuit()
+    {
+        gameData.ManageData(Action.Save);
+    }
 }
