@@ -59,7 +59,7 @@ public class EvidenceInteraction : MonoBehaviour
 
     void Update()
     {
-        if(currentEvidenceHeld != null && !hasCheckTextButton)
+        if (currentEvidenceHeld != null && !hasCheckTextButton)
         {
             if (currentEvidenceHeld.GetComponent<EvidenceObject>().data.hasText) textButton.gameObject.SetActive(true);
             else textButton.gameObject.SetActive(false);
@@ -172,10 +172,10 @@ public class EvidenceInteraction : MonoBehaviour
         {
             int val = 0;
 
+            val = _evidence.intels.Count;
+
             foreach (Intel _intel in _evidence.intels)
             {
-                val = _evidence.intels.Count;
-
                 if (!_intel.revealed) val--;
             }
 
@@ -194,7 +194,7 @@ public class EvidenceInteraction : MonoBehaviour
 
             _evidence.photographed = true;
             _evidence.unlockedData = true;
-            gameData.allEvidences[thisSceneLocation].Add(_evidence); // IMPORTANT : This is where we unlock the evidence in the List
+            //gameData.allEvidences[thisSceneLocation].Add(_evidence); // IMPORTANT : This is where we unlock the evidence in the List
 
             gameData.newStuff = true;
         }
@@ -203,8 +203,8 @@ public class EvidenceInteraction : MonoBehaviour
             soundAudio.PlayOneShot(photoReplacedSound);
             vibrateSystem.PhoneVibrate();
             StartCoroutine(DisplayText("Photo Replaced"));
-            gameData.allEvidences[thisSceneLocation].Remove(_evidence);
-            gameData.allEvidences[thisSceneLocation].Add(_evidence);
+            //gameData.allEvidences[thisSceneLocation].Remove(_evidence);
+            //gameData.allEvidences[thisSceneLocation].Add(_evidence);
         }
 
         // Takes the Screenshot and saves it under the right File Path

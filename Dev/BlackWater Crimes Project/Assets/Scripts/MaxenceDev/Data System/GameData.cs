@@ -290,7 +290,7 @@ public class GameData : SerializedScriptableObject
 
     [Title("Locations")]
     public List<Location> locations = new List<Location>();
-    public bool locationsInList = false; // get; set; autoproperty
+    
     [HideInInspector] public bool firstTimeInDocks = true;
 
     [Title("Questions")]
@@ -306,6 +306,121 @@ public class GameData : SerializedScriptableObject
     public Indics currentIndic = Indics.Standard;
 
     // Data Methods \\
+    
+    public List<SavingData> dataToStore { get; set; } = new List<SavingData>();
+
+    public delegate void DataDelegate<T>(T data, object variable, string name);
+    private DataDelegate<object> dataMethod;
+
+    private enum Action { Add, Replace }
+    private void Data<T>(Action toDo, T _variable, string _name)
+    {
+        if (toDo == Action.Add) AddData(_variable, _name);
+        else ReplaceData(_variable, _name);
+    }
+
+    private void AddData(object variable, string name)
+    {
+        dataToStore.Add(
+            new SavingData
+            {
+                dataVariable = variable as object, dataName = name
+            }
+        );
+    }
+    
+    private void ReplaceData<T>(T data, string name)
+    {
+        foreach (SavingData savingData in dataToStore)
+        {
+            if (savingData.dataName == name)
+            {
+                data = (T) savingData.dataVariable;
+            }
+        }
+    }
+
+    public void GetData(DataDelegate<object> Data)
+    {
+        dataToStore.Clear();
+
+        // Add Evidences
+        foreach (List<Evidence> evidenceList in allEvidences.Values)
+        {
+            string listName = evidenceList[0].modeCategory.location.ToString();
+
+            foreach (Evidence evidence in evidenceList)
+            {
+                string evidenceName = listName + "_" + evidence.codeName;
+
+                Data(evidence.unlockedData, evidence.unlockedData, evidenceName + "_" + nameof(evidence.unlockedData));
+
+                AddData(evidence.unlockedData, evidenceName + "_" + nameof(evidence.unlockedData));
+
+                if (evidence.hasIntels)
+                {
+                    foreach (Intel intel in evidence.intels)
+                    {
+                        AddData(intel.revealed, evidenceName + "_" + intel.name + "_" + nameof(intel.revealed));
+                        AddData(intel.intelAlpha, evidenceName + "_" + intel.name + "_" + nameof(intel.intelAlpha));
+                    }
+                }
+
+                AddData(evidence.photographed, evidenceName + "_" + nameof(evidence.photographed));
+                AddData(evidence.seen, evidenceName + "_" + nameof(evidence.seen));
+            }
+        }
+
+        // Add Locations
+        foreach (Location location in locations)
+        {
+            string locationName = location.locationName;
+
+            AddData(location.known, locationName + "_" + nameof(location.known));
+            AddData(location.visible, locationName + "_" + nameof(location.visible));
+            AddData(location.accessible, locationName + "_" + nameof(location.accessible));
+        }
+        
+        // Add Notes
+        foreach (Note note in notes)
+        {
+            string noteName = note.name;
+
+            AddData(note.text, noteName + "_" + nameof(note.text));
+            AddData(note.date, noteName + "_" + nameof(note.date));
+        }
+
+        // Add Reports
+        foreach ((List<Report>, List<Report>) bigList in megaReports.Values)
+        {
+            string ListName = bigList.Item1[0].agentName;
+
+            foreach (Report report in bigList.Item1)
+            {
+                string reportName = report.elementName;
+                if (report.mode == Modes.Evidence) reportName += ("_" + report.elementDetailName);
+
+                AddData(report.unlockedData, reportName + "_" + nameof(report.unlockedData));
+                AddData(report.unlockOrderIndex, reportName + "_" + nameof(report.unlockOrderIndex));
+                AddData(report.seen, reportName + "_" + nameof(report.seen));
+            }
+        }
+        AddData(reportsCollected, nameof(reportsCollected));
+        
+        // Add Questions
+        foreach (Suspects suspect in questions.Keys)
+        {
+            string listName = suspect.ToString();
+
+            foreach (Question question in questions[suspect])
+            {
+                string questionName = listName + question.index.ToString();
+
+                if (question.unlockedByReport) AddData(question.unlockedData, questionName + "_" + nameof(question.unlockedData));
+            }
+        }
+        AddData(interrogations, nameof(interrogations));
+    }
 
     [ContextMenu("Reset Game Data")]
     public void ResetData()
@@ -313,14 +428,36 @@ public class GameData : SerializedScriptableObject
         // Reset Evidences
         foreach (List<Evidence> evidenceList in allEvidences.Values)
         {
-            evidenceList.Clear();
+            foreach (Evidence evidence in evidenceList)
+            {
+                evidence.unlockedData = false;
+
+                if (evidence.hasIntels)
+                {
+                    foreach (Intel intel in evidence.intels)
+                    {
+                        intel.revealed = false;
+                        intel.intelAlpha = 0.0f;
+                    }
+                }
+
+                evidence.photographed = false;
+
+                evidence.seen = false;
+            }
         }
 
         // Reset Locations
-        locations.Clear();
-
-        locationsInList = false;
-
+        foreach (Location location in locations)
+        {
+            if (location.myLocation != Locations.Docks)
+            {
+                location.known = false;
+                location.visible = false;
+                location.accessible = false;
+            }
+        }
+        
         // Reset Notes
         notes.Clear();
 

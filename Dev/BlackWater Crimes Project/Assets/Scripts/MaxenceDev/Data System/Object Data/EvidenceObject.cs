@@ -7,8 +7,10 @@ using Sirenix.OdinInspector;
 
 public class EvidenceObject : ObjectData<Evidence>
 {
-    [Title("PROPERTIES")]
+    public int MyIndex { get { return data.index; } set => data.index = value; }
 
+    [Title("PROPERTIES")]
+    
     // Text \\
     public bool hasText;
     [ShowIf("hasText")]
@@ -18,6 +20,10 @@ public class EvidenceObject : ObjectData<Evidence>
     private float time;
     [ShowIf("hasText")]
     public Camera _cam;
+
+    public bool hasIntel { get { return data.hasIntels; } }
+    [ShowIf("hasIntel")]
+    public List<IntelObject> intelObjects;
 
     [HideInInspector]
     public bool isZoomed { get; set; } = false;
@@ -32,11 +38,13 @@ public class EvidenceObject : ObjectData<Evidence>
 
         List<Evidence> myDataList = gameData.allEvidences[data.modeCategory.location];
 
-        if (!instantiate) LoadDataOfType(myDataList);
+        LoadDataOfType(myDataList);
     }
 
     public override void Protocol()
     {
+        if (hasIntel) for (int i = 0; i < intelObjects.Count; i++) intelObjects[i].name = data.intels[i].name;
+
         base.Protocol();
     }
 
