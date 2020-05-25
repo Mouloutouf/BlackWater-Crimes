@@ -41,7 +41,7 @@ public class MainMenuScript : MonoBehaviour
 
         if (dataContainer != null) gameData = dataContainer.gameData;
 
-        gameData.ManageData(Action.Load);
+        //gameData.ManageData(Action.Load);
 
         SetLanguage();
     }
