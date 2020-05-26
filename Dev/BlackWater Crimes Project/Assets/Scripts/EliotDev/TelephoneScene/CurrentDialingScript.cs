@@ -11,12 +11,12 @@ public class CurrentDialingScript : MonoBehaviour
     public GameData gameData;
 
     [SerializeField] Text dialingText;
-    [SerializeField] Text callingText;
+    public Text callingText;
     [SerializeField] Button eraseButton;
 
-    List<int> currentDialing = new List<int>();
-    string currentContact = "";
-    string currentContactScene;
+    public List<int> currentDialing = new List<int>();
+    public string currentContact = "";
+    public string currentContactScene;
 
     public VibrateSystem vibrateSystem;
 

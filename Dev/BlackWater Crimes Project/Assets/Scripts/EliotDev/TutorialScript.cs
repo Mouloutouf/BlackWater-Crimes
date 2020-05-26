@@ -41,6 +41,27 @@ public class TutorialScript : SerializedMonoBehaviour
     public EvidenceInteraction evidenceScript;
 
 
+
+    [Title("Menu Desk References")]
+    Button folderButton;
+    Button mapButton;
+    Button phoneButton;
+
+
+    [Title("Folder Desk References")]
+    Button reportsButton;
+    Button locationsButton;
+    Button charactersButton;
+    Button evidencesButton;
+    Button returnButton;
+
+    [Title("Folder Desk References")]
+    CurrentDialingScript dialingScript;
+    CadranScript cadranScript;
+    Button eraseButton;
+
+
+
     [Title("Game Data")]
     public GameData gameData;
 
@@ -62,6 +83,18 @@ public class TutorialScript : SerializedMonoBehaviour
     bool waitingForLabelPhoto = false;
 
     bool waitingForDeskScene = false;
+
+    bool waitingForFolderScene = false;
+    bool waitingForEvidenceTab = false;
+
+    bool waitingForReturnToDesk = false;
+
+    bool waitingForPhoneScene = false;
+    bool waitingForSeven = false;
+    bool waitingForErase = false;
+    bool checkDialing = false;
+
+    bool waitingForSpecialistScene = false;
 
 
     void Start()
@@ -217,6 +250,114 @@ public class TutorialScript : SerializedMonoBehaviour
                 StartCoroutine(WaitForNextDialogue());
             }
         }
+
+        else if (waitingForDeskScene)
+        {
+            if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "MenuDeskScene")
+            {
+                waitingForDeskScene = false;
+
+                MenuDeskStart();
+
+                StartCoroutine(WaitForNextDialogue());
+            }
+        }
+
+        else if (waitingForFolderScene)
+        {
+            if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "NewDeskScene")
+            {
+                waitingForFolderScene = false;
+
+                FolderDeskStart();
+
+                StartCoroutine(WaitForNextDialogue());
+            }
+        }
+
+        else if (waitingForEvidenceTab)
+        {
+            if (UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject == evidencesButton.gameObject)
+            {
+                waitingForEvidenceTab = false;
+
+                StartCoroutine(WaitForNextDialogue());
+            }
+        }
+
+        else if (waitingForReturnToDesk)
+        {
+            if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "MenuDeskScene")
+            {
+                waitingForReturnToDesk = false;
+
+                MenuDeskStart();
+
+                StartCoroutine(WaitForNextDialogue());
+            }
+        }
+        
+        else if (waitingForPhoneScene)
+        {
+            if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "TelephoneScene")
+            {
+                waitingForPhoneScene = false;
+
+                PhoneStart();
+
+                StartCoroutine(WaitForNextDialogue());
+            }
+        }
+
+        else if (waitingForSeven)
+        {
+            if (dialingScript.currentDialing.Count > 0 && dialingScript.currentDialing[0] == 7)
+            {
+                waitingForSeven = false;
+
+                StartCoroutine(CadranTimer());
+
+                StartCoroutine(WaitForNextDialogue());
+            }
+
+            else if (dialingScript.currentDialing.Count > 0 && dialingScript.currentDialing[0] != 7)
+            {
+                dialingScript.ResetDial();
+            }
+        }
+
+        else if (waitingForErase)
+        {
+            if (dialingScript.currentDialing.Count == 0)
+            {
+                waitingForErase = false;
+
+                StartCoroutine(WaitForNextDialogue());
+            }
+        }
+
+        if (checkDialing)
+        {
+            if (dialingScript.currentContact != "" && dialingScript.currentContact != "B. Bennington")
+            {
+                dialingScript.currentContact = "";
+                dialingScript.currentContactScene = "";
+                dialingScript.callingText.text = "";
+                dialingScript.StopAllCoroutines();
+                dialingScript.ResetDial();
+            }
+        }
+
+        if (waitingForSpecialistScene)
+        {
+           if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "IndicScene")
+            {
+                checkDialing = false;
+                waitingForSpecialistScene = false;
+            
+                StartCoroutine(WaitForNextDialogue());
+            }
+        }
     }
 
     void DockStart()
@@ -241,6 +382,42 @@ public class TutorialScript : SerializedMonoBehaviour
 
         dialogueCanvas.SetActive(false);
         StartCoroutine(WaitForEndOfAnimation());
+    }
+
+    void MenuDeskStart()
+    {
+        folderButton = GameObject.Find("Desk Folders Button").GetComponent<Button>();
+        mapButton = GameObject.Find("Map Scene Button").GetComponent<Button>();
+        phoneButton = GameObject.Find("Telephone Scene Button").GetComponentInChildren<Button>();
+
+        folderButton.interactable = false;
+        mapButton.interactable = false;
+        phoneButton.interactable = false; 
+    }
+
+    void FolderDeskStart()
+    {
+        reportsButton = GameObject.Find("All Reports Tab").GetComponent<Button>();
+        locationsButton = GameObject.Find("Locations Tab").GetComponent<Button>();
+        charactersButton = GameObject.Find("Characters Tab").GetComponentInChildren<Button>();
+        evidencesButton = GameObject.Find("Evidences Tab").GetComponent<Button>();
+        returnButton = GameObject.Find("Return Button").GetComponent<Button>();
+
+        reportsButton.interactable = false;
+        locationsButton.interactable = false;
+        charactersButton.interactable = false; 
+        evidencesButton.interactable = false; 
+        returnButton.interactable = false;
+    }
+
+    void PhoneStart()
+    {
+        dialingScript = GameObject.FindObjectOfType<CurrentDialingScript>();
+        cadranScript = GameObject.FindObjectOfType<CadranScript>();
+        eraseButton = GameObject.Find("EraseButton").GetComponent<Button>();
+
+        cadranScript.enabled = false;
+        eraseButton.interactable = false;
     }
 
     public void NextLine()
@@ -363,6 +540,49 @@ public class TutorialScript : SerializedMonoBehaviour
             buttons["ReturnDesk"].interactable = true;
             waitingForDeskScene = true;
         }
+
+        else if (dialogueIndex == 13)
+        {
+            folderButton.interactable = true;
+            waitingForFolderScene = true;
+        }
+
+        else if (dialogueIndex == 14)
+        {
+            evidencesButton.interactable = true;
+            waitingForEvidenceTab = true;
+        }
+
+        else if (dialogueIndex == 15)
+        {
+            returnButton.interactable = true;
+            waitingForReturnToDesk = true;
+        }
+
+        else if (dialogueIndex == 16)
+        {
+            phoneButton.interactable = true;
+            waitingForPhoneScene = true;
+        }
+
+        else if (dialogueIndex == 17)
+        {
+            cadranScript.enabled = true;
+            waitingForSeven = true;
+        }
+
+        else if (dialogueIndex == 18)
+        {
+            eraseButton.interactable = true;
+            waitingForErase = true;
+        }
+
+        else if (dialogueIndex == 19)
+        {
+            cadranScript.enabled = true;
+            checkDialing = true;
+            waitingForSpecialistScene = true;
+        }
     }
 
     IEnumerator WaitForEndOfAnimation()
@@ -377,5 +597,11 @@ public class TutorialScript : SerializedMonoBehaviour
         dialogueCanvas.SetActive(true);
         dialogueIndex ++;
         NextLine();
+    }
+
+    IEnumerator CadranTimer()
+    {
+        yield return new WaitForSeconds(.5f);
+        cadranScript.enabled = false;
     }
 }
