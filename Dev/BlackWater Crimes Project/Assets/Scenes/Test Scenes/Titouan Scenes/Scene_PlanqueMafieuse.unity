@@ -906,6 +906,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46742789b7e08be46aa11d27648eb230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showData: 0
   data:
     unlockedData: 0
     index: 1
@@ -922,12 +923,12 @@ MonoBehaviour:
       location: 1
       suspect: 2
     seen: 0
-  instantiate: 0
-  hasApplied: 0
   hasText: 0
   displayTextComponent: {fileID: 0}
   timer: 0.3
   _cam: {fileID: 0}
+  intelObjects: []
+  isShown: 0
 --- !u!65 &623914899
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1337,11 +1338,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46742789b7e08be46aa11d27648eb230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showData: 0
   data:
     unlockedData: 0
     index: 2
-    codeName: Contrat Mafieux
-    intelSelf: 1
+    codeName: 
+    intelSelf: 0
     hasIntels: 0
     intels: []
     useToUnlock: 0
@@ -1350,15 +1352,15 @@ MonoBehaviour:
     hasText: 0
     descriptionText: 
     modeCategory:
-      location: 7
+      location: 6
       suspect: 4
     seen: 0
-  instantiate: 0
-  hasApplied: 0
   hasText: 0
   displayTextComponent: {fileID: 0}
   timer: 0.3
   _cam: {fileID: 0}
+  intelObjects: []
+  isShown: 0
 --- !u!114 &864982123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1856,11 +1858,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46742789b7e08be46aa11d27648eb230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showData: 0
   data:
     unlockedData: 0
     index: 0
-    codeName: Carte Mafieuse
-    intelSelf: 1
+    codeName: 
+    intelSelf: 0
     hasIntels: 0
     intels: []
     useToUnlock: 0
@@ -1869,15 +1872,15 @@ MonoBehaviour:
     hasText: 0
     descriptionText: 
     modeCategory:
-      location: 7
+      location: 6
       suspect: 4
     seen: 0
-  instantiate: 0
-  hasApplied: 0
   hasText: 0
   displayTextComponent: {fileID: 0}
   timer: 0.3
   _cam: {fileID: 0}
+  intelObjects: []
+  isShown: 0
 --- !u!114 &1321181849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3364,11 +3367,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46742789b7e08be46aa11d27648eb230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showData: 0
   data:
     unlockedData: 0
     index: 1
-    codeName: Photos Camion 2 et 3
-    intelSelf: 1
+    codeName: 
+    intelSelf: 0
     hasIntels: 0
     intels: []
     useToUnlock: 0
@@ -3377,15 +3381,15 @@ MonoBehaviour:
     hasText: 0
     descriptionText: 
     modeCategory:
-      location: 7
+      location: 6
       suspect: 4
     seen: 0
-  instantiate: 0
-  hasApplied: 0
   hasText: 0
   displayTextComponent: {fileID: 0}
   timer: 0.3
   _cam: {fileID: 0}
+  intelObjects: []
+  isShown: 0
 --- !u!114 &1982223060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6803,7 +6807,7 @@ PrefabInstance:
     - target: {fileID: 2213011490732483174, guid: 6e34bc824f7d2714e8a9caa2990f8913,
         type: 3}
       propertyPath: thisSceneLocation
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2213011490732483174, guid: 6e34bc824f7d2714e8a9caa2990f8913,
         type: 3}

@@ -170,6 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46742789b7e08be46aa11d27648eb230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showData: 0
   data:
     unlockedData: 0
     index: 8
@@ -190,12 +191,12 @@ MonoBehaviour:
       location: 5
       suspect: 0
     seen: 0
-  instantiate: 0
-  hasApplied: 0
-  hasText: 0
-  displayTextComponent: {fileID: 0}
+  hasText: 1
+  displayTextComponent: {fileID: 951130929}
   timer: 0.3
-  _cam: {fileID: 0}
+  _cam: {fileID: 1515454466}
+  intelObjects: []
+  isShown: 0
 --- !u!114 &10457836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -481,6 +482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46742789b7e08be46aa11d27648eb230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showData: 0
   data:
     unlockedData: 0
     index: 4
@@ -499,14 +501,12 @@ MonoBehaviour:
       location: 5
       suspect: 4
     seen: 0
-  instantiate: 0
-  hasApplied: 0
   hasText: 0
   displayTextComponent: {fileID: 0}
   timer: 0.3
   _cam: {fileID: 0}
-  hasIntels: 0
   intelObjects: []
+  isShown: 0
 --- !u!114 &85627033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -867,6 +867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46742789b7e08be46aa11d27648eb230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showData: 0
   data:
     unlockedData: 0
     index: 0
@@ -885,14 +886,12 @@ MonoBehaviour:
       location: 5
       suspect: 3
     seen: 0
-  instantiate: 0
-  hasApplied: 0
   hasText: 1
   displayTextComponent: {fileID: 951130929}
   timer: 0.3
   _cam: {fileID: 1515454466}
-  hasIntels: 0
   intelObjects: []
+  isShown: 0
 --- !u!114 &267094034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -961,6 +960,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46742789b7e08be46aa11d27648eb230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showData: 0
   data:
     unlockedData: 0
     index: 9
@@ -973,20 +973,18 @@ MonoBehaviour:
     useToUnlock: 0
     unlockableLocation: 0
     photo: {fileID: 0}
-    hasText: 1
-    descriptionText: "ICI ! BEAUCOUP TROP SOUVENT ! \n\nIl donne des cadeaux . Pour
-      son programme ? S\xFBrement\nPeut-\xEAtre pour les acheter ?\n\nDans tous les
-      cas, A OBSERVER ATTENTIVEMENT"
+    hasText: 0
+    descriptionText: 
     modeCategory:
       location: 5
       suspect: 0
     seen: 0
-  instantiate: 0
-  hasApplied: 0
   hasText: 0
   displayTextComponent: {fileID: 0}
   timer: 0.3
   _cam: {fileID: 0}
+  intelObjects: []
+  isShown: 0
 --- !u!114 &338775076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1362,6 +1360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46742789b7e08be46aa11d27648eb230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showData: 0
   data:
     unlockedData: 0
     index: 6
@@ -1382,12 +1381,12 @@ MonoBehaviour:
       location: 5
       suspect: 0
     seen: 0
-  instantiate: 0
-  hasApplied: 0
-  hasText: 0
-  displayTextComponent: {fileID: 0}
+  hasText: 1
+  displayTextComponent: {fileID: 951130929}
   timer: 0.3
-  _cam: {fileID: 0}
+  _cam: {fileID: 1515454466}
+  intelObjects: []
+  isShown: 0
 --- !u!114 &487587661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1760,6 +1759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46742789b7e08be46aa11d27648eb230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showData: 0
   data:
     unlockedData: 0
     index: 1
@@ -1776,14 +1776,12 @@ MonoBehaviour:
       location: 1
       suspect: 2
     seen: 0
-  instantiate: 0
-  hasApplied: 0
   hasText: 0
   displayTextComponent: {fileID: 0}
   timer: 0.3
   _cam: {fileID: 0}
-  hasIntels: 0
   intelObjects: []
+  isShown: 0
 --- !u!65 &623914899
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1988,6 +1986,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46742789b7e08be46aa11d27648eb230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showData: 0
   data:
     unlockedData: 0
     index: 5
@@ -2006,14 +2005,12 @@ MonoBehaviour:
       location: 5
       suspect: 4
     seen: 0
-  instantiate: 0
-  hasApplied: 0
   hasText: 1
   displayTextComponent: {fileID: 951130929}
   timer: 0.3
   _cam: {fileID: 1515454466}
-  hasIntels: 0
   intelObjects: []
+  isShown: 0
 --- !u!114 &678365765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2157,6 +2154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46742789b7e08be46aa11d27648eb230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showData: 0
   data:
     unlockedData: 0
     index: 7
@@ -2177,12 +2175,12 @@ MonoBehaviour:
       location: 5
       suspect: 0
     seen: 0
-  instantiate: 0
-  hasApplied: 0
-  hasText: 0
-  displayTextComponent: {fileID: 0}
+  hasText: 1
+  displayTextComponent: {fileID: 951130929}
   timer: 0.3
-  _cam: {fileID: 0}
+  _cam: {fileID: 1515454466}
+  intelObjects: []
+  isShown: 0
 --- !u!114 &694289113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2296,6 +2294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46742789b7e08be46aa11d27648eb230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showData: 0
   data:
     unlockedData: 0
     index: 3
@@ -2314,14 +2313,12 @@ MonoBehaviour:
       location: 5
       suspect: 2
     seen: 0
-  instantiate: 0
-  hasApplied: 0
   hasText: 0
   displayTextComponent: {fileID: 0}
   timer: 0.3
   _cam: {fileID: 0}
-  hasIntels: 0
   intelObjects: []
+  isShown: 0
 --- !u!114 &716882021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3341,6 +3338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46742789b7e08be46aa11d27648eb230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showData: 0
   data:
     unlockedData: 0
     index: 2
@@ -3359,14 +3357,12 @@ MonoBehaviour:
       location: 5
       suspect: 4
     seen: 0
-  instantiate: 0
-  hasApplied: 0
   hasText: 0
   displayTextComponent: {fileID: 0}
   timer: 0.3
   _cam: {fileID: 0}
-  hasIntels: 0
   intelObjects: []
+  isShown: 0
 --- !u!114 &1221352479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3485,7 +3481,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &1301497246
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3540,13 +3536,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1301497245}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: 2.409, y: 4.077, z: 28.524}
-  m_LocalScale: {x: 0.04003832, y: 0.09175212, z: 0.024216125}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0.7071068, w: 0}
+  m_LocalPosition: {x: 2.609, y: 4.077, z: 28.524}
+  m_LocalScale: {x: 0.04003833, y: 0.09175211, z: 0.024216127}
   m_Children:
   - {fileID: 1949581260}
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_Father: {fileID: 1907031896}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
 --- !u!1 &1307719608 stripped
 GameObject:
@@ -4345,6 +4341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46742789b7e08be46aa11d27648eb230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showData: 0
   data:
     unlockedData: 0
     index: 4
@@ -4366,14 +4363,12 @@ MonoBehaviour:
       location: 5
       suspect: 4
     seen: 0
-  instantiate: 0
-  hasApplied: 0
   hasText: 1
   displayTextComponent: {fileID: 951130929}
   timer: 0.3
   _cam: {fileID: 1515454466}
-  hasIntels: 0
   intelObjects: []
+  isShown: 0
 --- !u!114 &1586696861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4641,6 +4636,7 @@ GameObject:
   - component: {fileID: 1695334288}
   - component: {fileID: 1695334287}
   - component: {fileID: 1695334286}
+  - component: {fileID: 1695334292}
   m_Layer: 0
   m_Name: INDICE Plan maison Anna
   m_TagString: ClueHolder
@@ -4660,6 +4656,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46742789b7e08be46aa11d27648eb230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showData: 0
   data:
     unlockedData: 0
     index: 1
@@ -4678,14 +4675,12 @@ MonoBehaviour:
       location: 5
       suspect: 4
     seen: 0
-  instantiate: 0
-  hasApplied: 0
   hasText: 0
   displayTextComponent: {fileID: 0}
   timer: 0.3
   _cam: {fileID: 0}
-  hasIntels: 0
   intelObjects: []
+  isShown: 0
 --- !u!114 &1695334287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4781,6 +4776,21 @@ Transform:
   m_Father: {fileID: 873742327}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
+--- !u!114 &1695334292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695334285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e35f01f5191375643ad2941759539f96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameData: {fileID: 11400000, guid: eaa3567ddd179a64a9d879867070a0b4, type: 2}
+  evidenceObject: {fileID: 1695334286}
+  toUnlock: 7
 --- !u!1 &1708181187
 GameObject:
   m_ObjectHideFlags: 0
@@ -5045,6 +5055,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46742789b7e08be46aa11d27648eb230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showData: 0
   data:
     unlockedData: 0
     index: 4
@@ -5063,14 +5074,12 @@ MonoBehaviour:
       location: 5
       suspect: 4
     seen: 0
-  instantiate: 0
-  hasApplied: 0
   hasText: 0
   displayTextComponent: {fileID: 0}
   timer: 0.3
   _cam: {fileID: 0}
-  hasIntels: 0
   intelObjects: []
+  isShown: 0
 --- !u!114 &1878871732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5184,6 +5193,7 @@ Transform:
   - {fileID: 694289111}
   - {fileID: 10457834}
   - {fileID: 338775074}
+  - {fileID: 1301497248}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
