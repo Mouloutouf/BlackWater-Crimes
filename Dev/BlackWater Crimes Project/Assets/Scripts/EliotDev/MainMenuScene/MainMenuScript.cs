@@ -41,7 +41,7 @@ public class MainMenuScript : MonoBehaviour
 
         if (dataContainer != null) gameData = dataContainer.gameData;
 
-        //gameData.ManageData(Action.Load);
+        Saving();
 
         SetLanguage();
     }
@@ -156,5 +156,23 @@ public class MainMenuScript : MonoBehaviour
 
             parameterButton.GetComponent<Image>().sprite = baseParameter;
         }
+    }
+
+    public void Saving()
+    {
+        if (gameData.firstTimeInMenu && !gameData.firstTimeInGame)
+        {
+            gameData.ManageData(Action.Load); // Load the Player's Last Save
+
+            gameData.firstTimeInMenu = false;
+        }
+        else if (gameData.firstTimeInMenu && gameData.firstTimeInGame)
+        {
+            gameData.firstTimeInGame = false;
+
+            gameData.firstTimeInMenu = false;
+        }
+
+        gameData.ManageData(Action.Save);
     }
 }
