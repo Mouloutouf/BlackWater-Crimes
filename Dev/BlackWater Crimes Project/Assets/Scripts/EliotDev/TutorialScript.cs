@@ -93,10 +93,8 @@ public class TutorialScript : SerializedMonoBehaviour
             if (evidenceScript.currentEvidenceHeld == clues["BulletCase"])
             {
                 waitingForBulletCaseInteraction = false;
-                dialogueCanvas.SetActive(true);
 
-                dialogueIndex ++;
-                NextLine();
+                StartCoroutine(WaitForNextDialogue());
             }
         }
 
@@ -105,10 +103,8 @@ public class TutorialScript : SerializedMonoBehaviour
             if (evidenceScript.currentEvidenceHeld.GetComponent<EvidenceObject>().data.photographed)
             {
                 waitingForBulletCasePhotograph = false;
-                dialogueCanvas.SetActive(true);
 
-                dialogueIndex ++;
-                NextLine();
+                StartCoroutine(WaitForNextDialogue());
             }
         }
 
@@ -117,10 +113,8 @@ public class TutorialScript : SerializedMonoBehaviour
             if (evidenceScript.currentEvidenceHeld == null)
             {
                 waitingForBulletCaseDezoom = false;
-                dialogueCanvas.SetActive(true);
 
-                dialogueIndex ++;
-                NextLine();
+                StartCoroutine(WaitForNextDialogue());
             }
         }
 
@@ -129,13 +123,11 @@ public class TutorialScript : SerializedMonoBehaviour
             if (evidenceScript.currentEvidenceHeld == clues["Letter"])
             {
                 waitingForLetterInteraction = false;
-                dialogueCanvas.SetActive(true);
 
                 buttons["Photo"].interactable = false;
                 buttons["Dezoom"].interactable = false;
 
-                dialogueIndex ++;
-                NextLine();
+                StartCoroutine(WaitForNextDialogue());
             }
         }
 
@@ -144,10 +136,8 @@ public class TutorialScript : SerializedMonoBehaviour
             if (evidenceScript.currentEvidenceHeld.GetComponent<EvidenceObject>().isShown)
             {
                 waitingForLetterText = false;
-                dialogueCanvas.SetActive(true);
 
-                dialogueIndex ++;
-                NextLine();
+                StartCoroutine(WaitForNextDialogue());
             }
         }
 
@@ -156,10 +146,8 @@ public class TutorialScript : SerializedMonoBehaviour
             if (!evidenceScript.currentEvidenceHeld.GetComponent<EvidenceObject>().isShown)
             {
                 waitingForLetterNoText = false;
-                dialogueCanvas.SetActive(true);
 
-                dialogueIndex ++;
-                NextLine();
+                StartCoroutine(WaitForNextDialogue());
             }
         }
 
@@ -168,10 +156,8 @@ public class TutorialScript : SerializedMonoBehaviour
             if (fpToggle.isOn)
             {
                 waitingForLetterFpOn = false;
-                dialogueCanvas.SetActive(true);
 
-                dialogueIndex ++;
-                NextLine();
+                StartCoroutine(WaitForNextDialogue());
             }
         }
 
@@ -182,10 +168,8 @@ public class TutorialScript : SerializedMonoBehaviour
                 if (intel.revealed)
                 { 
                     waitingForLetterFpReveal = false;
-                    dialogueCanvas.SetActive(true);
 
-                    dialogueIndex ++;
-                    NextLine();
+                    StartCoroutine(WaitForNextDialogue());
                 }
             }
         }
@@ -195,10 +179,8 @@ public class TutorialScript : SerializedMonoBehaviour
             if (evidenceScript.currentEvidenceHeld.GetComponent<EvidenceObject>().data.photographed)
             {
                 waitingForLetterPhoto = false;
-                dialogueCanvas.SetActive(true);
 
-                dialogueIndex ++;
-                NextLine();
+                StartCoroutine(WaitForNextDialogue());
             }
         }
 
@@ -207,10 +189,8 @@ public class TutorialScript : SerializedMonoBehaviour
             if (evidenceScript.currentEvidenceHeld == null)
             {
                 waitingForLetterDezoom = false;
-                dialogueCanvas.SetActive(true);
 
-                dialogueIndex ++;
-                NextLine();
+                StartCoroutine(WaitForNextDialogue());
             }
         }
 
@@ -219,14 +199,12 @@ public class TutorialScript : SerializedMonoBehaviour
             if (evidenceScript.currentEvidenceHeld == clues["Label"])
             {
                 waitingForLabelInteraction = false;
-                dialogueCanvas.SetActive(true);
 
                 buttons["Photo"].interactable = false;
                 buttons["Dezoom"].interactable = false;
                 fpToggle.interactable = false;
 
-                dialogueIndex ++;
-                NextLine();
+                StartCoroutine(WaitForNextDialogue());
             }
         }
 
@@ -235,10 +213,8 @@ public class TutorialScript : SerializedMonoBehaviour
             if (evidenceScript.currentEvidenceHeld.GetComponent<EvidenceObject>().data.photographed)
             {
                 waitingForLabelPhoto = false;
-                dialogueCanvas.SetActive(true);
 
-                dialogueIndex ++;
-                NextLine();
+                StartCoroutine(WaitForNextDialogue());
             }
         }
     }
@@ -393,5 +369,13 @@ public class TutorialScript : SerializedMonoBehaviour
     {
         yield return new WaitForSeconds(3);
         dialogueCanvas.SetActive(true);
+    }
+
+    IEnumerator WaitForNextDialogue()
+    {
+        yield return new WaitForSeconds(.3f);
+        dialogueCanvas.SetActive(true);
+        dialogueIndex ++;
+        NextLine();
     }
 }
