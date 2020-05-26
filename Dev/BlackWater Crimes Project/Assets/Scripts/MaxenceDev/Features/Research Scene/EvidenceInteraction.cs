@@ -36,9 +36,7 @@ public class EvidenceInteraction : MonoBehaviour
     public AudioClip photoSavedSound;
     public AudioClip photoReplacedSound;
     public AudioClip fingerprintDiscoveredSound;
-    [SerializeField] Vector2 values;
-    [SerializeField] Vector2 sizes;
-
+    
     public VibrateSystem vibrateSystem;
 
     [ExecuteInEditMode]
@@ -53,8 +51,6 @@ public class EvidenceInteraction : MonoBehaviour
     void Start()
     {
         gameData = GameObject.Find("Data Container").GetComponent<DataContainer>().gameData;
-        values.x = (Screen.width * values.x) / 1480f;
-        values.y = (Screen.height * values.y) / 720;
     }
 
     void Update()
@@ -194,8 +190,7 @@ public class EvidenceInteraction : MonoBehaviour
 
             _evidence.photographed = true;
             _evidence.unlockedData = true;
-            //gameData.allEvidences[thisSceneLocation].Add(_evidence); // IMPORTANT : This is where we unlock the evidence in the List
-
+            
             gameData.newStuff = true;
         }
         else
@@ -203,8 +198,6 @@ public class EvidenceInteraction : MonoBehaviour
             soundAudio.PlayOneShot(photoReplacedSound);
             vibrateSystem.PhoneVibrate();
             StartCoroutine(DisplayText("Photo Replaced"));
-            //gameData.allEvidences[thisSceneLocation].Remove(_evidence);
-            //gameData.allEvidences[thisSceneLocation].Add(_evidence);
         }
 
         // Takes the Screenshot and saves it under the right File Path
@@ -246,55 +239,31 @@ public class EvidenceInteraction : MonoBehaviour
 
             StartCoroutine(CheckFile(Application.persistentDataPath + "/" + filePath, fileName, _evidence));
         }
-
-        /*if (!_evidence.photographed)
-
-        {
-
-            StartCoroutine(DisplayText("Photo Saved"));
-
-        }
-        else
-
-        {
-
-            StartCoroutine(DisplayText("Photo Replaced"));
-
-        }*/
     }
 
     IEnumerator CheckFile(string filePath, string fileName, Evidence _evidence)
     {
         if (File.Exists(filePath))
         {
-            CreateSprite(filePath, fileName, _evidence);
+            _evidence.photoPath = filePath;
         }
         else
         {
-            //returnButton.interactable = false;
             yield return new WaitForSeconds(0.1f);
             StartCoroutine(CheckFile(filePath, fileName, _evidence));
         }
     }
 
-    void CreateSprite(string filePath, string fileName, Evidence _evidence)
+    public static Sprite CreateSprite(string filePath, string fileName)
     {
         Texture2D texture;
         byte[] fileBytes;
         fileBytes = File.ReadAllBytes(filePath);
         texture = new Texture2D(2, 2, TextureFormat.RGB24, false);
         texture.LoadImage(fileBytes);
-        Rect rect = new Rect(0, 0, texture.width, texture.height);
-        Sprite sp = Sprite.Create(texture, new Rect(values.x, values.y, texture.width / sizes.x, texture.height / sizes.y), new Vector2(0.5f, 0.5f));
-        /*
-        if(AssetDatabase.FindAssets(fileName + "Cropped.asset") != null)
-        {
-            AssetDatabase.DeleteAsset("Assets/Graphs/Sprites/Screenshots/CropedSprites/" + fileName + "Cropped.asset");
-        }
-        AssetDatabase.CreateAsset(sp, "Assets/Graphs/Sprites/Screenshots/CropedSprites/" + fileName + "Cropped.asset");
-        */
-        _evidence.photo = sp;
-        returnButton.interactable = true;
+        Sprite sp = Sprite.Create(texture, new Rect((Screen.width * 360) / 1480f, 0, texture.width / 2, texture.height), new Vector2(0.5f, 0.5f));
+        
+        return sp;
     }
 
     IEnumerator DisplayText(string textToDisplay)
@@ -329,4 +298,16 @@ public class EvidenceInteraction : MonoBehaviour
     {
         currentEvidenceHeld.GetComponent<EvidenceObject>().ShowText();
     }
+
+    #region Old
+
+    /*
+        if(AssetDatabase.FindAssets(fileName + "Cropped.asset") != null)
+        {
+            AssetDatabase.DeleteAsset("Assets/Graphs/Sprites/Screenshots/CropedSprites/" + fileName + "Cropped.asset");
+        }
+        AssetDatabase.CreateAsset(sp, "Assets/Graphs/Sprites/Screenshots/CropedSprites/" + fileName + "Cropped.asset");
+    */
+
+    #endregion
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using Sirenix.OdinInspector;
+using UnityEditor;
 
 public enum Locations { Docks, Brothel, Anna_House, Abigail_House, Politician_Office, Cop_Office, Mafia_HideOut, Anna_House_Secret, Brothel_HideOut }
 
@@ -98,7 +99,8 @@ public class Evidence : Data
     public Locations unlockableLocation;
 
     public bool photographed { get; set; }
-    [HideInInspector] public Sprite photo; // get; set; autoproperty
+    [HideInInspector] public Sprite photo { get { return EvidenceInteraction.CreateSprite(photoPath, codeName.Replace(" ", "")); } set => photo = value; }
+    public string photoPath;
     public bool completedPhotograph { get; set; }
 
     [Title("Text")]
@@ -572,6 +574,26 @@ public class GameData : SerializedScriptableObject
 
     #region Test
 
+    /*
+    [HideInInspector] public Sprite photo { get { return EvidenceInteraction.CreateSprite(photoPath, codeName.Replace(" ", "")); } set => photo = value; }
+    public string photoPath
+    {
+        get
+        {
+            string name = codeName.Replace(" ", "");
+
+            bool isWindowsBuild = Application.platform == RuntimePlatform.WindowsPlayer;
+            bool isAndroidBuild = Application.platform == RuntimePlatform.Android;
+            bool isUnityEditor = Application.platform == RuntimePlatform.WindowsEditor || (Application.platform == RuntimePlatform.Android && EditorApplication.isPlaying);
+
+            string windowsBuildPath = Application.persistentDataPath + name + ".png";
+            string androidBuildPath = Application.persistentDataPath + "/" + name + ".png";
+            string unityEditorPath = "Assets/Graphs/Sprites/Screenshots/" + name + ".png";
+
+            return (isUnityEditor ? unityEditorPath : isWindowsBuild ? windowsBuildPath : isAndroidBuild ? androidBuildPath : "");
+        }
+    }
+    */
     /* Test Language \\
         [Title("Language")]
 
