@@ -31,6 +31,7 @@ MonoBehaviour:
     - {fileID: 21300000, guid: c380950968be14a43a02a39c3deecff1, type: 3}
     - {fileID: 21300000, guid: 790ecadda147c8a459fd80e902b75797, type: 3}
     - {fileID: 21300000, guid: 9d7481b73f6a3294eb4596f8ba342cd2, type: 3}
+    - {fileID: 21300000, guid: 0f65259f43fdb9645b8fdb02f0a6b0c8, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -1796,7 +1797,7 @@ MonoBehaviour:
       Data: 80|Evidence, Assembly-CSharp
     - Name: unlockedData
       Entry: 5
-      Data: false
+      Data: true
     - Name: index
       Entry: 3
       Data: 0
@@ -1844,7 +1845,7 @@ MonoBehaviour:
       Data: 
     - Name: photoPath
       Entry: 1
-      Data: 
+      Data: Assets/Graphs/Sprites/Screenshots/PhotoFamille.png
     - Name: hasText
       Entry: 5
       Data: true
@@ -2777,10 +2778,14 @@ MonoBehaviour:
       Data: 
     - Name: hasText
       Entry: 5
-      Data: false
+      Data: true
     - Name: descriptionText
       Entry: 1
-      Data: 
+      Data: "\u201CAnna Jameswan doit \xEAtre arr\xEAt\xE9 par tous les moyens. Elle
+        nuit \xE0 notre organisation et son bordel est le coup de gr\xE2ce \xE0 notre
+        \xE9conomie qui va d\xE9j\xE0 mal. \n\nLe contrat doit \xEAtre respect\xE9
+        dans la plus grande discr\xE9tion et ne doit faire ressortir aucun lien avec
+        notre organisation.\u201D"
     - Name: modeCategory
       Entry: 7
       Data: 129|ModeCategory, Assembly-CSharp
@@ -9592,8 +9597,8 @@ MonoBehaviour:
       Entry: 1
       Data: TAILLEUR
     - Name: image
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -9616,8 +9621,8 @@ MonoBehaviour:
       Entry: 1
       Data: "CHASSEUR DE T\xCATES"
     - Name: image
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 2
     - Name: 
       Entry: 8
       Data: 
@@ -9641,7 +9646,7 @@ MonoBehaviour:
       Data: POLICE SCIENTIFIQUE
     - Name: image
       Entry: 10
-      Data: 4
+      Data: 7
     - Name: 
       Entry: 8
       Data: 
@@ -9665,7 +9670,7 @@ MonoBehaviour:
       Data: "ENQU\xCATEUR DE VOISINAGE"
     - Name: image
       Entry: 10
-      Data: 6
+      Data: 9
     - Name: 
       Entry: 8
       Data: 
@@ -9689,7 +9694,7 @@ MonoBehaviour:
       Data: SECRETAIRE CHAMBRE DE COMMERCE
     - Name: image
       Entry: 10
-      Data: 11
+      Data: 14
     - Name: 
       Entry: 8
       Data: 
@@ -9713,7 +9718,7 @@ MonoBehaviour:
       Data: DOUANIER
     - Name: image
       Entry: 10
-      Data: 13
+      Data: 15
     - Name: 
       Entry: 8
       Data: 
@@ -9743,7 +9748,7 @@ MonoBehaviour:
       _volume: 0.5
   notes: []
   reportsCollected: 0
-  newStuff: 0
+  newStuff: 1
   locations:
   - unlockedData: 1
     index: 0
@@ -9756,9 +9761,9 @@ MonoBehaviour:
     locationArtwork: {fileID: 21300000, guid: eeba7478175025d4590a80462c1b2742, type: 3}
     locationCroppedImage: {fileID: 21300000, guid: 790ecadda147c8a459fd80e902b75797,
       type: 3}
-    locationDescription: "This is where \"dg-t\xE8\"\xE8'vd\" was killed, in the
-      eastern Docks of Chicago, a dark and isolated place at night, a perfect place
-      for a quick and silent murder"
+    locationDescription: "C'est ici que la victime a \xE9t\xE9 tu\xE9e, dans les
+      docks \xE0 l'Est de Chicago, un endroit sombre et isol\xE9. Un endroit parfait
+      pour un meurtre rapide et silencieux."
   - unlockedData: 1
     index: 1
     known: 0
@@ -9770,9 +9775,9 @@ MonoBehaviour:
     locationArtwork: {fileID: 21300000, guid: c2fe964d4f4c74e4d9505d7e14de50d9, type: 3}
     locationCroppedImage: {fileID: 21300000, guid: a33494e6b19f67b458fa883484c1ba94,
       type: 3}
-    locationDescription: The most well-known private club for men in the City, Anna's
-      stronghold, a very profficient business of course, but also the place of all
-      longings
+    locationDescription: "Le club priv\xE9 le plus connu de toute la cit\xE9, la
+      forteresse d'Anna. Un excellent endroit pour le business, \xE9videmment, mais
+      aussi un lieu pour d'autres types d'affaires..."
   - unlockedData: 1
     index: 2
     known: 0
@@ -9784,9 +9789,9 @@ MonoBehaviour:
     locationArtwork: {fileID: 21300000, guid: f5878d3216ed9a3419cda6e9c6ad1f98, type: 3}
     locationCroppedImage: {fileID: 21300000, guid: 438f236abe14f6947a33bb68bc4c7f0d,
       type: 3}
-    locationDescription: This is were Abigail lives, a nice flat for such a newcomer
-      in the underground business of Chicago. She used to be good friend with Anna,
-      until the incident of course.
+    locationDescription: C'est ici que vit Abigail,  un appartement assez simple
+      dans un quartier banal de Chicago. Au moins, il  n'y a pas de rats dans les
+      rues.
   - unlockedData: 1
     index: 3
     known: 0
@@ -9798,9 +9803,9 @@ MonoBehaviour:
     locationArtwork: {fileID: 21300000, guid: bdaa76e96c9cad140bbe16e4ca349b5a, type: 3}
     locationCroppedImage: {fileID: 21300000, guid: c380950968be14a43a02a39c3deecff1,
       type: 3}
-    locationDescription: Anna's Place, she must've gotten quite a nice view from
-      up there, but anyway, I need to find out what happened, that's still a very
-      bizarre crime for a person of that much wealth
+    locationDescription: "C'est l\xE0 que se trouve l'appartement d'Anna, avec une
+      magnifique vue sur Chicago. L'endrpot est bien situ\xE9, et l'entr\xE9e fait
+      montre d'une certaine richesse dans les environs."
   - unlockedData: 1
     index: 4
     known: 0
@@ -9825,7 +9830,9 @@ MonoBehaviour:
     locationArtwork: {fileID: 21300000, guid: 802c1f5ddae02a94cafc16d5562e0b23, type: 3}
     locationCroppedImage: {fileID: 21300000, guid: abaf3b2078c3f194da2c8365ea2339fc,
       type: 3}
-    locationDescription: Yes
+    locationDescription: "Le commissariat de police o\xF9 vous travaillez, mais surtout,
+      le bureau de Bob Jenkins. Pas le mauvais gars d'ordinaire, mais aujourd'hui,
+      tout le monde est suspect."
   - unlockedData: 0
     index: 6
     known: 0
@@ -9837,10 +9844,11 @@ MonoBehaviour:
     locationArtwork: {fileID: 21300000, guid: bdaa76e96c9cad140bbe16e4ca349b5a, type: 3}
     locationCroppedImage: {fileID: 21300000, guid: c380950968be14a43a02a39c3deecff1,
       type: 3}
-    locationDescription: "C'est une tr\xE8s belle petite planque, j'aime bien ce
-      qu'elle a fait de la d\xE9co..."
+    locationDescription: "Planque discr\xE8te dont l'entr\xE9e se trouve derri\xE8re
+      la biblioth\xE8que chez Anna. Au terme d'un long couloir, on arrive finalement
+      dans cette petite pi\xE8ce..."
   - unlockedData: 0
-    index: 8
+    index: 7
     known: 0
     visible: 0
     accessible: 0
@@ -9850,12 +9858,9 @@ MonoBehaviour:
     locationArtwork: {fileID: 21300000, guid: 6b9f0b986fb0fc443b80c00f42b24ae3, type: 3}
     locationCroppedImage: {fileID: 21300000, guid: 6cfcc2104487d424faff079c109c75be,
       type: 3}
-    locationDescription: Aha, you're funny, you're such a funny guy... What do you
-      mean I'm funny, you mean I'm a clown, I make you fucking laugh, is that it
-      ?... No, I-I mean, you're just funny, your joke is funny you know, it's the
-      way you tell it... No I don't know, you said it, what is it that's so funny
-      about me, I don't fucking know, you tell me... *...* ... Get the fuck outta
-      here Tommy...
+    locationDescription: "C'est au coeur d'un quartier mal fam\xE9 de Chicago que
+      se trouve l'entr\xE9e de ce hangar semblant aujourd'hui abandonn\xE9. Mais
+      l'odeur de poudre dans l'air laisse supposer que cela est r\xE9cent..."
   currentSuspect: 1
   interrogations: 3
   characters:
@@ -9908,4 +9913,308 @@ MonoBehaviour:
   firstTimeInGame: 1
   firstTimeInMenu: 1
   firstTimeInTuto: 0
-  savedData: []
+  savedData:
+  - dataName: firstTimeInGame
+  - dataName: firstTimeInMenu
+  - dataName: firstTimeInTuto
+  - dataName: gameLanguage
+  - dataName: vibrations
+  - dataName: soundSettings_musicVolume
+  - dataName: soundSettings_soundVolume
+  - dataName: soundSettings_voiceVolume
+  - dataName: Docks_Douille_unlockedData
+  - dataName: Docks_Douille_photoPath
+  - dataName: Docks_Douille_photographed
+  - dataName: Docks_Douille_seen
+  - dataName: Docks_Etiquette Vetement_unlockedData
+  - dataName: Docks_Etiquette Vetement_photoPath
+  - dataName: Docks_Etiquette Vetement_photographed
+  - dataName: Docks_Etiquette Vetement_seen
+  - dataName: Docks_Lettre sur victime_unlockedData
+  - dataName: Docks_Lettre sur victime_Anna_revealed
+  - dataName: Docks_Lettre sur victime_Anna_intelAlpha
+  - dataName: Docks_Lettre sur victime_photoPath
+  - dataName: Docks_Lettre sur victime_photographed
+  - dataName: Docks_Lettre sur victime_seen
+  - dataName: Brothel_Caisse Soda_unlockedData
+  - dataName: Brothel_Caisse Soda_photoPath
+  - dataName: Brothel_Caisse Soda_photographed
+  - dataName: Brothel_Caisse Soda_seen
+  - dataName: Brothel_Bon Commande_unlockedData
+  - dataName: Brothel_Bon Commande_photoPath
+  - dataName: Brothel_Bon Commande_photographed
+  - dataName: Brothel_Bon Commande_seen
+  - dataName: Brothel_Affiche_unlockedData
+  - dataName: Brothel_Affiche_photoPath
+  - dataName: Brothel_Affiche_photographed
+  - dataName: Brothel_Affiche_seen
+  - dataName: "Brothel_Carte Identit\xE9_unlockedData"
+  - dataName: "Brothel_Carte Identit\xE9_photoPath"
+  - dataName: "Brothel_Carte Identit\xE9_photographed"
+  - dataName: "Brothel_Carte Identit\xE9_seen"
+  - dataName: Anna_House_Colt Auto_unlockedData
+  - dataName: Anna_House_Colt Auto_photoPath
+  - dataName: Anna_House_Colt Auto_photographed
+  - dataName: Anna_House_Colt Auto_seen
+  - dataName: "Anna_House_Relev\xE9 Compte_unlockedData"
+  - dataName: "Anna_House_Relev\xE9 Compte_photoPath"
+  - dataName: "Anna_House_Relev\xE9 Compte_photographed"
+  - dataName: "Anna_House_Relev\xE9 Compte_seen"
+  - dataName: "Anna_House_Cl\xE9_unlockedData"
+  - dataName: "Anna_House_Cl\xE9_photoPath"
+  - dataName: "Anna_House_Cl\xE9_photographed"
+  - dataName: "Anna_House_Cl\xE9_seen"
+  - dataName: Anna_House_Gros Cheques_unlockedData
+  - dataName: Anna_House_Gros Cheques_photoPath
+  - dataName: Anna_House_Gros Cheques_photographed
+  - dataName: Anna_House_Gros Cheques_seen
+  - dataName: Anna_House_Sac Main_unlockedData
+  - dataName: Anna_House_Sac Main_photoPath
+  - dataName: Anna_House_Sac Main_photographed
+  - dataName: Anna_House_Sac Main_seen
+  - dataName: Abigail_House_Verres Whisky_unlockedData
+  - dataName: Abigail_House_Verres Whisky_Empreinte Richard_revealed
+  - dataName: Abigail_House_Verres Whisky_Empreinte Richard_intelAlpha
+  - dataName: Abigail_House_Verres Whisky_photoPath
+  - dataName: Abigail_House_Verres Whisky_photographed
+  - dataName: Abigail_House_Verres Whisky_seen
+  - dataName: Abigail_House_Lettre Anonyme_unlockedData
+  - dataName: Abigail_House_Lettre Anonyme_Umberto_revealed
+  - dataName: Abigail_House_Lettre Anonyme_Umberto_intelAlpha
+  - dataName: Abigail_House_Lettre Anonyme_photoPath
+  - dataName: Abigail_House_Lettre Anonyme_photographed
+  - dataName: Abigail_House_Lettre Anonyme_seen
+  - dataName: Abigail_House_Lettre Anna_unlockedData
+  - dataName: Abigail_House_Lettre Anna_photoPath
+  - dataName: Abigail_House_Lettre Anna_photographed
+  - dataName: Abigail_House_Lettre Anna_seen
+  - dataName: Abigail_House_Journal Politicien_unlockedData
+  - dataName: Abigail_House_Journal Politicien_photoPath
+  - dataName: Abigail_House_Journal Politicien_photographed
+  - dataName: Abigail_House_Journal Politicien_seen
+  - dataName: Abigail_House_Journal Enlevement_unlockedData
+  - dataName: Abigail_House_Journal Enlevement_photoPath
+  - dataName: Abigail_House_Journal Enlevement_photographed
+  - dataName: Abigail_House_Journal Enlevement_seen
+  - dataName: Politician_Office_Tract Anderson_unlockedData
+  - dataName: Politician_Office_Tract Anderson_photoPath
+  - dataName: Politician_Office_Tract Anderson_photographed
+  - dataName: Politician_Office_Tract Anderson_seen
+  - dataName: "Politician_Office_Note Secr\xE9taire_unlockedData"
+  - dataName: "Politician_Office_Note Secr\xE9taire_photoPath"
+  - dataName: "Politician_Office_Note Secr\xE9taire_photographed"
+  - dataName: "Politician_Office_Note Secr\xE9taire_seen"
+  - dataName: "Politician_Office_Num\xE9ro Bob_unlockedData"
+  - dataName: "Politician_Office_Num\xE9ro Bob_photoPath"
+  - dataName: "Politician_Office_Num\xE9ro Bob_photographed"
+  - dataName: "Politician_Office_Num\xE9ro Bob_seen"
+  - dataName: "Politician_Office_Num\xE9ro griffon\xE9_unlockedData"
+  - dataName: "Politician_Office_Num\xE9ro griffon\xE9_photoPath"
+  - dataName: "Politician_Office_Num\xE9ro griffon\xE9_photographed"
+  - dataName: "Politician_Office_Num\xE9ro griffon\xE9_seen"
+  - dataName: Politician_Office_Notes Anderson_unlockedData
+  - dataName: Politician_Office_Notes Anderson_photoPath
+  - dataName: Politician_Office_Notes Anderson_photographed
+  - dataName: Politician_Office_Notes Anderson_seen
+  - dataName: "Politician_Office_Contrat Prostitu\xE9e_unlockedData"
+  - dataName: "Politician_Office_Contrat Prostitu\xE9e_photoPath"
+  - dataName: "Politician_Office_Contrat Prostitu\xE9e_photographed"
+  - dataName: "Politician_Office_Contrat Prostitu\xE9e_seen"
+  - dataName: Cop_Office_Photo Famille_unlockedData
+  - dataName: Cop_Office_Photo Famille_photoPath
+  - dataName: Cop_Office_Photo Famille_photographed
+  - dataName: Cop_Office_Photo Famille_seen
+  - dataName: Cop_Office_Plan Maison_unlockedData
+  - dataName: Cop_Office_Plan Maison_photoPath
+  - dataName: Cop_Office_Plan Maison_photographed
+  - dataName: Cop_Office_Plan Maison_seen
+  - dataName: "Cop_Office_Relev\xE9 Compte 2_unlockedData"
+  - dataName: "Cop_Office_Relev\xE9 Compte 2_photoPath"
+  - dataName: "Cop_Office_Relev\xE9 Compte 2_photographed"
+  - dataName: "Cop_Office_Relev\xE9 Compte 2_seen"
+  - dataName: Cop_Office_Photos Richard_unlockedData
+  - dataName: Cop_Office_Photos Richard_photoPath
+  - dataName: Cop_Office_Photos Richard_photographed
+  - dataName: Cop_Office_Photos Richard_seen
+  - dataName: "Cop_Office_Moiti\xE9 Gauche_unlockedData"
+  - dataName: "Cop_Office_Moiti\xE9 Gauche_photoPath"
+  - dataName: "Cop_Office_Moiti\xE9 Gauche_photographed"
+  - dataName: "Cop_Office_Moiti\xE9 Gauche_seen"
+  - dataName: "Cop_Office_Moiti\xE9 Droite_unlockedData"
+  - dataName: "Cop_Office_Moiti\xE9 Droite_photoPath"
+  - dataName: "Cop_Office_Moiti\xE9 Droite_photographed"
+  - dataName: "Cop_Office_Moiti\xE9 Droite_seen"
+  - dataName: Cop_Office_Note 1_unlockedData
+  - dataName: Cop_Office_Note 1_photoPath
+  - dataName: Cop_Office_Note 1_photographed
+  - dataName: Cop_Office_Note 1_seen
+  - dataName: Cop_Office_Note 2_unlockedData
+  - dataName: Cop_Office_Note 2_photoPath
+  - dataName: Cop_Office_Note 2_photographed
+  - dataName: Cop_Office_Note 2_seen
+  - dataName: Cop_Office_Note 3_unlockedData
+  - dataName: Cop_Office_Note 3_photoPath
+  - dataName: Cop_Office_Note 3_photographed
+  - dataName: Cop_Office_Note 3_seen
+  - dataName: Cop_Office_Logos_unlockedData
+  - dataName: Cop_Office_Logos_photoPath
+  - dataName: Cop_Office_Logos_photographed
+  - dataName: Cop_Office_Logos_seen
+  - dataName: Mafia_HideOut_Carte Mafieuse_unlockedData
+  - dataName: Mafia_HideOut_Carte Mafieuse_photoPath
+  - dataName: Mafia_HideOut_Carte Mafieuse_photographed
+  - dataName: Mafia_HideOut_Carte Mafieuse_seen
+  - dataName: Mafia_HideOut_Photos Camion 2 et 3_unlockedData
+  - dataName: Mafia_HideOut_Photos Camion 2 et 3_photoPath
+  - dataName: Mafia_HideOut_Photos Camion 2 et 3_photographed
+  - dataName: Mafia_HideOut_Photos Camion 2 et 3_seen
+  - dataName: Mafia_HideOut_Contrat Mafieux_unlockedData
+  - dataName: Mafia_HideOut_Contrat Mafieux_photoPath
+  - dataName: Mafia_HideOut_Contrat Mafieux_photographed
+  - dataName: Mafia_HideOut_Contrat Mafieux_seen
+  - dataName: Anna_House_Secret_Photo Groupe_unlockedData
+  - dataName: Anna_House_Secret_Photo Groupe_photoPath
+  - dataName: Anna_House_Secret_Photo Groupe_photographed
+  - dataName: Anna_House_Secret_Photo Groupe_seen
+  - dataName: Anna_House_Secret_Panier Cadeau_unlockedData
+  - dataName: Anna_House_Secret_Panier Cadeau_photoPath
+  - dataName: Anna_House_Secret_Panier Cadeau_photographed
+  - dataName: Anna_House_Secret_Panier Cadeau_seen
+  - dataName: Anna_House_Secret_Fiche Dettes_unlockedData
+  - dataName: Anna_House_Secret_Fiche Dettes_photoPath
+  - dataName: Anna_House_Secret_Fiche Dettes_photographed
+  - dataName: Anna_House_Secret_Fiche Dettes_seen
+  - dataName: Anna_House_Secret_Passeports_unlockedData
+  - dataName: Anna_House_Secret_Passeports_photoPath
+  - dataName: Anna_House_Secret_Passeports_photographed
+  - dataName: Anna_House_Secret_Passeports_seen
+  - dataName: Anna_House_Secret_Photo Camion 1_unlockedData
+  - dataName: Anna_House_Secret_Photo Camion 1_photoPath
+  - dataName: Anna_House_Secret_Photo Camion 1_photographed
+  - dataName: Anna_House_Secret_Photo Camion 1_seen
+  - dataName: Docks_known
+  - dataName: Docks_visible
+  - dataName: Docks_accessible
+  - dataName: Brothel_known
+  - dataName: Brothel_visible
+  - dataName: Brothel_accessible
+  - dataName: Abigail's House_known
+  - dataName: Abigail's House_visible
+  - dataName: Abigail's House_accessible
+  - dataName: Anna's House_known
+  - dataName: Anna's House_visible
+  - dataName: Anna's House_accessible
+  - dataName: Richard's Office_known
+  - dataName: Richard's Office_visible
+  - dataName: Richard's Office_accessible
+  - dataName: Bob's Office_known
+  - dataName: Bob's Office_visible
+  - dataName: Bob's Office_accessible
+  - dataName: Planque d'Anna_known
+  - dataName: Planque d'Anna_visible
+  - dataName: Planque d'Anna_accessible
+  - dataName: Ancienne Planque Mafieuse_known
+  - dataName: Ancienne Planque Mafieuse_visible
+  - dataName: Ancienne Planque Mafieuse_accessible
+  - dataName: Brandon_Bennington_Etiquette Vetement__unlockedData
+  - dataName: Brandon_Bennington_Etiquette Vetement__unlockOrderIndex
+  - dataName: Brandon_Bennington_Etiquette Vetement__seen
+  - dataName: Brandon_Bennington_Sac Main__unlockedData
+  - dataName: Brandon_Bennington_Sac Main__unlockOrderIndex
+  - dataName: Brandon_Bennington_Sac Main__seen
+  - dataName: Brandon_Bennington_Affiche__unlockedData
+  - dataName: Brandon_Bennington_Affiche__unlockOrderIndex
+  - dataName: Brandon_Bennington_Affiche__seen
+  - dataName: James_Walker_Abigail White_unlockedData
+  - dataName: James_Walker_Abigail White_unlockOrderIndex
+  - dataName: James_Walker_Abigail White_seen
+  - dataName: James_Walker_Bob Jenkins_unlockedData
+  - dataName: James_Walker_Bob Jenkins_unlockOrderIndex
+  - dataName: James_Walker_Bob Jenkins_seen
+  - dataName: James_Walker_Anna Jameswan_unlockedData
+  - dataName: James_Walker_Anna Jameswan_unlockOrderIndex
+  - dataName: James_Walker_Anna Jameswan_seen
+  - dataName: James_Walker_Richard Anderson_unlockedData
+  - dataName: James_Walker_Richard Anderson_unlockOrderIndex
+  - dataName: James_Walker_Richard Anderson_seen
+  - dataName: Quentin_Copeland_Colt Auto__unlockedData
+  - dataName: Quentin_Copeland_Colt Auto__unlockOrderIndex
+  - dataName: Quentin_Copeland_Colt Auto__seen
+  - dataName: Quentin_Copeland_Verres Whisky_Empreinte Richard_unlockedData
+  - dataName: Quentin_Copeland_Verres Whisky_Empreinte Richard_unlockOrderIndex
+  - dataName: Quentin_Copeland_Verres Whisky_Empreinte Richard_seen
+  - dataName: Quentin_Copeland_Lettre Anonyme_Empreinte Umberto_unlockedData
+  - dataName: Quentin_Copeland_Lettre Anonyme_Empreinte Umberto_unlockOrderIndex
+  - dataName: Quentin_Copeland_Lettre Anonyme_Empreinte Umberto_seen
+  - dataName: Quentin_Copeland_Douille__unlockedData
+  - dataName: Quentin_Copeland_Douille__unlockOrderIndex
+  - dataName: Quentin_Copeland_Douille__seen
+  - dataName: Quentin_Copeland_Etiquette Vetement 69__unlockedData
+  - dataName: Quentin_Copeland_Etiquette Vetement 69__unlockOrderIndex
+  - dataName: Quentin_Copeland_Etiquette Vetement 69__seen
+  - dataName: "Quentin_Copeland_Cl\xE9__unlockedData"
+  - dataName: "Quentin_Copeland_Cl\xE9__unlockOrderIndex"
+  - dataName: "Quentin_Copeland_Cl\xE9__seen"
+  - dataName: Quentin_Copeland_Caisse Soda__unlockedData
+  - dataName: Quentin_Copeland_Caisse Soda__unlockOrderIndex
+  - dataName: Quentin_Copeland_Caisse Soda__seen
+  - dataName: Thomas_Maxwell_1048 West Madison street_unlockedData
+  - dataName: Thomas_Maxwell_1048 West Madison street_unlockOrderIndex
+  - dataName: Thomas_Maxwell_1048 West Madison street_seen
+  - dataName: Thomas_Maxwell_457 N Wabash Avenue_unlockedData
+  - dataName: Thomas_Maxwell_457 N Wabash Avenue_unlockOrderIndex
+  - dataName: Thomas_Maxwell_457 N Wabash Avenue_seen
+  - dataName: Thomas_Maxwell_Docks_unlockedData
+  - dataName: Thomas_Maxwell_Docks_unlockOrderIndex
+  - dataName: Thomas_Maxwell_Docks_seen
+  - dataName: Miss_Marshall_Bon Commande__unlockedData
+  - dataName: Miss_Marshall_Bon Commande__unlockOrderIndex
+  - dataName: Miss_Marshall_Bon Commande__seen
+  - dataName: "Miss_Marshall_Relev\xE9 Compte__unlockedData"
+  - dataName: "Miss_Marshall_Relev\xE9 Compte__unlockOrderIndex"
+  - dataName: "Miss_Marshall_Relev\xE9 Compte__seen"
+  - dataName: Miss_Marshall_Gros Cheques__unlockedData
+  - dataName: Miss_Marshall_Gros Cheques__unlockOrderIndex
+  - dataName: Miss_Marshall_Gros Cheques__seen
+  - dataName: Miss_Marshall_Tract Anderson__unlockedData
+  - dataName: Miss_Marshall_Tract Anderson__unlockOrderIndex
+  - dataName: Miss_Marshall_Tract Anderson__seen
+  - dataName: Arnold_Steele_Colt Auto 69__unlockedData
+  - dataName: Arnold_Steele_Colt Auto 69__unlockOrderIndex
+  - dataName: Arnold_Steele_Colt Auto 69__seen
+  - dataName: Arnold_Steele_Caisse Soda 69__unlockedData
+  - dataName: Arnold_Steele_Caisse Soda 69__unlockOrderIndex
+  - dataName: Arnold_Steele_Caisse Soda 69__seen
+  - dataName: Arnold_Steele_Journal Enlevement__unlockedData
+  - dataName: Arnold_Steele_Journal Enlevement__unlockOrderIndex
+  - dataName: Arnold_Steele_Journal Enlevement__seen
+  - dataName: Arnold_Steele_Logos__unlockedData
+  - dataName: Arnold_Steele_Logos__unlockOrderIndex
+  - dataName: Arnold_Steele_Logos__seen
+  - dataName: reportsCollected
+  - dataName: "Umberto_Moretti_question n\xB01_unlockedData"
+  - dataName: "Umberto_Moretti_question n\xB02_unlockedData"
+  - dataName: "Umberto_Moretti_question n\xB03_unlockedData"
+  - dataName: "Umberto_Moretti_question n\xB04_unlockedData"
+  - dataName: "Umberto_Moretti_question n\xB05_unlockedData"
+  - dataName: "Umberto_Moretti_question n\xB06_unlockedData"
+  - dataName: "Umberto_Moretti_question n\xB07_unlockedData"
+  - dataName: "Abigail_White_question n\xB00_unlockedData"
+  - dataName: "Abigail_White_question n\xB01_unlockedData"
+  - dataName: "Abigail_White_question n\xB02_unlockedData"
+  - dataName: "Abigail_White_question n\xB05_unlockedData"
+  - dataName: "Abigail_White_question n\xB06_unlockedData"
+  - dataName: "Richard_Anderson_question n\xB01_unlockedData"
+  - dataName: "Richard_Anderson_question n\xB02_unlockedData"
+  - dataName: "Richard_Anderson_question n\xB03_unlockedData"
+  - dataName: "Richard_Anderson_question n\xB04_unlockedData"
+  - dataName: "Richard_Anderson_question n\xB06_unlockedData"
+  - dataName: "Richard_Anderson_question n\xB07_unlockedData"
+  - dataName: "Bob_Jenkins_question n\xB02_unlockedData"
+  - dataName: "Bob_Jenkins_question n\xB03_unlockedData"
+  - dataName: "Bob_Jenkins_question n\xB04_unlockedData"
+  - dataName: "Bob_Jenkins_question n\xB05_unlockedData"
+  - dataName: "Bob_Jenkins_question n\xB06_unlockedData"
+  - dataName: "Bob_Jenkins_question n\xB07_unlockedData"
+  - dataName: interrogations
+  - dataName: firstTimeInTuto
