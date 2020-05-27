@@ -28,7 +28,7 @@ public class EvidenceInteraction : MonoBehaviour
 
     bool canRotate = true;
     bool fingerprintMode = false;
-    bool hasCheckTextButton = false;
+    bool check = true;
 
     public AudioSource soundAudio;
 
@@ -45,7 +45,7 @@ public class EvidenceInteraction : MonoBehaviour
         fingerprintToggle.isOn = false;
         fingerprintMode = false;
         saveText.SetActive(false);
-        hasCheckTextButton = false;
+        check = true;
     }
     
     void Start()
@@ -55,24 +55,32 @@ public class EvidenceInteraction : MonoBehaviour
 
     void Update()
     {
-        if (currentEvidenceHeld != null && !hasCheckTextButton)
+        if (currentEvidenceHeld != null)
         {
-            if (currentEvidenceHeld.GetComponent<EvidenceObject>().data.hasText) textButton.gameObject.SetActive(true);
-            else textButton.gameObject.SetActive(false);
-            hasCheckTextButton = true;
-        }
+            Evidence evidenceHeld = currentEvidenceHeld.GetComponent<EvidenceObject>().data;
 
-        ObjectRotation();
+            if (check)
+            {
+                // Text Check
+                if (evidenceHeld.hasText) textButton.gameObject.SetActive(true);
+                else textButton.gameObject.SetActive(false);
 
-        if (fingerprintMode == true && (Input.touchCount == 1 || Input.GetMouseButton(0)))
-        {
-            if (currentEvidenceHeld.GetComponent<EvidenceObject>().data.hasIntels) IntelReveal();
+                check = false;
+            }
+            
+            ObjectRotation();
+            
+            if (fingerprintMode && evidenceHeld.hasIntels)
+            {
+                foreach (Intel intel in evidenceHeld.intels) IntelReveal(evidenceHeld, intel);
+            }
         }
+        else check = true;
     }
 
     void ObjectRotation()
     {
-        if (currentEvidenceHeld != null && canRotate == true)
+        if (canRotate == true)
         {
             if (currentEvidenceHeld.GetComponent<ClueHolder>().blockHorizontalRotation == false)
             {
@@ -88,48 +96,35 @@ public class EvidenceInteraction : MonoBehaviour
         }
     }
 
-    void IntelReveal()
+    void IntelReveal(Evidence _evidence, Intel _intel)
     {
-        Vector3 inputPos;
-        if(Input.touchCount > 0) 
+        if ((Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Moved) || Input.GetMouseButton(0))
         {
-            inputPos = Input.GetTouch(0).position;
-        }
-        else inputPos = Input.mousePosition;
-        RaycastHit hit;
-        Ray ray = cam.ScreenPointToRay(inputPos);
+            Vector3 inputPos;
+            if (Input.touchCount > 0) inputPos = Input.GetTouch(0).position;
+            else inputPos = Input.mousePosition;
+            RaycastHit hit;
+            Ray ray = cam.ScreenPointToRay(inputPos);
 
-        if (Physics.Raycast(ray, out hit, 500f))
-        {
-            if (hit.transform.gameObject.tag == "Clue")
+            if (Physics.Raycast(ray, out hit, 500f))
             {
-                string name = hit.transform.gameObject.GetComponent<IntelObject>().myName;
+                GameObject selected = hit.transform.gameObject;
 
-                Evidence evidence = hit.transform.parent.gameObject.GetComponent<EvidenceObject>().data;
-
-                if (evidence.hasIntels == true && (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Moved) || Input.GetMouseButton(0))
+                if (selected.tag == "Clue" && selected.GetComponent<IntelObject>().myName == _intel.name && !_intel.revealed) // Clue means Intel
                 {
-                    foreach (Intel intel in evidence.intels)
+                    if (_intel.intelAlpha < 1f)
                     {
-                        if (intel.name == name && !intel.revealed)
-                        { 
-                            if (intel.intelAlpha < 1f)
-                            {
-                                intel.intelAlpha += .8f * Time.deltaTime;
-                                Color tempColor = hit.transform.gameObject.GetComponentInChildren<SpriteRenderer>().color;
-                                tempColor.a = intel.intelAlpha + .2f;
-                                hit.transform.gameObject.GetComponentInChildren<SpriteRenderer>().color = tempColor;
-                            }
-                            else
-                            {
-                                intel.revealed = true;
-                                hit.transform.gameObject.GetComponentsInChildren<ParticleSystem>()[0].Play();
-                                hit.transform.gameObject.GetComponentsInChildren<ParticleSystem>()[1].Stop();
-                                soundAudio.PlayOneShot(fingerprintDiscoveredSound);
-
-                                Debug.Log(intel.name + intel.revealed);
-                            }
-                        }
+                        _intel.intelAlpha += .8f * Time.deltaTime;
+                        Color tempColor = hit.transform.gameObject.GetComponentInChildren<SpriteRenderer>().color;
+                        tempColor.a = _intel.intelAlpha + .2f;
+                        hit.transform.gameObject.GetComponentInChildren<SpriteRenderer>().color = tempColor;
+                    }
+                    else
+                    {
+                        _intel.revealed = true;
+                        hit.transform.gameObject.GetComponentsInChildren<ParticleSystem>()[0].Play();
+                        hit.transform.gameObject.GetComponentsInChildren<ParticleSystem>()[1].Stop();
+                        soundAudio.PlayOneShot(fingerprintDiscoveredSound);
                     }
                 }
             }
@@ -245,6 +240,8 @@ public class EvidenceInteraction : MonoBehaviour
     {
         if (File.Exists(filePath))
         {
+            _evidence.photo = CreateSprite(filePath);
+
             _evidence.photoPath = filePath;
         }
         else
@@ -254,7 +251,7 @@ public class EvidenceInteraction : MonoBehaviour
         }
     }
 
-    public static Sprite CreateSprite(string filePath, string fileName)
+    public static Sprite CreateSprite(string filePath)
     {
         Texture2D texture;
         byte[] fileBytes;

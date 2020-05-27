@@ -99,7 +99,7 @@ public class Evidence : Data
     public Locations unlockableLocation;
 
     public bool photographed { get; set; }
-    [HideInInspector] public Sprite photo { get { return EvidenceInteraction.CreateSprite(photoPath, codeName.Replace(" ", "")); } set => photo = value; }
+    [HideInInspector] public Sprite photo;
     public string photoPath;
     public bool completedPhotograph { get; set; }
 
@@ -307,7 +307,7 @@ public class GameData : SerializedScriptableObject
     
     [HideInInspector] public bool firstTimeInGame = true;
     [HideInInspector] public bool firstTimeInMenu = true;
-    [HideInInspector] public bool firstTimeInDocks = true; // Tutorial Docks
+    public bool firstTimeInTuto = true; // Tutorial Docks
 
     [Title("DATA SAVE")]
 
@@ -395,7 +395,7 @@ public class GameData : SerializedScriptableObject
     {
         firstTimeInGame = SetData(action, firstTimeInGame, nameof(firstTimeInGame));
         firstTimeInMenu = SetData(action, firstTimeInMenu, nameof(firstTimeInMenu));
-        firstTimeInDocks  = SetData(action, firstTimeInDocks, nameof(firstTimeInDocks));
+        firstTimeInTuto = SetData(action, firstTimeInTuto, nameof(firstTimeInTuto));
 
         gameLanguage = SetData(action, gameLanguage, nameof(gameLanguage));
 
@@ -426,6 +426,9 @@ public class GameData : SerializedScriptableObject
                         intel.intelAlpha = SetData(action, intel.intelAlpha, evidenceName + "_" + intel.name + "_" + nameof(intel.intelAlpha));
                     }
                 }
+
+                evidence.photoPath = SetData(action, evidence.photoPath, evidenceName + "_" + nameof(evidence.photoPath));
+                if (action == Action.Load) evidence.photo = EvidenceInteraction.CreateSprite(evidence.photoPath);
 
                 evidence.photographed = SetData(action, evidence.photographed, evidenceName + "_" + nameof(evidence.photographed));
                 evidence.seen = SetData(action, evidence.seen, evidenceName + "_" + nameof(evidence.seen));
@@ -482,19 +485,21 @@ public class GameData : SerializedScriptableObject
         }
         interrogations = SetData(action, interrogations, nameof(interrogations));
 
-        firstTimeInDocks = SetData(action, firstTimeInDocks, nameof(firstTimeInDocks));
+        firstTimeInTuto = SetData(action, firstTimeInTuto, nameof(firstTimeInTuto));
     }
 
     [ContextMenu("Reset Game Data")]
     public void ResetData()
     {
+        savedData.Clear();
+
+        PlayerPrefs.DeleteAll();
+
         ResetParameters();
 
-        firstTimeInGame = true;
+        PlayerPrefs.SetInt(nameof(firstTimeInGame), 1);
 
-        firstTimeInMenu = true;
-
-        firstTimeInDocks = true;
+        PlayerPrefs.SetInt(nameof(firstTimeInMenu), 1);
         
         // Reset Evidences
         foreach (Locations location in allEvidences.Keys)
@@ -555,10 +560,6 @@ public class GameData : SerializedScriptableObject
         interrogations = 3;
 
         newStuff = false;
-        
-        savedData.Clear();
-
-        PlayerPrefs.DeleteAll();
     }
 
     public void ResetParameters()
@@ -575,7 +576,7 @@ public class GameData : SerializedScriptableObject
     #region Test
 
     /*
-    [HideInInspector] public Sprite photo { get { return EvidenceInteraction.CreateSprite(photoPath, codeName.Replace(" ", "")); } set => photo = value; }
+    [HideInInspector] public Sprite photo { get { return EvidenceInteraction.CreateSprite(photoPath); } set => photo = value; }
     public string photoPath
     {
         get
