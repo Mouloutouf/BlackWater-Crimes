@@ -79,7 +79,7 @@ public class SaveSystem
         {
             WriteData(saveData.dataType, saveData.dataVariable, saveData.dataName);
 
-            //Debug.Log(saveData.dataName + " : " + saveData.dataVariable + ", of type : " + saveData.dataType + ", was saved !");
+            Debug.Log(saveData.dataName + " : " + saveData.dataVariable + ", of type : " + saveData.dataType + ", was saved !");
         }
     }
 
