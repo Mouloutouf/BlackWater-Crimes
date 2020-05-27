@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -73,7 +73,7 @@ LightmapSettings:
     m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
-    m_BakeBackend: 2
+    m_BakeBackend: 1
     m_PVRSampling: 1
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 512
@@ -3750,6 +3750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46742789b7e08be46aa11d27648eb230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showData: 0
   data:
     unlockedData: 0
     index: 1
@@ -3766,12 +3767,12 @@ MonoBehaviour:
       location: 1
       suspect: 2
     seen: 0
-  instantiate: 0
-  hasApplied: 0
   hasText: 0
   displayTextComponent: {fileID: 0}
   timer: 0.3
   _cam: {fileID: 0}
+  intelObjects: []
+  isShown: 0
 --- !u!65 &623914899
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8105,6 +8106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46742789b7e08be46aa11d27648eb230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showData: 0
   data:
     unlockedData: 0
     index: 2
@@ -8121,12 +8123,12 @@ MonoBehaviour:
       location: 2
       suspect: 4
     seen: 0
-  instantiate: 0
-  hasApplied: 0
   hasText: 0
   displayTextComponent: {fileID: 0}
   timer: 0.3
   _cam: {fileID: 0}
+  intelObjects: []
+  isShown: 0
 --- !u!65 &1354229717
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10392,6 +10394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46742789b7e08be46aa11d27648eb230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showData: 0
   data:
     unlockedData: 0
     index: 3
@@ -10410,12 +10413,12 @@ MonoBehaviour:
       location: 2
       suspect: 4
     seen: 0
-  instantiate: 0
-  hasApplied: 0
   hasText: 1
   displayTextComponent: {fileID: 53175614}
   timer: 0.3
   _cam: {fileID: 185285710}
+  intelObjects: []
+  isShown: 0
 --- !u!1 &1742818073
 GameObject:
   m_ObjectHideFlags: 0
@@ -13100,6 +13103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46742789b7e08be46aa11d27648eb230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showData: 0
   data:
     unlockedData: 0
     index: 4
@@ -13116,12 +13120,12 @@ MonoBehaviour:
       location: 2
       suspect: 4
     seen: 0
-  instantiate: 0
-  hasApplied: 0
   hasText: 0
   displayTextComponent: {fileID: 0}
   timer: 0.3
   _cam: {fileID: 0}
+  intelObjects: []
+  isShown: 0
 --- !u!1001 &2213011489472495595
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13794,6 +13798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46742789b7e08be46aa11d27648eb230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showData: 0
   data:
     unlockedData: 0
     index: 0
@@ -13810,12 +13815,12 @@ MonoBehaviour:
       location: 2
       suspect: 4
     seen: 0
-  instantiate: 0
-  hasApplied: 0
   hasText: 0
   displayTextComponent: {fileID: 0}
   timer: 0.3
   _cam: {fileID: 0}
+  intelObjects: []
+  isShown: 0
 --- !u!65 &5771372805531144746
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14544,6 +14549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46742789b7e08be46aa11d27648eb230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showData: 0
   data:
     unlockedData: 0
     index: 1
@@ -14563,12 +14569,12 @@ MonoBehaviour:
       location: 2
       suspect: 4
     seen: 0
-  instantiate: 0
-  hasApplied: 0
   hasText: 1
   displayTextComponent: {fileID: 53175614}
   timer: 0.3
   _cam: {fileID: 185285710}
+  intelObjects: []
+  isShown: 0
 --- !u!65 &9159856205197708480
 BoxCollider:
   m_ObjectHideFlags: 0
