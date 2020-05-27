@@ -18,7 +18,7 @@ public class DataContainer : MonoBehaviour
         if (!menu) gameData.ManageData(Action.Save);
     }
 
-    void OnApplicationQuit()
+    void OnApplicationPause()
     {
         gameData.firstTimeInMenu = true;
 
