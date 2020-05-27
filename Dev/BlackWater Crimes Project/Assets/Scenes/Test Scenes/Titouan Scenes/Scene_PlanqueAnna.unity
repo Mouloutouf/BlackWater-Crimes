@@ -248,6 +248,7 @@ MonoBehaviour:
     useToUnlock: 0
     unlockableLocation: 0
     photo: {fileID: 0}
+    photoPath: 
     hasText: 1
     descriptionText: "O'Reilly | 80.000\nMr Cultins | 4.500\nButterfield | 3.575\nLucas
       | 987\nRadClover | 150.000\nMosermind | 20.525\n\nJ'ai beaucoup TROP PERDU\nAlcool
@@ -257,10 +258,10 @@ MonoBehaviour:
       location: 7
       suspect: 4
     seen: 0
-  hasText: 0
-  displayTextComponent: {fileID: 0}
+  hasText: 1
+  displayTextComponent: {fileID: 1897084750}
   timer: 0.3
-  _cam: {fileID: 0}
+  _cam: {fileID: 1515454466}
   intelObjects: []
   isShown: 0
 --- !u!114 &44223244
@@ -413,7 +414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46742789b7e08be46aa11d27648eb230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showData: 0
+  showData: 1
   data:
     unlockedData: 0
     index: 3
@@ -424,6 +425,7 @@ MonoBehaviour:
     useToUnlock: 0
     unlockableLocation: 0
     photo: {fileID: 0}
+    photoPath: 
     hasText: 1
     descriptionText: "Nom : Elizabeth Murphy\nDate de naissance : 16 octobre 1900\n\nNom
       : Cindy Georgia\nDate de naissance : 18 novembre 1895\n\nNom : Dorothy McKarty\nDate
@@ -434,10 +436,10 @@ MonoBehaviour:
       location: 7
       suspect: 4
     seen: 0
-  hasText: 0
-  displayTextComponent: {fileID: 0}
+  hasText: 1
+  displayTextComponent: {fileID: 1897084750}
   timer: 0.3
-  _cam: {fileID: 0}
+  _cam: {fileID: 1515454466}
   intelObjects: []
   isShown: 0
 --- !u!114 &202257781
@@ -1126,6 +1128,7 @@ MonoBehaviour:
     useToUnlock: 0
     unlockableLocation: 0
     photo: {fileID: 0}
+    photoPath: 
     hasText: 0
     descriptionText: 
     modeCategory:
@@ -1592,7 +1595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46742789b7e08be46aa11d27648eb230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showData: 0
+  showData: 1
   data:
     unlockedData: 0
     index: 4
@@ -1603,6 +1606,7 @@ MonoBehaviour:
     useToUnlock: 1
     unlockableLocation: 6
     photo: {fileID: 0}
+    photoPath: 
     hasText: 0
     descriptionText: 
     modeCategory:
@@ -1879,6 +1883,7 @@ MonoBehaviour:
     useToUnlock: 0
     unlockableLocation: 0
     photo: {fileID: 0}
+    photoPath: 
     hasText: 0
     descriptionText: 
     modeCategory:
@@ -3286,6 +3291,18 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1897084750 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2581055568132685622, guid: 6e34bc824f7d2714e8a9caa2990f8913,
+    type: 3}
+  m_PrefabInstance: {fileID: 2213011489472495595}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1907031895
 GameObject:
   m_ObjectHideFlags: 0
@@ -8217,6 +8234,7 @@ MonoBehaviour:
     useToUnlock: 0
     unlockableLocation: 0
     photo: {fileID: 0}
+    photoPath: 
     hasText: 0
     descriptionText: 
     modeCategory:
@@ -8224,9 +8242,9 @@ MonoBehaviour:
       suspect: 4
     seen: 0
   hasText: 0
-  displayTextComponent: {fileID: 0}
+  displayTextComponent: {fileID: 1897084750}
   timer: 0.3
-  _cam: {fileID: 0}
+  _cam: {fileID: 1515454466}
   intelObjects: []
   isShown: 0
 --- !u!114 &5402229996412736008
