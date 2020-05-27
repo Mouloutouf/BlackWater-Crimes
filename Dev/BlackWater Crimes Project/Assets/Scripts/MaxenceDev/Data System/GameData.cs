@@ -100,7 +100,7 @@ public class Evidence : Data
 
     public bool photographed { get; set; }
     [HideInInspector] public Sprite photo;
-    public string photoPath;
+    public string photoPath = "";
     public bool completedPhotograph { get; set; }
 
     [Title("Text")]
@@ -516,6 +516,8 @@ public class GameData : SerializedScriptableObject
                         intel.intelAlpha = 0.0f;
                     }
                 }
+
+                evidence.photoPath = "";
 
                 evidence.photographed = false;
 
