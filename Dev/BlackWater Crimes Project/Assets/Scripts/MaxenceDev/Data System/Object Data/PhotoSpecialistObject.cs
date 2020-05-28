@@ -9,6 +9,8 @@ public class PhotoSpecialistObject : ObjectData<Evidence>
 {
     public GameObject imageObject;
     
+    public Text textComponent;
+
     public bool isEvidenceDisplayed = false;
 
     void Start()
@@ -21,6 +23,8 @@ public class PhotoSpecialistObject : ObjectData<Evidence>
         if (!isEvidenceDisplayed)
         {
             imageObject.GetComponent<Image>().sprite = data.photo;
+
+            textComponent.text = data.codeName;
         }
 
         base.Protocol();

@@ -99,9 +99,9 @@ public class TutorialScript : SerializedMonoBehaviour
 
     void Start()
     {
-        if(gameData.firstTimeInDocks)
+        if(gameData.firstTimeInTuto)
         {
-            gameData.firstTimeInDocks = false;
+            gameData.firstTimeInTuto = false;
             DontDestroyOnLoad(this.gameObject);
             switch (gameData.gameLanguage)
             {

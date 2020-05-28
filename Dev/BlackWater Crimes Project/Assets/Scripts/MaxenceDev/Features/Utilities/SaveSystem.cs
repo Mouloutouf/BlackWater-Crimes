@@ -47,36 +47,31 @@ public class SaveSystem
     public object RetrieveData(Type type, object variable, string name)
     {
         if (type == typeof(int)){
-            variable = PlayerPrefs.GetInt(name);
-            int var = (int) variable;
+            int var = PlayerPrefs.GetInt(name);
             return var;
 
         } else if (type == typeof(string)){
-            variable = PlayerPrefs.GetString(name);
-            string var = (string) variable;
+            string var = PlayerPrefs.GetString(name);
             return var;
 
         } else if (type == typeof(bool)){
-            variable = PlayerPrefs.GetInt(name);
-            int var = (int) variable;
+            int var = PlayerPrefs.GetInt(name);
             bool _var = var == 0 ? false : true;
             return _var;
 
         } else if (type == typeof(float)){
-            variable = PlayerPrefs.GetFloat(name);
-            float var = (float) variable;
+            float var = PlayerPrefs.GetFloat(name);
             return var;
 
         } else if (type == typeof(Languages)){
-            variable = PlayerPrefs.GetInt(name);
-            int var = (int) variable;
+            int var = PlayerPrefs.GetInt(name);
             Languages _var = var == 0 ? Languages.English : Languages.French;
             return _var;
 
         } else { Debug.Log("The loaded variable Type did not match with any of the supported Types, the variable was returned unchanged"); return variable; }
     }
 
-    public void SaveDataList(GameData _gameData)
+    public void SaveDataInPrefs(GameData _gameData)
     {
         PlayerPrefs.DeleteAll();
 
@@ -88,15 +83,13 @@ public class SaveSystem
         }
     }
 
-    public void LoadDataList(GameData _gameData)
+    public void LoadDataFromPrefs(GameData _gameData)
     {
         foreach (SaveData saveData in _gameData.savedData)
         {
-            Debug.Log(saveData.dataType);
-
             saveData.dataVariable = RetrieveData(saveData.dataType, saveData.dataVariable, saveData.dataName);
 
-            Debug.Log(saveData.dataName + " : " + saveData.dataVariable + ", of type : " + saveData.dataType + ", has been loaded !");
+            //Debug.Log(saveData.dataName + " : " + saveData.dataVariable + ", of type : " + saveData.dataType + ", has been loaded !");
         }
     }
 }

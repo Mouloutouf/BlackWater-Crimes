@@ -20,6 +20,19 @@ public class DataContainer : MonoBehaviour
 
     void OnApplicationQuit()
     {
+        Debug.Log("Application Quit !");
+
+        gameData.firstTimeInMenu = true;
+
+        gameData.ManageData(Action.Save);
+    }
+
+    void OnApplicationPause()
+    {
+        Debug.Log("Application Paused");
+
+        gameData.firstTimeInMenu = true;
+
         gameData.ManageData(Action.Save);
     }
 }

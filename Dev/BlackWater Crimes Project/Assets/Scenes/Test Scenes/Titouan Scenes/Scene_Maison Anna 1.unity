@@ -73,7 +73,7 @@ LightmapSettings:
     m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
-    m_BakeBackend: 2
+    m_BakeBackend: 1
     m_PVRSampling: 1
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 512
@@ -3750,6 +3750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46742789b7e08be46aa11d27648eb230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showData: 0
   data:
     unlockedData: 0
     index: 1
@@ -3760,18 +3761,19 @@ MonoBehaviour:
     useToUnlock: 0
     unlockableLocation: 0
     photo: {fileID: 0}
+    photoPath: 
     hasText: 0
     descriptionText: 
     modeCategory:
       location: 1
       suspect: 2
     seen: 0
-  instantiate: 0
-  hasApplied: 0
   hasText: 0
   displayTextComponent: {fileID: 0}
   timer: 0.3
   _cam: {fileID: 0}
+  intelObjects: []
+  isShown: 0
 --- !u!65 &623914899
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8105,6 +8107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46742789b7e08be46aa11d27648eb230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showData: 0
   data:
     unlockedData: 0
     index: 2
@@ -8115,18 +8118,19 @@ MonoBehaviour:
     useToUnlock: 1
     unlockableLocation: 1
     photo: {fileID: 0}
+    photoPath: 
     hasText: 0
     descriptionText: 
     modeCategory:
       location: 2
       suspect: 4
     seen: 0
-  instantiate: 0
-  hasApplied: 0
   hasText: 0
   displayTextComponent: {fileID: 0}
   timer: 0.3
   _cam: {fileID: 0}
+  intelObjects: []
+  isShown: 0
 --- !u!65 &1354229717
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10392,6 +10396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46742789b7e08be46aa11d27648eb230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showData: 0
   data:
     unlockedData: 0
     index: 3
@@ -10402,6 +10407,7 @@ MonoBehaviour:
     useToUnlock: 0
     unlockableLocation: 1
     photo: {fileID: 0}
+    photoPath: 
     hasText: 1
     descriptionText: "Pour Anna Jameswan \r\nMille cinq\nDino Giuseppe Ghitta\r\n\r\nPour
       Anna Jameswsan\r\nQuatre cent et cinquante\r\nJ. Jonas Jameson\r\n\r\nPour
@@ -10410,12 +10416,12 @@ MonoBehaviour:
       location: 2
       suspect: 4
     seen: 0
-  instantiate: 0
-  hasApplied: 0
   hasText: 1
   displayTextComponent: {fileID: 53175614}
   timer: 0.3
   _cam: {fileID: 185285710}
+  intelObjects: []
+  isShown: 0
 --- !u!1 &1742818073
 GameObject:
   m_ObjectHideFlags: 0
@@ -13100,6 +13106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46742789b7e08be46aa11d27648eb230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showData: 0
   data:
     unlockedData: 0
     index: 4
@@ -13110,18 +13117,19 @@ MonoBehaviour:
     useToUnlock: 0
     unlockableLocation: 1
     photo: {fileID: 0}
+    photoPath: 
     hasText: 0
     descriptionText: 
     modeCategory:
       location: 2
       suspect: 4
     seen: 0
-  instantiate: 0
-  hasApplied: 0
   hasText: 0
   displayTextComponent: {fileID: 0}
   timer: 0.3
   _cam: {fileID: 0}
+  intelObjects: []
+  isShown: 0
 --- !u!1001 &2213011489472495595
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13794,6 +13802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46742789b7e08be46aa11d27648eb230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showData: 0
   data:
     unlockedData: 0
     index: 0
@@ -13804,18 +13813,19 @@ MonoBehaviour:
     useToUnlock: 0
     unlockableLocation: 0
     photo: {fileID: 0}
+    photoPath: 
     hasText: 0
     descriptionText: 
     modeCategory:
       location: 2
       suspect: 4
     seen: 0
-  instantiate: 0
-  hasApplied: 0
   hasText: 0
   displayTextComponent: {fileID: 0}
   timer: 0.3
   _cam: {fileID: 0}
+  intelObjects: []
+  isShown: 0
 --- !u!65 &5771372805531144746
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14544,6 +14554,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46742789b7e08be46aa11d27648eb230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showData: 0
   data:
     unlockedData: 0
     index: 1
@@ -14554,6 +14565,7 @@ MonoBehaviour:
     useToUnlock: 0
     unlockableLocation: 0
     photo: {fileID: 0}
+    photoPath: 
     hasText: 1
     descriptionText: "Anna Jameswan | Compte N\xB0468\n\n\t     D\xE9p\xF4t | Solde\n23
       janvier : 2.000 | 20.000\n1 f\xE9vrier : 955,48 | 20.955,48\n21 f\xE9vrier
@@ -14563,12 +14575,12 @@ MonoBehaviour:
       location: 2
       suspect: 4
     seen: 0
-  instantiate: 0
-  hasApplied: 0
   hasText: 1
   displayTextComponent: {fileID: 53175614}
   timer: 0.3
   _cam: {fileID: 185285710}
+  intelObjects: []
+  isShown: 0
 --- !u!65 &9159856205197708480
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14595,7 +14607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: 3
-  specificZoomPosition: {x: 0.5, y: 0.9, z: -6.8}
+  specificZoomPosition: {x: 0.5, y: 0.875, z: -6}
   hasSpecificRotation: 1
   specificZoomRotation: {x: 0, y: 180, z: 0}
   specificZoomRotationQuaternion: {x: 0, y: 1, z: 0, w: -0.00000004371139}
