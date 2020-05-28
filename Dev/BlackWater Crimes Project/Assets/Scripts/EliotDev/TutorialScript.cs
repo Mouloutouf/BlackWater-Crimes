@@ -53,13 +53,22 @@ public class TutorialScript : SerializedMonoBehaviour
     Button locationsButton;
     Button charactersButton;
     Button evidencesButton;
-    Button returnButton;
+    Button returnButtonFolder;
 
-    [Title("Folder Desk References")]
+
+    [Title("Phone References")]
     CurrentDialingScript dialingScript;
     CadranScript cadranScript;
     Button eraseButton;
+    Button returnButtonPhone;
 
+
+    [Title("Indic References")]
+    SpecialistCheck specialistCheck;
+    GameObject evidenceReceiver;
+    HeadHunterCheck headHunterCheck;
+    Button validateButton;
+    Button returnButtonIndic;
 
 
     [Title("Game Data")]
@@ -95,6 +104,14 @@ public class TutorialScript : SerializedMonoBehaviour
     bool checkDialing = false;
 
     bool waitingForSpecialistScene = false;
+    bool waitingForLabelDisplayed = false;
+    bool waitingForSpecialistValidate = false;
+
+    bool waitingForReturnFolderScene = false;
+
+    bool waitingForSecondReturnToDesk = false;
+
+    bool waitingForHeadHunterScene = false;
 
 
     void Start()
@@ -354,10 +371,69 @@ public class TutorialScript : SerializedMonoBehaviour
             {
                 checkDialing = false;
                 waitingForSpecialistScene = false;
+
+                IndicStart(true);
             
                 StartCoroutine(WaitForNextDialogue());
             }
         }
+
+        else if (waitingForLabelDisplayed)
+        {
+           if (evidenceReceiver.GetComponent<SpecialistEvidenceDisplayer>().currentEvidenceDisplayed.GetComponent<PhotoSpecialistObject>().data.codeName == "Etiquette Vetement")
+            {
+                waitingForLabelDisplayed = false;
+
+                StartCoroutine(WaitForNextDialogue());
+            }
+        }
+
+        else if (waitingForSpecialistValidate)
+        {
+           if (UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject == validateButton.gameObject)
+            {
+                waitingForSpecialistValidate = false;
+
+                StartCoroutine(WaitForNextDialogue());
+            }
+        }
+
+        else if (waitingForReturnFolderScene)
+        {
+            if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "NewDeskScene")
+            {
+                waitingForReturnFolderScene = false;
+
+                FolderDeskStart();
+
+                StartCoroutine(WaitForNextDialogue());
+            }
+        }
+
+        else if (waitingForSecondReturnToDesk)
+        {
+            if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "MenuDeskScene")
+            {
+                waitingForSecondReturnToDesk = false;
+
+                MenuDeskStart();
+
+                StartCoroutine(WaitForNextDialogue());
+            }
+        }
+
+        else if (waitingForHeadHunterScene)
+        {
+           if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "IndicScene" && gameData.currentIndic == Indics.James_Walker)
+            {
+                waitingForHeadHunterScene = false;
+
+                IndicStart(false);
+            
+                StartCoroutine(WaitForNextDialogue());
+            }
+        }
+
     }
 
     void DockStart()
@@ -401,13 +477,13 @@ public class TutorialScript : SerializedMonoBehaviour
         locationsButton = GameObject.Find("Locations Tab").GetComponent<Button>();
         charactersButton = GameObject.Find("Characters Tab").GetComponentInChildren<Button>();
         evidencesButton = GameObject.Find("Evidences Tab").GetComponent<Button>();
-        returnButton = GameObject.Find("Return Button").GetComponent<Button>();
+        returnButtonFolder = GameObject.Find("Return Button").GetComponent<Button>();
 
         reportsButton.interactable = false;
         locationsButton.interactable = false;
         charactersButton.interactable = false; 
         evidencesButton.interactable = false; 
-        returnButton.interactable = false;
+        returnButtonFolder.interactable = false;
     }
 
     void PhoneStart()
@@ -415,9 +491,32 @@ public class TutorialScript : SerializedMonoBehaviour
         dialingScript = GameObject.FindObjectOfType<CurrentDialingScript>();
         cadranScript = GameObject.FindObjectOfType<CadranScript>();
         eraseButton = GameObject.Find("EraseButton").GetComponent<Button>();
+        returnButtonPhone = GameObject.Find("Return Button").GetComponent<Button>();
 
         cadranScript.enabled = false;
         eraseButton.interactable = false;
+        returnButtonPhone.interactable = false;
+    }
+
+    void IndicStart(bool isSpecialist)
+    {
+        validateButton = GameObject.Find("Validate Button").GetComponent<Button>();
+        returnButtonIndic = GameObject.Find("Return Button").GetComponent<Button>();
+
+        validateButton.interactable = false;
+        returnButtonIndic.interactable = false;
+
+        if(isSpecialist)
+        {
+            specialistCheck = GameObject.FindObjectOfType<SpecialistCheck>();
+            evidenceReceiver = GameObject.FindObjectOfType<SpecialistEvidenceDisplayer>().gameObject;
+
+            evidenceReceiver.GetComponent<UnityEngine.EventSystems.EventTrigger>().enabled = false;
+        }
+        else
+        {
+            headHunterCheck = GameObject.FindObjectOfType<HeadHunterCheck>();
+        }
     }
 
     public void NextLine()
@@ -555,7 +654,7 @@ public class TutorialScript : SerializedMonoBehaviour
 
         else if (dialogueIndex == 15)
         {
-            returnButton.interactable = true;
+            returnButtonFolder.interactable = true;
             waitingForReturnToDesk = true;
         }
 
@@ -582,6 +681,37 @@ public class TutorialScript : SerializedMonoBehaviour
             cadranScript.enabled = true;
             checkDialing = true;
             waitingForSpecialistScene = true;
+        }
+
+        else if (dialogueIndex == 20)
+        {
+            evidenceReceiver.GetComponent<UnityEngine.EventSystems.EventTrigger>().enabled = true;
+            waitingForLabelDisplayed = true;
+        }
+
+        else if (dialogueIndex == 21)
+        {
+            validateButton.interactable = true;
+            waitingForSpecialistValidate = true;
+        }
+
+        else if (dialogueIndex == 22)
+        {
+            waitingForReturnFolderScene = true;
+        }
+
+        else if (dialogueIndex == 23)
+        {
+            waitingForSecondReturnToDesk = true;
+        }
+
+        else if (dialogueIndex == 24)
+        {
+            folderButton.interactable = true;
+            mapButton.interactable = true;
+            phoneButton.interactable = true; 
+
+            waitingForHeadHunterScene = true;
         }
     }
 
