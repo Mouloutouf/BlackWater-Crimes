@@ -201,7 +201,7 @@ public class EvidenceInteraction : MonoBehaviour
         string fileName = _hit.transform.parent.GetComponent<EvidenceObject>().data.codeName;
         fileName = fileName.Replace(" ", "");
 
-        if (Application.platform == RuntimePlatform.WindowsEditor || (Application.platform == RuntimePlatform.Android && EditorApplication.isPlaying))
+        if (Application.platform == RuntimePlatform.WindowsEditor /*|| (Application.platform == RuntimePlatform.Android && EditorApplication.isPlaying)*/)
         {
             filePath = "Assets/Graphs/Sprites/Screenshots/" + fileName + ".png";
             Debug.Log("Using Editor Folder");
@@ -240,9 +240,9 @@ public class EvidenceInteraction : MonoBehaviour
     {
         if (File.Exists(filePath))
         {
-            _evidence.photo = CreateSprite(filePath);
-
             _evidence.photoPath = filePath;
+
+            _evidence.photo = CreateSprite(filePath);
         }
         else
         {
@@ -253,14 +253,26 @@ public class EvidenceInteraction : MonoBehaviour
 
     public static Sprite CreateSprite(string filePath)
     {
-        Texture2D texture;
-        byte[] fileBytes;
-        fileBytes = File.ReadAllBytes(filePath);
-        texture = new Texture2D(2, 2, TextureFormat.RGB24, false);
-        texture.LoadImage(fileBytes);
-        Sprite sp = Sprite.Create(texture, new Rect((Screen.width * 360) / 1480f, 0, texture.width / 2, texture.height), new Vector2(0.5f, 0.5f));
-        
-        return sp;
+        if (File.Exists(filePath))
+        {
+            byte[] fileBytes;
+            Texture2D texture;
+            
+            fileBytes = File.ReadAllBytes(filePath);
+            
+            texture = new Texture2D(2, 2, TextureFormat.RGB24, false);
+            texture.LoadImage(fileBytes);
+
+            Sprite sp = Sprite.Create(texture, new Rect((Screen.width * 360) / 1480f, 0, texture.width / 2, texture.height), new Vector2(0.5f, 0.5f));
+            
+            return sp;
+        }
+        else
+        {
+            Sprite _sp = null;
+
+            return _sp;
+        }
     }
 
     IEnumerator DisplayText(string textToDisplay)

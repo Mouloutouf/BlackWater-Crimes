@@ -100,7 +100,7 @@ public class Evidence : Data
 
     public bool photographed { get; set; }
     [HideInInspector] public Sprite photo;
-    public string photoPath = "";
+    public string photoPath;
     public bool completedPhotograph { get; set; }
 
     [Title("Text")]
@@ -352,6 +352,8 @@ public class GameData : SerializedScriptableObject
             }
         );
 
+        //Debug.Log(name + " " + data + " was added to saved data list.");
+
         return data;
     }
     
@@ -364,6 +366,8 @@ public class GameData : SerializedScriptableObject
                 data = (T) saveData.dataVariable;
             }
         }
+
+        Debug.Log(name + " " + data + " was loaded from the saved data list");
 
         return data;
     }
@@ -488,18 +492,24 @@ public class GameData : SerializedScriptableObject
         firstTimeInTuto = SetData(action, firstTimeInTuto, nameof(firstTimeInTuto));
     }
 
-    [ContextMenu("Reset Game Data")]
-    public void ResetData()
+    [ContextMenu("Reset To Build State")]
+    public void ResetPrefs()
     {
         savedData.Clear();
 
         PlayerPrefs.DeleteAll();
 
-        ResetParameters();
+        ResetData();
 
         PlayerPrefs.SetInt(nameof(firstTimeInGame), 1);
 
         PlayerPrefs.SetInt(nameof(firstTimeInMenu), 1);
+    }
+
+    [ContextMenu("Reset Game Data")]
+    public void ResetData()
+    {
+        ResetParameters();
         
         // Reset Evidences
         foreach (Locations location in allEvidences.Keys)
@@ -516,8 +526,8 @@ public class GameData : SerializedScriptableObject
                         intel.intelAlpha = 0.0f;
                     }
                 }
-
-                evidence.photoPath = "";
+                
+                evidence.photoPath = "Assets/Graphs/Saved_Photos/" + evidence.codeName.Replace(" ", "") + ".png";
 
                 evidence.photographed = false;
 
