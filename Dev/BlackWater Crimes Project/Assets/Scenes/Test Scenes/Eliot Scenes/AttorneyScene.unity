@@ -173,9 +173,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actions: {fileID: 2105104414}
-  dialogueText: {fileID: 809220581}
-  validateButton: {fileID: 1755040874}
-  type: 0
+  dialogueKey: {fileID: 809220583}
+  validateButton: {fileID: 1330969698}
+  type: 1
 --- !u!114 &28743997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,6 +277,7 @@ GameObject:
   - component: {fileID: 35007030}
   - component: {fileID: 35007032}
   - component: {fileID: 35007031}
+  - component: {fileID: 35007033}
   m_Layer: 5
   m_Name: ClueShowerText
   m_TagString: Untagged
@@ -344,6 +345,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 35007029}
   m_CullTransparentMesh: 0
+--- !u!114 &35007033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35007029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 35007031}
+  key: attorney_interrogation_comment
 --- !u!1 &60978828
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,6 +473,7 @@ GameObject:
   - component: {fileID: 103657736}
   - component: {fileID: 103657738}
   - component: {fileID: 103657737}
+  - component: {fileID: 103657739}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -524,6 +540,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 103657735}
   m_CullTransparentMesh: 0
+--- !u!114 &103657739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103657735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 103657737}
+  key: 
 --- !u!1 &112315630
 GameObject:
   m_ObjectHideFlags: 0
@@ -678,8 +708,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1303152623}
   m_HandleRect: {fileID: 1303152622}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.9999996
+  m_Value: 0.5833333
+  m_Size: 0.999999
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -862,7 +892,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actions: {fileID: 2105104414}
-  dialogueText: {fileID: 0}
+  dialogueKey: {fileID: 809220583}
   validateButton: {fileID: 592403679}
   type: 2
 --- !u!1 &214903256
@@ -1074,6 +1104,7 @@ GameObject:
   - component: {fileID: 267421108}
   - component: {fileID: 267421110}
   - component: {fileID: 267421109}
+  - component: {fileID: 267421111}
   m_Layer: 5
   m_Name: ClueShowerText
   m_TagString: Untagged
@@ -1141,6 +1172,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 267421107}
   m_CullTransparentMesh: 0
+--- !u!114 &267421111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267421107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 267421109}
+  key: 
 --- !u!1 &287327151
 GameObject:
   m_ObjectHideFlags: 0
@@ -1501,6 +1546,7 @@ GameObject:
   - component: {fileID: 402807345}
   - component: {fileID: 402807344}
   - component: {fileID: 402807343}
+  - component: {fileID: 402807346}
   m_Layer: 5
   m_Name: Interrogation Number
   m_TagString: Untagged
@@ -1539,7 +1585,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Interrogations left: '
+  m_Text: 'Interrogations left : '
 --- !u!222 &402807344
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1567,6 +1613,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -632}
   m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &402807346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 402807342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 402807343}
+  key: attorney_interrogations
 --- !u!1 &411315902
 GameObject:
   m_ObjectHideFlags: 0
@@ -2321,6 +2381,7 @@ GameObject:
   - component: {fileID: 690821933}
   - component: {fileID: 690821935}
   - component: {fileID: 690821934}
+  - component: {fileID: 690821936}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -2387,6 +2448,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 690821932}
   m_CullTransparentMesh: 0
+--- !u!114 &690821936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690821932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 690821934}
+  key: attorney_interrogation_mesage
 --- !u!1 &715928181
 GameObject:
   m_ObjectHideFlags: 0
@@ -2468,8 +2543,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2078263408}
   m_HandleRect: {fileID: 2078263407}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.9999996
+  m_Value: 0.5833333
+  m_Size: 0.999999
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2822,6 +2897,7 @@ GameObject:
   - component: {fileID: 809220580}
   - component: {fileID: 809220582}
   - component: {fileID: 809220581}
+  - component: {fileID: 809220583}
   m_Layer: 5
   m_Name: Dialogue Text
   m_TagString: Untagged
@@ -2888,6 +2964,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 809220579}
   m_CullTransparentMesh: 0
+--- !u!114 &809220583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809220579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 809220581}
+  key: 
 --- !u!1 &846378636
 GameObject:
   m_ObjectHideFlags: 0
@@ -3125,6 +3215,7 @@ GameObject:
   - component: {fileID: 912511579}
   - component: {fileID: 912511581}
   - component: {fileID: 912511580}
+  - component: {fileID: 912511582}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -3191,6 +3282,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 912511578}
   m_CullTransparentMesh: 0
+--- !u!114 &912511582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912511578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 912511580}
+  key: show_clue
 --- !u!1 &955468480
 GameObject:
   m_ObjectHideFlags: 0
@@ -3273,7 +3378,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
       propertyPath: languageTexts.Array.size
-      value: 16
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
+      propertyPath: localisationKeys.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
       propertyPath: languageTexts.Array.data[0].textComponent
@@ -3714,6 +3823,7 @@ GameObject:
   - component: {fileID: 1063067477}
   - component: {fileID: 1063067479}
   - component: {fileID: 1063067478}
+  - component: {fileID: 1063067480}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -3780,6 +3890,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1063067476}
   m_CullTransparentMesh: 0
+--- !u!114 &1063067480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063067476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 0}
+  key: 
 --- !u!1 &1086210153
 GameObject:
   m_ObjectHideFlags: 0
@@ -4047,6 +4171,7 @@ GameObject:
   - component: {fileID: 1212691134}
   - component: {fileID: 1212691136}
   - component: {fileID: 1212691135}
+  - component: {fileID: 1212691137}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -4113,6 +4238,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1212691133}
   m_CullTransparentMesh: 0
+--- !u!114 &1212691137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212691133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 1212691135}
+  key: 
 --- !u!1 &1238963118
 GameObject:
   m_ObjectHideFlags: 0
@@ -4384,7 +4523,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actions: {fileID: 2105104414}
-  dialogueText: {fileID: 809220581}
+  dialogueKey: {fileID: 809220583}
   validateButton: {fileID: 1755040874}
   type: 0
 --- !u!1 &1288440144
@@ -4529,7 +4668,7 @@ RectTransform:
   m_Father: {fileID: 2105235574}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.0000004172325}
+  m_AnchorMin: {x: 0, y: 0.00000059107936}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
@@ -4697,7 +4836,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputText: {fileID: 2067631836}
   evidenceDisplayer: {fileID: 1701712636}
-  dialogueText: {fileID: 809220581}
+  dialogueKey: {fileID: 809220583}
+  validKey: attorney_dialogue_valid_person
+  wrongKey: attorney_dialogue_invalid_person
+  exceedKey: attorney_dialogue_none_left
+  missingKey: missing_elements
   interrogationsNumberText: {fileID: 402807343}
   gameData: {fileID: 11400000, guid: eaa3567ddd179a64a9d879867070a0b4, type: 2}
   debug: 0
@@ -4878,6 +5021,7 @@ GameObject:
   - component: {fileID: 1411085814}
   - component: {fileID: 1411085816}
   - component: {fileID: 1411085815}
+  - component: {fileID: 1411085817}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -4944,6 +5088,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1411085813}
   m_CullTransparentMesh: 0
+--- !u!114 &1411085817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411085813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 1411085815}
+  key: validation
 --- !u!1 &1551255275
 GameObject:
   m_ObjectHideFlags: 0
@@ -4955,6 +5113,7 @@ GameObject:
   - component: {fileID: 1551255276}
   - component: {fileID: 1551255278}
   - component: {fileID: 1551255277}
+  - component: {fileID: 1551255279}
   m_Layer: 5
   m_Name: VenueRequestText
   m_TagString: Untagged
@@ -5021,6 +5180,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1551255275}
   m_CullTransparentMesh: 0
+--- !u!114 &1551255279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1551255275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 1551255277}
+  key: 
 --- !u!1 &1564899613
 GameObject:
   m_ObjectHideFlags: 0
@@ -5148,6 +5321,7 @@ GameObject:
   - component: {fileID: 1572003361}
   - component: {fileID: 1572003363}
   - component: {fileID: 1572003362}
+  - component: {fileID: 1572003364}
   m_Layer: 5
   m_Name: SuspectNameText
   m_TagString: Untagged
@@ -5214,6 +5388,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1572003360}
   m_CullTransparentMesh: 0
+--- !u!114 &1572003364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572003360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 1572003362}
+  key: attorney_interrogation_question
 --- !u!1 &1583220832
 GameObject:
   m_ObjectHideFlags: 0
@@ -5819,6 +6007,7 @@ GameObject:
   - component: {fileID: 1839187180}
   - component: {fileID: 1839187182}
   - component: {fileID: 1839187181}
+  - component: {fileID: 1839187183}
   m_Layer: 5
   m_Name: Actions Text
   m_TagString: Untagged
@@ -5885,6 +6074,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1839187179}
   m_CullTransparentMesh: 0
+--- !u!114 &1839187183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1839187179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 1839187181}
+  key: attorney_message
 --- !u!1 &1847635925
 GameObject:
   m_ObjectHideFlags: 0
@@ -5962,6 +6165,7 @@ GameObject:
   - component: {fileID: 1869372510}
   - component: {fileID: 1869372512}
   - component: {fileID: 1869372511}
+  - component: {fileID: 1869372513}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -6028,6 +6232,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1869372509}
   m_CullTransparentMesh: 0
+--- !u!114 &1869372513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869372509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 1869372511}
+  key: show_clue
 --- !u!1 &1881148040
 GameObject:
   m_ObjectHideFlags: 0
@@ -6816,7 +7034,7 @@ RectTransform:
   m_Father: {fileID: 1352538315}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.0000004172325}
+  m_AnchorMin: {x: 0, y: 0.00000059107936}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
@@ -6968,6 +7186,7 @@ GameObject:
   - component: {fileID: 2099618214}
   - component: {fileID: 2099618216}
   - component: {fileID: 2099618215}
+  - component: {fileID: 2099618217}
   m_Layer: 5
   m_Name: Placeholder
   m_TagString: Untagged
@@ -7034,6 +7253,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2099618213}
   m_CullTransparentMesh: 0
+--- !u!114 &2099618217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099618213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 2099618215}
+  key: attorney_interrogation_field
 --- !u!1 &2104417180
 GameObject:
   m_ObjectHideFlags: 0
@@ -7045,6 +7278,7 @@ GameObject:
   - component: {fileID: 2104417181}
   - component: {fileID: 2104417183}
   - component: {fileID: 2104417182}
+  - component: {fileID: 2104417184}
   m_Layer: 5
   m_Name: Occupation Text
   m_TagString: Untagged
@@ -7111,6 +7345,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2104417180}
   m_CullTransparentMesh: 0
+--- !u!114 &2104417184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2104417180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 2104417182}
+  key: attorney_job
 --- !u!1 &2105104414
 GameObject:
   m_ObjectHideFlags: 0
@@ -7163,12 +7411,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a99e6d57a4f04e4380f37ee6972b382, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueText: {fileID: 809220581}
-  introText: "Bienvenue d\xE9tective ! Du nouveau dans votre affaire ?"
-  venueText: "Alors vous souhaitez acc\xE9der \xE0 un nouveau lieu..."
-  interrogationText: Alors vous souhaitez interroger quelqu'un...
-  prosecutionText: "Alors vous pensez avoir trouv\xE9 qui a fait \xE7a..."
-  returnText: Je vous en prie, dites-moi ce que vous voulez...
+  dialogueKey: {fileID: 809220583}
+  introKey: attorney_dialogue_intro
+  venueKey: 
+  interrogationKey: attorney_dialogue_interrogation
+  prosecutionKey: attorney_dialogue_prosecution
+  returnKey: attorney_dialogue_return
 --- !u!1 &2105235573
 GameObject:
   m_ObjectHideFlags: 0
@@ -7288,6 +7536,7 @@ GameObject:
   - component: {fileID: 2138056854}
   - component: {fileID: 2138056856}
   - component: {fileID: 2138056855}
+  - component: {fileID: 2138056857}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -7354,6 +7603,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2138056853}
   m_CullTransparentMesh: 0
+--- !u!114 &2138056857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2138056853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 2138056855}
+  key: attorney_prosecution_message
 --- !u!1 &2142193674
 GameObject:
   m_ObjectHideFlags: 0

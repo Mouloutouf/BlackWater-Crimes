@@ -10,4 +10,6 @@ public class StockageVariables : SerializedScriptableObject
     public Dictionary<Suspects, List<Question>> questions;
     public Dictionary<Indics, (List<Report>, List<Report>)> megaReports = new Dictionary<Indics, (List<Report>, List<Report>)>();
     public Dictionary<Indics, Indic> indics;
+
+    public List<LanguageTextComponent> languageTexts;
 }

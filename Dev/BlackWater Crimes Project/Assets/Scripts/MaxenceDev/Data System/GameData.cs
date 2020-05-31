@@ -85,6 +85,8 @@ public class Evidence : Data
 {
     public string codeName;
     
+    public string nameKey;
+    
     [Title("Intels")]
     
     public bool intelSelf;
@@ -111,6 +113,8 @@ public class Evidence : Data
     [HideLabel]
     [MultiLineProperty(5)]
     public string descriptionText;
+
+    public string textKey;
     
     [HideReferenceObjectPicker]
     [Title("Categories")]
@@ -148,6 +152,9 @@ public class Report : Data
     [MultiLineProperty(15)]
     public string reportText;
 
+    public string elementKey;
+    public string reportKey;
+
     [Title("Unlockable")]
 
     public bool giveAccess;
@@ -182,6 +189,9 @@ public class Location : Data
     [HideLabel]
     [MultiLineProperty(5)]
     public string locationDescription;
+
+    public string nameKey;
+    public string descriptionKey;
 }
 
 [Serializable]
@@ -190,6 +200,7 @@ public class Answer
     [HideLabel]
     [MultiLineProperty(4)]
     public string answer;
+    public string answerKey;
 
     public Emotions emotion;
 }
@@ -201,6 +212,7 @@ public class Question : Data
     [HideLabel]
     [MultiLineProperty(2)]
     public string question;
+    public string questionKey;
     
     public List<Answer> _answers;
 
@@ -228,6 +240,10 @@ public class Character : Data
     public bool isSuspect;
     [ShowIf("isSuspect")]
     public Suspects suspect;
+    [ShowIf("isSuspect")]
+    public string jobKey;
+    [ShowIf("isSuspect")]
+    public string introPhraseKey;
 
     [Title("Distinctions")]
     
@@ -240,7 +256,7 @@ public class Indic
     [Title("Infos")]
 
     public string name;
-    public string job;
+    public string jobKey;
 
     public Sprite image;
 }
@@ -306,7 +322,6 @@ public class GameData : SerializedScriptableObject
     public Indics currentIndic = Indics.Standard;
     
     [HideInInspector] public bool firstTimeInGame = true;
-    [HideInInspector] public bool firstTimeInMenu = true;
     public bool firstTimeInTuto = true; // Tutorial Docks
 
     [Title("DATA SAVE")]
@@ -398,7 +413,6 @@ public class GameData : SerializedScriptableObject
     public void ManageSavedData(Action action)
     {
         firstTimeInGame = SetData(action, firstTimeInGame, nameof(firstTimeInGame));
-        firstTimeInMenu = SetData(action, firstTimeInMenu, nameof(firstTimeInMenu));
         firstTimeInTuto = SetData(action, firstTimeInTuto, nameof(firstTimeInTuto));
 
         gameLanguage = SetData(action, gameLanguage, nameof(gameLanguage));
@@ -502,8 +516,6 @@ public class GameData : SerializedScriptableObject
         ResetData();
 
         PlayerPrefs.SetInt(nameof(firstTimeInGame), 1);
-
-        PlayerPrefs.SetInt(nameof(firstTimeInMenu), 1);
     }
 
     [ContextMenu("Reset Game Data")]

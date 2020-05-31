@@ -15,6 +15,9 @@ public class TargetNameScript : MonoBehaviour
     [SerializeField] GameObject detail;
     private Button validateButton;
 
+    public string validateKey;
+    public string missingKey;
+
     void Start() 
     {
         validateButton = GameObject.Find("Validate Button").GetComponent<Button>();
@@ -36,7 +39,7 @@ public class TargetNameScript : MonoBehaviour
         {
             detail.SetActive(true);
             validateButton.interactable = true;
-            validateButton.gameObject.GetComponentInChildren<Text>().text = "Validate";
+            validateButton.gameObject.GetComponentInChildren<Localisation>().key = validateKey;
             int index = knownNamesToCheck.IndexOf(name);
             if(inputText.text != knownNames[index])
             {
@@ -48,7 +51,7 @@ public class TargetNameScript : MonoBehaviour
         {
             detail.SetActive(false);
             validateButton.interactable = false;
-            validateButton.gameObject.GetComponentInChildren<Text>().text = "Missing elements";
+            validateButton.gameObject.GetComponentInChildren<Localisation>().key = missingKey;
             inputText.color = incorrectColor;
         }
     }

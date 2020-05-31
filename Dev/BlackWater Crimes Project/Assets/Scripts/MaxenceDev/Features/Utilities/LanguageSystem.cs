@@ -34,6 +34,14 @@ public class LargeLanguageTextComponent : LargeLanguageText
     public Text textComponent;
 }
 
+[Serializable]
+public class LocalisationKey
+{
+    public Localisation component;
+
+    public string key;
+}
+
 public class LanguageSystem : MonoBehaviour
 {
     public GameData gameData;
@@ -43,9 +51,13 @@ public class LanguageSystem : MonoBehaviour
 
     public List<GameObject> languageUsingObjects = new List<GameObject>();
 
+    public List<LocalisationKey> localisationKeys = new List<LocalisationKey>();
+
     void Start()
     {
         SetLanguage();
+
+        SetKeys();
     }
 
     public void SetLanguage()
@@ -72,6 +84,15 @@ public class LanguageSystem : MonoBehaviour
             }
 
             Debug.Log(str);
+        }
+    }
+
+    void SetKeys()
+    {
+        foreach(LocalisationKey localisationKey in localisationKeys)
+        {
+            localisationKey.component.key = localisationKey.key;
+            localisationKey.component.RefreshText();
         }
     }
 }
