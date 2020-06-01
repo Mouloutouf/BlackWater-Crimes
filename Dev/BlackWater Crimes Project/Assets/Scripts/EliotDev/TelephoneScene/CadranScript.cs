@@ -92,7 +92,7 @@ public class CadranScript : MonoBehaviour
         
             foreach(RaycastHit2D hit in hits)
             {
-                if (hit.collider != null)
+                if (hit.collider != null && !hasFoundANumber)
                 {
                     bool isNumber = ArrayContains(numbers, hit.transform.gameObject);
 
@@ -100,22 +100,23 @@ public class CadranScript : MonoBehaviour
                     {
                         currentNumber = FindNumber(numbers, hit.transform.gameObject);
                         placeHolderNumber.transform.position = hit.transform.position;
+
+                        Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
+                        Vector3 vector = new Vector3(inputPos.x - screenPos.x, inputPos.y - screenPos.y, 0 - screenPos.z);
+
+                        startAngle = Mathf.Atan2(vector.y, vector.x) * Mathf.Rad2Deg;
+                        
                         hasFoundANumber = true;
                     }
-                    else if(hit == hits[hits.Length -1] && !hasFoundANumber)
+                    else
                     {
-                        placeHolderNumber.transform.position = hit.transform.position;
+                        hasFoundANumber = false;
                     }
                 }
             }
-
-            Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
-            Vector3 vector = new Vector3(inputPos.x - screenPos.x, inputPos.y - screenPos.y, 0 - screenPos.z);
-
-            startAngle = Mathf.Atan2(vector.y, vector.x) * Mathf.Rad2Deg;
         }
 
-        else if (((Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Moved) || Input.GetMouseButton(0)) && passedByBegan)
+        else if (((Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Moved) || Input.GetMouseButton(0)) && passedByBegan && hasFoundANumber)
         {
 
             Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
@@ -185,6 +186,7 @@ public class CadranScript : MonoBehaviour
     void CadranReturn()
     {
         passedByBegan = false;
+        hasFoundANumber = false;
         placeHolderNumber.transform.localPosition = new Vector3(0, 0, 10);
         lastRotation = transform.rotation;
         rotateAlpha = 0f;
