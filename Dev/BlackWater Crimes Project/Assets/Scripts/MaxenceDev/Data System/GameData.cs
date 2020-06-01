@@ -243,6 +243,8 @@ public class Indic
     public string job;
 
     public Sprite image;
+
+    public bool quickCallAvailable;
 }
 
 [Serializable]
@@ -570,6 +572,11 @@ public class GameData : SerializedScriptableObject
             }
         }
         interrogations = 3;
+
+        foreach (Indic indic in indics.Values)
+        {
+            indic.quickCallAvailable = false;
+        }
 
         newStuff = false;
     }

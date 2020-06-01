@@ -94,6 +94,7 @@ public class CurrentDialingScript : MonoBehaviour
                 currentContactScene = contacts[i].contactSceneName;
 
                 if (contacts[i].indicContact) gameData.currentIndic = contacts[i].thisIndic;
+                if (!gameData.indics[contacts[i].thisIndic].quickCallAvailable) gameData.indics[contacts[i].thisIndic].quickCallAvailable = true;
             }
         }
 

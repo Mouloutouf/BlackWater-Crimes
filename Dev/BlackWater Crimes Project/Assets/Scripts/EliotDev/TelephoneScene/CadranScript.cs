@@ -195,6 +195,12 @@ public class CadranScript : MonoBehaviour
         shouldReturn = true;
     } 
 
+    public void AnimationEvent(int digit)
+    {
+        dialingScript.RecordNumber(digit);
+        soundSystem.PlaySound(clip);
+    }
+
     void ReturnRotation()
     {
         if (rotateAlpha < 1f)
