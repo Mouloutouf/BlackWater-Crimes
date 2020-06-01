@@ -15,6 +15,8 @@ public class DropdownVenues : MonoBehaviour
 
         if (specialist) // Neighborhood Investigation
         {
+            GameObject.Find("Validate Button").GetComponent<Button>().interactable = true;
+            
             foreach (Location location in gameData.locations)
             {
                 if (location.accessible)

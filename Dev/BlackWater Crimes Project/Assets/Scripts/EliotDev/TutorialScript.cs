@@ -7,7 +7,7 @@ using Sirenix.OdinInspector;
 public class TutorialScript : SerializedMonoBehaviour
 {
     [Title("Dialogue References")]
-    public GameObject dialogueCanvas;
+    public GameObject dialogueUI;
     public Text dialogueUIText;
     public Image charaUIImage;
 
@@ -24,14 +24,24 @@ public class TutorialScript : SerializedMonoBehaviour
     List<List<string>> currentDialogueLanguage = new List<List<string>>();
     int dialogueIndex = 0;
 
-    
-    
+       
     [Title("Dialogue Sprites")]
 
     [ListDrawerSettings(ShowIndexLabels = true)]
     public List<Sprite> dialoguesSprites = new List<Sprite>();
     int spriteIndex = 0;
 
+
+    [Title("Objective References")]
+    public GameObject objectiveUI;
+    public Text objectiveText;
+
+
+    [Title("Objective Text")]
+    public List<string> englishObjectives = new List<string>();
+    public List<string> frenchObjectives = new List<string>();    
+    List<string> currentObjectivesLanguage = new List<string>();
+    int objectiveIndex = 0;
 
 
     [Title("Docks References")]
@@ -41,11 +51,11 @@ public class TutorialScript : SerializedMonoBehaviour
     public EvidenceInteraction evidenceScript;
 
 
-
     [Title("Menu Desk References")]
     Button folderButton;
     Button mapButton;
     Button phoneButton;
+    Button mainMenuButton;
 
 
     [Title("Folder Desk References")]
@@ -53,13 +63,28 @@ public class TutorialScript : SerializedMonoBehaviour
     Button locationsButton;
     Button charactersButton;
     Button evidencesButton;
-    Button returnButton;
+    Button returnButtonFolder;
 
-    [Title("Folder Desk References")]
+
+    [Title("Phone References")]
     CurrentDialingScript dialingScript;
     CadranScript cadranScript;
     Button eraseButton;
+    Button returnButtonPhone;
 
+
+    [Title("Indic References")]
+    SpecialistCheck specialistCheck;
+    GameObject evidenceReceiver;
+    HeadHunterCheck headHunterCheck;
+    Button validateButton;
+    Button returnButtonIndic;
+
+
+    [Title("Map References")]
+    GameObject magMileQuarter;
+    GameObject docks;
+    GameObject annaHouse;
 
 
     [Title("Game Data")]
@@ -95,6 +120,22 @@ public class TutorialScript : SerializedMonoBehaviour
     bool checkDialing = false;
 
     bool waitingForSpecialistScene = false;
+    bool waitingForLabelDisplayed = false;
+    bool waitingForSpecialistValidate = false;
+
+    bool waitingForReturnFolderScene = false;
+
+    bool waitingForSecondReturnToDesk = false;
+
+    bool waitingForHeadHunterScene = false;
+
+    bool waitingForSecondReturnFolderScene = false;
+
+    bool waitingForThirdReturnToDesk = false;
+
+    bool waitingForMapScene = false;
+    bool waitingForMagMileZoom = false;
+    bool waitingForAnnaHouseDiscover = false;
 
 
     void Start()
@@ -107,10 +148,12 @@ public class TutorialScript : SerializedMonoBehaviour
             {
                 case Languages.English:
                     currentDialogueLanguage = englishDialogues;
+                    currentObjectivesLanguage = englishObjectives;
                     break;
 
                 case Languages.French:
                     currentDialogueLanguage = frenchDialogues;
+                    currentObjectivesLanguage = frenchObjectives;
                     break;
             }
 
@@ -354,7 +397,126 @@ public class TutorialScript : SerializedMonoBehaviour
             {
                 checkDialing = false;
                 waitingForSpecialistScene = false;
+
+                IndicStart(true);
             
+                StartCoroutine(WaitForNextDialogue());
+            }
+        }
+
+        else if (waitingForLabelDisplayed)
+        {
+            if(evidenceReceiver.GetComponent<SpecialistEvidenceDisplayer>().currentEvidenceDisplayed != null)
+            {
+                if (evidenceReceiver.GetComponent<SpecialistEvidenceDisplayer>().currentEvidenceDisplayed.GetComponent<PhotoSpecialistObject>().data.codeName == "Etiquette Vetement")
+                {
+                    waitingForLabelDisplayed = false;
+
+                    StartCoroutine(WaitForNextDialogue());
+                }
+            }
+        }
+
+        else if (waitingForSpecialistValidate)
+        {
+           if (UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject == validateButton.gameObject)
+            {
+                waitingForSpecialistValidate = false;
+
+                StartCoroutine(WaitForNextDialogue());
+            }
+        }
+
+        else if (waitingForReturnFolderScene)
+        {
+            if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "NewDeskScene")
+            {
+                waitingForReturnFolderScene = false;
+
+                FolderDeskStart();
+
+                StartCoroutine(WaitForNextDialogue());
+            }
+        }
+
+        else if (waitingForSecondReturnToDesk)
+        {
+            if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "MenuDeskScene")
+            {
+                waitingForSecondReturnToDesk = false;
+
+                MenuDeskStart();
+
+                StartCoroutine(WaitForNextDialogue());
+            }
+        }
+
+        else if (waitingForHeadHunterScene)
+        {
+           if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "IndicScene" && gameData.currentIndic == Indics.James_Walker)
+            {
+                waitingForHeadHunterScene = false;
+
+                IndicStart(false);
+            
+                StartCoroutine(WaitForNextDialogue());
+            }
+        }
+
+        else if (waitingForSecondReturnFolderScene)
+        {
+           if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "NewDeskScene")
+            {
+                waitingForSecondReturnFolderScene = false;
+
+                FolderDeskStart();
+
+                StartCoroutine(WaitForNextDialogue());
+            }
+        }
+
+        else if (waitingForThirdReturnToDesk)
+        {
+            if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "MenuDeskScene")
+            {
+                waitingForThirdReturnToDesk = false;
+
+                MenuDeskStart();
+
+                StartCoroutine(WaitForNextDialogue());
+            }
+        }
+
+        else if (waitingForMapScene)
+        {
+            if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "MapScene")
+            {
+                waitingForMapScene = false;
+
+                MapStart();
+
+                StartCoroutine(WaitForNextDialogue());
+            }
+        }
+
+        else if (waitingForMagMileZoom)
+        {
+            if (!magMileQuarter.activeSelf)
+            {
+                waitingForMagMileZoom = false;
+
+                StartCoroutine(WaitForNextDialogue());
+            }
+        }
+
+        else if (waitingForAnnaHouseDiscover)
+        {
+            if (annaHouse.GetComponent<LocationObject>().data.visible)
+            {
+                waitingForAnnaHouseDiscover = false;
+
+                annaHouse.GetComponent<CircleCollider2D>().enabled = false;
+
                 StartCoroutine(WaitForNextDialogue());
             }
         }
@@ -380,7 +542,7 @@ public class TutorialScript : SerializedMonoBehaviour
     
         NextLine();
 
-        dialogueCanvas.SetActive(false);
+        dialogueUI.SetActive(false);
         StartCoroutine(WaitForEndOfAnimation());
     }
 
@@ -389,10 +551,12 @@ public class TutorialScript : SerializedMonoBehaviour
         folderButton = GameObject.Find("Desk Folders Button").GetComponent<Button>();
         mapButton = GameObject.Find("Map Scene Button").GetComponent<Button>();
         phoneButton = GameObject.Find("Telephone Scene Button").GetComponentInChildren<Button>();
+        mainMenuButton = GameObject.Find("Return To Menu Button").GetComponent<Button>();
 
         folderButton.interactable = false;
         mapButton.interactable = false;
         phoneButton.interactable = false; 
+        mainMenuButton.interactable = false;
     }
 
     void FolderDeskStart()
@@ -401,13 +565,13 @@ public class TutorialScript : SerializedMonoBehaviour
         locationsButton = GameObject.Find("Locations Tab").GetComponent<Button>();
         charactersButton = GameObject.Find("Characters Tab").GetComponentInChildren<Button>();
         evidencesButton = GameObject.Find("Evidences Tab").GetComponent<Button>();
-        returnButton = GameObject.Find("Return Button").GetComponent<Button>();
+        returnButtonFolder = GameObject.Find("Return Button").GetComponent<Button>();
 
         reportsButton.interactable = false;
         locationsButton.interactable = false;
         charactersButton.interactable = false; 
         evidencesButton.interactable = false; 
-        returnButton.interactable = false;
+        returnButtonFolder.interactable = false;
     }
 
     void PhoneStart()
@@ -415,9 +579,41 @@ public class TutorialScript : SerializedMonoBehaviour
         dialingScript = GameObject.FindObjectOfType<CurrentDialingScript>();
         cadranScript = GameObject.FindObjectOfType<CadranScript>();
         eraseButton = GameObject.Find("EraseButton").GetComponent<Button>();
+        returnButtonPhone = GameObject.Find("Return Button").GetComponent<Button>();
 
         cadranScript.enabled = false;
         eraseButton.interactable = false;
+        returnButtonPhone.interactable = false;
+    }
+
+    void IndicStart(bool isSpecialist)
+    {
+        validateButton = GameObject.Find("Validate Button").GetComponent<Button>();
+        returnButtonIndic = GameObject.Find("Return Button").GetComponent<Button>();
+
+        validateButton.interactable = false;
+        returnButtonIndic.interactable = false;
+
+        if(isSpecialist)
+        {
+            specialistCheck = GameObject.FindObjectOfType<SpecialistCheck>();
+            evidenceReceiver = GameObject.FindObjectOfType<SpecialistEvidenceDisplayer>().gameObject;
+
+            evidenceReceiver.GetComponent<UnityEngine.EventSystems.EventTrigger>().enabled = false;
+        }
+        else
+        {
+            headHunterCheck = GameObject.FindObjectOfType<HeadHunterCheck>();
+        }
+    }
+
+    void MapStart()
+    {
+        magMileQuarter = GameObject.Find("Quarter Mag Mile");
+        docks = GameObject.Find("Location Docks");
+        annaHouse = GameObject.Find("Location Anna_House");
+
+        docks.GetComponent<CircleCollider2D>().enabled = false;
     }
 
     public void NextLine()
@@ -440,8 +636,13 @@ public class TutorialScript : SerializedMonoBehaviour
 
     void EndCurrentDialogue()
     {
-        dialogueCanvas.SetActive(false);
+        dialogueUI.SetActive(false);
         textIndex = 0;
+
+        objectiveUI.SetActive(true);
+        objectiveText.text = "- " + currentObjectivesLanguage[objectiveIndex];
+        objectiveIndex ++;
+
 
         PrepareNextDialogue();
     }
@@ -555,7 +756,7 @@ public class TutorialScript : SerializedMonoBehaviour
 
         else if (dialogueIndex == 15)
         {
-            returnButton.interactable = true;
+            returnButtonFolder.interactable = true;
             waitingForReturnToDesk = true;
         }
 
@@ -583,18 +784,91 @@ public class TutorialScript : SerializedMonoBehaviour
             checkDialing = true;
             waitingForSpecialistScene = true;
         }
+
+        else if (dialogueIndex == 20)
+        {
+            evidenceReceiver.GetComponent<UnityEngine.EventSystems.EventTrigger>().enabled = true;
+            waitingForLabelDisplayed = true;
+        }
+
+        else if (dialogueIndex == 21)
+        {
+            validateButton.interactable = true;
+            waitingForSpecialistValidate = true;
+        }
+
+        else if (dialogueIndex == 22)
+        {
+            waitingForReturnFolderScene = true;
+        }
+
+        else if (dialogueIndex == 23)
+        {
+            returnButtonFolder.interactable = true;
+
+            waitingForSecondReturnToDesk = true;
+        }
+
+        else if (dialogueIndex == 24)
+        {
+            folderButton.interactable = true;
+            mapButton.interactable = true;
+            phoneButton.interactable = true; 
+
+            waitingForHeadHunterScene = true;
+        }
+
+        else if (dialogueIndex == 25)
+        {
+            waitingForSecondReturnFolderScene = true;
+        }
+
+        else if (dialogueIndex == 26)
+        {
+            returnButtonFolder.interactable = true;
+
+            waitingForThirdReturnToDesk = true;
+        }
+
+        else if (dialogueIndex == 27)
+        {
+            folderButton.interactable = true;
+            mapButton.interactable = true;
+            phoneButton.interactable = true; 
+
+            waitingForMapScene = true;
+        }
+
+        else if (dialogueIndex == 28)
+        {
+            waitingForMagMileZoom = true;
+        }
+
+        else if (dialogueIndex == 29)
+        {
+            waitingForAnnaHouseDiscover = true;
+        }
+
+        else if (dialogueIndex == 30)
+        {
+            annaHouse.GetComponent<CircleCollider2D>().enabled = true;
+            docks.GetComponent<CircleCollider2D>().enabled = true;
+
+            Destroy(this.gameObject);
+        }
     }
 
     IEnumerator WaitForEndOfAnimation()
     {
         yield return new WaitForSeconds(3);
-        dialogueCanvas.SetActive(true);
+        dialogueUI.SetActive(true);
     }
 
     IEnumerator WaitForNextDialogue()
     {
+        objectiveUI.SetActive(false);
         yield return new WaitForSeconds(.3f);
-        dialogueCanvas.SetActive(true);
+        dialogueUI.SetActive(true);
         dialogueIndex ++;
         NextLine();
     }
