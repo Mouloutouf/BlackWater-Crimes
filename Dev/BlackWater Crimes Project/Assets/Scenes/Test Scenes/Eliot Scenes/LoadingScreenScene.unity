@@ -469,6 +469,7 @@ GameObject:
   - component: {fileID: 1598209102}
   - component: {fileID: 1598209104}
   - component: {fileID: 1598209103}
+  - component: {fileID: 1598209105}
   m_Layer: 5
   m_Name: LoadingText
   m_TagString: Untagged
@@ -535,6 +536,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1598209101}
   m_CullTransparentMesh: 0
+--- !u!114 &1598209105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598209101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 1598209103}
+  key: loading_text
 --- !u!1 &1666529427
 GameObject:
   m_ObjectHideFlags: 0
@@ -580,19 +595,21 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
       propertyPath: languageTexts.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
       propertyPath: languageTexts.Array.data[0].textComponent
       value: 
-      objectReference: {fileID: 1598209103}
+      objectReference: {fileID: 2053822965}
     - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
       propertyPath: languageTexts.Array.data[0].frenchText
-      value: ... Chargement ...
+      value: "Le Saviez-Vous : La Prohibition est le seul amendement de la Constitution
+        Am\xE9ricaine a avoir \xE9t\xE9 annul\xE9."
       objectReference: {fileID: 0}
     - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
       propertyPath: languageTexts.Array.data[0].englishText
-      value: ... Loading ...
+      value: 'Did You Know: Prohibition is the only amendment to the American Constitution
+        to have ever been repealed...'
       objectReference: {fileID: 0}
     - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
       propertyPath: languageTexts.Array.data[1].textComponent
@@ -754,6 +771,7 @@ GameObject:
   - component: {fileID: 2053822964}
   - component: {fileID: 2053822966}
   - component: {fileID: 2053822965}
+  - component: {fileID: 2053822967}
   m_Layer: 5
   m_Name: DYKText
   m_TagString: Untagged
@@ -821,6 +839,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2053822963}
   m_CullTransparentMesh: 0
+--- !u!114 &2053822967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053822963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 2053822965}
+  key: loading_fun_fact
 --- !u!1 &2090368624
 GameObject:
   m_ObjectHideFlags: 0

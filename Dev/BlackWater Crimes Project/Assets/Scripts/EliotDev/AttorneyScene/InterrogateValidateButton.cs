@@ -8,14 +8,20 @@ public class InterrogateValidateButton : MonoBehaviour
 {
     [SerializeField] Text inputText;
     [SerializeField] GameObject evidenceDisplayer;
-    [SerializeField] Text dialogueText;
+    [SerializeField] Localisation dialogueKey;
+
+    public string validKey;
+    public string wrongKey;
+    public string exceedKey;
+    public string missingKey;
+
     [SerializeField] Text interrogationsNumberText;
     [SerializeField] GameData gameData;
     Suspects inputSuspect;
 
     public bool debug;
 
-    private void Start() 
+    private void Start()
     {
         interrogationsNumberText.text += gameData.interrogations;
     }
@@ -24,7 +30,8 @@ public class InterrogateValidateButton : MonoBehaviour
     {
         if (debug)
         {
-            dialogueText.text = "This seems logic. I will bring this person!";
+            dialogueKey.key = validKey;
+            dialogueKey.RefreshText();
             StartCoroutine(DelayToInterrogate(2));
 
             Reset();
@@ -36,15 +43,21 @@ public class InterrogateValidateButton : MonoBehaviour
         {
             if (gameData.interrogations > 0)
             {
-                dialogueText.text = "This seems logic. I will bring this person!";
+                dialogueKey.key = validKey;
+                dialogueKey.RefreshText();
                 StartCoroutine(DelayToInterrogate(2));
             }
             else
             {
-                dialogueText.text = "Hold on a minute, you can't go on interrogating the whole city !";
+                dialogueKey.key = exceedKey;
+                dialogueKey.RefreshText();
             }
         }
-        else dialogueText.text = "This does not make any sense... Please detective, show me something concrete!";
+        else 
+        {
+            dialogueKey.key = wrongKey;
+            dialogueKey.RefreshText();
+        }
         
         Reset();
     }
@@ -98,7 +111,8 @@ public class InterrogateValidateButton : MonoBehaviour
         inputText.color = Color.black;
 
         GetComponent<Button>().interactable = false;
-        GetComponentInChildren<Text>().text = "Missing elements";
+        GetComponentInChildren<Localisation>().key = missingKey;
+        GetComponentInChildren<Localisation>().RefreshText();
     }
     
     IEnumerator DelayToInterrogate(int time)

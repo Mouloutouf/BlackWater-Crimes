@@ -983,6 +983,7 @@ GameObject:
   - component: {fileID: 1050104299}
   - component: {fileID: 1050104301}
   - component: {fileID: 1050104300}
+  - component: {fileID: 1050104302}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -1049,6 +1050,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1050104298}
   m_CullTransparentMesh: 0
+--- !u!114 &1050104302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050104298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 1050104300}
+  key: return_menu
 --- !u!1 &1128587926
 GameObject:
   m_ObjectHideFlags: 0
@@ -1060,6 +1075,7 @@ GameObject:
   - component: {fileID: 1128587927}
   - component: {fileID: 1128587929}
   - component: {fileID: 1128587928}
+  - component: {fileID: 1128587930}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -1126,6 +1142,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1128587926}
   m_CullTransparentMesh: 0
+--- !u!114 &1128587930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128587926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 1128587928}
+  key: menu_call_indic
 --- !u!114 &1249994403 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6054615890293101837, guid: e7f1cd350bc5f0941bb44b9e4b1ff994,
@@ -1149,6 +1179,7 @@ GameObject:
   - component: {fileID: 1307423852}
   - component: {fileID: 1307423854}
   - component: {fileID: 1307423853}
+  - component: {fileID: 1307423855}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -1215,6 +1246,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1307423851}
   m_CullTransparentMesh: 0
+--- !u!114 &1307423855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307423851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 1307423853}
+  key: menu_folders
 --- !u!1 &1311504190
 GameObject:
   m_ObjectHideFlags: 0
@@ -1516,6 +1561,7 @@ GameObject:
   - component: {fileID: 1860339347}
   - component: {fileID: 1860339349}
   - component: {fileID: 1860339348}
+  - component: {fileID: 1860339350}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -1582,6 +1628,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1860339346}
   m_CullTransparentMesh: 0
+--- !u!114 &1860339350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860339346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 1860339348}
+  key: menu_chicago_map
 --- !u!1001 &1926789239
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1809,31 +1869,31 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
       propertyPath: languageTexts.Array.size
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
       propertyPath: languageTexts.Array.data[0].textComponent
       value: 
-      objectReference: {fileID: 1307423853}
+      objectReference: {fileID: 1128587928}
     - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
       propertyPath: languageTexts.Array.data[0].englishText
-      value: Folders
+      value: Call an Indic
       objectReference: {fileID: 0}
     - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
       propertyPath: languageTexts.Array.data[0].frenchText
-      value: Carnets
+      value: Appel aux Indics
       objectReference: {fileID: 0}
     - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
       propertyPath: languageTexts.Array.data[1].textComponent
       value: 
-      objectReference: {fileID: 1860339348}
+      objectReference: {fileID: 1128587928}
     - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
       propertyPath: languageTexts.Array.data[1].englishText
-      value: Chicago Map
+      value: Call an Indic
       objectReference: {fileID: 0}
     - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
       propertyPath: languageTexts.Array.data[1].frenchText
-      value: Carte de Chicago
+      value: Appel aux Indics
       objectReference: {fileID: 0}
     - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
       propertyPath: languageTexts.Array.data[2].textComponent

@@ -10,8 +10,10 @@ public class InterrogateScript : SerializedMonoBehaviour
     [Title("Suspect Display")]
 
     [SerializeField] Text nameText;
-    [SerializeField] Text occupationText;
-    [SerializeField] Text dialogueText;
+    [SerializeField] Localisation occupationKey;
+    [SerializeField] Localisation dialogueKey;
+
+    public string endQuestionKey;
 
     [SerializeField] Image charaSprite;
 
@@ -34,38 +36,21 @@ public class InterrogateScript : SerializedMonoBehaviour
     
     void Start()
     {
-        switch (gameData.currentSuspect) //Update chara sprite & intro texts
+        foreach (Character character in gameData.characters)
         {
-            case Suspects.Abigail_White:
-                nameText.text = "Abigail White";
-                occupationText.text = "Pimp";
-                dialogueText.text = "Hello detective... Next time you want to ask me questions, I would be glad to welcome you at our place, it would be more... Comfortable.";
-                charaSprite.sprite = suspectSprites[Suspects.Abigail_White][Emotions.Neutral];
-                break;
-
-            case Suspects.Richard_Anderson:
-                nameText.text = "Richard Anderson";
-                occupationText.text = "Politician";
-                dialogueText.text = "I hope you have good reasons to disturb me during my busy day detective! Go ahead, what do you want? ";
-                charaSprite.sprite = suspectSprites[Suspects.Richard_Anderson][Emotions.Neutral];
-                break;
-
-            case Suspects.Bob_Jenkins:
-                nameText.text = "Bob Jenkins";
-                occupationText.text = "Police officer";
-                dialogueText.text = "I don't quite understand why you bring me here sir... Did I do something wrong while I was on duty?";
-                charaSprite.sprite = suspectSprites[Suspects.Bob_Jenkins][Emotions.Neutral];
-                break;
-
-            case Suspects.Umberto_Moretti:
-                nameText.text = "Umberto Moretti";
-                occupationText.text = "Handyman";
-                dialogueText.text = "Well officer, non vedo, non sento, non parlo...";
-                charaSprite.sprite = suspectSprites[Suspects.Umberto_Moretti][Emotions.Neutral];
-                break;
+            if (character.isSuspect && character.suspect == gameData.currentSuspect)
+            {
+                nameText.text = character.name;
+                occupationKey.key = character.jobKey;
+                dialogueKey.key = character.introPhraseKey;
+                charaSprite.sprite = suspectSprites[character.suspect][Emotions.Neutral];
+            }
         }
+        
+        occupationKey.RefreshText();
+        dialogueKey.RefreshText();
 
-        occupationText.text = occupationText.text.ToUpper();
+        //occupationKey.text = occupationKey.text.ToUpper();
         charaSprite.SetNativeSize();
         
         foreach (Question question in gameData.questions[gameData.currentSuspect]) if (question.unlockedData) questions.Add(question);
@@ -87,7 +72,8 @@ public class InterrogateScript : SerializedMonoBehaviour
             questionsParent.transform.GetChild(currentQuestion).gameObject.GetComponentInChildren<Text>().fontStyle = FontStyle.BoldAndItalic;
             questionsParent.transform.GetChild(currentQuestion).gameObject.GetComponent<Button>().enabled = false;
 
-            dialogueText.text = questions[currentQuestion]._answers[answerIndex].answer;
+            dialogueKey.key = questions[currentQuestion]._answers[answerIndex].answer;
+            dialogueKey.RefreshText();
             
             Emotions currentEmotion = questions[currentQuestion]._answers[answerIndex].emotion;
             charaSprite.sprite = suspectSprites[gameData.currentSuspect][currentEmotion];
@@ -99,7 +85,8 @@ public class InterrogateScript : SerializedMonoBehaviour
         if (answerIndex < questions[currentQuestion]._answers.Count - 1)
         {
             answerIndex ++;
-            dialogueText.text = questions[currentQuestion]._answers[answerIndex].answer;
+            dialogueKey.key = questions[currentQuestion]._answers[answerIndex].answer;
+            dialogueKey.RefreshText();
 
             Emotions currentEmotion = questions[currentQuestion]._answers[answerIndex].emotion;
             charaSprite.sprite = suspectSprites[gameData.currentSuspect][currentEmotion];
@@ -109,7 +96,8 @@ public class InterrogateScript : SerializedMonoBehaviour
 
     void EndQuestion()
     {
-        dialogueText.text = "Anything else detective?";
+        dialogueKey.key = endQuestionKey;
+        dialogueKey.RefreshText();
 
         nextButton.SetActive(false);
 

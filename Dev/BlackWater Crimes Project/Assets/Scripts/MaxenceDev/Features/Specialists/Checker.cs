@@ -10,15 +10,15 @@ public class IndicsText
 {
     public Indics indic;
 
-    public string introText;
+    public string introKey;
 
-    public string successText;
-    public string failureText;
+    public string successKey;
+    public string failureKey;
 }
 
 public class Checker : MonoBehaviour
 {
-    protected Text dialogueText;
+    protected Localisation dialogueKey;
     
     protected Button validateButton;
 
@@ -38,13 +38,14 @@ public class Checker : MonoBehaviour
     {
         gameData = GameObject.Find("Data Container").GetComponent<DataContainer>().gameData;
 
-        dialogueText = GameObject.Find("Dialogue Text").GetComponent<Text>();
+        dialogueKey = GameObject.Find("Dialogue Text").GetComponent<Localisation>();
         
         foreach (IndicsText indicsText in allIndicsText)
         {
             if (indicsText.indic == gameData.currentIndic)
             {
-                dialogueText.text = indicsText.introText;
+                dialogueKey.key = indicsText.introKey;
+                dialogueKey.RefreshText();
                 break;
             }
         }
@@ -174,8 +175,9 @@ public class Checker : MonoBehaviour
         {
             if (indicText.indic == gameData.currentIndic)
             {
-                if (match) dialogueText.text = indicText.successText;
-                else dialogueText.text = indicText.failureText;
+                if (match) dialogueKey.key = indicText.successKey;
+                else dialogueKey.key = indicText.failureKey;
+                dialogueKey.RefreshText();
 
                 break;
             }

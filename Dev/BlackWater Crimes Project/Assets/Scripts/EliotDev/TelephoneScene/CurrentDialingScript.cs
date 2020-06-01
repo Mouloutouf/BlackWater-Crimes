@@ -113,7 +113,7 @@ public class CurrentDialingScript : MonoBehaviour
         }
         else
         {
-            callingText.text = "Wrong number";
+            callingText.text = gameData.gameLanguage == Languages.English ? "Wrong Number" : "Mauvais Numéro";
             StartCoroutine(WaitForReset());
         }
     }

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 387698276}
   - component: {fileID: 387698277}
+  - component: {fileID: 6076510489270808320}
   m_Layer: 0
   m_Name: Language Manager
   m_TagString: Untagged
@@ -47,6 +48,21 @@ MonoBehaviour:
   languageTexts: []
   largeLanguageTexts: []
   languageUsingObjects: []
+  localisationKeys: []
+--- !u!114 &6076510489270808320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387698275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85bf5938a4e11754983d9a53cbfdb22c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameData: {fileID: 11400000, guid: eaa3567ddd179a64a9d879867070a0b4, type: 2}
+  testFile: {fileID: 4900000, guid: ae11c3e5d956a794a9ce414b76a183c7, type: 3}
 --- !u!1 &6054615889107839474
 GameObject:
   m_ObjectHideFlags: 0
@@ -574,6 +590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4206b0aec6eb07545a298b286059b682, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameData: {fileID: 0}
   sceneName: 
   loadSceneMode: 0
   withLoadingScreen: 0
@@ -648,6 +665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f087ffe139a6dea44b793653feecee4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menu: 0
   gameData: {fileID: 11400000, guid: eaa3567ddd179a64a9d879867070a0b4, type: 2}
 --- !u!1 &8560219952836006297
 GameObject:

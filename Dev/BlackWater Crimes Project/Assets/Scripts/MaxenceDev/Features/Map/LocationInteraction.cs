@@ -14,10 +14,10 @@ public class LocationInteraction : SerializedMonoBehaviour
     public Camera _camera;
 
     public GameObject locationMenu;
-    public Text menuName;
-    public Text menuDescription;
+    public Localisation menuNameKey;
+    public Localisation menuDescriptionKey;
     public Image menuArtwork;
-    public Text menuAdresse;
+    public Text menuAdress;
 
     public GameObject accessButton;
     public GameObject blockedButton;
@@ -77,10 +77,10 @@ public class LocationInteraction : SerializedMonoBehaviour
     void OpenLocationMenu(LocationObject _object)
     {
         locationMenu.SetActive(true);
-        menuName.text = _object.data.locationName;
-        menuDescription.text = _object.data.locationDescription;
+        menuNameKey.key = _object.data.nameKey; menuNameKey.RefreshText();
+        menuDescriptionKey.key = _object.data.descriptionKey; menuDescriptionKey.RefreshText();
         menuArtwork.sprite = _object.data.locationArtwork;
-        menuAdresse.text = _object.data.locationAdress;
+        menuAdress.text = _object.data.locationAdress;
 
         accessButton.GetComponent<Button>().onClick.AddListener(delegate 
         { 

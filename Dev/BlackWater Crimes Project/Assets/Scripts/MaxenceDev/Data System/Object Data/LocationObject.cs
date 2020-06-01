@@ -29,7 +29,8 @@ public class LocationObject : ObjectData<Location>
         if (!data.visible) locationSprite.SetActive(false);
         if (!data.accessible) { menuAccessButton.SetActive(false); menuBlockedButton.SetActive(true); }
 
-        locationName.GetComponentInChildren<TextMesh>().text = data.locationName;
+        locationName.GetComponentInChildren<LocalisationMesh>().key = data.nameKey;
+        locationName.GetComponentInChildren<LocalisationMesh>().RefreshText();
 
         if (!data.visible) locationName.SetActive(false);
         

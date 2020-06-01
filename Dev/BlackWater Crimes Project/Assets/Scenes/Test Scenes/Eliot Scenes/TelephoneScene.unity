@@ -12202,6 +12202,7 @@ GameObject:
   - component: {fileID: 1878819501}
   - component: {fileID: 1878819503}
   - component: {fileID: 1878819502}
+  - component: {fileID: 1878819504}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -12268,6 +12269,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1878819500}
   m_CullTransparentMesh: 0
+--- !u!114 &1878819504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878819500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 1878819502}
+  key: erase_text
 --- !u!1 &1913667310
 GameObject:
   m_ObjectHideFlags: 0
@@ -13250,7 +13265,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
       propertyPath: languageTexts.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
       propertyPath: languageTexts.Array.data[0].textComponent
