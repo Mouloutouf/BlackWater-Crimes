@@ -7,7 +7,7 @@ using Sirenix.OdinInspector;
 public class TutorialScript : SerializedMonoBehaviour
 {
     [Title("Dialogue References")]
-    public GameObject dialogueCanvas;
+    public GameObject dialogueUI;
     public Text dialogueUIText;
     public Image charaUIImage;
 
@@ -30,6 +30,18 @@ public class TutorialScript : SerializedMonoBehaviour
     [ListDrawerSettings(ShowIndexLabels = true)]
     public List<Sprite> dialoguesSprites = new List<Sprite>();
     int spriteIndex = 0;
+
+
+    [Title("Objective References")]
+    public GameObject objectiveUI;
+    public Text objectiveText;
+
+
+    [Title("Objective Text")]
+    public List<string> englishObjectives = new List<string>();
+    public List<string> frenchObjectives = new List<string>();    
+    List<string> currentObjectivesLanguage = new List<string>();
+    int objectiveIndex = 0;
 
 
     [Title("Docks References")]
@@ -128,7 +140,6 @@ public class TutorialScript : SerializedMonoBehaviour
 
     void Start()
     {
-        gameData.firstTimeInTuto = true;
         if(gameData.firstTimeInTuto)
         {
             gameData.firstTimeInTuto = false;
@@ -137,10 +148,12 @@ public class TutorialScript : SerializedMonoBehaviour
             {
                 case Languages.English:
                     currentDialogueLanguage = englishDialogues;
+                    currentObjectivesLanguage = englishObjectives;
                     break;
 
                 case Languages.French:
                     currentDialogueLanguage = frenchDialogues;
+                    currentObjectivesLanguage = frenchObjectives;
                     break;
             }
 
@@ -529,7 +542,7 @@ public class TutorialScript : SerializedMonoBehaviour
     
         NextLine();
 
-        dialogueCanvas.SetActive(false);
+        dialogueUI.SetActive(false);
         StartCoroutine(WaitForEndOfAnimation());
     }
 
@@ -623,8 +636,13 @@ public class TutorialScript : SerializedMonoBehaviour
 
     void EndCurrentDialogue()
     {
-        dialogueCanvas.SetActive(false);
+        dialogueUI.SetActive(false);
         textIndex = 0;
+
+        objectiveUI.SetActive(true);
+        objectiveText.text = "- " + currentObjectivesLanguage[objectiveIndex];
+        objectiveIndex ++;
+
 
         PrepareNextDialogue();
     }
@@ -843,13 +861,14 @@ public class TutorialScript : SerializedMonoBehaviour
     IEnumerator WaitForEndOfAnimation()
     {
         yield return new WaitForSeconds(3);
-        dialogueCanvas.SetActive(true);
+        dialogueUI.SetActive(true);
     }
 
     IEnumerator WaitForNextDialogue()
     {
+        objectiveUI.SetActive(false);
         yield return new WaitForSeconds(.3f);
-        dialogueCanvas.SetActive(true);
+        dialogueUI.SetActive(true);
         dialogueIndex ++;
         NextLine();
     }
