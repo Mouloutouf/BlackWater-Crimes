@@ -12,7 +12,8 @@ public class LanguageManager : MonoBehaviour
     public string languageKey { get { return gameData.gameLanguage == Languages.English ? "US" : "FR"; } }
     public TextAsset testFile;
 
-    Dictionary<string, string> allSentences = new Dictionary<string, string>();
+    Dictionary<string, string> sentencesFR = new Dictionary<string, string>();
+    Dictionary<string, string> sentencesEN = new Dictionary<string, string>();
     
     void Awake()
     {
@@ -28,13 +29,14 @@ public class LanguageManager : MonoBehaviour
 
     void CreateDictionary(TextAsset tsvFile)
     {
-        allSentences.Clear();
+        sentencesFR.Clear();
+        sentencesEN.Clear();
 
         if (tsvFile == null) return;
 
         string text = tsvFile.text;
         
-        string[] lines = text.Split(new string[]{"\n"}, StringSplitOptions.None);
+        string[] lines = text.Split(new string[]{"\n_"}, StringSplitOptions.None);
         
         string[] keyCells = lines[0].Split(new string[]{"\t"}, StringSplitOptions.None);
 
@@ -43,26 +45,36 @@ public class LanguageManager : MonoBehaviour
             string[] cells = lines[i].Split(new string[]{"\t"}, StringSplitOptions.None);
 
             string mainKey = cells[0];
-            for (int j = 1; j < cells.Length; j++)
-            {
-                allSentences.Add(mainKey + "_" + keyCells[j], cells[j]);
-            }
+
+            sentencesFR.Add(mainKey, cells[1]);
+            sentencesEN.Add(mainKey, cells[2]);
+        }
+
+        foreach (string _key in sentencesFR.Keys)
+        {
+            Debug.Log(_key + " : " + sentencesFR[_key]);
+        }
+        foreach (string _key in sentencesEN.Keys)
+        {
+            Debug.Log(_key + " : " + sentencesEN[_key]);
         }
     }
 
     public string Translate(string key)
     {
-        string fullKey = key + "_" + languageKey;
-        
         string sentence = "";
-
-        foreach (string _key in allSentences.Keys) Debug.Log(_key); // Debug Line
-        Debug.Log(fullKey);
-        if (allSentences.ContainsKey(fullKey)) sentence = allSentences[fullKey];
-        else Debug.Log("The Given Key was not present in the Dictionary, either the key did not match or Unity is unable to process basic information.");
-
-        Debug.Log(allSentences.Count);
-
+        
+        if (gameData.gameLanguage == Languages.French)
+        {
+            if (sentencesFR.ContainsKey(key)) sentence = sentencesFR[key];
+            else Debug.Log("The Given Key was not present in the Dictionary, either the key did not match or Unity is unable to process basic information.");
+        }
+        else
+        {
+            if (sentencesEN.ContainsKey(key)) sentence = sentencesEN[key];
+            else Debug.Log("The Given Key was not present in the Dictionary, either the key did not match or Unity is unable to process basic information.");
+        }
+        
         return sentence;
     }
 }
