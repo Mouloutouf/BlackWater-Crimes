@@ -10,6 +10,9 @@ public class AttorneyClueShowerScript : MonoBehaviour
     [SerializeField] GameObject clueFolder;
     [SerializeField] Button validateButton;
 
+    public string missingKey;
+    public string validateKey;
+
     public bool hasTwoDisplayers;
 
     GameObject evidenceDisplayerUsed;
@@ -26,7 +29,14 @@ public class AttorneyClueShowerScript : MonoBehaviour
         if (debug)
         {
             validateButton.interactable = true;
-            validateButton.GetComponentInChildren<Text>().text = "Validate";
+            validateButton.GetComponentInChildren<Localisation>().key = validateKey;
+            validateButton.GetComponentInChildren<Localisation>().RefreshText();
+        }
+
+        else
+        {
+            validateButton.GetComponentInChildren<Localisation>().key = missingKey;
+            validateButton.GetComponentInChildren<Localisation>().RefreshText();
         }
     }
 
@@ -50,17 +60,14 @@ public class AttorneyClueShowerScript : MonoBehaviour
 
         folderOpen = false;
         evidenceDisplayerUsed = null;
-
-        if (hasTwoDisplayers && currentEvidencesDisplayed[0] != null && currentEvidencesDisplayed[1] != null)
+        
+        if (currentEvidencesDisplayed[0] != null)
         {
-            validateButton.interactable = true;
-            validateButton.GetComponentInChildren<Text>().text = "Validate";
-        }
+            if (hasTwoDisplayers && currentEvidencesDisplayed[1] == null) return;
 
-        else if (!hasTwoDisplayers && currentEvidencesDisplayed[0] != null)
-        {
             validateButton.interactable = true;
-            validateButton.GetComponentInChildren<Text>().text = "Validate";
+            validateButton.GetComponentInChildren<Localisation>().key = validateKey;
+            validateButton.GetComponentInChildren<Localisation>().RefreshText();
         }
     }
 

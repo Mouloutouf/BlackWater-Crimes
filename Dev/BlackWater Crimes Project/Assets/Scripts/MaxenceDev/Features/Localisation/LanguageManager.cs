@@ -10,7 +10,7 @@ public class LanguageManager : MonoBehaviour
     public static LanguageManager instance;
 
     public string languageKey { get { return gameData.gameLanguage == Languages.English ? "US" : "FR"; } }
-    public TextAsset testFile;
+    public List<TextAsset> files = new List<TextAsset>();
 
     Dictionary<string, string> sentencesFR = new Dictionary<string, string>();
     Dictionary<string, string> sentencesEN = new Dictionary<string, string>();
@@ -24,14 +24,17 @@ public class LanguageManager : MonoBehaviour
         }
         instance = this;
         
-        CreateDictionary(testFile);
+        sentencesFR.Clear();
+        sentencesEN.Clear();
+
+        foreach (TextAsset file in files)
+        {
+            CreateDictionary(file);
+        }
     }
 
     void CreateDictionary(TextAsset tsvFile)
     {
-        sentencesFR.Clear();
-        sentencesEN.Clear();
-
         if (tsvFile == null) return;
 
         string text = tsvFile.text;

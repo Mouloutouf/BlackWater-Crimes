@@ -104,7 +104,8 @@ public class EvidenceObject : ObjectData<Evidence>
         }
         else
         {
-            displayTextComponent.text = data.descriptionText;
+            displayTextComponent.gameObject.GetComponent<Localisation>().key = data.textKey;
+            displayTextComponent.gameObject.GetComponent<Localisation>().RefreshText();
             displayTextComponent.transform.parent.gameObject.SetActive(true);
 
             isShown = true;

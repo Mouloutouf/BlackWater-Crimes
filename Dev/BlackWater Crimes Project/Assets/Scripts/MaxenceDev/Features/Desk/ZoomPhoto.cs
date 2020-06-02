@@ -35,39 +35,42 @@ public class ZoomPhoto : MonoBehaviour
     public void ZoomObject()
     {
         Sprite image = this.gameObject.GetComponent<PhotoObject>().data.photo;
-        string name = this.gameObject.GetComponent<PhotoObject>().data.codeName;
+        string nameKey = this.gameObject.GetComponent<PhotoObject>().data.nameKey;
 
         if (this.gameObject.GetComponent<PhotoObject>().data.hasText)
         {
-            string text = this.gameObject.GetComponent<PhotoObject>().data.descriptionText;
-            Zoom(image, name, text);
+            string textKey = this.gameObject.GetComponent<PhotoObject>().data.textKey;
+            Zoom(image, nameKey, textKey);
         }
-        else Zoom(image, name);
+        else Zoom(image, nameKey);
 
         isZoomed = true;
     }
 
-    public void Zoom(Sprite photoSprite, string photoName)
+    public void Zoom(Sprite photoSprite, string nameKey)
     {
         zoomPanel.SetActive(true);
         zoomPanel.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = photoSprite;
-        zoomPanel.transform.GetChild(0).GetChild(1).GetComponent<Text>().text = photoName;
+        zoomPanel.transform.GetChild(0).GetChild(1).GetComponent<Localisation>().key = nameKey;
+        zoomPanel.transform.GetChild(0).GetChild(1).GetComponent<Localisation>().RefreshText();
 
         zoomPanel.transform.GetChild(0).GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
 
         zoomPanel.transform.GetChild(1).gameObject.SetActive(false);
     }
 
-    public void Zoom(Sprite photoSprite, string photoName, string photoText)
+    public void Zoom(Sprite photoSprite, string nameKey, string textKey)
     {
         zoomPanel.SetActive(true);
         zoomPanel.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = photoSprite;
-        zoomPanel.transform.GetChild(0).GetChild(1).GetComponent<Text>().text = photoName;
+        zoomPanel.transform.GetChild(0).GetChild(1).GetComponent<Localisation>().key = nameKey;
+        zoomPanel.transform.GetChild(0).GetChild(1).GetComponent<Localisation>().RefreshText();
 
         zoomPanel.transform.GetChild(0).GetComponent<RectTransform>().anchoredPosition = imagePosWithText;
 
         zoomPanel.transform.GetChild(1).gameObject.SetActive(true);
-        zoomPanel.transform.GetChild(1).GetComponent<Text>().text = photoText;
+        zoomPanel.transform.GetChild(1).GetComponent<Localisation>().key = textKey;
+        zoomPanel.transform.GetChild(1).GetComponent<Localisation>().RefreshText();
     }
 
     public void DeZoom()

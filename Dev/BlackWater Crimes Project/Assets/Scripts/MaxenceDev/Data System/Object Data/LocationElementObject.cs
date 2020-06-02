@@ -20,7 +20,7 @@ public class LocationElementObject : ObjectData<Location>
     {
         imageObject.GetComponent<Image>().sprite = data.locationCroppedImage;
 
-        if (textObject != null) textObject.GetComponent<Text>().text = data.locationName;
+        if (textObject != null) { textObject.GetComponent<Localisation>().key = data.nameKey; textObject.GetComponent<Localisation>().RefreshText(); }
 
         base.Protocol();
     }

@@ -454,6 +454,8 @@ MonoBehaviour:
   fingerprintDiscoveredSound: {fileID: 8300000, guid: c6fdc7f41a026f348bb037b534bf5230,
     type: 3}
   vibrateSystem: {fileID: 0}
+  saveKey: photo_saved
+  replaceKey: photo_replaced
 --- !u!1 &2213011490861833837
 GameObject:
   m_ObjectHideFlags: 0
@@ -558,6 +560,7 @@ GameObject:
   - component: {fileID: 2213011491066520708}
   - component: {fileID: 2213011491066520730}
   - component: {fileID: 2213011491066520731}
+  - component: {fileID: 1965669185417897507}
   m_Layer: 5
   m_Name: Display Text
   m_TagString: Untagged
@@ -624,6 +627,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Photo Saved
+--- !u!114 &1965669185417897507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2213011491066520709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 2213011491066520731}
+  key: 
 --- !u!1 &2213011491200208163
 GameObject:
   m_ObjectHideFlags: 0
@@ -1154,6 +1171,7 @@ GameObject:
   - component: {fileID: 6489725231845354019}
   - component: {fileID: 8462622417511995512}
   - component: {fileID: 2581055568132685622}
+  - component: {fileID: 7125955699477817566}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -1177,7 +1195,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -25}
+  m_AnchoredPosition: {x: 0, y: -24.99997}
   m_SizeDelta: {x: -600, y: -250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8462622417511995512
@@ -1220,6 +1238,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: joyskfekfekfzekfzekfzekfzkefzke
+--- !u!114 &7125955699477817566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6610753772092709733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 2581055568132685622}
+  key: 
 --- !u!1001 &2213011491149554502
 PrefabInstance:
   m_ObjectHideFlags: 0

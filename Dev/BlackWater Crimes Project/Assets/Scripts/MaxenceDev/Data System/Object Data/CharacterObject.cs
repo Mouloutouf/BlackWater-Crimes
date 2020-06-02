@@ -10,7 +10,7 @@ public class CharacterObject : ObjectData<Character>
 
     public GameObject imageObject;
     public GameObject textObject;
-
+    
     public float factor;
 
     void Start()

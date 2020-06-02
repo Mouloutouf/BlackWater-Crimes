@@ -13,9 +13,9 @@ public class ReportObject : ObjectData<Report>
     public float agentFactor;
 
     public Image ElementImage;
-    public Text ElementText;
+    public Localisation elementKey;
     
-    public Text reportText;
+    public Localisation reportKey;
 
     public Image signatureImage;
 
@@ -36,9 +36,11 @@ public class ReportObject : ObjectData<Report>
         agentText.text = data.agentName;
 
         ElementImage.sprite = data.elementSprite;
-        ElementText.text = data.elementName;
+        elementKey.key = data.elementKey;
+        elementKey.RefreshText();
 
-        reportText.text = data.reportText;
+        reportKey.key = data.reportKey;
+        reportKey.RefreshText();
 
         if (signatureImage != null) signatureImage.sprite = data.signature;
 

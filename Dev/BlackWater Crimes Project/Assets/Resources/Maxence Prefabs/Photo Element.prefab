@@ -52,34 +52,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01e706babbafbfb469917f9d9e1c4a3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showData: 0
   data:
     unlockedData: 0
     index: 0
     codeName: 
+    nameKey: 
     intelSelf: 0
     hasIntels: 0
     intels: []
     useToUnlock: 0
     unlockableLocation: 0
     photo: {fileID: 0}
+    photoPath: 
     hasText: 0
     descriptionText: 
+    textKey: 
     modeCategory:
       location: 0
       suspect: 0
-      type: 0
     seen: 0
-  instantiate: 1
-  hasApplied: 0
-  photosBooklet: {fileID: 0}
-  pageNumber: 0
-  polaroids:
-  - {fileID: 21300000, guid: 9c0b429e593031441b690f9e49978050, type: 3}
-  - {fileID: 21300000, guid: 97464b157447ea940b83601ab85aaf54, type: 3}
   imageObject: {fileID: 789022149131863392}
-  polaroidObject: {fileID: 2727575133062196535}
   textObject: {fileID: 789022149021782609}
   holder: {fileID: 8744983604303464028}
+  pageNumber: 0
 --- !u!114 &7984622872036610523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,6 +238,7 @@ GameObject:
   - component: {fileID: 789022149021782610}
   - component: {fileID: 789022149021782612}
   - component: {fileID: 789022149021782611}
+  - component: {fileID: 9217783000420510711}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -308,6 +305,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: New Text
+--- !u!114 &9217783000420510711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789022149021782609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 789022149021782611}
+  key: 
 --- !u!1 &789022149131863392
 GameObject:
   m_ObjectHideFlags: 0

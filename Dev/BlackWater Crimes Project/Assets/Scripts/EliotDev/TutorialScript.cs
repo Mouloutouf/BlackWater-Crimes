@@ -8,7 +8,7 @@ public class TutorialScript : SerializedMonoBehaviour
 {
     [Title("Dialogue References")]
     public GameObject dialogueUI;
-    public Text dialogueUIText;
+    public Localisation dialogueUIKey;
     public Image charaUIImage;
 
 
@@ -34,7 +34,7 @@ public class TutorialScript : SerializedMonoBehaviour
 
     [Title("Objective References")]
     public GameObject objectiveUI;
-    public Text objectiveText;
+    public Localisation objectiveKey;
 
 
     [Title("Objective Text")]
@@ -144,18 +144,8 @@ public class TutorialScript : SerializedMonoBehaviour
         {
             gameData.firstTimeInTuto = false;
             DontDestroyOnLoad(this.gameObject);
-            switch (gameData.gameLanguage)
-            {
-                case Languages.English:
-                    currentDialogueLanguage = englishDialogues;
-                    currentObjectivesLanguage = englishObjectives;
-                    break;
-
-                case Languages.French:
-                    currentDialogueLanguage = frenchDialogues;
-                    currentObjectivesLanguage = frenchObjectives;
-                    break;
-            }
+            currentDialogueLanguage = englishDialogues;
+            currentObjectivesLanguage = englishObjectives;
 
             DockStart();
         }
@@ -621,7 +611,8 @@ public class TutorialScript : SerializedMonoBehaviour
         if(textIndex < currentDialogueLanguage[dialogueIndex].Count)
         {
             List<string> tempList = currentDialogueLanguage[dialogueIndex];
-            dialogueUIText.text = tempList[textIndex];
+            dialogueUIKey.key = tempList[textIndex];
+            dialogueUIKey.RefreshText();
 
             charaUIImage.sprite = dialoguesSprites[spriteIndex];
 
@@ -640,7 +631,8 @@ public class TutorialScript : SerializedMonoBehaviour
         textIndex = 0;
 
         objectiveUI.SetActive(true);
-        objectiveText.text = "- " + currentObjectivesLanguage[objectiveIndex];
+        objectiveKey.key = currentObjectivesLanguage[objectiveIndex];
+        objectiveKey.RefreshText();
         objectiveIndex ++;
 
 

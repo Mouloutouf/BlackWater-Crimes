@@ -57,7 +57,8 @@ public class InterrogateScript : SerializedMonoBehaviour
 
         for (int i = 0; i < questions.Count; i++) // Set the Associated Questions Texts
         {
-            questionsParent.transform.GetChild(i).gameObject.GetComponentInChildren<Text>().text = questions[i].question;
+            questionsParent.transform.GetChild(i).gameObject.GetComponentInChildren<Localisation>().key = questions[i].questionKey;
+            questionsParent.transform.GetChild(i).gameObject.GetComponentInChildren<Localisation>().RefreshText();
         }
     }
 

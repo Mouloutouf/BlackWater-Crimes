@@ -4,15 +4,17 @@ using System.Linq;
 
 public class InformationButton : MonoBehaviour
 {
-    public string informationText;
+    public string infoKey;
     public string buttonName;
-    public Text informationTextObject;
+    public Localisation informationKey;
     public GameObject bulleTexte;
     public Camera _camera;
 
     public void Start()
     {
-        informationTextObject.text = informationText;
+        informationKey.key = infoKey;
+        informationKey.RefreshText();
+        
         buttonName = gameObject.name;
     }
 

@@ -39,6 +39,9 @@ public class EvidenceInteraction : MonoBehaviour
     
     public VibrateSystem vibrateSystem;
 
+    public string saveKey;
+    public string replaceKey;
+
     [ExecuteInEditMode]
     void OnEnable()
     {
@@ -181,7 +184,7 @@ public class EvidenceInteraction : MonoBehaviour
         {
             soundAudio.PlayOneShot(photoSavedSound);
             vibrateSystem.PhoneVibrate();
-            StartCoroutine(DisplayText("Photo Saved"));
+            StartCoroutine(DisplayText(saveKey));
 
             _evidence.photographed = true;
             _evidence.unlockedData = true;
@@ -192,7 +195,7 @@ public class EvidenceInteraction : MonoBehaviour
         {
             soundAudio.PlayOneShot(photoReplacedSound);
             vibrateSystem.PhoneVibrate();
-            StartCoroutine(DisplayText("Photo Replaced"));
+            StartCoroutine(DisplayText(replaceKey));
         }
 
         // Takes the Screenshot and saves it under the right File Path
@@ -275,11 +278,11 @@ public class EvidenceInteraction : MonoBehaviour
         }
     }
 
-    IEnumerator DisplayText(string textToDisplay)
+    IEnumerator DisplayText(string keyToDisplay)
     {
         yield return new WaitForSeconds(0.1f);
         saveText.SetActive(true);
-        saveText.GetComponent<Text>().text = textToDisplay;
+        saveText.GetComponent<Localisation>().key = keyToDisplay;
         yield return new WaitForSeconds(2f);
         saveText.SetActive(false);
     }
