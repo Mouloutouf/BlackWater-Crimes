@@ -73,7 +73,7 @@ public class InterrogateScript : SerializedMonoBehaviour
             questionsParent.transform.GetChild(currentQuestion).gameObject.GetComponentInChildren<Text>().fontStyle = FontStyle.BoldAndItalic;
             questionsParent.transform.GetChild(currentQuestion).gameObject.GetComponent<Button>().enabled = false;
 
-            dialogueKey.key = questions[currentQuestion]._answers[answerIndex].answer;
+            dialogueKey.key = questions[currentQuestion]._answers[answerIndex].answerKey;
             dialogueKey.RefreshText();
             
             Emotions currentEmotion = questions[currentQuestion]._answers[answerIndex].emotion;
@@ -86,7 +86,7 @@ public class InterrogateScript : SerializedMonoBehaviour
         if (answerIndex < questions[currentQuestion]._answers.Count - 1)
         {
             answerIndex ++;
-            dialogueKey.key = questions[currentQuestion]._answers[answerIndex].answer;
+            dialogueKey.key = questions[currentQuestion]._answers[answerIndex].answerKey;
             dialogueKey.RefreshText();
 
             Emotions currentEmotion = questions[currentQuestion]._answers[answerIndex].emotion;

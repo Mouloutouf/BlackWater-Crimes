@@ -75,7 +75,11 @@ public class ReportObject : ObjectData<Report>
         {
             foreach (Location location in _gameData.locations)
             {
-                if (location.myLocation == report.locationToAccess) location.known = true;
+                if (location.myLocation == report.locationToAccess)
+                {
+                    location.known = true;
+                    location.accessible = true;
+                }
             }
         }
     }

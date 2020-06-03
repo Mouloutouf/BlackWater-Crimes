@@ -505,6 +505,11 @@ public class GameData : SerializedScriptableObject
         }
         interrogations = SetData(action, interrogations, nameof(interrogations));
 
+        foreach (Indic indic in indics.Values)
+        {
+            indic.quickCallAvailable = SetData(action, indic.quickCallAvailable, indic.name + "_" + nameof(indic.quickCallAvailable));
+        }
+
         firstTimeInTuto = SetData(action, firstTimeInTuto, nameof(firstTimeInTuto));
     }
 
