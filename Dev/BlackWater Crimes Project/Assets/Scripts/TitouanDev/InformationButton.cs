@@ -8,7 +8,7 @@ public class InformationButton : MonoBehaviour
     public string buttonName;
     public Localisation informationKey;
     public GameObject bulleTexte;
-    public Camera _camera;
+    public ScrollRect scrollRect;
 
     public void Start()
     {
@@ -18,17 +18,15 @@ public class InformationButton : MonoBehaviour
         buttonName = gameObject.name;
     }
 
-    public void Update()
+    public void ShowBulle()
     {
-        RaycastHit2D[] hits = Physics2D.RaycastAll(_camera.ScreenToWorldPoint(Input.mousePosition), new Vector3(0, 0, 1));
+        bulleTexte.SetActive(true);
+        scrollRect.enabled = false;
+    }
 
-        if (hits.Count() > 0 && hits[0].transform.GetComponent<BoxCollider2D>() != null && Input.GetMouseButton(0) && hits[0].transform.gameObject.name == buttonName)
-        {
-            bulleTexte.SetActive(true);
-        }
-        else
-        {
-            bulleTexte.SetActive(false);
-        }
+    public void HideBulle()
+    {
+        bulleTexte.SetActive(false);
+        scrollRect.enabled = true;
     }
 }
