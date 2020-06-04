@@ -4,154 +4,38 @@ using UnityEngine;
 using UnityEngine.UI;
 using Sirenix.OdinInspector;
 
-public class InstantiateLocationElements : InstantiationProcess<Location>
+public class InstantiateLocationElements : InstantiateElements<Location>
 {
-    public GameObject placeHolderPrefab;
+    protected override List<List<Location>> GetAllElements()
+    {
+        List<List<Location>> mainList = new List<List<Location>>();
 
-    [Title("Settings")]
+        List<Location> allLocations = new List<Location>();
 
-    public int amountInEachColumn;
-    public int amountInEachRow;
+        foreach (Location location in gameData.locations)
+        {
+            allLocations.Add(location);
+        }
 
-    public float scaleAmount;
+        mainList.Add(allLocations);
 
-    [HideInInspector] public List<Vector2> spawnPoints = new List<Vector2>();
-    [HideInInspector] public List<Vector2> spawnScales = new List<Vector2>();
+        return mainList;
+    }
 
-    [Title("Contents", horizontalLine: false)]
+    protected override bool Check(Location data)
+    {
+        bool check = data.unlockedData && data.known;
 
-    public InstantiateReports mainContentScript;
-    private int mainIndex = 0;
-
-    public Transform placeHolderContent;
-
-    public List<Transform> contents;
-    private Transform currentContent;
-
-    private Transform pageContent;
-
-    private int spawnIndex = 0;
-
-    public List<GameObject> elementsList { get; private set; } = new List<GameObject>();
-
-    public DisplaySystem locationDisplay;
+        return check;
+    }
 
     void Start()
     {
-        GetGameData();
-
-        SetLayout();
-
-        /*
-        for (int i = 0; i < spawnPoints.Count; i++) // Instantiate Place Holder Prefabs
-        {
-            Instantiation(placeHolderPrefab);
-        }
-        */
-
-        spawnIndex = 0;
-
-        int local = 0;
-        currentContent = contents[local];
-        CreatePage(currentContent);
-
-        foreach (Location _location in gameData.locations)
-        {
-            if (_location.unlockedData && _location.known)
-            {
-                InstantiateObjectOfType(_location, this.prefab);
-
-                SetElement(_location);
-                mainIndex++;
-            }
-        }
+        Initialize();
     }
 
-    public override GameObject Instantiation(GameObject prefab)
+    protected override string GetDataName(Location data)
     {
-        if (prefab == this.prefab)
-        {
-            GameObject _prefab = Instantiate(prefab) as GameObject;
-            _prefab.transform.SetParent(pageContent, false);
-
-            _prefab.GetComponent<RectTransform>().anchoredPosition = spawnPoints[spawnIndex];
-
-            //GameObject obj = _prefab.transform.GetChild(0).GetChild(_prefab.transform.GetChild(0).childCount - 1).gameObject;
-            //_prefab.GetComponent<Button>().onClick.AddListener(delegate { locationDisplay.SelectElement(obj); });
-
-            elementsList.Add(_prefab);
-
-            spawnIndex++;
-            if (spawnIndex == amountInEachRow * amountInEachColumn) { CreatePage(currentContent); }
-
-            return _prefab;
-        }
-        else if (prefab == placeHolderPrefab)
-        {
-            GameObject __prefab = Instantiate(prefab) as GameObject;
-            __prefab.transform.SetParent(placeHolderContent, false);
-
-            __prefab.GetComponent<RectTransform>().anchoredPosition = spawnPoints[spawnIndex];
-
-            spawnIndex++;
-
-            return __prefab;
-        }
-        else
-        {
-            return prefab;
-        }
-    }
-
-    void SetElement(Location location)
-    {
-        int ind = mainIndex;
-        mainContentScript.holders[1].elements.Add(new Element { index = ind, name = location.locationAdress, elementObject = elementsList[ind] });
-    }
-
-    void SetLayout()
-    {
-        float sizeX = contents[0].GetComponent<RectTransform>().rect.width / amountInEachRow;
-        float sizeY = contents[0].GetComponent<RectTransform>().rect.height / amountInEachColumn;
-
-        float posX;
-        float posY;
-
-        float scaleX;
-        float scaleY;
-
-        for (int w = 0; w < amountInEachColumn; w++)
-        {
-            posY = (sizeY / 2) + sizeY * w;
-
-            for (int v = 0; v < amountInEachRow; v++)
-            {
-                posX = (sizeX / 2) + sizeX * v;
-
-                spawnPoints.Add(new Vector2(posX, -posY));
-
-                if (sizeX > sizeY) { scaleX = sizeY - scaleAmount; scaleY = sizeY - scaleAmount; } // Scale with Height
-                else { scaleX = sizeX - scaleAmount; scaleY = sizeX - scaleAmount; } // Scale with Width
-
-                spawnScales.Add(new Vector2(scaleX, scaleY));
-            }
-        }
-    }
-
-    void CreatePage(Transform content)
-    {
-        GameObject page = Instantiate(new GameObject());
-        page.transform.SetParent(content, false);
-
-        page.AddComponent<RectTransform>();
-        page.GetComponent<RectTransform>().anchorMin = Vector2.zero; // sets the mode (stretch)
-        page.GetComponent<RectTransform>().anchorMax = Vector2.one;
-        page.GetComponent<RectTransform>().sizeDelta = Vector2.zero; // sets the size (offsets to 0)
-
-        page.name = "Page Content";
-
-        pageContent = page.transform;
-
-        spawnIndex = 0;
+        return data.locationAdress;
     }
 }

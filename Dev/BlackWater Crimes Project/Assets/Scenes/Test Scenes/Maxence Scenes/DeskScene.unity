@@ -3125,18 +3125,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 7485531061562324480, guid: dabed4893ef8ec14aa184421fe4c30aa, type: 3}
-  placeHolderPrefab: {fileID: 2924228119259497796, guid: c641891b1864d35469944a47e9eb3ec5,
-    type: 3}
+  instantiateReports: {fileID: 1454456515}
   amountInEachColumn: 2
   amountInEachRow: 3
   scaleAmount: 20
   spawnPoints: []
   spawnScales: []
-  mainContentScript: {fileID: 1454456515}
-  placeHolderContent: {fileID: 1968345918}
   contents:
   - {fileID: 1874278646}
-  locationDisplay: {fileID: 1874278647}
+  reportsContent: {fileID: 2018433682}
+  display: {fileID: 1874278647}
 --- !u!1 &1116606704
 GameObject:
   m_ObjectHideFlags: 0
@@ -3624,12 +3622,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 4061153543470559034, guid: 1551035ed1b2187439a0933ed5a64c43, type: 3}
-  amountInEachPage: 5
+  instantiateReports: {fileID: 1454456515}
+  amountInEachColumn: 5
+  amountInEachRow: 1
+  scaleAmount: 0
   spawnPoints: []
-  mainContentScript: {fileID: 1454456515}
+  spawnScales: []
   contents:
   - {fileID: 2062860387}
-  reportDisplay: {fileID: 2062860388}
+  reportsContent: {fileID: 531771770}
+  display: {fileID: 2062860388}
 --- !u!1 &1398180771
 GameObject:
   m_ObjectHideFlags: 0
@@ -4002,24 +4004,7 @@ MonoBehaviour:
   prefab: {fileID: 1127452058719276218, guid: 2ed2c364afcc1af448eb4faee3fbe24f, type: 3}
   failedPrefab: {fileID: 5798861634024255781, guid: 471094f72167d8e4f8222c77c3ce7455,
     type: 3}
-  holders:
-  - display: {fileID: 2062860388}
-    holderContent: {fileID: 531771770}
-    elements: []
-    reports: []
-  - display: {fileID: 1874278647}
-    holderContent: {fileID: 2018433682}
-    elements: []
-    reports: []
-  - display: {fileID: 377703613}
-    holderContent: {fileID: 781815819}
-    elements: []
-    reports: []
-  - display: {fileID: 2070389523}
-    holderContent: {fileID: 1241020121}
-    elements: []
-    reports: []
-  failedContentHolder: {fileID: 1533738241}
+  failedContent: {fileID: 0}
 --- !u!114 &1454456516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4943,15 +4928,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 789022147938596729, guid: ece7a87cb6a88b144a011bfc92061766, type: 3}
-  placeHolderPrefab: {fileID: 2924228119259497796, guid: c641891b1864d35469944a47e9eb3ec5,
-    type: 3}
+  instantiateReports: {fileID: 1454456515}
   amountInEachColumn: 2
   amountInEachRow: 3
   scaleAmount: 35
   spawnPoints: []
   spawnScales: []
-  mainContentScript: {fileID: 1454456515}
-  placeHolderContent: {fileID: 221880743}
   contents:
   - {fileID: 1979184202}
   - {fileID: 2138328480}
@@ -4962,7 +4944,8 @@ MonoBehaviour:
   - {fileID: 1367537033}
   - {fileID: 2106245633}
   - {fileID: 466311808}
-  photoDisplay: {fileID: 2070389523}
+  reportsContent: {fileID: 1241020121}
+  display: {fileID: 2070389523}
   zoomPhoto: {fileID: 1859268393}
 --- !u!224 &1682709776 stripped
 RectTransform:
@@ -5307,18 +5290,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 6480464397386579426, guid: 16e91f27ecdcdc548b11f62a48c0069a, type: 3}
-  placeHolderPrefab: {fileID: 2924228119259497796, guid: c641891b1864d35469944a47e9eb3ec5,
-    type: 3}
+  instantiateReports: {fileID: 1454456515}
   amountInEachColumn: 2
   amountInEachRow: 3
   scaleAmount: 20
   spawnPoints: []
   spawnScales: []
-  mainContentScript: {fileID: 1454456515}
-  placeHolderContent: {fileID: 2099037361}
   contents:
   - {fileID: 377703612}
-  characterDisplay: {fileID: 377703613}
+  reportsContent: {fileID: 781815819}
+  display: {fileID: 377703613}
 --- !u!1 &1758939141
 GameObject:
   m_ObjectHideFlags: 0

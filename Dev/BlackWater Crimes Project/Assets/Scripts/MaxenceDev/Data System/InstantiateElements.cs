@@ -8,7 +8,7 @@ public class InstantiateElements<T> : InstantiationProcess<T> where T : Data
 {
     public List<List<T>> allElements { get { return GetAllElements(); } }
 
-    private List<T> allData;
+    protected List<T> allData;
 
     public InstantiateReports instantiateReports;
 
@@ -33,9 +33,6 @@ public class InstantiateElements<T> : InstantiationProcess<T> where T : Data
     public Transform reportsContent;
     public DisplaySystem display;
 
-    // Exclusive Photo Elements
-    public ZoomPhoto zoomPhoto;
-
     protected virtual List<List<T>> GetAllElements()
     {
         return new List<List<T>>();
@@ -44,15 +41,17 @@ public class InstantiateElements<T> : InstantiationProcess<T> where T : Data
     #region Instantiation Process
     protected virtual bool Check(T data)
     {
-        // Exclusive Location Elements
-        bool isKnown = new Location().known;
-
         return data.unlockedData;
     }
 
     protected virtual void OrderElements() {}
 
     void Start()
+    {
+        Initialize();
+    }
+
+    protected void Initialize()
     {
         GetGameData();
         
@@ -122,15 +121,15 @@ public class InstantiateElements<T> : InstantiationProcess<T> where T : Data
         {
             foreach (Report _report in megaList.Item1)
             {
-                if (_report.elementName == GetDataName())
+                if (_report.elementName == GetDataName(_data))
                 {
-                    instantiateReports.InstantiateByElement(reportsContent, _element, _report, display);
+                    instantiateReports.CreateAssociatedReport(reportsContent, _element, _report, display);
                 }
             }
         }
     }
     
-    protected virtual string GetDataName() { return ""; }
+    protected virtual string GetDataName(T data) { return ""; }
     #endregion
 
     #region Layout
