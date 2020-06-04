@@ -27,7 +27,7 @@ public class InstantiateReports : InstantiationProcess<Report>
 
     void InstantiateFailedReports()
     {
-        foreach ((List<Report>, List<Report>) _list in gameData.megaReports.Values)
+        foreach ((List<Report>, List<Report>) _list in gameData.reports.Values)
         {
             foreach (Report fReport in _list.Item2)
             {

@@ -73,7 +73,7 @@ public class Instantiate : InstantiationProcess<Evidence>
     {
         GetGameData();
 
-        foreach (List<Evidence> _list in gameData.allEvidences.Values)
+        foreach (List<Evidence> _list in gameData.evidences.Values)
         {
             InstantiateDataOfType(type, _list);
         }

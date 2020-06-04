@@ -33,7 +33,7 @@ public class FailedReportsManager : MonoBehaviour
 
     public void ClearAllFailedReports()
     {
-        foreach ((List<Report>, List<Report>) reports in gameData.megaReports.Values)
+        foreach ((List<Report>, List<Report>) reports in gameData.reports.Values)
         {
             Report template = new Report();
 

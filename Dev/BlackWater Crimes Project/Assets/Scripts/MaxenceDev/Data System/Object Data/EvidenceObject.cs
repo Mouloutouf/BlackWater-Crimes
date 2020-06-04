@@ -36,7 +36,7 @@ public class EvidenceObject : ObjectData<Evidence>
     {
         GetGameData();
 
-        List<Evidence> myDataList = gameData.allEvidences[data.modeCategory.location];
+        List<Evidence> myDataList = gameData.evidences[data.modeCategory.location];
 
         LoadDataOfType(myDataList);
     }

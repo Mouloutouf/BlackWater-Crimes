@@ -28,12 +28,7 @@ public class InstantiateLocationElements : InstantiateElements<Location>
 
         return check;
     }
-
-    void Start()
-    {
-        Initialize();
-    }
-
+    
     protected override string GetDataName(Location data)
     {
         return data.locationAdress;

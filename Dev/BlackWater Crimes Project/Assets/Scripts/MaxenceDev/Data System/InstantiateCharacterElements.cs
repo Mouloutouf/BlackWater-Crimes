@@ -28,12 +28,7 @@ public class InstantiateCharacterElements : InstantiateElements<Character>
 
         return check;
     }
-
-    void Start()
-    {
-        Initialize();
-    }
-
+    
     protected override string GetDataName(Character data)
     {
         return data.name;

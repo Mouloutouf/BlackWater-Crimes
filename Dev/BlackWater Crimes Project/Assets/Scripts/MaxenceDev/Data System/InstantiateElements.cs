@@ -6,9 +6,9 @@ using Sirenix.OdinInspector;
 
 public class InstantiateElements<T> : InstantiationProcess<T> where T : Data
 {
-    public List<List<T>> allElements { get { return GetAllElements(); } }
+    protected List<List<T>> allElements = new List<List<T>>();
 
-    protected List<T> allData;
+    protected List<T> allData = new List<T>();
 
     public InstantiateReports instantiateReports;
 
@@ -48,17 +48,24 @@ public class InstantiateElements<T> : InstantiationProcess<T> where T : Data
 
     void Start()
     {
-        Initialize();
+        Initialization();
+
+        Execution();
     }
 
-    protected void Initialize()
+    void Initialization()
     {
         GetGameData();
         
-        int local = 0;
+        allElements = GetAllElements();
 
         SetLayout();
-        
+    }
+
+    void Execution()
+    {
+        int local = 0;
+
         spawnIndex = 0;
 
         foreach (List<T> list in allElements)
@@ -117,7 +124,7 @@ public class InstantiateElements<T> : InstantiationProcess<T> where T : Data
     #region Instantiate Report
     void InstantiateReport(T _data, GameObject _element)
     {
-        foreach ((List<Report>, List<Report>) megaList in gameData.megaReports.Values)
+        foreach ((List<Report>, List<Report>) megaList in gameData.reports.Values)
         {
             foreach (Report _report in megaList.Item1)
             {
@@ -129,7 +136,7 @@ public class InstantiateElements<T> : InstantiationProcess<T> where T : Data
         }
     }
     
-    protected virtual string GetDataName(T data) { return ""; }
+    protected virtual string GetDataName(T data) { return null; }
     #endregion
 
     #region Layout

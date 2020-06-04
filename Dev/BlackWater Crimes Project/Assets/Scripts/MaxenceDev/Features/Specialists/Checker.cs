@@ -63,9 +63,9 @@ public class Checker : MonoBehaviour
 
     protected void Send()
     {
-        foreach (Indics indic in gameData.megaReports.Keys)
+        foreach (Indics indic in gameData.reports.Keys)
         {
-            foreach (Report report in gameData.megaReports[indic].Item1)
+            foreach (Report report in gameData.reports[indic].Item1)
             {
                 if (Check(indic, report))
                 {
@@ -86,9 +86,9 @@ public class Checker : MonoBehaviour
 
     protected void Send(List<Intel> intelList)
     {
-        foreach (Indics indic in gameData.megaReports.Keys)
+        foreach (Indics indic in gameData.reports.Keys)
         {
-            foreach (Report report in gameData.megaReports[indic].Item1)
+            foreach (Report report in gameData.reports[indic].Item1)
             {
                 if (Check(indic, report))
                 {
@@ -149,7 +149,7 @@ public class Checker : MonoBehaviour
 
     void UnlockFailedReport()
     {
-        Report t_Report = gameData.megaReports[indic].Item2[0];
+        Report t_Report = gameData.reports[indic].Item2[0];
 
         Report f_Report = new Report
         {
@@ -158,7 +158,7 @@ public class Checker : MonoBehaviour
             elementSprite = checkedImage,
             elementName = checkedName,
             
-            index = gameData.megaReports[indic].Item2.Count,
+            index = gameData.reports[indic].Item2.Count,
 
             agentName = t_Report.agentName,
             agentSprite = t_Report.agentSprite,
@@ -168,7 +168,7 @@ public class Checker : MonoBehaviour
             elementKey = ""
         };
 
-        gameData.megaReports[indic].Item2.Add(f_Report);
+        gameData.reports[indic].Item2.Add(f_Report);
     }
     
     public virtual void ResetField()

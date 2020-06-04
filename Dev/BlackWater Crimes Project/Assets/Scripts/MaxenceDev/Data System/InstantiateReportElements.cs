@@ -13,7 +13,7 @@ public class InstantiateReportElements : InstantiateElements<Report>
 
         List<Report> allReports = new List<Report>();
 
-        foreach ((List<Report>, List<Report>) reportsList in gameData.megaReports.Values)
+        foreach ((List<Report>, List<Report>) reportsList in gameData.reports.Values)
         {
             foreach (Report report in reportsList.Item1)
             {
@@ -31,12 +31,7 @@ public class InstantiateReportElements : InstantiateElements<Report>
         allData = allData.OrderBy(w => w.unlockOrderIndex).ToList();
         allData.Reverse();
     }
-
-    void Start()
-    {
-        Initialize();
-    }
-
+    
     protected override void AdditionalSettings(GameObject __prefab)
     {
         __prefab.GetComponent<RectTransform>().offsetMin = new Vector2(15, __prefab.GetComponent<RectTransform>().offsetMin.y);
