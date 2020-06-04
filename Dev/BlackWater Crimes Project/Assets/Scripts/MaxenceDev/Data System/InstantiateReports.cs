@@ -34,7 +34,7 @@ public class InstantiateReports : InstantiationProcess<Report>
     [Title("Holders")]
     
     public List<Holder> holders = new List<Holder>();
-    private Transform currentContent;
+    private Transform reportsContent;
     private GameObject bindedObject;
     private Holder bindedHolder;
 
@@ -78,7 +78,7 @@ public class InstantiateReports : InstantiationProcess<Report>
                     bindedObject = element.elementObject;
                     bindedHolder = holder;
 
-                    currentContent = holder.holderContent;
+                    reportsContent = holder.holderContent;
 
                     InstantiateObjectOfType(report, this.prefab);
                 }
@@ -91,12 +91,24 @@ public class InstantiateReports : InstantiationProcess<Report>
         InstantiateObjectOfType(report, failedPrefab);
     }
     
+    public void InstantiateByElement(Transform content, GameObject element, Report report, DisplaySystem display)
+    {
+        bindedObject = null; // Debug
+
+        reportsContent = content;
+
+        GameObject reportPrefab = InstantiateObjectOfType(report, this.prefab);
+        
+        element.GetComponent<Button>().onClick.AddListener(delegate { display.DisplayElement(reportPrefab); });
+        reportPrefab.GetComponent<ElementHolder>().bind = element;
+    }
+
     public override GameObject Instantiation(GameObject prefab)
     {
         if (prefab == this.prefab) // Instantiation Process for Reports
         {
             GameObject _original = Instantiate(prefab) as GameObject;
-            _original.transform.SetParent(currentContent, false);
+            _original.transform.SetParent(reportsContent, false);
 
             _original.GetComponent<RectTransform>().anchorMin = Vector2.zero; // sets the mode (stretch)
             _original.GetComponent<RectTransform>().anchorMax = Vector2.one;

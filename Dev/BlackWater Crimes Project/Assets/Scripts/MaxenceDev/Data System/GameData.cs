@@ -74,6 +74,7 @@ public class Note : Data
 public class Intel
 {
     public string name;
+    public string intelKey; // useless for now
     
     public float intelAlpha { get; set; }
 
@@ -192,6 +193,7 @@ public class Location : Data
 
     public string nameKey;
     public string descriptionKey;
+    public string addressKey;
 }
 
 [Serializable]

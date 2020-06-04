@@ -17,9 +17,7 @@ public class InstantiatePhotoElements : InstantiationProcess<Evidence>
 
     [HideInInspector] public List<Vector2> spawnPoints = new List<Vector2>();
     [HideInInspector] public List<Vector2> spawnScales = new List<Vector2>();
-
-    public GameObject zoomPanel;
-
+    
     [Title("Contents", horizontalLine: false)]
 
     public InstantiateReports mainContentScript;
@@ -37,6 +35,8 @@ public class InstantiatePhotoElements : InstantiationProcess<Evidence>
     public List<GameObject> elementsList { get; private set; } = new List<GameObject>();
 
     public DisplaySystem photoDisplay;
+
+    public ZoomPhoto zoomPhoto;
 
     void Start()
     {
@@ -76,10 +76,12 @@ public class InstantiatePhotoElements : InstantiationProcess<Evidence>
             _prefab.transform.SetParent(pageContent, false);
 
             _prefab.GetComponent<RectTransform>().anchoredPosition = spawnPoints[spawnIndex];
-
-            _prefab.GetComponent<ZoomPhoto>().zoomPanel = this.zoomPanel;
+            
+            // Exclusive Photo Elements
+            _prefab.transform.GetChild(0).GetComponentInChildren<Button>().onClick.AddListener(delegate { zoomPhoto.ZoomObject(_prefab); } );
 
             _prefab.GetComponent<ElementHolder>().bind = _prefab;
+            //
 
             //GameObject obj = _prefab.transform.GetChild(0).GetChild(_prefab.transform.GetChild(0).childCount - 1).gameObject;
             //_prefab.GetComponent<Button>().onClick.AddListener(delegate { photoDisplay.SelectElement(obj); });

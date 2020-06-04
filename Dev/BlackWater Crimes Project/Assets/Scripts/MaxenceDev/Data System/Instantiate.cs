@@ -42,13 +42,16 @@ public class InstantiationProcess<T> : MonoBehaviour where T : Data
         }
     }
 
-    public void InstantiateObjectOfType<_T>(_T data, GameObject prefab) where _T : Data
+    public GameObject InstantiateObjectOfType<_T>(_T data, GameObject prefab) where _T : Data
     {
         if (data.unlockedData)
         {
             GameObject instance = Instantiation(prefab);
             instance.GetComponent<ObjectData<_T>>().data = data;
+
+            return instance;
         }
+        else return new GameObject();
     }
 
     public virtual GameObject Instantiation(GameObject prefab)

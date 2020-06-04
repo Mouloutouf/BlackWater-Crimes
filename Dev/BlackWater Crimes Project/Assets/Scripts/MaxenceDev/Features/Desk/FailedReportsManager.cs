@@ -26,6 +26,8 @@ public class FailedReportsManager : MonoBehaviour
     {
         report.GetComponent<ReportObject>().data.unlockedData = false;
         
+        if (failedContent.childCount == 1) ClearAllFailedReports();
+
         Destroy(report);
     }
 

@@ -163,7 +163,9 @@ public class Checker : MonoBehaviour
             agentName = t_Report.agentName,
             agentSprite = t_Report.agentSprite,
             reportText = t_Report.reportText,
-            signature = t_Report.signature
+            signature = t_Report.signature,
+
+            elementKey = ""
         };
 
         gameData.megaReports[indic].Item2.Add(f_Report);

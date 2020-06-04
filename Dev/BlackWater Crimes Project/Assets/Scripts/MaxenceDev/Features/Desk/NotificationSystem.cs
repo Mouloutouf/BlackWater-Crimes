@@ -27,10 +27,6 @@ public class NotificationSystem : MonoBehaviour
 
     public GameObject newPrefab;
     public Vector2 prefabPos;
-
-    public bool useOld;
-    [ShowIf("useOld")]
-    public int startElement = 0;
     
     void Start()
     {
@@ -105,9 +101,9 @@ public class NotificationSystem : MonoBehaviour
 
         foreach (Transform cont in current.subContents)
         {
-            current.elements += cont.childCount - startElement; // Calculates the number of Elements depending on the number of children
+            current.elements += cont.childCount; // Calculates the number of Elements depending on the number of children
 
-            for (int i = startElement; i < cont.childCount; i++) // Checks the validity of each child, if seen : removes it from the Elements, if not : instantiate a New Notification to it
+            for (int i = 0; i < cont.childCount; i++) // Checks the validity of each child, if seen : removes it from the Elements, if not : instantiate a New Notification to it
             {
                 if (current.photo) // Check for Photos
                 {
