@@ -13,6 +13,8 @@ public class AttorneySuspectNameScript : MonoBehaviour
     [SerializeField] Color correctColor;
     [SerializeField] Color incorrectColor;
     List<string> knownNamesToCheck = new List<string>();
+    TouchScreenKeyboard keyboard;
+    
 
     void Start() 
     {

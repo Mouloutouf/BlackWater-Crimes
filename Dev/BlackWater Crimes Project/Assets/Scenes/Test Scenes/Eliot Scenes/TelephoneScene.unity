@@ -2861,7 +2861,7 @@ RectTransform:
   - {fileID: 2139205044}
   - {fileID: 545807050}
   m_Father: {fileID: 1151903102}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7149,8 +7149,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
-  - {fileID: 475884808}
   - {fileID: 1567017600}
+  - {fileID: 475884808}
   m_Father: {fileID: 15995694}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7914,7 +7914,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1267674613}
   m_LocalRotation: {x: -0, y: -0, z: 0.000000029802322, w: 1}
-  m_LocalPosition: {x: 0.204, y: -0, z: 0}
+  m_LocalPosition: {x: 0.20399997, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1339883867}
@@ -8545,7 +8545,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1331404116}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
   m_Name: 
@@ -8705,7 +8705,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 2}
+  m_Size: {x: 0.3, y: 2}
   m_EdgeRadius: 0
 --- !u!1 &1341385780
 GameObject:
@@ -8821,7 +8821,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 2}
+  m_Size: {x: 0.3, y: 2}
   m_EdgeRadius: 0
 --- !u!4 &1361275050
 Transform:
@@ -9712,10 +9712,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   informationText: "Me Thommers, en sa qualit\xE9 de procureur, peut vous d\xE9bloquer
     l'acc\xE8s \xE0 un lieu, vous permettre d'interroger et / ou d'accuser quelqu'un "
-  buttonName: 
   informationTextObject: {fileID: 1500855004}
   bulleTexte: {fileID: 170974086}
-  _camera: {fileID: 1151050347}
   scrollRect: {fileID: 1331404118}
 --- !u!114 &1543503986
 MonoBehaviour:
@@ -10005,7 +10003,7 @@ RectTransform:
   - {fileID: 1329346330}
   - {fileID: 84712417}
   m_Father: {fileID: 1151903102}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10809,10 +10807,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   informationText: "James Walker excelle dans la recherche de personnes. Il a juste
     besoin d'un nom et d'un d\xE9tail physique pour trouver quelqu'un."
-  buttonName: 
   informationTextObject: {fileID: 400438905}
   bulleTexte: {fileID: 2091522867}
-  _camera: {fileID: 1151050347}
   scrollRect: {fileID: 1331404118}
 --- !u!114 &1616405068
 MonoBehaviour:
@@ -11742,10 +11738,8 @@ MonoBehaviour:
   informationText: "Thomas Maxwell est un sp\xE9cialiste des enqu\xEAtes de terrain.
     Donnez-lui simplement un lieu que vous avez trouv\xE9 sur la carte et il ira
     pour vous."
-  buttonName: 
   informationTextObject: {fileID: 1125617336}
   bulleTexte: {fileID: 534195581}
-  _camera: {fileID: 1151050347}
   scrollRect: {fileID: 1331404118}
 --- !u!95 &1736033739
 Animator:
@@ -13499,6 +13493,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Scene Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6054615890293101837, guid: e7f1cd350bc5f0941bb44b9e4b1ff994,
+        type: 3}
+      propertyPath: gameData
+      value: 
+      objectReference: {fileID: 11400000, guid: eaa3567ddd179a64a9d879867070a0b4,
+        type: 2}
+    - target: {fileID: 6054615890832728885, guid: e7f1cd350bc5f0941bb44b9e4b1ff994,
+        type: 3}
+      propertyPath: menu
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
