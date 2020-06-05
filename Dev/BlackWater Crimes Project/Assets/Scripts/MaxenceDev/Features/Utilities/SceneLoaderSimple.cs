@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoaderSimple : MonoBehaviour
 {
+    public GameData gameData;
+
     public delegate void Delegate();
     public Delegate methodToCall;
     [SerializeField] string sceneName;
@@ -21,6 +23,8 @@ public class SceneLoaderSimple : MonoBehaviour
 
     public void LoadScene()
     {
+        gameData.ManageData(Action.Save);
+
         if (withLoadingScreen == false)
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName, loadSceneMode);
@@ -36,7 +40,6 @@ public class SceneLoaderSimple : MonoBehaviour
 
     public void LoadScene(string name)
     {
-
         sceneName = name;
         methodToCall = LoadScene;
         StartCoroutine(WaitForFrame(methodToCall));

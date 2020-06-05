@@ -21,7 +21,7 @@ public class PhotoObject : ObjectData<Evidence>
     {
         imageObject.GetComponent<Image>().sprite = data.photo;
         
-        if (textObject != null) textObject.GetComponent<Text>().text = data.codeName;
+        if (textObject != null) { textObject.GetComponent<Localisation>().key = data.nameKey; textObject.GetComponent<Localisation>().RefreshText(); }
 
         if (holder != null) holder.seen = data.seen;
 

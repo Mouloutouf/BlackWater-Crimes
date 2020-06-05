@@ -1,0 +1,66 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
+
+public class AttorneySingleClueShowerScript : MonoBehaviour
+{
+    [SerializeField] GameObject clueFolder;
+    [SerializeField] Button validateButton;
+
+    public string validateKey;
+
+    public GameObject currentClueShowed;
+    bool folderOpen = false;
+
+    public void OpenFolder()
+    {
+        if(folderOpen == false)
+        {
+            clueFolder.SetActive(true);
+            folderOpen = true;
+            validateButton.interactable = false;
+        }
+    }
+
+    public void CloseFolder()
+    {
+        clueFolder.SetActive(false);
+        folderOpen = false;
+        if(currentClueShowed != null)
+        {
+            validateButton.interactable = true;
+            validateButton.GetComponentInChildren<Localisation>().key = validateKey;
+            validateButton.GetComponentInChildren<Localisation>().RefreshText();
+        }
+    }
+
+    public void ShowClue(GameObject clue)
+    {
+        if(currentClueShowed == null)
+        {
+            currentClueShowed = Instantiate(clue, this.transform);
+            currentClueShowed.GetComponent<RectTransform>().localPosition = Vector3.zero;
+            currentClueShowed.GetComponent<RectTransform>().localScale = new Vector3(2.3f, 2.3f, 1);
+            Destroy(currentClueShowed.GetComponent<Button>());
+            //currentClueShowed.GetComponent<PhotoAttorneyObject>().isEvidenceDisplayed = true;
+            CloseFolder();
+        }
+        else
+        {
+            Destroy(currentClueShowed);
+            currentClueShowed = Instantiate(clue, this.transform);
+            currentClueShowed.GetComponent<RectTransform>().localPosition = Vector3.zero;
+            currentClueShowed.GetComponent<RectTransform>().localScale = new Vector3(2.3f, 2.3f, 1);
+            Destroy(currentClueShowed.GetComponent<Button>());
+            //currentClueShowed.GetComponent<PhotoAttorneyObject>().isEvidenceDisplayed = true;
+            CloseFolder();
+        }
+    }
+
+    public void ResetClue()
+    {
+        Destroy(currentClueShowed);
+    }
+}

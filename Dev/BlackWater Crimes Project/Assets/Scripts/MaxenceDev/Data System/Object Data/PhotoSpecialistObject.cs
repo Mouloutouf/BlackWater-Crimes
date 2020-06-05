@@ -9,7 +9,7 @@ public class PhotoSpecialistObject : ObjectData<Evidence>
 {
     public GameObject imageObject;
     
-    public Text textComponent;
+    public Localisation textKey;
 
     public bool isEvidenceDisplayed = false;
 
@@ -24,7 +24,8 @@ public class PhotoSpecialistObject : ObjectData<Evidence>
         {
             imageObject.GetComponent<Image>().sprite = data.photo;
 
-            textComponent.text = data.codeName;
+            textKey.key = data.nameKey;
+            textKey.RefreshText();
         }
 
         base.Protocol();

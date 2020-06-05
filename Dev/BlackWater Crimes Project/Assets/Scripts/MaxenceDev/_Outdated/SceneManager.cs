@@ -52,9 +52,9 @@ public class SceneManager : MonoBehaviour
         for (int i = 0; i < contents.Count; i++)
         {
             if (!contents[i].instantiate)
-                LoadDataOfType(gameData.allEvidences[Locations.Docks][0], i); //GetDataType(contents[i].dataType)
+                LoadDataOfType(gameData.evidences[Locations.Docks][0], i); //GetDataType(contents[i].dataType)
             else
-                InstantiateDataOfType(gameData.allEvidences[Locations.Docks][0], i); //GetDataType(contents[i].dataType)
+                InstantiateDataOfType(gameData.evidences[Locations.Docks][0], i); //GetDataType(contents[i].dataType)
         }
 
         object type = GetType();

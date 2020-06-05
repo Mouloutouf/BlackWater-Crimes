@@ -160,17 +160,13 @@ public class MainMenuScript : MonoBehaviour
 
     public void Saving()
     {
-        if (PlayerPrefs.GetInt(nameof(gameData.firstTimeInMenu)) == 1 && PlayerPrefs.GetInt(nameof(gameData.firstTimeInGame)) == 0)
-        {
-            gameData.ManageData(Action.Load); // Load the Player's Last Save
-
-            gameData.firstTimeInMenu = false;
-        }
-        else if (PlayerPrefs.GetInt(nameof(gameData.firstTimeInMenu)) == 1 && PlayerPrefs.GetInt(nameof(gameData.firstTimeInGame)) == 1)
+        if (PlayerPrefs.GetInt(nameof(gameData.firstTimeInGame)) == 1) // First Time the Player Starts the Game
         {
             gameData.firstTimeInGame = false;
-
-            gameData.firstTimeInMenu = false;
+        }
+        else // Any Other Time the Player Starts the Game
+        {
+            gameData.ManageData(Action.Load); // Load the Player's Last Save
         }
 
         gameData.ManageData(Action.Save);

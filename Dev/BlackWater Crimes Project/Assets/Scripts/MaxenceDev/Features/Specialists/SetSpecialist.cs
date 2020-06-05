@@ -15,7 +15,7 @@ public class SetSpecialist : MonoBehaviour
     public Image characterImage;
     public float factor;
     public Text characterName;
-    public Text characterJob;
+    public Localisation characterJob;
 
     [Header("For Debug Only")]
     [SerializeField] private bool debug;
@@ -49,7 +49,8 @@ public class SetSpecialist : MonoBehaviour
 
         characterName.text = gameData.indics[_indic].name;
 
-        characterJob.text = gameData.indics[_indic].job;
+        characterJob.key = gameData.indics[_indic].jobKey;
+        characterJob.RefreshText();
 
         GameObject prefabToUse = (_indic == Indics.James_Walker) ? headHunterPrefab : (_indic == Indics.Thomas_Maxwell) ? neighborhoodPrefab : specialistPrefab;
 

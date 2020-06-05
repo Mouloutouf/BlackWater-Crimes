@@ -11,6 +11,8 @@ public class SpecialistEvidenceDisplayer : MonoBehaviour
     public GameObject currentEvidenceDisplayed;
 
     private Button validateButton;
+
+    public string validateKey;
     
     void Start()
     {
@@ -34,7 +36,8 @@ public class SpecialistEvidenceDisplayer : MonoBehaviour
         if(currentEvidenceDisplayed != null)
         {
             validateButton.interactable = true;
-            validateButton.GetComponentInChildren<Text>().text = "Validate";
+            validateButton.GetComponentInChildren<Localisation>().key = validateKey;
+            validateButton.GetComponentInChildren<Localisation>().RefreshText();
         }
     }
 

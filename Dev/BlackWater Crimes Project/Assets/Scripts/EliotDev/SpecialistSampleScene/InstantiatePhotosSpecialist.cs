@@ -18,12 +18,12 @@ public class InstantiatePhotosSpecialist : InstantiationProcess<Evidence>
 
     float yPos;
     float xPos;
-
+    
     void Start()
     {
         GetGameData();
-
-        foreach (List<Evidence> _list in gameData.allEvidences.Values)
+        
+        foreach (List<Evidence> _list in gameData.evidences.Values)
         {
             InstantiateDataOfType(type, _list);
         }

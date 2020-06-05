@@ -10,15 +10,15 @@ public class IndicsText
 {
     public Indics indic;
 
-    public string introText;
+    public string introKey;
 
-    public string successText;
-    public string failureText;
+    public string successKey;
+    public string failureKey;
 }
 
 public class Checker : MonoBehaviour
 {
-    protected Text dialogueText;
+    protected Localisation dialogueKey;
     
     protected Button validateButton;
 
@@ -38,13 +38,14 @@ public class Checker : MonoBehaviour
     {
         gameData = GameObject.Find("Data Container").GetComponent<DataContainer>().gameData;
 
-        dialogueText = GameObject.Find("Dialogue Text").GetComponent<Text>();
+        dialogueKey = GameObject.Find("Dialogue Text").GetComponent<Localisation>();
         
         foreach (IndicsText indicsText in allIndicsText)
         {
             if (indicsText.indic == gameData.currentIndic)
             {
-                dialogueText.text = indicsText.introText;
+                dialogueKey.key = indicsText.introKey;
+                dialogueKey.RefreshText();
                 break;
             }
         }
@@ -62,9 +63,9 @@ public class Checker : MonoBehaviour
 
     protected void Send()
     {
-        foreach (Indics indic in gameData.megaReports.Keys)
+        foreach (Indics indic in gameData.reports.Keys)
         {
-            foreach (Report report in gameData.megaReports[indic].Item1)
+            foreach (Report report in gameData.reports[indic].Item1)
             {
                 if (Check(indic, report))
                 {
@@ -85,9 +86,9 @@ public class Checker : MonoBehaviour
 
     protected void Send(List<Intel> intelList)
     {
-        foreach (Indics indic in gameData.megaReports.Keys)
+        foreach (Indics indic in gameData.reports.Keys)
         {
-            foreach (Report report in gameData.megaReports[indic].Item1)
+            foreach (Report report in gameData.reports[indic].Item1)
             {
                 if (Check(indic, report))
                 {
@@ -148,7 +149,7 @@ public class Checker : MonoBehaviour
 
     void UnlockFailedReport()
     {
-        Report t_Report = gameData.megaReports[indic].Item2[0];
+        Report t_Report = gameData.reports[indic].Item2[0];
 
         Report f_Report = new Report
         {
@@ -157,15 +158,17 @@ public class Checker : MonoBehaviour
             elementSprite = checkedImage,
             elementName = checkedName,
             
-            index = gameData.megaReports[indic].Item2.Count,
+            index = gameData.reports[indic].Item2.Count,
 
             agentName = t_Report.agentName,
             agentSprite = t_Report.agentSprite,
             reportText = t_Report.reportText,
-            signature = t_Report.signature
+            signature = t_Report.signature,
+
+            elementKey = ""
         };
 
-        gameData.megaReports[indic].Item2.Add(f_Report);
+        gameData.reports[indic].Item2.Add(f_Report);
     }
     
     public virtual void ResetField()
@@ -174,8 +177,9 @@ public class Checker : MonoBehaviour
         {
             if (indicText.indic == gameData.currentIndic)
             {
-                if (match) dialogueText.text = indicText.successText;
-                else dialogueText.text = indicText.failureText;
+                if (match) dialogueKey.key = indicText.successKey;
+                else dialogueKey.key = indicText.failureKey;
+                dialogueKey.RefreshText();
 
                 break;
             }

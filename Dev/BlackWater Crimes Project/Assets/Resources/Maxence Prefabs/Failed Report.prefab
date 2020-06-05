@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3157031202373331261}
   - component: {fileID: 2716075861899882148}
   - component: {fileID: 6446429437040287813}
+  - component: {fileID: 37738480659188770}
   m_Layer: 5
   m_Name: Element Text
   m_TagString: Untagged
@@ -77,6 +78,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Bon de Commande
+--- !u!114 &37738480659188770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085541235440424882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 6446429437040287813}
+  key: 
 --- !u!1 &5798861633258995788
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,6 +256,7 @@ GameObject:
   - component: {fileID: 5798861633315766792}
   - component: {fileID: 5798861633315766794}
   - component: {fileID: 5798861633315766793}
+  - component: {fileID: 1640433612340842190}
   m_Layer: 5
   m_Name: Report Text
   m_TagString: Untagged
@@ -307,6 +323,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Lorem Ipsum Dolor Sit Amet
+--- !u!114 &1640433612340842190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5798861633315766799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 5798861633315766793}
+  key: 
 --- !u!1 &5798861633474147430
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,6 +579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6a9d811913fa2c4b8ea8dd40a84d054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showData: 0
   data:
     unlockedData: 0
     index: 0
@@ -561,19 +592,19 @@ MonoBehaviour:
     elementName: 
     elementDetailName: 
     reportText: 
+    elementKey: 
+    reportKey: 
     giveAccess: 0
     locationToAccess: 0
     unlockOrderIndex: 0
     seen: 0
-  instantiate: 0
-  hasApplied: 0
   _gameData: {fileID: 0}
   agentImage: {fileID: 5798861633953636476}
   agentText: {fileID: 5798861633474147424}
   agentFactor: 20
   ElementImage: {fileID: 2323609563617987561}
-  ElementText: {fileID: 6446429437040287813}
-  reportText: {fileID: 5798861633315766793}
+  elementKey: {fileID: 37738480659188770}
+  reportKey: {fileID: 1640433612340842190}
   signatureImage: {fileID: 0}
   holder: {fileID: 0}
 --- !u!1 &6258307220865850722

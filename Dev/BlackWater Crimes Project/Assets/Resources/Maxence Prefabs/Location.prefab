@@ -4995,21 +4995,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ec639cf961e80042b9f8085bd208427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showData: 0
   data:
     unlockedData: 0
     index: 0
     known: 1
     visible: 0
     accessible: 0
-    completed: 0
     myLocation: 0
     locationName: Les Docks
     locationAdress: 
     locationArtwork: {fileID: 0}
     locationCroppedImage: {fileID: 0}
     locationDescription: 
-  instantiate: 0
-  hasApplied: 0
+    nameKey: 
+    descriptionKey: 
   cam: {fileID: 0}
   locationSprite: {fileID: 5548631633478804833}
   locationName: {fileID: 5548631633488035619}
@@ -5042,6 +5042,7 @@ GameObject:
   - component: {fileID: 5548631634904861495}
   - component: {fileID: 5548631634904861449}
   - component: {fileID: 5548631634904861448}
+  - component: {fileID: 4138670876000251153}
   m_Layer: 0
   m_Name: Text Name
   m_TagString: Untagged
@@ -5124,3 +5125,18 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4278190080
+--- !u!114 &4138670876000251153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5548631634904861494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5db3643bfe95b124ea6da6358f851b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 0}
+  key: 
+  textMeshComponent: {fileID: 5548631634904861448}

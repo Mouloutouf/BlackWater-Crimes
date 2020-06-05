@@ -4,29 +4,29 @@ using System.Linq;
 
 public class InformationButton : MonoBehaviour
 {
-    public string informationText;
+    public string infoKey;
     public string buttonName;
-    public Text informationTextObject;
+    public Localisation informationKey;
     public GameObject bulleTexte;
-    public Camera _camera;
+    public ScrollRect scrollRect;
 
     public void Start()
     {
-        informationTextObject.text = informationText;
+        informationKey.key = infoKey;
+        informationKey.RefreshText();
+        
         buttonName = gameObject.name;
     }
 
-    public void Update()
+    public void ShowBulle()
     {
-        RaycastHit2D[] hits = Physics2D.RaycastAll(_camera.ScreenToWorldPoint(Input.mousePosition), new Vector3(0, 0, 1));
+        bulleTexte.SetActive(true);
+        scrollRect.enabled = false;
+    }
 
-        if (hits.Count() > 0 && hits[0].transform.GetComponent<BoxCollider2D>() != null && Input.GetMouseButton(0) && hits[0].transform.gameObject.name == buttonName)
-        {
-            bulleTexte.SetActive(true);
-        }
-        else
-        {
-            bulleTexte.SetActive(false);
-        }
+    public void HideBulle()
+    {
+        bulleTexte.SetActive(false);
+        scrollRect.enabled = true;
     }
 }

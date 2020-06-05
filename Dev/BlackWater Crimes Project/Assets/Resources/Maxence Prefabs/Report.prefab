@@ -141,6 +141,8 @@ MonoBehaviour:
     elementName: 
     elementDetailName: 
     reportText: 
+    elementKey: 
+    reportKey: 
     giveAccess: 0
     locationToAccess: 0
     unlockOrderIndex: 0
@@ -150,8 +152,8 @@ MonoBehaviour:
   agentText: {fileID: 1127452059240024575}
   agentFactor: 20
   ElementImage: {fileID: 9215258553666795126}
-  ElementText: {fileID: 480305338700963290}
-  reportText: {fileID: 1127452059637612438}
+  elementKey: {fileID: 6461379496229045697}
+  reportKey: {fileID: 8824748973022984927}
   signatureImage: {fileID: 6772364230077377488}
   holder: {fileID: -7719243813178168510}
 --- !u!114 &-7719243813178168510
@@ -409,6 +411,7 @@ GameObject:
   - component: {fileID: 1127452059637612439}
   - component: {fileID: 1127452059637612437}
   - component: {fileID: 1127452059637612438}
+  - component: {fileID: 8824748973022984927}
   m_Layer: 5
   m_Name: Report Text
   m_TagString: Untagged
@@ -475,6 +478,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Lorem Ipsum Dolor Sit Amet
+--- !u!114 &8824748973022984927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127452059637612432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 1127452059637612438}
+  key: 
 --- !u!1 &1127452060389859393
 GameObject:
   m_ObjectHideFlags: 0
@@ -705,6 +722,7 @@ GameObject:
   - component: {fileID: 8362117315271038114}
   - component: {fileID: 8821780745184400187}
   - component: {fileID: 480305338700963290}
+  - component: {fileID: 6461379496229045697}
   m_Layer: 5
   m_Name: Element Text
   m_TagString: Untagged
@@ -771,3 +789,17 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Rapport :'
+--- !u!114 &6461379496229045697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4840638381346908717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 480305338700963290}
+  key: 

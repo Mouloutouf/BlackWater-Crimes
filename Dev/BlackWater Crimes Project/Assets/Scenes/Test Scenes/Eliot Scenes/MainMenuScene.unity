@@ -874,6 +874,7 @@ GameObject:
   - component: {fileID: 419720070}
   - component: {fileID: 419720072}
   - component: {fileID: 419720071}
+  - component: {fileID: 419720073}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -940,6 +941,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 419720069}
   m_CullTransparentMesh: 0
+--- !u!114 &419720073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419720069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 419720071}
+  key: delete_text
 --- !u!1 &499566147
 GameObject:
   m_ObjectHideFlags: 0
@@ -1599,7 +1614,6 @@ GameObject:
   - component: {fileID: 700321066}
   - component: {fileID: 700321065}
   - component: {fileID: 700321069}
-  - component: {fileID: 700321070}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1721,23 +1735,6 @@ MonoBehaviour:
   parameterButton: {fileID: 1435691819}
   baseParameter: {fileID: 21300000, guid: b7cb736f1699eaa4190de62f2aeb2cf2, type: 3}
   activeParameter: {fileID: 21300000, guid: 2f1e9f16f29ecde4e84678883c3f12d1, type: 3}
---- !u!114 &700321070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 700321064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4206b0aec6eb07545a298b286059b682, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneName: 
-  loadSceneMode: 0
-  withLoadingScreen: 0
-  loadingScreenPrefab: {fileID: 0}
-  loadNotes: 0
 --- !u!1 &721629649
 GameObject:
   m_ObjectHideFlags: 0
@@ -1749,6 +1746,7 @@ GameObject:
   - component: {fileID: 721629650}
   - component: {fileID: 721629652}
   - component: {fileID: 721629651}
+  - component: {fileID: 721629653}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -1815,6 +1813,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 721629649}
   m_CullTransparentMesh: 0
+--- !u!114 &721629653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721629649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 721629651}
+  key: erase_game
 --- !u!1 &743080416
 GameObject:
   m_ObjectHideFlags: 0
@@ -2665,6 +2677,7 @@ GameObject:
   - component: {fileID: 1131712223}
   - component: {fileID: 1131712225}
   - component: {fileID: 1131712224}
+  - component: {fileID: 1131712226}
   m_Layer: 5
   m_Name: MusicText
   m_TagString: Untagged
@@ -2731,6 +2744,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1131712222}
   m_CullTransparentMesh: 0
+--- !u!114 &1131712226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131712222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 1131712224}
+  key: parameter_music
 --- !u!1 &1154314801
 GameObject:
   m_ObjectHideFlags: 0
@@ -2742,6 +2769,7 @@ GameObject:
   - component: {fileID: 1154314802}
   - component: {fileID: 1154314804}
   - component: {fileID: 1154314803}
+  - component: {fileID: 1154314805}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -2808,6 +2836,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1154314801}
   m_CullTransparentMesh: 0
+--- !u!114 &1154314805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154314801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 1154314803}
+  key: no_text
 --- !u!1 &1190541614
 GameObject:
   m_ObjectHideFlags: 0
@@ -3295,7 +3337,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
       propertyPath: languageTexts.Array.size
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
       propertyPath: languageUsingObjects.Array.size
@@ -3306,52 +3348,56 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
+      propertyPath: localisationKeys.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
       propertyPath: languageTexts.Array.data[0].textComponent
       value: 
-      objectReference: {fileID: 1131712224}
+      objectReference: {fileID: 721629651}
     - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
       propertyPath: languageTexts.Array.data[0].englishText
-      value: MUSIC
+      value: Erase current game
       objectReference: {fileID: 0}
     - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
       propertyPath: languageTexts.Array.data[0].frenchText
-      value: MUSIQUE
+      value: Effacer partie actuelle
       objectReference: {fileID: 0}
     - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
       propertyPath: languageTexts.Array.data[1].textComponent
       value: 
-      objectReference: {fileID: 1855183596}
+      objectReference: {fileID: 721629651}
     - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
       propertyPath: languageTexts.Array.data[1].frenchText
-      value: SONS
+      value: Effacer partie actuelle
       objectReference: {fileID: 0}
     - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
       propertyPath: languageTexts.Array.data[1].englishText
-      value: SOUNDS
+      value: Erase current game
       objectReference: {fileID: 0}
     - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
       propertyPath: languageTexts.Array.data[2].textComponent
       value: 
-      objectReference: {fileID: 1979303239}
+      objectReference: {fileID: 721629651}
     - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
       propertyPath: languageTexts.Array.data[2].frenchText
-      value: LANGUE
+      value: Effacer partie actuelle
       objectReference: {fileID: 0}
     - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
       propertyPath: languageTexts.Array.data[2].englishText
-      value: LANGUAGE
+      value: Erase current game
       objectReference: {fileID: 0}
     - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
       propertyPath: languageTexts.Array.data[3].textComponent
       value: 
-      objectReference: {fileID: 1917343653}
+      objectReference: {fileID: 721629651}
     - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
       propertyPath: languageTexts.Array.data[3].frenchText
-      value: PARTIE
+      value: Effacer partie actuelle
       objectReference: {fileID: 0}
     - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
       propertyPath: languageTexts.Array.data[3].englishText
-      value: GAME
+      value: Erase current game
       objectReference: {fileID: 0}
     - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
       propertyPath: languageTexts.Array.data[4].textComponent
@@ -3364,6 +3410,70 @@ PrefabInstance:
     - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
       propertyPath: languageTexts.Array.data[4].englishText
       value: Erase current game
+      objectReference: {fileID: 0}
+    - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
+      propertyPath: localisationKeys.Array.data[0].component
+      value: 
+      objectReference: {fileID: 1131712226}
+    - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
+      propertyPath: localisationKeys.Array.data[0].key
+      value: parameter_music
+      objectReference: {fileID: 0}
+    - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
+      propertyPath: localisationKeys.Array.data[1].component
+      value: 
+      objectReference: {fileID: 1855183598}
+    - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
+      propertyPath: localisationKeys.Array.data[1].key
+      value: parameter_sound
+      objectReference: {fileID: 0}
+    - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
+      propertyPath: localisationKeys.Array.data[2].component
+      value: 
+      objectReference: {fileID: 1979303241}
+    - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
+      propertyPath: localisationKeys.Array.data[2].key
+      value: parameter_language
+      objectReference: {fileID: 0}
+    - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
+      propertyPath: localisationKeys.Array.data[3].component
+      value: 
+      objectReference: {fileID: 1917343655}
+    - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
+      propertyPath: localisationKeys.Array.data[3].key
+      value: parameter_game
+      objectReference: {fileID: 0}
+    - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
+      propertyPath: localisationKeys.Array.data[4].component
+      value: 
+      objectReference: {fileID: 721629653}
+    - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
+      propertyPath: localisationKeys.Array.data[4].key
+      value: erase_game
+      objectReference: {fileID: 0}
+    - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
+      propertyPath: localisationKeys.Array.data[5].component
+      value: 
+      objectReference: {fileID: 1718460399}
+    - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
+      propertyPath: localisationKeys.Array.data[5].key
+      value: erase_game_message
+      objectReference: {fileID: 0}
+    - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
+      propertyPath: localisationKeys.Array.data[6].component
+      value: 
+      objectReference: {fileID: 419720073}
+    - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
+      propertyPath: localisationKeys.Array.data[6].key
+      value: delete_text
+      objectReference: {fileID: 0}
+    - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
+      propertyPath: localisationKeys.Array.data[7].component
+      value: 
+      objectReference: {fileID: 1154314805}
+    - target: {fileID: 387698277, guid: e7f1cd350bc5f0941bb44b9e4b1ff994, type: 3}
+      propertyPath: localisationKeys.Array.data[7].key
+      value: no_text
       objectReference: {fileID: 0}
     - target: {fileID: 6054615889188889912, guid: e7f1cd350bc5f0941bb44b9e4b1ff994,
         type: 3}
@@ -4796,6 +4906,7 @@ GameObject:
   - component: {fileID: 1718460396}
   - component: {fileID: 1718460398}
   - component: {fileID: 1718460397}
+  - component: {fileID: 1718460399}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -4862,6 +4973,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1718460395}
   m_CullTransparentMesh: 0
+--- !u!114 &1718460399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718460395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 1718460397}
+  key: erase_game_message
 --- !u!1 &1745843470
 GameObject:
   m_ObjectHideFlags: 0
@@ -5153,6 +5278,7 @@ GameObject:
   - component: {fileID: 1855183595}
   - component: {fileID: 1855183597}
   - component: {fileID: 1855183596}
+  - component: {fileID: 1855183598}
   m_Layer: 5
   m_Name: SoundsText
   m_TagString: Untagged
@@ -5219,6 +5345,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1855183594}
   m_CullTransparentMesh: 0
+--- !u!114 &1855183598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855183594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 1855183596}
+  key: parameter_sound
 --- !u!1 &1860966779
 GameObject:
   m_ObjectHideFlags: 0
@@ -5432,6 +5572,7 @@ GameObject:
   - component: {fileID: 1917343652}
   - component: {fileID: 1917343654}
   - component: {fileID: 1917343653}
+  - component: {fileID: 1917343655}
   m_Layer: 5
   m_Name: GameText
   m_TagString: Untagged
@@ -5498,6 +5639,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1917343651}
   m_CullTransparentMesh: 0
+--- !u!114 &1917343655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917343651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 1917343653}
+  key: parameter_game
 --- !u!1 &1917963964
 GameObject:
   m_ObjectHideFlags: 0
@@ -5728,6 +5883,7 @@ GameObject:
   - component: {fileID: 1979303238}
   - component: {fileID: 1979303240}
   - component: {fileID: 1979303239}
+  - component: {fileID: 1979303241}
   m_Layer: 5
   m_Name: LanguageText
   m_TagString: Untagged
@@ -5794,6 +5950,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1979303237}
   m_CullTransparentMesh: 0
+--- !u!114 &1979303241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979303237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 1979303239}
+  key: parameter_language
 --- !u!1 &1983713187
 GameObject:
   m_ObjectHideFlags: 0

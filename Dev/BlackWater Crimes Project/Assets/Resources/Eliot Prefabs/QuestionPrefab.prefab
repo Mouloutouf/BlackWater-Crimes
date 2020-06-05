@@ -132,17 +132,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 832c379dbc9713749bbfd4ab9c8cceec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showData: 0
   data:
     unlockedData: 0
     index: 0
     question: 
+    questionKey: 
     _answers: []
     unlockedByReport: 0
     mode: 0
     reportName: 
     otherName: 
-  instantiate: 1
-  hasApplied: 0
 --- !u!114 &6631028077222997074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,6 +174,7 @@ GameObject:
   - component: {fileID: 8492563697577746934}
   - component: {fileID: 8492563697577746936}
   - component: {fileID: 8492563697577746937}
+  - component: {fileID: 423490751158089189}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -240,3 +241,17 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: Question
+--- !u!114 &423490751158089189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8492563697577746935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 8492563697577746937}
+  key: 

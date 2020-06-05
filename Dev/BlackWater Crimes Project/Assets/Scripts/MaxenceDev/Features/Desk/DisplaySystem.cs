@@ -10,14 +10,11 @@ public class DisplaySystem : MonoBehaviour
     public Transform content;
 
     public int startIndex;
-    private int currentIndex = 0;
-
+    
     private GameObject currentSelected;
 
     void Start()
     {
-        currentIndex = startIndex;
-
         if (content.childCount != 0) for (int n = startIndex; n < content.childCount; n++) content.GetChild(n).gameObject.SetActive(false);
     }
     

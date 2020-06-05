@@ -74,6 +74,7 @@ public class Note : Data
 public class Intel
 {
     public string name;
+    public string intelKey; // useless for now
     
     public float intelAlpha { get; set; }
 
@@ -84,6 +85,8 @@ public class Intel
 public class Evidence : Data
 {
     public string codeName;
+    
+    public string nameKey;
     
     [Title("Intels")]
     
@@ -111,6 +114,8 @@ public class Evidence : Data
     [HideLabel]
     [MultiLineProperty(5)]
     public string descriptionText;
+
+    public string textKey;
     
     [HideReferenceObjectPicker]
     [Title("Categories")]
@@ -148,6 +153,9 @@ public class Report : Data
     [MultiLineProperty(15)]
     public string reportText;
 
+    public string elementKey;
+    public string reportKey;
+
     [Title("Unlockable")]
 
     public bool giveAccess;
@@ -182,6 +190,10 @@ public class Location : Data
     [HideLabel]
     [MultiLineProperty(5)]
     public string locationDescription;
+
+    public string nameKey;
+    public string descriptionKey;
+    public string addressKey;
 }
 
 [Serializable]
@@ -190,6 +202,7 @@ public class Answer
     [HideLabel]
     [MultiLineProperty(4)]
     public string answer;
+    public string answerKey;
 
     public Emotions emotion;
 }
@@ -201,6 +214,7 @@ public class Question : Data
     [HideLabel]
     [MultiLineProperty(2)]
     public string question;
+    public string questionKey;
     
     public List<Answer> _answers;
 
@@ -228,6 +242,10 @@ public class Character : Data
     public bool isSuspect;
     [ShowIf("isSuspect")]
     public Suspects suspect;
+    [ShowIf("isSuspect")]
+    public string jobKey;
+    [ShowIf("isSuspect")]
+    public string introPhraseKey;
 
     [Title("Distinctions")]
     
@@ -240,9 +258,11 @@ public class Indic
     [Title("Infos")]
 
     public string name;
-    public string job;
+    public string jobKey;
 
     public Sprite image;
+
+    public bool quickCallAvailable;
 }
 
 [Serializable]
@@ -278,13 +298,13 @@ public class GameData : SerializedScriptableObject
     [Title("DATA")]
     
     [Title("Evidences")]
-    public Dictionary<Locations, List<Evidence>> allEvidences = new Dictionary<Locations, List<Evidence>>();
+    public Dictionary<Locations, List<Evidence>> evidences = new Dictionary<Locations, List<Evidence>>();
 
     [Title("Notes")]
     public List<Note> notes = new List<Note>();
     
     [Title("Reports")]
-    public Dictionary<Indics, (List<Report>, List<Report>)> megaReports = new Dictionary<Indics, (List<Report>, List<Report>)>();
+    public Dictionary<Indics, (List<Report>, List<Report>)> reports = new Dictionary<Indics, (List<Report>, List<Report>)>();
     [HideInInspector] public Dictionary<Indics, List<Report>> allReports = new Dictionary<Indics, List<Report>>();
     public int reportsCollected = 0;
 
@@ -306,7 +326,6 @@ public class GameData : SerializedScriptableObject
     public Indics currentIndic = Indics.Standard;
     
     [HideInInspector] public bool firstTimeInGame = true;
-    [HideInInspector] public bool firstTimeInMenu = true;
     public bool firstTimeInTuto = true; // Tutorial Docks
 
     [Title("DATA SAVE")]
@@ -398,7 +417,6 @@ public class GameData : SerializedScriptableObject
     public void ManageSavedData(Action action)
     {
         firstTimeInGame = SetData(action, firstTimeInGame, nameof(firstTimeInGame));
-        firstTimeInMenu = SetData(action, firstTimeInMenu, nameof(firstTimeInMenu));
         firstTimeInTuto = SetData(action, firstTimeInTuto, nameof(firstTimeInTuto));
 
         gameLanguage = SetData(action, gameLanguage, nameof(gameLanguage));
@@ -412,11 +430,11 @@ public class GameData : SerializedScriptableObject
         soundSettings.voiceVolume.Volume = SetData(action, soundSettings.voiceVolume.Volume, soundSettingsName + "_" + nameof(soundSettings.voiceVolume));
 
         // Add Evidences
-        foreach (Locations location in allEvidences.Keys)
+        foreach (Locations location in evidences.Keys)
         {
             string listName = location.ToString();
 
-            foreach (Evidence evidence in allEvidences[location])
+            foreach (Evidence evidence in evidences[location])
             {
                 string evidenceName = listName + "_" + evidence.codeName;
 
@@ -459,11 +477,11 @@ public class GameData : SerializedScriptableObject
         }
 
         // Add Reports
-        foreach (Indics indic in megaReports.Keys)
+        foreach (Indics indic in reports.Keys)
         {
             string listName = indic.ToString();
 
-            foreach (Report report in megaReports[indic].Item1)
+            foreach (Report report in reports[indic].Item1)
             {
                 string reportName = listName + "_" + report.elementName;
                 if (report.mode == Modes.Evidence) reportName += ("_" + report.elementDetailName);
@@ -489,6 +507,11 @@ public class GameData : SerializedScriptableObject
         }
         interrogations = SetData(action, interrogations, nameof(interrogations));
 
+        foreach (Indic indic in indics.Values)
+        {
+            indic.quickCallAvailable = SetData(action, indic.quickCallAvailable, indic.name + "_" + nameof(indic.quickCallAvailable));
+        }
+
         firstTimeInTuto = SetData(action, firstTimeInTuto, nameof(firstTimeInTuto));
     }
 
@@ -502,8 +525,6 @@ public class GameData : SerializedScriptableObject
         ResetData();
 
         PlayerPrefs.SetInt(nameof(firstTimeInGame), 1);
-
-        PlayerPrefs.SetInt(nameof(firstTimeInMenu), 1);
     }
 
     [ContextMenu("Reset Game Data")]
@@ -512,9 +533,9 @@ public class GameData : SerializedScriptableObject
         ResetParameters();
         
         // Reset Evidences
-        foreach (Locations location in allEvidences.Keys)
+        foreach (Locations location in evidences.Keys)
         {
-            foreach (Evidence evidence in allEvidences[location])
+            foreach (Evidence evidence in evidences[location])
             {
                 evidence.unlockedData = false;
 
@@ -550,9 +571,9 @@ public class GameData : SerializedScriptableObject
         notes.Clear();
 
         // Reset Reports
-        foreach (Indics indic in megaReports.Keys)
+        foreach (Indics indic in reports.Keys)
         {
-            foreach (Report _report in megaReports[indic].Item1)
+            foreach (Report _report in reports[indic].Item1)
             {
                 _report.unlockedData = false;
                 _report.unlockOrderIndex = 0;
@@ -570,6 +591,11 @@ public class GameData : SerializedScriptableObject
             }
         }
         interrogations = 3;
+
+        foreach (Indic indic in indics.Values)
+        {
+            indic.quickCallAvailable = false;
+        }
 
         newStuff = false;
     }
@@ -645,7 +671,7 @@ public class GameData : SerializedScriptableObject
         switch (allTypes[typeof(T)])
         {
             case "evidence":
-                return allEvidences as List<T>;
+                return evidences as List<T>;
             case "note":
                 return notes as List<T>;
             case "location":

@@ -6,14 +6,15 @@ using UnityEngine.UI;
 public class ReturnButtonScript : MonoBehaviour
 {
     [SerializeField] GameObject actions;
-    [SerializeField] Text dialogueText;
+    [SerializeField] Localisation dialogueKey;
     [SerializeField] GameObject validateButton;
     [SerializeField] ActionType type;
 
     public void ReturnButton(GameObject parent)
     {
         actions.SetActive(true);
-        dialogueText.text = actions.GetComponent<ActionsButtonsScript>().returnText;
+        dialogueKey.key = actions.GetComponent<ActionsButtonsScript>().returnKey;
+        dialogueKey.RefreshText();
 
         switch(type)
         {

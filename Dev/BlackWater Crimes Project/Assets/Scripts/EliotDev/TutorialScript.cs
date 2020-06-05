@@ -7,8 +7,8 @@ using Sirenix.OdinInspector;
 public class TutorialScript : SerializedMonoBehaviour
 {
     [Title("Dialogue References")]
-    public GameObject dialogueCanvas;
-    public Text dialogueUIText;
+    public GameObject dialogueUI;
+    public Localisation dialogueUIKey;
     public Image charaUIImage;
 
 
@@ -24,14 +24,24 @@ public class TutorialScript : SerializedMonoBehaviour
     List<List<string>> currentDialogueLanguage = new List<List<string>>();
     int dialogueIndex = 0;
 
-    
-    
+       
     [Title("Dialogue Sprites")]
 
     [ListDrawerSettings(ShowIndexLabels = true)]
     public List<Sprite> dialoguesSprites = new List<Sprite>();
     int spriteIndex = 0;
 
+
+    [Title("Objective References")]
+    public GameObject objectiveUI;
+    public Localisation objectiveKey;
+
+
+    [Title("Objective Text")]
+    public List<string> englishObjectives = new List<string>();
+    public List<string> frenchObjectives = new List<string>();    
+    List<string> currentObjectivesLanguage = new List<string>();
+    int objectiveIndex = 0;
 
 
     [Title("Docks References")]
@@ -41,11 +51,11 @@ public class TutorialScript : SerializedMonoBehaviour
     public EvidenceInteraction evidenceScript;
 
 
-
     [Title("Menu Desk References")]
     Button folderButton;
     Button mapButton;
     Button phoneButton;
+    Button mainMenuButton;
 
 
     [Title("Folder Desk References")]
@@ -69,6 +79,12 @@ public class TutorialScript : SerializedMonoBehaviour
     HeadHunterCheck headHunterCheck;
     Button validateButton;
     Button returnButtonIndic;
+
+
+    [Title("Map References")]
+    GameObject magMileQuarter;
+    GameObject docks;
+    GameObject annaHouse;
 
 
     [Title("Game Data")]
@@ -113,6 +129,14 @@ public class TutorialScript : SerializedMonoBehaviour
 
     bool waitingForHeadHunterScene = false;
 
+    bool waitingForSecondReturnFolderScene = false;
+
+    bool waitingForThirdReturnToDesk = false;
+
+    bool waitingForMapScene = false;
+    bool waitingForMagMileZoom = false;
+    bool waitingForAnnaHouseDiscover = false;
+
 
     void Start()
     {
@@ -120,16 +144,8 @@ public class TutorialScript : SerializedMonoBehaviour
         {
             gameData.firstTimeInTuto = false;
             DontDestroyOnLoad(this.gameObject);
-            switch (gameData.gameLanguage)
-            {
-                case Languages.English:
-                    currentDialogueLanguage = englishDialogues;
-                    break;
-
-                case Languages.French:
-                    currentDialogueLanguage = frenchDialogues;
-                    break;
-            }
+            currentDialogueLanguage = englishDialogues;
+            currentObjectivesLanguage = englishObjectives;
 
             DockStart();
         }
@@ -380,11 +396,14 @@ public class TutorialScript : SerializedMonoBehaviour
 
         else if (waitingForLabelDisplayed)
         {
-           if (evidenceReceiver.GetComponent<SpecialistEvidenceDisplayer>().currentEvidenceDisplayed.GetComponent<PhotoSpecialistObject>().data.codeName == "Etiquette Vetement")
+            if(evidenceReceiver.GetComponent<SpecialistEvidenceDisplayer>().currentEvidenceDisplayed != null)
             {
-                waitingForLabelDisplayed = false;
+                if (evidenceReceiver.GetComponent<SpecialistEvidenceDisplayer>().currentEvidenceDisplayed.GetComponent<PhotoSpecialistObject>().data.codeName == "Etiquette Vetement")
+                {
+                    waitingForLabelDisplayed = false;
 
-                StartCoroutine(WaitForNextDialogue());
+                    StartCoroutine(WaitForNextDialogue());
+                }
             }
         }
 
@@ -434,6 +453,63 @@ public class TutorialScript : SerializedMonoBehaviour
             }
         }
 
+        else if (waitingForSecondReturnFolderScene)
+        {
+           if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "NewDeskScene")
+            {
+                waitingForSecondReturnFolderScene = false;
+
+                FolderDeskStart();
+
+                StartCoroutine(WaitForNextDialogue());
+            }
+        }
+
+        else if (waitingForThirdReturnToDesk)
+        {
+            if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "MenuDeskScene")
+            {
+                waitingForThirdReturnToDesk = false;
+
+                MenuDeskStart();
+
+                StartCoroutine(WaitForNextDialogue());
+            }
+        }
+
+        else if (waitingForMapScene)
+        {
+            if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "MapScene")
+            {
+                waitingForMapScene = false;
+
+                MapStart();
+
+                StartCoroutine(WaitForNextDialogue());
+            }
+        }
+
+        else if (waitingForMagMileZoom)
+        {
+            if (!magMileQuarter.activeSelf)
+            {
+                waitingForMagMileZoom = false;
+
+                StartCoroutine(WaitForNextDialogue());
+            }
+        }
+
+        else if (waitingForAnnaHouseDiscover)
+        {
+            if (annaHouse.GetComponent<LocationObject>().data.visible)
+            {
+                waitingForAnnaHouseDiscover = false;
+
+                annaHouse.GetComponent<CircleCollider2D>().enabled = false;
+
+                StartCoroutine(WaitForNextDialogue());
+            }
+        }
     }
 
     void DockStart()
@@ -456,7 +532,7 @@ public class TutorialScript : SerializedMonoBehaviour
     
         NextLine();
 
-        dialogueCanvas.SetActive(false);
+        dialogueUI.SetActive(false);
         StartCoroutine(WaitForEndOfAnimation());
     }
 
@@ -465,10 +541,12 @@ public class TutorialScript : SerializedMonoBehaviour
         folderButton = GameObject.Find("Desk Folders Button").GetComponent<Button>();
         mapButton = GameObject.Find("Map Scene Button").GetComponent<Button>();
         phoneButton = GameObject.Find("Telephone Scene Button").GetComponentInChildren<Button>();
+        mainMenuButton = GameObject.Find("Return To Menu Button").GetComponent<Button>();
 
         folderButton.interactable = false;
         mapButton.interactable = false;
         phoneButton.interactable = false; 
+        mainMenuButton.interactable = false;
     }
 
     void FolderDeskStart()
@@ -519,12 +597,22 @@ public class TutorialScript : SerializedMonoBehaviour
         }
     }
 
+    void MapStart()
+    {
+        magMileQuarter = GameObject.Find("Quarter Mag Mile");
+        docks = GameObject.Find("Location Docks");
+        annaHouse = GameObject.Find("Location Anna_House");
+
+        docks.GetComponent<CircleCollider2D>().enabled = false;
+    }
+
     public void NextLine()
     {
         if(textIndex < currentDialogueLanguage[dialogueIndex].Count)
         {
             List<string> tempList = currentDialogueLanguage[dialogueIndex];
-            dialogueUIText.text = tempList[textIndex];
+            dialogueUIKey.key = tempList[textIndex];
+            dialogueUIKey.RefreshText();
 
             charaUIImage.sprite = dialoguesSprites[spriteIndex];
 
@@ -539,8 +627,14 @@ public class TutorialScript : SerializedMonoBehaviour
 
     void EndCurrentDialogue()
     {
-        dialogueCanvas.SetActive(false);
+        dialogueUI.SetActive(false);
         textIndex = 0;
+
+        objectiveUI.SetActive(true);
+        objectiveKey.key = currentObjectivesLanguage[objectiveIndex];
+        objectiveKey.RefreshText();
+        objectiveIndex ++;
+
 
         PrepareNextDialogue();
     }
@@ -702,6 +796,8 @@ public class TutorialScript : SerializedMonoBehaviour
 
         else if (dialogueIndex == 23)
         {
+            returnButtonFolder.interactable = true;
+
             waitingForSecondReturnToDesk = true;
         }
 
@@ -713,18 +809,58 @@ public class TutorialScript : SerializedMonoBehaviour
 
             waitingForHeadHunterScene = true;
         }
+
+        else if (dialogueIndex == 25)
+        {
+            waitingForSecondReturnFolderScene = true;
+        }
+
+        else if (dialogueIndex == 26)
+        {
+            returnButtonFolder.interactable = true;
+
+            waitingForThirdReturnToDesk = true;
+        }
+
+        else if (dialogueIndex == 27)
+        {
+            folderButton.interactable = true;
+            mapButton.interactable = true;
+            phoneButton.interactable = true; 
+
+            waitingForMapScene = true;
+        }
+
+        else if (dialogueIndex == 28)
+        {
+            waitingForMagMileZoom = true;
+        }
+
+        else if (dialogueIndex == 29)
+        {
+            waitingForAnnaHouseDiscover = true;
+        }
+
+        else if (dialogueIndex == 30)
+        {
+            annaHouse.GetComponent<CircleCollider2D>().enabled = true;
+            docks.GetComponent<CircleCollider2D>().enabled = true;
+
+            Destroy(this.gameObject);
+        }
     }
 
     IEnumerator WaitForEndOfAnimation()
     {
         yield return new WaitForSeconds(3);
-        dialogueCanvas.SetActive(true);
+        dialogueUI.SetActive(true);
     }
 
     IEnumerator WaitForNextDialogue()
     {
+        objectiveUI.SetActive(false);
         yield return new WaitForSeconds(.3f);
-        dialogueCanvas.SetActive(true);
+        dialogueUI.SetActive(true);
         dialogueIndex ++;
         NextLine();
     }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5562222236953116477}
   - component: {fileID: 5081451146319051735}
   - component: {fileID: 5731115904465695099}
+  - component: {fileID: 4274142971622760381}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -77,6 +78,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 
+--- !u!114 &4274142971622760381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225732985053458427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 5731115904465695099}
+  key: 
 --- !u!1 &4645354823844571672
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,11 +186,13 @@ MonoBehaviour:
     unlockedData: 0
     index: 0
     codeName: 
+    nameKey: 
     intelSelf: 0
     hasIntels: 0
     intels: []
     useToUnlock: 0
     unlockableLocation: 0
+    photo: {fileID: 0}
     photoPath: 
     hasText: 0
     descriptionText: 
@@ -184,7 +201,7 @@ MonoBehaviour:
       suspect: 0
     seen: 0
   imageObject: {fileID: 4645354825027871554}
-  textComponent: {fileID: 5731115904465695099}
+  textKey: {fileID: 4274142971622760381}
   isEvidenceDisplayed: 0
 --- !u!114 &8802668221664152005
 MonoBehaviour:

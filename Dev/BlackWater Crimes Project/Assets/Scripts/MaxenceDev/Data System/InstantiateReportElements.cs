@@ -5,123 +5,58 @@ using UnityEngine;
 using UnityEngine.UI;
 using Sirenix.OdinInspector;
 
-public class InstantiateReportElements : InstantiationProcess<Report>
+public class InstantiateReportElements : InstantiateElements<Report>
 {
-    [Title("Settings")]
-
-    public int amountInEachPage;
-    
-    [HideInInspector] public List<Vector2> spawnPoints = new List<Vector2>();
-    
-    [Title("Contents", horizontalLine: false)]
-
-    public InstantiateReports mainContentScript;
-    private int mainIndex = 0;
-
-    public List<Transform> contents;
-    private Transform currentContent;
-
-    private Transform pageContent;
-
-    private int spawnIndex = 0;
-
-    public List<GameObject> elementsList { get; private set; } = new List<GameObject>();
-
-    private List<Report> reportsList = new List<Report>();
-
-    public DisplaySystem reportDisplay;
-
-    void Start()
+    protected override List<List<Report>> GetAllElements()
     {
-        GetGameData();
-        
-        SetLayout();
+        List<List<Report>> mainList = new List<List<Report>>();
 
-        int local = 0;
-        currentContent = contents[local];
-        CreatePage(currentContent);
-        
-        foreach ((List<Report>, List<Report>) _list in gameData.megaReports.Values)
+        List<Report> allReports = new List<Report>();
+
+        foreach ((List<Report>, List<Report>) reportsList in gameData.reports.Values)
         {
-            foreach (Report report in _list.Item1)
+            foreach (Report report in reportsList.Item1)
             {
-                if (report.unlockedData)
-                {
-                    reportsList.Add(report);
-                }
+                allReports.Add(report);
             }
         }
 
-        reportsList = reportsList.OrderBy(w => w.unlockOrderIndex).ToList();
-        reportsList.Reverse();
+        mainList.Add(allReports);
 
-        foreach (Report _report in reportsList)
-        {
-            InstantiateObjectOfType(_report, this.prefab);
-
-            SetElement(_report);
-            mainIndex++;
-        }
+        return mainList;
     }
 
-    public override GameObject Instantiation(GameObject prefab)
+    protected override void OrderElements()
     {
-        GameObject _prefab = Instantiate(prefab) as GameObject;
-        _prefab.transform.SetParent(pageContent, false);
-
-        _prefab.GetComponent<RectTransform>().anchoredPosition = spawnPoints[spawnIndex];
-
-        _prefab.GetComponent<RectTransform>().offsetMin = new Vector2(15, _prefab.GetComponent<RectTransform>().offsetMin.y);
-        _prefab.GetComponent<RectTransform>().offsetMax = new Vector2(-15, _prefab.GetComponent<RectTransform>().offsetMax.y);
-
-        //GameObject obj = _prefab.transform.GetChild(0).GetChild(_prefab.transform.GetChild(0).childCount - 1).gameObject;
-        //_prefab.GetComponent<Button>().onClick.AddListener(delegate { reportDisplay.SelectElement(obj); });
-
-        elementsList.Add(_prefab);
-
-        spawnIndex++;
-        if (spawnIndex == amountInEachPage) { CreatePage(currentContent); }
-
-        return _prefab;
+        allData = allData.OrderBy(w => w.unlockOrderIndex).ToList();
+        allData.Reverse();
     }
-
-    void SetElement(Report report)
+    
+    protected override void AdditionalSettings(GameObject __prefab)
     {
-        int ind = mainIndex;
-        mainContentScript.holders[0].elements.Add(new Element { index = ind, name = report.elementName, elementObject = elementsList[ind] });
+        __prefab.GetComponent<RectTransform>().offsetMin = new Vector2(15, __prefab.GetComponent<RectTransform>().offsetMin.y);
+        __prefab.GetComponent<RectTransform>().offsetMax = new Vector2(-15, __prefab.GetComponent<RectTransform>().offsetMax.y);
+    }
+    
+    protected override string GetDataName(Report data)
+    {
+        return data.elementName;
     }
 
-    void SetLayout()
+    protected override void SetLayout()
     {
         float sizeX = contents[0].GetComponent<RectTransform>().rect.width;
-        float sizeY = contents[0].GetComponent<RectTransform>().rect.height / amountInEachPage;
+        float sizeY = contents[0].GetComponent<RectTransform>().rect.height / amountInEachColumn;
 
         float posX;
         float posY;
         
-        for (int w = 0; w < amountInEachPage; w++)
+        for (int w = 0; w < amountInEachColumn; w++)
         {
             posY = (sizeY / 2) + sizeY * w;
             posX = (sizeX / 2);
 
             spawnPoints.Add(new Vector2(posX, -posY));
         }
-    }
-
-    void CreatePage(Transform content)
-    {
-        GameObject page = Instantiate(new GameObject());
-        page.transform.SetParent(content, false);
-
-        page.AddComponent<RectTransform>();
-        page.GetComponent<RectTransform>().anchorMin = Vector2.zero; // sets the mode (stretch)
-        page.GetComponent<RectTransform>().anchorMax = Vector2.one;
-        page.GetComponent<RectTransform>().sizeDelta = Vector2.zero; // sets the size (offsets to 0)
-
-        page.name = "Page Content";
-
-        pageContent = page.transform;
-
-        spawnIndex = 0;
     }
 }
