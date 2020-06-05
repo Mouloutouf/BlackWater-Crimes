@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using Sirenix.OdinInspector;
 
@@ -43,7 +44,9 @@ public class ZoomPhoto : MonoBehaviour
             Zoom(image, nameKey, textKey);
         }
         else Zoom(image, nameKey);
-
+        
+        photoObject.GetComponent<NotificationPhoto>().ChangeNotification();
+        
         isZoomed = true;
     }
 

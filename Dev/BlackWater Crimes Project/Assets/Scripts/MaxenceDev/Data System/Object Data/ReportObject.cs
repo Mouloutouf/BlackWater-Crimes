@@ -18,8 +18,6 @@ public class ReportObject : ObjectData<Report>
     public Localisation reportKey;
 
     public Image signatureImage;
-
-    public ElementHolder holder;
     
     void Start()
     {
@@ -43,9 +41,7 @@ public class ReportObject : ObjectData<Report>
         reportKey.RefreshText();
 
         if (signatureImage != null) signatureImage.sprite = data.signature;
-
-        if (holder != null) holder.seen = data.seen;
-
+        
         base.Protocol();
     }
 

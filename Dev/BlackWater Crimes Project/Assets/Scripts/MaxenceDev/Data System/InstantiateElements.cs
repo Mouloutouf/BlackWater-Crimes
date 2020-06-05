@@ -33,12 +33,12 @@ public class InstantiateElements<T> : InstantiationProcess<T> where T : Data
     public Transform reportsContent;
     public DisplaySystem display;
 
+    #region Instantiation Process
     protected virtual List<List<T>> GetAllElements()
     {
         return new List<List<T>>();
     }
 
-    #region Instantiation Process
     protected virtual bool Check(T data)
     {
         return data.unlockedData;

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 789022147938596730}
   - component: {fileID: 789022147938596731}
   - component: {fileID: 7984622872036610523}
-  - component: {fileID: 8744983604303464028}
+  - component: {fileID: 2863953115032553740}
   m_Layer: 5
   m_Name: Photo Element
   m_TagString: Untagged
@@ -73,7 +73,7 @@ MonoBehaviour:
     seen: 0
   imageObject: {fileID: 789022149131863392}
   textObject: {fileID: 789022149021782609}
-  holder: {fileID: 8744983604303464028}
+  holder: {fileID: 0}
   pageNumber: 0
 --- !u!114 &7984622872036610523
 MonoBehaviour:
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &8744983604303464028
+--- !u!114 &2863953115032553740
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,11 +127,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 789022147938596729}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3494aadd882f1bb4ab1e757f6d9c3362, type: 3}
+  m_Script: {fileID: 11500000, guid: dd0e9e75783fd164692e264ffa653440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seen: 0
-  bind: {fileID: 0}
+  nPrefab: {fileID: 6933587236663041325, guid: 975703b446133b740891582f9fead6b0, type: 3}
+  nPosition: {x: 35, y: 2}
+  seenEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &789022148239859997
 GameObject:
   m_ObjectHideFlags: 0

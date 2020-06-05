@@ -7,9 +7,7 @@ public class ReportButtonObject : ObjectData<Report>
 {
     public Text agentText;
     public Localisation elementKey;
-
-    public GameObject associatedReport { get; set; }
-
+    
     void Start()
     {
         GetGameData();
