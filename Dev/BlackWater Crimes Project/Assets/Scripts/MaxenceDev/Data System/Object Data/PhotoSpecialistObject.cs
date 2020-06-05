@@ -22,6 +22,7 @@ public class PhotoSpecialistObject : ObjectData<Evidence>
     {
         if (!isEvidenceDisplayed)
         {
+            data.photo = EvidenceInteraction.CreateSprite(data.photoPath);
             imageObject.GetComponent<Image>().sprite = data.photo;
 
             textKey.key = data.nameKey;

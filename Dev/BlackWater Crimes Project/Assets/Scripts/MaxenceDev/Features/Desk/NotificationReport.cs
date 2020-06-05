@@ -8,25 +8,30 @@ public class NotificationReport : Notification
 
     void Start()
     {
-        if (!GetNotificationState())
-        {
-            _notification = InstantiateNotification(notificationObject.transform);
-        }
+        isSeen = GetNotificationState();
+
+        if (!isSeen) _notification = InstantiateNotification(notificationObject.transform);
+
+        SetNotificationSystem();
     }
 
     protected override bool GetNotificationState()
     {
         bool state = informationObject.GetComponent<ReportObject>().data.seen;
-
-        isSeen = state;
-
+        
         return state;
+    }
+
+    void SetNotificationSystem()
+    {
+        notificationSystem.groups[NotificationType.Report].notifications.Add(this);
+        seenEvent.AddListener(delegate { notificationSystem.Seen(NotificationType.Report); });
     }
 
     public override void ChangeNotification()
     {
         base.ChangeNotification();
 
-        informationObject.GetComponent<ReportObject>().data.seen = false;
+        informationObject.GetComponent<ReportObject>().data.seen = true;
     }
 }

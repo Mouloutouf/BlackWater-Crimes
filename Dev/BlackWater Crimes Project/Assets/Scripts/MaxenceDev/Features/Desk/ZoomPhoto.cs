@@ -17,68 +17,107 @@ public class ZoomPhoto : MonoBehaviour
     public Localisation zoomNameKey;
     public Localisation zoomTextKey;
     
+    public Vector2 imagePosWithText;
+
     private bool isZoomed;
 
-    private float timerValue = 0.3f;
+    public float timerValue = 0.3f;
     private float timer;
 
-    public Vector2 imagePosWithText;
+    private GameObject zoomedObject;
+    private int input = 0;
     
     void Update()
     {
         if (Input.GetMouseButtonDown(0) && isZoomed)
         {
-            DeZoom();
+            Dezoom();
             isZoomed = false;
+        }
+
+        if (zoomedObject != null)
+        {
+            WaitForZoom(zoomedObject);
         }
     }
     
     public void ZoomObject(GameObject photoObject)
     {
-        Sprite image = photoObject.GetComponent<PhotoObject>().data.photo;
-        string nameKey = photoObject.GetComponent<PhotoObject>().data.nameKey;
+        if (input == 0)
+        {
+            zoomedObject = photoObject;
+            input = 1;
+
+            timer = timerValue;
+        }
+        else
+        {
+            if (photoObject == zoomedObject)
+            {
+                input = 2;
+            }
+            else
+            {
+                zoomedObject = photoObject;
+                input = 1;
+
+                timer = timerValue;
+            }
+        }
+    }
+
+    public void WaitForZoom(GameObject photoObject)
+    {
+        timer -= Time.deltaTime;
+        
+        if (timer <= 0.0f)
+        {
+            zoomedObject = null;
+            input = 0;
+        }
+        else
+        {
+            if (input == 2)
+            {
+                Zoom(photoObject);
+
+                zoomedObject = null;
+                input = 0;
+            }
+        }
+    }
+
+    public void Zoom(GameObject photoObject)
+    {
+        zoomPanel.SetActive(true);
+
+        zoomImage.sprite = photoObject.GetComponent<PhotoObject>().data.photo;
+
+        zoomNameKey.key = photoObject.GetComponent<PhotoObject>().data.nameKey;
+        zoomNameKey.RefreshText();
 
         if (photoObject.GetComponent<PhotoObject>().data.hasText)
         {
-            string textKey = photoObject.GetComponent<PhotoObject>().data.textKey;
-            Zoom(image, nameKey, textKey);
+            zoomCadran.GetComponent<RectTransform>().anchoredPosition = imagePosWithText;
+
+            zoomTextKey.gameObject.SetActive(true);
+
+            zoomTextKey.key = photoObject.GetComponent<PhotoObject>().data.textKey;
+            zoomTextKey.RefreshText();
         }
-        else Zoom(image, nameKey);
+        else
+        {
+            zoomCadran.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+
+            zoomTextKey.gameObject.SetActive(false);
+        }
         
         photoObject.GetComponent<NotificationPhoto>().ChangeNotification();
         
         isZoomed = true;
     }
-
-    public void Zoom(Sprite photoSprite, string nameKey)
-    {
-        zoomPanel.SetActive(true);
-
-        zoomImage.sprite = photoSprite;
-        zoomNameKey.key = nameKey;
-        zoomNameKey.RefreshText();
-
-        zoomCadran.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
-
-        zoomPanel.transform.GetChild(1).gameObject.SetActive(false);
-    }
-
-    public void Zoom(Sprite photoSprite, string nameKey, string textKey)
-    {
-        zoomPanel.SetActive(true);
-
-        zoomImage.sprite = photoSprite;
-        zoomNameKey.key = nameKey;
-        zoomNameKey.RefreshText();
-
-        zoomCadran.GetComponent<RectTransform>().anchoredPosition = imagePosWithText;
-
-        zoomTextKey.gameObject.SetActive(true);
-        zoomTextKey.key = textKey;
-        zoomTextKey.RefreshText();
-    }
-
-    public void DeZoom()
+    
+    public void Dezoom()
     {
         zoomPanel.SetActive(false);
     }

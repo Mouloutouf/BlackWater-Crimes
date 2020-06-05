@@ -6,7 +6,9 @@ using Sirenix.OdinInspector;
 
 public class Notification : MonoBehaviour
 {
-    public bool isSeen { get; set; }
+    public NotificationSystem notificationSystem;
+
+    [HideInInspector] public bool isSeen;
     public GameObject notificationObject { get { return this.gameObject; } }
 
     [Title("Settings")]
@@ -50,25 +52,30 @@ public class NotificationPhoto : Notification
 {
     void Start()
     {
-        if (!GetNotificationState())
-        {
-            _notification = InstantiateNotification(notificationObject.transform);
-        }
+        isSeen = GetNotificationState();
+
+        if (!isSeen) _notification = InstantiateNotification(notificationObject.transform);
+
+        SetNotificationSystem();
     }
 
     protected override bool GetNotificationState()
     {
         bool state = notificationObject.GetComponent<PhotoObject>().data.seen;
-
-        isSeen = state;
-
+        
         return state;
+    }
+
+    void SetNotificationSystem()
+    {
+        notificationSystem.groups[NotificationType.Photo].notifications.Add(this);
+        seenEvent.AddListener(delegate { notificationSystem.Seen(NotificationType.Photo); });
     }
 
     public override void ChangeNotification()
     {
         base.ChangeNotification();
 
-        notificationObject.GetComponent<PhotoObject>().data.seen = false;
+        notificationObject.GetComponent<PhotoObject>().data.seen = true;
     }
 }

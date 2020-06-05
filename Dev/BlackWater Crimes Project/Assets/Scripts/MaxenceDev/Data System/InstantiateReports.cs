@@ -48,8 +48,7 @@ public class InstantiateReports : InstantiationProcess<Report>
         GameObject reportPrefab = InstantiateObjectOfType(report, this.prefab);
         
         element.GetComponent<Button>().onClick.AddListener(delegate { display.DisplayElement(element, reportPrefab); });
-        //reportPrefab.GetComponent<ElementHolder>().bind = element;
-
+        
         if (element.TryGetComponent<NotificationReport>(out NotificationReport obj)) element.GetComponent<NotificationReport>().informationObject = reportPrefab;
     }
 

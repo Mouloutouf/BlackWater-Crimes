@@ -17,6 +17,7 @@ public class PhotoObject : ObjectData<Evidence>
 
     public override void Protocol()
     {
+        data.photo = EvidenceInteraction.CreateSprite(data.photoPath);
         imageObject.GetComponent<Image>().sprite = data.photo;
         
         if (textObject != null) { textObject.GetComponent<Localisation>().key = data.nameKey; textObject.GetComponent<Localisation>().RefreshText(); }

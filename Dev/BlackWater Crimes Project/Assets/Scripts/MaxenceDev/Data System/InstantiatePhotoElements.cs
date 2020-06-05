@@ -57,15 +57,14 @@ public class InstantiatePhotoElements : InstantiateElements<Evidence>
         contentObject.GetComponentInChildren<Localisation>().key = location.nameKey;
         contentObject.GetComponentInChildren<Localisation>().RefreshText();
 
-        contents.Add(contentObject.transform);
+        contents.Add(contentObject.transform.GetChild(1));
     }
 
     protected override void AdditionalSettings(GameObject __prefab)
     {
         __prefab.transform.GetChild(0).GetComponentInChildren<Button>().onClick.AddListener(delegate { zoomPhoto.ZoomObject(__prefab); });
-        
-        notificationSystem.groups[NotificationType.Photo].notifications.Add(__prefab.GetComponent<NotificationPhoto>());
-        __prefab.GetComponent<NotificationPhoto>().seenEvent.AddListener(delegate { notificationSystem.Seen(NotificationType.Photo); });
+
+        __prefab.GetComponent<NotificationPhoto>().notificationSystem = notificationSystem;
     }
 
     protected override string GetDataName(Evidence data)
