@@ -4,14 +4,18 @@ using System.Linq;
 
 public class InformationButton : MonoBehaviour
 {
-    public string informationText;
-    public Text informationTextObject;
+    public string infoKey;
+    public string buttonName;
+    public Localisation informationKey;
     public GameObject bulleTexte;
     public ScrollRect scrollRect;
 
     public void Start()
     {
-        informationTextObject.text = informationText;
+        informationKey.key = infoKey;
+        informationKey.RefreshText();
+        
+        buttonName = gameObject.name;
     }
 
     public void ShowBulle()

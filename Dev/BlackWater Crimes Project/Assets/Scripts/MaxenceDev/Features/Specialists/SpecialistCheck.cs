@@ -9,6 +9,8 @@ public class SpecialistCheck : Checker
 
     private Evidence EvidenceHeld { get { return specialistEvidenceDisplayer.currentEvidenceDisplayed.GetComponent<PhotoSpecialistObject>().data; } }
 
+    public string missingKey;
+
     public override void SendEvent()
     {
         GetCheckedElements();
@@ -30,7 +32,7 @@ public class SpecialistCheck : Checker
         specialistEvidenceDisplayer.ResetClue();
 
         validateButton.interactable = false;
-        validateButton.GetComponentInChildren<Text>().text = "Missing elements";
+        validateButton.GetComponentInChildren<Localisation>().key = missingKey;
     }
 
     public override void UnlockReport(Report _report)

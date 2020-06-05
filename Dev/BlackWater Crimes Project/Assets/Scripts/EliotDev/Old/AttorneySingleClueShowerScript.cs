@@ -8,6 +8,9 @@ public class AttorneySingleClueShowerScript : MonoBehaviour
 {
     [SerializeField] GameObject clueFolder;
     [SerializeField] Button validateButton;
+
+    public string validateKey;
+
     public GameObject currentClueShowed;
     bool folderOpen = false;
 
@@ -28,7 +31,8 @@ public class AttorneySingleClueShowerScript : MonoBehaviour
         if(currentClueShowed != null)
         {
             validateButton.interactable = true;
-            validateButton.GetComponentInChildren<Text>().text = "Validate";
+            validateButton.GetComponentInChildren<Localisation>().key = validateKey;
+            validateButton.GetComponentInChildren<Localisation>().RefreshText();
         }
     }
 

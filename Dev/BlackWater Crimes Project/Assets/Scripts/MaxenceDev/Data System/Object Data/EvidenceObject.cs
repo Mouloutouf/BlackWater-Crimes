@@ -36,7 +36,7 @@ public class EvidenceObject : ObjectData<Evidence>
     {
         GetGameData();
 
-        List<Evidence> myDataList = gameData.allEvidences[data.modeCategory.location];
+        List<Evidence> myDataList = gameData.evidences[data.modeCategory.location];
 
         LoadDataOfType(myDataList);
     }
@@ -104,7 +104,8 @@ public class EvidenceObject : ObjectData<Evidence>
         }
         else
         {
-            displayTextComponent.text = data.descriptionText;
+            displayTextComponent.gameObject.GetComponent<Localisation>().key = data.textKey;
+            displayTextComponent.gameObject.GetComponent<Localisation>().RefreshText();
             displayTextComponent.transform.parent.gameObject.SetActive(true);
 
             isShown = true;

@@ -24,7 +24,8 @@ public class PhotoAttorneyObject : ObjectData<Evidence>
         {
             imageObject.GetComponent<Image>().sprite = data.photo;
 
-            textComponent.text = data.codeName;
+            textComponent.gameObject.GetComponent<Localisation>().key = data.nameKey;
+            textComponent.gameObject.GetComponent<Localisation>().RefreshText();
         }
 
         base.Protocol();

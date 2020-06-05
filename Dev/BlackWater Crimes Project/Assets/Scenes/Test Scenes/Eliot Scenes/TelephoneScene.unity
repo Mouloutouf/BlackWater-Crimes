@@ -2457,6 +2457,7 @@ GameObject:
   - component: {fileID: 400438904}
   - component: {fileID: 400438906}
   - component: {fileID: 400438905}
+  - component: {fileID: 400438907}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -2523,6 +2524,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 400438903}
   m_CullTransparentMesh: 0
+--- !u!114 &400438907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400438903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 400438905}
+  key: 
 --- !u!1 &408782644
 GameObject:
   m_ObjectHideFlags: 0
@@ -6660,6 +6675,7 @@ GameObject:
   - component: {fileID: 1125617335}
   - component: {fileID: 1125617337}
   - component: {fileID: 1125617336}
+  - component: {fileID: 1125617338}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -6726,6 +6742,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1125617334}
   m_CullTransparentMesh: 0
+--- !u!114 &1125617338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125617334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 1125617336}
+  key: 
 --- !u!1 &1129639669
 GameObject:
   m_ObjectHideFlags: 0
@@ -8986,6 +9016,7 @@ GameObject:
   - component: {fileID: 1500855003}
   - component: {fileID: 1500855005}
   - component: {fileID: 1500855004}
+  - component: {fileID: 1500855006}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -9052,6 +9083,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1500855002}
   m_CullTransparentMesh: 0
+--- !u!114 &1500855006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500855002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 1500855004}
+  key: 
 --- !u!1 &1509314796
 GameObject:
   m_ObjectHideFlags: 0
@@ -9710,9 +9755,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 902fa2ee1aafbd74ca389b109ca13e0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  informationText: "Me Thommers, en sa qualit\xE9 de procureur, peut vous d\xE9bloquer
-    l'acc\xE8s \xE0 un lieu, vous permettre d'interroger et / ou d'accuser quelqu'un "
-  informationTextObject: {fileID: 1500855004}
+  infoKey: thommers_info
+  buttonName: 
+  informationKey: {fileID: 1500855006}
   bulleTexte: {fileID: 170974086}
   scrollRect: {fileID: 1331404118}
 --- !u!114 &1543503986
@@ -10805,9 +10850,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 902fa2ee1aafbd74ca389b109ca13e0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  informationText: "James Walker excelle dans la recherche de personnes. Il a juste
-    besoin d'un nom et d'un d\xE9tail physique pour trouver quelqu'un."
-  informationTextObject: {fileID: 400438905}
+  infoKey: walker_info
+  buttonName: 
+  informationKey: {fileID: 400438907}
   bulleTexte: {fileID: 2091522867}
   scrollRect: {fileID: 1331404118}
 --- !u!114 &1616405068
@@ -11735,10 +11780,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 902fa2ee1aafbd74ca389b109ca13e0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  informationText: "Thomas Maxwell est un sp\xE9cialiste des enqu\xEAtes de terrain.
-    Donnez-lui simplement un lieu que vous avez trouv\xE9 sur la carte et il ira
-    pour vous."
-  informationTextObject: {fileID: 1125617336}
+  infoKey: maxwell_info
+  buttonName: 
+  informationKey: {fileID: 1125617338}
   bulleTexte: {fileID: 534195581}
   scrollRect: {fileID: 1331404118}
 --- !u!95 &1736033739

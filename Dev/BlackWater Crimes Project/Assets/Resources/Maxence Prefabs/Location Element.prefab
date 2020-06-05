@@ -317,6 +317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91d16592312f6ca4a95f6dd91248e49e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showData: 0
   data:
     unlockedData: 0
     index: 0
@@ -329,8 +330,8 @@ MonoBehaviour:
     locationArtwork: {fileID: 0}
     locationCroppedImage: {fileID: 0}
     locationDescription: 
-  instantiate: 1
-  hasApplied: 0
+    nameKey: 
+    descriptionKey: 
   imageObject: {fileID: 7485531062949769242}
   textObject: {fileID: 7485531062719785526}
 --- !u!1 &7485531062719785526
@@ -344,6 +345,7 @@ GameObject:
   - component: {fileID: 7485531062719785527}
   - component: {fileID: 7485531062719785513}
   - component: {fileID: 7485531062719785512}
+  - component: {fileID: 6023430606807215422}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -410,6 +412,20 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: New Text
+--- !u!114 &6023430606807215422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7485531062719785526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 7485531062719785512}
+  key: 
 --- !u!1 &7485531062949769242
 GameObject:
   m_ObjectHideFlags: 0

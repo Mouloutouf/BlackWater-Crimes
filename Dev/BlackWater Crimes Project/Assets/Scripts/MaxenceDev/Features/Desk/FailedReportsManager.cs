@@ -26,12 +26,14 @@ public class FailedReportsManager : MonoBehaviour
     {
         report.GetComponent<ReportObject>().data.unlockedData = false;
         
+        if (failedContent.childCount == 1) ClearAllFailedReports();
+
         Destroy(report);
     }
 
     public void ClearAllFailedReports()
     {
-        foreach ((List<Report>, List<Report>) reports in gameData.megaReports.Values)
+        foreach ((List<Report>, List<Report>) reports in gameData.reports.Values)
         {
             Report template = new Report();
 

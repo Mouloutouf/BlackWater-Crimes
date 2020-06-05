@@ -74,6 +74,7 @@ public class Note : Data
 public class Intel
 {
     public string name;
+    public string intelKey; // useless for now
     
     public float intelAlpha { get; set; }
 
@@ -192,6 +193,7 @@ public class Location : Data
 
     public string nameKey;
     public string descriptionKey;
+    public string addressKey;
 }
 
 [Serializable]
@@ -296,13 +298,13 @@ public class GameData : SerializedScriptableObject
     [Title("DATA")]
     
     [Title("Evidences")]
-    public Dictionary<Locations, List<Evidence>> allEvidences = new Dictionary<Locations, List<Evidence>>();
+    public Dictionary<Locations, List<Evidence>> evidences = new Dictionary<Locations, List<Evidence>>();
 
     [Title("Notes")]
     public List<Note> notes = new List<Note>();
     
     [Title("Reports")]
-    public Dictionary<Indics, (List<Report>, List<Report>)> megaReports = new Dictionary<Indics, (List<Report>, List<Report>)>();
+    public Dictionary<Indics, (List<Report>, List<Report>)> reports = new Dictionary<Indics, (List<Report>, List<Report>)>();
     [HideInInspector] public Dictionary<Indics, List<Report>> allReports = new Dictionary<Indics, List<Report>>();
     public int reportsCollected = 0;
 
@@ -428,11 +430,11 @@ public class GameData : SerializedScriptableObject
         soundSettings.voiceVolume.Volume = SetData(action, soundSettings.voiceVolume.Volume, soundSettingsName + "_" + nameof(soundSettings.voiceVolume));
 
         // Add Evidences
-        foreach (Locations location in allEvidences.Keys)
+        foreach (Locations location in evidences.Keys)
         {
             string listName = location.ToString();
 
-            foreach (Evidence evidence in allEvidences[location])
+            foreach (Evidence evidence in evidences[location])
             {
                 string evidenceName = listName + "_" + evidence.codeName;
 
@@ -475,11 +477,11 @@ public class GameData : SerializedScriptableObject
         }
 
         // Add Reports
-        foreach (Indics indic in megaReports.Keys)
+        foreach (Indics indic in reports.Keys)
         {
             string listName = indic.ToString();
 
-            foreach (Report report in megaReports[indic].Item1)
+            foreach (Report report in reports[indic].Item1)
             {
                 string reportName = listName + "_" + report.elementName;
                 if (report.mode == Modes.Evidence) reportName += ("_" + report.elementDetailName);
@@ -505,6 +507,11 @@ public class GameData : SerializedScriptableObject
         }
         interrogations = SetData(action, interrogations, nameof(interrogations));
 
+        foreach (Indic indic in indics.Values)
+        {
+            indic.quickCallAvailable = SetData(action, indic.quickCallAvailable, indic.name + "_" + nameof(indic.quickCallAvailable));
+        }
+
         firstTimeInTuto = SetData(action, firstTimeInTuto, nameof(firstTimeInTuto));
     }
 
@@ -526,9 +533,9 @@ public class GameData : SerializedScriptableObject
         ResetParameters();
         
         // Reset Evidences
-        foreach (Locations location in allEvidences.Keys)
+        foreach (Locations location in evidences.Keys)
         {
-            foreach (Evidence evidence in allEvidences[location])
+            foreach (Evidence evidence in evidences[location])
             {
                 evidence.unlockedData = false;
 
@@ -564,9 +571,9 @@ public class GameData : SerializedScriptableObject
         notes.Clear();
 
         // Reset Reports
-        foreach (Indics indic in megaReports.Keys)
+        foreach (Indics indic in reports.Keys)
         {
-            foreach (Report _report in megaReports[indic].Item1)
+            foreach (Report _report in reports[indic].Item1)
             {
                 _report.unlockedData = false;
                 _report.unlockOrderIndex = 0;
@@ -664,7 +671,7 @@ public class GameData : SerializedScriptableObject
         switch (allTypes[typeof(T)])
         {
             case "evidence":
-                return allEvidences as List<T>;
+                return evidences as List<T>;
             case "note":
                 return notes as List<T>;
             case "location":
