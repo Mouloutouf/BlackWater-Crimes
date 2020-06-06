@@ -33,4 +33,9 @@ public class InstantiateLocationElements : InstantiateElements<Location>
     {
         return data.locationAdress;
     }
+
+    protected override string GetDataName(Location data, bool getKey)
+    {
+        return data.addressKey;
+    }
 }

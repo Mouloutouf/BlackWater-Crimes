@@ -6,6 +6,8 @@ using Sirenix.OdinInspector;
 
 public class InstantiatePhotoElements : InstantiateElements<Evidence>
 {
+    [Title("Photo References", horizontalLine: false)]
+
     public ZoomPhoto zoomPhoto;
 
     public NotificationSystem notificationSystem;
@@ -62,7 +64,7 @@ public class InstantiatePhotoElements : InstantiateElements<Evidence>
 
     protected override void AdditionalSettings(GameObject __prefab)
     {
-        __prefab.transform.GetChild(0).GetComponentInChildren<Button>().onClick.AddListener(delegate { zoomPhoto.ZoomObject(__prefab); });
+        __prefab.GetComponent<Button>().onClick.AddListener(delegate { zoomPhoto.ZoomObject(__prefab); });
 
         __prefab.GetComponent<NotificationPhoto>().notificationSystem = notificationSystem;
     }
@@ -70,5 +72,10 @@ public class InstantiatePhotoElements : InstantiateElements<Evidence>
     protected override string GetDataName(Evidence data)
     {
         return data.codeName;
+    }
+
+    protected override string GetDataName(Evidence data, bool getKey)
+    {
+        return data.nameKey;
     }
 }

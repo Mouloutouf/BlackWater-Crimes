@@ -2249,7 +2249,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1094072887}
   - component: {fileID: 1094072888}
-  - component: {fileID: 1094072889}
   m_Layer: 5
   m_Name: Locations Content
   m_TagString: Untagged
@@ -2300,21 +2299,8 @@ MonoBehaviour:
   contents:
   - {fileID: 1874278646}
   reportsContent: {fileID: 2018433682}
-  display: {fileID: 1094072889}
---- !u!114 &1094072889
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1094072886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f05c9595c97db9e4f94530b643f19782, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  content: {fileID: 2018433682}
-  startIndex: 0
+  display: {fileID: 1454456518}
+  messageText: message_location
 --- !u!1 &1116606704
 GameObject:
   m_ObjectHideFlags: 0
@@ -2525,7 +2511,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1393414599}
   - component: {fileID: 1393414600}
-  - component: {fileID: 1393414601}
   m_Layer: 5
   m_Name: All Reports Content
   m_TagString: Untagged
@@ -2576,22 +2561,9 @@ MonoBehaviour:
   contents:
   - {fileID: 2062860387}
   reportsContent: {fileID: 531771770}
-  display: {fileID: 1393414601}
+  display: {fileID: 1454456518}
+  messageText: 
   notificationSystem: {fileID: 1454456517}
---- !u!114 &1393414601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1393414598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f05c9595c97db9e4f94530b643f19782, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  content: {fileID: 531771770}
-  startIndex: 0
 --- !u!1 &1398180771
 GameObject:
   m_ObjectHideFlags: 0
@@ -2836,6 +2808,7 @@ GameObject:
   - component: {fileID: 1454456515}
   - component: {fileID: 1454456516}
   - component: {fileID: 1454456517}
+  - component: {fileID: 1454456518}
   m_Layer: 5
   m_Name: Contents
   m_TagString: Untagged
@@ -2881,7 +2854,9 @@ MonoBehaviour:
   prefab: {fileID: 1127452058719276218, guid: 2ed2c364afcc1af448eb4faee3fbe24f, type: 3}
   failedPrefab: {fileID: 5798861634024255781, guid: 471094f72167d8e4f8222c77c3ce7455,
     type: 3}
-  failedContent: {fileID: 0}
+  failedContent: {fileID: 1533738241}
+  noneReportPrefab: {fileID: 6619626065693351960, guid: 9c47f76f8fb21ef44aa9556124784b8a,
+    type: 3}
 --- !u!114 &1454456516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3013,6 +2988,23 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+--- !u!114 &1454456518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1454456513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f05c9595c97db9e4f94530b643f19782, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contents:
+  - {fileID: 531771770}
+  - {fileID: 2018433682}
+  - {fileID: 781815819}
+  - {fileID: 1241020121}
 --- !u!1 &1484214577 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5791436653318616353, guid: 6286f62c518640642aeffd0cc148275e,
@@ -3429,7 +3421,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1678897887}
   - component: {fileID: 1678897888}
-  - component: {fileID: 1678897889}
   m_Layer: 5
   m_Name: Evidences Content
   m_TagString: Untagged
@@ -3479,26 +3470,13 @@ MonoBehaviour:
   spawnScales: []
   contents: []
   reportsContent: {fileID: 1241020121}
-  display: {fileID: 1678897889}
+  display: {fileID: 1454456518}
+  messageText: message_evidence
   zoomPhoto: {fileID: 1859268393}
   notificationSystem: {fileID: 1454456517}
   contentParent: {fileID: 2070389522}
   contentPrefab: {fileID: 6208862604872314030, guid: c57c08b2ba4a31a45b6b906519cdd4b1,
     type: 3}
---- !u!114 &1678897889
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1678897886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f05c9595c97db9e4f94530b643f19782, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  content: {fileID: 1241020121}
-  startIndex: 0
 --- !u!1 &1752463589
 GameObject:
   m_ObjectHideFlags: 0
@@ -3509,7 +3487,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1752463590}
   - component: {fileID: 1752463591}
-  - component: {fileID: 1752463592}
   m_Layer: 5
   m_Name: Characters Content
   m_TagString: Untagged
@@ -3560,21 +3537,8 @@ MonoBehaviour:
   contents:
   - {fileID: 377703612}
   reportsContent: {fileID: 781815819}
-  display: {fileID: 1752463592}
---- !u!114 &1752463592
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1752463589}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f05c9595c97db9e4f94530b643f19782, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  content: {fileID: 781815819}
-  startIndex: 0
+  display: {fileID: 1454456518}
+  messageText: message_character
 --- !u!1 &1787790936
 GameObject:
   m_ObjectHideFlags: 0
@@ -3722,6 +3686,7 @@ MonoBehaviour:
   zoomNameKey: {fileID: 1787790940}
   zoomTextKey: {fileID: 4989496}
   imagePosWithText: {x: 350, y: 0}
+  timerValue: 0.3
 --- !u!1 &1869501810
 GameObject:
   m_ObjectHideFlags: 0

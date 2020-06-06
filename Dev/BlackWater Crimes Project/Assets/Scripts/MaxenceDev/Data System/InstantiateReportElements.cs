@@ -7,6 +7,8 @@ using Sirenix.OdinInspector;
 
 public class InstantiateReportElements : InstantiateElements<Report>
 {
+    [Title("Report References", horizontalLine: false)]
+
     public NotificationSystem notificationSystem;
 
     protected override List<List<Report>> GetAllElements()
@@ -45,6 +47,11 @@ public class InstantiateReportElements : InstantiateElements<Report>
     protected override string GetDataName(Report data)
     {
         return data.elementName;
+    }
+
+    protected override string GetDataName(Report data, bool getKey)
+    {
+        return data.elementKey;
     }
 
     protected override void SetLayout()

@@ -74,7 +74,7 @@ public class Note : Data
 public class Intel
 {
     public string name;
-    public string intelKey; // useless for now
+    public string intelKey; /// Key To Use
     
     public float intelAlpha { get; set; }
 
@@ -85,7 +85,6 @@ public class Intel
 public class Evidence : Data
 {
     public string codeName;
-    
     public string nameKey;
     
     [Title("Intels")]
@@ -114,7 +113,7 @@ public class Evidence : Data
     [HideLabel]
     [MultiLineProperty(5)]
     public string descriptionText;
-
+    [ShowIf("hasText")]
     public string textKey;
     
     [HideReferenceObjectPicker]
@@ -136,6 +135,7 @@ public class Report : Data
 
     public Sprite agentSprite;
     public string agentName;
+    public string agentKey;
 
     public Sprite signature;
 
@@ -145,15 +145,18 @@ public class Report : Data
     [HideIf("mode", Modes.Evidence)]
     public Sprite elementSprite;
     public string elementName;
+    public string elementKey;
     [ShowIf("mode", Modes.Evidence)]
+    public bool hasDetail;
+    [ShowIf("hasDetail")]
     public string elementDetailName;
+    [ShowIf("hasDetail")]
+    public string detailKey;
 
     [Title("Report Text", bold: false)]
     [HideLabel]
     [MultiLineProperty(15)]
     public string reportText;
-
-    public string elementKey;
     public string reportKey;
 
     [Title("Unlockable")]
@@ -181,7 +184,9 @@ public class Location : Data
 
     public Locations myLocation;
     public string locationName;
+    public string nameKey;
     public string locationAdress;
+    public string addressKey;
 
     public Sprite locationArtwork;
     public Sprite locationCroppedImage;
@@ -190,10 +195,7 @@ public class Location : Data
     [HideLabel]
     [MultiLineProperty(5)]
     public string locationDescription;
-
-    public string nameKey;
     public string descriptionKey;
-    public string addressKey;
 }
 
 [Serializable]
@@ -226,8 +228,12 @@ public class Question : Data
     public Modes mode;
     [ShowIf("unlockedByReport")]
     public string reportName;
+    [ShowIf("unlockedByReport")]
+    public string reportKey;
     [ShowIf("mode", Modes.Evidence)]
     public string otherName;
+    [ShowIf("mode", Modes.Evidence)]
+    public string otherKey;
 }
 
 [Serializable]
@@ -236,6 +242,7 @@ public class Character : Data
     [Title("Information")]
 
     public string name;
+    public string nameKey;
     public Sprite sprite;
 
     [Title("", horizontalLine: false)]
@@ -250,6 +257,7 @@ public class Character : Data
     [Title("Distinctions")]
     
     public List<string> distinctiveElements;
+    public List<string> distinctionsKeys;
 }
 
 [Serializable]
@@ -258,6 +266,7 @@ public class Indic
     [Title("Infos")]
 
     public string name;
+    public string nameKey;
     public string jobKey;
 
     public Sprite image;

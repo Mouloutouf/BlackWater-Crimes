@@ -16,9 +16,6 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
     - {fileID: 21300000, guid: 19cddb9466c90f04cbbc707959752dad, type: 3}
     - {fileID: 21300000, guid: 9443cfd055f552c4cac20e4e4450d72b, type: 3}
     - {fileID: 21300000, guid: b2eeefb742d007443b1a22b3c2c96c10, type: 3}
@@ -79,7 +76,7 @@ MonoBehaviour:
       Data: 3|Evidence, Assembly-CSharp
     - Name: unlockedData
       Entry: 5
-      Data: true
+      Data: false
     - Name: index
       Entry: 3
       Data: 0
@@ -114,11 +111,11 @@ MonoBehaviour:
       Entry: 3
       Data: 0
     - Name: photo
-      Entry: 10
-      Data: 0
+      Entry: 6
+      Data: 
     - Name: photoPath
       Entry: 1
-      Data: Assets/Graphs/Sprites/Screenshots/Douille.png
+      Data: Assets/Graphs/Saved_Photos/Douille.png
     - Name: hasText
       Entry: 5
       Data: false
@@ -142,7 +139,7 @@ MonoBehaviour:
       Data: 
     - Name: seen
       Entry: 5
-      Data: true
+      Data: false
     - Name: 
       Entry: 8
       Data: 
@@ -151,7 +148,7 @@ MonoBehaviour:
       Data: 6|Evidence, Assembly-CSharp
     - Name: unlockedData
       Entry: 5
-      Data: true
+      Data: false
     - Name: index
       Entry: 3
       Data: 1
@@ -186,11 +183,11 @@ MonoBehaviour:
       Entry: 3
       Data: 2
     - Name: photo
-      Entry: 10
-      Data: 1
+      Entry: 6
+      Data: 
     - Name: photoPath
       Entry: 1
-      Data: Assets/Graphs/Sprites/Screenshots/EtiquetteVetement.png
+      Data: Assets/Graphs/Saved_Photos/EtiquetteVetement.png
     - Name: hasText
       Entry: 5
       Data: false
@@ -214,7 +211,7 @@ MonoBehaviour:
       Data: 
     - Name: seen
       Entry: 5
-      Data: true
+      Data: false
     - Name: 
       Entry: 8
       Data: 
@@ -223,7 +220,7 @@ MonoBehaviour:
       Data: 9|Evidence, Assembly-CSharp
     - Name: unlockedData
       Entry: 5
-      Data: true
+      Data: false
     - Name: index
       Entry: 3
       Data: 2
@@ -256,7 +253,7 @@ MonoBehaviour:
       Data: anna_fingerprint
     - Name: revealed
       Entry: 5
-      Data: true
+      Data: false
     - Name: 
       Entry: 8
       Data: 
@@ -273,11 +270,11 @@ MonoBehaviour:
       Entry: 3
       Data: 2
     - Name: photo
-      Entry: 10
-      Data: 2
+      Entry: 6
+      Data: 
     - Name: photoPath
       Entry: 1
-      Data: Assets/Graphs/Sprites/Screenshots/Lettresurvictime.png
+      Data: Assets/Graphs/Saved_Photos/Lettresurvictime.png
     - Name: hasText
       Entry: 5
       Data: true
@@ -307,7 +304,7 @@ MonoBehaviour:
       Data: 
     - Name: seen
       Entry: 5
-      Data: true
+      Data: false
     - Name: 
       Entry: 8
       Data: 
@@ -346,7 +343,7 @@ MonoBehaviour:
       Data: Caisse Soda
     - Name: nameKey
       Entry: 1
-      Data: caisse_name
+      Data: soda_name
     - Name: intelSelf
       Entry: 5
       Data: true
@@ -3540,13 +3537,16 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 3
+      Data: 0
     - Name: agentName
       Entry: 1
       Data: Brandon Bennington
+    - Name: agentKey
+      Entry: 1
+      Data: bennington_name
     - Name: signature
       Entry: 10
-      Data: 4
+      Data: 1
     - Name: mode
       Entry: 3
       Data: 2
@@ -3556,7 +3556,16 @@ MonoBehaviour:
     - Name: elementName
       Entry: 1
       Data: Etiquette Vetement
+    - Name: elementKey
+      Entry: 1
+      Data: etiquette_name
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
@@ -3567,9 +3576,6 @@ MonoBehaviour:
         grand manteau bleu royal qui m'a \xE9t\xE9 achet\xE9 par Anna Jameswan, une
         belle femme blonde. Votre victime m'avait laiss\xE9 une copieuse somme d'argent,
         m\xEAme un peu plus que ce qui \xE9tait pr\xE9vu pour cette pi\xE8ce."
-    - Name: elementKey
-      Entry: 1
-      Data: etiquette_name
     - Name: reportKey
       Entry: 1
       Data: bennington_etiquette
@@ -3602,13 +3608,16 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 3
+      Data: 0
     - Name: agentName
       Entry: 1
       Data: Brandon Bennington
+    - Name: agentKey
+      Entry: 1
+      Data: bennington_name
     - Name: signature
       Entry: 10
-      Data: 4
+      Data: 1
     - Name: mode
       Entry: 3
       Data: 2
@@ -3618,7 +3627,16 @@ MonoBehaviour:
     - Name: elementName
       Entry: 1
       Data: Sac Main
+    - Name: elementKey
+      Entry: 1
+      Data: sac_name
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
@@ -3629,9 +3647,6 @@ MonoBehaviour:
         marques de couture fran\xE7aise.\n\nCet objet doit facilement valoir plusieurs
         milliers de dollars... Si jamais, n'h\xE9sitez pas, je voudrais bien vous
         le racheter..."
-    - Name: elementKey
-      Entry: 1
-      Data: sac_name
     - Name: reportKey
       Entry: 1
       Data: bennington_sac
@@ -3664,13 +3679,16 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 3
+      Data: 0
     - Name: agentName
       Entry: 1
       Data: Brandon Bennington
+    - Name: agentKey
+      Entry: 1
+      Data: bennington_name
     - Name: signature
       Entry: 10
-      Data: 4
+      Data: 1
     - Name: mode
       Entry: 3
       Data: 2
@@ -3680,7 +3698,16 @@ MonoBehaviour:
     - Name: elementName
       Entry: 1
       Data: Affiche
+    - Name: elementKey
+      Entry: 1
+      Data: affiche_name
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
@@ -3690,9 +3717,6 @@ MonoBehaviour:
         livre \xE0 tout le monde, tant que \xE7a paye bien, et je vois que les prostitu\xE9es
         ne l\u2019arr\xEAtent pas non plus ! Le connaissant, il a m\xEAme d\xFB demander
         un paiement en nature, si vous me suivez..."
-    - Name: elementKey
-      Entry: 1
-      Data: affiche_name
     - Name: reportKey
       Entry: 1
       Data: bennington_affiche
@@ -3737,13 +3761,16 @@ MonoBehaviour:
       Data: true
     - Name: agentSprite
       Entry: 10
-      Data: 3
+      Data: 0
     - Name: agentName
       Entry: 1
       Data: Brandon Bennington
+    - Name: agentKey
+      Entry: 1
+      Data: bennington_name
     - Name: signature
       Entry: 10
-      Data: 4
+      Data: 1
     - Name: mode
       Entry: 3
       Data: 2
@@ -3753,15 +3780,21 @@ MonoBehaviour:
     - Name: elementName
       Entry: 1
       Data: 
+    - Name: elementKey
+      Entry: 6
+      Data: 
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
       Entry: 1
       Data: "D\xE9sol\xE9, \xE7a ne me dit rien..."
-    - Name: elementKey
-      Entry: 6
-      Data: 
     - Name: reportKey
       Entry: 1
       Data: bennington_failed
@@ -3823,23 +3856,35 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 5
+      Data: 2
     - Name: agentName
       Entry: 1
       Data: James Walker
+    - Name: agentKey
+      Entry: 1
+      Data: walker_name
     - Name: signature
       Entry: 10
-      Data: 6
+      Data: 3
     - Name: mode
       Entry: 3
       Data: 1
     - Name: elementSprite
       Entry: 10
-      Data: 7
+      Data: 4
     - Name: elementName
       Entry: 1
       Data: Abigail White
+    - Name: elementKey
+      Entry: 1
+      Data: abigail_name
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
@@ -3849,9 +3894,6 @@ MonoBehaviour:
         Elle n'y est pas souvent et y vit seule. Elle doit avoir un travail aux alentours
         du 1000 West Madison Street, au centre de la rue. Elle passe beaucoup de
         temps l\xE0-bas.\n"
-    - Name: elementKey
-      Entry: 1
-      Data: abigail
     - Name: reportKey
       Entry: 1
       Data: walker_abigail
@@ -3884,23 +3926,35 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 5
+      Data: 2
     - Name: agentName
       Entry: 1
       Data: James Walker
+    - Name: agentKey
+      Entry: 1
+      Data: walker_name
     - Name: signature
       Entry: 10
-      Data: 6
+      Data: 3
     - Name: mode
       Entry: 3
       Data: 1
     - Name: elementSprite
       Entry: 10
-      Data: 8
+      Data: 5
     - Name: elementName
       Entry: 1
       Data: Bob Jenkins
+    - Name: elementKey
+      Entry: 1
+      Data: bob_name
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
@@ -3910,9 +3964,6 @@ MonoBehaviour:
         pr\xE8s de la West Madison Street, mais je ne sais pas pourquoi... Il est
         tr\xE8s sur ses gardes, et c'\xE9tait compliqu\xE9 de le suivre, malheureusement,
         je n'ai pas pu r\xE9cup\xE9rer son adresse.\r\n"
-    - Name: elementKey
-      Entry: 1
-      Data: bob
     - Name: reportKey
       Entry: 1
       Data: walker_bob
@@ -3945,13 +3996,16 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 5
+      Data: 2
     - Name: agentName
       Entry: 1
       Data: James Walker
+    - Name: agentKey
+      Entry: 1
+      Data: walker_name
     - Name: signature
       Entry: 10
-      Data: 6
+      Data: 3
     - Name: mode
       Entry: 3
       Data: 1
@@ -3961,7 +4015,16 @@ MonoBehaviour:
     - Name: elementName
       Entry: 1
       Data: Anna Jameswan
+    - Name: elementKey
+      Entry: 1
+      Data: anna_name
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
@@ -3972,9 +4035,6 @@ MonoBehaviour:
         vivait seule dans un luxueux appartement au 457 N Wabash Avenue, \xE0 la
         crois\xE9e de la W Monroe Street, dans le quartier Mag Mile. J'esp\xE8re
         sinc\xE8rement que vous trouverez ce qui lui est arriv\xE9."
-    - Name: elementKey
-      Entry: 1
-      Data: anna
     - Name: reportKey
       Entry: 1
       Data: walker_anna
@@ -4007,23 +4067,35 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 5
+      Data: 2
     - Name: agentName
       Entry: 1
       Data: James Walker
+    - Name: agentKey
+      Entry: 1
+      Data: walker_name
     - Name: signature
       Entry: 10
-      Data: 6
+      Data: 3
     - Name: mode
       Entry: 3
       Data: 1
     - Name: elementSprite
       Entry: 10
-      Data: 9
+      Data: 6
     - Name: elementName
       Entry: 1
       Data: Richard Anderson
+    - Name: elementKey
+      Entry: 1
+      Data: richard_name
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
@@ -4033,9 +4105,6 @@ MonoBehaviour:
         d'\xE9lection. Il passe habituellement ses journ\xE9es \xE0 son bureau au
         130 E Randolph St, dans le quartier The Loop. \n\nQuoi que, ces derniers
         jours, il est en tourn\xE9e promotionnelle, il y va beaucoup moins..."
-    - Name: elementKey
-      Entry: 1
-      Data: richard
     - Name: reportKey
       Entry: 1
       Data: walker_richard
@@ -4080,13 +4149,16 @@ MonoBehaviour:
       Data: true
     - Name: agentSprite
       Entry: 10
-      Data: 5
+      Data: 2
     - Name: agentName
       Entry: 1
       Data: James Walker
+    - Name: agentKey
+      Entry: 1
+      Data: walker_name
     - Name: signature
       Entry: 10
-      Data: 6
+      Data: 3
     - Name: mode
       Entry: 3
       Data: 1
@@ -4096,15 +4168,21 @@ MonoBehaviour:
     - Name: elementName
       Entry: 6
       Data: 
+    - Name: elementKey
+      Entry: 6
+      Data: 
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
       Entry: 1
       Data: "D\xE9sol\xE9 mon gars, mais j'ai trouv\xE9 personne avec ces informations..."
-    - Name: elementKey
-      Entry: 6
-      Data: 
     - Name: reportKey
       Entry: 1
       Data: walker_failed
@@ -4166,13 +4244,16 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 10
+      Data: 7
     - Name: agentName
       Entry: 1
       Data: Quentin Copeland
+    - Name: agentKey
+      Entry: 1
+      Data: copeland_name
     - Name: signature
       Entry: 10
-      Data: 11
+      Data: 8
     - Name: mode
       Entry: 3
       Data: 2
@@ -4182,7 +4263,16 @@ MonoBehaviour:
     - Name: elementName
       Entry: 1
       Data: Colt Auto
+    - Name: elementKey
+      Entry: 1
+      Data: colt_name
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
@@ -4195,9 +4285,6 @@ MonoBehaviour:
         permis de tester la douille que vous nous avez envoy\xE9 pr\xE9c\xE9demment.
         Elle est exactement du m\xEAme calibre que cette arme, et pourrait en provenir.
         \r\n"
-    - Name: elementKey
-      Entry: 1
-      Data: colt_name
     - Name: reportKey
       Entry: 1
       Data: copeland_colt
@@ -4230,13 +4317,16 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 10
+      Data: 7
     - Name: agentName
       Entry: 1
       Data: Quentin Copeland
+    - Name: agentKey
+      Entry: 1
+      Data: copeland_name
     - Name: signature
       Entry: 10
-      Data: 11
+      Data: 8
     - Name: mode
       Entry: 3
       Data: 2
@@ -4246,9 +4336,18 @@ MonoBehaviour:
     - Name: elementName
       Entry: 1
       Data: Verres Whisky
+    - Name: elementKey
+      Entry: 1
+      Data: whiskey_name
+    - Name: hasDetail
+      Entry: 5
+      Data: true
     - Name: elementDetailName
       Entry: 1
       Data: Empreinte Richard
+    - Name: detailKey
+      Entry: 1
+      Data: richard_fingerprint
     - Name: reportText
       Entry: 1
       Data: "Au vu des empreintes que vous nous avez envoy\xE9es, les personnes qui
@@ -4257,9 +4356,6 @@ MonoBehaviour:
         \xE9lections municipales. Il s\u2019en sort plut\xF4t bien d\u2019apr\xE8s
         les journaux. Par contre je ne saurai pas vous dire ce qu\u2019il compte
         faire, \xE7a ne m'int\xE9resse que tr\xE8s peu."
-    - Name: elementKey
-      Entry: 1
-      Data: whiskey_name
     - Name: reportKey
       Entry: 1
       Data: copeland_whiskey
@@ -4292,13 +4388,16 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 10
+      Data: 7
     - Name: agentName
       Entry: 1
       Data: Quentin Copeland
+    - Name: agentKey
+      Entry: 1
+      Data: copeland_name
     - Name: signature
       Entry: 10
-      Data: 11
+      Data: 8
     - Name: mode
       Entry: 3
       Data: 2
@@ -4308,9 +4407,18 @@ MonoBehaviour:
     - Name: elementName
       Entry: 1
       Data: Lettre Anonyme
+    - Name: elementKey
+      Entry: 1
+      Data: lettre_anonyme_name
+    - Name: hasDetail
+      Entry: 5
+      Data: true
     - Name: elementDetailName
       Entry: 1
       Data: Empreinte Umberto
+    - Name: detailKey
+      Entry: 1
+      Data: umberto_fingerprint
     - Name: reportText
       Entry: 1
       Data: "D\xE9sol\xE9 du temps, mais les empreintes que vous nous avez envoy\xE9es
@@ -4321,9 +4429,6 @@ MonoBehaviour:
         de plusieurs crimes en Sicile (l\xE0 d\u2019o\xF9 il vient) mais les preuves
         l'inculpant n\u2019ont jamais \xE9t\xE9 trouv\xE9es. Faites attention \xE0
         vous si vous venez \xE0 le rencontrer. \r\n"
-    - Name: elementKey
-      Entry: 1
-      Data: lettre_anonyme_name
     - Name: reportKey
       Entry: 1
       Data: copeland_lettre_anonyme
@@ -4356,13 +4461,16 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 10
+      Data: 7
     - Name: agentName
       Entry: 1
       Data: Quentin Copeland
+    - Name: agentKey
+      Entry: 1
+      Data: copeland_name
     - Name: signature
       Entry: 10
-      Data: 11
+      Data: 8
     - Name: mode
       Entry: 3
       Data: 2
@@ -4372,7 +4480,16 @@ MonoBehaviour:
     - Name: elementName
       Entry: 1
       Data: Douille
+    - Name: elementKey
+      Entry: 1
+      Data: douille_name
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
@@ -4382,9 +4499,6 @@ MonoBehaviour:
         garantir que la victime n\u2019a pas \xE9t\xE9 tu\xE9e par cette balle. Elle
         n\u2019a pas \xE9t\xE9 tu\xE9e par balle du tout d\u2019ailleurs, c\u2019est
         le coup qu\u2019elle a re\xE7u sur la t\xEAte qui a mis fin \xE0 ses jours.\r\n"
-    - Name: elementKey
-      Entry: 1
-      Data: douille_name
     - Name: reportKey
       Entry: 1
       Data: copeland_douille
@@ -4417,13 +4531,16 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 10
+      Data: 7
     - Name: agentName
       Entry: 1
       Data: Quentin Copeland
+    - Name: agentKey
+      Entry: 1
+      Data: copeland_name
     - Name: signature
       Entry: 10
-      Data: 11
+      Data: 8
     - Name: mode
       Entry: 3
       Data: 2
@@ -4433,7 +4550,16 @@ MonoBehaviour:
     - Name: elementName
       Entry: 1
       Data: Etiquette Vetement 69
+    - Name: elementKey
+      Entry: 1
+      Data: etiquette_name
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
@@ -4443,9 +4569,6 @@ MonoBehaviour:
         malgr\xE9 la boue et la poussi\xE8re, j'ai pu identifer le sang de la victime.\n\nBien
         qu'il soit de groupe AB +, je ne peux pas vous en dire plus \xE0 ce moment,
         nous n'avons pas encore les moyens d'identifier quelqu'un seulement son sang."
-    - Name: elementKey
-      Entry: 1
-      Data: etiquette_name
     - Name: reportKey
       Entry: 1
       Data: copeland_etiquette
@@ -4478,13 +4601,16 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 10
+      Data: 7
     - Name: agentName
       Entry: 1
       Data: Quentin Copeland
+    - Name: agentKey
+      Entry: 1
+      Data: copeland_name
     - Name: signature
       Entry: 10
-      Data: 11
+      Data: 8
     - Name: mode
       Entry: 3
       Data: 2
@@ -4494,7 +4620,16 @@ MonoBehaviour:
     - Name: elementName
       Entry: 1
       Data: "Cl\xE9"
+    - Name: elementKey
+      Entry: 1
+      Data: "cl\xE9_name"
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
@@ -4505,9 +4640,6 @@ MonoBehaviour:
         ancien.\n\nPar contre, la cl\xE9 semble parfaitement entretenue et ne porte
         aucune trace d'usure. La personne qui la poss\xE9dait semblait en prendre
         tr\xE8s grand soin."
-    - Name: elementKey
-      Entry: 1
-      Data: "cl\xE9_name"
     - Name: reportKey
       Entry: 1
       Data: "copeland_cl\xE9"
@@ -4540,13 +4672,16 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 10
+      Data: 7
     - Name: agentName
       Entry: 1
       Data: Quentin Copeland
+    - Name: agentKey
+      Entry: 1
+      Data: copeland_name
     - Name: signature
       Entry: 10
-      Data: 11
+      Data: 8
     - Name: mode
       Entry: 3
       Data: 2
@@ -4556,7 +4691,16 @@ MonoBehaviour:
     - Name: elementName
       Entry: 1
       Data: Caisse Soda
+    - Name: elementKey
+      Entry: 1
+      Data: soda_name
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
@@ -4567,9 +4711,6 @@ MonoBehaviour:
         un d\xE9licieux breuvage r\xE9sultant de la longue distillation de malt et
         d'orge, lui donnant cette magnifique robe ambr\xE9e.\n\nOui, bon, c'est du
         whisky quoi..."
-    - Name: elementKey
-      Entry: 1
-      Data: caisse_name
     - Name: reportKey
       Entry: 1
       Data: copeland_soda
@@ -4614,13 +4755,16 @@ MonoBehaviour:
       Data: true
     - Name: agentSprite
       Entry: 10
-      Data: 10
+      Data: 7
     - Name: agentName
       Entry: 1
       Data: Quentin Copeland
+    - Name: agentKey
+      Entry: 1
+      Data: copeland_name
     - Name: signature
       Entry: 10
-      Data: 11
+      Data: 8
     - Name: mode
       Entry: 3
       Data: 2
@@ -4630,15 +4774,21 @@ MonoBehaviour:
     - Name: elementName
       Entry: 6
       Data: 
+    - Name: elementKey
+      Entry: 6
+      Data: 
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
       Entry: 1
       Data: L'analyse de cette preuve ne m'a malheureusement conduit nulle part.
-    - Name: elementKey
-      Entry: 6
-      Data: 
     - Name: reportKey
       Entry: 1
       Data: copeland_failed
@@ -4700,23 +4850,35 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 12
+      Data: 9
     - Name: agentName
       Entry: 1
       Data: Thomas Maxwell
+    - Name: agentKey
+      Entry: 1
+      Data: maxwell_name
     - Name: signature
       Entry: 10
-      Data: 13
+      Data: 10
     - Name: mode
       Entry: 3
       Data: 0
     - Name: elementSprite
       Entry: 10
-      Data: 14
+      Data: 11
     - Name: elementName
       Entry: 1
       Data: 1048 West Madison street
+    - Name: elementKey
+      Entry: 1
+      Data: brothel_address
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
@@ -4729,9 +4891,6 @@ MonoBehaviour:
         m'a presque suppli\xE9 de ne pas fermer l'\xE9tablissement malgr\xE9 ce que
         c'\xE9tait pass\xE9, car c'\xE9tait une seconde chance pour elles. Malheureusement
         pour elles, je ne suis qu'un simple enqu\xEAteur...\n"
-    - Name: elementKey
-      Entry: 1
-      Data: brothel_address
     - Name: reportKey
       Entry: 1
       Data: maxwell_brothel
@@ -4764,23 +4923,35 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 12
+      Data: 9
     - Name: agentName
       Entry: 1
       Data: Thomas Maxwell
+    - Name: agentKey
+      Entry: 1
+      Data: maxwell_name
     - Name: signature
       Entry: 10
-      Data: 13
+      Data: 10
     - Name: mode
       Entry: 3
       Data: 0
     - Name: elementSprite
       Entry: 10
-      Data: 15
+      Data: 12
     - Name: elementName
       Entry: 1
       Data: 457 N Wabash Avenue
+    - Name: elementKey
+      Entry: 1
+      Data: anna_house_address
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
@@ -4791,9 +4962,6 @@ MonoBehaviour:
         des domestique l\u2019a suivie, sans le vouloir, en rentrant chez lui. Il
         m\u2019a dit qu\u2019elle allait au 1048 West Madison Street, dans le quartier
         The Loop. Elle travaille peut-\xEAtre l\xE0-bas ?\r\n"
-    - Name: elementKey
-      Entry: 1
-      Data: anna_house_address
     - Name: reportKey
       Entry: 1
       Data: maxwell_anna_house
@@ -4826,23 +4994,35 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 12
+      Data: 9
     - Name: agentName
       Entry: 1
       Data: Thomas Maxwell
+    - Name: agentKey
+      Entry: 1
+      Data: maxwell_name
     - Name: signature
       Entry: 10
-      Data: 13
+      Data: 10
     - Name: mode
       Entry: 3
       Data: 0
     - Name: elementSprite
       Entry: 10
-      Data: 16
+      Data: 13
     - Name: elementName
       Entry: 1
       Data: Docks
+    - Name: elementKey
+      Entry: 1
+      Data: docks_address
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
@@ -4854,9 +5034,6 @@ MonoBehaviour:
         appel\xE9. \n\nLa seule information int\xE9ressante, c'est qu'une vieille
         femme a entendu hier soir un coup de feu, suivi par un cri de femme une trentaine
         de secondes plus tard, mais elle n'a pas os\xE9 regarder dehors."
-    - Name: elementKey
-      Entry: 1
-      Data: docks_address
     - Name: reportKey
       Entry: 1
       Data: maxwell_docks
@@ -4901,13 +5078,16 @@ MonoBehaviour:
       Data: true
     - Name: agentSprite
       Entry: 10
-      Data: 12
+      Data: 9
     - Name: agentName
       Entry: 1
       Data: Thomas Maxwell
+    - Name: agentKey
+      Entry: 1
+      Data: maxwell_name
     - Name: signature
       Entry: 10
-      Data: 13
+      Data: 10
     - Name: mode
       Entry: 3
       Data: 0
@@ -4917,16 +5097,22 @@ MonoBehaviour:
     - Name: elementName
       Entry: 6
       Data: 
+    - Name: elementKey
+      Entry: 6
+      Data: 
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
       Entry: 1
       Data: "Personne n'a rien vu... Les gens racontent juste leur journ\xE9e, et
         cela ne vous avancera pas.\n"
-    - Name: elementKey
-      Entry: 6
-      Data: 
     - Name: reportKey
       Entry: 1
       Data: maxwell_failed
@@ -4988,13 +5174,16 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 17
+      Data: 14
     - Name: agentName
       Entry: 1
       Data: Miss Marshall
+    - Name: agentKey
+      Entry: 1
+      Data: marshall_name
     - Name: signature
       Entry: 10
-      Data: 18
+      Data: 15
     - Name: mode
       Entry: 3
       Data: 2
@@ -5004,7 +5193,16 @@ MonoBehaviour:
     - Name: elementName
       Entry: 1
       Data: Bon Commande
+    - Name: elementKey
+      Entry: 1
+      Data: bon_name
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
@@ -5013,9 +5211,6 @@ MonoBehaviour:
         Okins. Il s'occupe des livraisons pour de tr\xE8s riches clients. R\xE9cemment,
         le politicien Richard Anderson a sign\xE9 un trait\xE9 avec eux pour avoir
         le monopole. En \xE9change, il en fait le sponsor principal de sa campagne.\n"
-    - Name: elementKey
-      Entry: 1
-      Data: bon_name
     - Name: reportKey
       Entry: 1
       Data: marshall_bon
@@ -5048,13 +5243,16 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 17
+      Data: 14
     - Name: agentName
       Entry: 1
       Data: Miss Marshall
+    - Name: agentKey
+      Entry: 1
+      Data: marshall_name
     - Name: signature
       Entry: 10
-      Data: 18
+      Data: 15
     - Name: mode
       Entry: 3
       Data: 2
@@ -5064,7 +5262,16 @@ MonoBehaviour:
     - Name: elementName
       Entry: 1
       Data: "Relev\xE9 Compte"
+    - Name: elementKey
+      Entry: 1
+      Data: compte_name
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
@@ -5074,9 +5281,6 @@ MonoBehaviour:
         bien cela qui m'\xE9tonne. Les sommes indiqu\xE9es sur cette feuille sont
         absolument colossales et m\xEAme certaines petites entreprises ne peuvent
         y pr\xE9tendre. Ou cette personne est tr\xE8s riche, ou c'est une menteuse..."
-    - Name: elementKey
-      Entry: 1
-      Data: compte_name
     - Name: reportKey
       Entry: 1
       Data: marshall_compte
@@ -5109,13 +5313,16 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 17
+      Data: 14
     - Name: agentName
       Entry: 1
       Data: Miss Marshall
+    - Name: agentKey
+      Entry: 1
+      Data: marshall_name
     - Name: signature
       Entry: 10
-      Data: 18
+      Data: 15
     - Name: mode
       Entry: 3
       Data: 2
@@ -5125,7 +5332,16 @@ MonoBehaviour:
     - Name: elementName
       Entry: 1
       Data: Gros Cheques
+    - Name: elementKey
+      Entry: 1
+      Data: "ch\xE8ques_name"
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
@@ -5134,9 +5350,6 @@ MonoBehaviour:
         importants, le bien \xE9chang\xE9 ou le service doit \xEAtre cons\xE9quent.
         C\u2019est m\xEAme peut \xEAtre quelque chose d\u2019ill\xE9gal, qui sait
         ? En tout cas, la chambre des commerces n\u2019a aucune information l\xE0-dessus."
-    - Name: elementKey
-      Entry: 1
-      Data: "ch\xE8ques_name"
     - Name: reportKey
       Entry: 1
       Data: "marshall_ch\xE8ques"
@@ -5169,13 +5382,16 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 17
+      Data: 14
     - Name: agentName
       Entry: 1
       Data: Miss Marshall
+    - Name: agentKey
+      Entry: 1
+      Data: marshall_name
     - Name: signature
       Entry: 10
-      Data: 18
+      Data: 15
     - Name: mode
       Entry: 3
       Data: 2
@@ -5185,7 +5401,16 @@ MonoBehaviour:
     - Name: elementName
       Entry: 1
       Data: Tract Anderson
+    - Name: elementKey
+      Entry: 1
+      Data: tract_name
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
@@ -5197,9 +5422,6 @@ MonoBehaviour:
         taxer les plus riches ? Il les fera partir de la ville, et les pauvres devront
         amortir ces pertes. Donc tout \xE7a n'int\xE9resse que tr\xE8s peu la chambre,
         et moi non plus."
-    - Name: elementKey
-      Entry: 1
-      Data: tract_name
     - Name: reportKey
       Entry: 1
       Data: marshall_tract
@@ -5244,13 +5466,16 @@ MonoBehaviour:
       Data: true
     - Name: agentSprite
       Entry: 10
-      Data: 17
+      Data: 14
     - Name: agentName
       Entry: 1
       Data: Miss Marshall
+    - Name: agentKey
+      Entry: 1
+      Data: marshall_name
     - Name: signature
       Entry: 10
-      Data: 18
+      Data: 15
     - Name: mode
       Entry: 3
       Data: 2
@@ -5260,15 +5485,21 @@ MonoBehaviour:
     - Name: elementName
       Entry: 6
       Data: 
+    - Name: elementKey
+      Entry: 6
+      Data: 
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
       Entry: 1
       Data: "Il n'y a rien de correspondant dans nos registres, d\xE9sol\xE9e...\n"
-    - Name: elementKey
-      Entry: 6
-      Data: 
     - Name: reportKey
       Entry: 1
       Data: marshall_failed
@@ -5330,13 +5561,16 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 19
+      Data: 16
     - Name: agentName
       Entry: 1
       Data: Arnold Steele
+    - Name: agentKey
+      Entry: 1
+      Data: steele_name
     - Name: signature
       Entry: 10
-      Data: 20
+      Data: 17
     - Name: mode
       Entry: 3
       Data: 2
@@ -5346,8 +5580,17 @@ MonoBehaviour:
     - Name: elementName
       Entry: 1
       Data: Colt Auto 69
+    - Name: elementKey
+      Entry: 1
+      Data: colt_name
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
       Entry: 1
+      Data: 
+    - Name: detailKey
+      Entry: 6
       Data: 
     - Name: reportText
       Entry: 1
@@ -5356,9 +5599,6 @@ MonoBehaviour:
         ! \n\nCependant, ces armes ne s'trouvent pas sur le march\xE9, il faut faire
         partie d'la police f\xE9d\xE9rale pour avoir l'droit de s'en servir. Elle
         est terriblement pr\xE9cise, bien qu'elle fasse un boucan d'enfer"
-    - Name: elementKey
-      Entry: 1
-      Data: colt_name
     - Name: reportKey
       Entry: 1
       Data: steele_colt
@@ -5391,13 +5631,16 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 19
+      Data: 16
     - Name: agentName
       Entry: 1
       Data: Arnold Steele
+    - Name: agentKey
+      Entry: 1
+      Data: steele_name
     - Name: signature
       Entry: 10
-      Data: 20
+      Data: 17
     - Name: mode
       Entry: 3
       Data: 2
@@ -5407,8 +5650,17 @@ MonoBehaviour:
     - Name: elementName
       Entry: 1
       Data: Caisse Soda 69
+    - Name: elementKey
+      Entry: 1
+      Data: soda_name
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
       Entry: 1
+      Data: 
+    - Name: detailKey
+      Entry: 6
       Data: 
     - Name: reportText
       Entry: 1
@@ -5417,9 +5669,6 @@ MonoBehaviour:
         pas cens\xE9 rentrer sur l'territoire \xE7a, c'est interdit en c'moment !
         J'suis d\xE9sol\xE9, mais j'vais devoir vous l'requisitionner. C'est pour
         l'travail, bien entendu..."
-    - Name: elementKey
-      Entry: 1
-      Data: caisse_name
     - Name: reportKey
       Entry: 1
       Data: steele_soda
@@ -5452,13 +5701,16 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 19
+      Data: 16
     - Name: agentName
       Entry: 1
       Data: Arnold Steele
+    - Name: agentKey
+      Entry: 1
+      Data: steele_name
     - Name: signature
       Entry: 10
-      Data: 20
+      Data: 17
     - Name: mode
       Entry: 3
       Data: 2
@@ -5468,7 +5720,16 @@ MonoBehaviour:
     - Name: elementName
       Entry: 1
       Data: Journal Enlevement
+    - Name: elementKey
+      Entry: 1
+      Data: journal_enlevement_name
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
@@ -5477,9 +5738,6 @@ MonoBehaviour:
         A la douane, on est tous sur le qui vive, au cas o\xF9 l'un des disparus
         pointerait le bout de son nez, mais on a rien vu passer du tout. Ce serait
         donc des enl\xE8vements ? Moi j\u2019en sais rien du tout..."
-    - Name: elementKey
-      Entry: 1
-      Data: journal_enlevement_name
     - Name: reportKey
       Entry: 1
       Data: steele_journal_enlevement
@@ -5524,13 +5782,16 @@ MonoBehaviour:
       Data: true
     - Name: agentSprite
       Entry: 10
-      Data: 19
+      Data: 16
     - Name: agentName
       Entry: 1
       Data: Arnold Steele
+    - Name: agentKey
+      Entry: 1
+      Data: steele_name
     - Name: signature
       Entry: 10
-      Data: 20
+      Data: 17
     - Name: mode
       Entry: 3
       Data: 2
@@ -5540,15 +5801,21 @@ MonoBehaviour:
     - Name: elementName
       Entry: 6
       Data: 
+    - Name: elementKey
+      Entry: 6
+      Data: 
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
       Entry: 1
       Data: "D\xE9sol\xE9 mec, j'ai rien d'int\xE9ressant pour toi avec \xE7a."
-    - Name: elementKey
-      Entry: 6
-      Data: 
     - Name: reportKey
       Entry: 1
       Data: steele_failed
@@ -5635,6 +5902,9 @@ MonoBehaviour:
     - Name: agentName
       Entry: 1
       Data: Brandon Bennington
+    - Name: agentKey
+      Entry: 6
+      Data: 
     - Name: signature
       Entry: 6
       Data: 
@@ -5647,15 +5917,21 @@ MonoBehaviour:
     - Name: elementName
       Entry: 1
       Data: 
+    - Name: elementKey
+      Entry: 6
+      Data: 
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
       Entry: 1
       Data: "D\xE9sol\xE9, \xE7a ne me dit rien..."
-    - Name: elementKey
-      Entry: 6
-      Data: 
     - Name: reportKey
       Entry: 6
       Data: 
@@ -5692,6 +5968,9 @@ MonoBehaviour:
     - Name: agentName
       Entry: 1
       Data: Brandon Bennington
+    - Name: agentKey
+      Entry: 6
+      Data: 
     - Name: signature
       Entry: 6
       Data: 
@@ -5704,7 +5983,16 @@ MonoBehaviour:
     - Name: elementName
       Entry: 1
       Data: Etiquette Vetement
+    - Name: elementKey
+      Entry: 6
+      Data: 
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
@@ -5715,9 +6003,6 @@ MonoBehaviour:
         grand manteau bleu royal qui m'a \xE9t\xE9 achet\xE9 par Anna Jameswan, une
         magnifique femme blonde. Elle m'avait laiss\xE9 une copieuse somme d'argent,
         m\xEAme un peu plus que ce qui \xE9tait pr\xE9vu pour cette pi\xE8ce."
-    - Name: elementKey
-      Entry: 6
-      Data: 
     - Name: reportKey
       Entry: 6
       Data: 
@@ -5754,6 +6039,9 @@ MonoBehaviour:
     - Name: agentName
       Entry: 1
       Data: Brandon Bennington
+    - Name: agentKey
+      Entry: 6
+      Data: 
     - Name: signature
       Entry: 6
       Data: 
@@ -5766,7 +6054,16 @@ MonoBehaviour:
     - Name: elementName
       Entry: 1
       Data: Sac Main
+    - Name: elementKey
+      Entry: 6
+      Data: 
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
@@ -5777,9 +6074,6 @@ MonoBehaviour:
         marques de couture fran\xE7aise.\n\nCet objet doit facilement valoir plusieurs
         milliers de dollars... Si jamais, n'h\xE9sitez pas, je voudrais bien vous
         le racheter..."
-    - Name: elementKey
-      Entry: 6
-      Data: 
     - Name: reportKey
       Entry: 6
       Data: 
@@ -5816,6 +6110,9 @@ MonoBehaviour:
     - Name: agentName
       Entry: 1
       Data: Brandon Bennington
+    - Name: agentKey
+      Entry: 6
+      Data: 
     - Name: signature
       Entry: 6
       Data: 
@@ -5828,7 +6125,16 @@ MonoBehaviour:
     - Name: elementName
       Entry: 1
       Data: Affiche
+    - Name: elementKey
+      Entry: 6
+      Data: 
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
@@ -5838,9 +6144,6 @@ MonoBehaviour:
         livre \xE0 tout le monde, tant que \xE7a paye bien, et je vois que les prostitu\xE9es
         ne l\u2019arr\xEAtent pas non plus ! Le connaissant, il a m\xEAme d\xFB demander
         un paiement en nature, si vous me suivez..."
-    - Name: elementKey
-      Entry: 6
-      Data: 
     - Name: reportKey
       Entry: 6
       Data: 
@@ -5898,9 +6201,12 @@ MonoBehaviour:
     - Name: agentName
       Entry: 1
       Data: James Walker
+    - Name: agentKey
+      Entry: 6
+      Data: 
     - Name: signature
       Entry: 10
-      Data: 3
+      Data: 0
     - Name: mode
       Entry: 3
       Data: 1
@@ -5910,15 +6216,21 @@ MonoBehaviour:
     - Name: elementName
       Entry: 6
       Data: 
+    - Name: elementKey
+      Entry: 6
+      Data: 
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
       Entry: 1
       Data: "D\xE9sol\xE9 mon gars, mais j'ai trouv\xE9 personne avec ces informations..."
-    - Name: elementKey
-      Entry: 6
-      Data: 
     - Name: reportKey
       Entry: 6
       Data: 
@@ -5955,19 +6267,31 @@ MonoBehaviour:
     - Name: agentName
       Entry: 1
       Data: James Walker
+    - Name: agentKey
+      Entry: 6
+      Data: 
     - Name: signature
       Entry: 10
-      Data: 3
+      Data: 0
     - Name: mode
       Entry: 3
       Data: 1
     - Name: elementSprite
       Entry: 10
-      Data: 4
+      Data: 1
     - Name: elementName
       Entry: 1
       Data: Abigail White
+    - Name: elementKey
+      Entry: 6
+      Data: 
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
@@ -5977,9 +6301,6 @@ MonoBehaviour:
         Elle n'y est pas souvent et y vit seule. Elle doit avoir un travail aux alentours
         du 1000 West Madison Street, au centre de la rue. Elle passe beaucoup de
         temps l\xE0-bas.\n"
-    - Name: elementKey
-      Entry: 6
-      Data: 
     - Name: reportKey
       Entry: 6
       Data: 
@@ -6016,19 +6337,31 @@ MonoBehaviour:
     - Name: agentName
       Entry: 1
       Data: James Walker
+    - Name: agentKey
+      Entry: 6
+      Data: 
     - Name: signature
       Entry: 10
-      Data: 3
+      Data: 0
     - Name: mode
       Entry: 3
       Data: 1
     - Name: elementSprite
       Entry: 10
-      Data: 5
+      Data: 2
     - Name: elementName
       Entry: 1
       Data: Bob Jenkins
+    - Name: elementKey
+      Entry: 6
+      Data: 
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
@@ -6038,9 +6371,6 @@ MonoBehaviour:
         pr\xE8s de la West Madison Street, mais je ne sais pas pourquoi... Il est
         tr\xE8s sur ses gardes, et c'\xE9tait compliqu\xE9 de le suivre, malheureusement,
         je n'ai pas pu r\xE9cup\xE9rer son adresse.\r\n"
-    - Name: elementKey
-      Entry: 6
-      Data: 
     - Name: reportKey
       Entry: 6
       Data: 
@@ -6077,9 +6407,12 @@ MonoBehaviour:
     - Name: agentName
       Entry: 1
       Data: James Walker
+    - Name: agentKey
+      Entry: 6
+      Data: 
     - Name: signature
       Entry: 10
-      Data: 3
+      Data: 0
     - Name: mode
       Entry: 3
       Data: 1
@@ -6089,7 +6422,16 @@ MonoBehaviour:
     - Name: elementName
       Entry: 1
       Data: Anna Jameswan
+    - Name: elementKey
+      Entry: 6
+      Data: 
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
@@ -6100,9 +6442,6 @@ MonoBehaviour:
         \n\nJ'avais not\xE9 qu'elle vivait seule dans un luxueux appartement au 457
         N Wabash Avenue, \xE0 la crois\xE9e de la W Monroe Street, dans le Mag Mile
         District. J'esp\xE8re sinc\xE8rement que vous trouverez ce qui lui est arriv\xE9."
-    - Name: elementKey
-      Entry: 6
-      Data: 
     - Name: reportKey
       Entry: 6
       Data: 
@@ -6139,19 +6478,31 @@ MonoBehaviour:
     - Name: agentName
       Entry: 1
       Data: James Walker
+    - Name: agentKey
+      Entry: 6
+      Data: 
     - Name: signature
       Entry: 10
-      Data: 3
+      Data: 0
     - Name: mode
       Entry: 3
       Data: 1
     - Name: elementSprite
       Entry: 10
-      Data: 6
+      Data: 3
     - Name: elementName
       Entry: 1
       Data: Richard Anderson
+    - Name: elementKey
+      Entry: 6
+      Data: 
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
@@ -6161,9 +6512,6 @@ MonoBehaviour:
         d'\xE9lection. Il passe habituellement ses journ\xE9es \xE0 son bureau au
         130 E Randolph St. \n\nQuoi que, ces derniers jours, il est en tourn\xE9e
         promotionnelle, il y va beaucoup moins..."
-    - Name: elementKey
-      Entry: 6
-      Data: 
     - Name: reportKey
       Entry: 6
       Data: 
@@ -6217,13 +6565,16 @@ MonoBehaviour:
       Data: true
     - Name: agentSprite
       Entry: 10
-      Data: 7
+      Data: 4
     - Name: agentName
       Entry: 1
       Data: Quentin Copeland
+    - Name: agentKey
+      Entry: 6
+      Data: 
     - Name: signature
       Entry: 10
-      Data: 8
+      Data: 5
     - Name: mode
       Entry: 3
       Data: 2
@@ -6233,15 +6584,21 @@ MonoBehaviour:
     - Name: elementName
       Entry: 6
       Data: 
+    - Name: elementKey
+      Entry: 6
+      Data: 
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
       Entry: 1
       Data: L'analyse de cette preuve ne m'a malheureusement conduit nulle part.
-    - Name: elementKey
-      Entry: 6
-      Data: 
     - Name: reportKey
       Entry: 6
       Data: 
@@ -6274,13 +6631,16 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 7
+      Data: 4
     - Name: agentName
       Entry: 1
       Data: Quentin Copeland
+    - Name: agentKey
+      Entry: 6
+      Data: 
     - Name: signature
       Entry: 10
-      Data: 8
+      Data: 5
     - Name: mode
       Entry: 3
       Data: 2
@@ -6290,7 +6650,16 @@ MonoBehaviour:
     - Name: elementName
       Entry: 1
       Data: Colt Auto
+    - Name: elementKey
+      Entry: 6
+      Data: 
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
@@ -6303,9 +6672,6 @@ MonoBehaviour:
         permis de tester la douille que vous nous avez envoy\xE9 pr\xE9c\xE9demment.
         Elle est exactement du m\xEAme calibre que cette arme, et semble directement
         en provenir. \r\n"
-    - Name: elementKey
-      Entry: 6
-      Data: 
     - Name: reportKey
       Entry: 6
       Data: 
@@ -6338,13 +6704,16 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 7
+      Data: 4
     - Name: agentName
       Entry: 1
       Data: Quentin Copeland
+    - Name: agentKey
+      Entry: 6
+      Data: 
     - Name: signature
       Entry: 10
-      Data: 8
+      Data: 5
     - Name: mode
       Entry: 3
       Data: 2
@@ -6354,9 +6723,18 @@ MonoBehaviour:
     - Name: elementName
       Entry: 1
       Data: Verres Whisky
+    - Name: elementKey
+      Entry: 6
+      Data: 
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
       Entry: 1
       Data: Empreinte Richard
+    - Name: detailKey
+      Entry: 6
+      Data: 
     - Name: reportText
       Entry: 1
       Data: "Au vu des empreintes que vous nous avez envoy\xE9es, les personnes qui
@@ -6365,9 +6743,6 @@ MonoBehaviour:
         \xE9lections municipales. Il s\u2019en sort plut\xF4t bien d\u2019apr\xE8s
         les journaux. Par contre je ne saurai pas vous dire ce qu\u2019il compte
         faire, \xE7a ne m'int\xE9resse que tr\xE8s peu."
-    - Name: elementKey
-      Entry: 6
-      Data: 
     - Name: reportKey
       Entry: 6
       Data: 
@@ -6400,13 +6775,16 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 7
+      Data: 4
     - Name: agentName
       Entry: 1
       Data: Quentin Copeland
+    - Name: agentKey
+      Entry: 6
+      Data: 
     - Name: signature
       Entry: 10
-      Data: 8
+      Data: 5
     - Name: mode
       Entry: 3
       Data: 2
@@ -6416,9 +6794,18 @@ MonoBehaviour:
     - Name: elementName
       Entry: 1
       Data: Lettre Anonyme
+    - Name: elementKey
+      Entry: 6
+      Data: 
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
       Entry: 1
       Data: Empreinte Umberto
+    - Name: detailKey
+      Entry: 6
+      Data: 
     - Name: reportText
       Entry: 1
       Data: "D\xE9sol\xE9 du temps, mais les empreintes que vous nous avez envoy\xE9es
@@ -6429,9 +6816,6 @@ MonoBehaviour:
         de plusieurs crimes en Sicile (l\xE0 d\u2019o\xF9 il vient) mais les preuves
         l'inculpant n\u2019ont jamais \xE9t\xE9 trouv\xE9es. Faites attention \xE0
         vous si vous venez \xE0 le rencontrer. \r\n"
-    - Name: elementKey
-      Entry: 6
-      Data: 
     - Name: reportKey
       Entry: 6
       Data: 
@@ -6464,13 +6848,16 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 7
+      Data: 4
     - Name: agentName
       Entry: 1
       Data: Quentin Copeland
+    - Name: agentKey
+      Entry: 6
+      Data: 
     - Name: signature
       Entry: 10
-      Data: 8
+      Data: 5
     - Name: mode
       Entry: 3
       Data: 2
@@ -6480,7 +6867,16 @@ MonoBehaviour:
     - Name: elementName
       Entry: 1
       Data: Douille
+    - Name: elementKey
+      Entry: 6
+      Data: 
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
@@ -6490,9 +6886,6 @@ MonoBehaviour:
         garantir que la victime n\u2019a pas \xE9t\xE9 tu\xE9e par cette balle. Elle
         n\u2019a pas \xE9t\xE9 tu\xE9e par balle du tout d\u2019ailleurs, c\u2019est
         le coup qu\u2019elle a re\xE7u sur la t\xEAte qui a mis fin \xE0 ses jours.\r\n"
-    - Name: elementKey
-      Entry: 6
-      Data: 
     - Name: reportKey
       Entry: 6
       Data: 
@@ -6525,13 +6918,16 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 7
+      Data: 4
     - Name: agentName
       Entry: 1
       Data: Quentin Copeland
+    - Name: agentKey
+      Entry: 6
+      Data: 
     - Name: signature
       Entry: 10
-      Data: 8
+      Data: 5
     - Name: mode
       Entry: 3
       Data: 2
@@ -6541,7 +6937,16 @@ MonoBehaviour:
     - Name: elementName
       Entry: 1
       Data: Etiquette Vetement
+    - Name: elementKey
+      Entry: 6
+      Data: 
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
@@ -6551,9 +6956,6 @@ MonoBehaviour:
         malgr\xE9 la boue et la poussi\xE8re, j'ai pu identifer le sang de la victime.\n\nBien
         qu'il soit de groupe AB +, je ne peux pas vous en dire plus \xE0 ce moment,
         nous n'avons pas encore les moyens d'identifier quelqu'un seulement son sang."
-    - Name: elementKey
-      Entry: 6
-      Data: 
     - Name: reportKey
       Entry: 6
       Data: 
@@ -6586,13 +6988,16 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 7
+      Data: 4
     - Name: agentName
       Entry: 1
       Data: Quentin Copeland
+    - Name: agentKey
+      Entry: 6
+      Data: 
     - Name: signature
       Entry: 10
-      Data: 8
+      Data: 5
     - Name: mode
       Entry: 3
       Data: 2
@@ -6602,7 +7007,16 @@ MonoBehaviour:
     - Name: elementName
       Entry: 1
       Data: "Cl\xE9"
+    - Name: elementKey
+      Entry: 6
+      Data: 
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
@@ -6613,9 +7027,6 @@ MonoBehaviour:
         ancien.\n\nPar contre, la cl\xE9 semble parfaitement entretenue et ne porte
         aucune trace d'usure. La personne qui la poss\xE9dait semblait en prendre
         tr\xE8s grand soin."
-    - Name: elementKey
-      Entry: 6
-      Data: 
     - Name: reportKey
       Entry: 6
       Data: 
@@ -6648,13 +7059,16 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 7
+      Data: 4
     - Name: agentName
       Entry: 1
       Data: Quentin Copeland
+    - Name: agentKey
+      Entry: 6
+      Data: 
     - Name: signature
       Entry: 10
-      Data: 8
+      Data: 5
     - Name: mode
       Entry: 3
       Data: 2
@@ -6664,7 +7078,16 @@ MonoBehaviour:
     - Name: elementName
       Entry: 1
       Data: Caisse Soda
+    - Name: elementKey
+      Entry: 6
+      Data: 
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
@@ -6675,9 +7098,6 @@ MonoBehaviour:
         un d\xE9licieux breuvage r\xE9sultant de la longue distillation de malt et
         d'orge, lui donnant cette magnifique robe ambr\xE9e.\n\nOui, bon, c'est du
         whisky quoi..."
-    - Name: elementKey
-      Entry: 6
-      Data: 
     - Name: reportKey
       Entry: 6
       Data: 
@@ -6731,13 +7151,16 @@ MonoBehaviour:
       Data: true
     - Name: agentSprite
       Entry: 10
-      Data: 9
+      Data: 6
     - Name: agentName
       Entry: 1
       Data: Thomas Maxwell
+    - Name: agentKey
+      Entry: 6
+      Data: 
     - Name: signature
       Entry: 10
-      Data: 10
+      Data: 7
     - Name: mode
       Entry: 3
       Data: 0
@@ -6747,16 +7170,22 @@ MonoBehaviour:
     - Name: elementName
       Entry: 6
       Data: 
+    - Name: elementKey
+      Entry: 6
+      Data: 
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
       Entry: 1
       Data: "Personne n'a rien vu... Les gens racontent juste leur journ\xE9e, et
         cela ne vous avancera pas.\n"
-    - Name: elementKey
-      Entry: 6
-      Data: 
     - Name: reportKey
       Entry: 6
       Data: 
@@ -6789,23 +7218,35 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 9
+      Data: 6
     - Name: agentName
       Entry: 1
       Data: Thomas Maxwell
+    - Name: agentKey
+      Entry: 6
+      Data: 
     - Name: signature
       Entry: 10
-      Data: 10
+      Data: 7
     - Name: mode
       Entry: 3
       Data: 0
     - Name: elementSprite
       Entry: 10
-      Data: 11
+      Data: 8
     - Name: elementName
       Entry: 1
       Data: 1048 West Madison street
+    - Name: elementKey
+      Entry: 6
+      Data: 
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
@@ -6818,9 +7259,6 @@ MonoBehaviour:
         m'a presque suppli\xE9 de ne pas fermer l'\xE9tablissement malgr\xE9 ce que
         c'\xE9tait pass\xE9, car c'\xE9tait une seconde chance pour elles. Malheureusement
         pour elles, je ne suis qu'un simple enqu\xEAteur...\n"
-    - Name: elementKey
-      Entry: 6
-      Data: 
     - Name: reportKey
       Entry: 6
       Data: 
@@ -6853,23 +7291,35 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 9
+      Data: 6
     - Name: agentName
       Entry: 1
       Data: Thomas Maxwell
+    - Name: agentKey
+      Entry: 6
+      Data: 
     - Name: signature
       Entry: 10
-      Data: 10
+      Data: 7
     - Name: mode
       Entry: 3
       Data: 0
     - Name: elementSprite
       Entry: 10
-      Data: 12
+      Data: 9
     - Name: elementName
       Entry: 1
       Data: 457 N Wabash Avenue
+    - Name: elementKey
+      Entry: 6
+      Data: 
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
@@ -6880,9 +7330,6 @@ MonoBehaviour:
         des domestique l\u2019a suivie, sans le vouloir, en rentrant chez lui. Il
         m\u2019a dit qu\u2019elle allait au 1048 West Madison Street, dans le Loop
         District. Elle travaille peut-\xEAtre l\xE0-bas ?\r\n"
-    - Name: elementKey
-      Entry: 6
-      Data: 
     - Name: reportKey
       Entry: 6
       Data: 
@@ -6915,23 +7362,35 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 9
+      Data: 6
     - Name: agentName
       Entry: 1
       Data: Thomas Maxwell
+    - Name: agentKey
+      Entry: 6
+      Data: 
     - Name: signature
       Entry: 10
-      Data: 10
+      Data: 7
     - Name: mode
       Entry: 3
       Data: 0
     - Name: elementSprite
       Entry: 10
-      Data: 13
+      Data: 10
     - Name: elementName
       Entry: 1
       Data: 210 West Merchandise Mart Plaza
+    - Name: elementKey
+      Entry: 6
+      Data: 
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
@@ -6943,9 +7402,6 @@ MonoBehaviour:
         appel\xE9. \n\nLa seule information int\xE9ressante, c'est qu'une vieille
         femme a entendu hier soir un coup de feu, suivi par un cri de femme une trentaine
         de secondes plus tard, mais elle n'a pas os\xE9 regarder dehors."
-    - Name: elementKey
-      Entry: 6
-      Data: 
     - Name: reportKey
       Entry: 6
       Data: 
@@ -6999,13 +7455,16 @@ MonoBehaviour:
       Data: true
     - Name: agentSprite
       Entry: 10
-      Data: 14
+      Data: 11
     - Name: agentName
       Entry: 1
       Data: Miss Marshall
+    - Name: agentKey
+      Entry: 6
+      Data: 
     - Name: signature
       Entry: 10
-      Data: 15
+      Data: 12
     - Name: mode
       Entry: 3
       Data: 2
@@ -7015,15 +7474,21 @@ MonoBehaviour:
     - Name: elementName
       Entry: 6
       Data: 
+    - Name: elementKey
+      Entry: 6
+      Data: 
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
       Entry: 1
       Data: "Il n'y a rien de correspondant dans nos registres, d\xE9sol\xE9e...\n"
-    - Name: elementKey
-      Entry: 6
-      Data: 
     - Name: reportKey
       Entry: 6
       Data: 
@@ -7056,13 +7521,16 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 14
+      Data: 11
     - Name: agentName
       Entry: 1
       Data: Miss Marshall
+    - Name: agentKey
+      Entry: 6
+      Data: 
     - Name: signature
       Entry: 10
-      Data: 15
+      Data: 12
     - Name: mode
       Entry: 3
       Data: 2
@@ -7072,7 +7540,16 @@ MonoBehaviour:
     - Name: elementName
       Entry: 1
       Data: Bon Commande
+    - Name: elementKey
+      Entry: 6
+      Data: 
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
@@ -7081,9 +7558,6 @@ MonoBehaviour:
         Okins. Il s'occupe des livraisons pour de tr\xE8s riches clients. R\xE9cemment,
         le politicien Richard Anderson a sign\xE9 un trait\xE9 avec eux pour avoir
         le monopole. En \xE9change, il en fait le sponsor principal de sa campagne.\n"
-    - Name: elementKey
-      Entry: 6
-      Data: 
     - Name: reportKey
       Entry: 6
       Data: 
@@ -7116,13 +7590,16 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 14
+      Data: 11
     - Name: agentName
       Entry: 1
       Data: Miss Marshall
+    - Name: agentKey
+      Entry: 6
+      Data: 
     - Name: signature
       Entry: 10
-      Data: 15
+      Data: 12
     - Name: mode
       Entry: 3
       Data: 2
@@ -7132,7 +7609,16 @@ MonoBehaviour:
     - Name: elementName
       Entry: 1
       Data: "Relev\xE9 Compte"
+    - Name: elementKey
+      Entry: 6
+      Data: 
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
@@ -7142,9 +7628,6 @@ MonoBehaviour:
         bien cela qui m'\xE9tonne. Les sommes indiqu\xE9es sur cette feuille sont
         absolument colossales et m\xEAme certaines petites entreprises ne peuvent
         y pr\xE9tendre. Ou cette personne est tr\xE8s riche, ou c'est une menteuse..."
-    - Name: elementKey
-      Entry: 6
-      Data: 
     - Name: reportKey
       Entry: 6
       Data: 
@@ -7177,13 +7660,16 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 14
+      Data: 11
     - Name: agentName
       Entry: 1
       Data: Miss Marshall
+    - Name: agentKey
+      Entry: 6
+      Data: 
     - Name: signature
       Entry: 10
-      Data: 15
+      Data: 12
     - Name: mode
       Entry: 3
       Data: 2
@@ -7193,7 +7679,16 @@ MonoBehaviour:
     - Name: elementName
       Entry: 1
       Data: Gros Cheques
+    - Name: elementKey
+      Entry: 6
+      Data: 
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
@@ -7202,9 +7697,6 @@ MonoBehaviour:
         importants, le bien \xE9chang\xE9 ou le service doit \xEAtre cons\xE9quent.
         C\u2019est m\xEAme peut \xEAtre quelque chose d\u2019ill\xE9gal, qui sait
         ? En tout cas, la chambre des commerces n\u2019a aucune information l\xE0-dessus."
-    - Name: elementKey
-      Entry: 6
-      Data: 
     - Name: reportKey
       Entry: 6
       Data: 
@@ -7237,13 +7729,16 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 14
+      Data: 11
     - Name: agentName
       Entry: 1
       Data: Miss Marshall
+    - Name: agentKey
+      Entry: 6
+      Data: 
     - Name: signature
       Entry: 10
-      Data: 15
+      Data: 12
     - Name: mode
       Entry: 3
       Data: 2
@@ -7253,7 +7748,16 @@ MonoBehaviour:
     - Name: elementName
       Entry: 1
       Data: Tract Anderson
+    - Name: elementKey
+      Entry: 6
+      Data: 
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
@@ -7265,9 +7769,6 @@ MonoBehaviour:
         taxer les plus riches ? Il les fera partir de la ville, et les pauvres devront
         amortir ces pertes. Donc tout \xE7a n'int\xE9resse que tr\xE8s peu la chambre,
         et moi non plus."
-    - Name: elementKey
-      Entry: 6
-      Data: 
     - Name: reportKey
       Entry: 6
       Data: 
@@ -7321,13 +7822,16 @@ MonoBehaviour:
       Data: true
     - Name: agentSprite
       Entry: 10
-      Data: 16
+      Data: 13
     - Name: agentName
       Entry: 1
       Data: Arnold Steele
+    - Name: agentKey
+      Entry: 6
+      Data: 
     - Name: signature
       Entry: 10
-      Data: 17
+      Data: 14
     - Name: mode
       Entry: 3
       Data: 2
@@ -7337,15 +7841,21 @@ MonoBehaviour:
     - Name: elementName
       Entry: 6
       Data: 
+    - Name: elementKey
+      Entry: 6
+      Data: 
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
       Entry: 1
       Data: "D\xE9sol\xE9 mec, j'ai rien d'int\xE9ressant pour toi avec \xE7a."
-    - Name: elementKey
-      Entry: 6
-      Data: 
     - Name: reportKey
       Entry: 6
       Data: 
@@ -7378,13 +7888,16 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 16
+      Data: 13
     - Name: agentName
       Entry: 1
       Data: Arnold Steele
+    - Name: agentKey
+      Entry: 6
+      Data: 
     - Name: signature
       Entry: 10
-      Data: 17
+      Data: 14
     - Name: mode
       Entry: 3
       Data: 2
@@ -7394,8 +7907,17 @@ MonoBehaviour:
     - Name: elementName
       Entry: 1
       Data: Colt Auto
+    - Name: elementKey
+      Entry: 6
+      Data: 
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
       Entry: 1
+      Data: 
+    - Name: detailKey
+      Entry: 6
       Data: 
     - Name: reportText
       Entry: 1
@@ -7404,9 +7926,6 @@ MonoBehaviour:
         ! \n\nCependant, ces armes ne s'trouvent pas sur le march\xE9, il faut faire
         partie d'la police f\xE9d\xE9rale pour avoir l'droit de s'en servir. Elle
         est terriblement pr\xE9cise, bien qu'elle fasse un boucan d'enfer"
-    - Name: elementKey
-      Entry: 6
-      Data: 
     - Name: reportKey
       Entry: 6
       Data: 
@@ -7439,13 +7958,16 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 16
+      Data: 13
     - Name: agentName
       Entry: 1
       Data: Arnold Steele
+    - Name: agentKey
+      Entry: 6
+      Data: 
     - Name: signature
       Entry: 10
-      Data: 17
+      Data: 14
     - Name: mode
       Entry: 3
       Data: 2
@@ -7455,8 +7977,17 @@ MonoBehaviour:
     - Name: elementName
       Entry: 1
       Data: Caisse Soda
+    - Name: elementKey
+      Entry: 6
+      Data: 
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
       Entry: 1
+      Data: 
+    - Name: detailKey
+      Entry: 6
       Data: 
     - Name: reportText
       Entry: 1
@@ -7465,9 +7996,6 @@ MonoBehaviour:
         pas cens\xE9 rentrer sur l'territoire \xE7a, c'est interdit en c'moment !
         J'suis d\xE9sol\xE9, mais j'vais devoir vous l'requisitionner. C'est pour
         l'travail, bien entendu..."
-    - Name: elementKey
-      Entry: 6
-      Data: 
     - Name: reportKey
       Entry: 6
       Data: 
@@ -7500,13 +8028,16 @@ MonoBehaviour:
       Data: false
     - Name: agentSprite
       Entry: 10
-      Data: 16
+      Data: 13
     - Name: agentName
       Entry: 1
       Data: Arnold Steele
+    - Name: agentKey
+      Entry: 6
+      Data: 
     - Name: signature
       Entry: 10
-      Data: 17
+      Data: 14
     - Name: mode
       Entry: 3
       Data: 2
@@ -7516,7 +8047,16 @@ MonoBehaviour:
     - Name: elementName
       Entry: 1
       Data: Journal Enlevement
+    - Name: elementKey
+      Entry: 6
+      Data: 
+    - Name: hasDetail
+      Entry: 5
+      Data: false
     - Name: elementDetailName
+      Entry: 6
+      Data: 
+    - Name: detailKey
       Entry: 6
       Data: 
     - Name: reportText
@@ -7525,9 +8065,6 @@ MonoBehaviour:
         A la douane, on est tous sur le qui vive, au cas o\xF9 l'un des disparus
         pointerait le bout de son nez, mais on a rien vu passer du tout. Ce serait
         donc des enl\xE8vements ? Moi j\u2019en sais rien du tout..."
-    - Name: elementKey
-      Entry: 6
-      Data: 
     - Name: reportKey
       Entry: 6
       Data: 
@@ -7644,7 +8181,13 @@ MonoBehaviour:
     - Name: reportName
       Entry: 6
       Data: 
+    - Name: reportKey
+      Entry: 6
+      Data: 
     - Name: otherName
+      Entry: 6
+      Data: 
+    - Name: otherKey
       Entry: 6
       Data: 
     - Name: 
@@ -7717,7 +8260,13 @@ MonoBehaviour:
     - Name: reportName
       Entry: 1
       Data: Colt Auto
+    - Name: reportKey
+      Entry: 6
+      Data: 
     - Name: otherName
+      Entry: 6
+      Data: 
+    - Name: otherKey
       Entry: 6
       Data: 
     - Name: 
@@ -7790,7 +8339,13 @@ MonoBehaviour:
     - Name: reportName
       Entry: 6
       Data: 
+    - Name: reportKey
+      Entry: 6
+      Data: 
     - Name: otherName
+      Entry: 6
+      Data: 
+    - Name: otherKey
       Entry: 6
       Data: 
     - Name: 
@@ -7879,7 +8434,13 @@ MonoBehaviour:
     - Name: reportName
       Entry: 1
       Data: Lettre Anonyme
+    - Name: reportKey
+      Entry: 6
+      Data: 
     - Name: otherName
+      Entry: 6
+      Data: 
+    - Name: otherKey
       Entry: 6
       Data: 
     - Name: 
@@ -7968,7 +8529,13 @@ MonoBehaviour:
     - Name: reportName
       Entry: 1
       Data: Photo Camion 1
+    - Name: reportKey
+      Entry: 6
+      Data: 
     - Name: otherName
+      Entry: 6
+      Data: 
+    - Name: otherKey
       Entry: 6
       Data: 
     - Name: 
@@ -8088,7 +8655,13 @@ MonoBehaviour:
     - Name: reportName
       Entry: 1
       Data: "Mot Tach\xE9 de Sang"
+    - Name: reportKey
+      Entry: 6
+      Data: 
     - Name: otherName
+      Entry: 6
+      Data: 
+    - Name: otherKey
       Entry: 6
       Data: 
     - Name: 
@@ -8164,7 +8737,13 @@ MonoBehaviour:
     - Name: reportName
       Entry: 1
       Data: Contrat Mafieux
+    - Name: reportKey
+      Entry: 6
+      Data: 
     - Name: otherName
+      Entry: 6
+      Data: 
+    - Name: otherKey
       Entry: 6
       Data: 
     - Name: 
@@ -8284,7 +8863,13 @@ MonoBehaviour:
     - Name: reportName
       Entry: 1
       Data: 
+    - Name: reportKey
+      Entry: 6
+      Data: 
     - Name: otherName
+      Entry: 6
+      Data: 
+    - Name: otherKey
       Entry: 6
       Data: 
     - Name: 
@@ -8393,7 +8978,13 @@ MonoBehaviour:
     - Name: reportName
       Entry: 1
       Data: Affiche
+    - Name: reportKey
+      Entry: 6
+      Data: 
     - Name: otherName
+      Entry: 6
+      Data: 
+    - Name: otherKey
       Entry: 6
       Data: 
     - Name: 
@@ -8497,9 +9088,15 @@ MonoBehaviour:
     - Name: reportName
       Entry: 1
       Data: Verres Whisky
+    - Name: reportKey
+      Entry: 6
+      Data: 
     - Name: otherName
       Entry: 1
       Data: Richard
+    - Name: otherKey
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -8587,7 +9184,13 @@ MonoBehaviour:
     - Name: reportName
       Entry: 1
       Data: Lettre sur victime
+    - Name: reportKey
+      Entry: 6
+      Data: 
     - Name: otherName
+      Entry: 6
+      Data: 
+    - Name: otherKey
       Entry: 6
       Data: 
     - Name: 
@@ -8675,7 +9278,13 @@ MonoBehaviour:
     - Name: reportName
       Entry: 6
       Data: 
+    - Name: reportKey
+      Entry: 6
+      Data: 
     - Name: otherName
+      Entry: 6
+      Data: 
+    - Name: otherKey
       Entry: 6
       Data: 
     - Name: 
@@ -8763,7 +9372,13 @@ MonoBehaviour:
     - Name: reportName
       Entry: 6
       Data: 
+    - Name: reportKey
+      Entry: 6
+      Data: 
     - Name: otherName
+      Entry: 6
+      Data: 
+    - Name: otherKey
       Entry: 6
       Data: 
     - Name: 
@@ -8836,7 +9451,13 @@ MonoBehaviour:
     - Name: reportName
       Entry: 1
       Data: Bobine Enregistrement
+    - Name: reportKey
+      Entry: 6
+      Data: 
     - Name: otherName
+      Entry: 6
+      Data: 
+    - Name: otherKey
       Entry: 6
       Data: 
     - Name: 
@@ -8924,7 +9545,13 @@ MonoBehaviour:
     - Name: reportName
       Entry: 1
       Data: Photo Camion 1
+    - Name: reportKey
+      Entry: 6
+      Data: 
     - Name: otherName
+      Entry: 6
+      Data: 
+    - Name: otherKey
       Entry: 6
       Data: 
     - Name: 
@@ -9014,7 +9641,13 @@ MonoBehaviour:
     - Name: reportName
       Entry: 6
       Data: 
+    - Name: reportKey
+      Entry: 6
+      Data: 
     - Name: otherName
+      Entry: 6
+      Data: 
+    - Name: otherKey
       Entry: 6
       Data: 
     - Name: 
@@ -9135,7 +9768,13 @@ MonoBehaviour:
     - Name: reportName
       Entry: 6
       Data: 
+    - Name: reportKey
+      Entry: 6
+      Data: 
     - Name: otherName
+      Entry: 6
+      Data: 
+    - Name: otherKey
       Entry: 6
       Data: 
     - Name: 
@@ -9243,7 +9882,13 @@ MonoBehaviour:
     - Name: reportName
       Entry: 6
       Data: 
+    - Name: reportKey
+      Entry: 6
+      Data: 
     - Name: otherName
+      Entry: 6
+      Data: 
+    - Name: otherKey
       Entry: 6
       Data: 
     - Name: 
@@ -9330,7 +9975,13 @@ MonoBehaviour:
     - Name: reportName
       Entry: 1
       Data: Bon Commande
+    - Name: reportKey
+      Entry: 6
+      Data: 
     - Name: otherName
+      Entry: 6
+      Data: 
+    - Name: otherKey
       Entry: 6
       Data: 
     - Name: 
@@ -9420,9 +10071,15 @@ MonoBehaviour:
     - Name: reportName
       Entry: 1
       Data: Verres Whisky
+    - Name: reportKey
+      Entry: 6
+      Data: 
     - Name: otherName
       Entry: 1
       Data: Richard
+    - Name: otherKey
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -9508,7 +10165,13 @@ MonoBehaviour:
     - Name: reportName
       Entry: 1
       Data: "Note Secr\xE9taire"
+    - Name: reportKey
+      Entry: 6
+      Data: 
     - Name: otherName
+      Entry: 6
+      Data: 
+    - Name: otherKey
       Entry: 6
       Data: 
     - Name: 
@@ -9581,7 +10244,13 @@ MonoBehaviour:
     - Name: reportName
       Entry: 1
       Data: "Num\xE9ro griffon\xE9"
+    - Name: reportKey
+      Entry: 6
+      Data: 
     - Name: otherName
+      Entry: 6
+      Data: 
+    - Name: otherKey
       Entry: 6
       Data: 
     - Name: 
@@ -9669,7 +10338,13 @@ MonoBehaviour:
     - Name: reportName
       Entry: 6
       Data: 
+    - Name: reportKey
+      Entry: 6
+      Data: 
     - Name: otherName
+      Entry: 6
+      Data: 
+    - Name: otherKey
       Entry: 6
       Data: 
     - Name: 
@@ -9743,7 +10418,13 @@ MonoBehaviour:
     - Name: reportName
       Entry: 1
       Data: "Num\xE9ro Bob"
+    - Name: reportKey
+      Entry: 6
+      Data: 
     - Name: otherName
+      Entry: 6
+      Data: 
+    - Name: otherKey
       Entry: 6
       Data: 
     - Name: 
@@ -9818,7 +10499,13 @@ MonoBehaviour:
     - Name: reportName
       Entry: 1
       Data: Photo Camion 1
+    - Name: reportKey
+      Entry: 6
+      Data: 
     - Name: otherName
+      Entry: 6
+      Data: 
+    - Name: otherKey
       Entry: 6
       Data: 
     - Name: 
@@ -9913,7 +10600,13 @@ MonoBehaviour:
     - Name: reportName
       Entry: 6
       Data: 
+    - Name: reportKey
+      Entry: 6
+      Data: 
     - Name: otherName
+      Entry: 6
+      Data: 
+    - Name: otherKey
       Entry: 6
       Data: 
     - Name: 
@@ -10002,7 +10695,13 @@ MonoBehaviour:
     - Name: reportName
       Entry: 6
       Data: 
+    - Name: reportKey
+      Entry: 6
+      Data: 
     - Name: otherName
+      Entry: 6
+      Data: 
+    - Name: otherKey
       Entry: 6
       Data: 
     - Name: 
@@ -10091,7 +10790,13 @@ MonoBehaviour:
     - Name: reportName
       Entry: 1
       Data: Photos Richard
+    - Name: reportKey
+      Entry: 6
+      Data: 
     - Name: otherName
+      Entry: 6
+      Data: 
+    - Name: otherKey
       Entry: 6
       Data: 
     - Name: 
@@ -10179,7 +10884,13 @@ MonoBehaviour:
     - Name: reportName
       Entry: 1
       Data: "Photo Doroth\xE9e"
+    - Name: reportKey
+      Entry: 6
+      Data: 
     - Name: otherName
+      Entry: 6
+      Data: 
+    - Name: otherKey
       Entry: 6
       Data: 
     - Name: 
@@ -10252,7 +10963,13 @@ MonoBehaviour:
     - Name: reportName
       Entry: 1
       Data: Photo Camion 1
+    - Name: reportKey
+      Entry: 6
+      Data: 
     - Name: otherName
+      Entry: 6
+      Data: 
+    - Name: otherKey
       Entry: 6
       Data: 
     - Name: 
@@ -10326,7 +11043,13 @@ MonoBehaviour:
     - Name: reportName
       Entry: 6
       Data: 
+    - Name: reportKey
+      Entry: 6
+      Data: 
     - Name: otherName
+      Entry: 6
+      Data: 
+    - Name: otherKey
       Entry: 6
       Data: 
     - Name: 
@@ -10416,7 +11139,13 @@ MonoBehaviour:
     - Name: reportName
       Entry: 1
       Data: "Carte Identit\xE9"
+    - Name: reportKey
+      Entry: 6
+      Data: 
     - Name: otherName
+      Entry: 6
+      Data: 
+    - Name: otherKey
       Entry: 6
       Data: 
     - Name: 
@@ -10521,7 +11250,13 @@ MonoBehaviour:
     - Name: reportName
       Entry: 6
       Data: 
+    - Name: reportKey
+      Entry: 6
+      Data: 
     - Name: otherName
+      Entry: 6
+      Data: 
+    - Name: otherKey
       Entry: 6
       Data: 
     - Name: 
@@ -10574,12 +11309,15 @@ MonoBehaviour:
     - Name: name
       Entry: 1
       Data: Brandon Bennington
+    - Name: nameKey
+      Entry: 1
+      Data: bennington_name
     - Name: jobKey
       Entry: 1
       Data: bennington_job
     - Name: image
       Entry: 10
-      Data: 3
+      Data: 0
     - Name: quickCallAvailable
       Entry: 5
       Data: false
@@ -10601,12 +11339,15 @@ MonoBehaviour:
     - Name: name
       Entry: 1
       Data: James Walker
+    - Name: nameKey
+      Entry: 1
+      Data: walker_name
     - Name: jobKey
       Entry: 1
       Data: walker_job
     - Name: image
       Entry: 10
-      Data: 5
+      Data: 2
     - Name: quickCallAvailable
       Entry: 5
       Data: false
@@ -10628,12 +11369,15 @@ MonoBehaviour:
     - Name: name
       Entry: 1
       Data: Quentin Copeland
+    - Name: nameKey
+      Entry: 1
+      Data: copeland_name
     - Name: jobKey
       Entry: 1
       Data: copeland_job
     - Name: image
       Entry: 10
-      Data: 10
+      Data: 7
     - Name: quickCallAvailable
       Entry: 5
       Data: false
@@ -10655,12 +11399,15 @@ MonoBehaviour:
     - Name: name
       Entry: 1
       Data: Thomas Maxwell
+    - Name: nameKey
+      Entry: 1
+      Data: maxwell_name
     - Name: jobKey
       Entry: 1
       Data: maxwell_job
     - Name: image
       Entry: 10
-      Data: 12
+      Data: 9
     - Name: quickCallAvailable
       Entry: 5
       Data: false
@@ -10682,12 +11429,15 @@ MonoBehaviour:
     - Name: name
       Entry: 1
       Data: Miss Marshall
+    - Name: nameKey
+      Entry: 1
+      Data: marshall_name
     - Name: jobKey
       Entry: 1
       Data: marshall_job
     - Name: image
       Entry: 10
-      Data: 17
+      Data: 14
     - Name: quickCallAvailable
       Entry: 5
       Data: false
@@ -10709,12 +11459,15 @@ MonoBehaviour:
     - Name: name
       Entry: 1
       Data: Arnold Steele
+    - Name: nameKey
+      Entry: 1
+      Data: steele_name
     - Name: jobKey
       Entry: 1
       Data: steele_job
     - Name: image
       Entry: 10
-      Data: 19
+      Data: 16
     - Name: quickCallAvailable
       Entry: 5
       Data: false
@@ -10734,6 +11487,9 @@ MonoBehaviour:
       Entry: 7
       Data: 404|Indic, Assembly-CSharp
     - Name: name
+      Entry: 6
+      Data: 
+    - Name: nameKey
       Entry: 6
       Data: 
     - Name: jobKey
@@ -10767,7 +11523,7 @@ MonoBehaviour:
   vibrations: 1
   soundSettings:
     musicVolume:
-      _volume: 0
+      _volume: 0.5
     soundVolume:
       _volume: 0.5
     voiceVolume:
@@ -10783,16 +11539,16 @@ MonoBehaviour:
     accessible: 1
     myLocation: 0
     locationName: Docks
+    nameKey: docks_name
     locationAdress: Docks
+    addressKey: docks_address
     locationArtwork: {fileID: 21300000, guid: eeba7478175025d4590a80462c1b2742, type: 3}
     locationCroppedImage: {fileID: 21300000, guid: 790ecadda147c8a459fd80e902b75797,
       type: 3}
     locationDescription: "C'est ici que la victime a \xE9t\xE9 tu\xE9e, dans les
       docks \xE0 l'Est de Chicago, un endroit sombre et isol\xE9. Un endroit parfait
       pour un meurtre rapide et silencieux."
-    nameKey: docks_name
     descriptionKey: docks_description
-    addressKey: docks_address
   - unlockedData: 1
     index: 1
     known: 0
@@ -10800,16 +11556,16 @@ MonoBehaviour:
     accessible: 0
     myLocation: 2
     locationName: Anna's House
+    nameKey: anna_house_name
     locationAdress: 457 N Wabash Avenue
+    addressKey: anna_house_address
     locationArtwork: {fileID: 21300000, guid: f91603777797e0c4ea7647389ac2c9cf, type: 3}
     locationCroppedImage: {fileID: 21300000, guid: eb12644eb8897cc4f815f6a3ffa0fe0d,
       type: 3}
     locationDescription: "C'est l\xE0 que se trouve l'appartement d'Anna, avec une
       magnifique vue sur Chicago. L'endrpot est bien situ\xE9, et l'entr\xE9e fait
       montre d'une certaine richesse dans les environs."
-    nameKey: anna_house_name
     descriptionKey: anna_house_description
-    addressKey: anna_house_address
   - unlockedData: 1
     index: 2
     known: 0
@@ -10817,16 +11573,16 @@ MonoBehaviour:
     accessible: 0
     myLocation: 1
     locationName: Brothel
+    nameKey: brothel_name
     locationAdress: 1048 West Madison street
+    addressKey: brothel_address
     locationArtwork: {fileID: 21300000, guid: c2fe964d4f4c74e4d9505d7e14de50d9, type: 3}
     locationCroppedImage: {fileID: 21300000, guid: a33494e6b19f67b458fa883484c1ba94,
       type: 3}
     locationDescription: "Le club priv\xE9 le plus connu de toute la cit\xE9, la
       forteresse d'Anna. Un excellent endroit pour le business, \xE9videmment, mais
       aussi un lieu pour d'autres types d'affaires..."
-    nameKey: brothel_name
     descriptionKey: brothel_description
-    addressKey: brothel_address
   - unlockedData: 1
     index: 3
     known: 0
@@ -10834,16 +11590,16 @@ MonoBehaviour:
     accessible: 0
     myLocation: 3
     locationName: Abigail's House
+    nameKey: abigail_house_name
     locationAdress: 700 West Huron Street
+    addressKey: abigail_house_address
     locationArtwork: {fileID: 21300000, guid: f5878d3216ed9a3419cda6e9c6ad1f98, type: 3}
     locationCroppedImage: {fileID: 21300000, guid: 438f236abe14f6947a33bb68bc4c7f0d,
       type: 3}
     locationDescription: C'est ici que vit Abigail,  un appartement assez simple
       dans un quartier banal de Chicago. Au moins, il  n'y a pas de rats dans les
       rues.
-    nameKey: abigail_house_name
     descriptionKey: abigail_house_description
-    addressKey: abigail_house_address
   - unlockedData: 1
     index: 4
     known: 0
@@ -10851,15 +11607,15 @@ MonoBehaviour:
     accessible: 0
     myLocation: 4
     locationName: Richard's Office
+    nameKey: politician_office_name
     locationAdress: 130 E Randolph Street
+    addressKey: politician_office_address
     locationArtwork: {fileID: 21300000, guid: 72168cb739499754592cea84435231d4, type: 3}
     locationCroppedImage: {fileID: 21300000, guid: 9a6624594c5b948458d60a4da2961ba0,
       type: 3}
     locationDescription: "Ce b\xE2timent abrite le QG de campagne de Richard Anderson.
       Il y passe tr\xE8s peu de temps, \xE9tant grandement mobilis\xE9 par sa campagne."
-    nameKey: politician_office_name
     descriptionKey: politician_office_description
-    addressKey: richard_office_address
   - unlockedData: 1
     index: 5
     known: 0
@@ -10867,16 +11623,16 @@ MonoBehaviour:
     accessible: 0
     myLocation: 5
     locationName: Bob's Office
+    nameKey: cop_office_name
     locationAdress: 75 E Ontario Street
+    addressKey: cop_office_address
     locationArtwork: {fileID: 21300000, guid: 802c1f5ddae02a94cafc16d5562e0b23, type: 3}
     locationCroppedImage: {fileID: 21300000, guid: abaf3b2078c3f194da2c8365ea2339fc,
       type: 3}
     locationDescription: "Le commissariat de police o\xF9 vous travaillez, mais surtout,
       le bureau de Bob Jenkins. Pas le mauvais gars d'ordinaire, mais aujourd'hui,
       tout le monde est suspect."
-    nameKey: cop_office_name
     descriptionKey: cop_office_description
-    addressKey: bob_office_address
   - unlockedData: 0
     index: 6
     known: 0
@@ -10884,16 +11640,16 @@ MonoBehaviour:
     accessible: 0
     myLocation: 7
     locationName: Planque d'Anna
+    nameKey: anna_hideout_name
     locationAdress: 211 N Wabash Avenue
+    addressKey: anna_hideout_address
     locationArtwork: {fileID: 21300000, guid: bdaa76e96c9cad140bbe16e4ca349b5a, type: 3}
     locationCroppedImage: {fileID: 21300000, guid: c380950968be14a43a02a39c3deecff1,
       type: 3}
     locationDescription: "Planque discr\xE8te dont l'entr\xE9e se trouve derri\xE8re
       la biblioth\xE8que chez Anna. Au terme d'un long couloir, on arrive finalement
       dans cette petite pi\xE8ce..."
-    nameKey: anna_hideout_name
     descriptionKey: anna_hideout_description
-    addressKey: anna_hideout_address
   - unlockedData: 0
     index: 7
     known: 0
@@ -10901,22 +11657,23 @@ MonoBehaviour:
     accessible: 0
     myLocation: 6
     locationName: Ancienne Planque Mafieuse
+    nameKey: mafia_hideout_name
     locationAdress: 502 S Ashland Avenue
+    addressKey: mafia_hideout_address
     locationArtwork: {fileID: 21300000, guid: 6b9f0b986fb0fc443b80c00f42b24ae3, type: 3}
     locationCroppedImage: {fileID: 21300000, guid: 6cfcc2104487d424faff079c109c75be,
       type: 3}
     locationDescription: "C'est au coeur d'un quartier mal fam\xE9 de Chicago que
       se trouve l'entr\xE9e de ce hangar semblant aujourd'hui abandonn\xE9. Mais
       l'odeur de poudre dans l'air laisse supposer que cela est r\xE9cent..."
-    nameKey: mafia_hideout_name
     descriptionKey: mafia_hideout_description
-    addressKey: mafia_hideout_address
   currentSuspect: 0
   interrogations: 3
   characters:
   - unlockedData: 1
     index: 0
     name: Abigail White
+    nameKey: abigail_name
     sprite: {fileID: 21300000, guid: 17e0a7c15ed0b814d80ebcd5d74efb7b, type: 3}
     isSuspect: 1
     suspect: 1
@@ -10925,9 +11682,11 @@ MonoBehaviour:
     distinctiveElements:
     - Brown
     - Mole
+    distinctionsKeys: []
   - unlockedData: 1
     index: 1
     name: Bob Jenkins
+    nameKey: bob_name
     sprite: {fileID: 21300000, guid: 3d9564a579b64724ebe73bc5775d16b2, type: 3}
     isSuspect: 1
     suspect: 3
@@ -10936,9 +11695,11 @@ MonoBehaviour:
     distinctiveElements:
     - Hazel eyes
     - Mustache
+    distinctionsKeys: []
   - unlockedData: 1
     index: 2
     name: Umberto Moretti
+    nameKey: umberto_name
     sprite: {fileID: 21300000, guid: b231728a9fcba714ba4de1ff8a4c750b, type: 3}
     isSuspect: 1
     suspect: 0
@@ -10948,9 +11709,11 @@ MonoBehaviour:
     - Brown
     - Scar
     - Brown eyes
+    distinctionsKeys: []
   - unlockedData: 1
     index: 3
     name: Richard Anderson
+    nameKey: richard_name
     sprite: {fileID: 21300000, guid: 6a935839ebdeaba4eab831280022a5b6, type: 3}
     isSuspect: 1
     suspect: 2
@@ -10959,9 +11722,11 @@ MonoBehaviour:
     distinctiveElements:
     - Blond
     - Mustache
+    distinctionsKeys: []
   - unlockedData: 1
     index: 4
     name: Anna Jameswan
+    nameKey: anna_name
     sprite: {fileID: 21300000, guid: d763d35a309478d4eaaa109bb3ac15fb, type: 3}
     isSuspect: 0
     suspect: 4
@@ -10969,314 +11734,8 @@ MonoBehaviour:
     introPhraseKey: 
     distinctiveElements:
     - Blond
-  currentIndic: 5
+    distinctionsKeys: []
+  currentIndic: 1
   firstTimeInGame: 0
   firstTimeInTuto: 0
-  savedData:
-  - dataName: firstTimeInGame
-  - dataName: firstTimeInTuto
-  - dataName: gameLanguage
-  - dataName: vibrations
-  - dataName: soundSettings_musicVolume
-  - dataName: soundSettings_soundVolume
-  - dataName: soundSettings_voiceVolume
-  - dataName: Docks_Douille_unlockedData
-  - dataName: Docks_Douille_photoPath
-  - dataName: Docks_Douille_photographed
-  - dataName: Docks_Douille_seen
-  - dataName: Docks_Etiquette Vetement_unlockedData
-  - dataName: Docks_Etiquette Vetement_photoPath
-  - dataName: Docks_Etiquette Vetement_photographed
-  - dataName: Docks_Etiquette Vetement_seen
-  - dataName: Docks_Lettre sur victime_unlockedData
-  - dataName: Docks_Lettre sur victime_Anna_revealed
-  - dataName: Docks_Lettre sur victime_Anna_intelAlpha
-  - dataName: Docks_Lettre sur victime_photoPath
-  - dataName: Docks_Lettre sur victime_photographed
-  - dataName: Docks_Lettre sur victime_seen
-  - dataName: Brothel_Caisse Soda_unlockedData
-  - dataName: Brothel_Caisse Soda_photoPath
-  - dataName: Brothel_Caisse Soda_photographed
-  - dataName: Brothel_Caisse Soda_seen
-  - dataName: Brothel_Bon Commande_unlockedData
-  - dataName: Brothel_Bon Commande_photoPath
-  - dataName: Brothel_Bon Commande_photographed
-  - dataName: Brothel_Bon Commande_seen
-  - dataName: Brothel_Affiche_unlockedData
-  - dataName: Brothel_Affiche_photoPath
-  - dataName: Brothel_Affiche_photographed
-  - dataName: Brothel_Affiche_seen
-  - dataName: "Brothel_Carte Identit\xE9_unlockedData"
-  - dataName: "Brothel_Carte Identit\xE9_photoPath"
-  - dataName: "Brothel_Carte Identit\xE9_photographed"
-  - dataName: "Brothel_Carte Identit\xE9_seen"
-  - dataName: Anna_House_Colt Auto_unlockedData
-  - dataName: Anna_House_Colt Auto_photoPath
-  - dataName: Anna_House_Colt Auto_photographed
-  - dataName: Anna_House_Colt Auto_seen
-  - dataName: "Anna_House_Relev\xE9 Compte_unlockedData"
-  - dataName: "Anna_House_Relev\xE9 Compte_photoPath"
-  - dataName: "Anna_House_Relev\xE9 Compte_photographed"
-  - dataName: "Anna_House_Relev\xE9 Compte_seen"
-  - dataName: "Anna_House_Cl\xE9_unlockedData"
-  - dataName: "Anna_House_Cl\xE9_photoPath"
-  - dataName: "Anna_House_Cl\xE9_photographed"
-  - dataName: "Anna_House_Cl\xE9_seen"
-  - dataName: Anna_House_Gros Cheques_unlockedData
-  - dataName: Anna_House_Gros Cheques_photoPath
-  - dataName: Anna_House_Gros Cheques_photographed
-  - dataName: Anna_House_Gros Cheques_seen
-  - dataName: Anna_House_Sac Main_unlockedData
-  - dataName: Anna_House_Sac Main_photoPath
-  - dataName: Anna_House_Sac Main_photographed
-  - dataName: Anna_House_Sac Main_seen
-  - dataName: Abigail_House_Verres Whisky_unlockedData
-  - dataName: Abigail_House_Verres Whisky_Empreinte Richard_revealed
-  - dataName: Abigail_House_Verres Whisky_Empreinte Richard_intelAlpha
-  - dataName: Abigail_House_Verres Whisky_photoPath
-  - dataName: Abigail_House_Verres Whisky_photographed
-  - dataName: Abigail_House_Verres Whisky_seen
-  - dataName: Abigail_House_Lettre Anonyme_unlockedData
-  - dataName: Abigail_House_Lettre Anonyme_Umberto_revealed
-  - dataName: Abigail_House_Lettre Anonyme_Umberto_intelAlpha
-  - dataName: Abigail_House_Lettre Anonyme_photoPath
-  - dataName: Abigail_House_Lettre Anonyme_photographed
-  - dataName: Abigail_House_Lettre Anonyme_seen
-  - dataName: Abigail_House_Lettre Anna_unlockedData
-  - dataName: Abigail_House_Lettre Anna_photoPath
-  - dataName: Abigail_House_Lettre Anna_photographed
-  - dataName: Abigail_House_Lettre Anna_seen
-  - dataName: Abigail_House_Journal Politicien_unlockedData
-  - dataName: Abigail_House_Journal Politicien_photoPath
-  - dataName: Abigail_House_Journal Politicien_photographed
-  - dataName: Abigail_House_Journal Politicien_seen
-  - dataName: Abigail_House_Journal Enlevement_unlockedData
-  - dataName: Abigail_House_Journal Enlevement_photoPath
-  - dataName: Abigail_House_Journal Enlevement_photographed
-  - dataName: Abigail_House_Journal Enlevement_seen
-  - dataName: Politician_Office_Tract Anderson_unlockedData
-  - dataName: Politician_Office_Tract Anderson_photoPath
-  - dataName: Politician_Office_Tract Anderson_photographed
-  - dataName: Politician_Office_Tract Anderson_seen
-  - dataName: "Politician_Office_Note Secr\xE9taire_unlockedData"
-  - dataName: "Politician_Office_Note Secr\xE9taire_photoPath"
-  - dataName: "Politician_Office_Note Secr\xE9taire_photographed"
-  - dataName: "Politician_Office_Note Secr\xE9taire_seen"
-  - dataName: "Politician_Office_Num\xE9ro Bob_unlockedData"
-  - dataName: "Politician_Office_Num\xE9ro Bob_photoPath"
-  - dataName: "Politician_Office_Num\xE9ro Bob_photographed"
-  - dataName: "Politician_Office_Num\xE9ro Bob_seen"
-  - dataName: "Politician_Office_Num\xE9ro griffon\xE9_unlockedData"
-  - dataName: "Politician_Office_Num\xE9ro griffon\xE9_photoPath"
-  - dataName: "Politician_Office_Num\xE9ro griffon\xE9_photographed"
-  - dataName: "Politician_Office_Num\xE9ro griffon\xE9_seen"
-  - dataName: Politician_Office_Notes Anderson_unlockedData
-  - dataName: Politician_Office_Notes Anderson_photoPath
-  - dataName: Politician_Office_Notes Anderson_photographed
-  - dataName: Politician_Office_Notes Anderson_seen
-  - dataName: "Politician_Office_Contrat Prostitu\xE9e_unlockedData"
-  - dataName: "Politician_Office_Contrat Prostitu\xE9e_photoPath"
-  - dataName: "Politician_Office_Contrat Prostitu\xE9e_photographed"
-  - dataName: "Politician_Office_Contrat Prostitu\xE9e_seen"
-  - dataName: Cop_Office_Photo Famille_unlockedData
-  - dataName: Cop_Office_Photo Famille_photoPath
-  - dataName: Cop_Office_Photo Famille_photographed
-  - dataName: Cop_Office_Photo Famille_seen
-  - dataName: Cop_Office_Plan Maison_unlockedData
-  - dataName: Cop_Office_Plan Maison_photoPath
-  - dataName: Cop_Office_Plan Maison_photographed
-  - dataName: Cop_Office_Plan Maison_seen
-  - dataName: "Cop_Office_Relev\xE9 Compte 2_unlockedData"
-  - dataName: "Cop_Office_Relev\xE9 Compte 2_photoPath"
-  - dataName: "Cop_Office_Relev\xE9 Compte 2_photographed"
-  - dataName: "Cop_Office_Relev\xE9 Compte 2_seen"
-  - dataName: Cop_Office_Photos Richard_unlockedData
-  - dataName: Cop_Office_Photos Richard_photoPath
-  - dataName: Cop_Office_Photos Richard_photographed
-  - dataName: Cop_Office_Photos Richard_seen
-  - dataName: "Cop_Office_Moiti\xE9 Gauche_unlockedData"
-  - dataName: "Cop_Office_Moiti\xE9 Gauche_photoPath"
-  - dataName: "Cop_Office_Moiti\xE9 Gauche_photographed"
-  - dataName: "Cop_Office_Moiti\xE9 Gauche_seen"
-  - dataName: "Cop_Office_Moiti\xE9 Droite_unlockedData"
-  - dataName: "Cop_Office_Moiti\xE9 Droite_photoPath"
-  - dataName: "Cop_Office_Moiti\xE9 Droite_photographed"
-  - dataName: "Cop_Office_Moiti\xE9 Droite_seen"
-  - dataName: Cop_Office_Note 1_unlockedData
-  - dataName: Cop_Office_Note 1_photoPath
-  - dataName: Cop_Office_Note 1_photographed
-  - dataName: Cop_Office_Note 1_seen
-  - dataName: Cop_Office_Note 2_unlockedData
-  - dataName: Cop_Office_Note 2_photoPath
-  - dataName: Cop_Office_Note 2_photographed
-  - dataName: Cop_Office_Note 2_seen
-  - dataName: Cop_Office_Note 3_unlockedData
-  - dataName: Cop_Office_Note 3_photoPath
-  - dataName: Cop_Office_Note 3_photographed
-  - dataName: Cop_Office_Note 3_seen
-  - dataName: Cop_Office_Logos_unlockedData
-  - dataName: Cop_Office_Logos_photoPath
-  - dataName: Cop_Office_Logos_photographed
-  - dataName: Cop_Office_Logos_seen
-  - dataName: Mafia_HideOut_Carte Mafieuse_unlockedData
-  - dataName: Mafia_HideOut_Carte Mafieuse_photoPath
-  - dataName: Mafia_HideOut_Carte Mafieuse_photographed
-  - dataName: Mafia_HideOut_Carte Mafieuse_seen
-  - dataName: Mafia_HideOut_Photos Camion 2 et 3_unlockedData
-  - dataName: Mafia_HideOut_Photos Camion 2 et 3_photoPath
-  - dataName: Mafia_HideOut_Photos Camion 2 et 3_photographed
-  - dataName: Mafia_HideOut_Photos Camion 2 et 3_seen
-  - dataName: Mafia_HideOut_Contrat Mafieux_unlockedData
-  - dataName: Mafia_HideOut_Contrat Mafieux_photoPath
-  - dataName: Mafia_HideOut_Contrat Mafieux_photographed
-  - dataName: Mafia_HideOut_Contrat Mafieux_seen
-  - dataName: Anna_House_Secret_Photo Groupe_unlockedData
-  - dataName: Anna_House_Secret_Photo Groupe_photoPath
-  - dataName: Anna_House_Secret_Photo Groupe_photographed
-  - dataName: Anna_House_Secret_Photo Groupe_seen
-  - dataName: Anna_House_Secret_Panier Cadeau_unlockedData
-  - dataName: Anna_House_Secret_Panier Cadeau_photoPath
-  - dataName: Anna_House_Secret_Panier Cadeau_photographed
-  - dataName: Anna_House_Secret_Panier Cadeau_seen
-  - dataName: Anna_House_Secret_Fiche Dettes_unlockedData
-  - dataName: Anna_House_Secret_Fiche Dettes_photoPath
-  - dataName: Anna_House_Secret_Fiche Dettes_photographed
-  - dataName: Anna_House_Secret_Fiche Dettes_seen
-  - dataName: Anna_House_Secret_Passeports_unlockedData
-  - dataName: Anna_House_Secret_Passeports_photoPath
-  - dataName: Anna_House_Secret_Passeports_photographed
-  - dataName: Anna_House_Secret_Passeports_seen
-  - dataName: Anna_House_Secret_Photo Camion 1_unlockedData
-  - dataName: Anna_House_Secret_Photo Camion 1_photoPath
-  - dataName: Anna_House_Secret_Photo Camion 1_photographed
-  - dataName: Anna_House_Secret_Photo Camion 1_seen
-  - dataName: Docks_known
-  - dataName: Docks_visible
-  - dataName: Docks_accessible
-  - dataName: Anna's House_known
-  - dataName: Anna's House_visible
-  - dataName: Anna's House_accessible
-  - dataName: Brothel_known
-  - dataName: Brothel_visible
-  - dataName: Brothel_accessible
-  - dataName: Abigail's House_known
-  - dataName: Abigail's House_visible
-  - dataName: Abigail's House_accessible
-  - dataName: Richard's Office_known
-  - dataName: Richard's Office_visible
-  - dataName: Richard's Office_accessible
-  - dataName: Bob's Office_known
-  - dataName: Bob's Office_visible
-  - dataName: Bob's Office_accessible
-  - dataName: Planque d'Anna_known
-  - dataName: Planque d'Anna_visible
-  - dataName: Planque d'Anna_accessible
-  - dataName: Ancienne Planque Mafieuse_known
-  - dataName: Ancienne Planque Mafieuse_visible
-  - dataName: Ancienne Planque Mafieuse_accessible
-  - dataName: Brandon_Bennington_Etiquette Vetement__unlockedData
-  - dataName: Brandon_Bennington_Etiquette Vetement__unlockOrderIndex
-  - dataName: Brandon_Bennington_Etiquette Vetement__seen
-  - dataName: Brandon_Bennington_Sac Main__unlockedData
-  - dataName: Brandon_Bennington_Sac Main__unlockOrderIndex
-  - dataName: Brandon_Bennington_Sac Main__seen
-  - dataName: Brandon_Bennington_Affiche__unlockedData
-  - dataName: Brandon_Bennington_Affiche__unlockOrderIndex
-  - dataName: Brandon_Bennington_Affiche__seen
-  - dataName: James_Walker_Abigail White_unlockedData
-  - dataName: James_Walker_Abigail White_unlockOrderIndex
-  - dataName: James_Walker_Abigail White_seen
-  - dataName: James_Walker_Bob Jenkins_unlockedData
-  - dataName: James_Walker_Bob Jenkins_unlockOrderIndex
-  - dataName: James_Walker_Bob Jenkins_seen
-  - dataName: James_Walker_Anna Jameswan_unlockedData
-  - dataName: James_Walker_Anna Jameswan_unlockOrderIndex
-  - dataName: James_Walker_Anna Jameswan_seen
-  - dataName: James_Walker_Richard Anderson_unlockedData
-  - dataName: James_Walker_Richard Anderson_unlockOrderIndex
-  - dataName: James_Walker_Richard Anderson_seen
-  - dataName: Quentin_Copeland_Colt Auto__unlockedData
-  - dataName: Quentin_Copeland_Colt Auto__unlockOrderIndex
-  - dataName: Quentin_Copeland_Colt Auto__seen
-  - dataName: Quentin_Copeland_Verres Whisky_Empreinte Richard_unlockedData
-  - dataName: Quentin_Copeland_Verres Whisky_Empreinte Richard_unlockOrderIndex
-  - dataName: Quentin_Copeland_Verres Whisky_Empreinte Richard_seen
-  - dataName: Quentin_Copeland_Lettre Anonyme_Empreinte Umberto_unlockedData
-  - dataName: Quentin_Copeland_Lettre Anonyme_Empreinte Umberto_unlockOrderIndex
-  - dataName: Quentin_Copeland_Lettre Anonyme_Empreinte Umberto_seen
-  - dataName: Quentin_Copeland_Douille__unlockedData
-  - dataName: Quentin_Copeland_Douille__unlockOrderIndex
-  - dataName: Quentin_Copeland_Douille__seen
-  - dataName: Quentin_Copeland_Etiquette Vetement 69__unlockedData
-  - dataName: Quentin_Copeland_Etiquette Vetement 69__unlockOrderIndex
-  - dataName: Quentin_Copeland_Etiquette Vetement 69__seen
-  - dataName: "Quentin_Copeland_Cl\xE9__unlockedData"
-  - dataName: "Quentin_Copeland_Cl\xE9__unlockOrderIndex"
-  - dataName: "Quentin_Copeland_Cl\xE9__seen"
-  - dataName: Quentin_Copeland_Caisse Soda__unlockedData
-  - dataName: Quentin_Copeland_Caisse Soda__unlockOrderIndex
-  - dataName: Quentin_Copeland_Caisse Soda__seen
-  - dataName: Thomas_Maxwell_1048 West Madison street_unlockedData
-  - dataName: Thomas_Maxwell_1048 West Madison street_unlockOrderIndex
-  - dataName: Thomas_Maxwell_1048 West Madison street_seen
-  - dataName: Thomas_Maxwell_457 N Wabash Avenue_unlockedData
-  - dataName: Thomas_Maxwell_457 N Wabash Avenue_unlockOrderIndex
-  - dataName: Thomas_Maxwell_457 N Wabash Avenue_seen
-  - dataName: Thomas_Maxwell_Docks_unlockedData
-  - dataName: Thomas_Maxwell_Docks_unlockOrderIndex
-  - dataName: Thomas_Maxwell_Docks_seen
-  - dataName: Miss_Marshall_Bon Commande__unlockedData
-  - dataName: Miss_Marshall_Bon Commande__unlockOrderIndex
-  - dataName: Miss_Marshall_Bon Commande__seen
-  - dataName: "Miss_Marshall_Relev\xE9 Compte__unlockedData"
-  - dataName: "Miss_Marshall_Relev\xE9 Compte__unlockOrderIndex"
-  - dataName: "Miss_Marshall_Relev\xE9 Compte__seen"
-  - dataName: Miss_Marshall_Gros Cheques__unlockedData
-  - dataName: Miss_Marshall_Gros Cheques__unlockOrderIndex
-  - dataName: Miss_Marshall_Gros Cheques__seen
-  - dataName: Miss_Marshall_Tract Anderson__unlockedData
-  - dataName: Miss_Marshall_Tract Anderson__unlockOrderIndex
-  - dataName: Miss_Marshall_Tract Anderson__seen
-  - dataName: Arnold_Steele_Colt Auto 69__unlockedData
-  - dataName: Arnold_Steele_Colt Auto 69__unlockOrderIndex
-  - dataName: Arnold_Steele_Colt Auto 69__seen
-  - dataName: Arnold_Steele_Caisse Soda 69__unlockedData
-  - dataName: Arnold_Steele_Caisse Soda 69__unlockOrderIndex
-  - dataName: Arnold_Steele_Caisse Soda 69__seen
-  - dataName: Arnold_Steele_Journal Enlevement__unlockedData
-  - dataName: Arnold_Steele_Journal Enlevement__unlockOrderIndex
-  - dataName: Arnold_Steele_Journal Enlevement__seen
-  - dataName: reportsCollected
-  - dataName: "Umberto_Moretti_question n\xB01_unlockedData"
-  - dataName: "Umberto_Moretti_question n\xB02_unlockedData"
-  - dataName: "Umberto_Moretti_question n\xB03_unlockedData"
-  - dataName: "Umberto_Moretti_question n\xB04_unlockedData"
-  - dataName: "Umberto_Moretti_question n\xB05_unlockedData"
-  - dataName: "Umberto_Moretti_question n\xB06_unlockedData"
-  - dataName: "Umberto_Moretti_question n\xB07_unlockedData"
-  - dataName: "Abigail_White_question n\xB00_unlockedData"
-  - dataName: "Abigail_White_question n\xB01_unlockedData"
-  - dataName: "Abigail_White_question n\xB02_unlockedData"
-  - dataName: "Abigail_White_question n\xB05_unlockedData"
-  - dataName: "Abigail_White_question n\xB06_unlockedData"
-  - dataName: "Richard_Anderson_question n\xB01_unlockedData"
-  - dataName: "Richard_Anderson_question n\xB02_unlockedData"
-  - dataName: "Richard_Anderson_question n\xB03_unlockedData"
-  - dataName: "Richard_Anderson_question n\xB04_unlockedData"
-  - dataName: "Richard_Anderson_question n\xB06_unlockedData"
-  - dataName: "Richard_Anderson_question n\xB07_unlockedData"
-  - dataName: "Bob_Jenkins_question n\xB02_unlockedData"
-  - dataName: "Bob_Jenkins_question n\xB03_unlockedData"
-  - dataName: "Bob_Jenkins_question n\xB04_unlockedData"
-  - dataName: "Bob_Jenkins_question n\xB05_unlockedData"
-  - dataName: "Bob_Jenkins_question n\xB06_unlockedData"
-  - dataName: "Bob_Jenkins_question n\xB07_unlockedData"
-  - dataName: interrogations
-  - dataName: Brandon Bennington_quickCallAvailable
-  - dataName: James Walker_quickCallAvailable
-  - dataName: Quentin Copeland_quickCallAvailable
-  - dataName: Thomas Maxwell_quickCallAvailable
-  - dataName: Miss Marshall_quickCallAvailable
-  - dataName: Arnold Steele_quickCallAvailable
-  - dataName: _quickCallAvailable
-  - dataName: firstTimeInTuto
+  savedData: []

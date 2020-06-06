@@ -32,6 +32,10 @@ public class InstantiateElements<T> : InstantiationProcess<T> where T : Data
     
     public Transform reportsContent;
     public DisplaySystem display;
+    
+    [Title("None Report", horizontalLine: false)]
+
+    public string messageText;
 
     #region Instantiation Process
     protected virtual List<List<T>> GetAllElements()
@@ -124,19 +128,29 @@ public class InstantiateElements<T> : InstantiationProcess<T> where T : Data
     #region Instantiate Report
     void InstantiateReport(T _data, GameObject _element)
     {
+        bool match = false;
+
         foreach ((List<Report>, List<Report>) megaList in gameData.reports.Values)
         {
             foreach (Report _report in megaList.Item1)
             {
-                if (_report.elementName == GetDataName(_data))
+                if (_report.elementName == GetDataName(_data) && _report.unlockedData)
                 {
                     instantiateReports.CreateAssociatedReport(reportsContent, _element, _report, display);
+
+                    match = true;
                 }
             }
+        }
+        if (!match)
+        {
+            instantiateReports.CreateNoneReport(reportsContent, _element, GetDataName(_data, true), messageText, display);
         }
     }
     
     protected virtual string GetDataName(T data) { return null; }
+
+    protected virtual string GetDataName(T data, bool getKey) { return null; }
     #endregion
 
     #region Layout

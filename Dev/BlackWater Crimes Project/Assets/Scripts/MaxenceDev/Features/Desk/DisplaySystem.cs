@@ -5,27 +5,39 @@ using UnityEngine.UI;
 
 public class DisplaySystem : MonoBehaviour
 {
-    public Transform content;
-
-    public int startIndex;
+    public List<Transform> contents;
     
     private GameObject currentSelected;
 
     void Start()
     {
-        if (content.childCount != 0) for (int n = startIndex; n < content.childCount; n++) content.GetChild(n).gameObject.SetActive(false);
+        Reset();
     }
     
+    void Reset()
+    {
+        foreach (Transform content in contents)
+        {
+            if (content.childCount != 0) for (int n = 0; n < content.childCount; n++)
+            {
+                content.GetChild(n).gameObject.SetActive(false);
+            }
+        }
+    }
+
     public void DisplayElement(GameObject elementObject, GameObject reportObject)
     {
-        for (int n = startIndex; n < content.childCount; n++) content.GetChild(n).gameObject.SetActive(false);
+        Reset();
         
         reportObject.SetActive(true);
 
         if (elementObject.TryGetComponent<NotificationReport>(out NotificationReport ntr)) elementObject.GetComponent<NotificationReport>().ChangeNotification();
+
+        GameObject select = elementObject.transform.GetChild(0).gameObject;
+        SelectElement(select);
     }
 
-    public void SelectElement(GameObject element)
+    void SelectElement(GameObject element)
     {
         if (currentSelected != null) currentSelected.SetActive(false);
 

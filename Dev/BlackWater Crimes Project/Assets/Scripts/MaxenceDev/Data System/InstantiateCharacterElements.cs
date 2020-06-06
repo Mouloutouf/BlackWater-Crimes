@@ -33,4 +33,9 @@ public class InstantiateCharacterElements : InstantiateElements<Character>
     {
         return data.name;
     }
+
+    protected override string GetDataName(Character data, bool getKey)
+    {
+        return data.nameKey;
+    }
 }
