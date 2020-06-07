@@ -26,4 +26,10 @@ public class SoundSystem : MonoBehaviour
     {
         soundAudio.PlayOneShot(audio);
     }
+
+    public void PlayVoice(AudioClip audio)
+    {
+        voiceAudio.clip = audio;
+        voiceAudio.Play();
+    }
 }

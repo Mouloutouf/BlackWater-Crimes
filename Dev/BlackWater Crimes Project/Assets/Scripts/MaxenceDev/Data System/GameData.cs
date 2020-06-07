@@ -207,6 +207,8 @@ public class Answer
     public string answerKey;
 
     public Emotions emotion;
+
+    public AudioClip voiceLineAudio;
 }
 
 [Serializable]
@@ -259,6 +261,8 @@ public class Character : Data
     public string jobKey;
     [ShowIf("isSuspect")]
     public string introPhraseKey;
+    [ShowIf("isSuspect")]
+    public AudioClip introPhraseAudio;
 
     public List<Incriminate> incriminates;
 

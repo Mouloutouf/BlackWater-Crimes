@@ -33,6 +33,8 @@ public class InterrogateScript : SerializedMonoBehaviour
     int currentQuestion = -1;
 
     List<Question> questions = new List<Question>();
+
+    public SoundSystem soundSystem;
     
     void Start()
     {
@@ -44,6 +46,7 @@ public class InterrogateScript : SerializedMonoBehaviour
                 occupationKey.key = character.jobKey;
                 dialogueKey.key = character.introPhraseKey;
                 charaSprite.sprite = suspectSprites[character.suspect][Emotions.Neutral];
+                soundSystem.PlayVoice(character.introPhraseAudio);
             }
         }
         
@@ -78,6 +81,8 @@ public class InterrogateScript : SerializedMonoBehaviour
             
             Emotions currentEmotion = questions[currentQuestion]._answers[answerIndex].emotion;
             charaSprite.sprite = suspectSprites[gameData.currentSuspect][currentEmotion];
+
+            soundSystem.PlayVoice(questions[currentQuestion]._answers[answerIndex].voiceLineAudio);
         }
     }
 
@@ -91,6 +96,8 @@ public class InterrogateScript : SerializedMonoBehaviour
 
             Emotions currentEmotion = questions[currentQuestion]._answers[answerIndex].emotion;
             charaSprite.sprite = suspectSprites[gameData.currentSuspect][currentEmotion];
+
+            soundSystem.PlayVoice(questions[currentQuestion]._answers[answerIndex].voiceLineAudio);
         }
         else EndQuestion();
     }

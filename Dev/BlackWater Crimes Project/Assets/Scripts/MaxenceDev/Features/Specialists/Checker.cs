@@ -14,6 +14,10 @@ public class IndicsText
 
     public string successKey;
     public string failureKey;
+
+    public AudioClip introAudio;
+    public AudioClip successAudio;
+    public AudioClip failureAudio;
 }
 
 public class Checker : MonoBehaviour
@@ -33,12 +37,16 @@ public class Checker : MonoBehaviour
     private bool match;
     
     [SerializeField] private List<IndicsText> allIndicsText;
+
+    SoundSystem soundSystem;
     
     void Start()
     {
         gameData = GameObject.Find("Data Container").GetComponent<DataContainer>().gameData;
 
         dialogueKey = GameObject.Find("Dialogue Text").GetComponent<Localisation>();
+
+        soundSystem = GameObject.FindObjectOfType<SoundSystem>();
         
         foreach (IndicsText indicsText in allIndicsText)
         {
@@ -46,6 +54,7 @@ public class Checker : MonoBehaviour
             {
                 dialogueKey.key = indicsText.introKey;
                 dialogueKey.RefreshText();
+                soundSystem.PlayVoice(indicsText.introAudio);
                 break;
             }
         }
@@ -177,8 +186,16 @@ public class Checker : MonoBehaviour
         {
             if (indicText.indic == gameData.currentIndic)
             {
-                if (match) dialogueKey.key = indicText.successKey;
-                else dialogueKey.key = indicText.failureKey;
+                if (match) 
+                {
+                    dialogueKey.key = indicText.successKey; 
+                    soundSystem.PlayVoice(indicText.successAudio);
+                }
+                else 
+                {
+                    dialogueKey.key = indicText.failureKey;
+                    soundSystem.PlayVoice(indicText.failureAudio);
+                }
                 dialogueKey.RefreshText();
 
                 break;
