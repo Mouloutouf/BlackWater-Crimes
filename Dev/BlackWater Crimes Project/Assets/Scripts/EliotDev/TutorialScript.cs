@@ -29,7 +29,12 @@ public class TutorialScript : SerializedMonoBehaviour
 
     [ListDrawerSettings(ShowIndexLabels = true)]
     public List<Sprite> dialoguesSprites = new List<Sprite>();
-    int spriteIndex = 0;
+    int lineIndex = 0;
+
+
+    [Title("Dialogue Voicelines")]
+
+    public List<AudioClip> dialogueAudios = new List<AudioClip>();
 
 
     [Title("Objective References")]
@@ -89,6 +94,7 @@ public class TutorialScript : SerializedMonoBehaviour
 
     [Title("Game Data")]
     public GameData gameData;
+    SoundSystem soundSystem;
 
 
 
@@ -514,6 +520,8 @@ public class TutorialScript : SerializedMonoBehaviour
 
     void DockStart()
     {
+        soundSystem = GameObject.FindObjectOfType<SoundSystem>();
+
         foreach (GameObject clue in clues.Values)
         {
             clue.GetComponent<Collider>().enabled = false;
@@ -538,6 +546,8 @@ public class TutorialScript : SerializedMonoBehaviour
 
     void MenuDeskStart()
     {
+        soundSystem = GameObject.FindObjectOfType<SoundSystem>();
+
         folderButton = GameObject.Find("Desk Folders Button").GetComponent<Button>();
         mapButton = GameObject.Find("Map Scene Button").GetComponent<Button>();
         phoneButton = GameObject.Find("Telephone Scene Button").GetComponentInChildren<Button>();
@@ -551,6 +561,8 @@ public class TutorialScript : SerializedMonoBehaviour
 
     void FolderDeskStart()
     {
+        soundSystem = GameObject.FindObjectOfType<SoundSystem>();
+
         reportsButton = GameObject.Find("All Reports Tab").GetComponent<Button>();
         locationsButton = GameObject.Find("Locations Tab").GetComponent<Button>();
         charactersButton = GameObject.Find("Characters Tab").GetComponentInChildren<Button>();
@@ -566,6 +578,8 @@ public class TutorialScript : SerializedMonoBehaviour
 
     void PhoneStart()
     {
+        soundSystem = GameObject.FindObjectOfType<SoundSystem>();
+
         dialingScript = GameObject.FindObjectOfType<CurrentDialingScript>();
         cadranScript = GameObject.FindObjectOfType<CadranScript>();
         eraseButton = GameObject.Find("EraseButton").GetComponent<Button>();
@@ -578,6 +592,8 @@ public class TutorialScript : SerializedMonoBehaviour
 
     void IndicStart(bool isSpecialist)
     {
+        soundSystem = GameObject.FindObjectOfType<SoundSystem>();
+
         validateButton = GameObject.Find("Validate Button").GetComponent<Button>();
         returnButtonIndic = GameObject.Find("Return Button").GetComponent<Button>();
 
@@ -599,6 +615,8 @@ public class TutorialScript : SerializedMonoBehaviour
 
     void MapStart()
     {
+        soundSystem = GameObject.FindObjectOfType<SoundSystem>();
+
         magMileQuarter = GameObject.Find("Quarter Mag Mile");
         docks = GameObject.Find("Location Docks");
         annaHouse = GameObject.Find("Location Anna_House");
@@ -614,10 +632,12 @@ public class TutorialScript : SerializedMonoBehaviour
             dialogueUIKey.key = tempList[textIndex];
             dialogueUIKey.RefreshText();
 
-            charaUIImage.sprite = dialoguesSprites[spriteIndex];
+            charaUIImage.sprite = dialoguesSprites[lineIndex];
+            soundSystem.PlayVoice(dialogueAudios[lineIndex]);
+
 
             textIndex ++;
-            spriteIndex ++;
+            lineIndex ++;
         }
         else
         {
@@ -635,6 +655,7 @@ public class TutorialScript : SerializedMonoBehaviour
         objectiveKey.RefreshText();
         objectiveIndex ++;
 
+        soundSystem.voiceAudio.Stop();
 
         PrepareNextDialogue();
     }
@@ -852,16 +873,20 @@ public class TutorialScript : SerializedMonoBehaviour
 
     IEnumerator WaitForEndOfAnimation()
     {
+        soundSystem.voiceAudio.Pause();
         yield return new WaitForSeconds(3);
         dialogueUI.SetActive(true);
+        soundSystem.voiceAudio.UnPause();
     }
 
     IEnumerator WaitForNextDialogue()
     {
+        soundSystem.voiceAudio.Pause();
         objectiveUI.SetActive(false);
         yield return new WaitForSeconds(.3f);
         dialogueUI.SetActive(true);
         dialogueIndex ++;
+        soundSystem.voiceAudio.UnPause();
         NextLine();
     }
 
