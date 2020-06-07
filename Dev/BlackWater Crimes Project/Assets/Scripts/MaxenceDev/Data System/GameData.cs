@@ -236,6 +236,12 @@ public class Question : Data
     public string otherKey;
 }
 
+public class Incriminate
+{
+    public string elementName;
+    public FileCategory category;
+}
+
 [Serializable]
 public class Character : Data
 {
@@ -253,6 +259,8 @@ public class Character : Data
     public string jobKey;
     [ShowIf("isSuspect")]
     public string introPhraseKey;
+
+    public List<Incriminate> incriminates;
 
     [Title("Distinctions")]
     
@@ -304,6 +312,9 @@ public class GameData : SerializedScriptableObject
 
     public SoundSettings soundSettings;
 
+    [HideInInspector] public bool firstTimeInGame = true;
+    public bool firstTimeInTuto = true; // Tutorial Docks
+
     [Title("DATA")]
     
     [Title("Evidences")]
@@ -333,9 +344,6 @@ public class GameData : SerializedScriptableObject
     [Title("Indics")]
     public Dictionary<Indics, Indic> indics = new Dictionary<Indics, Indic>();
     public Indics currentIndic = Indics.Standard;
-    
-    [HideInInspector] public bool firstTimeInGame = true;
-    public bool firstTimeInTuto = true; // Tutorial Docks
 
     [Title("DATA SAVE")]
 
