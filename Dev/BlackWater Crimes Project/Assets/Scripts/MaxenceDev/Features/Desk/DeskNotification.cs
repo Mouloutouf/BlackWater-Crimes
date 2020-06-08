@@ -10,6 +10,8 @@ public class DeskNotification : MonoBehaviour
 
     void Start()
     {
+        if (notification == null) return;
+        
         if (gameData.newStuff) notification.SetActive(true);
         else notification.SetActive(false);
     }

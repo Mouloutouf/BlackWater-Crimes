@@ -226,6 +226,7 @@ GameObject:
   - component: {fileID: 279972229}
   - component: {fileID: 279972228}
   - component: {fileID: 279972231}
+  - component: {fileID: 279972232}
   m_Layer: 5
   m_Name: Report Button
   m_TagString: Untagged
@@ -306,6 +307,17 @@ MonoBehaviour:
           m_StringArgument: DeskScene
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 279972232}
+        m_MethodName: ResetStuff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &279972229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -361,6 +373,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &279972232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279972226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc75200dbe39f2f4fb96cc709dfd2e6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameData: {fileID: 11400000, guid: eaa3567ddd179a64a9d879867070a0b4, type: 2}
+  notification: {fileID: 0}
 --- !u!1 &384610937
 GameObject:
   m_ObjectHideFlags: 0

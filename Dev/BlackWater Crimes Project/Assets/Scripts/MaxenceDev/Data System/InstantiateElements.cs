@@ -74,6 +74,8 @@ public class InstantiateElements<T> : InstantiationProcess<T> where T : Data
 
         foreach (List<T> list in allElements)
         {
+            allData.Clear();
+
             currentContent = contents[local];
             CreatePage(currentContent);
             

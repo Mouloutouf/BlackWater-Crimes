@@ -775,29 +775,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46742789b7e08be46aa11d27648eb230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showData: 0
   data:
     unlockedData: 0
     index: 1
-    codeName: 
+    nameKey: 
     intelSelf: 0
     hasIntels: 0
     intels: []
     useToUnlock: 0
     unlockableLocation: 0
     photo: {fileID: 0}
+    photoPath: 
     hasText: 0
-    descriptionText: 
+    textKey: 
     modeCategory:
       location: 1
       suspect: 2
     seen: 0
-  instantiate: 0
-  hasApplied: 0
   hasText: 0
   displayTextComponent: {fileID: 0}
   timer: 0.3
   _cam: {fileID: 0}
   intelObjects: []
+  isShown: 0
 --- !u!65 &623914899
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1079,7 +1080,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcb0521eef70ac444ae95e79d8fa7a15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myName: TestEmpreinte
+  myIntelKey: 
 --- !u!4 &898582630 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3730569804384897927, guid: 87335fb74df80ba469e5e3d87edc2191,
@@ -1560,42 +1561,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46742789b7e08be46aa11d27648eb230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showData: 0
   data:
     unlockedData: 0
     index: 4
-    codeName: Journal Enlevement
+    nameKey: 
     intelSelf: 1
     hasIntels: 0
     intels: []
     useToUnlock: 0
     unlockableLocation: 0
     photo: {fileID: 0}
+    photoPath: 
     hasText: 1
-    descriptionText: "Kidnapping ou fuite ?, de JConon O'Reilly\r\n\r\nDurant les
-      derniers mois, le Chicago Police Department (CPD) a fait de son mieux pour
-      garder le calme \xE0 Chicago. Les gangsters sont \xE0 chaque coin de rue, de
-      plus en pluis de mouvements contre la Prohibition apparaissent et grandissent
-      \xE0 chaque seconde. Le plus terrifiant et difficile pour nos agents de la
-      paix est de devoir faire face au nombre grandissant d'absences \xE0 travers
-      la ville. \r\n\r\nDes enqu\xEAteurs aux indics, personne ne sait qui, quand
-      et pourquoi ces personens disparaissent. Le chef investigateur Thomas Maxwell
-      suppose que cela serait du \xE0 des gangs ou des organisations secr\xE8tes
-      associ\xE9es avec le march\xE9 noir qui utiliseraient des personnes pour du
-      travail ill\xE9gal ou pire... Certaines personnes auraient tr\xE8s bien pu
-      partir au vu de leurs relations particuli\xE8res avec leur famille. Cela reste 
-      la proposition la plus absurde \xE0 ce jour, bien que les habitants de l'Illinois
-      semblent s'en contenter..."
+    textKey: 
     modeCategory:
       location: 3
       suspect: 4
     seen: 0
-  instantiate: 0
-  hasApplied: 0
   hasText: 1
   displayTextComponent: {fileID: 1145899166}
   timer: 0.3
   _cam: {fileID: 1515454466}
   intelObjects: []
+  isShown: 0
 --- !u!114 &1306128414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1932,7 +1921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcb0521eef70ac444ae95e79d8fa7a15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myName: Umberto
+  myIntelKey: 
 --- !u!1001 &1430949778
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2185,33 +2174,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46742789b7e08be46aa11d27648eb230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showData: 0
   data:
     unlockedData: 0
     index: 1
-    codeName: Lettre Anonyme
+    nameKey: 
     intelSelf: 1
     hasIntels: 1
     intels:
-    - name: Umberto
+    - intelKey: 
       revealed: 0
     useToUnlock: 0
     unlockableLocation: 0
     photo: {fileID: 0}
+    photoPath: 
     hasText: 1
-    descriptionText: "Ce n\u2019est pas parce que tu as remplac\xE9 l\u2019autre
-      que tout est fini. NOUS ferons en sorte de NOUS D\xC9BARRASSER DE VOUS TOUTES."
+    textKey: 
     modeCategory:
       location: 3
       suspect: 0
     seen: 0
-  instantiate: 0
-  hasApplied: 0
   hasText: 1
   displayTextComponent: {fileID: 1145899166}
   timer: 0.3
   _cam: {fileID: 1515454466}
   intelObjects:
   - {fileID: 1399755429}
+  isShown: 0
 --- !u!114 &1442453223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2749,7 +2738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcb0521eef70ac444ae95e79d8fa7a15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myName: Empreinte Richard
+  myIntelKey: 
 --- !u!1001 &1612409379
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3281,34 +3270,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46742789b7e08be46aa11d27648eb230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showData: 0
   data:
     unlockedData: 0
     index: 2
-    codeName: Lettre Anna
+    nameKey: 
     intelSelf: 1
     hasIntels: 0
     intels: []
     useToUnlock: 0
     unlockableLocation: 0
     photo: {fileID: 0}
+    photoPath: 
     hasText: 1
-    descriptionText: "Ch\xE8re Abigail\r\n\r\nJe comprends tes craintes mais ne t\u2019en
-      fais pas, tout est sous contr\xF4le. J\u2019accepte ton invitation et te rejoindrai
-      sur place \xE0 l\u2019heure convenue. Il faudrait qu\u2019on discute de la
-      suite aussi, de comment ca se passerait si je n\u2019\xE9tais plus l\xE0. \r\nLes
-      filles seront toujours ma priorit\xE9, tu le sais bien.\r\n\r\nCordialement,
-      Anna.\r\n"
+    textKey: 
     modeCategory:
       location: 3
       suspect: 1
     seen: 0
-  instantiate: 0
-  hasApplied: 0
   hasText: 1
   displayTextComponent: {fileID: 1145899166}
   timer: 0.3
   _cam: {fileID: 1515454466}
   intelObjects: []
+  isShown: 0
 --- !u!114 &1949669946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3451,40 +3436,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46742789b7e08be46aa11d27648eb230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showData: 0
   data:
     unlockedData: 0
     index: 3
-    codeName: Journal Politicien
+    nameKey: 
     intelSelf: 1
     hasIntels: 0
     intels: []
     useToUnlock: 0
     unlockableLocation: 0
     photo: {fileID: 0}
+    photoPath: 
     hasText: 1
-    descriptionText: "Un candidat prometteur pour une ville prometteuse, de Jonah
-      Vale\r\n\r\nLes \xE9lections pour le prochain maire de Chicago se rapprochent.
-      Apr\xE8s la grande marche des femmes pour la lib\xE9ration de toutes les personnes
-      kidnapp\xE9es en vente sur le march\xE9 noir, nous pouvons dire que Chicago
-      est en crise. Richard Anderson, candidat perdant de la pr\xE9c\xE9dente \xE9lection
-      de maire a vu sa popularit\xE9 exploser gr\xE2ce \xE0 son charisme et sa volont\xE9
-      d'aider \"le peuple\" d'Am\xE9rique. \r\n\r\n\"Je vais vous dire... Je me pr\xE9sente
-      pour les hommes et les femmes qui ont fait un travail incroyable... Contrairement
-      \xE0 mes concurrents, je pense aux milliers qui se battent pour s\xE9curiser
-      et ramener l'\xE9quilibre dans notre soci\xE9t\xE9 \xE0 travers le pays, et
-      surtout dans notre ville de Chicago. Je tiens vraiment \xE0 toutes ces personnes,
-      elles sont tout simplement incroyables.\""
+    textKey: 
     modeCategory:
       location: 3
       suspect: 4
     seen: 0
-  instantiate: 0
-  hasApplied: 0
   hasText: 1
   displayTextComponent: {fileID: 1145899166}
   timer: 0.3
   _cam: {fileID: 1515454466}
   intelObjects: []
+  isShown: 0
 --- !u!114 &2010337064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5015,32 +4990,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46742789b7e08be46aa11d27648eb230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showData: 0
   data:
     unlockedData: 0
     index: 0
-    codeName: Verres Whisky
+    nameKey: 
     intelSelf: 0
     hasIntels: 1
     intels:
-    - name: Empreinte Richard
+    - intelKey: 
       revealed: 0
     useToUnlock: 1
     unlockableLocation: 4
     photo: {fileID: 0}
+    photoPath: 
     hasText: 0
-    descriptionText: 
+    textKey: 
     modeCategory:
       location: 3
       suspect: 2
     seen: 0
-  instantiate: 0
-  hasApplied: 0
   hasText: 0
   displayTextComponent: {fileID: 1145899166}
   timer: 0.3
   _cam: {fileID: 0}
   intelObjects:
   - {fileID: 1587676505}
+  isShown: 0
 --- !u!114 &2187449669116551643
 MonoBehaviour:
   m_ObjectHideFlags: 0
