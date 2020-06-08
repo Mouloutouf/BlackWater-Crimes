@@ -17,7 +17,7 @@ public class LocationInteraction : SerializedMonoBehaviour
     public Localisation menuNameKey;
     public Localisation menuDescriptionKey;
     public Image menuArtwork;
-    public Text menuAdress;
+    public Localisation menuAddress;
 
     public GameObject accessButton;
     public GameObject blockedButton;
@@ -80,7 +80,7 @@ public class LocationInteraction : SerializedMonoBehaviour
         menuNameKey.key = _object.data.nameKey; menuNameKey.RefreshText();
         menuDescriptionKey.key = _object.data.descriptionKey; menuDescriptionKey.RefreshText();
         menuArtwork.sprite = _object.data.locationArtwork;
-        menuAdress.text = _object.data.locationAdress;
+        menuAddress.key = _object.data.addressKey; menuAddress.RefreshText();
 
         accessButton.GetComponent<Button>().onClick.AddListener(delegate 
         { 

@@ -229,8 +229,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 250, y: 445}
-  m_SizeDelta: {x: 400, y: 75}
+  m_AnchoredPosition: {x: 268.9, y: 445}
+  m_SizeDelta: {x: 437.9, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &40743285
 MonoBehaviour:
@@ -310,7 +310,7 @@ GameObject:
   - component: {fileID: 79343153}
   - component: {fileID: 79343152}
   m_Layer: 5
-  m_Name: Accused Image
+  m_Name: Accused Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1797,8 +1797,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 250, y: 392}
-  m_SizeDelta: {x: 400, y: 50}
+  m_AnchoredPosition: {x: 268.92, y: 392}
+  m_SizeDelta: {x: 437.85, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1094015420
 MonoBehaviour:
@@ -1813,7 +1813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1094015422}
-  key: attorney_job
+  key: 
 --- !u!222 &1094015421
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2068,7 +2068,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1149895913}
-  key: 
+  key: the _accused
 --- !u!1 &1202162603
 GameObject:
   m_ObjectHideFlags: 0
@@ -2195,7 +2195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1216753244}
-  key: 
+  key: mobile
 --- !u!1 &1268511185
 GameObject:
   m_ObjectHideFlags: 0
@@ -2364,7 +2364,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1360272119}
   m_Layer: 5
-  m_Name: Evidence Folder
+  m_Name: Folder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3049,7 +3049,7 @@ GameObject:
   - component: {fileID: 1539013145}
   - component: {fileID: 1539013144}
   m_Layer: 5
-  m_Name: Evidence Displayer
+  m_Name: File Displayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3097,9 +3097,9 @@ MonoBehaviour:
   suspectImage: {fileID: 1524047529}
   factor: 1.2
   validateButton: {fileID: 129878010}
-  missingKey: 
-  fileDisplayer: {fileID: 0}
-  endSceneName: 
+  missingKey: missing_elements
+  fileDisplayer: {fileID: 1539013145}
+  endSceneName: EndReportScene
 --- !u!114 &1539013145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3638,7 +3638,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1662959384}
-  key: 
+  key: opportunity
 --- !u!1 &1757575140
 GameObject:
   m_ObjectHideFlags: 0
@@ -3839,7 +3839,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1937182718}
-  key: 
+  key: medium
 --- !u!1 &1972374136
 GameObject:
   m_ObjectHideFlags: 0

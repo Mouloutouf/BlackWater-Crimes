@@ -77,7 +77,7 @@ public class AttorneyClueShowerScript : MonoBehaviour
 
         foreach (GameObject evidence in currentEvidencesDisplayed)
         {
-            if (evidence != null && clue.GetComponent<PhotoAttorneyObject>().data.codeName == evidence.GetComponent<PhotoAttorneyObject>().data.codeName)
+            if (evidence != null && clue.GetComponent<PhotoAttorneyObject>().data.nameKey == evidence.GetComponent<PhotoAttorneyObject>().data.nameKey)
             { 
                 CloseFolder();
                 return;

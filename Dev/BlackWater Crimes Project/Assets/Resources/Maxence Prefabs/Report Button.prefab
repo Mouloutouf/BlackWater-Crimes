@@ -60,20 +60,19 @@ MonoBehaviour:
     index: 0
     failed: 0
     agentSprite: {fileID: 0}
-    agentName: 
+    agentKey: 
     signature: {fileID: 0}
     mode: 0
     elementSprite: {fileID: 0}
-    elementName: 
-    elementDetailName: 
-    reportText: 
     elementKey: 
+    hasDetail: 0
+    detailKey: 
     reportKey: 
     giveAccess: 0
     locationToAccess: 0
     unlockOrderIndex: 0
     seen: 0
-  agentText: {fileID: 4061153544706187355}
+  agentKey: {fileID: 4820013108298058906}
   elementKey: {fileID: 1193203456579895215}
 --- !u!114 &7966950472194822625
 MonoBehaviour:
@@ -314,6 +313,7 @@ GameObject:
   - component: {fileID: 4061153544706187348}
   - component: {fileID: 4061153544706187354}
   - component: {fileID: 4061153544706187355}
+  - component: {fileID: 4820013108298058906}
   m_Layer: 5
   m_Name: Agent Name
   m_TagString: Untagged
@@ -380,6 +380,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Agent
+--- !u!114 &4820013108298058906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4061153544706187349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 4061153544706187355}
+  key: 
 --- !u!1001 &6252693023570321922
 PrefabInstance:
   m_ObjectHideFlags: 0

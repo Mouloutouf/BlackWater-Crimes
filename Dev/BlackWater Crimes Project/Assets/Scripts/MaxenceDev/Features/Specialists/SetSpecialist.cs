@@ -14,7 +14,7 @@ public class SetSpecialist : MonoBehaviour
 
     public Image characterImage;
     public float factor;
-    public Text characterName;
+    public Localisation characterName;
     public Localisation characterJob;
 
     [Header("For Debug Only")]
@@ -47,7 +47,8 @@ public class SetSpecialist : MonoBehaviour
         RectTransform rt = characterImage.GetComponent<RectTransform>();
         rt.sizeDelta = new Vector2(rt.sizeDelta.x * factor, rt.sizeDelta.y * factor);
 
-        characterName.text = gameData.indics[_indic].name;
+        characterName.key = gameData.indics[_indic].nameKey;
+        characterName.RefreshText();
 
         characterJob.key = gameData.indics[_indic].jobKey;
         characterJob.RefreshText();

@@ -58,26 +58,24 @@ public class ProsecutionCheck : MonoBehaviour
 
     void Check()
     {
+        gameData.accused = new Character();
+        gameData.accused.suspect = suspect.suspect;
+
         foreach (FileCategory category in fileDisplayer.currentFilesDisplayed.Keys)
         {
-            bool match = false;
+            string key = null;
 
             foreach (Incriminate incriminate in suspect.incriminates)
             {
-                if (fileDisplayer.currentFilesDisplayed[category].GetComponent<FileObject>().codeName == incriminate.elementName)
+                key = fileDisplayer.currentFilesDisplayed[category].GetComponent<FileObject>().codeKey;
+
+                if (key == incriminate.elementKey)
                 {
-                    if (category == incriminate.category) match = true;
-                    // Bravo, you checked an element that is in the incriminate elements of the suspect and put it in the right receiver
+                    if (category == incriminate.category) // Bravo, you checked an element that is in the incriminate elements of the suspect and put it in the right receiver
+                    {
+                        gameData.accused.incriminates.Add(new Incriminate { elementKey = key, category = category });
+                    }
                 }
-            }
-
-            if (match)
-            {
-
-            }
-            else
-            {
-
             }
         }
     }

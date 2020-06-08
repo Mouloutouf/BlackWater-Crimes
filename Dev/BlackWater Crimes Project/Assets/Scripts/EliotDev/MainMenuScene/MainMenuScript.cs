@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class MainMenuScript : MonoBehaviour
 {
     public SoundSystem soundSystem;
+    public LanguageSystem languageSystem;
 
     public DataContainer dataContainer;
     private GameData gameData;
@@ -136,6 +137,8 @@ public class MainMenuScript : MonoBehaviour
         {
             gameData.gameLanguage = Languages.French;
         }
+
+        languageSystem.SetKeys();
     }
 
     public void OpenParameters()

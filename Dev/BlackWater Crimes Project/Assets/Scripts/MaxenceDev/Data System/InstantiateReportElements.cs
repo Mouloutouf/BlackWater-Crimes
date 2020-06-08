@@ -46,14 +46,9 @@ public class InstantiateReportElements : InstantiateElements<Report>
     
     protected override string GetDataName(Report data)
     {
-        return data.elementName;
-    }
-
-    protected override string GetDataName(Report data, bool getKey)
-    {
         return data.elementKey;
     }
-
+    
     protected override void SetLayout()
     {
         float sizeX = contents[0].GetComponent<RectTransform>().rect.width;

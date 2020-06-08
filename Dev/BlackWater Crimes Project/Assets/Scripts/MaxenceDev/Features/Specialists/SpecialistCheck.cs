@@ -20,7 +20,7 @@ public class SpecialistCheck : Checker
 
     public override void GetCheckedElements()
     {
-        checkedName = EvidenceHeld.codeName;
+        checkedName = EvidenceHeld.nameKey;
 
         checkedImage = EvidenceHeld.photo;
     }

@@ -8,7 +8,7 @@ public class ReportObject : ObjectData<Report>
     public GameData _gameData;
 
     public Image agentImage;
-    public Text agentText;
+    public Localisation agentKey;
 
     public float agentFactor;
 
@@ -31,7 +31,8 @@ public class ReportObject : ObjectData<Report>
         RectTransform rect = agentImage.gameObject.GetComponent<RectTransform>();
         rect.sizeDelta = new Vector2(rect.rect.width / agentFactor, rect.rect.height / agentFactor);
 
-        agentText.text = data.agentName;
+        agentKey.key = data.agentKey;
+        agentKey.RefreshText();
 
         ElementImage.sprite = data.elementSprite;
         elementKey.key = data.elementKey;
@@ -45,17 +46,17 @@ public class ReportObject : ObjectData<Report>
         base.Protocol();
     }
 
-    public void SetData(Report report)
+    public void SetData()
     {
         // Set Questions
         
-        foreach (List<Question> questionList in _gameData.questions.Values) 
+        foreach (List<Question> questionList in _gameData.questions.Values)
         {
             foreach (Question question in questionList)
             {
-                if (question.reportName == data.elementName)
+                if (question.reportKey == data.elementKey)
                 {
-                    if (question.mode == Modes.Evidence && question.otherName == data.elementDetailName)
+                    if (question.mode == Modes.Evidence && question.otherKey == data.detailKey)
                     {
                         question.unlockedData = true;
                     }
@@ -67,11 +68,11 @@ public class ReportObject : ObjectData<Report>
 
         // Set Location Known
 
-        if (report.giveAccess)
+        if (data.giveAccess)
         {
             foreach (Location location in _gameData.locations)
             {
-                if (location.myLocation == report.locationToAccess)
+                if (location.myLocation == data.locationToAccess)
                 {
                     location.known = true;
                     location.accessible = true;

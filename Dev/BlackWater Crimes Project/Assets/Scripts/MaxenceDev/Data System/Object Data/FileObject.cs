@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class FileObject : MonoBehaviour
 {
-    [HideInInspector] public string codeName;
+    [HideInInspector] public string codeKey;
     [HideInInspector] public Type type;
 
     [HideInInspector] public bool isFileDisplayed = false;

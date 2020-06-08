@@ -15,7 +15,7 @@ public class PhotoFileObject : ObjectData<Evidence>
     {
         GetGameData();
 
-        file.codeName = data.codeName;
+        file.codeKey = data.nameKey;
         file.type = typeof(Evidence);
     }
 

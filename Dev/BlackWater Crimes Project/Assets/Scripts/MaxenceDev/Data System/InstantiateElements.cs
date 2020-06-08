@@ -134,7 +134,7 @@ public class InstantiateElements<T> : InstantiationProcess<T> where T : Data
         {
             foreach (Report _report in megaList.Item1)
             {
-                if (_report.elementName == GetDataName(_data) && _report.unlockedData)
+                if (_report.elementKey == GetDataName(_data) && _report.unlockedData)
                 {
                     instantiateReports.CreateAssociatedReport(reportsContent, _element, _report, display);
 
@@ -144,13 +144,12 @@ public class InstantiateElements<T> : InstantiationProcess<T> where T : Data
         }
         if (!match)
         {
-            instantiateReports.CreateNoneReport(reportsContent, _element, GetDataName(_data, true), messageText, display);
+            instantiateReports.CreateNoneReport(reportsContent, _element, GetDataName(_data), messageText, display);
         }
     }
     
     protected virtual string GetDataName(T data) { return null; }
-
-    protected virtual string GetDataName(T data, bool getKey) { return null; }
+    
     #endregion
 
     #region Layout

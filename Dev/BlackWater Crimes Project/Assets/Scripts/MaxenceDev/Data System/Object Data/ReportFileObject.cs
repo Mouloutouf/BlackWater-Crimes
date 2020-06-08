@@ -14,7 +14,7 @@ public class ReportFileObject : ObjectData<Report>
     {
         GetGameData();
 
-        file.codeName = data.elementName;
+        file.codeKey = data.elementKey;
         file.type = typeof(Report);
     }
 

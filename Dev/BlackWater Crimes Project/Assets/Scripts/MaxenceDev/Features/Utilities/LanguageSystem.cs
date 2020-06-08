@@ -87,9 +87,9 @@ public class LanguageSystem : MonoBehaviour
         }
     }
 
-    void SetKeys()
+    public void SetKeys()
     {
-        foreach(LocalisationKey localisationKey in localisationKeys)
+        foreach (LocalisationKey localisationKey in localisationKeys)
         {
             localisationKey.component.key = localisationKey.key;
             localisationKey.component.RefreshText();

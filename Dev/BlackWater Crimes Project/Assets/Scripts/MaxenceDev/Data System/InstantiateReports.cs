@@ -56,7 +56,7 @@ public class InstantiateReports : InstantiationProcess<Report>
         if (element.TryGetComponent<NotificationReport>(out NotificationReport obj)) element.GetComponent<NotificationReport>().informationObject = reportPrefab;
     }
 
-    public void CreateNoneReport(Transform content, GameObject element, string name, string message, DisplaySystem display)
+    public void CreateNoneReport(Transform content, GameObject element, string nameKey, string message, DisplaySystem display)
     {
         this.content = content;
         
@@ -64,7 +64,7 @@ public class InstantiateReports : InstantiationProcess<Report>
 
         element.GetComponent<Button>().onClick.AddListener(delegate { display.DisplayElement(element, nonePrefab); });
 
-        nonePrefab.GetComponent<NoneReportObject>().nameKey = name;
+        nonePrefab.GetComponent<NoneReportObject>().nameKey = nameKey;
         nonePrefab.GetComponent<NoneReportObject>().messageKey = message;
     }
 

@@ -19,10 +19,10 @@ public class ProsecutionValidateButton : MonoBehaviour
             if (character.isSuspect && inputText.text == character.name)
             {
                 gameData.currentSuspect = character.suspect;
+
+                StartCoroutine(DelayToProsecution(2.0f));
             }
         }
-
-        StartCoroutine(DelayToProsecution(2.0f));
     }
 
     public void Reset()

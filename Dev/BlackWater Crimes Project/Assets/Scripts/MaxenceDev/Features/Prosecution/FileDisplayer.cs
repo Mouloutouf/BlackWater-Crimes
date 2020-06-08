@@ -85,7 +85,7 @@ public class FileDisplayer : SerializedMonoBehaviour
             {
                 FileObject file1 = file.GetComponent<FileObject>(); FileObject file2 = fileDisplayed.GetComponent<FileObject>();
 
-                if (file1.codeName == file2.codeName && file1.type == file2.type) { CloseFolder(); return; }
+                if (file1.codeKey == file2.codeKey && file1.type == file2.type) { CloseFolder(); return; }
             }
         }
 
@@ -105,7 +105,7 @@ public class FileDisplayer : SerializedMonoBehaviour
         currentFilesDisplayed[category].GetComponent<FileObject>().isFileDisplayed = true;
     }
 
-    public void ResetFiles()
+    public void ResetFiles() // Could be a button option at the bottom of the screen if the player wants to reset his selection
     {
         foreach (GameObject fileDisplayed in currentFilesDisplayed.Values)
         {

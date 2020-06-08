@@ -33,5 +33,7 @@ public class NotificationReport : Notification
         base.ChangeNotification();
 
         informationObject.GetComponent<ReportObject>().data.seen = true;
+        
+        informationObject.GetComponent<ReportObject>().SetData();
     }
 }

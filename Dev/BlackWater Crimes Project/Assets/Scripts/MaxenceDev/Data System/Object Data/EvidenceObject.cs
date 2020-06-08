@@ -43,7 +43,7 @@ public class EvidenceObject : ObjectData<Evidence>
 
     public override void Protocol()
     {
-        if (hasIntel) for (int i = 0; i < intelObjects.Count; i++) intelObjects[i].name = data.intels[i].name;
+        if (hasIntel) for (int i = 0; i < intelObjects.Count; i++) intelObjects[i].myIntelKey = data.intels[i].intelKey;
 
         base.Protocol();
     }

@@ -9,7 +9,7 @@ public class InterrogateScript : SerializedMonoBehaviour
 {
     [Title("Suspect Display")]
 
-    [SerializeField] Text nameText;
+    [SerializeField] Localisation nameKey;
     [SerializeField] Localisation occupationKey;
     [SerializeField] Localisation dialogueKey;
 
@@ -42,7 +42,7 @@ public class InterrogateScript : SerializedMonoBehaviour
         {
             if (character.isSuspect && character.suspect == gameData.currentSuspect)
             {
-                nameText.text = character.name;
+                nameKey.key = character.nameKey;
                 occupationKey.key = character.jobKey;
                 dialogueKey.key = character.introPhraseKey;
                 charaSprite.sprite = suspectSprites[character.suspect][Emotions.Neutral];
@@ -50,6 +50,7 @@ public class InterrogateScript : SerializedMonoBehaviour
             }
         }
         
+        nameKey.RefreshText();
         occupationKey.RefreshText();
         dialogueKey.RefreshText();
 

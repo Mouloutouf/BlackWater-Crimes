@@ -73,8 +73,7 @@ public class Note : Data
 [Serializable]
 public class Intel
 {
-    public string name;
-    public string intelKey; /// Key To Use
+    public string intelKey;
     
     public float intelAlpha { get; set; }
 
@@ -84,7 +83,6 @@ public class Intel
 [Serializable]
 public class Evidence : Data
 {
-    public string codeName;
     public string nameKey;
     
     [Title("Intels")]
@@ -109,11 +107,6 @@ public class Evidence : Data
 
     public bool hasText;
     [ShowIf("hasText")]
-    [Title("Description Text", bold: false, HorizontalLine = false)]
-    [HideLabel]
-    [MultiLineProperty(5)]
-    public string descriptionText;
-    [ShowIf("hasText")]
     public string textKey;
     
     [HideReferenceObjectPicker]
@@ -134,7 +127,6 @@ public class Report : Data
     [Title("Agent")]
 
     public Sprite agentSprite;
-    public string agentName;
     public string agentKey;
 
     public Sprite signature;
@@ -144,19 +136,13 @@ public class Report : Data
     public Modes mode;
     [HideIf("mode", Modes.Evidence)]
     public Sprite elementSprite;
-    public string elementName;
     public string elementKey;
     [ShowIf("mode", Modes.Evidence)]
     public bool hasDetail;
     [ShowIf("hasDetail")]
-    public string elementDetailName;
-    [ShowIf("hasDetail")]
     public string detailKey;
 
     [Title("Report Text", bold: false)]
-    [HideLabel]
-    [MultiLineProperty(15)]
-    public string reportText;
     public string reportKey;
 
     [Title("Unlockable")]
@@ -183,27 +169,20 @@ public class Location : Data
     [Title("Location")]
 
     public Locations myLocation;
-    public string locationName;
     public string nameKey;
-    public string locationAdress;
+    public string locationAdress; // Cannot be changed yet --> will require Localisation on the dropdown of addresses (venues)
     public string addressKey;
 
     public Sprite locationArtwork;
     public Sprite locationCroppedImage;
 
     [Title("Description", bold: false)]
-    [HideLabel]
-    [MultiLineProperty(5)]
-    public string locationDescription;
     public string descriptionKey;
 }
 
 [Serializable]
 public class Answer
 {
-    [HideLabel]
-    [MultiLineProperty(4)]
-    public string answer;
     public string answerKey;
 
     public Emotions emotion;
@@ -215,9 +194,6 @@ public class Answer
 public class Question : Data
 {
     [Title("Question", bold: false)]
-    [HideLabel]
-    [MultiLineProperty(2)]
-    public string question;
     public string questionKey;
     
     public List<Answer> _answers;
@@ -229,18 +205,15 @@ public class Question : Data
     [ShowIf("unlockedByReport")]
     public Modes mode;
     [ShowIf("unlockedByReport")]
-    public string reportName;
-    [ShowIf("unlockedByReport")]
     public string reportKey;
-    [ShowIf("mode", Modes.Evidence)]
-    public string otherName;
     [ShowIf("mode", Modes.Evidence)]
     public string otherKey;
 }
 
+[Serializable]
 public class Incriminate
 {
-    public string elementName;
+    public string elementKey;
     public FileCategory category;
 }
 
@@ -249,7 +222,7 @@ public class Character : Data
 {
     [Title("Information")]
 
-    public string name;
+    public string name; // Cannot be changed yet --> will require comparison between input names and nameKeys values (the dictionary can't be accessed)
     public string nameKey;
     public Sprite sprite;
 
@@ -269,15 +242,13 @@ public class Character : Data
     [Title("Distinctions")]
     
     public List<string> distinctiveElements;
-    public List<string> distinctionsKeys;
+    //public List<string> distinctionsKeys;
 }
 
 [Serializable]
 public class Indic
 {
     [Title("Infos")]
-
-    public string name;
     public string nameKey;
     public string jobKey;
 
@@ -345,6 +316,8 @@ public class GameData : SerializedScriptableObject
     [Title("Characters")]
     public List<Character> characters = new List<Character>();
     
+    [HideInInspector] public Character accused;
+
     [Title("Indics")]
     public Dictionary<Indics, Indic> indics = new Dictionary<Indics, Indic>();
     public Indics currentIndic = Indics.Standard;
@@ -457,7 +430,7 @@ public class GameData : SerializedScriptableObject
 
             foreach (Evidence evidence in evidences[location])
             {
-                string evidenceName = listName + "_" + evidence.codeName;
+                string evidenceName = listName + "_" + evidence.nameKey;
 
                 evidence.unlockedData = SetData(action, evidence.unlockedData, evidenceName + "_" + nameof(evidence.unlockedData));
                 
@@ -465,8 +438,8 @@ public class GameData : SerializedScriptableObject
                 {
                     foreach (Intel intel in evidence.intels)
                     {
-                        intel.revealed = SetData(action, intel.revealed, evidenceName + "_" + intel.name + "_" + nameof(intel.revealed));
-                        intel.intelAlpha = SetData(action, intel.intelAlpha, evidenceName + "_" + intel.name + "_" + nameof(intel.intelAlpha));
+                        intel.revealed = SetData(action, intel.revealed, evidenceName + "_" + intel.intelKey + "_" + nameof(intel.revealed));
+                        intel.intelAlpha = SetData(action, intel.intelAlpha, evidenceName + "_" + intel.intelKey + "_" + nameof(intel.intelAlpha));
                     }
                 }
 
@@ -481,7 +454,7 @@ public class GameData : SerializedScriptableObject
         // Add Locations
         foreach (Location location in locations)
         {
-            string locationName = location.locationName;
+            string locationName = location.nameKey;
 
             location.known = SetData(action, location.known, locationName + "_" + nameof(location.known));
             location.visible = SetData(action, location.visible, locationName + "_" + nameof(location.visible));
@@ -504,8 +477,8 @@ public class GameData : SerializedScriptableObject
 
             foreach (Report report in reports[indic].Item1)
             {
-                string reportName = listName + "_" + report.elementName;
-                if (report.mode == Modes.Evidence) reportName += ("_" + report.elementDetailName);
+                string reportName = listName + "_" + report.elementKey;
+                if (report.mode == Modes.Evidence) reportName += ("_" + report.detailKey);
 
                 report.unlockedData = SetData(action, report.unlockedData, reportName + "_" + nameof(report.unlockedData));
                 report.unlockOrderIndex = SetData(action, report.unlockOrderIndex, reportName + "_" + nameof(report.unlockOrderIndex));
@@ -530,7 +503,7 @@ public class GameData : SerializedScriptableObject
 
         foreach (Indic indic in indics.Values)
         {
-            indic.quickCallAvailable = SetData(action, indic.quickCallAvailable, indic.name + "_" + nameof(indic.quickCallAvailable));
+            indic.quickCallAvailable = SetData(action, indic.quickCallAvailable, indic.nameKey + "_" + nameof(indic.quickCallAvailable));
         }
 
         firstTimeInTuto = SetData(action, firstTimeInTuto, nameof(firstTimeInTuto));
@@ -569,7 +542,7 @@ public class GameData : SerializedScriptableObject
                     }
                 }
                 
-                evidence.photoPath = "Assets/Graphs/Saved_Photos/" + evidence.codeName.Replace(" ", "") + ".png";
+                evidence.photoPath = "Assets/Graphs/Saved_Photos/" + evidence.nameKey + ".png";
 
                 evidence.photographed = false;
 

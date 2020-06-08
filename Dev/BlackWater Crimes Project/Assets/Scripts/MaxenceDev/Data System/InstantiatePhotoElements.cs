@@ -71,11 +71,6 @@ public class InstantiatePhotoElements : InstantiateElements<Evidence>
 
     protected override string GetDataName(Evidence data)
     {
-        return data.codeName;
-    }
-
-    protected override string GetDataName(Evidence data, bool getKey)
-    {
         return data.nameKey;
     }
 }
