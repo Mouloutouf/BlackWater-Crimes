@@ -146,7 +146,7 @@ public class TutorialScript : SerializedMonoBehaviour
 
     void Start()
     {
-        if(gameData.firstTimeInTuto)
+        /*if(gameData.firstTimeInTuto)
         {
             gameData.firstTimeInTuto = false;
             DontDestroyOnLoad(this.gameObject);
@@ -155,7 +155,12 @@ public class TutorialScript : SerializedMonoBehaviour
 
             DockStart();
         }
-        else Destroy(this.gameObject);
+        else Destroy(this.gameObject);*/
+
+        DontDestroyOnLoad(this.gameObject);
+        currentDialogueLanguage = englishDialogues;
+        currentObjectivesLanguage = englishObjectives;
+        DockStart();
     }
 
     void Update() 
