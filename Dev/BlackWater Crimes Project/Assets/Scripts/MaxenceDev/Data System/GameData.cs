@@ -228,6 +228,8 @@ public class Character : Data
 
     [Title("", horizontalLine: false)]
     public bool isSuspect;
+    [HideInInspector]
+    public bool known;
     [ShowIf("isSuspect")]
     public Suspects suspect;
     [ShowIf("isSuspect")]

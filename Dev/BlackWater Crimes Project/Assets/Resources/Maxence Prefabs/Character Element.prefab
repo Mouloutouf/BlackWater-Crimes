@@ -84,6 +84,7 @@ GameObject:
   - component: {fileID: 6480464396463727061}
   - component: {fileID: 6480464396463727051}
   - component: {fileID: 6480464396463727050}
+  - component: {fileID: 4839470712035314145}
   - component: {fileID: 7838894782715045072}
   m_Layer: 5
   m_Name: Text
@@ -140,7 +141,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 12800000, guid: da39bc5829190a84cab56332eff41374, type: 3}
     m_FontSize: 300
-    m_FontStyle: 1
+    m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 3
     m_MaxSize: 300
@@ -151,6 +152,21 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: New Text
+--- !u!114 &4839470712035314145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6480464396463727060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!114 &7838894782715045072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,15 +240,16 @@ MonoBehaviour:
     nameKey: 
     sprite: {fileID: 0}
     isSuspect: 0
+    known: 0
     suspect: 0
     jobKey: 
     introPhraseKey: 
     introPhraseAudio: {fileID: 0}
     incriminates: []
     distinctiveElements: []
-  factor: 40
   imageComponent: {fileID: 6480464396217498622}
   textComponent: {fileID: 7838894782715045072}
+  factor: 40
 --- !u!114 &-7624745784223039267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,8 +328,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.4800034, y: -56.980003}
-  m_SizeDelta: {x: -39.88, y: -149.2}
+  m_AnchoredPosition: {x: 1.4800034, y: -53.69}
+  m_SizeDelta: {x: -39.88, y: -155.78}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6480464397899459865
 CanvasRenderer:

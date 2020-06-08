@@ -50,6 +50,8 @@ public class HeadHunterCheck : Checker
 
         if (_report.index == 0) check = false;
         
+        UnlockCharacter(check);
+
         return check;
     }
 
@@ -66,5 +68,19 @@ public class HeadHunterCheck : Checker
         }
 
         return check;
+    }
+
+    void UnlockCharacter(bool _check)
+    {
+        if (_check)
+        {
+            foreach (Character character in gameData.characters)
+            {
+                if (checkedName == character.nameKey)
+                {
+                    character.known = true;
+                }
+            }
+        }
     }
 }

@@ -45,7 +45,7 @@ public class SetSpecialist : MonoBehaviour
         characterImage.sprite = gameData.indics[_indic].image;
         characterImage.SetNativeSize();
         RectTransform rt = characterImage.GetComponent<RectTransform>();
-        rt.sizeDelta = new Vector2(rt.sizeDelta.x * factor, rt.sizeDelta.y * factor);
+        rt.sizeDelta = new Vector2(rt.sizeDelta.x / factor, rt.sizeDelta.y / factor);
 
         characterName.key = gameData.indics[_indic].nameKey;
         characterName.RefreshText();

@@ -113,7 +113,7 @@ public class EvidenceInteraction : MonoBehaviour
             {
                 GameObject selected = hit.transform.gameObject;
 
-                if (selected.tag == "Clue" && selected.GetComponent<IntelObject>().myIntelKey == _intel.intelKey && !_intel.revealed) // Clue means Intel
+                if (selected.tag == "Clue" && selected.GetComponent<IntelObject>().myIntelKey == _intel.intelKey && !_intel.revealed) // "Clue" means Intel
                 {
                     if (_intel.intelAlpha < 1f)
                     {
