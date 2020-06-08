@@ -66,6 +66,7 @@ public class LocationInteraction : SerializedMonoBehaviour
     {
         _object.locationSprite.SetActive(true);
         _object.data.visible = true;
+        _object.data.accessible = true;
 
         //Particle Effects & anims & sounds etc.
 

@@ -304,7 +304,7 @@ public class TutorialScript : SerializedMonoBehaviour
 
         else if (waitingForFolderScene)
         {
-            if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "NewDeskScene")
+            if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "DeskScene")
             {
                 waitingForFolderScene = false;
 
@@ -425,7 +425,7 @@ public class TutorialScript : SerializedMonoBehaviour
 
         else if (waitingForReturnFolderScene)
         {
-            if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "NewDeskScene")
+            if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "DeskScene")
             {
                 waitingForReturnFolderScene = false;
 
@@ -461,7 +461,7 @@ public class TutorialScript : SerializedMonoBehaviour
 
         else if (waitingForSecondReturnFolderScene)
         {
-           if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "NewDeskScene")
+           if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "DeskScene")
             {
                 waitingForSecondReturnFolderScene = false;
 
