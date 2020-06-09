@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class SpecialistEvidenceDisplayer : MonoBehaviour
 {
     [SerializeField] GameObject evidencesFolder;
-    private bool folderOpen = false;
+    public bool folderOpen = false;
 
     public GameObject currentEvidenceDisplayed;
 

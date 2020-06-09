@@ -63,4 +63,9 @@ public class TargetNameScript : MonoBehaviour
             inputText.color = baseColor;
         }
     }
+
+    public void ToAlertMode()
+    {
+        TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default, false, false, false, true);
+    }
 }

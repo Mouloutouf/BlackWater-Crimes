@@ -41,7 +41,7 @@ public class MusicManager : SerializedMonoBehaviour
         soundSystem = GameObject.FindObjectOfType<SoundSystem>();
         audioSource = soundSystem.transform.GetChild(0).GetComponent<AudioSource>();
 
-        if(this.transform.childCount > 0 && !deskSceneNames.Contains(newScene.name)) Destroy(this.transform.GetChild(0).gameObject);
+        if (this.transform.childCount > 0 && !deskSceneNames.Contains(newScene.name)) Destroy(this.transform.GetChild(0).gameObject);
 
         if (researchSceneNames.ContainsValue(newScene.name)) LoadResearchSceneMusic(newScene.name);
         else if (deskSceneNames.Contains(newScene.name)) LoadDeskSceneMusic(newScene.name);
@@ -60,8 +60,12 @@ public class MusicManager : SerializedMonoBehaviour
         }
 
         AudioClip musicToPlay = researchSceneMusics[locationKey];
-        audioSource.clip = musicToPlay;
-        audioSource.Play();
+
+        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != "Scene_PlanqueAnna")
+        {
+            audioSource.clip = musicToPlay;
+            audioSource.Play();
+        }
     }
 
     void LoadDeskSceneMusic(string sceneName)

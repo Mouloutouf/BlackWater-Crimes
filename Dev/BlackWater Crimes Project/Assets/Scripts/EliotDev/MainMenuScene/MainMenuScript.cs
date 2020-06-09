@@ -32,6 +32,7 @@ public class MainMenuScript : MonoBehaviour
     public Dropdown languageSelection;
 
     public GameObject parameterButton;
+    public Toggle tutoToggle;
 
     public Sprite baseParameter;
     public Sprite activeParameter;
@@ -45,6 +46,8 @@ public class MainMenuScript : MonoBehaviour
         gameStatusText.text = "Game 1 - " + DateTime.Today.ToString("M/d/yyyy");
         
         SetGame();
+
+        tutoToggle.isOn = gameData.firstTimeInTuto;
 
         SetLanguage();
     }
@@ -141,6 +144,11 @@ public class MainMenuScript : MonoBehaviour
         }
 
         languageSystem.SetKeys();
+    }
+
+    public void Tutorial(bool enabled)
+    {
+        gameData.firstTimeInTuto = enabled;
     }
 
     public void OpenParameters()

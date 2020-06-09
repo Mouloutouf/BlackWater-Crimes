@@ -293,9 +293,10 @@ public class GameData : SerializedScriptableObject
     public bool vibrations = true;
 
     public SoundSettings soundSettings;
-
+    [HideInInspector] public bool alternativeAnnaMusic = false;
     [HideInInspector] public string playGame = "Play Game !";
     public bool firstTimeInTuto = true; // Tutorial Docks
+
 
     [Title("DATA")]
     
@@ -587,6 +588,8 @@ public class GameData : SerializedScriptableObject
         {
             indic.quickCallAvailable = false;
         }
+
+        alternativeAnnaMusic = false;
 
         newStuff = false;
     }
