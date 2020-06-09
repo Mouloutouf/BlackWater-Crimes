@@ -11708,7 +11708,7 @@ MonoBehaviour:
     voiceVolume:
       _volume: 0.5
   playGame: Play Game !
-  firstTimeInTuto: 0
+  firstTimeInTuto: 1
   notes: []
   reportsCollected: 0
   newStuff: 0
@@ -11844,7 +11844,16 @@ MonoBehaviour:
     jobKey: abigail_job
     introPhraseKey: abigail_intro
     introPhraseAudio: {fileID: 0}
-    incriminates: []
+    incriminates:
+    - elementKey: brique_name
+      elementType: 0
+      category: 0
+    - elementKey: passeports_name
+      elementType: 0
+      category: 1
+    - elementKey: lettre_victime_name
+      elementType: 0
+      category: 2
     prosecutionKeys:
     - end_bad_abigail
     - end_ok_abigail
@@ -11863,7 +11872,16 @@ MonoBehaviour:
     jobKey: bob_job
     introPhraseKey: bob_intro
     introPhraseAudio: {fileID: 0}
-    incriminates: []
+    incriminates:
+    - elementKey: brique_name
+      elementType: 0
+      category: 0
+    - elementKey: enveloppe_name
+      elementType: 1
+      category: 1
+    - elementKey: none
+      elementType: 0
+      category: 2
     prosecutionKeys:
     - end_bad_bob
     - end_ok_bob
@@ -11883,14 +11901,14 @@ MonoBehaviour:
     introPhraseKey: umberto_intro
     introPhraseAudio: {fileID: 0}
     incriminates:
-    - elementKey: colt_name
+    - elementKey: brique_name
       elementType: 0
       category: 0
-    - elementKey: etiquette_name
-      elementType: 0
-      category: 1
-    - elementKey: etiquette_name
+    - elementKey: lettre_anonyme_name
       elementType: 1
+      category: 1
+    - elementKey: mot_name
+      elementType: 0
       category: 2
     prosecutionKeys:
     - end_bad_umberto
@@ -11911,7 +11929,16 @@ MonoBehaviour:
     jobKey: richard_job
     introPhraseKey: richard_intro
     introPhraseAudio: {fileID: 0}
-    incriminates: []
+    incriminates:
+    - elementKey: brique_name
+      elementType: 0
+      category: 0
+    - elementKey: note_anderson_name
+      elementType: 0
+      category: 1
+    - elementKey: none
+      elementType: 0
+      category: 2
     prosecutionKeys:
     - end_bad_richard
     - end_ok_richard
