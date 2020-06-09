@@ -24,6 +24,8 @@ public class RandomQuoteLoadingScreen : MonoBehaviour
         randomNumber = Random.Range(0, randomFunFact.Count);
         string key = string.Concat(defaultKeySentence, randomNumber.ToString());
 
+        Debug.Log(key);
+
         if (string.IsNullOrEmpty(key)) return;
 
         string displayText = LanguageManager.instance.Translate(key);

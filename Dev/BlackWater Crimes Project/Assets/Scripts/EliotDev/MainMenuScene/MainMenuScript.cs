@@ -166,6 +166,7 @@ public class MainMenuScript : MonoBehaviour
         if (PlayerPrefs.GetInt(nameof(gameData.firstTimeInGame)) == 1) // First Time the Player Starts the Game
         {
             gameData.firstTimeInGame = false;
+            gameData.firstTimeInTuto = true;
         }
         else // Any Other Time the Player Starts the Game
         {
@@ -173,5 +174,9 @@ public class MainMenuScript : MonoBehaviour
         }
 
         gameData.ManageData(Action.Save);
+
+        gameData.locations[0].accessible = true;
+        gameData.locations[0].known = true;
+        gameData.locations[0].visible = true;
     }
 }
