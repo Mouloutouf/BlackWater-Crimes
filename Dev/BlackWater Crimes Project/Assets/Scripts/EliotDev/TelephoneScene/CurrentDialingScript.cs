@@ -13,6 +13,7 @@ public class CurrentDialingScript : MonoBehaviour
     [SerializeField] Text dialingText;
     public Text callingText;
     [SerializeField] Button eraseButton;
+    public List<Button> quickCallButtons;
 
     public List<int> currentDialing = new List<int>();
     public string currentContact = "";
@@ -42,6 +43,12 @@ public class CurrentDialingScript : MonoBehaviour
             if(currentDialing.Count == 4)
             {
                 eraseButton.interactable = false;
+
+                foreach(Button qCButton in quickCallButtons)
+                {
+                    qCButton.interactable = false;
+                }
+
                 StartCoroutine(Call());
             }
         }
@@ -134,6 +141,10 @@ public class CurrentDialingScript : MonoBehaviour
         yield return new WaitForSeconds(1);
         callingText.text = "";
         eraseButton.interactable = true;
+        foreach(Button qCButton in quickCallButtons)
+        {
+            qCButton.interactable = false;
+        }
         ResetDial();
     }
 
