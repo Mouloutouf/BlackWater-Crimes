@@ -1720,6 +1720,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundSystem: {fileID: 516273677}
+  languageSystem: {fileID: 2144607592}
   dataContainer: {fileID: 1880976872}
   musicSlider: {fileID: 1193168957}
   voicesSlider: {fileID: 508266756}
@@ -4480,7 +4481,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: VideoIntroScene
+          m_StringArgument: ChooseEpisode
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 516273677}
@@ -4685,8 +4686,12 @@ PrefabInstance:
         type: 3}
       propertyPath: serializationData.Prefab
       value: 
-      objectReference: {fileID: 3967563921942102658, guid: 38ee6f9e21af31b41a1f2da02a7acd01,
+      objectReference: {fileID: 0}
+    - target: {fileID: 3967563921942102658, guid: 38ee6f9e21af31b41a1f2da02a7acd01,
         type: 3}
+      propertyPath: prosecutionSceneName
+      value: AccusationScene
+      objectReference: {fileID: 0}
     - target: {fileID: 5899252172979392240, guid: 38ee6f9e21af31b41a1f2da02a7acd01,
         type: 3}
       propertyPath: m_Name

@@ -1207,14 +1207,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6979cc5fb58ef7e4fb8aeb82e0af6c80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  introText: "Bonjour monsieur ! Besoin d'une enqu\xEAte ?"
-  validateText: "Je vais y aller ! V\xE9rifie tes rapports !"
+  checkedImage: {fileID: 0}
   allIndicsText:
   - indic: 4
-    introText: Hello detective ! Want me to go somewhere ?
-    successText: Sure, we should find good infos there. Check your reports !
-    failureText: Are you really sure I need to go there ? Well, I'll try...
-  reportButton: {fileID: 2987559514699708907}
+    introKey: maxwell_intro_text
+    successKey: maxwell_success_text
+    failureKey: maxwell_failure_text
+    introAudio: {fileID: 0}
+    successAudio: {fileID: 0}
+    failureAudio: {fileID: 0}
   dropdown: {fileID: 3522174017839784017}
 --- !u!1 &3522174019322760388
 GameObject:

@@ -8,9 +8,7 @@ public class InstantiationProcess<T> : MonoBehaviour where T : Data
     protected T type;
 
     protected GameData gameData;
-
-    [Title("Prefabs")]
-
+    
     public GameObject prefab;
     
     public void GetGameData()

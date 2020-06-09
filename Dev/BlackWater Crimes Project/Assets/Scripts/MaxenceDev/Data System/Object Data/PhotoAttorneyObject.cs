@@ -22,6 +22,7 @@ public class PhotoAttorneyObject : ObjectData<Evidence>
     {
         if (!isEvidenceDisplayed)
         {
+            data.photo = EvidenceInteraction.CreateSprite(data.photoPath);
             imageObject.GetComponent<Image>().sprite = data.photo;
 
             textComponent.gameObject.GetComponent<Localisation>().key = data.nameKey;

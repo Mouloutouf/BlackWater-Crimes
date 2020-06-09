@@ -7,6 +7,10 @@ using Sirenix.OdinInspector;
 
 public class InstantiateReportElements : InstantiateElements<Report>
 {
+    [Title("Report References", horizontalLine: false)]
+
+    public NotificationSystem notificationSystem;
+
     protected override List<List<Report>> GetAllElements()
     {
         List<List<Report>> mainList = new List<List<Report>>();
@@ -36,13 +40,15 @@ public class InstantiateReportElements : InstantiateElements<Report>
     {
         __prefab.GetComponent<RectTransform>().offsetMin = new Vector2(15, __prefab.GetComponent<RectTransform>().offsetMin.y);
         __prefab.GetComponent<RectTransform>().offsetMax = new Vector2(-15, __prefab.GetComponent<RectTransform>().offsetMax.y);
+
+        __prefab.GetComponent<NotificationReport>().notificationSystem = notificationSystem;
     }
     
     protected override string GetDataName(Report data)
     {
-        return data.elementName;
+        return data.elementKey;
     }
-
+    
     protected override void SetLayout()
     {
         float sizeX = contents[0].GetComponent<RectTransform>().rect.width;

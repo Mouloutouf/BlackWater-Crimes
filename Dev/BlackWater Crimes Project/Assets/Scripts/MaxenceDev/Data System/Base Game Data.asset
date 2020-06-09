@@ -1,0 +1,9345 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06c217b4604086847907ec22f5028824, type: 3}
+  m_Name: Base Game Data
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 21300000, guid: e7bfe084a9cf21049bfd59d48cc03111, type: 3}
+    - {fileID: 21300000, guid: 9443cfd055f552c4cac20e4e4450d72b, type: 3}
+    - {fileID: 21300000, guid: 4e2a307ccf541ee409b8025d15403f0e, type: 3}
+    - {fileID: 21300000, guid: da33f4d91856b1141bdcc401ab440d57, type: 3}
+    - {fileID: 21300000, guid: e5df8534340e55949ae47e8ad12339c2, type: 3}
+    - {fileID: 21300000, guid: 55c9071abadc03f4d9430932520fcf72, type: 3}
+    - {fileID: 21300000, guid: c3ced49b9b2d5ce4eab4e2cb50b03be6, type: 3}
+    - {fileID: 21300000, guid: 89f3c4da1773ae548a8723995db4a636, type: 3}
+    - {fileID: 21300000, guid: e35db344fbfd6ab42a6113fbef92fa44, type: 3}
+    - {fileID: 21300000, guid: 8d7093147653f2343a2cc5cb3555e25a, type: 3}
+    - {fileID: 21300000, guid: 1cb316980da6cd6488973411fd4d5ccc, type: 3}
+    - {fileID: 21300000, guid: b79bdf46eb9e771499f42ef4c22374e5, type: 3}
+    - {fileID: 21300000, guid: a33494e6b19f67b458fa883484c1ba94, type: 3}
+    - {fileID: 21300000, guid: eb12644eb8897cc4f815f6a3ffa0fe0d, type: 3}
+    - {fileID: 21300000, guid: 790ecadda147c8a459fd80e902b75797, type: 3}
+    - {fileID: 21300000, guid: 438f236abe14f6947a33bb68bc4c7f0d, type: 3}
+    - {fileID: 21300000, guid: 9a6624594c5b948458d60a4da2961ba0, type: 3}
+    - {fileID: 21300000, guid: abaf3b2078c3f194da2c8365ea2339fc, type: 3}
+    - {fileID: 21300000, guid: 604044291a678494caf88090235724a1, type: 3}
+    - {fileID: 21300000, guid: cb8aa81430237e64abe270f98f59fd0b, type: 3}
+    - {fileID: 21300000, guid: 3894aebf717505c46848a6c562ebb957, type: 3}
+    - {fileID: 21300000, guid: 4f0db1972eae3984fb278e4c9d175063, type: 3}
+    - {fileID: 21300000, guid: d290833c696cb6e409da257d3348b26e, type: 3}
+    - {fileID: 8300000, guid: da7cd60bff361044e9317975e63b4900, type: 3}
+    - {fileID: 8300000, guid: c218f9c6303f8f441ae1b2fc1eda6f43, type: 3}
+    - {fileID: 8300000, guid: fed8d5e394abeb84489bf3e8ffe97fdb, type: 3}
+    - {fileID: 8300000, guid: e72978eae56c5f64a9fbaabd7a2cc870, type: 3}
+    - {fileID: 8300000, guid: d320c28634d031b4f852dd7c61b2c37c, type: 3}
+    - {fileID: 8300000, guid: 42ec4652c9c608a4285e4c185a7dc1ee, type: 3}
+    - {fileID: 8300000, guid: d3b0f8f399f8fd041afd6953e4e97810, type: 3}
+    - {fileID: 8300000, guid: 062afd87f5a93ea49976b7d90217e98a, type: 3}
+    - {fileID: 8300000, guid: 7667f38e5fa13894cb54d03d57da15d3, type: 3}
+    - {fileID: 8300000, guid: 95e85186d417ce949acb15214d375bf1, type: 3}
+    - {fileID: 8300000, guid: f734a4d822a4308438adc54ea52e9b08, type: 3}
+    - {fileID: 8300000, guid: 5c63125dbfe762e41bb30645601c4bf7, type: 3}
+    - {fileID: 8300000, guid: 3ffc45f0fff55e94795d6a2dfbd36d70, type: 3}
+    - {fileID: 8300000, guid: 3d7242847d4a1364eb1b3235c5da0f23, type: 3}
+    - {fileID: 8300000, guid: a20e00f69df7c6c47a01f4ca6297cd89, type: 3}
+    - {fileID: 8300000, guid: f9bbdd2dbdb77b840adbff336b7191ba, type: 3}
+    - {fileID: 8300000, guid: f26d6923fa2b44644a20facf0ca51e4d, type: 3}
+    - {fileID: 8300000, guid: 950acf05ae3702e48add2f82ac4a3eab, type: 3}
+    - {fileID: 8300000, guid: fa4c2acd7805ddc45b9b2855f45be1a3, type: 3}
+    - {fileID: 8300000, guid: d05c07da20bfa7d44aef0738e0520105, type: 3}
+    - {fileID: 8300000, guid: 840e5f3fd04f3e64fa2db2e11310a05a, type: 3}
+    - {fileID: 8300000, guid: 28244c88bba5e0147a1a66a13715c6cd, type: 3}
+    - {fileID: 8300000, guid: 020d159a988d0d448a29a7d64ab70fe0, type: 3}
+    - {fileID: 8300000, guid: f74f6f2ee8e51194b80858a9a5061a17, type: 3}
+    - {fileID: 8300000, guid: 42759703be1d0e644b96302323d49776, type: 3}
+    - {fileID: 8300000, guid: d738ad123542bdc47aa324fd37a12c91, type: 3}
+    - {fileID: 8300000, guid: 06baf280a4645114ba0f5e7f8e8bec46, type: 3}
+    - {fileID: 8300000, guid: e2b926e31d0b71540948915d57650e17, type: 3}
+    - {fileID: 8300000, guid: 8484ba0d55ac59e4188c7edae494e9d9, type: 3}
+    - {fileID: 8300000, guid: c9af9aec62caf2c4c8b6af2d0de9fe97, type: 3}
+    - {fileID: 8300000, guid: 2f5410a48a076be44a431375253b6020, type: 3}
+    - {fileID: 8300000, guid: cba59ba06e43f4f4c96c25fa6466fd03, type: 3}
+    - {fileID: 21300000, guid: 85912369f3af6bb4e8ba7713d3642e1e, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: evidences
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[Locations, Assembly-CSharp],[System.Collections.Generic.List`1[[Evidence,
+        Assembly-CSharp]], mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[Locations, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 9
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[Evidence, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: 3|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 0
+    - Name: nameKey
+      Entry: 1
+      Data: douille_name
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: false
+    - Name: intels
+      Entry: 7
+      Data: 4|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: false
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 0
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: Assets/Graphs/Saved_Photos/douille_name.png
+    - Name: hasText
+      Entry: 5
+      Data: false
+    - Name: textKey
+      Entry: 6
+      Data: 
+    - Name: modeCategory
+      Entry: 7
+      Data: 5|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 0
+    - Name: suspect
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 6|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 1
+    - Name: nameKey
+      Entry: 1
+      Data: etiquette_name
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: false
+    - Name: intels
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: true
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 2
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: Assets/Graphs/Saved_Photos/etiquette_name.png
+    - Name: hasText
+      Entry: 5
+      Data: false
+    - Name: textKey
+      Entry: 6
+      Data: 
+    - Name: modeCategory
+      Entry: 7
+      Data: 8|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 0
+    - Name: suspect
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 9|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 2
+    - Name: nameKey
+      Entry: 1
+      Data: lettre_victime_name
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: true
+    - Name: intels
+      Entry: 7
+      Data: 10|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 11|Intel, Assembly-CSharp
+    - Name: intelKey
+      Entry: 1
+      Data: anna_fingerprint
+    - Name: revealed
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: false
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 2
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: Assets/Graphs/Saved_Photos/lettre_victime_name.png
+    - Name: hasText
+      Entry: 5
+      Data: true
+    - Name: textKey
+      Entry: 1
+      Data: lettre_victime_text
+    - Name: modeCategory
+      Entry: 7
+      Data: 12|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 0
+    - Name: suspect
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 3
+    - Name: nameKey
+      Entry: 1
+      Data: brique_name
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: false
+    - Name: intels
+      Entry: 7
+      Data: 14|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: false
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 0
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: Assets/Graphs/Saved_Photos/brique_name.png
+    - Name: hasText
+      Entry: 5
+      Data: false
+    - Name: textKey
+      Entry: 6
+      Data: 
+    - Name: modeCategory
+      Entry: 7
+      Data: 15|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 0
+    - Name: suspect
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: 16|System.Collections.Generic.List`1[[Evidence, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: 17|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 0
+    - Name: nameKey
+      Entry: 1
+      Data: soda_name
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: false
+    - Name: intels
+      Entry: 7
+      Data: 18|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: false
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 0
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: Assets/Graphs/Saved_Photos/soda_name.png
+    - Name: hasText
+      Entry: 5
+      Data: false
+    - Name: textKey
+      Entry: 6
+      Data: 
+    - Name: modeCategory
+      Entry: 7
+      Data: 19|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 1
+    - Name: suspect
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 20|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 1
+    - Name: nameKey
+      Entry: 1
+      Data: bon_name
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: false
+    - Name: intels
+      Entry: 7
+      Data: 21|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: false
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 0
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: Assets/Graphs/Saved_Photos/bon_name.png
+    - Name: hasText
+      Entry: 5
+      Data: true
+    - Name: textKey
+      Entry: 1
+      Data: bon_text
+    - Name: modeCategory
+      Entry: 7
+      Data: 22|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 1
+    - Name: suspect
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 23|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 2
+    - Name: nameKey
+      Entry: 1
+      Data: affiche_name
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: false
+    - Name: intels
+      Entry: 7
+      Data: 24|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: true
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 3
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: Assets/Graphs/Saved_Photos/affiche_name.png
+    - Name: hasText
+      Entry: 5
+      Data: false
+    - Name: textKey
+      Entry: 6
+      Data: 
+    - Name: modeCategory
+      Entry: 7
+      Data: 25|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 1
+    - Name: suspect
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 26|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 3
+    - Name: nameKey
+      Entry: 1
+      Data: carte_name
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: false
+    - Name: intels
+      Entry: 7
+      Data: 27|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: true
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 5
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: Assets/Graphs/Saved_Photos/carte_name.png
+    - Name: hasText
+      Entry: 5
+      Data: true
+    - Name: textKey
+      Entry: 1
+      Data: carte_text
+    - Name: modeCategory
+      Entry: 7
+      Data: 28|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 1
+    - Name: suspect
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 7
+      Data: 29|System.Collections.Generic.List`1[[Evidence, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 30|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 0
+    - Name: nameKey
+      Entry: 1
+      Data: colt_name
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: false
+    - Name: intels
+      Entry: 7
+      Data: 31|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: false
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 0
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: Assets/Graphs/Saved_Photos/colt_name.png
+    - Name: hasText
+      Entry: 5
+      Data: false
+    - Name: textKey
+      Entry: 6
+      Data: 
+    - Name: modeCategory
+      Entry: 7
+      Data: 32|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 2
+    - Name: suspect
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 33|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 1
+    - Name: nameKey
+      Entry: 1
+      Data: compte_name
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: false
+    - Name: intels
+      Entry: 7
+      Data: 34|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: false
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 0
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: Assets/Graphs/Saved_Photos/compte_name.png
+    - Name: hasText
+      Entry: 5
+      Data: true
+    - Name: textKey
+      Entry: 1
+      Data: compte_text
+    - Name: modeCategory
+      Entry: 7
+      Data: 35|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 2
+    - Name: suspect
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 36|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 2
+    - Name: nameKey
+      Entry: 1
+      Data: "cl\xE9_name"
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: false
+    - Name: intels
+      Entry: 7
+      Data: 37|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: true
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 1
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: "Assets/Graphs/Saved_Photos/cl\xE9_name.png"
+    - Name: hasText
+      Entry: 5
+      Data: false
+    - Name: textKey
+      Entry: 6
+      Data: 
+    - Name: modeCategory
+      Entry: 7
+      Data: 38|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 2
+    - Name: suspect
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 39|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 3
+    - Name: nameKey
+      Entry: 1
+      Data: "ch\xE8ques_name"
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: false
+    - Name: intels
+      Entry: 7
+      Data: 40|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: false
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 1
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: "Assets/Graphs/Saved_Photos/ch\xE8ques_name.png"
+    - Name: hasText
+      Entry: 5
+      Data: true
+    - Name: textKey
+      Entry: 1
+      Data: "ch\xE8ques_text"
+    - Name: modeCategory
+      Entry: 7
+      Data: 41|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 2
+    - Name: suspect
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 42|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 4
+    - Name: nameKey
+      Entry: 1
+      Data: sac_name
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: false
+    - Name: intels
+      Entry: 7
+      Data: 43|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: false
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 1
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: Assets/Graphs/Saved_Photos/sac_name.png
+    - Name: hasText
+      Entry: 5
+      Data: false
+    - Name: textKey
+      Entry: 6
+      Data: 
+    - Name: modeCategory
+      Entry: 7
+      Data: 44|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 2
+    - Name: suspect
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 3
+    - Name: $v
+      Entry: 7
+      Data: 45|System.Collections.Generic.List`1[[Evidence, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 46|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 0
+    - Name: nameKey
+      Entry: 1
+      Data: whiskey_name
+    - Name: intelSelf
+      Entry: 5
+      Data: false
+    - Name: hasIntels
+      Entry: 5
+      Data: true
+    - Name: intels
+      Entry: 7
+      Data: 47|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 48|Intel, Assembly-CSharp
+    - Name: intelKey
+      Entry: 1
+      Data: richard_fingerprint
+    - Name: revealed
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: true
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 4
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: Assets/Graphs/Saved_Photos/whiskey_name.png
+    - Name: hasText
+      Entry: 5
+      Data: false
+    - Name: textKey
+      Entry: 6
+      Data: 
+    - Name: modeCategory
+      Entry: 7
+      Data: 49|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 3
+    - Name: suspect
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 50|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 1
+    - Name: nameKey
+      Entry: 1
+      Data: lettre_anonyme_name
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: true
+    - Name: intels
+      Entry: 7
+      Data: 51|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 52|Intel, Assembly-CSharp
+    - Name: intelKey
+      Entry: 1
+      Data: umberto_fingerprint
+    - Name: revealed
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: false
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 0
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: Assets/Graphs/Saved_Photos/lettre_anonyme_name.png
+    - Name: hasText
+      Entry: 5
+      Data: true
+    - Name: textKey
+      Entry: 1
+      Data: lettre_anonyme_text
+    - Name: modeCategory
+      Entry: 7
+      Data: 53|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 3
+    - Name: suspect
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 54|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 2
+    - Name: nameKey
+      Entry: 1
+      Data: lettre_anna_name
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: false
+    - Name: intels
+      Entry: 7
+      Data: 55|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: false
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 0
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: Assets/Graphs/Saved_Photos/lettre_anna_name.png
+    - Name: hasText
+      Entry: 5
+      Data: true
+    - Name: textKey
+      Entry: 1
+      Data: lettre_anna_text
+    - Name: modeCategory
+      Entry: 7
+      Data: 56|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 3
+    - Name: suspect
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 57|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 3
+    - Name: nameKey
+      Entry: 1
+      Data: journal_politique_name
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: false
+    - Name: intels
+      Entry: 7
+      Data: 58|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: false
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 0
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: Assets/Graphs/Saved_Photos/journal_politique_name.png
+    - Name: hasText
+      Entry: 5
+      Data: true
+    - Name: textKey
+      Entry: 1
+      Data: journal_politique_text
+    - Name: modeCategory
+      Entry: 7
+      Data: 59|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 3
+    - Name: suspect
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 60|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 4
+    - Name: nameKey
+      Entry: 1
+      Data: journal_enlevement_name
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: false
+    - Name: intels
+      Entry: 7
+      Data: 61|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: false
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 0
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: Assets/Graphs/Saved_Photos/journal_enlevement_name.png
+    - Name: hasText
+      Entry: 5
+      Data: true
+    - Name: textKey
+      Entry: 1
+      Data: journal_enlevement_text
+    - Name: modeCategory
+      Entry: 7
+      Data: 62|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 3
+    - Name: suspect
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 4
+    - Name: $v
+      Entry: 7
+      Data: 63|System.Collections.Generic.List`1[[Evidence, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 6
+    - Name: 
+      Entry: 7
+      Data: 64|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 0
+    - Name: nameKey
+      Entry: 1
+      Data: tract_name
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: false
+    - Name: intels
+      Entry: 7
+      Data: 65|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: false
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 0
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: Assets/Graphs/Saved_Photos/tract_name.png
+    - Name: hasText
+      Entry: 5
+      Data: true
+    - Name: textKey
+      Entry: 1
+      Data: tract_text
+    - Name: modeCategory
+      Entry: 7
+      Data: 66|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 4
+    - Name: suspect
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 67|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 1
+    - Name: nameKey
+      Entry: 1
+      Data: note_secretaire_name
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: false
+    - Name: intels
+      Entry: 7
+      Data: 68|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: false
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 0
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: Assets/Graphs/Saved_Photos/note_secretaire_name.png
+    - Name: hasText
+      Entry: 5
+      Data: true
+    - Name: textKey
+      Entry: 1
+      Data: note_secretaire_text
+    - Name: modeCategory
+      Entry: 7
+      Data: 69|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 4
+    - Name: suspect
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 70|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 2
+    - Name: nameKey
+      Entry: 1
+      Data: num_bob_name
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: false
+    - Name: intels
+      Entry: 7
+      Data: 71|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: false
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 5
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: Assets/Graphs/Saved_Photos/num_bob_name.png
+    - Name: hasText
+      Entry: 5
+      Data: true
+    - Name: textKey
+      Entry: 1
+      Data: num_bob_text
+    - Name: modeCategory
+      Entry: 7
+      Data: 72|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 4
+    - Name: suspect
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 73|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 3
+    - Name: nameKey
+      Entry: 1
+      Data: num_traviata_name
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: false
+    - Name: intels
+      Entry: 7
+      Data: 74|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: false
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 0
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: Assets/Graphs/Saved_Photos/num_traviata_name.png
+    - Name: hasText
+      Entry: 5
+      Data: false
+    - Name: textKey
+      Entry: 6
+      Data: 
+    - Name: modeCategory
+      Entry: 7
+      Data: 75|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 4
+    - Name: suspect
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 76|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 4
+    - Name: nameKey
+      Entry: 1
+      Data: note_anderson_name
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: false
+    - Name: intels
+      Entry: 7
+      Data: 77|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: false
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 0
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: Assets/Graphs/Saved_Photos/note_anderson_name.png
+    - Name: hasText
+      Entry: 5
+      Data: true
+    - Name: textKey
+      Entry: 1
+      Data: note_anderson_text
+    - Name: modeCategory
+      Entry: 7
+      Data: 78|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 4
+    - Name: suspect
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 79|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 5
+    - Name: nameKey
+      Entry: 1
+      Data: contrat_pute_name
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: false
+    - Name: intels
+      Entry: 7
+      Data: 80|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: false
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 0
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: Assets/Graphs/Saved_Photos/contrat_pute_name.png
+    - Name: hasText
+      Entry: 5
+      Data: true
+    - Name: textKey
+      Entry: 1
+      Data: contrat_pute_text
+    - Name: modeCategory
+      Entry: 7
+      Data: 81|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 4
+    - Name: suspect
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 5
+    - Name: $v
+      Entry: 7
+      Data: 82|System.Collections.Generic.List`1[[Evidence, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 10
+    - Name: 
+      Entry: 7
+      Data: 83|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 0
+    - Name: nameKey
+      Entry: 1
+      Data: photo_famille_name
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: false
+    - Name: intels
+      Entry: 7
+      Data: 84|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 85|Intel, Assembly-CSharp
+    - Name: intelKey
+      Entry: 6
+      Data: 
+    - Name: revealed
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: false
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 0
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: Assets/Graphs/Saved_Photos/photo_famille_name.png
+    - Name: hasText
+      Entry: 5
+      Data: true
+    - Name: textKey
+      Entry: 1
+      Data: photo_famille_text
+    - Name: modeCategory
+      Entry: 7
+      Data: 86|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 5
+    - Name: suspect
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 87|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 1
+    - Name: nameKey
+      Entry: 1
+      Data: plan_planque_name
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: false
+    - Name: intels
+      Entry: 7
+      Data: 88|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 89|Intel, Assembly-CSharp
+    - Name: intelKey
+      Entry: 6
+      Data: 
+    - Name: revealed
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: true
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 7
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: Assets/Graphs/Saved_Photos/plan_planque_name.png
+    - Name: hasText
+      Entry: 5
+      Data: false
+    - Name: textKey
+      Entry: 6
+      Data: 
+    - Name: modeCategory
+      Entry: 7
+      Data: 90|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 5
+    - Name: suspect
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 91|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 2
+    - Name: nameKey
+      Entry: 1
+      Data: compte_anna_name
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: false
+    - Name: intels
+      Entry: 7
+      Data: 92|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 93|Intel, Assembly-CSharp
+    - Name: intelKey
+      Entry: 6
+      Data: 
+    - Name: revealed
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: false
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 0
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: Assets/Graphs/Saved_Photos/compte_anna_name.png
+    - Name: hasText
+      Entry: 5
+      Data: false
+    - Name: textKey
+      Entry: 6
+      Data: 
+    - Name: modeCategory
+      Entry: 7
+      Data: 94|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 5
+    - Name: suspect
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 95|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 3
+    - Name: nameKey
+      Entry: 1
+      Data: photo_richard_name
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: false
+    - Name: intels
+      Entry: 7
+      Data: 96|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 97|Intel, Assembly-CSharp
+    - Name: intelKey
+      Entry: 6
+      Data: 
+    - Name: revealed
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: false
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 0
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: Assets/Graphs/Saved_Photos/photo_richard_name.png
+    - Name: hasText
+      Entry: 5
+      Data: false
+    - Name: textKey
+      Entry: 6
+      Data: 
+    - Name: modeCategory
+      Entry: 7
+      Data: 98|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 5
+    - Name: suspect
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 99|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 4
+    - Name: nameKey
+      Entry: 1
+      Data: photo_bob_name
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: false
+    - Name: intels
+      Entry: 7
+      Data: 100|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 101|Intel, Assembly-CSharp
+    - Name: intelKey
+      Entry: 6
+      Data: 
+    - Name: revealed
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: false
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 0
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: Assets/Graphs/Saved_Photos/photo_bob_name.png
+    - Name: hasText
+      Entry: 5
+      Data: true
+    - Name: textKey
+      Entry: 1
+      Data: photo_bob_text
+    - Name: modeCategory
+      Entry: 7
+      Data: 102|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 5
+    - Name: suspect
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 103|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 5
+    - Name: nameKey
+      Entry: 1
+      Data: photo_dorothe_name
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: false
+    - Name: intels
+      Entry: 7
+      Data: 104|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 105|Intel, Assembly-CSharp
+    - Name: intelKey
+      Entry: 6
+      Data: 
+    - Name: revealed
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: false
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 0
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: Assets/Graphs/Saved_Photos/photo_dorothe_name.png
+    - Name: hasText
+      Entry: 5
+      Data: true
+    - Name: textKey
+      Entry: 1
+      Data: photo_dorothe_text
+    - Name: modeCategory
+      Entry: 7
+      Data: 106|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 5
+    - Name: suspect
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 107|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 6
+    - Name: nameKey
+      Entry: 1
+      Data: note1_name
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: false
+    - Name: intels
+      Entry: 7
+      Data: 108|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 109|Intel, Assembly-CSharp
+    - Name: intelKey
+      Entry: 6
+      Data: 
+    - Name: revealed
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: false
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 0
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: Assets/Graphs/Saved_Photos/note1_name.png
+    - Name: hasText
+      Entry: 5
+      Data: true
+    - Name: textKey
+      Entry: 1
+      Data: note1_text
+    - Name: modeCategory
+      Entry: 7
+      Data: 110|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 5
+    - Name: suspect
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 111|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 7
+    - Name: nameKey
+      Entry: 1
+      Data: note2_name
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: false
+    - Name: intels
+      Entry: 7
+      Data: 112|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 113|Intel, Assembly-CSharp
+    - Name: intelKey
+      Entry: 6
+      Data: 
+    - Name: revealed
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: false
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 0
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: Assets/Graphs/Saved_Photos/note2_name.png
+    - Name: hasText
+      Entry: 5
+      Data: true
+    - Name: textKey
+      Entry: 1
+      Data: note2_text
+    - Name: modeCategory
+      Entry: 7
+      Data: 114|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 5
+    - Name: suspect
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 115|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 8
+    - Name: nameKey
+      Entry: 1
+      Data: note3_name
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: false
+    - Name: intels
+      Entry: 7
+      Data: 116|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 117|Intel, Assembly-CSharp
+    - Name: intelKey
+      Entry: 6
+      Data: 
+    - Name: revealed
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: false
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 0
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: Assets/Graphs/Saved_Photos/note3_name.png
+    - Name: hasText
+      Entry: 5
+      Data: true
+    - Name: textKey
+      Entry: 1
+      Data: note3_text
+    - Name: modeCategory
+      Entry: 7
+      Data: 118|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 5
+    - Name: suspect
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 119|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 9
+    - Name: nameKey
+      Entry: 1
+      Data: logos_name
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: false
+    - Name: intels
+      Entry: 7
+      Data: 120|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 121|Intel, Assembly-CSharp
+    - Name: intelKey
+      Entry: 6
+      Data: 
+    - Name: revealed
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: true
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 6
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: Assets/Graphs/Saved_Photos/logos_name.png
+    - Name: hasText
+      Entry: 5
+      Data: false
+    - Name: textKey
+      Entry: 6
+      Data: 
+    - Name: modeCategory
+      Entry: 7
+      Data: 122|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 5
+    - Name: suspect
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 6
+    - Name: $v
+      Entry: 7
+      Data: 123|System.Collections.Generic.List`1[[Evidence, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: 124|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 0
+    - Name: nameKey
+      Entry: 1
+      Data: carte_mafia_name
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: false
+    - Name: intels
+      Entry: 7
+      Data: 125|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: false
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 0
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: Assets/Graphs/Saved_Photos/carte_mafia_name.png
+    - Name: hasText
+      Entry: 5
+      Data: false
+    - Name: textKey
+      Entry: 6
+      Data: 
+    - Name: modeCategory
+      Entry: 7
+      Data: 126|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 6
+    - Name: suspect
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 127|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 1
+    - Name: nameKey
+      Entry: 1
+      Data: photo_camions_name
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: false
+    - Name: intels
+      Entry: 7
+      Data: 128|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: false
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 0
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: Assets/Graphs/Saved_Photos/photo_camions_name.png
+    - Name: hasText
+      Entry: 5
+      Data: false
+    - Name: textKey
+      Entry: 6
+      Data: 
+    - Name: modeCategory
+      Entry: 7
+      Data: 129|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 6
+    - Name: suspect
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 130|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 2
+    - Name: nameKey
+      Entry: 1
+      Data: contrat_name
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: false
+    - Name: intels
+      Entry: 7
+      Data: 131|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: false
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 0
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: Assets/Graphs/Saved_Photos/contrat_name.png
+    - Name: hasText
+      Entry: 5
+      Data: true
+    - Name: textKey
+      Entry: 1
+      Data: contrat_text
+    - Name: modeCategory
+      Entry: 7
+      Data: 132|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 6
+    - Name: suspect
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 133|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 3
+    - Name: nameKey
+      Entry: 1
+      Data: mot_name
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: false
+    - Name: intels
+      Entry: 7
+      Data: 134|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: false
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 0
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: Assets/Graphs/Saved_Photos/mot_name.png
+    - Name: hasText
+      Entry: 5
+      Data: true
+    - Name: textKey
+      Entry: 1
+      Data: mot_text
+    - Name: modeCategory
+      Entry: 7
+      Data: 135|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 6
+    - Name: suspect
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 7
+    - Name: $v
+      Entry: 7
+      Data: 136|System.Collections.Generic.List`1[[Evidence, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 6
+    - Name: 
+      Entry: 7
+      Data: 137|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 0
+    - Name: nameKey
+      Entry: 1
+      Data: photo_groupe_name
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: false
+    - Name: intels
+      Entry: 7
+      Data: 138|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: false
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 0
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: Assets/Graphs/Saved_Photos/photo_groupe_name.png
+    - Name: hasText
+      Entry: 5
+      Data: false
+    - Name: textKey
+      Entry: 6
+      Data: 
+    - Name: modeCategory
+      Entry: 7
+      Data: 139|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 7
+    - Name: suspect
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 140|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 1
+    - Name: nameKey
+      Entry: 1
+      Data: panier_name
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: false
+    - Name: intels
+      Entry: 7
+      Data: 141|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: false
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 0
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: Assets/Graphs/Saved_Photos/panier_name.png
+    - Name: hasText
+      Entry: 5
+      Data: false
+    - Name: textKey
+      Entry: 6
+      Data: 
+    - Name: modeCategory
+      Entry: 7
+      Data: 142|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 7
+    - Name: suspect
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 143|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 2
+    - Name: nameKey
+      Entry: 1
+      Data: fiche_dette_name
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: false
+    - Name: intels
+      Entry: 7
+      Data: 144|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: false
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 0
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: Assets/Graphs/Saved_Photos/fiche_dette_name.png
+    - Name: hasText
+      Entry: 5
+      Data: true
+    - Name: textKey
+      Entry: 1
+      Data: fiche_dette_text
+    - Name: modeCategory
+      Entry: 7
+      Data: 145|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 7
+    - Name: suspect
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 146|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 3
+    - Name: nameKey
+      Entry: 1
+      Data: passeports_name
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: false
+    - Name: intels
+      Entry: 7
+      Data: 147|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: false
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 0
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: Assets/Graphs/Saved_Photos/passeports_name.png
+    - Name: hasText
+      Entry: 5
+      Data: true
+    - Name: textKey
+      Entry: 1
+      Data: passeports_text
+    - Name: modeCategory
+      Entry: 7
+      Data: 148|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 7
+    - Name: suspect
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 149|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 4
+    - Name: nameKey
+      Entry: 1
+      Data: photo_camion_name
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: false
+    - Name: intels
+      Entry: 7
+      Data: 150|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: true
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 6
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: Assets/Graphs/Saved_Photos/photo_camion_name.png
+    - Name: hasText
+      Entry: 5
+      Data: false
+    - Name: textKey
+      Entry: 6
+      Data: 
+    - Name: modeCategory
+      Entry: 7
+      Data: 151|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 7
+    - Name: suspect
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 152|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 5
+    - Name: nameKey
+      Entry: 1
+      Data: note_anna_name
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: false
+    - Name: intels
+      Entry: 7
+      Data: 153|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: false
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 0
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: Assets/Graphs/Saved_Photos/note_anna_name.png
+    - Name: hasText
+      Entry: 5
+      Data: true
+    - Name: textKey
+      Entry: 1
+      Data: note_anna_text
+    - Name: modeCategory
+      Entry: 7
+      Data: 154|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 0
+    - Name: suspect
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 8
+    - Name: $v
+      Entry: 7
+      Data: 155|System.Collections.Generic.List`1[[Evidence, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: 156|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 0
+    - Name: nameKey
+      Entry: 1
+      Data: photo_employees_name
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: false
+    - Name: intels
+      Entry: 7
+      Data: 157|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: false
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 0
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: Assets/Graphs/Saved_Photos/photo_employees_name.png
+    - Name: hasText
+      Entry: 5
+      Data: false
+    - Name: textKey
+      Entry: 6
+      Data: 
+    - Name: modeCategory
+      Entry: 7
+      Data: 158|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 0
+    - Name: suspect
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 159|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 1
+    - Name: nameKey
+      Entry: 1
+      Data: enveloppe_name
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: false
+    - Name: intels
+      Entry: 7
+      Data: 160|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: false
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 0
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: Assets/Graphs/Saved_Photos/enveloppe_name.png
+    - Name: hasText
+      Entry: 5
+      Data: false
+    - Name: textKey
+      Entry: 6
+      Data: 
+    - Name: modeCategory
+      Entry: 7
+      Data: 161|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 0
+    - Name: suspect
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 162|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 2
+    - Name: nameKey
+      Entry: 1
+      Data: lettre_ordre_name
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: false
+    - Name: intels
+      Entry: 7
+      Data: 163|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: false
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 0
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 1
+      Data: Assets/Graphs/Saved_Photos/lettre_ordre_name.png
+    - Name: hasText
+      Entry: 5
+      Data: true
+    - Name: textKey
+      Entry: 1
+      Data: lettre_ordre_text
+    - Name: modeCategory
+      Entry: 7
+      Data: 164|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 0
+    - Name: suspect
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 165|Evidence, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: true
+    - Name: index
+      Entry: 3
+      Data: 3
+    - Name: nameKey
+      Entry: 1
+      Data: brouillon_name
+    - Name: intelSelf
+      Entry: 5
+      Data: true
+    - Name: hasIntels
+      Entry: 5
+      Data: false
+    - Name: intels
+      Entry: 7
+      Data: 166|System.Collections.Generic.List`1[[Intel, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: useToUnlock
+      Entry: 5
+      Data: false
+    - Name: unlockableLocation
+      Entry: 3
+      Data: 0
+    - Name: photo
+      Entry: 6
+      Data: 
+    - Name: photoPath
+      Entry: 6
+      Data: 
+    - Name: hasText
+      Entry: 5
+      Data: true
+    - Name: textKey
+      Entry: 1
+      Data: brouillon_text
+    - Name: modeCategory
+      Entry: 7
+      Data: 167|ModeCategory, Assembly-CSharp
+    - Name: location
+      Entry: 3
+      Data: 8
+    - Name: suspect
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: reports
+      Entry: 7
+      Data: 168|System.Collections.Generic.Dictionary`2[[Indics, Assembly-CSharp],[System.ValueTuple`2[[System.Collections.Generic.List`1[[Report,
+        Assembly-CSharp]], mscorlib],[System.Collections.Generic.List`1[[Report,
+        Assembly-CSharp]], mscorlib]], mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 169|System.Collections.Generic.EnumEqualityComparer`1[[Indics, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 6
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: System.ValueTuple`2[[System.Collections.Generic.List`1[[Report, Assembly-CSharp]],
+        mscorlib],[System.Collections.Generic.List`1[[Report, Assembly-CSharp]],
+        mscorlib]], mscorlib
+    - Name: Item1
+      Entry: 7
+      Data: 170|System.Collections.Generic.List`1[[Report, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 171|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 1
+    - Name: failed
+      Entry: 5
+      Data: false
+    - Name: agentSprite
+      Entry: 10
+      Data: 0
+    - Name: agentKey
+      Entry: 1
+      Data: bennington_name
+    - Name: signature
+      Entry: 10
+      Data: 1
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: elementSprite
+      Entry: 6
+      Data: 
+    - Name: elementKey
+      Entry: 1
+      Data: etiquette_name
+    - Name: hasDetail
+      Entry: 5
+      Data: false
+    - Name: detailKey
+      Entry: 6
+      Data: 
+    - Name: reportKey
+      Entry: 1
+      Data: bennington_etiquette
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 172|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 2
+    - Name: failed
+      Entry: 5
+      Data: false
+    - Name: agentSprite
+      Entry: 10
+      Data: 0
+    - Name: agentKey
+      Entry: 1
+      Data: bennington_name
+    - Name: signature
+      Entry: 10
+      Data: 1
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: elementSprite
+      Entry: 6
+      Data: 
+    - Name: elementKey
+      Entry: 1
+      Data: sac_name
+    - Name: hasDetail
+      Entry: 5
+      Data: false
+    - Name: detailKey
+      Entry: 6
+      Data: 
+    - Name: reportKey
+      Entry: 1
+      Data: bennington_sac
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 173|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 3
+    - Name: failed
+      Entry: 5
+      Data: false
+    - Name: agentSprite
+      Entry: 10
+      Data: 0
+    - Name: agentKey
+      Entry: 1
+      Data: bennington_name
+    - Name: signature
+      Entry: 10
+      Data: 1
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: elementSprite
+      Entry: 6
+      Data: 
+    - Name: elementKey
+      Entry: 1
+      Data: affiche_name
+    - Name: hasDetail
+      Entry: 5
+      Data: false
+    - Name: detailKey
+      Entry: 6
+      Data: 
+    - Name: reportKey
+      Entry: 1
+      Data: bennington_affiche
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Item2
+      Entry: 7
+      Data: 174|System.Collections.Generic.List`1[[Report, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 175|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 0
+    - Name: failed
+      Entry: 5
+      Data: true
+    - Name: agentSprite
+      Entry: 10
+      Data: 0
+    - Name: agentKey
+      Entry: 1
+      Data: bennington_name
+    - Name: signature
+      Entry: 10
+      Data: 1
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: elementSprite
+      Entry: 6
+      Data: 
+    - Name: elementKey
+      Entry: 6
+      Data: 
+    - Name: hasDetail
+      Entry: 5
+      Data: false
+    - Name: detailKey
+      Entry: 6
+      Data: 
+    - Name: reportKey
+      Entry: 1
+      Data: bennington_failed
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 7
+      Data: System.ValueTuple`2[[System.Collections.Generic.List`1[[Report, Assembly-CSharp]],
+        mscorlib],[System.Collections.Generic.List`1[[Report, Assembly-CSharp]],
+        mscorlib]], mscorlib
+    - Name: Item1
+      Entry: 7
+      Data: 176|System.Collections.Generic.List`1[[Report, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: 177|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 1
+    - Name: failed
+      Entry: 5
+      Data: false
+    - Name: agentSprite
+      Entry: 10
+      Data: 2
+    - Name: agentKey
+      Entry: 1
+      Data: walker_name
+    - Name: signature
+      Entry: 10
+      Data: 3
+    - Name: mode
+      Entry: 3
+      Data: 1
+    - Name: elementSprite
+      Entry: 10
+      Data: 4
+    - Name: elementKey
+      Entry: 1
+      Data: abigail_name
+    - Name: hasDetail
+      Entry: 5
+      Data: false
+    - Name: detailKey
+      Entry: 6
+      Data: 
+    - Name: reportKey
+      Entry: 1
+      Data: walker_abigail
+    - Name: giveAccess
+      Entry: 5
+      Data: true
+    - Name: locationToAccess
+      Entry: 3
+      Data: 3
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 178|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 2
+    - Name: failed
+      Entry: 5
+      Data: false
+    - Name: agentSprite
+      Entry: 10
+      Data: 2
+    - Name: agentKey
+      Entry: 1
+      Data: walker_name
+    - Name: signature
+      Entry: 10
+      Data: 3
+    - Name: mode
+      Entry: 3
+      Data: 1
+    - Name: elementSprite
+      Entry: 10
+      Data: 5
+    - Name: elementKey
+      Entry: 1
+      Data: bob_name
+    - Name: hasDetail
+      Entry: 5
+      Data: false
+    - Name: detailKey
+      Entry: 6
+      Data: 
+    - Name: reportKey
+      Entry: 1
+      Data: walker_bob
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 179|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 3
+    - Name: failed
+      Entry: 5
+      Data: false
+    - Name: agentSprite
+      Entry: 10
+      Data: 2
+    - Name: agentKey
+      Entry: 1
+      Data: walker_name
+    - Name: signature
+      Entry: 10
+      Data: 3
+    - Name: mode
+      Entry: 3
+      Data: 1
+    - Name: elementSprite
+      Entry: 10
+      Data: 6
+    - Name: elementKey
+      Entry: 1
+      Data: anna_name
+    - Name: hasDetail
+      Entry: 5
+      Data: false
+    - Name: detailKey
+      Entry: 6
+      Data: 
+    - Name: reportKey
+      Entry: 1
+      Data: walker_anna
+    - Name: giveAccess
+      Entry: 5
+      Data: true
+    - Name: locationToAccess
+      Entry: 3
+      Data: 2
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 180|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 4
+    - Name: failed
+      Entry: 5
+      Data: false
+    - Name: agentSprite
+      Entry: 10
+      Data: 2
+    - Name: agentKey
+      Entry: 1
+      Data: walker_name
+    - Name: signature
+      Entry: 10
+      Data: 3
+    - Name: mode
+      Entry: 3
+      Data: 1
+    - Name: elementSprite
+      Entry: 10
+      Data: 7
+    - Name: elementKey
+      Entry: 1
+      Data: richard_name
+    - Name: hasDetail
+      Entry: 5
+      Data: false
+    - Name: detailKey
+      Entry: 6
+      Data: 
+    - Name: reportKey
+      Entry: 1
+      Data: walker_richard
+    - Name: giveAccess
+      Entry: 5
+      Data: true
+    - Name: locationToAccess
+      Entry: 3
+      Data: 4
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Item2
+      Entry: 7
+      Data: 181|System.Collections.Generic.List`1[[Report, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 182|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 0
+    - Name: failed
+      Entry: 5
+      Data: true
+    - Name: agentSprite
+      Entry: 10
+      Data: 2
+    - Name: agentKey
+      Entry: 1
+      Data: walker_name
+    - Name: signature
+      Entry: 10
+      Data: 3
+    - Name: mode
+      Entry: 3
+      Data: 1
+    - Name: elementSprite
+      Entry: 6
+      Data: 
+    - Name: elementKey
+      Entry: 6
+      Data: 
+    - Name: hasDetail
+      Entry: 5
+      Data: false
+    - Name: detailKey
+      Entry: 6
+      Data: 
+    - Name: reportKey
+      Entry: 1
+      Data: walker_failed
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 3
+    - Name: $v
+      Entry: 7
+      Data: System.ValueTuple`2[[System.Collections.Generic.List`1[[Report, Assembly-CSharp]],
+        mscorlib],[System.Collections.Generic.List`1[[Report, Assembly-CSharp]],
+        mscorlib]], mscorlib
+    - Name: Item1
+      Entry: 7
+      Data: 183|System.Collections.Generic.List`1[[Report, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 8
+    - Name: 
+      Entry: 7
+      Data: 184|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 1
+    - Name: failed
+      Entry: 5
+      Data: false
+    - Name: agentSprite
+      Entry: 10
+      Data: 8
+    - Name: agentKey
+      Entry: 1
+      Data: copeland_name
+    - Name: signature
+      Entry: 10
+      Data: 9
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: elementSprite
+      Entry: 6
+      Data: 
+    - Name: elementKey
+      Entry: 1
+      Data: colt_name
+    - Name: hasDetail
+      Entry: 5
+      Data: false
+    - Name: detailKey
+      Entry: 6
+      Data: 
+    - Name: reportKey
+      Entry: 1
+      Data: copeland_colt
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 185|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 2
+    - Name: failed
+      Entry: 5
+      Data: false
+    - Name: agentSprite
+      Entry: 10
+      Data: 8
+    - Name: agentKey
+      Entry: 1
+      Data: copeland_name
+    - Name: signature
+      Entry: 10
+      Data: 9
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: elementSprite
+      Entry: 6
+      Data: 
+    - Name: elementKey
+      Entry: 1
+      Data: whiskey_name
+    - Name: hasDetail
+      Entry: 5
+      Data: true
+    - Name: detailKey
+      Entry: 1
+      Data: richard_fingerprint
+    - Name: reportKey
+      Entry: 1
+      Data: copeland_whiskey
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 186|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 3
+    - Name: failed
+      Entry: 5
+      Data: false
+    - Name: agentSprite
+      Entry: 10
+      Data: 8
+    - Name: agentKey
+      Entry: 1
+      Data: copeland_name
+    - Name: signature
+      Entry: 10
+      Data: 9
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: elementSprite
+      Entry: 6
+      Data: 
+    - Name: elementKey
+      Entry: 1
+      Data: lettre_anonyme_name
+    - Name: hasDetail
+      Entry: 5
+      Data: true
+    - Name: detailKey
+      Entry: 1
+      Data: umberto_fingerprint
+    - Name: reportKey
+      Entry: 1
+      Data: copeland_lettre_anonyme
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 187|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 4
+    - Name: failed
+      Entry: 5
+      Data: false
+    - Name: agentSprite
+      Entry: 10
+      Data: 8
+    - Name: agentKey
+      Entry: 1
+      Data: copeland_name
+    - Name: signature
+      Entry: 10
+      Data: 9
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: elementSprite
+      Entry: 6
+      Data: 
+    - Name: elementKey
+      Entry: 1
+      Data: douille_name
+    - Name: hasDetail
+      Entry: 5
+      Data: false
+    - Name: detailKey
+      Entry: 6
+      Data: 
+    - Name: reportKey
+      Entry: 1
+      Data: copeland_douille
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 188|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 5
+    - Name: failed
+      Entry: 5
+      Data: false
+    - Name: agentSprite
+      Entry: 10
+      Data: 8
+    - Name: agentKey
+      Entry: 1
+      Data: copeland_name
+    - Name: signature
+      Entry: 10
+      Data: 9
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: elementSprite
+      Entry: 6
+      Data: 
+    - Name: elementKey
+      Entry: 1
+      Data: etiquette_name
+    - Name: hasDetail
+      Entry: 5
+      Data: false
+    - Name: detailKey
+      Entry: 6
+      Data: 
+    - Name: reportKey
+      Entry: 1
+      Data: copeland_etiquette
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 189|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 6
+    - Name: failed
+      Entry: 5
+      Data: false
+    - Name: agentSprite
+      Entry: 10
+      Data: 8
+    - Name: agentKey
+      Entry: 1
+      Data: copeland_name
+    - Name: signature
+      Entry: 10
+      Data: 9
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: elementSprite
+      Entry: 6
+      Data: 
+    - Name: elementKey
+      Entry: 1
+      Data: "cl\xE9_name"
+    - Name: hasDetail
+      Entry: 5
+      Data: false
+    - Name: detailKey
+      Entry: 6
+      Data: 
+    - Name: reportKey
+      Entry: 1
+      Data: "copeland_cl\xE9"
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 190|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 7
+    - Name: failed
+      Entry: 5
+      Data: false
+    - Name: agentSprite
+      Entry: 10
+      Data: 8
+    - Name: agentKey
+      Entry: 1
+      Data: copeland_name
+    - Name: signature
+      Entry: 10
+      Data: 9
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: elementSprite
+      Entry: 6
+      Data: 
+    - Name: elementKey
+      Entry: 1
+      Data: soda_name
+    - Name: hasDetail
+      Entry: 5
+      Data: false
+    - Name: detailKey
+      Entry: 6
+      Data: 
+    - Name: reportKey
+      Entry: 1
+      Data: copeland_soda
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 191|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 8
+    - Name: failed
+      Entry: 5
+      Data: false
+    - Name: agentSprite
+      Entry: 10
+      Data: 8
+    - Name: agentKey
+      Entry: 1
+      Data: copeland_name
+    - Name: signature
+      Entry: 10
+      Data: 9
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: elementSprite
+      Entry: 6
+      Data: 
+    - Name: elementKey
+      Entry: 1
+      Data: lettre_victime_name
+    - Name: hasDetail
+      Entry: 5
+      Data: false
+    - Name: detailKey
+      Entry: 6
+      Data: 
+    - Name: reportKey
+      Entry: 1
+      Data: copeland_lettre_anna
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Item2
+      Entry: 7
+      Data: 192|System.Collections.Generic.List`1[[Report, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 193|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 0
+    - Name: failed
+      Entry: 5
+      Data: true
+    - Name: agentSprite
+      Entry: 10
+      Data: 8
+    - Name: agentKey
+      Entry: 1
+      Data: copeland_name
+    - Name: signature
+      Entry: 10
+      Data: 9
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: elementSprite
+      Entry: 6
+      Data: 
+    - Name: elementKey
+      Entry: 6
+      Data: 
+    - Name: hasDetail
+      Entry: 5
+      Data: false
+    - Name: detailKey
+      Entry: 6
+      Data: 
+    - Name: reportKey
+      Entry: 1
+      Data: copeland_failed
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 4
+    - Name: $v
+      Entry: 7
+      Data: System.ValueTuple`2[[System.Collections.Generic.List`1[[Report, Assembly-CSharp]],
+        mscorlib],[System.Collections.Generic.List`1[[Report, Assembly-CSharp]],
+        mscorlib]], mscorlib
+    - Name: Item1
+      Entry: 7
+      Data: 194|System.Collections.Generic.List`1[[Report, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 9
+    - Name: 
+      Entry: 7
+      Data: 195|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 1
+    - Name: failed
+      Entry: 5
+      Data: false
+    - Name: agentSprite
+      Entry: 10
+      Data: 10
+    - Name: agentKey
+      Entry: 1
+      Data: maxwell_name
+    - Name: signature
+      Entry: 10
+      Data: 11
+    - Name: mode
+      Entry: 3
+      Data: 0
+    - Name: elementSprite
+      Entry: 10
+      Data: 12
+    - Name: elementKey
+      Entry: 1
+      Data: brothel_address
+    - Name: hasDetail
+      Entry: 5
+      Data: false
+    - Name: detailKey
+      Entry: 6
+      Data: 
+    - Name: reportKey
+      Entry: 1
+      Data: maxwell_brothel
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 196|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 2
+    - Name: failed
+      Entry: 5
+      Data: false
+    - Name: agentSprite
+      Entry: 10
+      Data: 10
+    - Name: agentKey
+      Entry: 1
+      Data: maxwell_name
+    - Name: signature
+      Entry: 10
+      Data: 11
+    - Name: mode
+      Entry: 3
+      Data: 0
+    - Name: elementSprite
+      Entry: 10
+      Data: 13
+    - Name: elementKey
+      Entry: 1
+      Data: anna_house_address
+    - Name: hasDetail
+      Entry: 5
+      Data: false
+    - Name: detailKey
+      Entry: 6
+      Data: 
+    - Name: reportKey
+      Entry: 1
+      Data: maxwell_anna_house
+    - Name: giveAccess
+      Entry: 5
+      Data: true
+    - Name: locationToAccess
+      Entry: 3
+      Data: 1
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 197|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 3
+    - Name: failed
+      Entry: 5
+      Data: false
+    - Name: agentSprite
+      Entry: 10
+      Data: 10
+    - Name: agentKey
+      Entry: 1
+      Data: maxwell_name
+    - Name: signature
+      Entry: 10
+      Data: 11
+    - Name: mode
+      Entry: 3
+      Data: 0
+    - Name: elementSprite
+      Entry: 10
+      Data: 14
+    - Name: elementKey
+      Entry: 1
+      Data: docks_address
+    - Name: hasDetail
+      Entry: 5
+      Data: false
+    - Name: detailKey
+      Entry: 6
+      Data: 
+    - Name: reportKey
+      Entry: 1
+      Data: maxwell_docks
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 198|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 4
+    - Name: failed
+      Entry: 5
+      Data: false
+    - Name: agentSprite
+      Entry: 10
+      Data: 10
+    - Name: agentKey
+      Entry: 1
+      Data: maxwell_name
+    - Name: signature
+      Entry: 10
+      Data: 11
+    - Name: mode
+      Entry: 3
+      Data: 0
+    - Name: elementSprite
+      Entry: 10
+      Data: 15
+    - Name: elementKey
+      Entry: 1
+      Data: abigail_house_address
+    - Name: hasDetail
+      Entry: 5
+      Data: false
+    - Name: detailKey
+      Entry: 6
+      Data: 
+    - Name: reportKey
+      Entry: 1
+      Data: maxwell_abigail_house
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 199|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 5
+    - Name: failed
+      Entry: 5
+      Data: false
+    - Name: agentSprite
+      Entry: 10
+      Data: 10
+    - Name: agentKey
+      Entry: 1
+      Data: maxwell_name
+    - Name: signature
+      Entry: 10
+      Data: 11
+    - Name: mode
+      Entry: 3
+      Data: 0
+    - Name: elementSprite
+      Entry: 10
+      Data: 16
+    - Name: elementKey
+      Entry: 1
+      Data: politician_office_address
+    - Name: hasDetail
+      Entry: 5
+      Data: false
+    - Name: detailKey
+      Entry: 6
+      Data: 
+    - Name: reportKey
+      Entry: 1
+      Data: maxwell_richard_desk
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 200|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 6
+    - Name: failed
+      Entry: 5
+      Data: false
+    - Name: agentSprite
+      Entry: 10
+      Data: 10
+    - Name: agentKey
+      Entry: 1
+      Data: maxwell_name
+    - Name: signature
+      Entry: 10
+      Data: 11
+    - Name: mode
+      Entry: 3
+      Data: 0
+    - Name: elementSprite
+      Entry: 10
+      Data: 17
+    - Name: elementKey
+      Entry: 1
+      Data: cop_office_address
+    - Name: hasDetail
+      Entry: 5
+      Data: false
+    - Name: detailKey
+      Entry: 6
+      Data: 
+    - Name: reportKey
+      Entry: 1
+      Data: maxwell_bob_desk
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 201|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 7
+    - Name: failed
+      Entry: 5
+      Data: false
+    - Name: agentSprite
+      Entry: 10
+      Data: 10
+    - Name: agentKey
+      Entry: 1
+      Data: maxwell_name
+    - Name: signature
+      Entry: 10
+      Data: 11
+    - Name: mode
+      Entry: 3
+      Data: 0
+    - Name: elementSprite
+      Entry: 6
+      Data: 
+    - Name: elementKey
+      Entry: 1
+      Data: anna_hideout_address
+    - Name: hasDetail
+      Entry: 5
+      Data: false
+    - Name: detailKey
+      Entry: 6
+      Data: 
+    - Name: reportKey
+      Entry: 1
+      Data: maxwell_anna_hideout
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 202|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 8
+    - Name: failed
+      Entry: 5
+      Data: false
+    - Name: agentSprite
+      Entry: 10
+      Data: 10
+    - Name: agentKey
+      Entry: 1
+      Data: maxwell_name
+    - Name: signature
+      Entry: 10
+      Data: 11
+    - Name: mode
+      Entry: 3
+      Data: 0
+    - Name: elementSprite
+      Entry: 6
+      Data: 
+    - Name: elementKey
+      Entry: 1
+      Data: mafia_hideout_address
+    - Name: hasDetail
+      Entry: 5
+      Data: false
+    - Name: detailKey
+      Entry: 6
+      Data: 
+    - Name: reportKey
+      Entry: 1
+      Data: maxwell_mafia_hideout
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 203|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 9
+    - Name: failed
+      Entry: 5
+      Data: false
+    - Name: agentSprite
+      Entry: 10
+      Data: 10
+    - Name: agentKey
+      Entry: 1
+      Data: maxwell_name
+    - Name: signature
+      Entry: 10
+      Data: 11
+    - Name: mode
+      Entry: 3
+      Data: 0
+    - Name: elementSprite
+      Entry: 10
+      Data: 18
+    - Name: elementKey
+      Entry: 1
+      Data: girls_hideout_address
+    - Name: hasDetail
+      Entry: 5
+      Data: false
+    - Name: detailKey
+      Entry: 6
+      Data: 
+    - Name: reportKey
+      Entry: 1
+      Data: maxwell_pute_hideout
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Item2
+      Entry: 7
+      Data: 204|System.Collections.Generic.List`1[[Report, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 205|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 0
+    - Name: failed
+      Entry: 5
+      Data: true
+    - Name: agentSprite
+      Entry: 10
+      Data: 10
+    - Name: agentKey
+      Entry: 1
+      Data: maxwell_name
+    - Name: signature
+      Entry: 10
+      Data: 11
+    - Name: mode
+      Entry: 3
+      Data: 0
+    - Name: elementSprite
+      Entry: 6
+      Data: 
+    - Name: elementKey
+      Entry: 6
+      Data: 
+    - Name: hasDetail
+      Entry: 5
+      Data: false
+    - Name: detailKey
+      Entry: 6
+      Data: 
+    - Name: reportKey
+      Entry: 1
+      Data: maxwell_failed
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 5
+    - Name: $v
+      Entry: 7
+      Data: System.ValueTuple`2[[System.Collections.Generic.List`1[[Report, Assembly-CSharp]],
+        mscorlib],[System.Collections.Generic.List`1[[Report, Assembly-CSharp]],
+        mscorlib]], mscorlib
+    - Name: Item1
+      Entry: 7
+      Data: 206|System.Collections.Generic.List`1[[Report, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 207|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 1
+    - Name: failed
+      Entry: 5
+      Data: false
+    - Name: agentSprite
+      Entry: 10
+      Data: 19
+    - Name: agentKey
+      Entry: 1
+      Data: marshall_name
+    - Name: signature
+      Entry: 10
+      Data: 20
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: elementSprite
+      Entry: 6
+      Data: 
+    - Name: elementKey
+      Entry: 1
+      Data: bon_name
+    - Name: hasDetail
+      Entry: 5
+      Data: false
+    - Name: detailKey
+      Entry: 6
+      Data: 
+    - Name: reportKey
+      Entry: 1
+      Data: marshall_bon
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 208|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 2
+    - Name: failed
+      Entry: 5
+      Data: false
+    - Name: agentSprite
+      Entry: 10
+      Data: 19
+    - Name: agentKey
+      Entry: 1
+      Data: marshall_name
+    - Name: signature
+      Entry: 10
+      Data: 20
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: elementSprite
+      Entry: 6
+      Data: 
+    - Name: elementKey
+      Entry: 1
+      Data: compte_name
+    - Name: hasDetail
+      Entry: 5
+      Data: false
+    - Name: detailKey
+      Entry: 6
+      Data: 
+    - Name: reportKey
+      Entry: 1
+      Data: marshall_compte
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 209|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 3
+    - Name: failed
+      Entry: 5
+      Data: false
+    - Name: agentSprite
+      Entry: 10
+      Data: 19
+    - Name: agentKey
+      Entry: 1
+      Data: marshall_name
+    - Name: signature
+      Entry: 10
+      Data: 20
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: elementSprite
+      Entry: 6
+      Data: 
+    - Name: elementKey
+      Entry: 1
+      Data: "ch\xE8ques_name"
+    - Name: hasDetail
+      Entry: 5
+      Data: false
+    - Name: detailKey
+      Entry: 6
+      Data: 
+    - Name: reportKey
+      Entry: 1
+      Data: "marshall_ch\xE8ques"
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 210|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 4
+    - Name: failed
+      Entry: 5
+      Data: false
+    - Name: agentSprite
+      Entry: 10
+      Data: 19
+    - Name: agentKey
+      Entry: 1
+      Data: marshall_name
+    - Name: signature
+      Entry: 10
+      Data: 20
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: elementSprite
+      Entry: 6
+      Data: 
+    - Name: elementKey
+      Entry: 1
+      Data: tract_name
+    - Name: hasDetail
+      Entry: 5
+      Data: false
+    - Name: detailKey
+      Entry: 6
+      Data: 
+    - Name: reportKey
+      Entry: 1
+      Data: marshall_tract
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 211|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 5
+    - Name: failed
+      Entry: 5
+      Data: false
+    - Name: agentSprite
+      Entry: 10
+      Data: 19
+    - Name: agentKey
+      Entry: 1
+      Data: marshall_name
+    - Name: signature
+      Entry: 10
+      Data: 20
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: elementSprite
+      Entry: 6
+      Data: 
+    - Name: elementKey
+      Entry: 1
+      Data: photo_camion_name
+    - Name: hasDetail
+      Entry: 5
+      Data: false
+    - Name: detailKey
+      Entry: 6
+      Data: 
+    - Name: reportKey
+      Entry: 1
+      Data: marshall_photo_anna1
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Item2
+      Entry: 7
+      Data: 212|System.Collections.Generic.List`1[[Report, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 213|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 0
+    - Name: failed
+      Entry: 5
+      Data: true
+    - Name: agentSprite
+      Entry: 10
+      Data: 19
+    - Name: agentKey
+      Entry: 1
+      Data: marshall_name
+    - Name: signature
+      Entry: 10
+      Data: 20
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: elementSprite
+      Entry: 6
+      Data: 
+    - Name: elementKey
+      Entry: 6
+      Data: 
+    - Name: hasDetail
+      Entry: 5
+      Data: false
+    - Name: detailKey
+      Entry: 6
+      Data: 
+    - Name: reportKey
+      Entry: 1
+      Data: marshall_failed
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 6
+    - Name: $v
+      Entry: 7
+      Data: System.ValueTuple`2[[System.Collections.Generic.List`1[[Report, Assembly-CSharp]],
+        mscorlib],[System.Collections.Generic.List`1[[Report, Assembly-CSharp]],
+        mscorlib]], mscorlib
+    - Name: Item1
+      Entry: 7
+      Data: 214|System.Collections.Generic.List`1[[Report, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 215|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 1
+    - Name: failed
+      Entry: 5
+      Data: false
+    - Name: agentSprite
+      Entry: 10
+      Data: 21
+    - Name: agentKey
+      Entry: 1
+      Data: steele_name
+    - Name: signature
+      Entry: 10
+      Data: 22
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: elementSprite
+      Entry: 6
+      Data: 
+    - Name: elementKey
+      Entry: 1
+      Data: colt_name
+    - Name: hasDetail
+      Entry: 5
+      Data: false
+    - Name: detailKey
+      Entry: 6
+      Data: 
+    - Name: reportKey
+      Entry: 1
+      Data: steele_colt
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 216|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 2
+    - Name: failed
+      Entry: 5
+      Data: false
+    - Name: agentSprite
+      Entry: 10
+      Data: 21
+    - Name: agentKey
+      Entry: 1
+      Data: steele_name
+    - Name: signature
+      Entry: 10
+      Data: 22
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: elementSprite
+      Entry: 6
+      Data: 
+    - Name: elementKey
+      Entry: 1
+      Data: soda_name
+    - Name: hasDetail
+      Entry: 5
+      Data: false
+    - Name: detailKey
+      Entry: 6
+      Data: 
+    - Name: reportKey
+      Entry: 1
+      Data: steele_soda
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 217|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 3
+    - Name: failed
+      Entry: 5
+      Data: false
+    - Name: agentSprite
+      Entry: 10
+      Data: 21
+    - Name: agentKey
+      Entry: 1
+      Data: steele_name
+    - Name: signature
+      Entry: 10
+      Data: 22
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: elementSprite
+      Entry: 6
+      Data: 
+    - Name: elementKey
+      Entry: 1
+      Data: journal_enlevement_name
+    - Name: hasDetail
+      Entry: 5
+      Data: false
+    - Name: detailKey
+      Entry: 6
+      Data: 
+    - Name: reportKey
+      Entry: 1
+      Data: steele_journal_enlevement
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 218|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 4
+    - Name: failed
+      Entry: 5
+      Data: false
+    - Name: agentSprite
+      Entry: 10
+      Data: 21
+    - Name: agentKey
+      Entry: 1
+      Data: steele_name
+    - Name: signature
+      Entry: 10
+      Data: 22
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: elementSprite
+      Entry: 6
+      Data: 
+    - Name: elementKey
+      Entry: 1
+      Data: contrat_name
+    - Name: hasDetail
+      Entry: 5
+      Data: false
+    - Name: detailKey
+      Entry: 6
+      Data: 
+    - Name: reportKey
+      Entry: 1
+      Data: steele_contrat_umberto
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 219|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 5
+    - Name: failed
+      Entry: 5
+      Data: false
+    - Name: agentSprite
+      Entry: 10
+      Data: 21
+    - Name: agentKey
+      Entry: 1
+      Data: steele_name
+    - Name: signature
+      Entry: 10
+      Data: 22
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: elementSprite
+      Entry: 6
+      Data: 
+    - Name: elementKey
+      Entry: 1
+      Data: logos_name
+    - Name: hasDetail
+      Entry: 5
+      Data: false
+    - Name: detailKey
+      Entry: 6
+      Data: 
+    - Name: reportKey
+      Entry: 1
+      Data: steele_logo_mafia
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Item2
+      Entry: 7
+      Data: 220|System.Collections.Generic.List`1[[Report, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 221|Report, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 0
+    - Name: failed
+      Entry: 5
+      Data: true
+    - Name: agentSprite
+      Entry: 10
+      Data: 21
+    - Name: agentKey
+      Entry: 1
+      Data: steele_name
+    - Name: signature
+      Entry: 10
+      Data: 22
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: elementSprite
+      Entry: 6
+      Data: 
+    - Name: elementKey
+      Entry: 6
+      Data: 
+    - Name: hasDetail
+      Entry: 5
+      Data: false
+    - Name: detailKey
+      Entry: 6
+      Data: 
+    - Name: reportKey
+      Entry: 1
+      Data: steele_failed
+    - Name: giveAccess
+      Entry: 5
+      Data: false
+    - Name: locationToAccess
+      Entry: 3
+      Data: 0
+    - Name: unlockOrderIndex
+      Entry: 3
+      Data: 0
+    - Name: seen
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: allReports
+      Entry: 7
+      Data: 222|System.Collections.Generic.Dictionary`2[[Indics, Assembly-CSharp],[System.Collections.Generic.List`1[[Report,
+        Assembly-CSharp]], mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 223|System.Collections.Generic.EnumEqualityComparer`1[[Indics, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: questions
+      Entry: 7
+      Data: 224|System.Collections.Generic.Dictionary`2[[Suspects, Assembly-CSharp],[System.Collections.Generic.List`1[[Question,
+        Assembly-CSharp]], mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 225|System.Collections.Generic.EnumEqualityComparer`1[[Suspects, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 7
+      Data: 226|System.Collections.Generic.List`1[[Question, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 8
+    - Name: 
+      Entry: 7
+      Data: 227|Question, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: true
+    - Name: index
+      Entry: 3
+      Data: 0
+    - Name: questionKey
+      Entry: 1
+      Data: umberto_question_0
+    - Name: _answers
+      Entry: 7
+      Data: 228|System.Collections.Generic.List`1[[Answer, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 229|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: umberto_answer_0_0
+    - Name: emotion
+      Entry: 3
+      Data: 3
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: unlockedByReport
+      Entry: 5
+      Data: false
+    - Name: mode
+      Entry: 3
+      Data: 0
+    - Name: reportKey
+      Entry: 6
+      Data: 
+    - Name: otherKey
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 230|Question, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: true
+    - Name: index
+      Entry: 3
+      Data: 1
+    - Name: questionKey
+      Entry: 1
+      Data: umberto_question_1
+    - Name: _answers
+      Entry: 7
+      Data: 231|System.Collections.Generic.List`1[[Answer, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 232|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: umberto_answer_1_0
+    - Name: emotion
+      Entry: 3
+      Data: 1
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 233|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: umberto_answer_1_1
+    - Name: emotion
+      Entry: 3
+      Data: 4
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: unlockedByReport
+      Entry: 5
+      Data: false
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: reportKey
+      Entry: 1
+      Data: 
+    - Name: otherKey
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 234|Question, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 2
+    - Name: questionKey
+      Entry: 1
+      Data: umberto_question_2
+    - Name: _answers
+      Entry: 7
+      Data: 235|System.Collections.Generic.List`1[[Answer, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 236|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: umberto_answer_2_0
+    - Name: emotion
+      Entry: 3
+      Data: 0
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 237|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: umberto_answer_2_1
+    - Name: emotion
+      Entry: 3
+      Data: 2
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: unlockedByReport
+      Entry: 5
+      Data: true
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: reportKey
+      Entry: 1
+      Data: steele_logo_mafia
+    - Name: otherKey
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 238|Question, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 3
+    - Name: questionKey
+      Entry: 1
+      Data: umberto_question_3
+    - Name: _answers
+      Entry: 7
+      Data: 239|System.Collections.Generic.List`1[[Answer, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 240|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: umberto_answer_3_0
+    - Name: emotion
+      Entry: 3
+      Data: 2
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 241|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: umberto_answer_3_1
+    - Name: emotion
+      Entry: 3
+      Data: 4
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 242|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: umberto_answer_3_2
+    - Name: emotion
+      Entry: 3
+      Data: 3
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: unlockedByReport
+      Entry: 5
+      Data: true
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: reportKey
+      Entry: 1
+      Data: copeland_lettre_anonyme
+    - Name: otherKey
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 243|Question, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 4
+    - Name: questionKey
+      Entry: 1
+      Data: umberto_question_4
+    - Name: _answers
+      Entry: 7
+      Data: 244|System.Collections.Generic.List`1[[Answer, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 245|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: umberto_answer_4_0
+    - Name: emotion
+      Entry: 3
+      Data: 0
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 246|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: umberto_answer_4_1
+    - Name: emotion
+      Entry: 3
+      Data: 4
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 247|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: umberto_answer_4_2
+    - Name: emotion
+      Entry: 3
+      Data: 2
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: unlockedByReport
+      Entry: 5
+      Data: true
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: reportKey
+      Entry: 1
+      Data: marshall_photo_anna1
+    - Name: otherKey
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 248|Question, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 5
+    - Name: questionKey
+      Entry: 1
+      Data: umberto_question_5
+    - Name: _answers
+      Entry: 7
+      Data: 249|System.Collections.Generic.List`1[[Answer, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 250|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: umberto_answer_5_0
+    - Name: emotion
+      Entry: 3
+      Data: 1
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 251|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: umberto_answer_5_1
+    - Name: emotion
+      Entry: 3
+      Data: 0
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 252|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: umberto_answer_5_2
+    - Name: emotion
+      Entry: 3
+      Data: 1
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 253|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: umberto_answer_5_3
+    - Name: emotion
+      Entry: 3
+      Data: 1
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 254|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: umberto_answer_5_4
+    - Name: emotion
+      Entry: 3
+      Data: 0
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: unlockedByReport
+      Entry: 5
+      Data: true
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: reportKey
+      Entry: 1
+      Data: copeland_mot
+    - Name: otherKey
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 255|Question, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 6
+    - Name: questionKey
+      Entry: 1
+      Data: umberto_question_6
+    - Name: _answers
+      Entry: 7
+      Data: 256|System.Collections.Generic.List`1[[Answer, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 257|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: umberto_answer_6_0
+    - Name: emotion
+      Entry: 3
+      Data: 3
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 258|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: umberto_answer_6_1
+    - Name: emotion
+      Entry: 3
+      Data: 4
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: unlockedByReport
+      Entry: 5
+      Data: true
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: reportKey
+      Entry: 1
+      Data: steele_contrat_umberto
+    - Name: otherKey
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 259|Question, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 7
+    - Name: questionKey
+      Entry: 1
+      Data: umberto_question_7
+    - Name: _answers
+      Entry: 7
+      Data: 260|System.Collections.Generic.List`1[[Answer, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 261|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: umberto_answer_7_0
+    - Name: emotion
+      Entry: 3
+      Data: 0
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 262|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: umberto_answer_7_1
+    - Name: emotion
+      Entry: 3
+      Data: 0
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 263|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: umberto_answer_7_2
+    - Name: emotion
+      Entry: 3
+      Data: 1
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 264|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: umberto_answer_7_3
+    - Name: emotion
+      Entry: 3
+      Data: 4
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 265|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: umberto_answer_7_4
+    - Name: emotion
+      Entry: 3
+      Data: 1
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: unlockedByReport
+      Entry: 5
+      Data: true
+    - Name: mode
+      Entry: 3
+      Data: 0
+    - Name: reportKey
+      Entry: 1
+      Data: maxwell_mafia_hideout
+    - Name: otherKey
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: 266|System.Collections.Generic.List`1[[Question, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 9
+    - Name: 
+      Entry: 7
+      Data: 267|Question, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 0
+    - Name: questionKey
+      Entry: 1
+      Data: abigail_question_0
+    - Name: _answers
+      Entry: 7
+      Data: 268|System.Collections.Generic.List`1[[Answer, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 269|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: abigail_answer_0_0
+    - Name: emotion
+      Entry: 3
+      Data: 0
+    - Name: voiceLineAudio
+      Entry: 10
+      Data: 23
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 270|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: abigail_answer_0_1
+    - Name: emotion
+      Entry: 3
+      Data: 3
+    - Name: voiceLineAudio
+      Entry: 10
+      Data: 24
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 271|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: abigail_answer_0_2
+    - Name: emotion
+      Entry: 3
+      Data: 3
+    - Name: voiceLineAudio
+      Entry: 10
+      Data: 25
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: unlockedByReport
+      Entry: 5
+      Data: true
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: reportKey
+      Entry: 1
+      Data: bennington_affiche
+    - Name: otherKey
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 272|Question, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 1
+    - Name: questionKey
+      Entry: 1
+      Data: abigail_question_1
+    - Name: _answers
+      Entry: 7
+      Data: 273|System.Collections.Generic.List`1[[Answer, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: 274|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: abigail_answer_1_0
+    - Name: emotion
+      Entry: 3
+      Data: 0
+    - Name: voiceLineAudio
+      Entry: 10
+      Data: 26
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 275|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: abigail_answer_1_1
+    - Name: emotion
+      Entry: 3
+      Data: 0
+    - Name: voiceLineAudio
+      Entry: 10
+      Data: 27
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 276|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: abigail_answer_1_2
+    - Name: emotion
+      Entry: 3
+      Data: 3
+    - Name: voiceLineAudio
+      Entry: 10
+      Data: 28
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 277|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: abigail_answer_1_3
+    - Name: emotion
+      Entry: 3
+      Data: 3
+    - Name: voiceLineAudio
+      Entry: 10
+      Data: 29
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: unlockedByReport
+      Entry: 5
+      Data: true
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: reportKey
+      Entry: 1
+      Data: copeland_whiskey
+    - Name: otherKey
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 278|Question, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 2
+    - Name: questionKey
+      Entry: 1
+      Data: abigail_question_2
+    - Name: _answers
+      Entry: 7
+      Data: 279|System.Collections.Generic.List`1[[Answer, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 280|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: abigail_answer_2_0
+    - Name: emotion
+      Entry: 3
+      Data: 0
+    - Name: voiceLineAudio
+      Entry: 10
+      Data: 30
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 281|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: abigail_answer_2_1
+    - Name: emotion
+      Entry: 3
+      Data: 0
+    - Name: voiceLineAudio
+      Entry: 10
+      Data: 31
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 282|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: abigail_answer_2_2
+    - Name: emotion
+      Entry: 3
+      Data: 3
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: unlockedByReport
+      Entry: 5
+      Data: true
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: reportKey
+      Entry: 1
+      Data: copeland_lettre_anna
+    - Name: otherKey
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 283|Question, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: true
+    - Name: index
+      Entry: 3
+      Data: 3
+    - Name: questionKey
+      Entry: 1
+      Data: abigail_question_3
+    - Name: _answers
+      Entry: 7
+      Data: 284|System.Collections.Generic.List`1[[Answer, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 285|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: abigail_answer_3_0
+    - Name: emotion
+      Entry: 3
+      Data: 0
+    - Name: voiceLineAudio
+      Entry: 10
+      Data: 32
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 286|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: abigail_answer_3_1
+    - Name: emotion
+      Entry: 3
+      Data: 0
+    - Name: voiceLineAudio
+      Entry: 10
+      Data: 33
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 287|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: abigail_answer_3_2
+    - Name: emotion
+      Entry: 3
+      Data: 0
+    - Name: voiceLineAudio
+      Entry: 10
+      Data: 34
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: unlockedByReport
+      Entry: 5
+      Data: false
+    - Name: mode
+      Entry: 3
+      Data: 0
+    - Name: reportKey
+      Entry: 6
+      Data: 
+    - Name: otherKey
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 288|Question, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: true
+    - Name: index
+      Entry: 3
+      Data: 4
+    - Name: questionKey
+      Entry: 1
+      Data: abigail_question_4
+    - Name: _answers
+      Entry: 7
+      Data: 289|System.Collections.Generic.List`1[[Answer, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 290|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: abigail_answer_4_0
+    - Name: emotion
+      Entry: 3
+      Data: 2
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 291|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: abigail_answer_4_1
+    - Name: emotion
+      Entry: 3
+      Data: 2
+    - Name: voiceLineAudio
+      Entry: 10
+      Data: 35
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 292|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: abigail_answer_4_2
+    - Name: emotion
+      Entry: 3
+      Data: 3
+    - Name: voiceLineAudio
+      Entry: 10
+      Data: 36
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: unlockedByReport
+      Entry: 5
+      Data: false
+    - Name: mode
+      Entry: 3
+      Data: 0
+    - Name: reportKey
+      Entry: 6
+      Data: 
+    - Name: otherKey
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 293|Question, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 5
+    - Name: questionKey
+      Entry: 1
+      Data: abigail_question_5
+    - Name: _answers
+      Entry: 7
+      Data: 294|System.Collections.Generic.List`1[[Answer, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 295|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: abigail_answer_5_0
+    - Name: emotion
+      Entry: 3
+      Data: 1
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 296|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: abigail_answer_5_1
+    - Name: emotion
+      Entry: 3
+      Data: 2
+    - Name: voiceLineAudio
+      Entry: 10
+      Data: 37
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: unlockedByReport
+      Entry: 5
+      Data: true
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: reportKey
+      Entry: 1
+      Data: copeland_cassette
+    - Name: otherKey
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 297|Question, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 6
+    - Name: questionKey
+      Entry: 1
+      Data: abigail_question_6
+    - Name: _answers
+      Entry: 7
+      Data: 298|System.Collections.Generic.List`1[[Answer, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 299|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: abigail_answer_6_0
+    - Name: emotion
+      Entry: 3
+      Data: 0
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 300|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: abigail_answer_6_1
+    - Name: emotion
+      Entry: 3
+      Data: 0
+    - Name: voiceLineAudio
+      Entry: 10
+      Data: 38
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 301|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: abigail_answer_6_2
+    - Name: emotion
+      Entry: 3
+      Data: 1
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: unlockedByReport
+      Entry: 5
+      Data: true
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: reportKey
+      Entry: 1
+      Data: marshall_photo_anna1
+    - Name: otherKey
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 302|Question, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 7
+    - Name: questionKey
+      Entry: 1
+      Data: abigail_question_7
+    - Name: _answers
+      Entry: 7
+      Data: 303|System.Collections.Generic.List`1[[Answer, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 304|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: abigail_answer_7_0
+    - Name: emotion
+      Entry: 3
+      Data: 3
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 305|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: abigail_answer_7_1
+    - Name: emotion
+      Entry: 3
+      Data: 2
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 306|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: abigail_answer_7_2
+    - Name: emotion
+      Entry: 3
+      Data: 2
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: unlockedByReport
+      Entry: 5
+      Data: true
+    - Name: mode
+      Entry: 3
+      Data: 0
+    - Name: reportKey
+      Entry: 1
+      Data: maxwell_mafia_hideout
+    - Name: otherKey
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 307|Question, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 8
+    - Name: questionKey
+      Entry: 1
+      Data: abigail_question_8
+    - Name: _answers
+      Entry: 7
+      Data: 308|System.Collections.Generic.List`1[[Answer, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 309|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: abigail_answer_8_0
+    - Name: emotion
+      Entry: 3
+      Data: 1
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 310|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: abigail_answer_8_1
+    - Name: emotion
+      Entry: 3
+      Data: 2
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 311|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: abigail_answer_8_2
+    - Name: emotion
+      Entry: 3
+      Data: 2
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 312|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: abigail_answer_8_3
+    - Name: emotion
+      Entry: 3
+      Data: 1
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 313|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: abigail_answer_8_4
+    - Name: emotion
+      Entry: 3
+      Data: 4
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: unlockedByReport
+      Entry: 5
+      Data: true
+    - Name: mode
+      Entry: 3
+      Data: 0
+    - Name: reportKey
+      Entry: 1
+      Data: maxwell_pute_hideout
+    - Name: otherKey
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 7
+      Data: 314|System.Collections.Generic.List`1[[Question, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 8
+    - Name: 
+      Entry: 7
+      Data: 315|Question, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: true
+    - Name: index
+      Entry: 3
+      Data: 0
+    - Name: questionKey
+      Entry: 1
+      Data: richard_question_0
+    - Name: _answers
+      Entry: 7
+      Data: 316|System.Collections.Generic.List`1[[Answer, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 317|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: richard_answer_0_0
+    - Name: emotion
+      Entry: 3
+      Data: 0
+    - Name: voiceLineAudio
+      Entry: 10
+      Data: 39
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 318|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: richard_answer_0_1
+    - Name: emotion
+      Entry: 3
+      Data: 4
+    - Name: voiceLineAudio
+      Entry: 10
+      Data: 40
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 319|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: richard_answer_0_2
+    - Name: emotion
+      Entry: 3
+      Data: 0
+    - Name: voiceLineAudio
+      Entry: 10
+      Data: 41
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: unlockedByReport
+      Entry: 5
+      Data: false
+    - Name: mode
+      Entry: 3
+      Data: 0
+    - Name: reportKey
+      Entry: 6
+      Data: 
+    - Name: otherKey
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 320|Question, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 1
+    - Name: questionKey
+      Entry: 1
+      Data: richard_question_1
+    - Name: _answers
+      Entry: 7
+      Data: 321|System.Collections.Generic.List`1[[Answer, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 322|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: richard_answer_1_0
+    - Name: emotion
+      Entry: 3
+      Data: 0
+    - Name: voiceLineAudio
+      Entry: 10
+      Data: 42
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 323|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: richard_answer_1_1
+    - Name: emotion
+      Entry: 3
+      Data: 3
+    - Name: voiceLineAudio
+      Entry: 10
+      Data: 43
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 324|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: richard_answer_1_2
+    - Name: emotion
+      Entry: 3
+      Data: 4
+    - Name: voiceLineAudio
+      Entry: 10
+      Data: 44
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: unlockedByReport
+      Entry: 5
+      Data: true
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: reportKey
+      Entry: 1
+      Data: marshall_bon
+    - Name: otherKey
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 325|Question, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 2
+    - Name: questionKey
+      Entry: 1
+      Data: richard_question_2
+    - Name: _answers
+      Entry: 7
+      Data: 326|System.Collections.Generic.List`1[[Answer, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 327|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: ricahrd_answer_2_0
+    - Name: emotion
+      Entry: 3
+      Data: 0
+    - Name: voiceLineAudio
+      Entry: 10
+      Data: 45
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 328|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: ricahrd_answer_2_1
+    - Name: emotion
+      Entry: 3
+      Data: 4
+    - Name: voiceLineAudio
+      Entry: 10
+      Data: 46
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 329|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: ricahrd_answer_2_2
+    - Name: emotion
+      Entry: 3
+      Data: 4
+    - Name: voiceLineAudio
+      Entry: 10
+      Data: 47
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: unlockedByReport
+      Entry: 5
+      Data: true
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: reportKey
+      Entry: 1
+      Data: copeland_whiskey
+    - Name: otherKey
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 330|Question, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 3
+    - Name: questionKey
+      Entry: 1
+      Data: richard_question_3
+    - Name: _answers
+      Entry: 7
+      Data: 331|System.Collections.Generic.List`1[[Answer, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 332|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: richard_answer_3_0
+    - Name: emotion
+      Entry: 3
+      Data: 1
+    - Name: voiceLineAudio
+      Entry: 10
+      Data: 48
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 333|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: richard_answer_3_1
+    - Name: emotion
+      Entry: 3
+      Data: 4
+    - Name: voiceLineAudio
+      Entry: 10
+      Data: 49
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 334|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: richard_answer_3_2
+    - Name: emotion
+      Entry: 3
+      Data: 4
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: unlockedByReport
+      Entry: 5
+      Data: true
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: reportKey
+      Entry: 1
+      Data: steele_contrat_dorothy
+    - Name: otherKey
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 335|Question, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 4
+    - Name: questionKey
+      Entry: 1
+      Data: richard_question_4
+    - Name: _answers
+      Entry: 7
+      Data: 336|System.Collections.Generic.List`1[[Answer, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 337|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: richard_answer_4_0
+    - Name: emotion
+      Entry: 3
+      Data: 0
+    - Name: voiceLineAudio
+      Entry: 10
+      Data: 50
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 338|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: richard_answer_4_1
+    - Name: emotion
+      Entry: 3
+      Data: 2
+    - Name: voiceLineAudio
+      Entry: 10
+      Data: 51
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: unlockedByReport
+      Entry: 5
+      Data: true
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: reportKey
+      Entry: 1
+      Data: copeland_numero_bob
+    - Name: otherKey
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 339|Question, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: true
+    - Name: index
+      Entry: 3
+      Data: 5
+    - Name: questionKey
+      Entry: 1
+      Data: richard_question_5
+    - Name: _answers
+      Entry: 7
+      Data: 340|System.Collections.Generic.List`1[[Answer, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 341|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: richard_answer_5_0
+    - Name: emotion
+      Entry: 3
+      Data: 4
+    - Name: voiceLineAudio
+      Entry: 10
+      Data: 52
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 342|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: richard_answer_5_1
+    - Name: emotion
+      Entry: 3
+      Data: 3
+    - Name: voiceLineAudio
+      Entry: 10
+      Data: 53
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 343|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: richard_answer_5_2
+    - Name: emotion
+      Entry: 3
+      Data: 3
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: unlockedByReport
+      Entry: 5
+      Data: false
+    - Name: mode
+      Entry: 3
+      Data: 0
+    - Name: reportKey
+      Entry: 6
+      Data: 
+    - Name: otherKey
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 344|Question, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 6
+    - Name: questionKey
+      Entry: 1
+      Data: richard_question_6
+    - Name: _answers
+      Entry: 7
+      Data: 345|System.Collections.Generic.List`1[[Answer, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 346|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: richard_answer_6_0
+    - Name: emotion
+      Entry: 3
+      Data: 0
+    - Name: voiceLineAudio
+      Entry: 10
+      Data: 54
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 347|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: richard_answer_6_1
+    - Name: emotion
+      Entry: 3
+      Data: 0
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: unlockedByReport
+      Entry: 5
+      Data: true
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: reportKey
+      Entry: 1
+      Data: copeland_numero_bob
+    - Name: otherKey
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 348|Question, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 7
+    - Name: questionKey
+      Entry: 1
+      Data: richard_question_7
+    - Name: _answers
+      Entry: 7
+      Data: 349|System.Collections.Generic.List`1[[Answer, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 350|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: richard_answer_7_0
+    - Name: emotion
+      Entry: 3
+      Data: 2
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 351|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: richard_answer_7_1
+    - Name: emotion
+      Entry: 3
+      Data: 1
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: unlockedByReport
+      Entry: 5
+      Data: true
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: reportKey
+      Entry: 1
+      Data: marshall_photo_anna1
+    - Name: otherKey
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 3
+    - Name: $v
+      Entry: 7
+      Data: 352|System.Collections.Generic.List`1[[Question, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 8
+    - Name: 
+      Entry: 7
+      Data: 353|Question, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: true
+    - Name: index
+      Entry: 3
+      Data: 0
+    - Name: questionKey
+      Entry: 1
+      Data: bob_question_0
+    - Name: _answers
+      Entry: 7
+      Data: 354|System.Collections.Generic.List`1[[Answer, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 355|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: bob_answer_0_0
+    - Name: emotion
+      Entry: 3
+      Data: 0
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 356|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: bob_answer_0_1
+    - Name: emotion
+      Entry: 3
+      Data: 4
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: unlockedByReport
+      Entry: 5
+      Data: false
+    - Name: mode
+      Entry: 3
+      Data: 0
+    - Name: reportKey
+      Entry: 6
+      Data: 
+    - Name: otherKey
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 357|Question, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: true
+    - Name: index
+      Entry: 3
+      Data: 1
+    - Name: questionKey
+      Entry: 1
+      Data: bob_question_1
+    - Name: _answers
+      Entry: 7
+      Data: 358|System.Collections.Generic.List`1[[Answer, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 359|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: bob_answer_1_0
+    - Name: emotion
+      Entry: 3
+      Data: 0
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 360|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: bob_answer_1_1
+    - Name: emotion
+      Entry: 3
+      Data: 0
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 361|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: bob_answer_1_2
+    - Name: emotion
+      Entry: 3
+      Data: 4
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: unlockedByReport
+      Entry: 5
+      Data: false
+    - Name: mode
+      Entry: 3
+      Data: 0
+    - Name: reportKey
+      Entry: 6
+      Data: 
+    - Name: otherKey
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 362|Question, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 2
+    - Name: questionKey
+      Entry: 1
+      Data: bob_question_2
+    - Name: _answers
+      Entry: 7
+      Data: 363|System.Collections.Generic.List`1[[Answer, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 364|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: bob_answer_2_0
+    - Name: emotion
+      Entry: 3
+      Data: 0
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 365|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: bob_answer_2_1
+    - Name: emotion
+      Entry: 3
+      Data: 2
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 366|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: bob_answer_2_2
+    - Name: emotion
+      Entry: 3
+      Data: 4
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: unlockedByReport
+      Entry: 5
+      Data: true
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: reportKey
+      Entry: 1
+      Data: marshall_photos_richard
+    - Name: otherKey
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 367|Question, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 3
+    - Name: questionKey
+      Entry: 1
+      Data: bob_question_3
+    - Name: _answers
+      Entry: 7
+      Data: 368|System.Collections.Generic.List`1[[Answer, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 369|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: bob_answer_3_0
+    - Name: emotion
+      Entry: 3
+      Data: 0
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 370|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: bob_answer_3_1
+    - Name: emotion
+      Entry: 3
+      Data: 1
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 371|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: bob_answer_3_2
+    - Name: emotion
+      Entry: 3
+      Data: 1
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: unlockedByReport
+      Entry: 5
+      Data: true
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: reportKey
+      Entry: 1
+      Data: steele_photo_dorothy
+    - Name: otherKey
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 372|Question, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 4
+    - Name: questionKey
+      Entry: 1
+      Data: bob_question_4
+    - Name: _answers
+      Entry: 7
+      Data: 373|System.Collections.Generic.List`1[[Answer, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 374|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: bob_answer_4_0
+    - Name: emotion
+      Entry: 3
+      Data: 0
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 375|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: bob_answer_4_1
+    - Name: emotion
+      Entry: 3
+      Data: 0
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: unlockedByReport
+      Entry: 5
+      Data: true
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: reportKey
+      Entry: 1
+      Data: marshall_photo_anna1
+    - Name: otherKey
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 376|Question, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 5
+    - Name: questionKey
+      Entry: 1
+      Data: bob_question_5
+    - Name: _answers
+      Entry: 7
+      Data: 377|System.Collections.Generic.List`1[[Answer, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 378|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: bob_answer_5_0
+    - Name: emotion
+      Entry: 3
+      Data: 0
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 379|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: bob_answer_5_1
+    - Name: emotion
+      Entry: 3
+      Data: 4
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: unlockedByReport
+      Entry: 5
+      Data: true
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: reportKey
+      Entry: 1
+      Data: steele_logo_mafia
+    - Name: otherKey
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 380|Question, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 6
+    - Name: questionKey
+      Entry: 1
+      Data: bob_question_6
+    - Name: _answers
+      Entry: 7
+      Data: 381|System.Collections.Generic.List`1[[Answer, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 382|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: bob_answer_6_0
+    - Name: emotion
+      Entry: 3
+      Data: 2
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 383|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: bob_answer_6_1
+    - Name: emotion
+      Entry: 3
+      Data: 0
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 384|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: bob_answer_6_2
+    - Name: emotion
+      Entry: 3
+      Data: 1
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: unlockedByReport
+      Entry: 5
+      Data: true
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: reportKey
+      Entry: 1
+      Data: steele_carte_bob
+    - Name: otherKey
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 385|Question, Assembly-CSharp
+    - Name: unlockedData
+      Entry: 5
+      Data: false
+    - Name: index
+      Entry: 3
+      Data: 7
+    - Name: questionKey
+      Entry: 1
+      Data: bob_question_7
+    - Name: _answers
+      Entry: 7
+      Data: 386|System.Collections.Generic.List`1[[Answer, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: 387|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: bob_answer_7_0
+    - Name: emotion
+      Entry: 3
+      Data: 2
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 388|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: bob_answer_7_1
+    - Name: emotion
+      Entry: 3
+      Data: 2
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 389|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: bob_answer_7_2
+    - Name: emotion
+      Entry: 3
+      Data: 2
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 390|Answer, Assembly-CSharp
+    - Name: answerKey
+      Entry: 1
+      Data: bob_answer_7_3
+    - Name: emotion
+      Entry: 3
+      Data: 1
+    - Name: voiceLineAudio
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: unlockedByReport
+      Entry: 5
+      Data: true
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: reportKey
+      Entry: 1
+      Data: copeland_enveloppe
+    - Name: otherKey
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: indics
+      Entry: 7
+      Data: 391|System.Collections.Generic.Dictionary`2[[Indics, Assembly-CSharp],[Indic,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 392|System.Collections.Generic.EnumEqualityComparer`1[[Indics, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 7
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: 393|Indic, Assembly-CSharp
+    - Name: nameKey
+      Entry: 1
+      Data: bennington_name
+    - Name: jobKey
+      Entry: 1
+      Data: bennington_job
+    - Name: image
+      Entry: 10
+      Data: 0
+    - Name: quickCallAvailable
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 7
+      Data: 394|Indic, Assembly-CSharp
+    - Name: nameKey
+      Entry: 1
+      Data: walker_name
+    - Name: jobKey
+      Entry: 1
+      Data: walker_job
+    - Name: image
+      Entry: 10
+      Data: 2
+    - Name: quickCallAvailable
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 3
+    - Name: $v
+      Entry: 7
+      Data: 395|Indic, Assembly-CSharp
+    - Name: nameKey
+      Entry: 1
+      Data: copeland_name
+    - Name: jobKey
+      Entry: 1
+      Data: copeland_job
+    - Name: image
+      Entry: 10
+      Data: 8
+    - Name: quickCallAvailable
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 4
+    - Name: $v
+      Entry: 7
+      Data: 396|Indic, Assembly-CSharp
+    - Name: nameKey
+      Entry: 1
+      Data: maxwell_name
+    - Name: jobKey
+      Entry: 1
+      Data: maxwell_job
+    - Name: image
+      Entry: 10
+      Data: 10
+    - Name: quickCallAvailable
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 5
+    - Name: $v
+      Entry: 7
+      Data: 397|Indic, Assembly-CSharp
+    - Name: nameKey
+      Entry: 1
+      Data: marshall_name
+    - Name: jobKey
+      Entry: 1
+      Data: marshall_job
+    - Name: image
+      Entry: 10
+      Data: 19
+    - Name: quickCallAvailable
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 6
+    - Name: $v
+      Entry: 7
+      Data: 398|Indic, Assembly-CSharp
+    - Name: nameKey
+      Entry: 1
+      Data: steele_name
+    - Name: jobKey
+      Entry: 1
+      Data: steele_job
+    - Name: image
+      Entry: 10
+      Data: 21
+    - Name: quickCallAvailable
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 7
+      Data: 399|Indic, Assembly-CSharp
+    - Name: nameKey
+      Entry: 1
+      Data: attorney_name
+    - Name: jobKey
+      Entry: 1
+      Data: attorney_job
+    - Name: image
+      Entry: 10
+      Data: 55
+    - Name: quickCallAvailable
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: saveSystem
+      Entry: 7
+      Data: 400|SaveSystem, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+  gameLanguage: 0
+  vibrations: 1
+  soundSettings:
+    musicVolume:
+      _volume: 0
+    soundVolume:
+      _volume: 0
+    voiceVolume:
+      _volume: 0
+  firstTimeInGame: 1
+  firstTimeInTuto: 1
+  notes: []
+  reportsCollected: 0
+  newStuff: 0
+  locations:
+  - unlockedData: 1
+    index: 0
+    known: 1
+    visible: 1
+    accessible: 1
+    myLocation: 0
+    nameKey: docks_name
+    locationAdress: Docks
+    addressKey: docks_address
+    locationArtwork: {fileID: 21300000, guid: eeba7478175025d4590a80462c1b2742, type: 3}
+    locationCroppedImage: {fileID: 21300000, guid: 790ecadda147c8a459fd80e902b75797,
+      type: 3}
+    descriptionKey: docks_description
+  - unlockedData: 1
+    index: 1
+    known: 0
+    visible: 0
+    accessible: 0
+    myLocation: 2
+    nameKey: anna_house_name
+    locationAdress: 457 N Wabash Avenue
+    addressKey: anna_house_address
+    locationArtwork: {fileID: 21300000, guid: f91603777797e0c4ea7647389ac2c9cf, type: 3}
+    locationCroppedImage: {fileID: 21300000, guid: eb12644eb8897cc4f815f6a3ffa0fe0d,
+      type: 3}
+    descriptionKey: anna_house_description
+  - unlockedData: 1
+    index: 2
+    known: 0
+    visible: 0
+    accessible: 0
+    myLocation: 1
+    nameKey: brothel_name
+    locationAdress: 1048 West Madison street
+    addressKey: brothel_address
+    locationArtwork: {fileID: 21300000, guid: c2fe964d4f4c74e4d9505d7e14de50d9, type: 3}
+    locationCroppedImage: {fileID: 21300000, guid: a33494e6b19f67b458fa883484c1ba94,
+      type: 3}
+    descriptionKey: brothel_description
+  - unlockedData: 1
+    index: 3
+    known: 0
+    visible: 0
+    accessible: 0
+    myLocation: 3
+    nameKey: abigail_house_name
+    locationAdress: 700 West Huron Street
+    addressKey: abigail_house_address
+    locationArtwork: {fileID: 21300000, guid: f5878d3216ed9a3419cda6e9c6ad1f98, type: 3}
+    locationCroppedImage: {fileID: 21300000, guid: 438f236abe14f6947a33bb68bc4c7f0d,
+      type: 3}
+    descriptionKey: abigail_house_description
+  - unlockedData: 1
+    index: 4
+    known: 0
+    visible: 0
+    accessible: 0
+    myLocation: 4
+    nameKey: politician_office_name
+    locationAdress: 130 E Randolph Street
+    addressKey: politician_office_address
+    locationArtwork: {fileID: 21300000, guid: 72168cb739499754592cea84435231d4, type: 3}
+    locationCroppedImage: {fileID: 21300000, guid: 9a6624594c5b948458d60a4da2961ba0,
+      type: 3}
+    descriptionKey: politician_office_description
+  - unlockedData: 1
+    index: 5
+    known: 0
+    visible: 0
+    accessible: 0
+    myLocation: 5
+    nameKey: cop_office_name
+    locationAdress: 75 E Ontario Street
+    addressKey: cop_office_address
+    locationArtwork: {fileID: 21300000, guid: 802c1f5ddae02a94cafc16d5562e0b23, type: 3}
+    locationCroppedImage: {fileID: 21300000, guid: abaf3b2078c3f194da2c8365ea2339fc,
+      type: 3}
+    descriptionKey: cop_office_description
+  - unlockedData: 0
+    index: 6
+    known: 0
+    visible: 0
+    accessible: 0
+    myLocation: 7
+    nameKey: anna_hideout_name
+    locationAdress: 211 N Wabash Avenue
+    addressKey: anna_hideout_address
+    locationArtwork: {fileID: 21300000, guid: bdaa76e96c9cad140bbe16e4ca349b5a, type: 3}
+    locationCroppedImage: {fileID: 21300000, guid: c380950968be14a43a02a39c3deecff1,
+      type: 3}
+    descriptionKey: anna_hideout_description
+  - unlockedData: 0
+    index: 7
+    known: 0
+    visible: 0
+    accessible: 0
+    myLocation: 6
+    nameKey: mafia_hideout_name
+    locationAdress: 502 S Ashland Avenue
+    addressKey: mafia_hideout_address
+    locationArtwork: {fileID: 21300000, guid: 6b9f0b986fb0fc443b80c00f42b24ae3, type: 3}
+    locationCroppedImage: {fileID: 21300000, guid: 6cfcc2104487d424faff079c109c75be,
+      type: 3}
+    descriptionKey: mafia_hideout_description
+  - unlockedData: 0
+    index: 8
+    known: 0
+    visible: 0
+    accessible: 0
+    myLocation: 8
+    nameKey: girls_hideout_name
+    locationAdress: 646 N Morgan Street
+    addressKey: girls_hideout_address
+    locationArtwork: {fileID: 0}
+    locationCroppedImage: {fileID: 0}
+    descriptionKey: girls_hideout_description
+  currentSuspect: 0
+  interrogations: 3
+  characters:
+  - unlockedData: 1
+    index: 0
+    name: Abigail White
+    nameKey: abigail_name
+    sprite: {fileID: 21300000, guid: e5df8534340e55949ae47e8ad12339c2, type: 3}
+    isSuspect: 1
+    known: 0
+    suspect: 1
+    jobKey: abigail_job
+    introPhraseKey: abigail_intro
+    introPhraseAudio: {fileID: 0}
+    incriminates: []
+    distinctiveElements:
+    - Brown
+    - Mole
+  - unlockedData: 1
+    index: 1
+    name: Bob Jenkins
+    nameKey: bob_name
+    sprite: {fileID: 21300000, guid: 55c9071abadc03f4d9430932520fcf72, type: 3}
+    isSuspect: 1
+    known: 0
+    suspect: 3
+    jobKey: bob_job
+    introPhraseKey: bob_intro
+    introPhraseAudio: {fileID: 0}
+    incriminates: []
+    distinctiveElements:
+    - Hazel eyes
+    - Mustache
+  - unlockedData: 1
+    index: 2
+    name: Umberto Moretti
+    nameKey: umberto_name
+    sprite: {fileID: 21300000, guid: 0e0fb61550967c949bdef8c159b16b5f, type: 3}
+    isSuspect: 1
+    known: 0
+    suspect: 0
+    jobKey: umberto_job
+    introPhraseKey: umberto_intro
+    introPhraseAudio: {fileID: 0}
+    incriminates: []
+    distinctiveElements:
+    - Brown
+    - Scar
+    - Brown eyes
+  - unlockedData: 1
+    index: 3
+    name: Richard Anderson
+    nameKey: richard_name
+    sprite: {fileID: 21300000, guid: 89f3c4da1773ae548a8723995db4a636, type: 3}
+    isSuspect: 1
+    known: 0
+    suspect: 2
+    jobKey: richard_job
+    introPhraseKey: richard_intro
+    introPhraseAudio: {fileID: 0}
+    incriminates: []
+    distinctiveElements:
+    - Blond
+    - Mustache
+  - unlockedData: 1
+    index: 4
+    name: Anna Jameswan
+    nameKey: anna_name
+    sprite: {fileID: 21300000, guid: c3ced49b9b2d5ce4eab4e2cb50b03be6, type: 3}
+    isSuspect: 0
+    known: 0
+    suspect: 4
+    jobKey: 
+    introPhraseKey: 
+    introPhraseAudio: {fileID: 0}
+    incriminates: []
+    distinctiveElements:
+    - Blond
+  accused:
+    unlockedData: 0
+    index: 0
+    name: 
+    nameKey: 
+    sprite: {fileID: 0}
+    isSuspect: 0
+    known: 0
+    suspect: 0
+    jobKey: 
+    introPhraseKey: 
+    introPhraseAudio: {fileID: 0}
+    incriminates: []
+    distinctiveElements: []
+  currentIndic: 1
+  savedData: []

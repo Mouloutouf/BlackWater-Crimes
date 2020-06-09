@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 using Sirenix.OdinInspector;
 
-[CreateAssetMenu(fileName = "TestDataTitouan", menuName = "Player Data Scriptable")]
+[CreateAssetMenu(fileName = "TestDataTitouan", menuName = "Test Titouan Data Scriptable")]
 public class StockageVariables : SerializedScriptableObject
 {
     public Dictionary<Locations, List<Evidence>> evidences;

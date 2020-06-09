@@ -27,7 +27,7 @@ public class HeadHunterValidateScript : MonoBehaviour
             {
                 foreach(Report report in gameData.allReports[indic])
                 {
-                    if(report.elementName == targetName && report.unlockedData == false)
+                    if(report.elementKey == targetName && report.unlockedData == false)
                     {
                         report.unlockedData = true;
                         gameData.reportsCollected ++;
@@ -41,7 +41,7 @@ public class HeadHunterValidateScript : MonoBehaviour
         else
         {
             gameData.allReports[Indics.James_Walker][0].unlockedData = true;
-            gameData.allReports[Indics.James_Walker][0].elementName = targetName;
+            gameData.allReports[Indics.James_Walker][0].elementKey = targetName;
         }
 
         dialogueText.text = validateText;

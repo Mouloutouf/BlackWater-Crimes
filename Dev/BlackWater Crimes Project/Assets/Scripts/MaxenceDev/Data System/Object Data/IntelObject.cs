@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class IntelObject : MonoBehaviour
 {
-    public string myName;
+    public string myIntelKey;
 }

@@ -226,8 +226,9 @@ GameObject:
   - component: {fileID: 279972229}
   - component: {fileID: 279972228}
   - component: {fileID: 279972231}
+  - component: {fileID: 279972232}
   m_Layer: 5
-  m_Name: ReportButton
+  m_Name: Report Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -303,7 +304,18 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: NewDeskScene
+          m_StringArgument: DeskScene
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 279972232}
+        m_MethodName: ResetStuff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &279972229
@@ -361,6 +373,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &279972232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279972226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc75200dbe39f2f4fb96cc709dfd2e6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameData: {fileID: 11400000, guid: eaa3567ddd179a64a9d879867070a0b4, type: 2}
+  notification: {fileID: 0}
 --- !u!1 &384610937
 GameObject:
   m_ObjectHideFlags: 0
@@ -588,6 +614,7 @@ GameObject:
   - component: {fileID: 651920781}
   - component: {fileID: 651920783}
   - component: {fileID: 651920782}
+  - component: {fileID: 651920784}
   m_Layer: 5
   m_Name: Name Text
   m_TagString: Untagged
@@ -654,6 +681,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 651920780}
   m_CullTransparentMesh: 0
+--- !u!114 &651920784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651920780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 651920782}
+  key: 
 --- !u!1 &676395449
 GameObject:
   m_ObjectHideFlags: 0
@@ -1094,7 +1135,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0f65259f43fdb9645b8fdb02f0a6b0c8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e5df8534340e55949ae47e8ad12339c2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1236,8 +1277,8 @@ MonoBehaviour:
   neighborhoodPrefab: {fileID: 3522174019290621760, guid: 5d1dcce82ad544e4aabed764e91b8d70,
     type: 3}
   characterImage: {fileID: 1189910253}
-  factor: 0.12
-  characterName: {fileID: 651920782}
+  factor: 8
+  characterName: {fileID: 651920784}
   characterJob: {fileID: 1108253665}
   debug: 1
   indicToTest: 2

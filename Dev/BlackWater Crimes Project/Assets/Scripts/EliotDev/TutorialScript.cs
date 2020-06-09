@@ -160,7 +160,7 @@ public class TutorialScript : SerializedMonoBehaviour
 
     void Start()
     {
-        if(gameData.firstTimeInTuto)
+        /*if(gameData.firstTimeInTuto)
         {
             gameData.firstTimeInTuto = false;
             DontDestroyOnLoad(this.gameObject);
@@ -169,7 +169,12 @@ public class TutorialScript : SerializedMonoBehaviour
 
             DockStart();
         }
-        else Destroy(this.gameObject);
+        else Destroy(this.gameObject);*/
+
+        DontDestroyOnLoad(this.gameObject);
+        currentDialogueLanguage = englishDialogues;
+        currentObjectivesLanguage = englishObjectives;
+        DockStart();
     }
 
     void Update() 
@@ -325,7 +330,7 @@ public class TutorialScript : SerializedMonoBehaviour
 
         else if (waitingForFolderScene)
         {
-            if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "NewDeskScene")
+            if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "DeskScene")
             {
                 waitingForFolderScene = false;
 
@@ -425,7 +430,7 @@ public class TutorialScript : SerializedMonoBehaviour
         {
             if(evidenceReceiver.GetComponent<SpecialistEvidenceDisplayer>().currentEvidenceDisplayed != null)
             {
-                if (evidenceReceiver.GetComponent<SpecialistEvidenceDisplayer>().currentEvidenceDisplayed.GetComponent<PhotoSpecialistObject>().data.codeName == "Etiquette Vetement")
+                if (evidenceReceiver.GetComponent<SpecialistEvidenceDisplayer>().currentEvidenceDisplayed.GetComponent<PhotoSpecialistObject>().data.nameKey == "etiquette_name")
                 {
                     waitingForLabelDisplayed = false;
 
@@ -446,7 +451,7 @@ public class TutorialScript : SerializedMonoBehaviour
 
         else if (waitingForReturnFolderScene)
         {
-            if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "NewDeskScene")
+            if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "DeskScene")
             {
                 waitingForReturnFolderScene = false;
 
@@ -482,7 +487,7 @@ public class TutorialScript : SerializedMonoBehaviour
 
         else if (waitingForSecondReturnFolderScene)
         {
-           if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "NewDeskScene")
+           if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "DeskScene")
             {
                 waitingForSecondReturnFolderScene = false;
 

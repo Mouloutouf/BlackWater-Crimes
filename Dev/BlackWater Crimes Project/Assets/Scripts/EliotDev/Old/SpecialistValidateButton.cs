@@ -26,9 +26,9 @@ public class SpecialistValidateButton : MonoBehaviour
         {
             foreach (Report report in gameData.allReports[indic])
             {
-                if (report.elementName == script.currentEvidenceDisplayed.GetComponent<PhotoSpecialistObject>().data.codeName && report.index != 0)
+                if (report.elementKey == script.currentEvidenceDisplayed.GetComponent<PhotoSpecialistObject>().data.nameKey && report.index != 0)
                 {
-                    if (report.elementDetailName == null)
+                    if (report.detailKey == null)
                     {
                         UnlockReport(report);
 
@@ -38,9 +38,7 @@ public class SpecialistValidateButton : MonoBehaviour
                     {
                         foreach (Intel intel in script.currentEvidenceDisplayed.GetComponent<PhotoSpecialistObject>().data.intels)
                         {
-                            Debug.Log(intel.name + intel.revealed);
-
-                            if (intel.revealed && report.elementDetailName == intel.name)
+                            if (intel.revealed && report.detailKey == intel.intelKey)
                             {
                                 UnlockReport(report);
 
@@ -98,7 +96,7 @@ public class SpecialistValidateButton : MonoBehaviour
     {
         gameData.allReports[indic][0].unlockedData = true;
         gameData.allReports[indic][0].elementSprite = script.currentEvidenceDisplayed.GetComponent<PhotoSpecialistObject>().data.photo;
-        gameData.allReports[indic][0].elementName = script.currentEvidenceDisplayed.GetComponent<PhotoSpecialistObject>().data.codeName;
+        gameData.allReports[indic][0].elementKey = script.currentEvidenceDisplayed.GetComponent<PhotoSpecialistObject>().data.nameKey;
     }
 }
 

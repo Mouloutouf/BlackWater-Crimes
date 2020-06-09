@@ -24,13 +24,13 @@ public class InstantiateCharacterElements : InstantiateElements<Character>
 
     protected override bool Check(Character data)
     {
-        bool check = data.unlockedData; // Rajoutez variable knownCharacter au Game Data
+        bool check = data.unlockedData && data.known;
 
         return check;
     }
     
     protected override string GetDataName(Character data)
     {
-        return data.name;
+        return data.nameKey;
     }
 }

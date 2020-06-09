@@ -113,7 +113,7 @@ public class EvidenceInteraction : MonoBehaviour
             {
                 GameObject selected = hit.transform.gameObject;
 
-                if (selected.tag == "Clue" && selected.GetComponent<IntelObject>().myName == _intel.name && !_intel.revealed) // Clue means Intel
+                if (selected.tag == "Clue" && selected.GetComponent<IntelObject>().myIntelKey == _intel.intelKey && !_intel.revealed) // "Clue" means Intel
                 {
                     if (_intel.intelAlpha < 1f)
                     {
@@ -201,10 +201,9 @@ public class EvidenceInteraction : MonoBehaviour
         // Takes the Screenshot and saves it under the right File Path
 
         string filePath;
-        string fileName = _hit.transform.parent.GetComponent<EvidenceObject>().data.codeName;
-        fileName = fileName.Replace(" ", "");
-
-        if (Application.platform == RuntimePlatform.WindowsEditor /*|| (Application.platform == RuntimePlatform.Android && EditorApplication.isPlaying)*/)
+        string fileName = _hit.transform.parent.GetComponent<EvidenceObject>().data.nameKey;
+        
+        if (Application.platform == RuntimePlatform.WindowsEditor || (Application.platform == RuntimePlatform.Android && EditorApplication.isPlaying))
         {
             filePath = "Assets/Graphs/Sprites/Screenshots/" + fileName + ".png";
             Debug.Log("Using Editor Folder");

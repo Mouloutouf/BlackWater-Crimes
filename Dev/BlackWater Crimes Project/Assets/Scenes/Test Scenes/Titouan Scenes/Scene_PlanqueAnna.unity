@@ -241,7 +241,7 @@ MonoBehaviour:
   data:
     unlockedData: 0
     index: 2
-    codeName: Fiche Dettes
+    nameKey: 
     intelSelf: 1
     hasIntels: 0
     intels: []
@@ -250,10 +250,7 @@ MonoBehaviour:
     photo: {fileID: 0}
     photoPath: 
     hasText: 1
-    descriptionText: "O'Reilly | 80.000\nMr Cultins | 4.500\nButterfield | 3.575\nLucas
-      | 987\nRadClover | 150.000\nMosermind | 20.525\n\nJ'ai beaucoup TROP PERDU\nAlcool
-      | 178.578\nV\xEAtements | 15.000\nSalaire des filles |8 x 350 x 6\n\nJe ne
-      peux pas laisser CA arriver..."
+    textKey: 
     modeCategory:
       location: 7
       suspect: 4
@@ -418,7 +415,7 @@ MonoBehaviour:
   data:
     unlockedData: 0
     index: 3
-    codeName: Passeports
+    nameKey: 
     intelSelf: 1
     hasIntels: 0
     intels: []
@@ -427,11 +424,7 @@ MonoBehaviour:
     photo: {fileID: 0}
     photoPath: 
     hasText: 1
-    descriptionText: "Nom : Elizabeth Murphy\nDate de naissance : 16 octobre 1900\n\nNom
-      : Cindy Georgia\nDate de naissance : 18 novembre 1895\n\nNom : Dorothy McKarty\nDate
-      de naissance : 28 mars 1885\n\nCe passeport est bon pour le voyage dans tous
-      les pays autrement limit\xE9s. Ce passeport est valide pour 2 ans \xE0 compter
-      de la date d'\xE9mission. Il n'est pas renouvelable au bout des deux ans."
+    textKey: 
     modeCategory:
       location: 7
       suspect: 4
@@ -657,6 +650,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &308516139
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 308516140}
+  - component: {fileID: 308516141}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Clue
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &308516140
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308516139}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1289048067}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &308516141
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308516139}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 16.791676, y: 1, z: 25.667639}
+  m_Center: {x: -2.5495744, y: 0.00000060771754, z: -0.15277867}
 --- !u!1001 &391366277
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1121,7 +1158,7 @@ MonoBehaviour:
   data:
     unlockedData: 0
     index: 1
-    codeName: 
+    nameKey: 
     intelSelf: 0
     hasIntels: 0
     intels: []
@@ -1130,7 +1167,7 @@ MonoBehaviour:
     photo: {fileID: 0}
     photoPath: 
     hasText: 0
-    descriptionText: 
+    textKey: 
     modeCategory:
       location: 1
       suspect: 2
@@ -1544,7 +1581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcb0521eef70ac444ae95e79d8fa7a15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myName: TestEmpreinte
+  myIntelKey: 
 --- !u!1 &839638897
 GameObject:
   m_ObjectHideFlags: 0
@@ -1599,7 +1636,7 @@ MonoBehaviour:
   data:
     unlockedData: 0
     index: 4
-    codeName: Photo Camion 1
+    nameKey: 
     intelSelf: 1
     hasIntels: 0
     intels: []
@@ -1608,7 +1645,7 @@ MonoBehaviour:
     photo: {fileID: 0}
     photoPath: 
     hasText: 0
-    descriptionText: 
+    textKey: 
     modeCategory:
       location: 7
       suspect: 4
@@ -1683,7 +1720,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 17d502e340498b44c9c0125aeab99226, type: 2}
+  - {fileID: 2100000, guid: b63f9093a04d54545a1ec444af541cc4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1876,7 +1913,7 @@ MonoBehaviour:
   data:
     unlockedData: 0
     index: 0
-    codeName: Photo Groupe
+    nameKey: 
     intelSelf: 1
     hasIntels: 0
     intels: []
@@ -1885,7 +1922,7 @@ MonoBehaviour:
     photo: {fileID: 0}
     photoPath: 
     hasText: 0
-    descriptionText: 
+    textKey: 
     modeCategory:
       location: 7
       suspect: 4
@@ -2232,6 +2269,172 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.17169903, y: 0.18965521, z: 0.1603303}
   m_Center: {x: -0.033796746, y: 0.013309855, z: 0.032019235}
+--- !u!1 &1289048066
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1289048067}
+  - component: {fileID: 1289048073}
+  - component: {fileID: 1289048072}
+  - component: {fileID: 1289048071}
+  - component: {fileID: 1289048070}
+  - component: {fileID: 1289048069}
+  - component: {fileID: 1289048068}
+  m_Layer: 0
+  m_Name: "INDICE Mot Prostitu\xE9es"
+  m_TagString: ClueHolder
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1289048067
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289048066}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalPosition: {x: 5.843, y: 2.993, z: 25.592}
+  m_LocalScale: {x: 0.04284751, y: 0.0612997, z: 0.023888493}
+  m_Children:
+  - {fileID: 308516140}
+  m_Father: {fileID: 1907031896}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 180}
+--- !u!114 &1289048068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289048066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46742789b7e08be46aa11d27648eb230, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showData: 1
+  data:
+    unlockedData: 0
+    index: 5
+    nameKey: 
+    intelSelf: 1
+    hasIntels: 0
+    intels: []
+    useToUnlock: 0
+    unlockableLocation: 0
+    photo: {fileID: 0}
+    photoPath: 
+    hasText: 1
+    textKey: note_anna_text
+    modeCategory:
+      location: 7
+      suspect: 4
+    seen: 0
+  hasText: 1
+  displayTextComponent: {fileID: 1897084750}
+  timer: 0.3
+  _cam: {fileID: 1515454466}
+  intelObjects: []
+  isShown: 0
+--- !u!114 &1289048069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289048066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 747888c006b21314e93c3fb31c697136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: 3
+  specificZoomPosition: {x: 3.35, y: 6.12, z: 20.43}
+  hasSpecificRotation: 1
+  specificZoomRotation: {x: 104, y: 0, z: 178.037}
+  specificZoomRotationQuaternion: {x: 0.013498318, y: -0.7878951, z: 0.61557114, w: 0.0105460435}
+  blockHorizontalRotation: 1
+  blockVerticalRotation: 1
+--- !u!65 &1289048070
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289048066}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.332333, y: 0.29700002, z: 10.072005}
+  m_Center: {x: 0.040703773, y: -0.13635848, z: 0.035117444}
+--- !u!64 &1289048071
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289048066}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1289048072
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289048066}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: e3154840619f1944c80e14043f20de90, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1289048073
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289048066}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1290821204
 GameObject:
   m_ObjectHideFlags: 0
@@ -3337,6 +3540,7 @@ Transform:
   - {fileID: 44223242}
   - {fileID: 202257779}
   - {fileID: 839638898}
+  - {fileID: 1289048067}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5188,6 +5392,7 @@ GameObject:
   - component: {fileID: 6389873162201950476}
   - component: {fileID: 5883839629951895703}
   - component: {fileID: 4040681042144686849}
+  - component: {fileID: 2027237535388969584}
   m_Layer: 0
   m_Name: pile de livre
   m_TagString: Untagged
@@ -5195,6 +5400,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &2027237535388969584
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027237535388969583}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 300513338617834906, guid: 100b42ef41f588e44a378ff0ad7c086d, type: 3}
 --- !u!33 &2084345213432581095
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -8227,7 +8446,7 @@ MonoBehaviour:
   data:
     unlockedData: 0
     index: 1
-    codeName: Panier Cadeau
+    nameKey: 
     intelSelf: 1
     hasIntels: 0
     intels: []
@@ -8236,7 +8455,7 @@ MonoBehaviour:
     photo: {fileID: 0}
     photoPath: 
     hasText: 0
-    descriptionText: 
+    textKey: 
     modeCategory:
       location: 7
       suspect: 4

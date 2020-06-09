@@ -5,11 +5,9 @@ using UnityEngine.UI;
 
 public class ReportButtonObject : ObjectData<Report>
 {
-    public Text agentText;
+    public Localisation agentKey;
     public Localisation elementKey;
-
-    public GameObject associatedReport { get; set; }
-
+    
     void Start()
     {
         GetGameData();
@@ -17,7 +15,8 @@ public class ReportButtonObject : ObjectData<Report>
 
     public override void Protocol()
     {
-        agentText.text = data.agentName;
+        agentKey.key = data.agentKey;
+        agentKey.RefreshText();
         elementKey.key = data.elementKey;
         elementKey.RefreshText();
 

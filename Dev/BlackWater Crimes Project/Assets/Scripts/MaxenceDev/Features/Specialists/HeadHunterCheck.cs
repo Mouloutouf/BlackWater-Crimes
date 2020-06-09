@@ -21,7 +21,7 @@ public class HeadHunterCheck : Checker
         {
             if (inputField.text == character.name)
             {
-                checkedName = character.name;
+                checkedName = character.nameKey;
 
                 checkedImage = character.sprite;
             }
@@ -46,10 +46,12 @@ public class HeadHunterCheck : Checker
 
         if (_indic != this.indic) check = false;
 
-        if (_report.elementName != checkedName) check = false;
+        if (_report.elementKey != checkedName) check = false;
 
         if (_report.index == 0) check = false;
         
+        UnlockCharacter(check);
+
         return check;
     }
 
@@ -59,12 +61,26 @@ public class HeadHunterCheck : Checker
 
         foreach (Character character in gameData.characters)
         {
-            if (checkedName == character.name)
+            if (checkedName == character.nameKey)
             {
                 check = true;
             }
         }
 
         return check;
+    }
+
+    void UnlockCharacter(bool _check)
+    {
+        if (_check)
+        {
+            foreach (Character character in gameData.characters)
+            {
+                if (checkedName == character.nameKey)
+                {
+                    character.known = true;
+                }
+            }
+        }
     }
 }

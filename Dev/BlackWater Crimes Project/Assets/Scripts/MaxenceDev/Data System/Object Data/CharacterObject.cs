@@ -8,8 +8,8 @@ public class CharacterObject : ObjectData<Character>
 {
     [Title("References")]
 
-    public GameObject imageObject;
-    public GameObject textObject;
+    public Image imageComponent;
+    public Localisation textComponent;
     
     public float factor;
 
@@ -20,12 +20,12 @@ public class CharacterObject : ObjectData<Character>
 
     public override void Protocol()
     {
-        imageObject.GetComponent<Image>().sprite = data.sprite;
-        imageObject.GetComponent<Image>().SetNativeSize();
-        RectTransform rect = imageObject.GetComponent<RectTransform>();
+        imageComponent.sprite = data.sprite;
+        imageComponent.SetNativeSize();
+        RectTransform rect = imageComponent.GetComponent<RectTransform>();
         rect.sizeDelta = new Vector2(rect.rect.width / factor, rect.rect.height / factor);
 
-        if (textObject != null) textObject.GetComponent<Text>().text = data.name;
+        if (textComponent != null) { textComponent.key = data.nameKey; textComponent.RefreshText(); }
 
         base.Protocol();
     }

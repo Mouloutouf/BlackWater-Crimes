@@ -20,7 +20,7 @@ public class NeighborhoodCheck : Checker
         {
             if (dropdown.GetComponentInChildren<Text>().text == location.locationAdress)
             {
-                checkedName = location.locationAdress;
+                checkedName = location.addressKey;
 
                 checkedImage = location.locationCroppedImage;
             }

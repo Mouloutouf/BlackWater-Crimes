@@ -179,6 +179,7 @@ GameObject:
   - component: {fileID: 2213011489670628284}
   - component: {fileID: 2213011489670628274}
   - component: {fileID: 2213011489670628275}
+  - component: {fileID: 3086627464813255061}
   m_Layer: 5
   m_Name: Fingerprint Text
   m_TagString: Untagged
@@ -245,6 +246,20 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: Rub to reveal fingerprints...
+--- !u!114 &3086627464813255061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2213011489670628285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 2213011489670628275}
+  key: rub_fingerprints
 --- !u!1 &2213011490574676899
 GameObject:
   m_ObjectHideFlags: 0
@@ -1402,12 +1417,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
---- !u!224 &8058071886568660290 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8170153791668043268, guid: 0d230cc8be529a542a08cb878ab14b18,
-    type: 3}
-  m_PrefabInstance: {fileID: 2213011491149554502}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &8058071886568660295 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8170153791668043265, guid: 0d230cc8be529a542a08cb878ab14b18,
@@ -1420,6 +1429,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a47f546fc70ec8428172694e78e4288, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &8058071886568660290 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8170153791668043268, guid: 0d230cc8be529a542a08cb878ab14b18,
+    type: 3}
+  m_PrefabInstance: {fileID: 2213011491149554502}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6364023845229059026
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -101,7 +101,7 @@ public class Checker : MonoBehaviour
             {
                 if (Check(indic, report))
                 {
-                    if (report.elementDetailName == null)
+                    if (report.detailKey == null)
                     {
                         UnlockReport(report);
                         match = true;
@@ -111,7 +111,7 @@ public class Checker : MonoBehaviour
                     {
                         foreach (Intel intel in intelList)
                         {
-                            if (intel.revealed && report.elementDetailName == intel.name)
+                            if (intel.revealed && report.detailKey == intel.intelKey)
                             {
                                 UnlockReport(report);
                                 match = true;
@@ -137,7 +137,7 @@ public class Checker : MonoBehaviour
 
         if (_indic != this.indic) check = false;
 
-        if (_report.elementName != checkedName) check = false;
+        if (_report.elementKey != checkedName) check = false;
 
         if (_report.index == 0) check = false;
 
@@ -165,16 +165,14 @@ public class Checker : MonoBehaviour
             failed = true,
             unlockedData = true,
             elementSprite = checkedImage,
-            elementName = checkedName,
+            elementKey = checkedName,
             
             index = gameData.reports[indic].Item2.Count,
 
-            agentName = t_Report.agentName,
+            agentKey = t_Report.agentKey,
             agentSprite = t_Report.agentSprite,
-            reportText = t_Report.reportText,
-            signature = t_Report.signature,
-
-            elementKey = ""
+            reportKey = t_Report.reportKey,
+            signature = t_Report.signature
         };
 
         gameData.reports[indic].Item2.Add(f_Report);

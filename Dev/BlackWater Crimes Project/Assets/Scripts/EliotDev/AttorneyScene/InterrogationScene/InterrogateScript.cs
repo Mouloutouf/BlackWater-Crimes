@@ -9,13 +9,14 @@ public class InterrogateScript : SerializedMonoBehaviour
 {
     [Title("Suspect Display")]
 
-    [SerializeField] Text nameText;
+    [SerializeField] Localisation nameKey;
     [SerializeField] Localisation occupationKey;
     [SerializeField] Localisation dialogueKey;
 
     public string endQuestionKey;
 
     [SerializeField] Image charaSprite;
+    public float factor;
 
     [Title("Characters", horizontalLine: false)]
     public Dictionary<Suspects, Dictionary<Emotions, Sprite>> suspectSprites =  new Dictionary<Suspects, Dictionary<Emotions, Sprite>>();
@@ -42,19 +43,23 @@ public class InterrogateScript : SerializedMonoBehaviour
         {
             if (character.isSuspect && character.suspect == gameData.currentSuspect)
             {
-                nameText.text = character.name;
+                nameKey.key = character.nameKey;
                 occupationKey.key = character.jobKey;
                 dialogueKey.key = character.introPhraseKey;
+                
                 charaSprite.sprite = suspectSprites[character.suspect][Emotions.Neutral];
+
                 soundSystem.PlayVoice(character.introPhraseAudio);
             }
         }
         
+        nameKey.RefreshText();
         occupationKey.RefreshText();
         dialogueKey.RefreshText();
-
-        //occupationKey.text = occupationKey.text.ToUpper();
+        
         charaSprite.SetNativeSize();
+        RectTransform rt = charaSprite.GetComponent<RectTransform>();
+        rt.sizeDelta = new Vector2(rt.sizeDelta.x / factor, rt.sizeDelta.y / factor);
         
         foreach (Question question in gameData.questions[gameData.currentSuspect]) if (question.unlockedData) questions.Add(question);
 

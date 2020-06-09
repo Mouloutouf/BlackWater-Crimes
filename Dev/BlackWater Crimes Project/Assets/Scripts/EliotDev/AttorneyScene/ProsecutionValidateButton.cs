@@ -2,28 +2,39 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ProsecutionValidateButton : MonoBehaviour
 {
-    [SerializeField] GameObject disclaimer;
-
-    public string confirmKey;
-    public string engageKey;
+    public GameData gameData;
+    
+    public Text inputText;
+    
+    public string prosecutionSceneName;
 
     public void Validate()
     {
-        if(disclaimer.activeSelf == false)
+        foreach (Character character in gameData.characters)
         {
-            disclaimer.SetActive(true);
-            GetComponentInChildren<Localisation>().key = confirmKey;
-            GetComponentInChildren<Localisation>().RefreshText();
+            if (character.isSuspect && inputText.text == character.name)
+            {
+                gameData.currentSuspect = character.suspect;
+
+                StartCoroutine(DelayToProsecution(2.0f));
+            }
         }
     }
 
     public void Reset()
     {
-        disclaimer.SetActive(false);
-        GetComponentInChildren<Localisation>().key = engageKey;
-        GetComponentInChildren<Localisation>().RefreshText();
+        inputText.GetComponentInParent<InputField>().text = "";
+        inputText.color = Color.black;
+    }
+
+    IEnumerator DelayToProsecution(float time)
+    {
+        yield return new WaitForSeconds(time);
+        
+        UnityEngine.SceneManagement.SceneManager.LoadScene(prosecutionSceneName, LoadSceneMode.Single);
     }
 }
