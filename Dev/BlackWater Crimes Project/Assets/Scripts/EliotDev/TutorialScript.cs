@@ -16,10 +16,6 @@ public class TutorialScript : SerializedMonoBehaviour
 
     [MultiLineProperty(3)]
     public List<List<string>> englishDialogues = new List<List<string>>();
-
-    [MultiLineProperty(3)]
-    public List<List<string>> frenchDialogues = new List<List<string>>();
-
     int textIndex = 0;
     List<List<string>> currentDialogueLanguage = new List<List<string>>();
     int dialogueIndex = 0;
@@ -44,7 +40,6 @@ public class TutorialScript : SerializedMonoBehaviour
 
     [Title("Objective Text")]
     public List<string> englishObjectives = new List<string>();
-    public List<string> frenchObjectives = new List<string>();    
     List<string> currentObjectivesLanguage = new List<string>();
     int objectiveIndex = 0;
 
@@ -54,6 +49,7 @@ public class TutorialScript : SerializedMonoBehaviour
     public GameObject focusBG;
     public List<Vector3> focusMaskPositions = new List<Vector3>();
     int focusIndex = 0;
+    Coroutine currentCoroutine;
 
 
     [Title("Docks References")]
@@ -155,7 +151,6 @@ public class TutorialScript : SerializedMonoBehaviour
     
     bool shouldFocusOnLetter = false;
     bool shouldFocusOnLabel = false;
-    bool shouldFocusOnLabelDisplayed = false;
 
 
     void Start()
@@ -181,7 +176,7 @@ public class TutorialScript : SerializedMonoBehaviour
     {
        WaitingObjectives();
 
-       //WaitingFocusChange();
+       WaitingFocusChange();
     }
 
     void WaitingObjectives()
@@ -191,6 +186,10 @@ public class TutorialScript : SerializedMonoBehaviour
             if (evidenceScript.currentEvidenceHeld == clues["BulletCase"])
             {
                 waitingForBulletCaseInteraction = false;
+
+                StopCoroutine(currentCoroutine);
+                focusMask.SetActive(false);
+                focusBG.SetActive(false);
 
                 StartCoroutine(WaitForNextDialogue());
             }
@@ -224,6 +223,10 @@ public class TutorialScript : SerializedMonoBehaviour
 
                 buttons["Photo"].interactable = false;
                 buttons["Dezoom"].interactable = false;
+
+                StopCoroutine(currentCoroutine);
+                focusMask.SetActive(false);
+                focusBG.SetActive(false);
 
                 StartCoroutine(WaitForNextDialogue());
             }
@@ -301,6 +304,10 @@ public class TutorialScript : SerializedMonoBehaviour
                 buttons["Photo"].interactable = false;
                 buttons["Dezoom"].interactable = false;
                 fpToggle.interactable = false;
+
+                StopCoroutine(currentCoroutine);
+                focusMask.SetActive(false);
+                focusBG.SetActive(false);
 
                 StartCoroutine(WaitForNextDialogue());
             }
@@ -563,15 +570,6 @@ public class TutorialScript : SerializedMonoBehaviour
                 FocusChange();
             }
         }
-
-        else if (shouldFocusOnLabelDisplayed)
-        {
-            if (evidenceReceiver.GetComponent<SpecialistEvidenceDisplayer>().folderOpen)
-            {
-                shouldFocusOnLabelDisplayed = false;
-                FocusChange();
-            }
-        }
     }
 
     void DockStart()
@@ -710,8 +708,6 @@ public class TutorialScript : SerializedMonoBehaviour
         objectiveKey.key = currentObjectivesLanguage[objectiveIndex];
         objectiveKey.RefreshText();
 
-        FocusChange();
-
         objectiveIndex ++;
 
         soundSystem.voiceAudio.Stop();
@@ -719,23 +715,52 @@ public class TutorialScript : SerializedMonoBehaviour
         PrepareNextDialogue();
     }
 
+    void CheckFocus()
+    {
+        if (focusIndex == 0) FocusChange();
+        else if (focusIndex == 1) shouldFocusOnLetter = true;
+        else if (focusIndex == 2) shouldFocusOnLabel = true;
+    }
+    
     void FocusChange()
     {
-        /*if (focusIndex <= 23)
+        focusMask.SetActive(false);
+        focusBG.SetActive(false);
+
+        focusMask.GetComponent<RectTransform>().anchoredPosition = focusMaskPositions[focusIndex];
+        focusIndex ++;
+
+        currentCoroutine = StartCoroutine(WaitForFocus());        
+    }
+
+    IEnumerator WaitForFocus()
+    {
+        yield return new WaitForSeconds(10);
+        if (focusIndex == 1)
         {
-            focusMask.SetActive(false);
-
-            focusMask.GetComponent<RectTransform>().anchoredPosition = focusMaskPositions[focusIndex];
-            focusIndex ++;
-
+            focusBG.SetActive(true);
             focusMask.SetActive(true);
-
-            if (waitingForLetterNoText || waitingForSpecialistScene || waitingForReturnToDesk)
-            {
-                focusMask.SetActive(false);
-                focusBG.SetActive(false);
-            }
-        }*/
+        }
+        else if (focusIndex == 2 && camerasScript.gameplayCameras[1].camera.activeSelf) 
+        {
+            focusBG.SetActive(true);
+            focusMask.SetActive(true);
+        }
+        else if (focusIndex == 3 && camerasScript.gameplayCameras[0].camera.activeSelf)
+        {
+            focusBG.SetActive(true);
+            focusMask.SetActive(true);
+        } 
+        else if (focusIndex == 2 && !camerasScript.gameplayCameras[1].camera.activeSelf)
+        {
+            focusIndex = 1;
+            CheckFocus();
+        }
+        else if (focusIndex == 3 && !camerasScript.gameplayCameras[0].camera.activeSelf)
+        {
+            focusIndex = 2;
+            CheckFocus();
+        }
     }
 
     void PrepareNextDialogue()
@@ -750,6 +775,8 @@ public class TutorialScript : SerializedMonoBehaviour
                 collider.enabled = true;
             }
             waitingForBulletCaseInteraction = true;
+
+            CheckFocus();
         }
 
         else if(dialogueIndex == 1)
@@ -773,7 +800,8 @@ public class TutorialScript : SerializedMonoBehaviour
                 collider.enabled = true;
             }
             waitingForLetterInteraction = true;
-            shouldFocusOnLetter = true;
+
+            CheckFocus();
         }
 
         else if(dialogueIndex == 4)
@@ -819,7 +847,8 @@ public class TutorialScript : SerializedMonoBehaviour
                 collider.enabled = true;
             }
             waitingForLabelInteraction = true;
-            shouldFocusOnLabel = true;
+
+            CheckFocus();
         }
 
         else if (dialogueIndex == 11)
@@ -882,7 +911,6 @@ public class TutorialScript : SerializedMonoBehaviour
         {
             evidenceReceiver.GetComponent<UnityEngine.EventSystems.EventTrigger>().enabled = true;
             waitingForLabelDisplayed = true;
-            shouldFocusOnLabelDisplayed = true;
         }
 
         else if (dialogueIndex == 21)

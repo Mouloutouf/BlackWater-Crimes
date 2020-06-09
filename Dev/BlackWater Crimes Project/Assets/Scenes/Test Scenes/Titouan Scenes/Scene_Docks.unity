@@ -1486,6 +1486,80 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &456420370
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 456420371}
+  - component: {fileID: 456420373}
+  - component: {fileID: 456420372}
+  m_Layer: 0
+  m_Name: Objective BG
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &456420371
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456420370}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_Children:
+  - {fileID: 1674177797}
+  m_Father: {fileID: 1914467040}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -200, y: -10}
+  m_SizeDelta: {x: 527, y: 200}
+  m_Pivot: {x: 1, y: 1}
+--- !u!114 &456420372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456420370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 3360f5d60a59f9f448f095f70c20bcaf, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &456420373
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456420370}
+  m_CullTransparentMesh: 0
 --- !u!1 &456420567
 GameObject:
   m_ObjectHideFlags: 0
@@ -3085,7 +3159,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &961663225
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3317,7 +3391,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &1109139972
 Animator:
   serializedVersion: 3
@@ -3389,7 +3463,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -219, y: -179}
   m_SizeDelta: {x: 260, y: 260}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1111980703
@@ -5463,26 +5537,13 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: frenchDialogues
-      Entry: 7
-      Data: 32|System.Collections.Generic.List`1[[System.Collections.Generic.List`1[[System.String,
-        mscorlib]], mscorlib]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: clues
       Entry: 7
-      Data: 33|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[UnityEngine.GameObject,
+      Data: 32|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[UnityEngine.GameObject,
         UnityEngine.CoreModule]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 34|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+      Data: 33|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
         mscorlib]], mscorlib
     - Name: 
       Entry: 8
@@ -5534,11 +5595,11 @@ MonoBehaviour:
       Data: 
     - Name: buttons
       Entry: 7
-      Data: 35|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[UnityEngine.UI.Button,
+      Data: 34|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[UnityEngine.UI.Button,
         UnityEngine.UI]], mscorlib
     - Name: comparer
       Entry: 9
-      Data: 34
+      Data: 33
     - Name: 
       Entry: 12
       Data: 8
@@ -5877,41 +5938,12 @@ MonoBehaviour:
   - tutoriel_objectif_zoom
   - tutoriel_objectif_find
   - 
-  frenchObjectives: []
   focusMask: {fileID: 1109139971}
   focusBG: {fileID: 961663224}
   focusMaskPositions:
-  - {x: -219, y: -179, z: 0}
-  - {x: 648, y: -266, z: 0}
-  - {x: -671, y: 287, z: 0}
-  - {x: 0, y: 270, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+  - {x: -205, y: -188, z: 0}
+  - {x: 164, y: -166, z: 0}
+  - {x: 300, y: -187, z: 0}
   fpToggle: {fileID: 1988407229}
   evidenceScript: {fileID: 1988407228}
   camerasScript: {fileID: 689778231}
@@ -6638,7 +6670,6 @@ GameObject:
   - component: {fileID: 1674177797}
   - component: {fileID: 1674177799}
   - component: {fileID: 1674177798}
-  - component: {fileID: 1674177800}
   - component: {fileID: 1674177801}
   m_Layer: 0
   m_Name: Objective Text
@@ -6658,14 +6689,14 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1914467040}
-  m_RootOrder: 2
+  m_Father: {fileID: 456420371}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 30, y: 0}
-  m_SizeDelta: {x: 300, y: 100}
-  m_Pivot: {x: 0, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -5, y: -0.0025024414}
+  m_SizeDelta: {x: -120, y: -100.005}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1674177798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6679,25 +6710,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.94117653, g: 0.76470596, b: 0.4901961, a: 1}
+  m_Color: {r: 0.93725497, g: 0.76470596, b: 0.49411768, a: 1}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: da39bc5829190a84cab56332eff41374, type: 3}
-    m_FontSize: 30
+    m_FontSize: 25
     m_FontStyle: 2
-    m_BestFit: 0
-    m_MinSize: 3
-    m_MaxSize: 50
-    m_Alignment: 0
+    m_BestFit: 1
+    m_MinSize: 0
+    m_MaxSize: 35
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 1
+    m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '- Find a clue'
+  m_Text: "Trouver un nom, un d\xE9tail physique puis retourner au bureau"
 --- !u!222 &1674177799
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6706,21 +6737,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1674177796}
   m_CullTransparentMesh: 0
---- !u!114 &1674177800
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1674177796}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 1, g: 1, b: 1, a: 0.7058824}
-  m_EffectDistance: {x: 1, y: -1}
-  m_UseGraphicAlpha: 1
 --- !u!114 &1674177801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7315,7 +7331,7 @@ RectTransform:
   m_Children:
   - {fileID: 1109139975}
   - {fileID: 961663225}
-  - {fileID: 1674177797}
+  - {fileID: 456420371}
   m_Father: {fileID: 1330376440}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7661,7 +7677,7 @@ PrefabInstance:
     - target: {fileID: 6489725231845354019, guid: 6e34bc824f7d2714e8a9caa2990f8913,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -25.00003
+      value: -25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e34bc824f7d2714e8a9caa2990f8913, type: 3}
