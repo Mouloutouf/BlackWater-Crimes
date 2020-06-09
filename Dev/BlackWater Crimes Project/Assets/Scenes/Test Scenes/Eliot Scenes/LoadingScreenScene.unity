@@ -771,6 +771,7 @@ GameObject:
   - component: {fileID: 2053822964}
   - component: {fileID: 2053822966}
   - component: {fileID: 2053822965}
+  - component: {fileID: 2053822968}
   - component: {fileID: 2053822967}
   m_Layer: 5
   m_Name: DYKText
@@ -851,9 +852,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2156d51958c0924479836e2ee6cdb751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DYKText: {fileID: 2053822965}
-  didYouKnow: loading_sentence_
-  defaultKeySentence: did_you_know
+  didYouKnowKey: {fileID: 2053822968}
+  defaultKeySentence: loading_sentence_
   randomFunFact:
   - loading_sentence_0
   - loading_sentence_1
@@ -865,6 +865,20 @@ MonoBehaviour:
   - loading_sentence_7
   - loading_sentence_8
   - loading_sentence_9
+--- !u!114 &2053822968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053822963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 2053822965}
+  key: 
 --- !u!1 &2090368624
 GameObject:
   m_ObjectHideFlags: 0

@@ -108,6 +108,8 @@ public class CurrentDialingScript : MonoBehaviour
             }
             else
             {
+                if (currentContact == "J'appelle la Police") gameData.UnlockAll(); // VERY IMPORTANT LINE
+
                 StartCoroutine(WaitForReset());
             }
         }

@@ -348,6 +348,7 @@ GameObject:
   - component: {fileID: 5798861633474147431}
   - component: {fileID: 5798861633474147425}
   - component: {fileID: 5798861633474147424}
+  - component: {fileID: 4915487204773079306}
   m_Layer: 5
   m_Name: Agent Text
   m_TagString: Untagged
@@ -414,6 +415,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: De Sam Jenkins
+--- !u!114 &4915487204773079306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5798861633474147430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 5798861633474147424}
+  key: 
 --- !u!1 &5798861633953636450
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,28 +600,26 @@ MonoBehaviour:
     index: 0
     failed: 0
     agentSprite: {fileID: 0}
-    agentName: 
+    agentKey: 
     signature: {fileID: 0}
     mode: 0
     elementSprite: {fileID: 0}
-    elementName: 
-    elementDetailName: 
-    reportText: 
     elementKey: 
+    hasDetail: 0
+    detailKey: 
     reportKey: 
     giveAccess: 0
     locationToAccess: 0
     unlockOrderIndex: 0
     seen: 0
-  _gameData: {fileID: 0}
+  _gameData: {fileID: 11400000, guid: eaa3567ddd179a64a9d879867070a0b4, type: 2}
   agentImage: {fileID: 5798861633953636476}
-  agentText: {fileID: 5798861633474147424}
+  agentKey: {fileID: 4915487204773079306}
   agentFactor: 20
   ElementImage: {fileID: 2323609563617987561}
   elementKey: {fileID: 37738480659188770}
   reportKey: {fileID: 1640433612340842190}
   signatureImage: {fileID: 0}
-  holder: {fileID: 0}
 --- !u!1 &6258307220865850722
 GameObject:
   m_ObjectHideFlags: 0

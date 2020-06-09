@@ -5,35 +5,26 @@ using UnityEngine.UI;
 
 public class RandomQuoteLoadingScreen : MonoBehaviour
 {
-    public Text DYKText;
-
-    public string didYouKnow;
+    public Localisation didYouKnowKey;
+    
     public string defaultKeySentence;
     public List<string> randomFunFact;
-
-    // Start is called before the first frame update
+    
     void Start()
     {
-        RefreshText();
+        RandomText();
     }
 
-    public virtual void RefreshText()
+    public void RandomText()
     {
         int randomNumber;
 
         randomNumber = Random.Range(0, randomFunFact.Count);
         string key = string.Concat(defaultKeySentence, randomNumber.ToString());
 
-        if (string.IsNullOrEmpty(key)) return;
-
-        string displayText = LanguageManager.instance.Translate(key);
-
-        DYKText.text = displayText;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        Debug.Log(key);
         
+        didYouKnowKey.key = key;
+        didYouKnowKey.RefreshText();
     }
 }

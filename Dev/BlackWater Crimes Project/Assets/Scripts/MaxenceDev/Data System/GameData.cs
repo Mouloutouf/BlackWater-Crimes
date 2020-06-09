@@ -609,6 +609,76 @@ public class GameData : SerializedScriptableObject
         soundSettings.voiceVolume.Volume = 0.5f;
     }
 
+    public void UnlockAll()
+    {
+        // Unlocks all evidences
+        foreach (Locations _location in evidences.Keys)
+        {
+            foreach (Evidence evidence in evidences[_location])
+            {
+                evidence.unlockedData = true;
+
+                if (evidence.hasIntels)
+                {
+                    foreach (Intel intel in evidence.intels)
+                    {
+                        intel.revealed = true;
+                        intel.intelAlpha = 1.0f;
+                    }
+                }
+
+                evidence.photographed = true;
+            }
+        }
+
+        reportsCollected = 0;
+
+        // Unlocks all reports
+        foreach (Indics indic in reports.Keys)
+        {
+            foreach (Report report in reports[indic].Item1)
+            {
+                reportsCollected++;
+                report.unlockOrderIndex = reportsCollected;
+
+                report.unlockedData = true;
+            }
+        }
+
+        // Unlocks all characters
+        foreach (Character character in characters)
+        {
+            character.known = true;
+        }
+
+        // Unlocks all locations
+        foreach (Location location in locations)
+        {
+            location.known = true;
+            location.visible = true;
+            location.accessible = true;
+        }
+
+        // Unlocks all questions
+        foreach (Suspects suspect in questions.Keys)
+        {
+            foreach (Question question in questions[suspect])
+            {
+                question.unlockedData = true;
+            }
+        }
+
+        interrogations = 1000;
+
+        // Unlocks all quick calls
+        foreach (Indic indic in indics.Values)
+        {
+            indic.quickCallAvailable = true;
+        }
+
+        newStuff = true;
+    }
+
     #region Test
 
     /*
