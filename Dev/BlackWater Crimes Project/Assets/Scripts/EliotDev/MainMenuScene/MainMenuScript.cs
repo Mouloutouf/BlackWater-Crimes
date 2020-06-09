@@ -45,9 +45,9 @@ public class MainMenuScript : MonoBehaviour
     {
         gameStatusText.text = "Game 1 - " + DateTime.Today.ToString("M/d/yyyy");
         
-        SetGame();
-
         tutoToggle.isOn = gameData.firstTimeInTuto;
+
+        SetGame();
 
         SetLanguage();
     }

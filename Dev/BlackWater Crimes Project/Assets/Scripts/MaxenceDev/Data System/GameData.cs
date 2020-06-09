@@ -293,10 +293,12 @@ public class GameData : SerializedScriptableObject
     public bool vibrations = true;
 
     public SoundSettings soundSettings;
-    [HideInInspector] public bool alternativeAnnaMusic = false;
-    [HideInInspector] public string playGame = "Play Game !";
-    public bool firstTimeInTuto = true; // Tutorial Docks
 
+    [HideInInspector] public bool alternativeAnnaMusic = false;
+
+    [HideInInspector] public string playGame = "Play Game !";
+
+    public bool firstTimeInTuto = true; // Tutorial Docks
 
     [Title("DATA")]
     
@@ -490,6 +492,11 @@ public class GameData : SerializedScriptableObject
             }
         }
         interrogations = SetData(action, interrogations, nameof(interrogations));
+
+        foreach (Character character in characters)
+        {
+            character.known = SetData(action, character.known, character.nameKey + "_" + nameof(character.known));
+        }
 
         foreach (Indic indic in indics.Values)
         {
