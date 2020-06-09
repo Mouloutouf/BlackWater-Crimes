@@ -80,6 +80,8 @@ public class QuickCallScript : SerializedMonoBehaviour
 
     IEnumerator CadranAnimation(List<int> digits)
     {
+        currentDialingScript.ResetDial();
+
         for (int i = 0; i < digits.Count; i++)
         {   
             cadranAnimator.enabled = true;

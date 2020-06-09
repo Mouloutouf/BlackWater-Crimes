@@ -129,7 +129,7 @@ public class CadranScript : MonoBehaviour
 
             if (!isBlockedLeft && !isBlockedRight)
             {
-                Collider2D[] hitColliders = Physics2D.OverlapCircleAll(placeHolderNumber.transform.position, .6f);
+                /*Collider2D[] hitColliders = Physics2D.OverlapCircleAll(placeHolderNumber.transform.position, .6f);
 
                 foreach(Collider2D collider in hitColliders)
                 {
@@ -137,9 +137,43 @@ public class CadranScript : MonoBehaviour
                     {
                         isBlockedLeft = true;
                         blockedAngle = newRotation.eulerAngles.z;
+                        Debug.LogError(blockedAngle);
                         return;
                     }
                     else if(collider.gameObject == blockR)
+                    {
+                        isBlockedRight = true;
+                        blockedAngle = newRotation.eulerAngles.z;
+                        Debug.LogError(blockedAngle);
+                        return;
+                    }
+                }*/
+
+                float lBlockValue;
+                float rBlockValue;
+
+                if (currentNumber != 0)
+                {
+                    lBlockValue = 310 - (30.5f * currentNumber);
+                    rBlockValue = 338 - (30.5f * currentNumber);
+                }
+                else 
+                {
+                    lBlockValue = 310 - (30.5f * 10);
+                    rBlockValue = 338 - (30.5f * 10);
+                } 
+
+                Collider2D[] hitColliders = Physics2D.OverlapCircleAll(placeHolderNumber.transform.position, .8f);
+
+                foreach(Collider2D collider in hitColliders)
+                {
+                    if(collider.gameObject == blockL && newRotation.eulerAngles.z >= lBlockValue)
+                    {
+                        isBlockedLeft = true;
+                        blockedAngle = newRotation.eulerAngles.z;
+                        return;
+                    }
+                    else if(collider.gameObject == blockR && newRotation.eulerAngles.z <= rBlockValue)
                     {
                         isBlockedRight = true;
                         blockedAngle = newRotation.eulerAngles.z;
