@@ -40,7 +40,7 @@ public class TutorialScript : SerializedMonoBehaviour
     [Title("Objective References")]
     public GameObject objectiveUI;
     public Localisation objectiveKey;
-
+    
 
     [Title("Objective Text")]
     public List<string> englishObjectives = new List<string>();
@@ -49,11 +49,19 @@ public class TutorialScript : SerializedMonoBehaviour
     int objectiveIndex = 0;
 
 
+    [Title("Focus Mask References")]
+    public GameObject focusMask;
+    public GameObject focusBG;
+    public List<Vector3> focusMaskPositions = new List<Vector3>();
+    int focusIndex = 0;
+
+
     [Title("Docks References")]
     public Dictionary<string, GameObject> clues = new Dictionary<string, GameObject>();
     public Dictionary<string, Button> buttons = new Dictionary<string, Button>();
     public Toggle fpToggle;
     public EvidenceInteraction evidenceScript;
+    public CamerasScript camerasScript;
 
 
     [Title("Menu Desk References")]
@@ -143,6 +151,12 @@ public class TutorialScript : SerializedMonoBehaviour
     bool waitingForMagMileZoom = false;
     bool waitingForAnnaHouseDiscover = false;
 
+    
+    
+    bool shouldFocusOnLetter = false;
+    bool shouldFocusOnLabel = false;
+    bool shouldFocusOnLabelDisplayed = false;
+
 
     void Start()
     {
@@ -159,6 +173,13 @@ public class TutorialScript : SerializedMonoBehaviour
     }
 
     void Update() 
+    {
+       WaitingObjectives();
+
+       //WaitingFocusChange();
+    }
+
+    void WaitingObjectives()
     {
         if (waitingForBulletCaseInteraction) 
         {
@@ -518,6 +539,36 @@ public class TutorialScript : SerializedMonoBehaviour
         }
     }
 
+    void WaitingFocusChange()
+    {
+        if (shouldFocusOnLetter)
+        {
+            if (camerasScript.gameplayCameras[1].camera.activeSelf)
+            {
+                shouldFocusOnLetter = false;
+                FocusChange();
+            }
+        }
+
+        else if (shouldFocusOnLabel)
+        {
+            if (camerasScript.gameplayCameras[0].camera.activeSelf)
+            {
+                shouldFocusOnLabel = false;
+                FocusChange();
+            }
+        }
+
+        else if (shouldFocusOnLabelDisplayed)
+        {
+            if (evidenceReceiver.GetComponent<SpecialistEvidenceDisplayer>().folderOpen)
+            {
+                shouldFocusOnLabelDisplayed = false;
+                FocusChange();
+            }
+        }
+    }
+
     void DockStart()
     {
         soundSystem = GameObject.FindObjectOfType<SoundSystem>();
@@ -653,11 +704,33 @@ public class TutorialScript : SerializedMonoBehaviour
         objectiveUI.SetActive(true);
         objectiveKey.key = currentObjectivesLanguage[objectiveIndex];
         objectiveKey.RefreshText();
+
+        FocusChange();
+
         objectiveIndex ++;
 
         soundSystem.voiceAudio.Stop();
 
         PrepareNextDialogue();
+    }
+
+    void FocusChange()
+    {
+        /*if (focusIndex <= 23)
+        {
+            focusMask.SetActive(false);
+
+            focusMask.GetComponent<RectTransform>().anchoredPosition = focusMaskPositions[focusIndex];
+            focusIndex ++;
+
+            focusMask.SetActive(true);
+
+            if (waitingForLetterNoText || waitingForSpecialistScene || waitingForReturnToDesk)
+            {
+                focusMask.SetActive(false);
+                focusBG.SetActive(false);
+            }
+        }*/
     }
 
     void PrepareNextDialogue()
@@ -695,6 +768,7 @@ public class TutorialScript : SerializedMonoBehaviour
                 collider.enabled = true;
             }
             waitingForLetterInteraction = true;
+            shouldFocusOnLetter = true;
         }
 
         else if(dialogueIndex == 4)
@@ -740,6 +814,7 @@ public class TutorialScript : SerializedMonoBehaviour
                 collider.enabled = true;
             }
             waitingForLabelInteraction = true;
+            shouldFocusOnLabel = true;
         }
 
         else if (dialogueIndex == 11)
@@ -802,6 +877,7 @@ public class TutorialScript : SerializedMonoBehaviour
         {
             evidenceReceiver.GetComponent<UnityEngine.EventSystems.EventTrigger>().enabled = true;
             waitingForLabelDisplayed = true;
+            shouldFocusOnLabelDisplayed = true;
         }
 
         else if (dialogueIndex == 21)
