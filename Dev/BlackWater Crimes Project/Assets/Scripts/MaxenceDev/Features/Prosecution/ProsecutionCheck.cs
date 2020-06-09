@@ -8,7 +8,7 @@ public class ProsecutionCheck : MonoBehaviour
 {
     public GameData gameData;
 
-    public Character suspect { get; set; }
+    public Character accused { get; set; }
 
     public Localisation suspectName;
     public Localisation suspectJob;
@@ -33,7 +33,7 @@ public class ProsecutionCheck : MonoBehaviour
         {
             if (character.isSuspect && character.suspect == gameData.currentSuspect)
             {
-                suspect = character;
+                this.accused = character;
 
                 suspectImage.sprite = character.sprite;
                 suspectImage.SetNativeSize();
@@ -59,24 +59,14 @@ public class ProsecutionCheck : MonoBehaviour
     void Check()
     {
         gameData.accused = new Character();
-        gameData.accused.suspect = suspect.suspect;
+        gameData.accused.suspect = this.accused.suspect;
 
         foreach (FileCategory category in fileDisplayer.currentFilesDisplayed.Keys)
         {
-            string key = null;
+            string key = fileDisplayer.currentFilesDisplayed[category].GetComponent<FileObject>().codeKey;
+            FileType type = fileDisplayer.currentFilesDisplayed[category].GetComponent<FileObject>().fileType;
 
-            foreach (Incriminate incriminate in suspect.incriminates)
-            {
-                key = fileDisplayer.currentFilesDisplayed[category].GetComponent<FileObject>().codeKey;
-
-                if (key == incriminate.elementKey)
-                {
-                    if (category == incriminate.category) // Bravo, you checked an element that is in the incriminate elements of the suspect and put it in the right receiver
-                    {
-                        gameData.accused.incriminates.Add(new Incriminate { elementKey = key, category = category });
-                    }
-                }
-            }
+            gameData.accused.incriminates.Add(new Incriminate { elementKey = key, category = category, elementType = type });
         }
     }
     

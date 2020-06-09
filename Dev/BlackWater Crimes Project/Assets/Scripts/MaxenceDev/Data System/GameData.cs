@@ -210,10 +210,13 @@ public class Question : Data
     public string otherKey;
 }
 
+public enum FileType { Evidence, Report }
+
 [Serializable]
 public class Incriminate
 {
     public string elementKey;
+    public FileType elementType;
     public FileCategory category;
 }
 
@@ -226,10 +229,10 @@ public class Character : Data
     public string nameKey;
     public Sprite sprite;
 
+    public bool known;
+
     [Title("", horizontalLine: false)]
     public bool isSuspect;
-    [HideInInspector]
-    public bool known;
     [ShowIf("isSuspect")]
     public Suspects suspect;
     [ShowIf("isSuspect")]
@@ -239,7 +242,7 @@ public class Character : Data
     [ShowIf("isSuspect")]
     public AudioClip introPhraseAudio;
     [ShowIf("isSuspect")]
-    public List<Incriminate> incriminates;
+    public List<Incriminate> incriminates = new List<Incriminate>();
     [ShowIf("isSuspect")]
     public List<string> prosecutionKeys;
 
@@ -291,7 +294,7 @@ public class GameData : SerializedScriptableObject
 
     public SoundSettings soundSettings;
 
-    [HideInInspector] public bool firstTimeInGame = true;
+    [HideInInspector] public string playGame = "Play Game !";
     public bool firstTimeInTuto = true; // Tutorial Docks
 
     [Title("DATA")]
@@ -333,24 +336,6 @@ public class GameData : SerializedScriptableObject
     // Data Methods \\
     
     public List<SaveData> savedData = new List<SaveData>();
-    
-    [ContextMenu("Test Object Conversion")]
-    public void Test()
-    {
-        int myInt = 6;
-        
-        object myObject = myInt;
-        
-        Debug.Log(myObject);
-
-        myInt++;
-
-        Debug.Log(myObject);
-
-        Type myType = myObject.GetType();
-        object otherObject = new object();
-        Debug.Log(myType);
-    }
     
     private T SetData<T>(Action _action, T _variable, string _name)
     {
@@ -414,7 +399,7 @@ public class GameData : SerializedScriptableObject
 
     public void ManageSavedData(Action action)
     {
-        firstTimeInGame = SetData(action, firstTimeInGame, nameof(firstTimeInGame));
+        playGame = SetData(action, playGame, nameof(playGame));
         firstTimeInTuto = SetData(action, firstTimeInTuto, nameof(firstTimeInTuto));
 
         gameLanguage = SetData(action, gameLanguage, nameof(gameLanguage));
@@ -522,7 +507,7 @@ public class GameData : SerializedScriptableObject
 
         ResetData();
 
-        PlayerPrefs.SetInt(nameof(firstTimeInGame), 1);
+        PlayerPrefs.SetString(nameof(playGame), "Play Game !");
     }
 
     [ContextMenu("Reset Game Data")]
@@ -588,8 +573,16 @@ public class GameData : SerializedScriptableObject
                 if (question.unlockedByReport) question.unlockedData = false;
             }
         }
+
         interrogations = 3;
 
+        // Reset Characters
+        foreach (Character character in characters)
+        {
+            character.known = false;
+        }
+
+        // Reset Indics
         foreach (Indic indic in indics.Values)
         {
             indic.quickCallAvailable = false;

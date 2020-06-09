@@ -4,12 +4,5 @@ using UnityEngine;
 
 public class DataContainer : MonoBehaviour
 {
-    public bool menu;
-    
     public GameData gameData;
-
-    public void EraseCurrentGame()
-    {
-        gameData.ResetData();
-    }
 }

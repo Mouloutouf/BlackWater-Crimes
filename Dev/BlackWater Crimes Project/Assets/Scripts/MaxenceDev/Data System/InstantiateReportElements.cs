@@ -44,6 +44,15 @@ public class InstantiateReportElements : InstantiateElements<Report>
         __prefab.GetComponent<NotificationReport>().notificationSystem = notificationSystem;
     }
     
+    protected override bool Compare(Indics _indic, Report data)
+    {
+        Indic indic = gameData.indics[_indic];
+
+        bool check = data.agentKey == indic.nameKey;
+
+        return check;
+    }
+
     protected override string GetDataName(Report data)
     {
         return data.elementKey;

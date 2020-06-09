@@ -20,6 +20,9 @@ public class FileDisplayer : SerializedMonoBehaviour
 
     private bool isOpen = false;
     private FileCategory category;
+
+    public Transform displayContent;
+    public Button selectionButton;
     
     void Start()
     {
@@ -27,6 +30,10 @@ public class FileDisplayer : SerializedMonoBehaviour
         validateButton.GetComponentInChildren<Localisation>().RefreshText();
 
         validateButton.interactable = false;
+
+        selectionButton.gameObject.SetActive(false);
+
+        foreach (Transform _element in displayContent) _element.gameObject.SetActive(false);
     }
 
     public void OpenFolder(GameObject receiver)
@@ -52,6 +59,10 @@ public class FileDisplayer : SerializedMonoBehaviour
         isOpen = false;
         currentFileReceiver = null;
         
+        selectionButton.gameObject.SetActive(false);
+
+        foreach (Transform element in displayContent) element.gameObject.SetActive(false);
+        
         bool allDisplayed = true;
 
         foreach (GameObject fileDisplayed in currentFilesDisplayed.Values)
@@ -73,6 +84,18 @@ public class FileDisplayer : SerializedMonoBehaviour
         }
     }
 
+    public void DisplayFile(GameObject element, GameObject file)
+    {
+        selectionButton.gameObject.SetActive(true);
+
+        foreach (Transform _element in displayContent) _element.gameObject.SetActive(false);
+        
+        element.SetActive(true);
+
+        selectionButton.onClick.RemoveAllListeners();
+        selectionButton.onClick.AddListener(delegate { SelectFile(file); });
+    }
+
     public void SelectFile(GameObject file)
     {
         // Removes the displayed file from the receiver if any
@@ -85,7 +108,7 @@ public class FileDisplayer : SerializedMonoBehaviour
             {
                 FileObject file1 = file.GetComponent<FileObject>(); FileObject file2 = fileDisplayed.GetComponent<FileObject>();
 
-                if (file1.codeKey == file2.codeKey && file1.type == file2.type) { CloseFolder(); return; }
+                if (file1.codeKey == file2.codeKey && file1.fileType == file2.fileType) { CloseFolder(); return; }
             }
         }
 

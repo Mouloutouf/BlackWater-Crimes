@@ -45,7 +45,7 @@ public class CaseReport : SerializedMonoBehaviour
 
             foreach (Incriminate _incriminate in chosen.incriminates)
             {
-                if (incriminate.category == _incriminate.category && incriminate.elementKey == _incriminate.elementKey)
+                if (incriminate.category == _incriminate.category && incriminate.elementKey == _incriminate.elementKey && incriminate.elementType == _incriminate.elementType)
                 {
                     match = true;
 

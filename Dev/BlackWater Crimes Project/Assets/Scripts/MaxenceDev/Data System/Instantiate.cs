@@ -49,7 +49,7 @@ public class InstantiationProcess<T> : MonoBehaviour where T : Data
 
             return instance;
         }
-        else return new GameObject();
+        else return null;
     }
 
     public virtual GameObject Instantiation(GameObject prefab)

@@ -15,7 +15,7 @@ public class ReportFileObject : ObjectData<Report>
         GetGameData();
 
         file.codeKey = data.elementKey;
-        file.type = typeof(Report);
+        file.fileType = FileType.Report;
     }
 
     public override void Protocol()

@@ -8,7 +8,7 @@ public class MainMenuScript : MonoBehaviour
     public LanguageSystem languageSystem;
 
     public DataContainer dataContainer;
-    private GameData gameData;
+    public GameData gameData;
     
     [SerializeField] Slider musicSlider;
     [SerializeField] Slider voicesSlider;
@@ -36,13 +36,15 @@ public class MainMenuScript : MonoBehaviour
     public Sprite baseParameter;
     public Sprite activeParameter;
 
+    public Button playButton;
+    public SceneLoaderSimple sceneLoader;
+    private string sceneToLoad;
+
     private void Start()
     {
         gameStatusText.text = "Game 1 - " + DateTime.Today.ToString("M/d/yyyy");
-
-        if (dataContainer != null) gameData = dataContainer.gameData;
-
-        Saving();
+        
+        SetGame();
 
         SetLanguage();
     }
@@ -161,22 +163,43 @@ public class MainMenuScript : MonoBehaviour
         }
     }
 
-    public void Saving()
+    public void SetGame()
     {
-        if (PlayerPrefs.GetInt(nameof(gameData.firstTimeInGame)) == 1) // First Time the Player Starts the Game
+        if (PlayerPrefs.GetString(nameof(gameData.playGame)) == "Play Game !")
         {
-            gameData.firstTimeInGame = false;
-            gameData.firstTimeInTuto = true;
+            LoadGame();
         }
-        else // Any Other Time the Player Starts the Game
+        else
         {
-            gameData.ManageData(Action.Load); // Load the Player's Last Save
+            NewGame();
         }
+    }
+
+    public void NewGame()
+    {
+        gameData.ResetPrefs();
+
+        sceneToLoad = "ChooseEpisode";
+
+        playButton.onClick.RemoveAllListeners();
+        playButton.onClick.AddListener(delegate { sceneLoader.LoadScene(sceneToLoad); });
 
         gameData.ManageData(Action.Save);
 
-        gameData.locations[0].accessible = true;
-        gameData.locations[0].known = true;
-        gameData.locations[0].visible = true;
+        Debug.Log("This is a New Game !");
+    }
+
+    public void LoadGame()
+    {
+        gameData.ManageData(Action.Load);
+
+        sceneToLoad = "MenuDeskScene";
+
+        playButton.onClick.RemoveAllListeners();
+        playButton.onClick.AddListener(delegate { sceneLoader.LoadScene(sceneToLoad); });
+
+        gameData.ManageData(Action.Save);
+
+        Debug.Log("The Current Game has been Loaded !");
     }
 }

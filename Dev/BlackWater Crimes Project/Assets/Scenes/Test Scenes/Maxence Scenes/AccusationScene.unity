@@ -384,7 +384,6 @@ GameObject:
   - component: {fileID: 129878015}
   - component: {fileID: 129878014}
   - component: {fileID: 129878012}
-  - component: {fileID: 129878013}
   m_Layer: 5
   m_Name: Validate Button
   m_TagString: Untagged
@@ -455,7 +454,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 129878013}
+      - m_Target: {fileID: 1539013144}
         m_MethodName: Validate
         m_Mode: 1
         m_Arguments:
@@ -466,28 +465,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &129878013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 129878010}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f734cab79e20aa545ab7c3a2d9c76abb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputText: {fileID: 0}
-  evidenceDisplayer: {fileID: 1539013142}
-  dialogueKey: {fileID: 0}
-  validKey: attorney_dialogue_valid_person
-  wrongKey: attorney_dialogue_invalid_person
-  exceedKey: attorney_dialogue_none_left
-  missingKey: missing_elements
-  interrogationsNumberText: {fileID: 0}
-  gameData: {fileID: 11400000, guid: eaa3567ddd179a64a9d879867070a0b4, type: 2}
-  debug: 0
 --- !u!114 &129878014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1004,6 +981,7 @@ GameObject:
   - component: {fileID: 401228325}
   - component: {fileID: 401228327}
   - component: {fileID: 401228326}
+  - component: {fileID: 401228328}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -1061,7 +1039,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Validate
+  m_Text: Select
 --- !u!222 &401228327
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1070,6 +1048,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 401228324}
   m_CullTransparentMesh: 0
+--- !u!114 &401228328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 401228324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9dad88a8472c644a644b07ccdd3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 401228326}
+  key: 
 --- !u!1 &540685841
 GameObject:
   m_ObjectHideFlags: 0
@@ -2079,7 +2071,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1202162604}
   m_Layer: 5
-  m_Name: Content
+  m_Name: Display Content
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2236,7 +2228,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1277308839}
   m_Layer: 5
-  m_Name: Validation
+  m_Name: Selection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2914,7 +2906,8 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1638340650}
   m_Father: {fileID: 970801234}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3187,6 +3180,8 @@ MonoBehaviour:
   validateButton: {fileID: 129878012}
   missingKey: missing_elements
   validateKey: validation
+  displayContent: {fileID: 1202162604}
+  selectionButton: {fileID: 1452842438}
 --- !u!114 &1539013146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3200,13 +3195,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fileDisplayer: {fileID: 1539013145}
-  content: {fileID: 1503637176}
   amountPerRow: 3
   verticalPosition: -115
   offset: -300
+  folderContent: {fileID: 1638340650}
   evidenceFilePrefab: {fileID: 7254317953392811480, guid: 0ce488b147b6aed44a8b1c3af9c5abae,
     type: 3}
   reportFilePrefab: {fileID: 3011848400423994409, guid: c647ca354a5689a4f863be8a3af70ba3,
+    type: 3}
+  displayContent: {fileID: 1202162604}
+  evidenceElementPrefab: {fileID: 3528007557417585669, guid: fbde014438feb2b42bae304c713797cc,
+    type: 3}
+  reportElementPrefab: {fileID: 1127452058719276218, guid: 2ed2c364afcc1af448eb4faee3fbe24f,
     type: 3}
 --- !u!1 &1638161628
 GameObject:
@@ -3312,6 +3312,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1638161628}
   m_CullTransparentMesh: 0
+--- !u!1 &1638340649
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1638340650}
+  m_Layer: 5
+  m_Name: Folder Content
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1638340650
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638340649}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1503637176}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1653015464
 GameObject:
   m_ObjectHideFlags: 0

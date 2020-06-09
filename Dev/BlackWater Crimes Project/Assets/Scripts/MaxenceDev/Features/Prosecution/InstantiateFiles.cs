@@ -13,9 +13,8 @@ public class InstantiateFiles : MonoBehaviour
     private InstantiateEvidenceFiles instantiateEvidenceFiles = new InstantiateEvidenceFiles();
     private InstantiateReportFiles instantiateReportFiles = new InstantiateReportFiles();
 
-    public Transform content;
-
     public int amountPerRow;
+    private int amount;
 
     public float verticalPosition;
     public float offset;
@@ -24,10 +23,15 @@ public class InstantiateFiles : MonoBehaviour
     private List<Vector2> spawnPoints = new List<Vector2>();
     
     private int spawnIndex;
-    
+
+    public Transform folderContent;
     public GameObject evidenceFilePrefab;
     public GameObject reportFilePrefab;
     
+    public Transform displayContent;
+    public GameObject evidenceElementPrefab;
+    public GameObject reportElementPrefab;
+
     void Start()
     {
         gameData = GameObject.Find("Data Container").GetComponent<DataContainer>().gameData;
@@ -43,7 +47,7 @@ public class InstantiateFiles : MonoBehaviour
         {
             foreach (Report report in list.Item1)
             {
-                dataList.Add(report);
+                if (report.unlockedData) dataList.Add(report);
             }
         }
 
@@ -51,7 +55,7 @@ public class InstantiateFiles : MonoBehaviour
         {
             foreach (Evidence evidence in list)
             {
-                dataList.Add(evidence);
+                if (evidence.unlockedData) dataList.Add(evidence);
             }
         }
 
@@ -59,30 +63,52 @@ public class InstantiateFiles : MonoBehaviour
 
         foreach (Data data in dataList)
         {
-            if (data.GetType() == typeof(Report)) instantiateReportFiles.InstantiateObjectOfType(data as Report, reportFilePrefab);
-            else if (data.GetType() == typeof(Evidence)) instantiateEvidenceFiles.InstantiateObjectOfType(data as Evidence, evidenceFilePrefab);
-            else Debug.Log("Data is not a valid Type container");
+            if (data.GetType() == typeof(Report))
+            {
+                GameObject rFile = instantiateReportFiles.InstantiateObjectOfType(data as Report, reportFilePrefab);
+
+                GameObject rElement = instantiateReportFiles.InstantiateObjectOfType(data as Report, reportElementPrefab);
+                
+                rFile.GetComponent<Button>().onClick.AddListener(delegate { fileDisplayer.DisplayFile(rElement, rFile); });
+            }
+
+            else if (data.GetType() == typeof(Evidence))
+            {
+                GameObject eFile = instantiateEvidenceFiles.InstantiateObjectOfType(data as Evidence, evidenceFilePrefab);
+
+                GameObject eElement = instantiateEvidenceFiles.InstantiateObjectOfType(data as Evidence, evidenceElementPrefab);
+                
+                eFile.GetComponent<Button>().onClick.AddListener(delegate { fileDisplayer.DisplayFile(eElement, eFile); });
+            }
         }
     }
 
     public GameObject Instantiation(GameObject prefab)
     {
         GameObject _prefab = Instantiate(prefab) as GameObject;
-        _prefab.transform.SetParent(content, false);
+        _prefab.transform.SetParent(folderContent, false);
 
         _prefab.GetComponent<RectTransform>().anchoredPosition = spawnPoints[spawnIndex];
         
-        _prefab.GetComponent<Button>().onClick.AddListener( delegate { fileDisplayer.SelectFile(_prefab); } );
-
         spawnIndex++;
-        if (spawnIndex == amountPerRow) { ofst += offset; SetLayout(ofst); }
+        if (spawnIndex == amount) { ofst += offset; SetLayout(ofst); }
+
+        return _prefab;
+    }
+
+    public GameObject CreateAssociatedElement(GameObject prefab)
+    {
+        GameObject _prefab = Instantiate(prefab) as GameObject;
+        _prefab.transform.SetParent(displayContent, false);
 
         return _prefab;
     }
 
     void SetLayout(float _offset)
     {
-        float sizeX = content.GetComponent<RectTransform>().rect.width / amountPerRow;
+        amount += amountPerRow;
+
+        float sizeX = folderContent.GetComponent<RectTransform>().rect.width / amountPerRow;
         
         float posX;
         float posY = verticalPosition + _offset;
@@ -102,9 +128,22 @@ public class InstantiateEvidenceFiles : InstantiationProcess<Evidence>
 
     public override GameObject Instantiation(GameObject prefab)
     {
-        GameObject _prefab = instantiateFiles.Instantiation(prefab);
+        if (prefab == instantiateFiles.evidenceFilePrefab)
+        {
+            GameObject filePrefab = instantiateFiles.Instantiation(prefab);
 
-        return _prefab;
+            return filePrefab;
+        }
+        else if (prefab == instantiateFiles.evidenceElementPrefab)
+        {
+            GameObject elementPrefab = instantiateFiles.CreateAssociatedElement(prefab);
+
+            return elementPrefab;
+        }
+        else
+        {
+            return prefab;
+        }
     }
 }
 
@@ -114,8 +153,21 @@ public class InstantiateReportFiles : InstantiationProcess<Report>
 
     public override GameObject Instantiation(GameObject prefab)
     {
-        GameObject _prefab = instantiateFiles.Instantiation(prefab);
+        if (prefab == instantiateFiles.reportFilePrefab)
+        {
+            GameObject filePrefab = instantiateFiles.Instantiation(prefab);
 
-        return _prefab;
+            return filePrefab;
+        }
+        else if (prefab == instantiateFiles.reportElementPrefab)
+        {
+            GameObject elementPrefab = instantiateFiles.CreateAssociatedElement(prefab);
+
+            return elementPrefab;
+        }
+        else
+        {
+            return prefab;
+        }
     }
 }

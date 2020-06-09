@@ -16,7 +16,7 @@ public class PhotoFileObject : ObjectData<Evidence>
         GetGameData();
 
         file.codeKey = data.nameKey;
-        file.type = typeof(Evidence);
+        file.fileType = FileType.Evidence;
     }
 
     public override void Protocol()

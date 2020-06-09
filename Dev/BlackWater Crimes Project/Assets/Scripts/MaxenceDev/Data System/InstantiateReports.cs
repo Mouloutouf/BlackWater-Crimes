@@ -14,19 +14,21 @@ public class InstantiateReports : InstantiationProcess<Report>
 
     public GameObject failedPrefab;
     public Transform failedContent;
-    private FailedReportsManager failedReportsManager;
+    public FailedReportsManager failedReportsManager;
 
     [Title("None Settings")]
 
     public GameObject noneReportPrefab;
+
+    [Title("Group Settings")]
+
+    public GameObject contentGroupPrefab;
     
     void Start()
     {
         GetGameData();
-
-        failedReportsManager = GetComponent<FailedReportsManager>();
         
-        InstantiateFailedReports();
+        if (failedReportsManager != null) InstantiateFailedReports();
     }
 
     void InstantiateFailedReports()
@@ -54,6 +56,21 @@ public class InstantiateReports : InstantiationProcess<Report>
         element.GetComponent<Button>().onClick.AddListener(delegate { display.DisplayElement(element, reportPrefab); });
         
         if (element.TryGetComponent<NotificationReport>(out NotificationReport obj)) element.GetComponent<NotificationReport>().informationObject = reportPrefab;
+    }
+
+    public void CreateGroupReports(Transform content, GameObject element, Report[] reports, DisplaySystem display)
+    {
+        GameObject contentPrefab = Instantiate(contentGroupPrefab);
+        contentPrefab.transform.SetParent(content, false);
+
+        element.GetComponent<Button>().onClick.AddListener(delegate { display.DisplayElement(element, contentPrefab); });
+
+        foreach (Report report in reports)
+        {
+            this.content = contentPrefab.transform.GetChild(0);
+
+            GameObject reportPrefab = InstantiateObjectOfType(report, this.prefab);
+        }
     }
 
     public void CreateNoneReport(Transform content, GameObject element, string nameKey, string message, DisplaySystem display)

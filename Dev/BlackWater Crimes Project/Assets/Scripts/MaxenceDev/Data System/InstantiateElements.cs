@@ -130,26 +130,37 @@ public class InstantiateElements<T> : InstantiationProcess<T> where T : Data
     #region Instantiate Report
     void InstantiateReport(T _data, GameObject _element)
     {
-        bool match = false;
+        int matchs = 0;
+        List<Report> _reports = new List<Report>();
 
-        foreach ((List<Report>, List<Report>) megaList in gameData.reports.Values)
+        foreach (Indics indic in gameData.reports.Keys)
         {
-            foreach (Report _report in megaList.Item1)
+            foreach (Report _report in gameData.reports[indic].Item1)
             {
-                if (_report.elementKey == GetDataName(_data) && _report.unlockedData)
+                if (_report.elementKey == GetDataName(_data) && Compare(indic, _data) && _report.unlockedData)
                 {
-                    instantiateReports.CreateAssociatedReport(reportsContent, _element, _report, display);
-
-                    match = true;
+                    _reports.Add(_report);
+                    matchs++;
                 }
             }
         }
-        if (!match)
+
+        if (matchs > 1)
+        {
+            instantiateReports.CreateGroupReports(reportsContent, _element, _reports.ToArray(), display);
+        }
+        else if (matchs == 1)
+        {
+            instantiateReports.CreateAssociatedReport(reportsContent, _element, _reports[0], display);
+        }
+        else if (matchs == 0)
         {
             instantiateReports.CreateNoneReport(reportsContent, _element, GetDataName(_data), messageText, display);
         }
     }
     
+    protected virtual bool Compare(Indics _indic, T data) { return true; }
+
     protected virtual string GetDataName(T data) { return null; }
     
     #endregion
