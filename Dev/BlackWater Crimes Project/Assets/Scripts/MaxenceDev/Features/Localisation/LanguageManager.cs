@@ -38,7 +38,7 @@ public class LanguageManager : MonoBehaviour
         if (tsvFile == null) return;
 
         string text = tsvFile.text;
-        text.Replace("#", "\r\n");
+        text = text.Replace("#", "\r\n");
         
         string[] lines = text.Split(new string[]{"\n_"}, StringSplitOptions.None);
         

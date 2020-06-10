@@ -247,6 +247,8 @@ public class Character : Data
     public List<string> prosecutionKeys;
     [ShowIf("isSuspect")]
     public Sprite accusedSprite;
+    [ShowIf("isSuspect")]
+    public string juryKey;
 
     [Title("Distinctions")]
     

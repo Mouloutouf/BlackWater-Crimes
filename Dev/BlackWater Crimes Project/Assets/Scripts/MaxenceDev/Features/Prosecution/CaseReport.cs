@@ -12,6 +12,7 @@ public class CaseReport : SerializedMonoBehaviour
     public Image accusedImage;
     public float factor;
     public Localisation accusedName;
+    public Localisation accusedJury;
 
     public Dictionary<FileCategory, Localisation> paragraphs = new Dictionary<FileCategory, Localisation>();
     public Dictionary<FileCategory, (string, string)> texts = new Dictionary<FileCategory, (string, string)>();
@@ -73,6 +74,9 @@ public class CaseReport : SerializedMonoBehaviour
 
         accusedName.key = chosen.nameKey;
         accusedName.RefreshText();
+
+        accusedJury.key = chosen.juryKey;
+        accusedJury.RefreshText();
     }
 
     void SetParagraphs()
