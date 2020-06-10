@@ -309,6 +309,7 @@ public class EvidenceInteraction : MonoBehaviour
     public void TextButton()
     {
         currentEvidenceHeld.GetComponent<EvidenceObject>().ShowText();
+        if (currentEvidenceHeld.TryGetComponent<CassetteScript>(out CassetteScript script)) currentEvidenceHeld.GetComponent<CassetteScript>().PlayAudio();
     }
 
     #region Old

@@ -240,8 +240,6 @@ public class Character : Data
     [ShowIf("isSuspect")]
     public string introPhraseKey;
     [ShowIf("isSuspect")]
-    public AudioClip introPhraseAudio;
-    [ShowIf("isSuspect")]
     public List<Incriminate> incriminates = new List<Incriminate>();
     [ShowIf("isSuspect")]
     public List<string> prosecutionKeys;

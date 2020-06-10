@@ -168,6 +168,7 @@ public class TutorialScript : SerializedMonoBehaviour
         }
         else Destroy(this.gameObject);
     }
+    
     void Update() 
     {
        WaitingObjectives();
