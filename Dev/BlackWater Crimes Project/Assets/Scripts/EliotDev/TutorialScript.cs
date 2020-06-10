@@ -168,7 +168,6 @@ public class TutorialScript : SerializedMonoBehaviour
         }
         else Destroy(this.gameObject);
     }
-
     void Update() 
     {
        WaitingObjectives();
@@ -537,7 +536,8 @@ public class TutorialScript : SerializedMonoBehaviour
 
         else if (waitingForAnnaHouseDiscover)
         {
-            if (annaHouse.GetComponent<LocationObject>().data.visible)
+            if (annaHouse == null && UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "MapScene") MapStart();
+            if (annaHouse != null && annaHouse.GetComponent<LocationObject>().data.visible)
             {
                 waitingForAnnaHouseDiscover = false;
 

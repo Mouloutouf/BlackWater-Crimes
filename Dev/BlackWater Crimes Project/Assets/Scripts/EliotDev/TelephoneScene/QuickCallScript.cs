@@ -64,6 +64,12 @@ public class QuickCallScript : SerializedMonoBehaviour
 
     public void QuickCall(int phoneNumber)
     {
+        currentDialingScript.ResetDial();
+        foreach (Button qCButton in buttons.Values)
+        {
+            qCButton.interactable = false;
+        }
+
         //Alors c'est de la magie noire mais ça permet de split le int dans une liste
         List<int> phoneDigits = new List<int>();
 
@@ -80,8 +86,6 @@ public class QuickCallScript : SerializedMonoBehaviour
 
     IEnumerator CadranAnimation(List<int> digits)
     {
-        currentDialingScript.ResetDial();
-
         for (int i = 0; i < digits.Count; i++)
         {   
             cadranAnimator.enabled = true;

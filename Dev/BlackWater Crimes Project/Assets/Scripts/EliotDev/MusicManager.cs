@@ -11,7 +11,6 @@ public class MusicManager : SerializedMonoBehaviour
     public AudioClip deskMusic;
     public AudioClip interrogationMusic;
     public AudioClip prosecutionMusic;
-    public AudioClip mainMenuMusic;
 
 
     [Title ("Scene References")]
@@ -28,9 +27,6 @@ public class MusicManager : SerializedMonoBehaviour
 
     void Start()
     {
-        MusicManager musicManagerCopy = GameObject.FindObjectOfType<MusicManager>();
-        if(musicManagerCopy != null && musicManagerCopy != this) Destroy(musicManagerCopy.gameObject);
-
         DontDestroyOnLoad(this.gameObject);
 
         UnityEngine.SceneManagement.SceneManager.activeSceneChanged += OnNewScene;
@@ -39,7 +35,7 @@ public class MusicManager : SerializedMonoBehaviour
     void OnNewScene(Scene oldScene, Scene newScene)
     {
         soundSystem = GameObject.FindObjectOfType<SoundSystem>();
-        audioSource = soundSystem.transform.GetChild(0).GetComponent<AudioSource>();
+        audioSource = soundSystem.musicAudio;
 
         if (this.transform.childCount > 0 && !deskSceneNames.Contains(newScene.name)) Destroy(this.transform.GetChild(0).gameObject);
 
@@ -47,6 +43,14 @@ public class MusicManager : SerializedMonoBehaviour
         else if (deskSceneNames.Contains(newScene.name)) LoadDeskSceneMusic(newScene.name);
         else if (newScene.name == interrogationSceneName) LoadInterrogationSceneMusic();
         else if (newScene.name == prosecutionSceneName) LoadProsecutionSceneMusic();
+        else if (newScene.name == "MainMenuScene")
+        {
+            MusicManager[] musicManagerCopies = GameObject.FindObjectsOfType<MusicManager>();
+            foreach (MusicManager musicManager in musicManagerCopies)
+            {
+                if(musicManager != this) Destroy(musicManager.gameObject);
+            }
+        }
     }  
 
     void LoadResearchSceneMusic(string sceneName)
