@@ -54,7 +54,7 @@ public class ReportObject : ObjectData<Report>
         {
             foreach (Question question in questionList)
             {
-                if (question.reportKey == data.elementKey)
+                if (question.reportKey == data.reportKey)
                 {
                     if (question.mode == Modes.Evidence && question.otherKey == data.detailKey)
                     {

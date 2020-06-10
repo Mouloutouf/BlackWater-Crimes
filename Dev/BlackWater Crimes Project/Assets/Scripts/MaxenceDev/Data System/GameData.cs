@@ -245,6 +245,8 @@ public class Character : Data
     public List<Incriminate> incriminates = new List<Incriminate>();
     [ShowIf("isSuspect")]
     public List<string> prosecutionKeys;
+    [ShowIf("isSuspect")]
+    public Sprite accusedSprite;
 
     [Title("Distinctions")]
     

@@ -15,6 +15,8 @@ public class InstantiateFiles : MonoBehaviour
 
     public int amountPerRow;
     private int amount;
+    
+    public int sizeOffset;
 
     public float verticalPosition;
     public float offset;
@@ -107,6 +109,9 @@ public class InstantiateFiles : MonoBehaviour
     void SetLayout(float _offset)
     {
         amount += amountPerRow;
+
+        Vector2 size = folderContent.GetComponent<RectTransform>().offsetMin;
+        folderContent.GetComponent<RectTransform>().offsetMin = new Vector2(size.x, size.y + sizeOffset);
 
         float sizeX = folderContent.GetComponent<RectTransform>().rect.width / amountPerRow;
         

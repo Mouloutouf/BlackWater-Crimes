@@ -11,6 +11,7 @@ public class CaseReport : SerializedMonoBehaviour
 
     public Image accusedImage;
     public float factor;
+    public Localisation accusedName;
 
     public Dictionary<FileCategory, Localisation> paragraphs = new Dictionary<FileCategory, Localisation>();
     public Dictionary<FileCategory, (string, string)> texts = new Dictionary<FileCategory, (string, string)>();
@@ -35,7 +36,7 @@ public class CaseReport : SerializedMonoBehaviour
             }
         }
 
-        SetPhoto();
+        SetAccused();
 
         int success = 0;
 
@@ -63,12 +64,15 @@ public class CaseReport : SerializedMonoBehaviour
         SetParagraphs();
     }
 
-    void SetPhoto()
+    void SetAccused()
     {
-        accusedImage.sprite = chosen.sprite;
+        accusedImage.sprite = chosen.accusedSprite;
         accusedImage.SetNativeSize();
         RectTransform rect = accusedImage.gameObject.GetComponent<RectTransform>();
         rect.sizeDelta = new Vector2(rect.rect.width / factor, rect.rect.height / factor);
+
+        accusedName.key = chosen.nameKey;
+        accusedName.RefreshText();
     }
 
     void SetParagraphs()
