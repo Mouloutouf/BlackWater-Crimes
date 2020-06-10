@@ -16,7 +16,7 @@ public class Notification : MonoBehaviour
     public GameObject nPrefab;
     public Vector2 nPosition = new Vector2(35f, 2f);
 
-    protected GameObject _notification;
+    protected GameObject notificationNew;
     
     public UnityEvent seenEvent;
 
@@ -41,7 +41,7 @@ public class Notification : MonoBehaviour
     {
         if (!isSeen)
         {
-            _notification.SetActive(false);
+            notificationNew.SetActive(false);
 
             seenEvent.Invoke();
         }
@@ -50,11 +50,11 @@ public class Notification : MonoBehaviour
 
 public class NotificationPhoto : Notification
 {
-    void Start()
+    public void Set()
     {
         isSeen = GetNotificationState();
 
-        if (!isSeen) _notification = InstantiateNotification(notificationObject.transform);
+        if (!isSeen) notificationNew = InstantiateNotification(notificationObject.transform);
 
         SetNotificationSystem();
     }

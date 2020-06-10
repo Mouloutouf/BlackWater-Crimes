@@ -282,6 +282,7 @@ public class EvidenceInteraction : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         saveText.SetActive(true);
         saveText.GetComponent<Localisation>().key = keyToDisplay;
+        saveText.GetComponent<Localisation>().RefreshText();
         yield return new WaitForSeconds(2f);
         saveText.SetActive(false);
     }

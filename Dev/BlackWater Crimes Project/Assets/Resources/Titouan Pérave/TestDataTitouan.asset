@@ -9926,13 +9926,22 @@ MonoBehaviour:
     name: Abigail White
     nameKey: abigail_name
     sprite: {fileID: 21300000, guid: e5df8534340e55949ae47e8ad12339c2, type: 3}
+    known: 0
     isSuspect: 1
-    known: 1
     suspect: 1
     jobKey: abigail_job
     introPhraseKey: abigail_intro
     introPhraseAudio: {fileID: 0}
-    incriminates: []
+    incriminates:
+    - elementKey: brique_name
+      elementType: 0
+      category: 0
+    - elementKey: passeports_name
+      elementType: 0
+      category: 1
+    - elementKey: lettre_victime_name
+      elementType: 0
+      category: 2
     prosecutionKeys:
     - end_bad_abigail
     - end_ok_abigail
@@ -9945,13 +9954,22 @@ MonoBehaviour:
     name: Bob Jenkins
     nameKey: bob_name
     sprite: {fileID: 21300000, guid: 55c9071abadc03f4d9430932520fcf72, type: 3}
+    known: 0
     isSuspect: 1
-    known: 1
     suspect: 3
     jobKey: bob_job
     introPhraseKey: bob_intro
     introPhraseAudio: {fileID: 0}
-    incriminates: []
+    incriminates:
+    - elementKey: brique_name
+      elementType: 0
+      category: 0
+    - elementKey: enveloppe_name
+      elementType: 1
+      category: 1
+    - elementKey: none
+      elementType: 0
+      category: 2
     prosecutionKeys:
     - end_bad_bob
     - end_ok_bob
@@ -9964,13 +9982,22 @@ MonoBehaviour:
     name: Umberto Moretti
     nameKey: umberto_name
     sprite: {fileID: 21300000, guid: 0e0fb61550967c949bdef8c159b16b5f, type: 3}
+    known: 0
     isSuspect: 1
-    known: 1
     suspect: 0
     jobKey: umberto_job
     introPhraseKey: umberto_intro
     introPhraseAudio: {fileID: 0}
-    incriminates: []
+    incriminates:
+    - elementKey: brique_name
+      elementType: 0
+      category: 0
+    - elementKey: lettre_anonyme_name
+      elementType: 1
+      category: 1
+    - elementKey: mot_name
+      elementType: 0
+      category: 2
     prosecutionKeys:
     - end_bad_umberto
     - end_ok_umberto
@@ -9984,13 +10011,22 @@ MonoBehaviour:
     name: Richard Anderson
     nameKey: richard_name
     sprite: {fileID: 21300000, guid: 89f3c4da1773ae548a8723995db4a636, type: 3}
+    known: 0
     isSuspect: 1
-    known: 1
     suspect: 2
     jobKey: richard_job
     introPhraseKey: richard_intro
     introPhraseAudio: {fileID: 0}
-    incriminates: []
+    incriminates:
+    - elementKey: brique_name
+      elementType: 0
+      category: 0
+    - elementKey: note_anderson_name
+      elementType: 0
+      category: 1
+    - elementKey: none
+      elementType: 0
+      category: 2
     prosecutionKeys:
     - end_bad_richard
     - end_ok_richard
@@ -10003,8 +10039,8 @@ MonoBehaviour:
     name: Anna Jameswan
     nameKey: anna_name
     sprite: {fileID: 21300000, guid: c3ced49b9b2d5ce4eab4e2cb50b03be6, type: 3}
+    known: 0
     isSuspect: 0
-    known: 1
     suspect: 4
     jobKey: 
     introPhraseKey: 

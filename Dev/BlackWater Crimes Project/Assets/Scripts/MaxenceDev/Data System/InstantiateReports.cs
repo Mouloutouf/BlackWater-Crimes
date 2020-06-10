@@ -55,7 +55,11 @@ public class InstantiateReports : InstantiationProcess<Report>
         
         element.GetComponent<Button>().onClick.AddListener(delegate { display.DisplayElement(element, reportPrefab); });
         
-        if (element.TryGetComponent<NotificationReport>(out NotificationReport obj)) element.GetComponent<NotificationReport>().informationObject = reportPrefab;
+        if (element.TryGetComponent<NotificationReport>(out NotificationReport obj))
+        {
+            element.GetComponent<NotificationReport>().informationObject = reportPrefab;
+            element.GetComponent<NotificationReport>().Set();
+        }
     }
 
     public void CreateGroupReports(Transform content, GameObject element, Report[] reports, DisplaySystem display)

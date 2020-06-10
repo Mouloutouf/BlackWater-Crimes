@@ -187,8 +187,8 @@ public class MainMenuScript : MonoBehaviour
     {
         gameData.ResetPrefs();
 
-        gameData.firstTimeInTuto = true;
-
+        PlayerPrefs.SetString(nameof(gameData.playGame), "Play Game !");
+        
         sceneToLoad = "ChooseEpisode";
 
         playButton.onClick.RemoveAllListeners();

@@ -6,11 +6,11 @@ public class NotificationReport : Notification
 {
     public GameObject informationObject;
 
-    void Start()
+    public void Set()
     {
         isSeen = GetNotificationState();
 
-        if (!isSeen) _notification = InstantiateNotification(notificationObject.transform);
+        if (!isSeen) notificationNew = InstantiateNotification(notificationObject.transform);
 
         SetNotificationSystem();
     }

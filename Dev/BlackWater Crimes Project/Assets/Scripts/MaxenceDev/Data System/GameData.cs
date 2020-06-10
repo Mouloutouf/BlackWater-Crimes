@@ -504,6 +504,8 @@ public class GameData : SerializedScriptableObject
         }
 
         firstTimeInTuto = SetData(action, firstTimeInTuto, nameof(firstTimeInTuto));
+
+        alternativeAnnaMusic = SetData(action, alternativeAnnaMusic, nameof(alternativeAnnaMusic));
     }
 
     [ContextMenu("Reset To Build State")]
@@ -514,15 +516,13 @@ public class GameData : SerializedScriptableObject
         PlayerPrefs.DeleteAll();
 
         ResetData();
-
-        PlayerPrefs.SetString(nameof(playGame), "Play Game !");
     }
 
     [ContextMenu("Reset Game Data")]
     public void ResetData()
     {
-        ResetParameters();
-        
+        firstTimeInTuto = true;
+
         // Reset Evidences
         foreach (Locations location in evidences.Keys)
         {
