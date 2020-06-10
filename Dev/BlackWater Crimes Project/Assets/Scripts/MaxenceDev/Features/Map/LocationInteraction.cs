@@ -45,19 +45,22 @@ public class LocationInteraction : SerializedMonoBehaviour
         }
         else foreach (Transform tr in transform) if (tr.GetComponent<LocationObject>().data.visible) tr.GetChild(1).gameObject.SetActive(true);
 
-        RaycastHit2D[] hits = Physics2D.RaycastAll(_camera.ScreenToWorldPoint(Input.mousePosition), new Vector3(0, 0, 1));
-
-        if (hits.Count() > 0 && hits[0].transform.GetComponent<CircleCollider2D>() != null && Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
-            locationObject = hits[0].transform.GetComponent<LocationObject>();
+            RaycastHit2D[] hits = Physics2D.RaycastAll(_camera.ScreenToWorldPoint(Input.mousePosition), new Vector3(0, 0, 1));
 
-            if (!locationObject.data.visible)
+            if (hits.Count() > 0 && hits[0].transform.GetComponent<CircleCollider2D>() != null)
             {
-                RevealLocation(locationObject);
-            }
-            else
-            {
-                OpenLocationMenu(locationObject);
+                locationObject = hits[0].transform.GetComponent<LocationObject>();
+
+                if (!locationObject.data.visible)
+                {
+                    RevealLocation(locationObject);
+                }
+                else
+                {
+                    OpenLocationMenu(locationObject);
+                }
             }
         }
     }
