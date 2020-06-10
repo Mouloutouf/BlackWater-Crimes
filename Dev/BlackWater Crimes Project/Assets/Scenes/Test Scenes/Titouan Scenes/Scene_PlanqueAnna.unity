@@ -448,10 +448,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: 3
-  specificZoomPosition: {x: 3.25, y: 5.679, z: 20.984}
+  specificZoomPosition: {x: 3.25, y: 5.55, z: 21.2}
   hasSpecificRotation: 1
   specificZoomRotation: {x: 104, y: 0, z: 178.037}
-  specificZoomRotationQuaternion: {x: 0.19680989, y: 0.04145245, z: -0.02445448, w: 0.97925967}
+  specificZoomRotationQuaternion: {x: 0.013498318, y: -0.7878951, z: 0.61557114, w: 0.0105460435}
   blockHorizontalRotation: 1
   blockVerticalRotation: 1
 --- !u!65 &202257782
@@ -897,50 +897,6 @@ Transform:
   m_Father: {fileID: 1653428648}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 30.000002, y: 0, z: 0}
---- !u!1 &510126465
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 510126466}
-  - component: {fileID: 510126467}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Clue
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &510126466
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 510126465}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2047441276}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &510126467
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 510126465}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 9.954602, y: 1, z: 9.652909}
-  m_Center: {x: 0.10216685, y: 0.0000006142684, z: -0.09954558}
 --- !u!114 &510400395 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9045211434734282764, guid: 3ad9061556b69b64eb83004ba39f7c7a,
@@ -1057,7 +1013,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 1}
-  m_Intensity: 0.5
+  m_Intensity: 0.15
   m_Range: 124.58
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -3814,8 +3770,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: -0.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 510126466}
+  m_Children: []
   m_Father: {fileID: 839638898}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
