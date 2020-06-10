@@ -542,7 +542,7 @@ public class GameData : SerializedScriptableObject
                 }
                 
                 evidence.photoPath = "Assets/Graphs/Saved_Photos/" + evidence.nameKey + ".png";
-                evidence.photo = EvidenceInteraction.CreateSprite(evidence.photoPath);
+                //evidence.photo = EvidenceInteraction.CreateSprite(evidence.photoPath);
 
                 evidence.photographed = false;
 
