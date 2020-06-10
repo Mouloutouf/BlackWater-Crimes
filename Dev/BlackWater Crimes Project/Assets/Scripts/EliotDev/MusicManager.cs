@@ -11,7 +11,6 @@ public class MusicManager : SerializedMonoBehaviour
     public AudioClip deskMusic;
     public AudioClip interrogationMusic;
     public AudioClip prosecutionMusic;
-    public AudioClip mainMenuMusic;
 
 
     [Title ("Scene References")]
