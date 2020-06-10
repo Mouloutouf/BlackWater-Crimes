@@ -203,7 +203,7 @@ public class EvidenceInteraction : MonoBehaviour
         string filePath;
         string fileName = _hit.transform.parent.GetComponent<EvidenceObject>().data.nameKey;
         
-        if (Application.platform == RuntimePlatform.WindowsEditor /*|| (Application.platform == RuntimePlatform.Android && EditorApplication.isPlaying)*/)
+        if (Application.platform == RuntimePlatform.WindowsEditor || (Application.platform == RuntimePlatform.Android && EditorApplication.isPlaying))
         {
             filePath = "Assets/Graphs/Sprites/Screenshots/" + fileName + ".png";
             Debug.Log("Using Editor Folder");

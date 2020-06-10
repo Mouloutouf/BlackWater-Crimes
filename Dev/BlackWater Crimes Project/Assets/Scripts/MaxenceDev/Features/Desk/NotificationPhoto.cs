@@ -50,7 +50,7 @@ public class Notification : MonoBehaviour
 
 public class NotificationPhoto : Notification
 {
-    public void Set()
+    public void Start()
     {
         isSeen = GetNotificationState();
 
@@ -76,6 +76,7 @@ public class NotificationPhoto : Notification
     {
         base.ChangeNotification();
 
+        Debug.Log("wat ?");
         notificationObject.GetComponent<PhotoObject>().data.seen = true;
     }
 }

@@ -67,7 +67,7 @@ public class InstantiatePhotoElements : InstantiateElements<Evidence>
         __prefab.GetComponent<Button>().onClick.AddListener(delegate { zoomPhoto.ZoomObject(__prefab); });
 
         __prefab.GetComponent<NotificationPhoto>().notificationSystem = notificationSystem;
-        __prefab.GetComponent<NotificationPhoto>().Set();
+        //__prefab.GetComponent<NotificationPhoto>().Set();
     }
 
     protected override string GetDataName(Evidence data)

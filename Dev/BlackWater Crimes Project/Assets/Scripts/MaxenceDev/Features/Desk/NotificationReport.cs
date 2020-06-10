@@ -6,7 +6,7 @@ public class NotificationReport : Notification
 {
     public GameObject informationObject;
 
-    public void Set()
+    public void Start()
     {
         isSeen = GetNotificationState();
 

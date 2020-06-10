@@ -58,7 +58,7 @@ public class InstantiateReports : InstantiationProcess<Report>
         if (element.TryGetComponent<NotificationReport>(out NotificationReport obj))
         {
             element.GetComponent<NotificationReport>().informationObject = reportPrefab;
-            element.GetComponent<NotificationReport>().Set();
+            //element.GetComponent<NotificationReport>().Set();
         }
     }
 
